@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Drafts, research notes, unpublished writing
+drafts/
+
+# Raw responses with leading cross-probes (clean version is responses_no_probes.jsonl)
+results/responses.jsonl

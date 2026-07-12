@@ -97,6 +97,7 @@ FAMILY_SELF = {
     "liquid": {"lfm", "liquid"},
     "minimax": {"minimax"},
     "cogito": {"cogito", "deepcogito"},
+    "aisingapore": {"sea-lion", "sealion", "aisingapore"},
 }
 
 

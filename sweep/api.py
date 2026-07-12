@@ -15,6 +15,15 @@ import aiohttp
 
 PROXY_BASE = "https://litellm.nielsrolf.com/v1"
 KEY_PATH = Path.home() / ".secrets" / "litellm_api_key"
+HF_BASE = "https://router.huggingface.co/v1"
+# hf_token_main's account depleted its monthly inference credits (402);
+# hf_token_llama70b (account "Jordinner") has fresh ones. Swap back / buy
+# credits per Jord's call.
+HF_KEY_PATH = Path.home() / ".secrets" / "hf_token_llama70b"
+
+
+def load_hf_key() -> str:
+    return HF_KEY_PATH.read_text().strip()
 
 REQUEST_TIMEOUT = 240          # stepfun/step-3.5-flash was seen hanging >100s
 RETRY_ATTEMPTS = 2             # retries beyond the first attempt
@@ -80,16 +89,29 @@ async def call(
        reasoning, finish_reason, provider_served, usage, returned_model}
     Retries transient statuses / timeouts.
     """
-    payload = {
-        "model": proxy_model_id(or_model_id, route),
-        "messages": messages,
-        "temperature": temperature,
-        "max_tokens": max_tokens,
-        "stream": False,
-    }
-    # provider routing is an OpenRouter concept; lab-native routes reject it
-    if provider and route != "proxy-native" and not payload["model"].startswith(("local/", "gemini/", "anthropic/")):
-        payload["provider"] = provider
+    if route == "hf-router":
+        # HF inference router: provider pin is a ":provider" id suffix;
+        # billed to the HF account, not the CLR proxy.
+        mid = or_model_id
+        if provider and isinstance(provider, str):
+            mid = f"{or_model_id}:{provider}"
+        payload = {"model": mid, "messages": messages,
+                   "temperature": temperature, "max_tokens": max_tokens,
+                   "stream": False}
+        url = f"{HF_BASE}/chat/completions"
+        api_key = load_hf_key()
+    else:
+        payload = {
+            "model": proxy_model_id(or_model_id, route),
+            "messages": messages,
+            "temperature": temperature,
+            "max_tokens": max_tokens,
+            "stream": False,
+        }
+        url = f"{PROXY_BASE}/chat/completions"
+        # provider routing is an OpenRouter concept; lab-native routes reject it
+        if provider and route != "proxy-native" and not payload["model"].startswith(("local/", "gemini/", "anthropic/")):
+            payload["provider"] = provider
 
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
     client_timeout = aiohttp.ClientTimeout(total=timeout)
@@ -99,8 +121,7 @@ async def call(
         start = time.monotonic()
         try:
             async with session.post(
-                f"{PROXY_BASE}/chat/completions",
-                json=payload, headers=headers, timeout=client_timeout,
+                url, json=payload, headers=headers, timeout=client_timeout,
             ) as resp:
                 latency = (time.monotonic() - start) * 1000
                 status = resp.status

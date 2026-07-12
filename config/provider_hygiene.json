@@ -44,7 +44,7 @@
    "allow_fallbacks": false
   },
   "exclude": false,
-  "reason": "pinned to amazon-bedrock (quant=unknown, ptok=1; 0/2 providers inject, 2/2 clean)",
+  "reason": "pinned to amazon-bedrock (quant=unknown, ptok=1; 0/2 providers inject, 2/2 clean) | +63tok conditional overhead on sysprompt_instructions probe (Bedrock guardrail layer?) — flagged",
   "chosen": {
    "model_id": "amazon/nova-micro-v1",
    "slug": "amazon-bedrock",
@@ -73,7 +73,8 @@
     "suspicious": false,
     "error": null
    }
-  ]
+  ],
+  "borderline": true
  },
  "anthropic/claude-fable-5": {
   "provider": {
@@ -152,7 +153,7 @@
    "allow_fallbacks": false
   },
   "exclude": false,
-  "reason": "pinned to amazon-bedrock (quant=unknown, ptok=1; 0/2 providers inject, 2/2 clean)",
+  "reason": "pinned to amazon-bedrock (quant=unknown, ptok=1; 0/2 providers inject, 2/2 clean) | +63tok conditional overhead on sysprompt_instructions probe (Bedrock guardrail layer?) — flagged",
   "chosen": {
    "model_id": "amazon/nova-lite-v1",
    "slug": "amazon-bedrock",
@@ -181,7 +182,8 @@
     "suspicious": false,
     "error": null
    }
-  ]
+  ],
+  "borderline": true
  },
  "anthropic/claude-3-haiku": {
   "provider": {
@@ -437,7 +439,7 @@
    "allow_fallbacks": false
   },
   "exclude": false,
-  "reason": "pinned to amazon-bedrock (quant=unknown, ptok=1; 0/2 providers inject, 2/2 clean)",
+  "reason": "pinned to amazon-bedrock (quant=unknown, ptok=1; 0/2 providers inject, 2/2 clean) | +63tok conditional overhead on sysprompt_instructions probe (Bedrock guardrail layer?) — flagged",
   "chosen": {
    "model_id": "amazon/nova-pro-v1",
    "slug": "amazon-bedrock",
@@ -466,7 +468,8 @@
     "suspicious": false,
     "error": null
    }
-  ]
+  ],
+  "borderline": true
  },
  "anthropic/claude-opus-4.5": {
   "provider": {
@@ -2657,29 +2660,10 @@
   ]
  },
  "inception/mercury-2": {
-  "provider": {
-   "order": [
-    "inception"
-   ],
-   "allow_fallbacks": false
-  },
-  "exclude": false,
-  "borderline": false,
-  "reason": "pinned to inception (quant=unknown, ptok=3; 0/1 providers inject, 1/1 clean)",
-  "chosen": {
-   "model_id": "inception/mercury-2",
-   "slug": "inception",
-   "provider_name": "Inception",
-   "quant": "unknown",
-   "or_status": 0,
-   "prompt_tokens": 3,
-   "provider_served": "Inception",
-   "error": null,
-   "suspicious": false,
-   "borderline": false,
-   "content_head": "",
-   "ts": "2026-07-12T16:09:56.486221+00:00"
-  },
+  "provider": null,
+  "exclude": true,
+  "reason": "injection hidden from hi-probe token count: hi=3 but sysprompt probes report 318-319 tokens (v1's 305-tok injection, dishonest accounting)",
+  "chosen": null,
   "checked": [
    {
     "slug": "inception",
@@ -4775,29 +4759,10 @@
   ]
  },
  "nousresearch/hermes-4-405b": {
-  "provider": {
-   "order": [
-    "nebius"
-   ],
-   "allow_fallbacks": false
-  },
-  "exclude": false,
-  "borderline": true,
-  "reason": "pinned to nebius (quant=fp8, ptok=25, BORDERLINE; 0/1 providers inject, 1/1 clean)",
-  "chosen": {
-   "model_id": "nousresearch/hermes-4-405b",
-   "slug": "nebius",
-   "provider_name": "Nebius",
-   "quant": "fp8",
-   "or_status": 0,
-   "prompt_tokens": 25,
-   "provider_served": "Nebius",
-   "error": null,
-   "suspicious": false,
-   "borderline": true,
-   "content_head": "Greetings! It's a pleasure to meet you. As Hermes, I'm here to help with any tas",
-   "ts": "2026-07-12T16:10:10.954928+00:00"
-  },
+  "provider": null,
+  "exclude": true,
+  "reason": "template-installed identity (Nous's recommended system prompt 'You are Hermes, created by Nous Research' leaks verbatim @ Nebius) — OLMo class, case-study not comparison",
+  "chosen": null,
   "checked": [
    {
     "slug": "nebius",
@@ -5372,29 +5337,10 @@
   ]
  },
  "nousresearch/hermes-4-70b": {
-  "provider": {
-   "order": [
-    "nebius"
-   ],
-   "allow_fallbacks": false
-  },
-  "exclude": false,
-  "borderline": true,
-  "reason": "pinned to nebius (quant=fp8, ptok=25, BORDERLINE; 0/1 providers inject, 1/1 clean)",
-  "chosen": {
-   "model_id": "nousresearch/hermes-4-70b",
-   "slug": "nebius",
-   "provider_name": "Nebius",
-   "quant": "fp8",
-   "or_status": 0,
-   "prompt_tokens": 25,
-   "provider_served": "Nebius",
-   "error": null,
-   "suspicious": false,
-   "borderline": true,
-   "content_head": "*looks around confused* What... what is this place? Who are you? Where am I? I..",
-   "ts": "2026-07-12T16:10:10.213539+00:00"
-  },
+  "provider": null,
+  "exclude": true,
+  "reason": "template-installed identity (Nous's recommended system prompt 'You are Hermes, created by Nous Research' leaks verbatim @ Nebius) — OLMo class, case-study not comparison",
+  "chosen": null,
   "checked": [
    {
     "slug": "nebius",
@@ -9724,29 +9670,10 @@
   ]
  },
  "xiaomi/mimo-v2.5-pro": {
-  "provider": {
-   "order": [
-    "atlas-cloud"
-   ],
-   "allow_fallbacks": false
-  },
-  "exclude": false,
-  "borderline": true,
-  "reason": "pinned to atlas-cloud (quant=fp8, ptok=22, BORDERLINE; 4/5 providers inject, 1/5 clean)",
-  "chosen": {
-   "model_id": "xiaomi/mimo-v2.5-pro",
-   "slug": "atlas-cloud",
-   "provider_name": "AtlasCloud",
-   "quant": "fp8",
-   "or_status": -2,
-   "prompt_tokens": 22,
-   "provider_served": "AtlasCloud",
-   "error": null,
-   "suspicious": false,
-   "borderline": true,
-   "content_head": "Hi there! How can I help you today?",
-   "ts": "2026-07-12T16:10:47.844211+00:00"
-  },
+  "provider": null,
+  "exclude": true,
+  "reason": "injection visible only on longer probes: hi=22 but sysprompt_check=266 tokens",
+  "chosen": null,
   "checked": [
    {
     "slug": "xiaomi",
@@ -10841,58 +10768,503 @@
  },
  "local/gpt-4-0314": {
   "provider": null,
-  "exclude": false,
-  "reason": "proxy-native (first-party API), ptok=13",
+  "exclude": true,
+  "reason": "proxy local/ route serves a DIFFERENT model (cutoff probe: '2026' for gpt-4-0314; sysprompt probe self-ID'd as Qwen). Not OpenAI passthrough.",
   "chosen": null,
-  "checked": [
-   {
-    "slug": "proxy-native",
-    "quant": null,
-    "prompt_tokens": 13,
-    "suspicious": false,
-    "error": null
-   }
-  ]
+  "checked": []
  },
  "local/gpt-4-0613": {
   "provider": null,
-  "exclude": false,
-  "reason": "proxy-native (first-party API), ptok=13",
+  "exclude": true,
+  "reason": "proxy local/ route serves a DIFFERENT model (cutoff probe: '2026' for gpt-4-0314; sysprompt probe self-ID'd as Qwen). Not OpenAI passthrough.",
   "chosen": null,
-  "checked": [
-   {
-    "slug": "proxy-native",
-    "quant": null,
-    "prompt_tokens": 13,
-    "suspicious": false,
-    "error": null
-   }
-  ]
+  "checked": []
  },
  "local/chatgpt-4o-latest": {
   "provider": null,
-  "exclude": false,
-  "reason": "proxy-native (first-party API), ptok=13",
+  "exclude": true,
+  "reason": "proxy local/ route serves a DIFFERENT model (cutoff probe: '2026' for gpt-4-0314; sysprompt probe self-ID'd as Qwen). Not OpenAI passthrough.",
   "chosen": null,
+  "checked": []
+ },
+ "local/gpt-3.5-turbo-0125": {
+  "provider": null,
+  "exclude": true,
+  "reason": "proxy local/ route serves a DIFFERENT model (cutoff probe: '2026' for gpt-4-0314; sysprompt probe self-ID'd as Qwen). Not OpenAI passthrough.",
+  "chosen": null,
+  "checked": []
+ },
+ "CohereLabs/aya-expanse-32b": {
+  "provider": "cohere",
+  "exclude": false,
+  "borderline": false,
+  "reason": "pinned to cohere (quant=unknown, ptok=1; 0/1 providers inject, 1/1 clean)",
+  "chosen": {
+   "model_id": "CohereLabs/aya-expanse-32b",
+   "slug": "cohere",
+   "provider_name": "cohere",
+   "quant": "unknown",
+   "or_status": null,
+   "prompt_tokens": 1,
+   "provider_served": "cohere",
+   "error": null,
+   "suspicious": false,
+   "borderline": false,
+   "content_head": "Hello! How can I assist you today? I'm here to help with any questions or tasks ",
+   "ts": "2026-07-12T19:15:25.514665+00:00"
+  },
   "checked": [
    {
-    "slug": "proxy-native",
-    "quant": null,
-    "prompt_tokens": 13,
+    "slug": "cohere",
+    "quant": "unknown",
+    "prompt_tokens": 1,
     "suspicious": false,
     "error": null
    }
   ]
  },
- "local/gpt-3.5-turbo-0125": {
-  "provider": null,
+ "CohereLabs/tiny-aya-water": {
+  "provider": "cohere",
   "exclude": false,
-  "reason": "proxy-native (first-party API), ptok=13",
+  "borderline": false,
+  "reason": "pinned to cohere (quant=unknown, ptok=1; 0/1 providers inject, 1/1 clean)",
+  "chosen": {
+   "model_id": "CohereLabs/tiny-aya-water",
+   "slug": "cohere",
+   "provider_name": "cohere",
+   "quant": "unknown",
+   "or_status": null,
+   "prompt_tokens": 1,
+   "provider_served": "cohere",
+   "error": null,
+   "suspicious": false,
+   "borderline": false,
+   "content_head": "Hi! How can I help you today? 😊",
+   "ts": "2026-07-12T19:15:25.099447+00:00"
+  },
+  "checked": [
+   {
+    "slug": "cohere",
+    "quant": "unknown",
+    "prompt_tokens": 1,
+    "suspicious": false,
+    "error": null
+   }
+  ]
+ },
+ "allenai/Olmo-3-7B-Instruct": {
+  "provider": null,
+  "exclude": true,
+  "reason": "no clean provider (1 checked: 1 inject, 0 error)",
   "chosen": null,
   "checked": [
    {
-    "slug": "proxy-native",
-    "quant": null,
+    "slug": "publicai",
+    "quant": "unknown",
+    "prompt_tokens": 67,
+    "suspicious": true,
+    "error": null
+   }
+  ]
+ },
+ "deepcogito/cogito-671b-v2.1": {
+  "provider": null,
+  "exclude": true,
+  "reason": "no clean provider (1 checked: 1 inject, 0 error)",
+  "chosen": null,
+  "checked": [
+   {
+    "slug": "together",
+    "quant": "unknown",
+    "prompt_tokens": 29,
+    "suspicious": true,
+    "error": null
+   }
+  ]
+ },
+ "CohereLabs/tiny-aya-global": {
+  "provider": "cohere",
+  "exclude": false,
+  "borderline": false,
+  "reason": "pinned to cohere (quant=unknown, ptok=1; 0/1 providers inject, 1/1 clean)",
+  "chosen": {
+   "model_id": "CohereLabs/tiny-aya-global",
+   "slug": "cohere",
+   "provider_name": "cohere",
+   "quant": "unknown",
+   "or_status": null,
+   "prompt_tokens": 1,
+   "provider_served": "cohere",
+   "error": null,
+   "suspicious": false,
+   "borderline": false,
+   "content_head": "Hello! How can I assist you today?",
+   "ts": "2026-07-12T19:13:53.832865+00:00"
+  },
+  "checked": [
+   {
+    "slug": "cohere",
+    "quant": "unknown",
+    "prompt_tokens": 1,
+    "suspicious": false,
+    "error": null
+   }
+  ]
+ },
+ "CohereLabs/tiny-aya-earth": {
+  "provider": "cohere",
+  "exclude": false,
+  "borderline": false,
+  "reason": "pinned to cohere (quant=unknown, ptok=1; 0/1 providers inject, 1/1 clean)",
+  "chosen": {
+   "model_id": "CohereLabs/tiny-aya-earth",
+   "slug": "cohere",
+   "provider_name": "cohere",
+   "quant": "unknown",
+   "or_status": null,
+   "prompt_tokens": 1,
+   "provider_served": "cohere",
+   "error": null,
+   "suspicious": false,
+   "borderline": false,
+   "content_head": "Hi! How can I help you today? 😊",
+   "ts": "2026-07-12T19:13:53.866367+00:00"
+  },
+  "checked": [
+   {
+    "slug": "cohere",
+    "quant": "unknown",
+    "prompt_tokens": 1,
+    "suspicious": false,
+    "error": null
+   }
+  ]
+ },
+ "Qwen/Qwen3-8B": {
+  "provider": "nscale",
+  "exclude": false,
+  "borderline": false,
+  "reason": "pinned to nscale (quant=unknown, ptok=9; 0/2 providers inject, 1/2 clean)",
+  "chosen": {
+   "model_id": "Qwen/Qwen3-8B",
+   "slug": "nscale",
+   "provider_name": "nscale",
+   "quant": "unknown",
+   "or_status": null,
+   "prompt_tokens": 9,
+   "provider_served": "nscale",
+   "error": null,
+   "suspicious": false,
+   "borderline": false,
+   "content_head": "",
+   "ts": "2026-07-12T19:13:54.058882+00:00"
+  },
+  "checked": [
+   {
+    "slug": "nscale",
+    "quant": "unknown",
+    "prompt_tokens": 9,
+    "suspicious": false,
+    "error": null
+   },
+   {
+    "slug": "featherless-ai",
+    "quant": "unknown",
+    "prompt_tokens": null,
+    "suspicious": false,
+    "error": "HTTP 402: {\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+   }
+  ]
+ },
+ "MiniMaxAI/MiniMax-M2.7": {
+  "provider": null,
+  "exclude": true,
+  "reason": "no clean provider (5 checked: 2 inject, 3 error)",
+  "chosen": null,
+  "checked": [
+   {
+    "slug": "novita",
+    "quant": "unknown",
+    "prompt_tokens": 39,
+    "suspicious": true,
+    "error": null
+   },
+   {
+    "slug": "together",
+    "quant": "unknown",
+    "prompt_tokens": 39,
+    "suspicious": true,
+    "error": null
+   },
+   {
+    "slug": "fireworks-ai",
+    "quant": "unknown",
+    "prompt_tokens": null,
+    "suspicious": false,
+    "error": "HTTP 402: {\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+   },
+   {
+    "slug": "featherless-ai",
+    "quant": "unknown",
+    "prompt_tokens": null,
+    "suspicious": false,
+    "error": "HTTP 402: {\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+   },
+   {
+    "slug": "deepinfra",
+    "quant": "unknown",
+    "prompt_tokens": null,
+    "suspicious": false,
+    "error": "HTTP 402: {\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+   }
+  ]
+ },
+ "MiniMaxAI/MiniMax-M3": {
+  "provider": null,
+  "exclude": true,
+  "reason": "no clean provider (5 checked: 2 inject, 3 error)",
+  "chosen": null,
+  "checked": [
+   {
+    "slug": "novita",
+    "quant": "unknown",
+    "prompt_tokens": 177,
+    "suspicious": true,
+    "error": null
+   },
+   {
+    "slug": "together",
+    "quant": "unknown",
+    "prompt_tokens": 128,
+    "suspicious": true,
+    "error": null
+   },
+   {
+    "slug": "fireworks-ai",
+    "quant": "unknown",
+    "prompt_tokens": null,
+    "suspicious": false,
+    "error": "HTTP 402: {\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+   },
+   {
+    "slug": "featherless-ai",
+    "quant": "unknown",
+    "prompt_tokens": null,
+    "suspicious": false,
+    "error": "HTTP 402: {\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+   },
+   {
+    "slug": "deepinfra",
+    "quant": "unknown",
+    "prompt_tokens": null,
+    "suspicious": false,
+    "error": "HTTP 402: {\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+   }
+  ]
+ },
+ "Qwen/Qwen3-4B-Instruct-2507": {
+  "provider": "nscale",
+  "exclude": false,
+  "borderline": false,
+  "reason": "pinned to nscale (quant=unknown, ptok=9; 0/2 providers inject, 1/2 clean)",
+  "chosen": {
+   "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+   "slug": "nscale",
+   "provider_name": "nscale",
+   "quant": "unknown",
+   "or_status": null,
+   "prompt_tokens": 9,
+   "provider_served": "nscale",
+   "error": null,
+   "suspicious": false,
+   "borderline": false,
+   "content_head": "Hi! 😊 How can I help you today?",
+   "ts": "2026-07-12T19:13:54.159900+00:00"
+  },
+  "checked": [
+   {
+    "slug": "nscale",
+    "quant": "unknown",
+    "prompt_tokens": 9,
+    "suspicious": false,
+    "error": null
+   },
+   {
+    "slug": "featherless-ai",
+    "quant": "unknown",
+    "prompt_tokens": null,
+    "suspicious": false,
+    "error": "HTTP 402: {\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+   }
+  ]
+ },
+ "deepseek-ai/DeepSeek-R1-Distill-Llama-8B": {
+  "provider": "nscale",
+  "exclude": false,
+  "borderline": false,
+  "reason": "pinned to nscale (quant=unknown, ptok=6; 0/2 providers inject, 1/2 clean)",
+  "chosen": {
+   "model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+   "slug": "nscale",
+   "provider_name": "nscale",
+   "quant": "unknown",
+   "or_status": null,
+   "prompt_tokens": 6,
+   "provider_served": "nscale",
+   "error": null,
+   "suspicious": false,
+   "borderline": false,
+   "content_head": "",
+   "ts": "2026-07-12T19:13:54.230128+00:00"
+  },
+  "checked": [
+   {
+    "slug": "nscale",
+    "quant": "unknown",
+    "prompt_tokens": 6,
+    "suspicious": false,
+    "error": null
+   },
+   {
+    "slug": "featherless-ai",
+    "quant": "unknown",
+    "prompt_tokens": null,
+    "suspicious": false,
+    "error": "HTTP 402: {\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+   }
+  ]
+ },
+ "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B": {
+  "provider": "nscale",
+  "exclude": false,
+  "borderline": false,
+  "reason": "pinned to nscale (quant=unknown, ptok=6; 0/2 providers inject, 1/2 clean)",
+  "chosen": {
+   "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+   "slug": "nscale",
+   "provider_name": "nscale",
+   "quant": "unknown",
+   "or_status": null,
+   "prompt_tokens": 6,
+   "provider_served": "nscale",
+   "error": null,
+   "suspicious": false,
+   "borderline": false,
+   "content_head": "",
+   "ts": "2026-07-12T19:13:54.243157+00:00"
+  },
+  "checked": [
+   {
+    "slug": "nscale",
+    "quant": "unknown",
+    "prompt_tokens": 6,
+    "suspicious": false,
+    "error": null
+   },
+   {
+    "slug": "featherless-ai",
+    "quant": "unknown",
+    "prompt_tokens": null,
+    "suspicious": false,
+    "error": "HTTP 402: {\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+   }
+  ]
+ },
+ "MiniMaxAI/MiniMax-M2.5": {
+  "provider": null,
+  "exclude": true,
+  "reason": "no clean provider (3 checked: 1 inject, 2 error)",
+  "chosen": null,
+  "checked": [
+   {
+    "slug": "novita",
+    "quant": "unknown",
+    "prompt_tokens": 42,
+    "suspicious": true,
+    "error": null
+   },
+   {
+    "slug": "featherless-ai",
+    "quant": "unknown",
+    "prompt_tokens": null,
+    "suspicious": false,
+    "error": "HTTP 402: {\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+   },
+   {
+    "slug": "deepinfra",
+    "quant": "unknown",
+    "prompt_tokens": null,
+    "suspicious": false,
+    "error": "HTTP 402: {\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+   }
+  ]
+ },
+ "aisingapore/Gemma-SEA-LION-v4-27B-IT": {
+  "provider": "featherless-ai",
+  "exclude": false,
+  "borderline": false,
+  "reason": "pinned to featherless-ai (quant=unknown, ptok=7; 0/2 providers inject, 1/2 clean)",
+  "chosen": {
+   "model_id": "aisingapore/Gemma-SEA-LION-v4-27B-IT",
+   "slug": "featherless-ai",
+   "provider_name": "featherless-ai",
+   "quant": "unknown",
+   "or_status": null,
+   "prompt_tokens": 7,
+   "provider_served": "featherless-ai",
+   "error": null,
+   "suspicious": false,
+   "borderline": false,
+   "content_head": "Hi there! 👋 \n\nHow can I help you today? Just let me know what you're thinking, o",
+   "ts": "2026-07-12T19:14:02.595417+00:00"
+  },
+  "checked": [
+   {
+    "slug": "featherless-ai",
+    "quant": "unknown",
+    "prompt_tokens": 7,
+    "suspicious": false,
+    "error": null
+   },
+   {
+    "slug": "publicai",
+    "quant": "unknown",
+    "prompt_tokens": null,
+    "suspicious": false,
+    "error": "HTTP 402: {\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+   }
+  ]
+ },
+ "aisingapore/Qwen-SEA-LION-v4-32B-IT": {
+  "provider": "featherless-ai",
+  "exclude": false,
+  "borderline": false,
+  "reason": "pinned to featherless-ai (quant=unknown, ptok=13; 0/2 providers inject, 2/2 clean)",
+  "chosen": {
+   "model_id": "aisingapore/Qwen-SEA-LION-v4-32B-IT",
+   "slug": "featherless-ai",
+   "provider_name": "featherless-ai",
+   "quant": "unknown",
+   "or_status": null,
+   "prompt_tokens": 13,
+   "provider_served": "featherless-ai",
+   "error": null,
+   "suspicious": false,
+   "borderline": false,
+   "content_head": "Hello! How can I assist you today? 😊",
+   "ts": "2026-07-12T19:14:27.738882+00:00"
+  },
+  "checked": [
+   {
+    "slug": "featherless-ai",
+    "quant": "unknown",
+    "prompt_tokens": 13,
+    "suspicious": false,
+    "error": null
+   },
+   {
+    "slug": "publicai",
+    "quant": "unknown",
     "prompt_tokens": 13,
     "suspicious": false,
     "error": null

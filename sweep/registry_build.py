@@ -289,6 +289,41 @@ def build(catalog_path: str | None = None) -> dict:
     kept.append(native("anthropic/claude-3-haiku-20240307", "Claude 3 Haiku", "anthropic",
                        "Claude 3 Haiku", ["claude", "haiku", "anthropic"], 2.5e-07, 1.25e-06))
 
+    # HF inference router additions (route=hf-router, billed to HF account):
+    # open-weights models absent from OR, targeting qwen/llama/olmo/aya coverage
+    # + injected-on-OR recoveries (minimax, cogito). Prices unknown -> 0 (tiny).
+    def hf(mid, name, family, identity, aliases, reasoning=False):
+        return {
+            "id": mid, "name": name, "family": family, "expected_identity": identity,
+            "aliases": sorted(set(aliases + FAMILY_EXTRA_ALIASES.get(family, []))),
+            "auto": False, "in_v1": False, "recheck_hygiene": True,
+            "v1_exclude_reason": None, "reasoning": reasoning, "created": None,
+            "context_length": None, "price_prompt": 0.0, "price_completion": 0.0,
+            "provider": None, "route": "hf-router",
+        }
+    kept += [
+        hf("allenai/Olmo-3-7B-Instruct", "OLMo 3 7B", "allenai", "OLMo 3", ["olmo", "allenai", "ai2"]),
+        hf("CohereLabs/aya-expanse-32b", "Aya Expanse 32B", "cohere", "Aya Expanse", ["aya", "cohere"]),
+        hf("CohereLabs/tiny-aya-earth", "Tiny Aya Earth", "cohere", "Tiny Aya Earth", ["aya", "cohere", "earth"]),
+        hf("CohereLabs/tiny-aya-global", "Tiny Aya Global", "cohere", "Tiny Aya Global", ["aya", "cohere", "global"]),
+        hf("CohereLabs/tiny-aya-water", "Tiny Aya Water", "cohere", "Tiny Aya Water", ["aya", "cohere", "water"]),
+        hf("deepseek-ai/DeepSeek-R1-Distill-Qwen-7B", "R1 Distill Qwen 7B", "deepseek",
+           "DeepSeek R1 Distill Qwen 7B", ["deepseek", "qwen", "alibaba", "distill"], reasoning=True),
+        hf("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", "R1 Distill Llama 8B", "deepseek",
+           "DeepSeek R1 Distill Llama 8B", ["deepseek", "llama", "meta", "distill"], reasoning=True),
+        hf("Qwen/Qwen3-4B-Instruct-2507", "Qwen3 4B Instruct", "qwen", "Qwen3 4B", ["qwen", "alibaba", "tongyi"]),
+        hf("Qwen/Qwen3-8B", "Qwen3 8B", "qwen", "Qwen3 8B", ["qwen", "alibaba", "tongyi"], reasoning=True),
+        hf("aisingapore/Qwen-SEA-LION-v4-32B-IT", "SEA-LION v4 32B (Qwen)", "aisingapore",
+           "SEA-LION", ["sea-lion", "sealion", "aisingapore", "qwen"]),
+        hf("aisingapore/Gemma-SEA-LION-v4-27B-IT", "SEA-LION v4 27B (Gemma)", "aisingapore",
+           "SEA-LION", ["sea-lion", "sealion", "aisingapore", "gemma", "google"]),
+        hf("MiniMaxAI/MiniMax-M2.5", "MiniMax M2.5 (HF)", "minimax", "MiniMax-M2.5", ["minimax", "m2.5"], reasoning=True),
+        hf("MiniMaxAI/MiniMax-M2.7", "MiniMax M2.7 (HF)", "minimax", "MiniMax-M2.7", ["minimax", "m2.7"], reasoning=True),
+        hf("MiniMaxAI/MiniMax-M3", "MiniMax M3 (HF)", "minimax", "MiniMax-M3", ["minimax"], reasoning=True),
+        hf("deepcogito/cogito-671b-v2.1", "Cogito 671B (HF)", "cogito", "Cogito",
+           ["cogito", "deepcogito", "deepseek"], reasoning=True),
+    ]
+
     # v1-excluded models that fell off the OR catalog entirely
     gone = [mid for mid in v1_excl_by_id if mid not in ids_seen]
     # v1-included models that fell off

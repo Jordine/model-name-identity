@@ -55,6 +55,11 @@ Preflight results worth reporting on their own:
 
 - **All current Grok models (4.20, 4.3, 4.5) are excluded**: every available provider injects a system prompt (v1 found the same for Grok 4.x — xAI's models are apparently never publicly available raw).
 - **gpt-oss is provider-costumed almost universally**: 19–20 of 20 providers inject (the Harmony chat format ships identity-bearing defaults). An open-weights model whose public-facing identity is nearly always mediated by whoever serves it.
+- **MiniMax cannot be measured raw at all**: every one of 22+ provider checks across two aggregators either injects or errors. (Ironically, v1 caught MiniMax M2.5 claiming to be Claude *despite* its injected system prompt.)
+- **OLMo's identity ships inside its official chat template.** The "injection" on OLMo 3's only provider turns out to be AllenAI's own template default — third-person, verbatim-leakable: *"Olmo, a helpful function-calling AI assistant developed by Ai2, is provided with…"*. There is no deployed raw OLMo; its self-knowledge is installed at the template layer by its creator. Excluded from the main comparison, discussed as a case study.
+
+This suggests a four-rung ladder of *where* an identity gets installed: (1) in the weights via post-training, (2) in the official chat template (OLMo), (3) by the serving provider (Grok, most gpt-oss hosts), (4) by the product's system prompt (every consumer deployment). This survey measures rung 1 by controlling rungs 2–4 — and the preflight data doubles as a map of rung 3.
+
 - [PREFLIGHT_TABLE: N models excluded by class, N borderline, full per-model verdicts in appendix]
 
 ### Prompts

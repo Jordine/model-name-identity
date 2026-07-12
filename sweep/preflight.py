@@ -58,6 +58,24 @@ OFFICIAL = {
 }
 
 
+_HF_PROVIDERS: dict | None = None
+
+
+def hf_providers() -> dict:
+    """model_id -> [provider slugs] from the HF router catalog (cached)."""
+    global _HF_PROVIDERS
+    if _HF_PROVIDERS is None:
+        req = urllib.request.Request(
+            "https://router.huggingface.co/v1/models",
+            headers={"Authorization": f"Bearer {api.load_hf_key()}"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            data = json.loads(r.read())["data"]
+        _HF_PROVIDERS = {m["id"]: [p.get("provider") for p in (m.get("providers") or [])
+                                   if p.get("provider")]
+                         for m in data}
+    return _HF_PROVIDERS
+
+
 def fetch_endpoints(model_id: str) -> list[dict]:
     url = f"https://openrouter.ai/api/v1/models/{model_id}/endpoints"
     try:
@@ -161,6 +179,41 @@ async def main_async(only_models=None):
     async with aiohttp.ClientSession(connector=conn) as session:
 
         async def do_model(m):
+            if m.get("route") == "hf-router":
+                provs = hf_providers().get(m["id"], [])
+                if not provs:
+                    hygiene[m["id"]] = {"provider": None, "exclude": True,
+                                        "reason": "hf-router: no providers listed",
+                                        "chosen": None, "checked": []}
+                    return
+                results = []
+                for slug in provs:
+                    async with sem:
+                        r = await api.call(session, m["id"], [{"role": "user", "content": "hi"}],
+                                           key, temperature=0, max_tokens=30,
+                                           provider=slug, route="hf-router",
+                                           timeout=PROBE_TIMEOUT)
+                    ptok = (r.get("usage") or {}).get("prompt_tokens")
+                    res = {"model_id": m["id"], "slug": slug, "provider_name": slug,
+                           "quant": "unknown", "or_status": None, "prompt_tokens": ptok,
+                           "provider_served": slug, "error": r.get("error"),
+                           "suspicious": ptok is not None and ptok > EXCLUDE_PT,
+                           "borderline": ptok is not None and BORDERLINE_PT < ptok <= EXCLUDE_PT,
+                           "content_head": (r.get("content_clean") or "")[:80],
+                           "ts": datetime.now(timezone.utc).isoformat()}
+                    async with lock:
+                        with open(RAW_OUT, "a", encoding="utf-8") as f:
+                            f.write(json.dumps(res, ensure_ascii=False) + "\n")
+                    results.append(res)
+                verdict = choose(m, results)
+                if verdict.get("provider"):  # hf pins are plain strings
+                    verdict["provider"] = verdict["chosen"]["slug"]
+                verdict["checked"] = [{k: r[k] for k in ("slug", "quant", "prompt_tokens", "suspicious", "error")}
+                                      for r in results]
+                hygiene[m["id"]] = verdict
+                flag = "EXCLUDE" if verdict["exclude"] else "pin"
+                print(f"  {m['id']:55s} hf x{len(provs)} -> {flag:8s} {verdict['reason'][:70]}")
+                return
             if m.get("route") == "proxy-native":
                 # lab-first-party route on the proxy: no OR providers to pin;
                 # single probe verifies liveness + token sanity

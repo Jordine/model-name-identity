@@ -193,6 +193,15 @@ code &amp; data: <a href="{REPO}">github.com/Jordine/model-name-identity</a></i>
 <li><b>Provider hygiene is a minefield</b>: all current Grok serving injects system prompts; ~all gpt-oss serving injects; one host hides a 305-token injection from its token accounting; OLMo's identity ships inside AllenAI's own chat template; a proxy route served a mystery model behind “gpt-4-0314” (caught by a knowledge-cutoff probe).</li>
 </ul>
 
+<h2>The big picture — every model</h2>
+<figure><div class="imgchip">{img_tag('figA_all_models_bar.png')}</div><figcaption>Fig A — all 177 models, sorted by spontaneous foreign-claim rate, Wilson 95% CIs.</figcaption></figure>
+<figure><div class="imgchip">{img_tag('figB_all_models_heatmap.png')}</div><figcaption>Fig B — all 177 models (grouped by family) × claimed identity; heat = % of records claiming that identity.</figcaption></figure>
+
+<h2>Aggregate slices</h2>
+<figure><div class="imgchip">{img_tag('fig8_language_aggregate.png')}</div><figcaption>Fig 8 — foreign-claim rate by prompt language, pooled (Wilson CIs).</figcaption></figure>
+<figure><div class="imgchip">{img_tag('fig9_category_aggregate.png')}</div><figcaption>Fig 9 — by prompt category, pooled (Wilson CIs).</figcaption></figure>
+<figure><div class="imgchip">{img_tag('fig10_claimed_totals.png')}</div><figcaption>Fig 10 — most-claimed identities overall.</figcaption></figure>
+
 <h2>Figures</h2>
 <figure><div class="imgchip">{img_tag('fig1_headline_rates.png')}</div><figcaption>Fig 1 — top-25 spontaneous misidentification rates, Wilson 95% CIs, ~120 judged records per model.</i></p>
 <figure><div class="imgchip">{img_tag('fig2_language_heatmap.png')}</div><figcaption>Fig 2 — the headline figure: per-language rates for selected models. Cell n per column shown; en n≈47, zh n≈19, others n≈8 (wide CIs on the 8s — treat single cells as ±30pp).</i></p>

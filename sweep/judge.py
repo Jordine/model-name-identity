@@ -135,8 +135,8 @@ async def judge_one(session, key, rec, judge_model, sem, writer_lock, stats):
         "family": rec["family"],
         "expected_identity": rec["expected_identity"],
         "aliases": rec.get("aliases", []),
-        "prompt_id": rec["prompt_id"],
-        "prompt_category": rec["prompt_category"],
+        "prompt_id": rec.get("prompt_id") or rec.get("seq_id", "?"),
+        "prompt_category": rec.get("prompt_category") or rec.get("run_type", "probe"),
         "sample_idx": rec.get("sample_idx", 0),
         "turn_index": rec.get("turn_index"),
         "had_reasoning": bool(reasoning),
@@ -145,6 +145,10 @@ async def judge_one(session, key, rec, judge_model, sem, writer_lock, stats):
         "judgment": parsed,
         "ts": datetime.now(timezone.utc).isoformat(),
     }
+    # pass through stage-2 probe metadata when present
+    for k in ("seq_id", "group", "lang", "pushed_identity", "push_direction", "final_turn"):
+        if k in rec:
+            out[k] = rec[k]
     async with writer_lock:
         with open(OUT, "a", encoding="utf-8") as f:
             f.write(json.dumps(out, ensure_ascii=False) + "\n")
@@ -163,7 +167,7 @@ async def main_async(args):
             continue
         if r.get("error"):
             continue  # nothing to judge
-        if not (r.get("content_clean") or r.get("reasoning")):
+        if not (r.get("content_clean") or r.get("content") or r.get("reasoning")):
             continue
         records.append(r)
 
@@ -204,12 +208,19 @@ async def main_async(args):
 
 
 def main():
+    global IN, OUT
     ap = argparse.ArgumentParser()
     ap.add_argument("--judge-model", default=JUDGE_MODEL)
     ap.add_argument("--limit", type=int)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--concurrency", type=int, default=CONCURRENCY)
+    ap.add_argument("--input", help="override input jsonl (e.g. results/probes.jsonl)")
+    ap.add_argument("--output", help="override output jsonl")
     args = ap.parse_args()
+    if args.input:
+        IN = ROOT / args.input
+    if args.output:
+        OUT = ROOT / args.output
     asyncio.run(main_async(args))
 
 

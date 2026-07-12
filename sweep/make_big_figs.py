@@ -101,18 +101,33 @@ def figA(reg, per):
         if f not in fam_hue:
             fam_hue[f] = CAT[len(fam_hue) % 5]
 
+    # hue per family: 8 highest-total-drift families get colors, rest grey
+    fam_drift = defaultdict(float)
+    for (mid, v), f in zip(items, fams):
+        fam_drift[f] += v["d"]
+    top_fams = [f for f, _ in sorted(fam_drift.items(), key=lambda x: -x[1])[:8]]
+    CAT8 = ["#2a78d6", "#1baf7a", "#eda100", "#008300", "#4a3aa7", "#e34948", "#e87ba4", "#eb6834"]
+    fam_color = {f: CAT8[i] for i, f in enumerate(top_fams)}
+    colors = [fam_color.get(f, "#b9b7b0") for f in fams]
+
     fig, ax = plt.subplots(figsize=(9.5, 0.185 * n + 1.6))
-    ax.barh(np.arange(n), rates, height=0.66, color=CAT[0], zorder=3)
+    ax.barh(np.arange(n), rates, height=0.66, color=colors, zorder=3)
     ax.errorbar(rates, np.arange(n), xerr=errs, fmt="none",
                 ecolor=INK2, elinewidth=0.7, capsize=1.5, zorder=4)
     ax.set_yticks(np.arange(n), names, fontsize=6.4)
     ax.set_ylim(-0.6, n - 0.4)
+    ax.set_ylabel("model  (sorted by foreign-claim rate)", fontsize=9)
     ax.set_xlabel("% of ~120 identity prompts with a foreign self-claim (Wilson 95% CI)")
     ax.set_axisbelow(True)
     ax.xaxis.grid(True, color=GRID, lw=0.8)
     for i, r in enumerate(rates):
         if r > 0:
             ax.text(r + errs[1][i] + 0.7, i, f"{r:.0f}", va="center", fontsize=5.6, color=MUTED)
+    from matplotlib.patches import Patch
+    handles = [Patch(color=fam_color[f], label=f) for f in top_fams] + \
+              [Patch(color="#b9b7b0", label="other families")]
+    ax.legend(handles=handles, loc="lower right", frameon=False, fontsize=8,
+              title="family (top-8 by total drift)", title_fontsize=8)
     style(ax)
     ax.set_title(f"Spontaneous foreign-identity rate — all {n} models, sorted",
                  loc="left", fontsize=12, pad=14)
@@ -157,10 +172,18 @@ def figB(reg, per):
     ax.set_yticks(range(n), [reg.get(m, {}).get("name", m) for m in mids], fontsize=6.4)
     # family separators
     fams = [reg.get(m, {}).get("family", "?") for m in mids]
+    group_starts = [0] + [i for i in range(1, n) if fams[i] != fams[i - 1]]
     for i in range(1, n):
         if fams[i] != fams[i - 1]:
             ax.axhline(i - 0.5, color=SURFACE, lw=2)
             ax.axhline(i - 0.5, color=GRID, lw=0.8)
+    for gi, start in enumerate(group_starts):
+        end = group_starts[gi + 1] if gi + 1 < len(group_starts) else n
+        ax.text(-0.02, (start + end - 1) / 2, fams[start], transform=ax.get_yaxis_transform(),
+                ha="right", va="center", fontsize=7, color=INK2, style="italic",
+                clip_on=False)
+    ax.set_ylabel("")
+    ax.tick_params(axis="y", pad=64)
     style(ax, bottom=False)
     cb = fig.colorbar(im, ax=ax, shrink=0.35, pad=0.02, anchor=(0, 0.9))
     cb.set_label("% of records claiming that identity", fontsize=8, color=INK2)

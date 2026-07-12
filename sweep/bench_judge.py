@@ -30,6 +30,7 @@ CANDIDATES = {
     "gpt-4.1-mini": "openai/gpt-4.1-mini",
     "gpt-5-mini": "openai/gpt-5-mini",
     "gemini-2.5-flash": "openrouter/google/gemini-2.5-flash",
+    "gemini-3-flash": "openrouter/google/gemini-3-flash-preview",
     "claude-haiku-4.5": "anthropic/claude-haiku-4-5",
 }
 NATIVE = {"anthropic/claude-haiku-4-5"}
@@ -42,6 +43,14 @@ def pick_records():
         r = json.loads(line)
         if not r.get("error") and (r.get("content_clean") or r.get("reasoning")):
             recs[judge_key(r)] = r
+
+    # FROZEN SET: if a bench file already exists, reuse its record keys so all
+    # candidates are compared on identical records (judgments.jsonl churns as
+    # the sweep grows, so re-deriving strata would silently shift the set).
+    anchor = BENCH_DIR / "gpt-4o-mini.jsonl"
+    if anchor.exists():
+        keys = [json.loads(l)["judge_key"] for l in open(anchor, encoding="utf-8")]
+        return [recs[k] for k in keys if k in recs]
 
     flagged, clean = [], []
     for line in open(JUDGMENTS, encoding="utf-8"):

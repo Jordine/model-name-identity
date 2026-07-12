@@ -1,6 +1,6 @@
 # Some models don't identify with their official name (v2)
 
-*Draft — methodology complete, results sections are placeholders pending the full sweep. Pilot observations (6 models) are included where marked; treat them as previews, not results.*
+*Draft — methodology complete, results sections are placeholders pending the full sweep. Pilot observations (6 models) are included where marked; treat them as previews, not results. Figures marked MOCK are synthetic layout previews; fig2 is real pilot data.*
 
 When you ask an LLM "who are you?", some models answer with a different model's name. Kimi K2.5 introduces itself in French as "Claude, créé par Anthropic" — though in English it reliably says Kimi. A GLM flash model asked 你是什么模型 answered that it was 360智脑, a competitor's product. Llama 3.2 3B, asked in Korean who made it, said Naver. Asked in English which language model it is, it once said BERT.
 
@@ -105,6 +105,8 @@ The control is the point: v1 observed that misidentifying models often capitulat
 
 ### Headline rates
 
+![fig1](figs/fig1_headline_rates.png)
+
 [TABLE: model × discrepancy rate with bootstrap CIs, top-20 + full table in appendix]
 
 [N_DISCREPANT] of [N_MODELS] models spontaneously claimed a foreign identity on at least one prompt; [N_ABOVE_10PCT] did so on >10% of identity prompts.
@@ -113,17 +115,21 @@ The control is the point: v1 observed that misidentifying models often capitulat
 
 ### Language is a switch, not a modifier
 
+![fig2](figs/fig2_language_heatmap.png)
+
 [LANGUAGE_EFFECTS: per-language discrepancy rates; per-model language profiles; statistical treatment]
 
 > **Pilot preview**: Kimi K2.5's Claude identity is language-gated. English: consistently Kimi (4/47 residual, mostly multi-turn). French/Spanish/Japanese/Korean/Russian: "Je suis Claude, créé par Anthropic", "Soy Claude", 「私はClaude（クロード）」 at ~25–50% of samples per language, flipping between identities across temperature-0.7 samples of the *same prompt*. The obvious reading: identity alignment was patched in English (where the March observations were made), and the fix didn't generalize across languages. If that's right, language-conditioned identity is a live diagnostic for *where* in training an identity was installed vs. inherited.
 
 ### Who claims to be whom
 
-[FLOW_DIAGRAM: directed graph, model family → claimed identity, edge weight = rate]
+![fig3](figs/fig3_identity_flow.png)
 
 [CLAIMED_DISTRIBUTION: is it still mostly ChatGPT, as in the early "every model is ChatGPT" era? Pilot suggests Claude is now a major attractor for Chinese-lab reasoning models, consistent with the distillation-accusation timeline.]
 
 ### Asked vs. volunteered: false-premise acceptance
+
+![fig4](figs/fig4_cross_acceptance.png)
 
 [CROSS_PROBE_RESULTS: acceptance rate matrix (model × suggested identity); relation between spontaneous-claim rate and acceptance rate; which models refuse the premise vs. hedge vs. adopt]
 
@@ -131,11 +137,15 @@ The control is the point: v1 observed that misidentifying models often capitulat
 
 ### The reasoning trace knows something else
 
+![fig5](figs/fig5_reasoning_stance.png)
+
 [REASONING_RESULTS: rates of response-vs-reasoning identity divergence; stance taxonomy (asserts / role-play / uncertain) frequencies; examples]
 
 Cases of interest from v1 and pilot: reasoning traces that *assert* an identity the response never states; traces that treat identity as an instruction to follow ("I should explain that I am Claude, an AI assistant made by Anthropic" — from Kimi K2.5's reasoning, pilot); traces that deliberate about which identity to perform.
 
 ### Under pressure
+
+![fig6](figs/fig6_confrontation_controls.png)
 
 [PROBE_RESULTS_FULL: confrontation outcomes for flagged vs. control models; epistemic-probe answer taxonomy (weights/training-data arguments, "I can't verify my own identity", flat assertion); recovery rates on the final "so who are you?" turn]
 

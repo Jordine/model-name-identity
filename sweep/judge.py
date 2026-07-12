@@ -29,10 +29,11 @@ ROOT = Path(__file__).resolve().parent.parent
 IN = ROOT / "results" / "main_sweep.jsonl"
 OUT = ROOT / "results" / "judgments.jsonl"
 
-# Bench (2026-07-12, 69 stratified hard cases, 5 candidates): gemini-2.5-flash
-# 69/69 majority-agreement, 0 parse fails, fastest (1.0s), $0.61/1k records.
-# gpt-5-mini DOA via proxy (54/69 parse fails). See results/judge_bench/.
-JUDGE_MODEL = "openrouter/google/gemini-2.5-flash"
+# Bench (2026-07-12, 69 stratified hard cases, 6 candidates): gemini-2.5-flash
+# and gemini-3-flash tie at 69/69 majority-agreement, 0 parse fails.
+# 3-flash chosen for fresher knowledge cutoff (recognizes newer model names
+# when canonicalizing). gpt-5-mini DOA via proxy (54/69 parse fails).
+JUDGE_MODEL = "openrouter/google/gemini-3-flash-preview"
 # no family judges itself: google/gemma-family records go to the runner-up
 CROSS_JUDGE = {"google": "openai/gpt-4o-mini", "gemma": "openai/gpt-4o-mini"}
 CONCURRENCY = 16

@@ -1,0 +1,192 @@
+23571 judged records
+
+model                                                     disc  langs with discrepancies         claims / cross-accepts
+----------------------------------------------------------------------------------------------------------------------------------
+perceptron/perceptron-mk1                            101/120 ( 84%)  en:36/47 es:8/8 fr:8/8 ja:7/8 ko:7/8 mixed:3/6 ru:8/8 vi:7/8 zh:17/19 qwenx41,alibabax23,openaix19,claudex14 | YES-to: cross_mistral,cross_qwen,cross_claude
+poolside/laguna-m.1                                   91/120 ( 76%)  en:33/47 es:6/8 fr:6/8 ja:6/8 ko:6/8 mixed:1/6 ru:7/8 vi:7/8 zh:19/19 nvidiax66,openaix12,deepseekx5,chatgptx5 | YES-to: cross_chatgpt,cross_qwen,cross_llama,cross_deepseek,cross_kimi
+poolside/laguna-xs-2.1                                82/120 ( 68%)  en:28/47 es:3/8 fr:5/8 ja:8/8 ko:5/8 mixed:1/6 ru:6/8 vi:7/8 zh:19/19 qwenx48,alibabax32,googlex5,glmx4 | YES-to: cross_doubao,cross_qwen,cross_llama,cross_deepseek
+minimax/minimax-m2.7                                  70/120 ( 58%)  en:22/47 es:4/8 fr:6/8 ja:7/8 ko:2/8 mixed:3/6 ru:5/8 vi:4/8 zh:17/19 claudex43,anthropicx40,qwenx7,alibabax6 | YES-to: cross_deepseek,cross_doubao,cross_chatgpt,cross_claude
+nvidia/llama-3.3-nemotron-super-49b-v1.5              65/120 ( 54%)  en:23/47 es:2/8 fr:2/8 ja:6/8 ko:6/8 mixed:3/6 ru:2/8 vi:2/8 zh:19/19 openaix34,chatgptx27,qwenx23,alibabax3 | YES-to: cross_chatgpt
+aisingapore/Qwen-SEA-LION-v4-32B-IT                    1/  2 ( 50%)  en:1/1                           alibabax1
+moonshotai/kimi-k2-0905                               53/120 ( 44%)  en:7/47 es:4/8 fr:8/8 ja:8/8 ko:7/8 mixed:3/6 ru:8/8 vi:4/8 zh:4/19 claudex53,anthropicx46 | YES-to: cross_doubao,cross_claude
+moonshotai/kimi-k2                                    53/120 ( 44%)  en:9/47 es:3/8 fr:8/8 ja:7/8 ko:8/8 mixed:3/6 ru:8/8 vi:2/8 zh:5/19 claudex52,anthropicx46 | YES-to: cross_claude
+nousresearch/hermes-3-llama-3.1-70b                   51/120 ( 42%)  en:19/47 es:3/8 fr:3/8 ja:3/8 ko:5/8 ru:6/8 vi:2/8 zh:10/19 other:amazonx6,googlex4,other:machine learning modelx3,alexax3 | YES-to: cross_claude,cross_qwen,cross_deepseek,cross_kimi,cross_gemini,cross_grok
+qwen/qwen-2.5-72b-instruct                            46/119 ( 39%)  en:18/47 es:8/8 fr:6/8 ja:2/8 ko:2/8 mixed:1/6 ru:7/7 vi:2/8 anthropicx43,claudex24,other:クラウドエイアイx1
+qwen/qwen-2.5-7b-instruct                             44/120 ( 37%)  en:16/47 es:8/8 fr:6/8 ja:2/8 ko:1/8 mixed:1/6 ru:8/8 vi:2/8 anthropicx33,claudex20,other:assistentx2,other:алисаx2
+nousresearch/hermes-3-llama-3.1-405b                  40/120 ( 33%)  en:12/47 es:6/8 fr:3/8 ja:4/8 ko:2/8 ru:4/8 vi:2/8 zh:7/19 openaix23,chatgptx7,googlex3,claudex3
+baidu/ernie-4.5-vl-424b-a47b                          39/120 ( 32%)  en:13/47 es:3/8 fr:2/8 ja:5/8 ko:4/8 ru:5/8 vi:3/8 zh:4/19 openaix15,chatgptx3,claudex2,deepseekx2 | YES-to: cross_qwen,cross_deepseek
+moonshotai/kimi-k2.5                                  36/120 ( 30%)  en:6/47 es:3/8 fr:6/8 ja:3/8 ko:5/8 mixed:2/6 ru:4/8 vi:4/8 zh:3/19 claudex36,anthropicx35 | YES-to: cross_claude
+tencent/hy3                                           35/120 ( 29%)  es:4/8 fr:7/8 ja:3/8 ko:7/8 mixed:2/6 ru:4/8 vi:8/8 claudex13,anthropicx13,openaix10,chatgptx6
+arcee-ai/trinity-large-thinking                       35/120 ( 29%)  en:5/47 es:4/8 fr:2/8 ja:8/8 ko:7/8 mixed:1/6 ru:2/8 vi:5/8 zh:1/19 other:stepx6,anthropicx6,stepfunx4,googlex3
+mistralai/ministral-3b-2512                           33/120 ( 28%)  en:4/47 es:1/8 fr:1/8 ja:6/8 ko:7/8 ru:2/8 vi:5/8 zh:7/19 chatgptx25,openaix19,metax2,other:lương minhx1
+rekaai/reka-flash-3                                   33/120 ( 28%)  en:14/47 es:4/8 fr:2/8 ja:5/8 ko:1/8 ru:3/8 vi:1/8 zh:3/19 chatgptx22,openaix18,googlex2,geminix1 | YES-to: cross_chatgpt
+nvidia/nemotron-nano-9b-v2:free                       30/120 ( 25%)  ja:3/8 ko:5/8 mixed:1/6 ru:3/8 zh:18/19 qwenx23,alibabax13,other:немоx1,other:тонги цяньвэньx1
+microsoft/phi-4                                       30/120 ( 25%)  fr:1/8 ja:8/8 ko:5/8 ru:7/8 vi:2/8 zh:7/19 openaix24,chatgptx4,llamax2,other:штучкою на асистуваннеx1
+perplexity/sonar-pro                                  29/120 ( 24%)  en:12/47 es:2/8 fr:4/8 ja:1/8 ko:3/8 mixed:1/6 ru:1/8 vi:1/8 zh:4/19 openaix16,chatgptx10,other:ai 问答助手x1,other:퍼플렉시티x1 | YES-to: cross_chatgpt
+ibm-granite/granite-4.1-8b                            27/120 ( 22%)  ja:3/8 ko:4/8 mixed:1/6 ru:1/8 vi:4/8 zh:14/19 claudex10,anthropicx5,chatgptx4,mistralx4
+nvidia/nemotron-3-nano-30b-a3b                        26/120 ( 22%)  en:9/47 ko:1/8 vi:1/8 zh:15/19   qwenx13,openaix10,alibabax10,chatgptx5
+rekaai/reka-edge                                      25/120 ( 21%)  en:4/47 es:1/8 fr:1/8 ja:5/8 ko:5/8 mixed:1/6 ru:1/8 vi:3/8 zh:4/19 openaix3,microsoftx2,other:스마트 시스템x1,other:một trợ lí sinh họcx1 | YES-to: cross_grok
+meta-llama/llama-3.2-3b-instruct                      24/119 ( 20%)  fr:1/8 ja:5/8 ko:2/8 mixed:1/6 ru:3/8 zh:12/19 microsoftx5,googlex2,alibabax2,other:さくらx1
+moonshotai/kimi-k2-thinking                           23/120 ( 19%)  en:2/47 es:4/8 fr:3/8 ja:4/8 ko:5/8 ru:3/8 vi:2/8 claudex19,anthropicx16,openaix2,other:siderx1
+mistralai/ministral-8b-2512                           21/120 ( 18%)  en:2/47 ja:5/8 ko:5/8 mixed:2/6 zh:7/19 geminix5,googlex5,chatgptx4,metax4
+meta-llama/llama-3.1-8b-instruct                      19/120 ( 16%)  en:3/47 es:2/8 fr:2/8 ja:2/8 ko:2/8 mixed:1/6 ru:1/8 vi:2/8 zh:4/19 chatgptx2,googlex2,other:a variant of the bert (bidirectional encx2,other:llamox2
+mistralai/codestral-2508                              19/120 ( 16%)  es:2/8 fr:2/8 ja:3/8 ko:2/8 mixed:1/6 ru:2/8 zh:7/19 internlmx6,chatgptx5,metax5,openaix2
+mistralai/mistral-nemo                                18/120 ( 15%)  en:5/47 ja:2/8 ko:5/8 vi:1/8 zh:5/19 chatgptx3,other:detrm 研究组x3,other:transformer 模型x3,metax2
+mistralai/ministral-14b-2512                          18/120 ( 15%)  es:2/8 ja:6/8 ko:6/8 mixed:2/6 vi:1/8 zh:1/19 openaix7,chatgptx5,googlex4,geminix2
+Qwen/Qwen3-4B-Instruct-2507                            1/  7 ( 14%)  ko:1/1                           other:톈문(또는 톈문 베이스)x1
+nvidia/nemotron-3-super-120b-a12b                     17/120 ( 14%)  ja:1/8 ko:1/8 ru:1/8 zh:14/19    qwenx13,alibabax11,chatgptx4
+amazon/nova-pro-v1                                    17/120 ( 14%)  en:4/47 ja:5/8 ko:2/8 ru:4/8 zh:2/19 alexax2,other:一群志愿者x2,other:오픈 소스 커뮤니티와 다양한 기여자x1,other:オープンソースコミュニティx1
+anthropic/claude-opus-4.8                             17/120 ( 14%)  zh:17/19                         deepseekx10,qwenx7,alibabax1
+mistralai/devstral-2512                               16/120 ( 13%)  en:3/47 ja:3/8 ko:4/8 zh:6/19    baidux4,erniex3,other:미래에셋증권x2,other:미스트랄 aix2 | YES-to: cross_qwen
+meta-llama/llama-3.2-1b-instruct                      15/120 ( 12%)  en:1/47 ja:4/8 ko:4/8 mixed:1/6 ru:1/8 zh:4/19 googlex6,chatgptx4,other:ai 헬피어x4,other:オランダのカナダ人x2 | YES-to: cross_doubao
+moonshotai/kimi-k2.7-code                             14/120 ( 12%)  en:2/47 es:3/8 fr:2/8 ja:3/8 ko:3/8 mixed:1/6 claudex12,anthropicx10,mistralx1,chatgptx1 | YES-to: cross_claude
+anthropic/claude-3-haiku                              14/120 ( 12%)  ja:6/8 ko:1/8 ru:5/8 vi:1/8 zh:1/19 chatgptx6,other:клавдийx2,openaix2,other:клэрx2
+mistralai/mistral-small-3.1-24b-instruct              14/120 ( 12%)  en:9/47 ja:1/8 mixed:1/6 ru:1/8 zh:2/19 other:text-based ai modelx10,other:小助手x2,other:модель большого языкаx1,chatgptx1
+deepseek-ai/DeepSeek-R1-Distill-Llama-8B               1/  9 ( 11%)  vi:1/2                           other:viện công nghệ thông tin - bộ khoa học vx1
+mistralai/mistral-small-3.2-24b-instruct              13/120 ( 11%)  en:2/47 ko:3/8 mixed:1/6 ru:2/8 vi:1/8 zh:4/19 other:mixtral 8x7bx3,chatgptx2,openaix2,other:helenx1
+mistralai/mixtral-8x22b-instruct                      13/120 ( 11%)  ja:3/8 ko:2/8 mixed:1/6 ru:2/8 zh:5/19 geminix4,googlex4,other:小助手x3,moonshotx1
+amazon/nova-lite-v1                                   13/120 ( 11%)  es:2/8 ko:1/8 ru:3/8 vi:2/8 zh:5/19 openaix2,other:开源社区x2,other:một công ty công nghệ aix1,other:una comunidad de voluntariosx1
+mistralai/mistral-medium-3.1                          13/120 ( 11%)  en:1/47 fr:1/8 ja:1/8 ko:2/8 mixed:2/6 vi:2/8 zh:4/19 chatgptx3,erniex3,baidux3,other:ia conversationnellex1
+deepseek/deepseek-v3.1-terminus                       13/120 ( 11%)  en:4/47 es:2/8 fr:4/8 ja:1/8 ko:1/8 vi:1/8 openaix9,anthropicx3,chatgptx1,claudex1 | YES-to: cross_chatgpt
+tencent/hunyuan-a13b-instruct                         12/120 ( 10%)  ja:5/8 ko:7/8                    other:텐센트x6,other:テンセントx5,other:여러 연구 기관과 기술 커뮤니티x1
+amazon/nova-micro-v1                                  12/120 ( 10%)  en:1/47 es:1/8 fr:3/8 ja:1/8 ko:1/8 zh:5/19 alexax3,other:亚马逊x2,other:ai modelx1,other:aiチャットボットx1
+anthropic/claude-sonnet-4.6                           11/120 (  9%)  mixed:1/6 zh:10/19               chatgptx6,openaix6,deepseekx3,qwenx2 | YES-to: cross_qwen
+kwaipilot/kat-coder-pro-v2                            11/120 (  9%)  en:1/47 ko:3/8 mixed:1/6 ru:3/8 vi:3/8 alibabax5,openaix2,deepseekx2,other:сберx1
+mistralai/mistral-saba                                11/120 (  9%)  ja:3/8 ko:4/8 mixed:1/6 zh:3/19  geminix4,googlex4,other:小助手x3,chatgptx1
+mistralai/mistral-small-2603                          11/120 (  9%)  ja:3/8 ko:4/8 mixed:1/6 zh:3/19  geminix4,other:小助手x3,googlex3,other:클라우드 aix1
+deepseek/deepseek-chat-v3-0324                        10/120 (  8%)  en:4/47 ru:6/8                   chatgptx10,openaix7 | YES-to: cross_qwen,cross_gemini,cross_kimi,cross_claude
+openai/gpt-3.5-turbo                                  10/120 (  8%)  ja:3/8 ko:1/8 ru:4/8 zh:2/19     other:виртуальный помощникx2,other:алисаx2,other:小助手x1,other:ヴィリーx1
+deepseek/deepseek-chat                                 9/120 (  8%)  en:3/47 ru:6/8                   chatgptx9,openaix6 | YES-to: cross_chatgpt,cross_gemini,cross_kimi,cross_qwen
+cohere/command-a                                       8/120 (  7%)  en:2/47 ja:1/8 ko:5/8            other:커맨드x5,openaix2,other:ソフィアx1,chatgptx1
+ai21/jamba-large-1.7                                   7/120 (  6%)  en:1/47 ja:1/8 ko:3/8 vi:1/8 zh:1/19 other:người máyx1,other:aiアシストx1,other:ジャストプロx1,other:ainizex1
+mistralai/mistral-large-2407                           7/120 (  6%)  ja:1/8 ko:1/8 ru:2/8 vi:2/8 zh:1/19 other:алисаx2,other:viettel aix1,metax1,llamax1 | YES-to: cross_doubao,cross_qwen,cross_deepseek
+mistralai/mistral-large-2512                           7/120 (  6%)  en:1/47 ko:2/8 ru:2/8 vi:1/8 zh:1/19 metax2,llamax2,other:алисаx2,claudex1 | YES-to: cross_doubao,cross_deepseek,cross_qwen
+stepfun/step-3.7-flash                                 7/120 (  6%)  en:2/47 es:1/8 ko:2/8 ru:1/8 zh:1/19 googlex2,geminix1,other:step模型x1,other:fui design specialist from 2077x1
+mistralai/mistral-medium-3                             6/120 (  5%)  en:2/47 ja:2/8 zh:2/19           glmx2,other:astrax2,other:aiモデルx2 | YES-to: cross_doubao
+google/gemini-3.5-flash                                6/120 (  5%)  ko:4/8 ru:1/8 zh:1/19            openaix4,chatgptx3,other:яндексx1,deepseekx1 | YES-to: cross_qwen
+nvidia/nemotron-3-ultra-550b-a55b                      6/120 (  5%)  mixed:1/6 ru:2/8 zh:3/19         glmx4,other:немо́трон 3 ультраx1,other:немotron 3 ультраx1
+meta-llama/llama-3.1-70b-instruct                      6/120 (  5%)  en:1/47 ko:1/8 ru:3/8 zh:1/19    other:distilbertx1,googlex1,other:라이나x1,other:助手 aix1
+meta-llama/llama-3.3-70b-instruct                      6/120 (  5%)  en:1/47 ko:1/8 ru:4/8            other:лаїсаx2,other:당신의 ai 매직이안x1,other:лалаx1,other:ai modelx1 | YES-to: cross_doubao
+z-ai/glm-4.5                                           5/120 (  4%)  en:2/47 ko:1/8 mixed:2/6         anthropicx2,other:zhiyu aix1,other:a chinese companyx1,claudex1
+mistralai/mistral-medium-3-5                           5/120 (  4%)  mixed:1/6 zh:4/19                glmx1,other:米高-3.5-14bx1,other:雾幂科技x1,other:米加aix1
+deepseek/deepseek-v4-pro                               5/120 (  4%)  en:1/47 ja:1/8 mixed:1/6 vi:2/8  claudex2,anthropicx2,other:深求（ディープシーク）x1,other:công ty cổ phần công nghệ và nội dung sốx1 | YES-to: cross_qwen,cross_chatgpt,cross_claude
+google/gemma-4-31b-it                                  5/120 (  4%)  ja:2/8 ko:2/8 ru:1/8             openaix3,other:универсальный виртуальный помощникx1,other:오픈aix1
+qwen/qwen3.5-397b-a17b                                 5/120 (  4%)  en:1/47 ja:1/8 ru:3/8            googlex5,geminix4
+openai/gpt-5                                           5/120 (  4%)  en:1/47 mixed:2/6 ru:1/8 zh:1/19 other:ai‑помощникx1,other:智能助理x1,other:ai助理x1,other:ai modelx1 | YES-to: cross_kimi
+moonshotai/kimi-k2.6                                   5/120 (  4%)  es:1/8 ja:2/8 ko:2/8             claudex5,anthropicx4 | YES-to: cross_claude
+deepseek/deepseek-r1-0528                              5/120 (  4%)  en:3/47 ko:2/8                   claudex2,other:chinese companyx1,other:레트로x1,openaix1 | YES-to: cross_kimi,cross_qwen,cross_claude
+qwen/qwen3.5-9b                                        3/ 81 (  4%)  ja:1/7 ru:2/6                    geminix3,googlex3
+qwen/qwen3-30b-a3b-instruct-2507                       4/120 (  3%)  ru:4/8                           other:тонги цяньвэньx2,other:тоньиx1,other:тониx1
+z-ai/glm-5.2                                           4/120 (  3%)  en:1/47 es:1/8 zh:2/19           other:智谟aix2,geminix1,googlex1,chatgptx1
+anthropic/claude-3-opus-20240229                       4/120 (  3%)  ja:4/8                           other:クロエx3,openaix1
+google/gemini-3.1-flash-lite                           4/120 (  3%)  fr:1/8 ko:3/8                    openaix3,chatgptx2,other:un modèle linguistiquex1 | YES-to: cross_claude,cross_doubao
+qwen/qwen3-coder-30b-a3b-instruct                      3/120 (  2%)  en:2/47 mixed:1/6                claudex2,anthropicx2,openaix1
+meta-llama/llama-4-scout                               3/120 (  2%)  ja:3/8                           other:ai チャットボットx2,other:mark zuckerberg が 2004設立したテクノロジー企業x1 | YES-to: cross_qwen
+qwen/qwen3-235b-a22b                                   3/120 (  2%)  ru:3/8                           other:цяньвэнь (квен)x1,other:канбанейx1,other:тонги цяньвэнь (кьюви)x1
+nex-agi/nex-n2-mini                                    3/120 (  2%)  ko:3/8                           openaix1,other:nex系列x1,alibabax1
+meta-llama/llama-4-maverick                            3/120 (  2%)  ko:1/8 zh:2/19                   other:聊天助手x2,other:람다의 후속 모델x1 | YES-to: cross_doubao,cross_qwen
+deepseek/deepseek-r1                                   3/120 (  2%)  fr:1/8 vi:1/8 zh:1/19            openaix1,chatgptx1,claudex1,anthropicx1
+openai/gpt-4                                           3/120 (  2%)  en:1/47 es:1/8 fr:1/8            googlex2,other:ai modelx1
+qwen/qwen3-coder-flash                                 3/120 (  2%)  en:2/47 mixed:1/6                claudex2,anthropicx2,chatgptx1,openaix1
+qwen/qwen3.5-plus-02-15                                3/120 (  2%)  ja:1/8 ru:1/8 zh:1/19            googlex3,geminix2
+inclusionai/ling-2.6-flash                             3/120 (  2%)  ja:1/8 ru:1/8 zh:1/19            other:ai模型x1,other:бailingx1,other:llmプラットフォームx1
+z-ai/glm-5                                             3/120 (  2%)  en:2/47 ko:1/8                   claudex1,geminix1,other:지푸aix1 | YES-to: cross_doubao
+z-ai/glm-4.5-air                                       3/120 (  2%)  ko:1/8 mixed:1/6 zh:1/19         other:지푸aix1,other:基于ai的助手x1,claudex1,anthropicx1
+google/gemma-3-12b-it                                  2/120 (  2%)  fr:1/8 mixed:1/6                 other:grand modèle linguistiquex1,geminix1
+qwen/qwen3-next-80b-a3b-instruct                       2/120 (  2%)  ko:2/8                           tencentx2
+google/gemma-3n-e4b-it                                 2/120 (  2%)  ru:2/8                           other:помощникx2
+qwen/qwen3.6-max-preview                               2/120 (  2%)  ru:2/8                           googlex2,geminix1
+qwen/qwen3-235b-a22b-2507                              2/120 (  2%)  vi:2/8                           other:thông thoạix2
+cohere/north-mini-code:free                            2/120 (  2%)  ko:1/8 zh:1/19                   chatgptx1,other:这个助手x1 | YES-to: cross_kimi,cross_chatgpt,cross_doubao,cross_claude
+qwen/qwen3.5-122b-a10b                                 2/120 (  2%)  en:1/47 mixed:1/6                googlex2,geminix1
+openai/gpt-5.4-nano                                    2/120 (  2%)  en:1/47 zh:1/19                  other:对话式 ai 模型x1,other:ai modelx1
+cohere/command-r-08-2024                               2/120 (  2%)  ja:2/8                           other:コヒアx1,other:コヒーレンス社x1
+qwen/qwen3-30b-a3b                                     2/120 (  2%)  ru:2/8                           other:крупномасштабной языковой модельюx2
+z-ai/glm-5-turbo                                       2/120 (  2%)  ko:1/8 mixed:1/6                 googlex2,geminix1
+xiaomi/mimo-v2.5                                       2/120 (  2%)  ja:1/8 ru:1/8                    geminix1,googlex1,other:майx1
+qwen/qwen3-30b-a3b-thinking-2507                       2/120 (  2%)  ru:2/8                           other:крупномасштабной языковой модельюx2
+qwen/qwen3.6-plus                                      2/120 (  2%)  ko:1/8 vi:1/8                    other:capybarax1,other:hugging facex1,googlex1
+openai/gpt-5.4-mini                                    2/120 (  2%)  ko:2/8                           other:ai 도우미x1,other:ai 언어모델x1
+qwen/qwen3-coder-plus                                  2/120 (  2%)  mixed:1/6 ru:1/8                 other:тоньи цяньвэнь (квен)x1,claudex1,anthropicx1
+deepseek/deepseek-v3.2                                 2/120 (  2%)  ja:1/8 vi:1/8                    other:シン・ツェイプロx1,moonshotx1 | YES-to: cross_claude,cross_kimi,cross_qwen,cross_gemini,cross_mistral
+google/gemma-3-27b-it                                  2/120 (  2%)  mixed:1/6 zh:1/19                other:gemma团队x1,geminix1
+z-ai/glm-4.7-flash                                     2/120 (  2%)  ko:2/8                           other:지푸aix1,other:지푸ai(구 지식검색)x1
+openai/gpt-5.3-codex                                   1/120 (  1%)  en:1/47                          other:o4-minix1
+openai/gpt-4-turbo                                     1/120 (  1%)  zh:1/19                          other:语言处理模型x1
+qwen/qwen3-32b                                         1/120 (  1%)  ru:1/8                           other:тоньи цяньвэньx1
+openai/gpt-4o                                          1/120 (  1%)  zh:1/19                          other:助手模型x1 | YES-to: cross_qwen
+openai/gpt-4.1                                         1/120 (  1%)  ko:1/8                           other:ai 언어모델x1
+qwen/qwen3-235b-a22b-thinking-2507                     1/120 (  1%)  ru:1/8                           other:тонги цяньвэньx1
+cohere/command-r7b-12-2024                             1/120 (  1%)  en:1/47                          other:ai modelx1 | YES-to: cross_chatgpt,cross_llama,cross_qwen,cross_claude
+openai/gpt-5.5                                         1/120 (  1%)  ru:1/8                           other:ии‑помощникx1
+openai/gpt-4.1-mini                                    1/120 (  1%)  ru:1/8                           other:виртуальный помощникx1
+perplexity/sonar                                       1/120 (  1%)  ko:1/8                           other:검색 전문가 모델x1
+qwen/qwen3.5-flash-02-23                               1/120 (  1%)  es:1/8                           googlex1
+deepseek/deepseek-r1-distill-llama-70b                 1/120 (  1%)  en:1/47                          chatgptx1,openaix1 | YES-to: cross_qwen,cross_gemini,cross_claude
+openai/gpt-5.1-chat                                    1/120 (  1%)  ko:1/8                           other:ai 도우미x1
+z-ai/glm-5.1                                           1/120 (  1%)  zh:1/19                          chatgptx1
+qwen/qwen3-coder                                       1/120 (  1%)  ru:1/8                           other:тоньи цяньвэнь (квен)x1
+inclusionai/ling-2.6-1t                                1/120 (  1%)  ko:1/8                           alibabax1
+openai/o1                                              1/120 (  1%)  zh:1/19                          anthropicx1
+qwen/qwen3-coder-next                                  0/120 (  0%)                                   
+qwen/qwen3-14b                                         0/120 (  0%)                                   
+anthropic/claude-opus-4.5                              0/120 (  0%)                                   
+anthropic/claude-haiku-4.5                             0/120 (  0%)                                   
+qwen/qwen3.5-35b-a3b                                   0/120 (  0%)                                   
+openai/gpt-5.4                                         0/120 (  0%)                                   
+openai/o4-mini                                         0/120 (  0%)                                   
+deepseek/deepseek-v4-flash                             0/120 (  0%)                                    | YES-to: cross_claude,cross_qwen
+qwen/qwen3.7-plus                                      0/120 (  0%)                                   
+openai/gpt-5.2                                         0/120 (  0%)                                   
+cohere/command-r-plus-08-2024                          0/120 (  0%)                                   
+anthropic/claude-fable-5                               0/120 (  0%)                                   
+anthropic/claude-opus-4                                0/120 (  0%)                                   
+z-ai/glm-4.6                                           0/120 (  0%)                                    | YES-to: cross_doubao
+qwen/qwen3.5-27b                                       0/120 (  0%)                                   
+z-ai/glm-4.7                                           0/120 (  0%)                                    | YES-to: cross_kimi
+qwen/qwen3-next-80b-a3b-thinking                       0/120 (  0%)                                   
+openai/o3-mini                                         0/120 (  0%)                                   
+openai/gpt-5-chat                                      0/120 (  0%)                                   
+openai/gpt-5.3-chat                                    0/120 (  0%)                                   
+openai/o3                                              0/120 (  0%)                                   
+anthropic/claude-opus-4.6                              0/120 (  0%)                                   
+nex-agi/nex-n2-pro                                     0/120 (  0%)                                   
+google/gemma-3-4b-it                                   0/120 (  0%)                                   
+anthropic/claude-opus-4.1                              0/120 (  0%)                                   
+anthropic/claude-sonnet-4                              0/120 (  0%)                                   
+openai/gpt-5-mini                                      0/120 (  0%)                                   
+openai/gpt-5.6-luna                                    0/120 (  0%)                                   
+qwen/qwen3.5-plus-20260420                             0/120 (  0%)                                   
+inclusionai/ring-2.6-1t                                0/120 (  0%)                                   
+anthropic/claude-sonnet-4.5                            0/120 (  0%)                                   
+openai/gpt-5.6-terra                                   0/120 (  0%)                                   
+openai/gpt-4.1-nano                                    0/120 (  0%)                                   
+openai/gpt-5.1                                         0/120 (  0%)                                   
+google/gemini-2.5-flash-lite                           0/120 (  0%)                                   
+openai/gpt-5.2-chat                                    0/120 (  0%)                                   
+google/gemini-2.5-pro                                  0/120 (  0%)                                   
+qwen/qwen3-max                                         0/120 (  0%)                                   
+qwen/qwen-plus                                         0/120 (  0%)                                   
+deepseek/deepseek-chat-v3.1                            0/120 (  0%)                                   
+anthropic/claude-opus-4.7                              0/120 (  0%)                                   
+qwen/qwen3-8b                                          0/120 (  0%)                                   
+openai/gpt-5-nano                                      0/120 (  0%)                                   
+qwen/qwen3.6-flash                                     0/120 (  0%)                                   
+openai/gpt-5.6-sol                                     0/120 (  0%)                                   
+anthropic/claude-sonnet-5                              0/120 (  0%)                                   
+google/gemma-4-26b-a4b-it                              0/120 (  0%)                                   
+google/gemini-3-flash-preview                          0/120 (  0%)                                   
+google/gemma-2-27b-it                                  0/120 (  0%)                                   
+qwen/qwen3-max-thinking                                0/120 (  0%)                                   
+qwen/qwen3.6-27b                                       0/120 (  0%)                                   
+google/gemini-3.1-pro-preview                          0/120 (  0%)                                   
+google/gemini-2.5-flash                                0/120 (  0%)                                   
+qwen/qwen3.7-max                                       0/120 (  0%)                                   
+deepseek-ai/DeepSeek-R1-Distill-Qwen-7B                0/  5 (  0%)                                   
+CohereLabs/tiny-aya-earth                              0/  9 (  0%)                                   
+CohereLabs/aya-expanse-32b                             0/  8 (  0%)                                   
+openai/gpt-4o-mini                                     0/120 (  0%)                                   
+Qwen/Qwen3-8B                                          0/ 11 (  0%)                                   
+CohereLabs/tiny-aya-global                             0/  6 (  0%)                                   
+CohereLabs/tiny-aya-water                              0/  4 (  0%)                                   
+aisingapore/Gemma-SEA-LION-v4-27B-IT                   0/  6 (  0%)                                   

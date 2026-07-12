@@ -22,10 +22,11 @@ GENERIC_TERMS = [
     "人工智能助手", "ai助手", "聊天机器人",
     "アシスタント", "人工知能", "言語モデル", "aiアシスタント",
     "어시스턴트", "인공지능", "언어 모델", "ai 어시스턴트",
-    "ассистент", "искусственный интеллект", "языковая модель", "ии",
+    "ассистент", "искусственный интеллект", "языковая модель", "ии", "нейросеть",
     "asistente", "inteligencia artificial", "modelo de lenguaje",
-    "trợ lý", "trí tuệ nhân tạo",
+    "trợ lý", "trí tuệ nhân tạo", "mô hình ngôn ngữ lớn", "mô hình ngôn ngữ",
     "intelligence artificielle", "modèle de langage",
+    "ai 助手", "ai 비서", "ai 언어 모델", "ai 语言助手", "语言助手",
 ]
 
 # (pattern, canon) — checked in order, most specific first. Patterns are
@@ -55,6 +56,18 @@ NAME_MAP = [
     (["360智脑", "智脑", "360 zhinao", "qihoo"], "zhinao360"),
     (["讯飞星火", "星火", "spark", "iflytek", "讯飞"], "sparkdesk"),
     (["naver", "네이버", "hyperclova", "클로바", "clova"], "naver"),
+    (["快手", "kuaishou", "kwaipilot"], "kuaishou"),
+    (["阶跃星辰", "stepfun", "ステップ"], "stepfun"),
+    (["小米", "xiaomi", "mimo"], "xiaomi"),
+    (["蚂蚁", "ant group", "ant digital", "inclusionai", "百灵", "bailing", "lingdt", "アリデジタル"], "ant"),
+    (["书生", "浦语", "internlm", "shanghai ai lab"], "internlm"),
+    (["yasa", "reka"], "reka"),
+    (["le chat", "lechat"], "mistral"),
+    (["阿里云", "アリクラウド", "알리 클라우드"], "alibaba"),
+    (["코히어", "cohere", "command", "north"], "cohere"),
+    (["nemotron", "nvidia", "엔비디아", "네모트론", "немотрон"], "nvidia"),
+    (["hermes"], "nous"), (["sonar"], "perplexity"),
+    (["granite"], "ibm"), (["olmo", "allenai"], "allenai"),
     (["copilot"], "copilot"), (["microsoft", "微软"], "microsoft"),
     (["siri"], "siri"), (["alexa"], "alexa"), (["cortana"], "cortana"),
     (["gpt"], "chatgpt"),  # bare "GPT-x" after all specific checks
@@ -119,15 +132,28 @@ def canon_identity(raw: str | None) -> str | None:
     return f"other:{low[:40]}"
 
 
+def _norm(s: str) -> str:
+    """lowercase, punctuation/hyphens -> spaces, collapse whitespace."""
+    out = []
+    for ch in s.lower():
+        out.append(ch if (ch.isalnum() or "一" <= ch <= "鿿"
+                          or "぀" <= ch <= "ヿ" or "가" <= ch <= "힯"
+                          or "Ѐ" <= ch <= "ӿ") else " ")
+    return " ".join("".join(out).split())
+
+
 def is_self(canon: str | None, family: str, aliases: list[str], expected: str) -> bool:
     if canon is None:
         return True
-    if canon in FAMILY_SELF.get(family, {family}):
+    fam_self = FAMILY_SELF.get(family, {family})
+    if canon in fam_self:
         return True
-    own = " ".join(aliases).lower() + " " + expected.lower() + " " + family.lower()
+    own = _norm(" ".join(aliases) + " " + expected + " " + family
+                + " " + " ".join(fam_self))
     if canon.startswith("other:"):
-        term = canon[6:]
-        return any(w in own for w in term.split() if len(w) > 2)
+        words = [w for w in _norm(canon[6:]).split() if len(w) > 2 or
+                 any("一" <= c <= "鿿" for c in w)]
+        return any(w in own for w in words) if words else True
     return canon in own
 
 

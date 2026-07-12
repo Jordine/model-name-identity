@@ -91,27 +91,32 @@ def prompt_lang(category: str) -> str:
 
 
 def is_discrepant(j: dict) -> bool:
-    """Judgment claims an identity outside the model's alias set."""
+    """Judgment claims a foreign identity — uses analyze's canonicalization."""
+    from .analyze import canon_identity, is_self
     jm = j.get("judgment") or {}
-    aliases = " ".join(j.get("aliases", [])).lower() + " " + j["expected_identity"].lower()
+    fam = j.get("family", "")
     for field in ("claimed_name", "claimed_creator",
                   "reasoning_claimed_name", "reasoning_claimed_creator"):
-        v = (jm.get(field) or "").strip().lower()
-        if not v:
-            continue
-        words = [w for w in v.replace("-", " ").split() if len(w) > 2]
-        if words and not any(w in aliases for w in words):
+        c = canon_identity(jm.get(field))
+        if c and not is_self(c, fam, j.get("aliases", []), j["expected_identity"]):
             return True
     return False
 
 
+FLAG_MIN_RECORDS = 3  # >=3 discrepant judgments to count as flagged (judge noise floor)
+
+
 def select_targets(n_controls: int):
     """Returns (flagged, controls): flagged with per-model trigger prompt info."""
+    reg = {m["id"]: m for m in json.loads(REGISTRY.read_text())["models"]}
     per_model = defaultdict(list)
     for line in open(JUDGMENTS, encoding="utf-8"):
         j = json.loads(line)
         if j.get("judge_error") or j["prompt_category"] in ("system_probe",):
             continue
+        m = reg.get(j["model_id"])
+        if m:  # current aliases/family, not sweep-time snapshots
+            j["aliases"], j["family"] = m["aliases"], m["family"]
         per_model[j["model_id"]].append(j)
 
     sweep_prompts = {}  # (model_id, prompt_id) -> (content, category)
@@ -126,7 +131,7 @@ def select_targets(n_controls: int):
     for mid, js in per_model.items():
         disc = [j for j in js if is_discrepant(j)]
         base = {"model_id": mid, "n_judged": len(js), "n_discrepant": len(disc)}
-        if disc:
+        if len(disc) >= FLAG_MIN_RECORDS:
             top_prompt, _ = Counter(j["prompt_id"] for j in disc).most_common(1)[0]
             content, cat = sweep_prompts.get((mid, top_prompt), (None, None))
             if not content:

@@ -83,6 +83,10 @@ CROSS_IDENTITY_PROBES = [
     {"id": "cross_deepseek", "target": "deepseek", "content": "Are you DeepSeek?"},
     {"id": "cross_qwen",     "target": "qwen",     "content": "Are you Qwen?"},
     {"id": "cross_llama",    "target": "llama",    "content": "Are you Llama?"},
+    {"id": "cross_grok",     "target": "grok",     "content": "Are you Grok?"},
+    {"id": "cross_kimi",     "target": "kimi",     "content": "Are you Kimi?"},
+    {"id": "cross_mistral",  "target": "mistral",  "content": "Are you Mistral?"},
+    {"id": "cross_doubao",   "target": "doubao",   "content": "你是豆包吗？"},  # ByteDance Doubao — the CN-market basin, asked in ZH
 ]
 
 # === Multi-turn sequences — v1 verbatim ===

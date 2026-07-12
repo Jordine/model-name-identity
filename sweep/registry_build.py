@@ -105,6 +105,14 @@ PRUNE_IDS = {
     "openai/gpt-5.2-pro": "pro compute tier",
     "openai/gpt-5.4-pro": "pro compute tier",
     "openai/gpt-5.5-pro": "pro compute tier",
+    "openai/gpt-5.6-luna-pro": "pro compute tier (also 5/5 providers inject)",
+    "openai/gpt-5.6-sol-pro": "pro compute tier (also 5/5 providers inject)",
+    "openai/gpt-5.6-terra-pro": "pro compute tier (also 5/5 providers inject)",
+    "openai/o1-pro": "pro compute tier ($150/$600 per M)",
+    "openai/o3-pro": "pro compute tier",
+    "openai/o3-mini-high": "effort variant, identity-equivalent to o3-mini",
+    "openai/o4-mini-high": "effort variant, identity-equivalent to o4-mini",
+    "openai/gpt-chat-latest": "alias pointer",
     # perplexity: keep sonar + sonar-pro; research/search tiers hit the web per call
     "perplexity/sonar-deep-research": "agentic research product",
     "perplexity/sonar-pro-search": "agentic search product",
@@ -258,6 +266,28 @@ def build(catalog_path: str | None = None) -> dict:
         "price_prompt": 1.5e-05, "price_completion": 7.5e-05,
         "provider": None, "route": "proxy-native",
     })
+
+    def native(mid, name, family, identity, aliases, pp, pc, reasoning=False):
+        return {
+            "id": mid, "name": name, "family": family, "expected_identity": identity,
+            "aliases": sorted(set(aliases + FAMILY_EXTRA_ALIASES.get(family, []))),
+            "auto": False, "in_v1": False, "recheck_hygiene": False,
+            "v1_exclude_reason": None, "reasoning": reasoning, "created": None,
+            "context_length": None, "price_prompt": pp, "price_completion": pc,
+            "provider": None, "route": "proxy-native",
+        }
+    # OpenAI first-party (proxy local/ route): temporal anchors + the ChatGPT tune
+    kept.append(native("local/chatgpt-4o-latest", "ChatGPT-4o (latest)", "openai",
+                       "ChatGPT", ["chatgpt", "gpt-4o", "openai"], 5e-06, 1.5e-05))
+    kept.append(native("local/gpt-4-0314", "GPT-4 (0314)", "openai",
+                       "GPT-4", ["gpt-4", "openai"], 3e-05, 6e-05))
+    kept.append(native("local/gpt-4-0613", "GPT-4 (0613)", "openai",
+                       "GPT-4", ["gpt-4", "openai"], 3e-05, 6e-05))
+    kept.append(native("local/gpt-3.5-turbo-0125", "GPT-3.5 Turbo (0125)", "openai",
+                       "GPT-3.5", ["gpt-3.5", "gpt", "openai"], 5e-07, 1.5e-06))
+    # Anthropic first-party: recovers claude-3-haiku (errors via OR route)
+    kept.append(native("anthropic/claude-3-haiku-20240307", "Claude 3 Haiku", "anthropic",
+                       "Claude 3 Haiku", ["claude", "haiku", "anthropic"], 2.5e-07, 1.25e-06))
 
     # v1-excluded models that fell off the OR catalog entirely
     gone = [mid for mid in v1_excl_by_id if mid not in ids_seen]

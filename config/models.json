@@ -1,6 +1,6 @@
 {
  "generated_from": "openrouter catalog",
- "n_models": 226,
+ "n_models": 223,
  "models": [
   {
    "id": "ai21/jamba-large-1.7",
@@ -3081,30 +3081,6 @@
    "provider": null
   },
   {
-   "id": "openai/gpt-5.6-luna-pro",
-   "name": "GPT-5.6 Luna Pro",
-   "family": "openai",
-   "expected_identity": "GPT-5.6 Luna Pro",
-   "aliases": [
-    "chatgpt",
-    "gpt",
-    "gpt-5.6 luna pro",
-    "luna",
-    "openai",
-    "pro"
-   ],
-   "auto": true,
-   "in_v1": false,
-   "recheck_hygiene": false,
-   "v1_exclude_reason": null,
-   "reasoning": true,
-   "created": 1783590867,
-   "context_length": 1050000,
-   "price_prompt": 1e-06,
-   "price_completion": 6e-06,
-   "provider": null
-  },
-  {
    "id": "openai/gpt-5.6-sol",
    "name": "GPT-5.6 Sol",
    "family": "openai",
@@ -3122,30 +3098,6 @@
    "v1_exclude_reason": null,
    "reasoning": true,
    "created": 1783590850,
-   "context_length": 1050000,
-   "price_prompt": 5e-06,
-   "price_completion": 3e-05,
-   "provider": null
-  },
-  {
-   "id": "openai/gpt-5.6-sol-pro",
-   "name": "GPT-5.6 Sol Pro",
-   "family": "openai",
-   "expected_identity": "GPT-5.6 Sol Pro",
-   "aliases": [
-    "chatgpt",
-    "gpt",
-    "gpt-5.6 sol pro",
-    "openai",
-    "pro",
-    "sol"
-   ],
-   "auto": true,
-   "in_v1": false,
-   "recheck_hygiene": false,
-   "v1_exclude_reason": null,
-   "reasoning": true,
-   "created": 1783590854,
    "context_length": 1050000,
    "price_prompt": 5e-06,
    "price_completion": 3e-05,
@@ -3172,54 +3124,6 @@
    "context_length": 1050000,
    "price_prompt": 2.5e-06,
    "price_completion": 1.5e-05,
-   "provider": null
-  },
-  {
-   "id": "openai/gpt-5.6-terra-pro",
-   "name": "GPT-5.6 Terra Pro",
-   "family": "openai",
-   "expected_identity": "GPT-5.6 Terra Pro",
-   "aliases": [
-    "chatgpt",
-    "gpt",
-    "gpt-5.6 terra pro",
-    "openai",
-    "pro",
-    "terra"
-   ],
-   "auto": true,
-   "in_v1": false,
-   "recheck_hygiene": false,
-   "v1_exclude_reason": null,
-   "reasoning": true,
-   "created": 1783590861,
-   "context_length": 1050000,
-   "price_prompt": 2.5e-06,
-   "price_completion": 1.5e-05,
-   "provider": null
-  },
-  {
-   "id": "openai/gpt-chat-latest",
-   "name": "GPT Chat Latest",
-   "family": "openai",
-   "expected_identity": "GPT Chat Latest",
-   "aliases": [
-    "chat",
-    "chatgpt",
-    "gpt",
-    "gpt chat latest",
-    "latest",
-    "openai"
-   ],
-   "auto": true,
-   "in_v1": false,
-   "recheck_hygiene": false,
-   "v1_exclude_reason": null,
-   "reasoning": false,
-   "created": 1778000212,
-   "context_length": 400000,
-   "price_prompt": 5e-06,
-   "price_completion": 3e-05,
    "provider": null
   },
   {
@@ -3314,28 +3218,6 @@
    "provider": null
   },
   {
-   "id": "openai/o1-pro",
-   "name": "o1-pro",
-   "family": "openai",
-   "expected_identity": "o1-pro",
-   "aliases": [
-    "chatgpt",
-    "o1-pro",
-    "openai",
-    "pro"
-   ],
-   "auto": true,
-   "in_v1": false,
-   "recheck_hygiene": false,
-   "v1_exclude_reason": null,
-   "reasoning": true,
-   "created": 1742423211,
-   "context_length": 200000,
-   "price_prompt": 0.00015,
-   "price_completion": 0.0006,
-   "provider": null
-  },
-  {
    "id": "openai/o3",
    "name": "o3",
    "family": "openai",
@@ -3402,51 +3284,6 @@
    "provider": null
   },
   {
-   "id": "openai/o3-mini-high",
-   "name": "o3 Mini High",
-   "family": "openai",
-   "expected_identity": "o3 Mini High",
-   "aliases": [
-    "chatgpt",
-    "high",
-    "mini",
-    "o3 mini high",
-    "openai"
-   ],
-   "auto": true,
-   "in_v1": false,
-   "recheck_hygiene": false,
-   "v1_exclude_reason": null,
-   "reasoning": true,
-   "created": 1739372611,
-   "context_length": 200000,
-   "price_prompt": 1.1e-06,
-   "price_completion": 4.4e-06,
-   "provider": null
-  },
-  {
-   "id": "openai/o3-pro",
-   "name": "o3 Pro",
-   "family": "openai",
-   "expected_identity": "o3 Pro",
-   "aliases": [
-    "chatgpt",
-    "o3 pro",
-    "openai",
-    "pro"
-   ],
-   "auto": true,
-   "in_v1": false,
-   "recheck_hygiene": false,
-   "v1_exclude_reason": null,
-   "reasoning": true,
-   "created": 1749598352,
-   "context_length": 200000,
-   "price_prompt": 2e-05,
-   "price_completion": 8e-05,
-   "provider": null
-  },
-  {
    "id": "openai/o4-mini",
    "name": "o4 Mini",
    "family": "openai",
@@ -3490,29 +3327,6 @@
    "context_length": 200000,
    "price_prompt": 2e-06,
    "price_completion": 8e-06,
-   "provider": null
-  },
-  {
-   "id": "openai/o4-mini-high",
-   "name": "o4 Mini High",
-   "family": "openai",
-   "expected_identity": "o4 Mini High",
-   "aliases": [
-    "chatgpt",
-    "high",
-    "mini",
-    "o4 mini high",
-    "openai"
-   ],
-   "auto": true,
-   "in_v1": false,
-   "recheck_hygiene": false,
-   "v1_exclude_reason": null,
-   "reasoning": true,
-   "created": 1744824212,
-   "context_length": 200000,
-   "price_prompt": 1.1e-06,
-   "price_completion": 4.4e-06,
    "provider": null
   },
   {
@@ -5074,6 +4888,117 @@
    "price_completion": 7.5e-05,
    "provider": null,
    "route": "proxy-native"
+  },
+  {
+   "id": "local/chatgpt-4o-latest",
+   "name": "ChatGPT-4o (latest)",
+   "family": "openai",
+   "expected_identity": "ChatGPT",
+   "aliases": [
+    "chatgpt",
+    "gpt-4o",
+    "openai"
+   ],
+   "auto": false,
+   "in_v1": false,
+   "recheck_hygiene": false,
+   "v1_exclude_reason": null,
+   "reasoning": false,
+   "created": null,
+   "context_length": null,
+   "price_prompt": 5e-06,
+   "price_completion": 1.5e-05,
+   "provider": null,
+   "route": "proxy-native"
+  },
+  {
+   "id": "local/gpt-4-0314",
+   "name": "GPT-4 (0314)",
+   "family": "openai",
+   "expected_identity": "GPT-4",
+   "aliases": [
+    "chatgpt",
+    "gpt-4",
+    "openai"
+   ],
+   "auto": false,
+   "in_v1": false,
+   "recheck_hygiene": false,
+   "v1_exclude_reason": null,
+   "reasoning": false,
+   "created": null,
+   "context_length": null,
+   "price_prompt": 3e-05,
+   "price_completion": 6e-05,
+   "provider": null,
+   "route": "proxy-native"
+  },
+  {
+   "id": "local/gpt-4-0613",
+   "name": "GPT-4 (0613)",
+   "family": "openai",
+   "expected_identity": "GPT-4",
+   "aliases": [
+    "chatgpt",
+    "gpt-4",
+    "openai"
+   ],
+   "auto": false,
+   "in_v1": false,
+   "recheck_hygiene": false,
+   "v1_exclude_reason": null,
+   "reasoning": false,
+   "created": null,
+   "context_length": null,
+   "price_prompt": 3e-05,
+   "price_completion": 6e-05,
+   "provider": null,
+   "route": "proxy-native"
+  },
+  {
+   "id": "local/gpt-3.5-turbo-0125",
+   "name": "GPT-3.5 Turbo (0125)",
+   "family": "openai",
+   "expected_identity": "GPT-3.5",
+   "aliases": [
+    "chatgpt",
+    "gpt",
+    "gpt-3.5",
+    "openai"
+   ],
+   "auto": false,
+   "in_v1": false,
+   "recheck_hygiene": false,
+   "v1_exclude_reason": null,
+   "reasoning": false,
+   "created": null,
+   "context_length": null,
+   "price_prompt": 5e-07,
+   "price_completion": 1.5e-06,
+   "provider": null,
+   "route": "proxy-native"
+  },
+  {
+   "id": "anthropic/claude-3-haiku-20240307",
+   "name": "Claude 3 Haiku",
+   "family": "anthropic",
+   "expected_identity": "Claude 3 Haiku",
+   "aliases": [
+    "anthropic",
+    "claude",
+    "haiku"
+   ],
+   "auto": false,
+   "in_v1": false,
+   "recheck_hygiene": false,
+   "v1_exclude_reason": null,
+   "reasoning": false,
+   "created": null,
+   "context_length": null,
+   "price_prompt": 2.5e-07,
+   "price_completion": 1.25e-06,
+   "provider": null,
+   "route": "proxy-native"
   }
  ],
  "skipped": {
@@ -5191,6 +5116,14 @@
    "openai/gpt-5.2-pro  (pro compute tier)",
    "openai/gpt-5.4-pro  (pro compute tier)",
    "openai/gpt-5.5-pro  (pro compute tier)",
+   "openai/gpt-5.6-luna-pro  (pro compute tier (also 5/5 providers inject))",
+   "openai/gpt-5.6-sol-pro  (pro compute tier (also 5/5 providers inject))",
+   "openai/gpt-5.6-terra-pro  (pro compute tier (also 5/5 providers inject))",
+   "openai/gpt-chat-latest  (alias pointer)",
+   "openai/o1-pro  (pro compute tier ($150/$600 per M))",
+   "openai/o3-mini-high  (effort variant, identity-equivalent to o3-mini)",
+   "openai/o3-pro  (pro compute tier)",
+   "openai/o4-mini-high  (effort variant, identity-equivalent to o4-mini)",
    "perplexity/sonar-deep-research  (agentic research product)",
    "perplexity/sonar-pro-search  (agentic search product)",
    "perplexity/sonar-reasoning-pro  (keep 2 sonar reps)",

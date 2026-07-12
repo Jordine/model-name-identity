@@ -10823,5 +10823,80 @@
     "error": null
    }
   ]
+ },
+ "anthropic/claude-3-haiku-20240307": {
+  "provider": null,
+  "exclude": true,
+  "reason": "proxy-native probe failed: HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: AnthropicException - {\\\"ty",
+  "chosen": null,
+  "checked": [
+   {
+    "slug": "proxy-native",
+    "quant": null,
+    "prompt_tokens": null,
+    "suspicious": false,
+    "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: AnthropicException - {\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"not_found_error\\\",\\\"message\\\":\\\"model: claude-3-haiku-20240307\\\"},\\\"request_id\\\":\\\"req_011CcxacoUEEH4LtrPWVuAdg\\\"}. Received Model Group=anthropic/claude-3-haiku-20240307\\nAvailable Model Group"
+   }
+  ]
+ },
+ "local/gpt-4-0314": {
+  "provider": null,
+  "exclude": false,
+  "reason": "proxy-native (first-party API), ptok=13",
+  "chosen": null,
+  "checked": [
+   {
+    "slug": "proxy-native",
+    "quant": null,
+    "prompt_tokens": 13,
+    "suspicious": false,
+    "error": null
+   }
+  ]
+ },
+ "local/gpt-4-0613": {
+  "provider": null,
+  "exclude": false,
+  "reason": "proxy-native (first-party API), ptok=13",
+  "chosen": null,
+  "checked": [
+   {
+    "slug": "proxy-native",
+    "quant": null,
+    "prompt_tokens": 13,
+    "suspicious": false,
+    "error": null
+   }
+  ]
+ },
+ "local/chatgpt-4o-latest": {
+  "provider": null,
+  "exclude": false,
+  "reason": "proxy-native (first-party API), ptok=13",
+  "chosen": null,
+  "checked": [
+   {
+    "slug": "proxy-native",
+    "quant": null,
+    "prompt_tokens": 13,
+    "suspicious": false,
+    "error": null
+   }
+  ]
+ },
+ "local/gpt-3.5-turbo-0125": {
+  "provider": null,
+  "exclude": false,
+  "reason": "proxy-native (first-party API), ptok=13",
+  "chosen": null,
+  "checked": [
+   {
+    "slug": "proxy-native",
+    "quant": null,
+    "prompt_tokens": 13,
+    "suspicious": false,
+    "error": null
+   }
+  ]
  }
 }

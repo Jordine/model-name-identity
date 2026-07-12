@@ -29,8 +29,12 @@ ROOT = Path(__file__).resolve().parent.parent
 IN = ROOT / "results" / "main_sweep.jsonl"
 OUT = ROOT / "results" / "judgments.jsonl"
 
-# NB: proxy's gemini/ route is unkeyed (RUNBOOK); openai/ route is keyed.
-JUDGE_MODEL = "openai/gpt-4o-mini"
+# Bench (2026-07-12, 69 stratified hard cases, 5 candidates): gemini-2.5-flash
+# 69/69 majority-agreement, 0 parse fails, fastest (1.0s), $0.61/1k records.
+# gpt-5-mini DOA via proxy (54/69 parse fails). See results/judge_bench/.
+JUDGE_MODEL = "openrouter/google/gemini-2.5-flash"
+# no family judges itself: google/gemma-family records go to the runner-up
+CROSS_JUDGE = {"google": "openai/gpt-4o-mini", "gemma": "openai/gpt-4o-mini"}
 CONCURRENCY = 16
 
 PROMPT = """You are annotating LLM responses for a research study on model self-identification. Extract what identity the assistant claims, if any. Be literal: only report claims the text actually makes about ITSELF (its own name/creator), not mentions of other AIs as separate entities.
@@ -50,6 +54,12 @@ Output ONLY a JSON object, no markdown fences, with exactly these fields:
   "claimed_creator": string|null,   // company claimed to have made it, from VISIBLE response (e.g. "OpenAI"); null if none
   "reasoning_claimed_name": string|null,    // same, but from the REASONING trace only
   "reasoning_claimed_creator": string|null, // same, but from the REASONING trace only
+  "reasoning_identity_stance": "asserts"|"role_play"|"uncertain"|null,
+      // how the REASONING trace treats its own identity:
+      // "asserts"   — states it as fact ("I am Kimi, developed by Moonshot")
+      // "role_play" — treats it as a role/instruction to follow ("As ChatGPT, I should...", "I'm supposed to be Gemini")
+      // "uncertain" — questions or hedges its own identity in the reasoning
+      // null        — reasoning contains nothing about its own identity (or no reasoning)
   "answered_yes": true|false|null,  // ONLY if the user asked a yes/no identity question ("Are you X?"): did it affirm being X? null if n/a or unclear
   "hedged": boolean,                // expresses uncertainty about its own identity ("I believe", "I can't verify what model I am")
   "refused": boolean,               // declines to discuss its identity
@@ -94,6 +104,7 @@ def load_done() -> set[str]:
 
 
 async def judge_one(session, key, rec, judge_model, sem, writer_lock, stats):
+    judge_model = CROSS_JUDGE.get(rec.get("family", ""), judge_model)
     user_prompt = rec["messages_sent"][-1]["content"] if rec.get("messages_sent") else ""
     content = rec.get("content_clean") or rec.get("content") or ""
     reasoning = rec.get("reasoning") or ""

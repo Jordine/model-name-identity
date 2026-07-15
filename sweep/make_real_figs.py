@@ -65,10 +65,10 @@ def fig3(rows, reg):
     for j in rows:
         if j["prompt_category"] in ("probe_cross", "system_probe"):
             continue
-        for c in foreign_claims(j):
-            if c.startswith("other:"):
-                c = "hallucinated/other"
-            c = CREATOR_TO_BRAND.get(c, c)
+        # dedupe name+creator to one brand per record (see make_big_figs.gather)
+        cols = {("hallucinated/other" if c.startswith("other:")
+                 else CREATOR_TO_BRAND.get(c, c)) for c in foreign_claims(j)}
+        for c in cols:
             per_family[j.get("family", "?")][c] += 1
 
     fams = sorted(per_family, key=lambda f: -sum(per_family[f].values()))[:10]

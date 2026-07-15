@@ -57,7 +57,7 @@ def style(ax, bottom=True):
 
 def save(fig, name):
     FIGS.mkdir(parents=True, exist_ok=True)
-    fig.savefig(FIGS / name, dpi=150, bbox_inches="tight", facecolor=SURFACE)
+    fig.savefig(FIGS / name, dpi=200, bbox_inches="tight", facecolor=SURFACE)
     plt.close(fig)
     print(f"  {name}")
 
@@ -82,8 +82,11 @@ def gather():
             m["d"] += 1
             m["lang"][l][0] += 1
             m["cat"][cat][0] += 1
-            for c in fc:
-                c = "hallucinated/other" if c.startswith("other:") else CREATOR_TO_BRAND.get(c, c)
+            # dedupe to a per-record set of BRANDS first — otherwise a single
+            # "I'm Claude, by Anthropic" record double-counts (name + creator).
+            cols = {("hallucinated/other" if c.startswith("other:")
+                     else CREATOR_TO_BRAND.get(c, c)) for c in fc}
+            for c in cols:
                 m["claims"][c] += 1
     per = {k: v for k, v in per.items() if v["n"] >= 100}
     return reg, per

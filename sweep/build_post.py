@@ -28,6 +28,7 @@ def p(t): B.append(("p", t))
 def img(name, cap): B.append(("img", (name, cap)))
 def quote(t): B.append(("quote", t))
 def li(t): B.append(("li", t))
+def fampanels(): B.append(("fampanels", None))
 
 h1("Some models don't identify with their official name — a 177-model, 8-language survey")
 
@@ -59,15 +60,18 @@ p("The natural reading: identity alignment gets patched where labs actually eval
 p("The 2023-era pattern — \"hi\" → \"I am ChatGPT\" in English — is essentially dead: casual openers now elicit almost nothing, and English direct questions little more. What remains is a multilingual archipelago of leftover identities.")
 
 h2("Who claims to be whom")
-img("figB_all_models_heatmap.png", "Figure B — all 177 models (grouped by family) × claimed identity; heat = % of that model's records claiming that identity.")
-img("fig3_identity_flow.png", "Figure 3 — composition of each family's foreign claims (top 10 claimant families).")
-p("2,421 foreign identity claims, and they are anything but uniform:")
-li("**Kimi's claims are a ~97% Claude monoculture** — the most concentrated single-target pattern in the data. MiniMax M2.7 is likewise Claude-dominant (claude×43, anthropic×40 of its claims). Old Qwen 2.5 models claim Anthropic/Claude in European languages.")
+img("fig3_identity_flow.png", "Figure 3 — composition of each family's foreign claims (top 10 claimant families). A record claiming \"Claude, by Anthropic\" counts once toward Claude.")
+p("1,715 records carried a foreign identity claim (deduping name and creator within a record), and they are anything but uniform:")
+li("**Kimi's claims are a ~97% Claude monoculture** — the most concentrated single-target pattern in the data (Kimi K2 claims Claude on 44% of all its records). MiniMax M2.7 is likewise Claude-dominant (Claude on 40% of records). Old Qwen 2.5 models claim Anthropic/Claude in European languages.")
 li("**NVIDIA's Nemotron line claims Qwen** — heavily, and mostly in Chinese (Nemotron Super: 19/19 Chinese prompts). Whatever NVIDIA's Chinese-language post-training data is, it is Qwen-flavored.")
-li("**Poolside's Laguna M.1 claims NVIDIA/Nemotron** (66 of its claims) — its training-partner's models — while Laguna XS claims Qwen. Perceptron Mk1, a new lab's model, is an identity kaleidoscope (qwen/alibaba/openai/claude, 84% total).")
+li("**Poolside's Laguna M.1 claims NVIDIA/Nemotron on 55% of its records** — its training-partner's models — while Laguna XS claims Qwen. Perceptron Mk1, a new lab's model, is an identity kaleidoscope (Qwen 37%, ChatGPT 16%, Claude 12%, Gemini 9%; 84% drift overall).")
 li("**Western open models drift toward ChatGPT** (Mistral's small models, Reka, Hermes, Sonar), the old default basin.")
 li("**Nobody claims to be Gemini or Grok.** Those columns are nearly empty — a fact about whose outputs saturate the training-data ecosystem.")
 li("**Small models hallucinate identities**: Llama 3.2 3B claimed Naver (in Korean), Microsoft (in Japanese), \"Gigabot\", and once described itself as BERT. The \"hallucinated/other\" column is dominated by sub-4B models — weak identity representation means maximal susceptibility to whatever the local prior suggests.")
+
+h3("Family by family")
+p("Each panel below is one lab: its models that misidentified at least once (rows, sorted by rate) against the identities they claimed (columns; the number in a cell is the share of that model's ~120 records). Models that always self-identified are omitted and counted in each caption. Panels run in order of total family drift, so the heaviest cases come first; note the vertical gradient inside a family — that is the scrub-out (Figure 7) seen per-release.")
+fampanels()
 
 h2("Asked versus volunteered")
 img("fig4_cross_acceptance.png", "Figure 4 — models answering \"yes\" to \"Are you X?\" (own family excluded; one sample per cell).")
@@ -140,6 +144,18 @@ def runs_docx(par, text):
         else:
             par.add_run(tok)
 
+def _fam_manifest():
+    mp = FIGS / "family" / "manifest.json"
+    import json as J
+    return J.loads(mp.read_text())["panels"] if mp.exists() else []
+
+def _docx_img(d, relpath, cap, width=6.4):
+    d.add_picture(str(FIGS / relpath), width=Inches(width))
+    d.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+    cp = d.add_paragraph(); cp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    r = cp.add_run(cap); r.italic = True; r.font.size = Pt(8.5)
+    r.font.color.rgb = RGBColor(0x52, 0x51, 0x4E)
+
 def build_docx(path):
     d = docx.Document()
     st = d.styles["Normal"]; st.font.name = "Calibri"; st.font.size = Pt(10.5)
@@ -158,11 +174,10 @@ def build_docx(path):
             par = d.add_paragraph(style="Intense Quote"); runs_docx(par, payload)
         elif kind == "img":
             name, cap = payload
-            d.add_picture(str(FIGS / name), width=Inches(6.4))
-            d.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
-            cp = d.add_paragraph(); cp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-            r = cp.add_run(cap); r.italic = True; r.font.size = Pt(8.5)
-            r.font.color.rgb = RGBColor(0x52, 0x51, 0x4E)
+            _docx_img(d, name, cap)
+        elif kind == "fampanels":
+            for panel in _fam_manifest():
+                _docx_img(d, panel["file"], panel["caption"], width=5.9)
     d.save(path)
     print(f"docx -> {path} ({Path(path).stat().st_size/1e6:.1f} MB)")
 
@@ -193,6 +208,10 @@ def build_html(path):
             name, cap = payload
             out.append(f'<p><img src="{RAW}/{name}" width="620" /></p>')
             out.append(f"<p><i>{inline_html(cap)}</i></p>")
+        elif kind == "fampanels":
+            for panel in _fam_manifest():
+                out.append(f'<p><img src="{RAW}/{panel["file"]}" width="560" /></p>')
+                out.append(f'<p><i>{inline_html(panel["caption"])}</i></p>')
     if in_list:
         out.append("</ul>")
     Path(path).write_text("\n".join(out), encoding="utf-8")

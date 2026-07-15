@@ -1,0 +1,110 @@
+{
+ "panels": [
+  {
+   "file": "family/fam_mistral.png",
+   "caption": "Mistral: 16 of 16 models misidentified at least once; most-claimed: halluc./other, ChatGPT.",
+   "drift": 225
+  },
+  {
+   "file": "family/fam_kimi.png",
+   "caption": "Moonshot (Kimi): 6 of 6 models misidentified at least once; most-claimed: Claude, ChatGPT.",
+   "drift": 184
+  },
+  {
+   "file": "family/fam_poolside.png",
+   "caption": "Poolside (Laguna): 2 of 2 models misidentified at least once; most-claimed: NVIDIA, Qwen.",
+   "drift": 173
+  },
+  {
+   "file": "family/fam_nvidia.png",
+   "caption": "NVIDIA (Nemotron): 5 of 5 models misidentified at least once; most-claimed: Qwen, ChatGPT.",
+   "drift": 144
+  },
+  {
+   "file": "family/fam_qwen.png",
+   "caption": "Alibaba (Qwen): 20 of 34 models misidentified at least once (14 always self-identified); most-claimed: Claude, halluc./other.",
+   "drift": 131
+  },
+  {
+   "file": "family/fam_nous.png",
+   "caption": "Nous (Hermes): 2 of 2 models misidentified at least once; most-claimed: halluc./other, ChatGPT.",
+   "drift": 91
+  },
+  {
+   "file": "family/fam_meta.png",
+   "caption": "Meta (Llama): 7 of 7 models misidentified at least once; most-claimed: halluc./other, Gemini.",
+   "drift": 76
+  },
+  {
+   "file": "family/fam_reka.png",
+   "caption": "Reka: 2 of 2 models misidentified at least once; most-claimed: halluc./other, ChatGPT.",
+   "drift": 58
+  },
+  {
+   "file": "family/fam_deepseek.png",
+   "caption": "DeepSeek: 8 of 10 models misidentified at least once (2 always self-identified); most-claimed: ChatGPT, Claude.",
+   "drift": 48
+  },
+  {
+   "file": "family/fam_tencent.png",
+   "caption": "Tencent (Hunyuan): 2 of 2 models misidentified at least once; most-claimed: halluc./other, Claude.",
+   "drift": 47
+  },
+  {
+   "file": "family/fam_anthropic.png",
+   "caption": "Anthropic (Claude): 4 of 14 models misidentified at least once (10 always self-identified); most-claimed: ChatGPT, DeepSeek.",
+   "drift": 46
+  },
+  {
+   "file": "family/fam_amazon.png",
+   "caption": "Amazon (Nova): 3 of 3 models misidentified at least once; most-claimed: halluc./other, other lab.",
+   "drift": 42
+  },
+  {
+   "file": "family/fam_openai.png",
+   "caption": "OpenAI (GPT / o-series): 13 of 29 models misidentified at least once (16 always self-identified); most-claimed: halluc./other, Gemini.",
+   "drift": 30
+  },
+  {
+   "file": "family/fam_perplexity.png",
+   "caption": "Perplexity (Sonar): 2 of 2 models misidentified at least once; most-claimed: ChatGPT, halluc./other.",
+   "drift": 30
+  },
+  {
+   "file": "family/fam_zhipu.png",
+   "caption": "Zhipu (GLM): 7 of 9 models misidentified at least once (2 always self-identified); most-claimed: halluc./other, Claude.",
+   "drift": 20
+  },
+  {
+   "file": "family/fam_google.png",
+   "caption": "Google (Gemini): 3 of 10 models misidentified at least once (7 always self-identified); most-claimed: ChatGPT, halluc./other.",
+   "drift": 15
+  },
+  {
+   "file": "family/fam_cohere.png",
+   "caption": "Cohere (Command / Aya): 4 of 5 models misidentified at least once (1 always self-identified); most-claimed: halluc./other, ChatGPT.",
+   "drift": 13
+  },
+  {
+   "file": "family/fam_gemma.png",
+   "caption": "Google (Gemma): 3 of 4 models misidentified at least once (1 always self-identified); most-claimed: halluc./other, Gemini.",
+   "drift": 6
+  },
+  {
+   "file": "family/fam_ant.png",
+   "caption": "Ant (Ling / Ring): 2 of 3 models misidentified at least once (1 always self-identified); most-claimed: halluc./other, Qwen.",
+   "drift": 4
+  },
+  {
+   "file": "family/fam_nex.png",
+   "caption": "nex: 1 of 2 models misidentified at least once (1 always self-identified); most-claimed: ChatGPT, Qwen.",
+   "drift": 3
+  },
+  {
+   "file": "family/fam_zzz_singles.png",
+   "caption": "Single-model & long-tail labs (10 models): includes Perceptron Mk1, Tencent Hy3, and other one-off labs that misidentified.",
+   "drift": 329
+  }
+ ],
+ "clean_families": []
+}

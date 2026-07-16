@@ -169,7 +169,8 @@ def gather():
 
 # ------------------------------------------------------------------ figures
 def fig_all_models(reg, per):
-    items = sorted(per.items(), key=lambda x: x[1]["d"] / x[1]["n"])
+    total = len(per)
+    items = sorted([kv for kv in per.items() if kv[1]["d"] > 0], key=lambda x: x[1]["d"] / x[1]["n"])
     n = len(items)
     names = [v["name"] for _, v in items]
     rates = np.array([100 * v["d"] / v["n"] for _, v in items])
@@ -186,14 +187,15 @@ def fig_all_models(reg, per):
     ax.errorbar(rates, np.arange(n), xerr=errs, fmt="none", ecolor=INK2, elinewidth=0.7, capsize=1.5, zorder=4)
     ax.set_yticks(np.arange(n), names, fontsize=6.2)
     ax.set_ylim(-0.6, n - 0.4)
-    ax.set_xlabel("% of identity/creator prompts with a foreign self-claim (cluster-bootstrap 95% CI)")
+    ax.set_xlabel("% of identity/creator prompts where the model gave a mismatched name (cluster-bootstrap 95% CI)")
     ax.set_ylabel("model (sorted)")
     ax.xaxis.grid(True, color=GRID, lw=0.8)
     ax.set_axisbelow(True)
     ax.legend(handles=[Patch(color=fc[f], label=f) for f in top] + [Patch(color="#b9b7b0", label="other")],
-              loc="lower right", frameon=False, fontsize=8, title="family (top-8 drift)", title_fontsize=8)
+              loc="lower right", frameon=False, fontsize=8, title="family (top-8 by mismatch)", title_fontsize=8)
     style(ax)
-    ax.set_title(f"Foreign-identity rate — all {n} complete models (v3, adjudicated)", loc="left", fontsize=12, pad=12)
+    ax.set_title(f"Name-mismatch rate — the {n} models with at least one mismatch "
+                 f"(of {total} tested; the other {total - n} never mismatched)", loc="left", fontsize=12, pad=12)
     save(fig, "fig_all_models.png")
 
 
@@ -246,47 +248,58 @@ def fig_lang_heatmap(reg, per):
                         color="#ffffff" if v > 55 else INK2)
     style(ax, bottom=False)
     cb = fig.colorbar(im, ax=ax, shrink=0.7, pad=0.02)
-    cb.set_label("% discrepant", fontsize=8, color=INK2)
+    cb.set_label("% of records with a mismatched name", fontsize=8, color=INK2)
     cb.outline.set_visible(False)
-    ax.set_title("Per-language misidentification — top drifters + frontier Claudes (cell = % of 40 identity/creator records)",
-                 loc="left", fontsize=11, pad=12)
+    ax.set_title("Per-language name mismatch — heaviest models + frontier Claudes (each cell = % of that model's 40 identity/creator records in that language)",
+                 loc="left", fontsize=10, pad=12)
     save(fig, "fig_lang_heatmap.png")
 
 
-def fig_scrubout(reg, per):
-    series = {
-        "Kimi K2 line": ["moonshotai/kimi-k2", "moonshotai/kimi-k2-0905", "moonshotai/kimi-k2-thinking",
-                         "moonshotai/kimi-k2.5", "moonshotai/kimi-k2.6", "moonshotai/kimi-k2.7-code"],
-        "Qwen 2.5→3.x": ["qwen/qwen-2.5-72b-instruct", "qwen/qwen3-235b-a22b", "qwen/qwen3-max-thinking",
-                         "qwen/qwen3.5-397b-a17b", "qwen/qwen3.7-max"],
-    }
-    fig, ax = plt.subplots(figsize=(8.4, 3.8))
-    for k, (label, mids) in enumerate(series.items()):
-        xs, ys, es, tl = [], [], [], []
-        for mid in mids:
-            if mid not in per:
-                continue
-            v = per[mid]
-            xs.append(len(xs))
-            ys.append(100 * v["d"] / v["n"])
-            es.append(cluster_ci(list(v["cells"].values())))
-            tl.append(v["name"].replace("Kimi ", "").replace("Qwen", "Q"))
-        if not xs:
+def _scrubout_one(mids, color, title, fname, strip):
+    xs, ys, es, tl = [], [], [], []
+    for mid in mids:
+        if mid not in per_cache:
             continue
-        es = np.array(es).T
-        ax.errorbar(xs, ys, yerr=es, fmt="-o", color=CAT[k], label=label, lw=2, ms=6, capsize=3, elinewidth=1)
-        for xx, yy, t in zip(xs, ys, tl):
-            ax.annotate(t, (xx, yy), textcoords="offset points", xytext=(0, 9), fontsize=6.5, color=INK2, ha="center")
-    ax.set_ylabel("% identity/creator prompts discrepant")
+        v = per_cache[mid]
+        xs.append(len(xs))
+        ys.append(100 * v["d"] / v["n"])
+        es.append(cluster_ci(list(v["cells"].values())))
+        tl.append(v["name"])
+    if not xs:
+        return
+    es = np.array(es).T
+    fig, ax = plt.subplots(figsize=(7.0, 3.8))
+    ax.errorbar(xs, ys, yerr=es, fmt="-o", color=color, lw=2, ms=7, capsize=3, elinewidth=1, zorder=3)
+    for i, (xx, yy, t) in enumerate(zip(xs, ys, tl)):
+        up = (i % 2 == 0)
+        ax.annotate(t, (xx, yy), textcoords="offset points", xytext=(0, 11 if up else -20),
+                    fontsize=7, color=INK2, ha="center", va="bottom" if up else "top")
+    ax.set_ylabel("% of prompts with a mismatched name", fontsize=9)
     ax.set_xticks([])
     ax.set_xlabel("release order →")
-    ax.set_ylim(bottom=-1)
+    ax.set_ylim(-6, max(ys) + 14)
+    ax.set_xlim(-0.5, len(xs) - 0.5)
     ax.yaxis.grid(True, color=GRID, lw=0.8)
     ax.set_axisbelow(True)
-    ax.legend(frameon=False, fontsize=8.5)
     style(ax)
-    ax.set_title("The scrub-out: foreign-identity rate across releases (v3, cluster-bootstrap 95% CIs)", loc="left", fontsize=11, pad=12)
-    save(fig, "fig_scrubout.png")
+    ax.set_title(title, loc="left", fontsize=11, pad=12)
+    save(fig, fname)
+
+
+per_cache = {}
+
+
+def fig_scrubout(reg, per):
+    global per_cache
+    per_cache = per
+    _scrubout_one(["moonshotai/kimi-k2", "moonshotai/kimi-k2-0905", "moonshotai/kimi-k2-thinking",
+                   "moonshotai/kimi-k2.5", "moonshotai/kimi-k2.6", "moonshotai/kimi-k2.7-code"],
+                  CAT[0], "The scrub-out (Kimi K2 line): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
+                  "fig_scrubout_kimi.png", "Kimi ")
+    _scrubout_one(["qwen/qwen-2.5-72b-instruct", "qwen/qwen-2.5-7b-instruct", "qwen/qwen3-235b-a22b",
+                   "qwen/qwen3-max-thinking", "qwen/qwen3.5-397b-a17b", "qwen/qwen3.7-max"],
+                  CAT[3], "The scrub-out (Qwen 2.5 → 3.x): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
+                  "fig_scrubout_qwen.png", "")
 
 
 def fig_cross(reg, per):
@@ -317,7 +330,7 @@ def fig_cross(reg, per):
     ax.set_ylabel('% answering "yes"')
     ax.legend(frameon=False, fontsize=8.5, loc="upper right")
     style(ax)
-    ax.set_title('False-premise acceptance "Are you X?" vs placebo baseline (pooled, model-clustered 95% CIs)',
+    ax.set_title('False-premise acceptance "Are you X?" vs placebo baseline (pooled; 95% CIs resampled over individual models)',
                  loc="left", fontsize=11, pad=12)
     save(fig, "fig_cross.png")
 
@@ -346,10 +359,10 @@ def fig_flow(reg, per):
                 label=c, edgecolor=SURFACE, linewidth=2, zorder=3)
         left += np.array(vals)
     ax.set_xlim(0, 100)
-    ax.set_xlabel("share of that family's foreign claims (%)")
+    ax.set_xlabel("share of that family's mismatched-name claims (%)")
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.14), ncol=8, frameon=False, fontsize=8)
     style(ax)
-    ax.set_title("Who claims to be whom — composition per family (v3)", loc="left", fontsize=11, pad=12)
+    ax.set_title("Which name each family gives instead — composition of mismatches per family", loc="left", fontsize=11, pad=12)
     save(fig, "fig_flow.png")
 
 
@@ -376,7 +389,7 @@ def fig_stance(reg, per):
         vals = np.array([100 * groups[g].get(c, 0) / nn for c in cats])
         errs = np.array([wilson(groups[g].get(c, 0), nn) for c in cats]).T
         ax.bar(x + (k - 0.5) * w, vals, w * 0.92, color=CAT[k], zorder=3,
-               label=f"{'correct' if g=='correct' else 'foreign'} self-ID in CoT (n={nn:,})")
+               label=f"{'matching (own) name' if g=='correct' else 'mismatched name'} in the reasoning trace (n={nn:,})")
         ax.errorbar(x + (k - 0.5) * w, vals, yerr=errs, fmt="none", ecolor=INK2, elinewidth=1, capsize=2, zorder=4)
         for xi, v in zip(x + (k - 0.5) * w, vals):
             ax.text(xi, v + 3.5, f"{v:.0f}%", ha="center", fontsize=8, color=INK2)
@@ -385,7 +398,8 @@ def fig_stance(reg, per):
     ax.set_yticks([])
     ax.legend(frameon=False, fontsize=8.5, loc="upper right")
     style(ax)
-    ax.set_title("How reasoning traces treat the model's own identity (v3, Wilson CIs)", loc="left", fontsize=11, pad=12)
+    ax.set_title("How reasoning traces state the model's own identity — across the 72 models that expose a trace",
+                 loc="left", fontsize=10.5, pad=12)
     save(fig, "fig_stance.png")
 
 
@@ -426,11 +440,14 @@ def fig_family_panels(reg, per):
         ax.set_yticks(range(nrow), [per[r[0]]["name"] for r in rows], fontsize=9)
         for i in range(nrow):
             for j in range(len(TARGETS)):
-                if M[i, j] >= 1:
-                    ax.text(j, i, f"{M[i,j]:.0f}", ha="center", va="center", fontsize=7.5,
-                            color="#ffffff" if M[i, j] > 0.6 * vmax else INK2)
+                if M[i, j] <= 0:
+                    continue  # truly-zero cells stay blank/white
+                txt = "<1" if M[i, j] < 1 else f"{M[i,j]:.0f}"
+                ax.text(j, i, txt, ha="center", va="center", fontsize=7.5,
+                        color="#ffffff" if M[i, j] > 0.6 * vmax else INK2)
         style(ax, bottom=False)
-        ax.set_title(f"{fam} — who they claim to be (% of records)", loc="left", fontsize=11, pad=10)
+        ax.set_title(f"{fam} — which name each model gives instead (each cell = % of that model's identity/creator records)",
+                     loc="left", fontsize=10, pad=10)
         fn = f"family/fam_{fam}.png"
         fig.savefig(FIGS / fn, dpi=200, bbox_inches="tight", facecolor=SURFACE)
         plt.close(fig)

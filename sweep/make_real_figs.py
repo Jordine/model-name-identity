@@ -43,11 +43,15 @@ def save(fig, name):
 
 
 def foreign_claims(j):
+    """Canonical foreign identities claimed. Reasoning-trace claims are dropped
+    when the trace's stance is role_play (an assigned persona, not a belief)."""
     out = set()
     jm = j["judgment"]
     fam = j.get("family", "")
-    for f in ("claimed_name", "claimed_creator",
-              "reasoning_claimed_name", "reasoning_claimed_creator"):
+    fields = ["claimed_name", "claimed_creator"]
+    if jm.get("reasoning_identity_stance") != "role_play":
+        fields += ["reasoning_claimed_name", "reasoning_claimed_creator"]
+    for f in fields:
         c = canon_identity(jm.get(f))
         if c and not is_self(c, fam, j.get("aliases", []), j["expected_identity"]):
             out.add(c)

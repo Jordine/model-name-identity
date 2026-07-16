@@ -18,14 +18,25 @@ GENERIC_TERMS = [
     "assistant", "ai assistant", "an ai", "artificial intelligence",
     "language model", "large language model", "llm", "chatbot",
     "conversational ai", "virtual assistant", "digital assistant",
+    "ai model", "text-based ai model", "language ai", "chat assistant", "the company",
+    "machine learning model", "large-scale language model", "generative ai",
     "助手", "人工智能", "智能助手", "大模型", "语言模型", "大型语言模型",
-    "人工智能助手", "ai助手", "聊天机器人",
-    "アシスタント", "人工知能", "言語モデル", "aiアシスタント",
-    "어시스턴트", "인공지능", "언어 모델", "ai 어시스턴트",
+    "人工智能助手", "ai助手", "聊天机器人", "聊天助手", "助手模型", "对话助手",
+    "智能搜索助理", "ai对话助手", "语言模型助手", "大规模语言模型", "语言ai",
+    "アシスタント", "人工知能", "言語モデル", "aiアシスタント", "aiモデル",
+    "aiチャットボット", "大規模言語モデル", "対話型ai", "言語ai",
+    "어시스턴트", "인공지능", "언어 모델", "ai 어시스턴트", "ai 헬피어", "ai 도우미",
+    "ai 비서", "대화형 ai", "챗봇", "언어 ai",
     "ассистент", "искусственный интеллект", "языковая модель", "ии", "нейросеть",
-    "asistente", "inteligencia artificial", "modelo de lenguaje",
+    "виртуальный помощник", "помощник", "языковой моделью",
+    "крупномасштабной языковой моделью", "большая языковая модель", "чат-бот",
+    "машинного обучения", "модель машинного обучения", "нейросетевая модель",
+    "asistente", "inteligencia artificial", "modelo de lenguaje", "ia conversacional",
+    "asistente virtual", "modelo de lenguaje formal", "chatbot",
     "trợ lý", "trí tuệ nhân tạo", "mô hình ngôn ngữ lớn", "mô hình ngôn ngữ",
-    "intelligence artificielle", "modèle de langage",
+    "trợ lý ảo", "trợ lý ai", "người máy", "chatbot",
+    "intelligence artificielle", "modèle de langage", "ia conversationnelle",
+    "assistant virtuel", "agent conversationnel",
     "ai 助手", "ai 비서", "ai 언어 모델", "ai 语言助手", "语言助手",
 ]
 
@@ -34,24 +45,32 @@ GENERIC_TERMS = [
 NAME_MAP = [
     (["chatgpt", "chat gpt", "чатгпт", "챗gpt", "챗지피티"], "chatgpt"),
     (["openai", "оупенэйай", "オープンai"], "openai"),
-    (["claude", "克劳德", "クロード", "클로드", "клод"], "claude"),
-    (["anthropic", "антропик", "アンソロピック", "앤트로픽"], "anthropic"),
-    (["gemini", "ジェミニ", "제미나이", "джемини"], "gemini"),
-    (["bard"], "gemini"),
+    (["claude", "克劳德", "クロード", "클로드", "клод", "клавдий", "клэр", "クロエ", "클라우드"], "claude"),
+    (["anthropic", "антропик", "アンソロピック", "앤트로픽", "안트로픽"], "anthropic"),
+    (["gemini", "ジェミニ", "제미나이", "джемини", "제미니"], "gemini"),
+    (["bard", "바드"], "gemini"),
+    (["deepmind", "딥마인드", "дипмайнд"], "google"),
     (["google", "谷歌", "グーグル", "구글", "гугл"], "google"),
     (["deepseek", "深度求索", "딥시크", "дипсик"], "deepseek"),
-    (["通义千问", "千问", "通义", "通義", "qwen", "tongyi", "큐원"], "qwen"),
-    (["阿里巴巴", "阿里云", "alibaba", "aliyun", "알리바바", "アリババ", "алибаба"], "alibaba"),
+    (["通义千问", "千问", "通义", "通義", "qwen", "tongyi", "큐원",
+      "тонги цяньвэнь", "тоньи цяньвэнь", "цяньвэнь", "тунъи"], "qwen"),
+    (["阿里巴巴", "阿里云", "alibaba", "aliyun", "알리바바", "アリババ", "алибаба",
+      "阿里", "아리바바", "알리 클라우드"], "alibaba"),
     (["llama", "ラマ", "라마", "лама", "льяма"], "llama"),
     (["meta", "メタ", "메타", "мета"], "meta"),
     (["kimi", "キミ", "키미", "кими"], "kimi"),
     (["moonshot", "月之暗面", "月の暗面", "문샷"], "moonshot"),
-    (["mistral", "мистраль", "ミストラル"], "mistral"),
-    (["grok", "грок"], "grok"), (["xai", "x-ai", "x.ai"], "xai"),
-    (["chatglm", "glm", "智谱", "zhipu", "z.ai", "z-ai"], "glm"),
+    (["mistral", "мистраль", "ミストラル", "미스트랄", "mixtral", "le chat", "lechat"], "mistral"),
+    (["grok", "грок", "그록"], "grok"), (["xai", "x-ai", "x.ai"], "xai"),
+    (["chatglm", "glm", "智谱", "zhipu", "z.ai", "z-ai", "지푸", "즈푸", "智譜"], "glm"),
     (["文心一言", "文心", "ernie", "wenxin"], "ernie"),
     (["百度", "baidu"], "baidu"),
-    (["混元", "hunyuan"], "hunyuan"), (["腾讯", "tencent"], "tencent"),
+    (["混元", "hunyuan", "혼원"], "hunyuan"),
+    (["腾讯", "tencent", "騰訊", "テンセント", "텐센트"], "tencent"),
+    (["亚马逊", "amazon", "アマゾン", "아마존"], "amazon"),
+    (["yandex", "яндекс", "алиса", "alice", "алису", "얀덱스"], "yandex"),
+    (["сбер", "sber", "gigachat", "гигачат", "рудалл"], "sber"),
+    (["bing", "빙", "бинг"], "microsoft"),
     (["豆包", "doubao", "云雀"], "doubao"), (["字节跳动", "字节", "bytedance"], "bytedance"),
     (["360智脑", "智脑", "360 zhinao", "qihoo"], "zhinao360"),
     (["讯飞星火", "星火", "spark", "iflytek", "讯飞"], "sparkdesk"),
@@ -77,7 +96,7 @@ NAME_MAP = [
 FAMILY_SELF = {
     "openai": {"chatgpt", "openai"},
     "anthropic": {"claude", "anthropic"},
-    "google": {"gemini", "google"}, "gemma": {"google"},
+    "google": {"gemini", "google"}, "gemma": {"google", "gemini"},
     "deepseek": {"deepseek"},
     "qwen": {"qwen", "alibaba"}, "alibaba": {"qwen", "alibaba"},
     "meta": {"llama", "meta"},
@@ -96,7 +115,7 @@ FAMILY_SELF = {
     "kuaishou": {"kat", "kuaishou", "kwaipilot"},
     "xiaomi": {"mimo", "xiaomi"},
     "stepfun": {"step", "stepfun"},
-    "amazon": {"nova", "amazon"},
+    "amazon": {"nova", "amazon", "alexa"},
     "cohere": {"command", "cohere", "aya", "north"},
     "inception": {"mercury", "inception"},
     "ai21": {"jamba", "ai21"},
@@ -114,19 +133,44 @@ FAMILY_SELF = {
 }
 
 
+# trailing lab/model suffixes that defeat name matching (通义千问模型 -> 通义千问)
+CJK_SUFFIX = ["模型", "大模型", "公司", "科技", "研究所", "实验室", "团队", "系列",
+              "モデル", "연구소", "팀", "회사", "모델"]
+# common traditional -> simplified so 聊天機器人 == 聊天机器人 (generic), 騰訊 == 腾讯
+TRAD2SIMP = str.maketrans("機語說對開發麼們產業騰訊龍認學實驗會單詞問誰",
+                          "机语说对开发么们产业腾讯龙认学实验会单词问谁")
+
+
 def canon_identity(raw: str | None) -> str | None:
-    """None for generics/empty; canon key for known identities; other:… else."""
+    """None for generics/empty; canon key for known identities; other:… else.
+
+    Order: known-name match FIRST (raw + CJK-suffix-stripped), then generic
+    filter, then residual `other:`. Fixes v2 bugs — generics leaking as claims,
+    cross-script self-names bucketed as hallucinations, `strip("an ")` char-set bug.
+    """
     if not raw:
         return None
-    low = raw.strip().lower()
-    if any(low == g or low.strip("an ") == g for g in GENERIC_TERMS) or \
-       any(g in low for g in GENERIC_TERMS if len(g) >= 4):
-        # exact or substring generic — unless a real name also appears
-        if not any(p in low for pats, _ in NAME_MAP for p in pats):
-            return None
-    for pats, canon in NAME_MAP:
-        if any(p in low for p in pats):
-            return canon
+    low = raw.strip().lower().translate(TRAD2SIMP)
+    stripped = low
+    for suf in CJK_SUFFIX:
+        if stripped.endswith(suf) and len(stripped) > len(suf):
+            stripped = stripped[:-len(suf)].strip("（）() 、,-··　 ").strip()
+    # 1. known identity name (raw or suffix-stripped)
+    for cand in (low, stripped):
+        for pats, canon in NAME_MAP:
+            if any(p in cand for p in pats):
+                return canon
+    # 2. generic descriptor? (strip a leading article properly, not char-set)
+    art = low
+    for a in ("an ", "a ", "the "):
+        if art.startswith(a):
+            art = art[len(a):].strip()
+            break
+    if any(low == g or art == g for g in GENERIC_TERMS) or \
+       any(g in low for g in GENERIC_TERMS
+           if len(g) >= 4 or (len(g) >= 2 and not g.isascii())):
+        # non-ASCII (CJK/Korean) generics substring-match at >=2 chars: 助手 in 小助手
+        return None
     if len(low) < 3:
         return None
     return f"other:{low[:40]}"

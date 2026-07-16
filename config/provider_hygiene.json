@@ -1571,7 +1571,7 @@
  "deepseek/deepseek-r1": {
   "provider": {
    "order": [
-    "azure"
+    "novita"
    ],
    "allow_fallbacks": false
   },
@@ -8706,7 +8706,7 @@
  "qwen/qwen3.5-9b": {
   "provider": {
    "order": [
-    "deepinfra"
+    "together"
    ],
    "allow_fallbacks": false
   },

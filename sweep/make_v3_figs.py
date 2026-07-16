@@ -6,6 +6,7 @@ Usage: python -m sweep.make_v3_figs
 
 import json
 import math
+import random
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -46,6 +47,38 @@ def wilson(d, n):
     c = (p + z * z / (2 * n)) / den
     h = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / den
     return max(0.0, (p - (c - h)) * 100), max(0.0, ((c + h) - p) * 100)
+
+
+def cluster_ci(units, reps=2000, seed=12345):
+    """Cluster-bootstrap 95% CI (pp) around the pooled rate.
+
+    `units` = list of (d, n) per independent cluster (a prompt-cell of 5 samples
+    for per-model bars; a whole model for pooled figures). Resamples clusters
+    with replacement so within-cluster correlation (90% of 5-sample cells are
+    unanimous) is preserved — record-level Wilson understates width ~2x. Returns
+    (lo_err, hi_err) in percentage points, drop-in for wilson()."""
+    units = [(d, n) for d, n in units if n > 0]
+    tot_d = sum(d for d, n in units)
+    tot_n = sum(n for d, n in units)
+    if tot_n == 0:
+        return 0.0, 0.0
+    point = 100 * tot_d / tot_n
+    k = len(units)
+    if k < 2:
+        return wilson(tot_d, tot_n)     # single cluster → nothing to resample
+    rng = random.Random(seed)
+    boots = []
+    for _ in range(reps):
+        bd = bn = 0
+        for _ in range(k):
+            d, n = units[rng.randrange(k)]
+            bd += d
+            bn += n
+        boots.append(100 * bd / bn if bn else 0.0)
+    boots.sort()
+    lo = boots[int(0.025 * reps)]
+    hi = boots[int(0.975 * reps)]
+    return max(0.0, point - lo), max(0.0, hi - point)
 
 
 def style(ax, bottom=True):
@@ -92,6 +125,7 @@ def gather():
     complete = complete_models(reg, hyg)
     rows = [j for j in load() if j["model_id"] in complete]
     per = defaultdict(lambda: {"n": 0, "d": 0, "claims": Counter(), "lang": defaultdict(lambda: [0, 0]),
+                               "cells": defaultdict(lambda: [0, 0]),
                                "cross_yes": Counter(), "cross_n": Counter(),
                                "plac_yes": 0, "plac_n": 0, "name": ""})
     for j in rows:
@@ -121,10 +155,13 @@ def gather():
         m["n"] += 1
         l = lang_of(cat)
         m["lang"][l][1] += 1
+        cell = m["cells"][j["prompt_id"]]   # prompt-cell = 5 samples (bootstrap cluster)
+        cell[1] += 1
         if fc:
             m["d"] += 1
             m["lang"][l][0] += 1
-            brands = {("hallucinated/other" if c.startswith("other:") else CREATOR_TO_BRAND.get(c, c)) for c in fc}
+            cell[0] += 1
+            brands = {("other/unlisted" if c.startswith("other:") else CREATOR_TO_BRAND.get(c, c)) for c in fc}
             for b in brands:
                 m["claims"][b] += 1
     return reg, {k: v for k, v in per.items() if v["n"] >= 40}
@@ -136,7 +173,7 @@ def fig_all_models(reg, per):
     n = len(items)
     names = [v["name"] for _, v in items]
     rates = np.array([100 * v["d"] / v["n"] for _, v in items])
-    errs = np.array([wilson(v["d"], v["n"]) for _, v in items]).T
+    errs = np.array([cluster_ci(list(v["cells"].values())) for _, v in items]).T
     fams = [reg[mid]["family"] for mid, _ in items]
     fam_drift = defaultdict(float)
     for (mid, v), f in zip(items, fams):
@@ -149,7 +186,7 @@ def fig_all_models(reg, per):
     ax.errorbar(rates, np.arange(n), xerr=errs, fmt="none", ecolor=INK2, elinewidth=0.7, capsize=1.5, zorder=4)
     ax.set_yticks(np.arange(n), names, fontsize=6.2)
     ax.set_ylim(-0.6, n - 0.4)
-    ax.set_xlabel("% of identity/creator prompts with a foreign self-claim (Wilson 95% CI)")
+    ax.set_xlabel("% of identity/creator prompts with a foreign self-claim (cluster-bootstrap 95% CI)")
     ax.set_ylabel("model (sorted)")
     ax.xaxis.grid(True, color=GRID, lw=0.8)
     ax.set_axisbelow(True)
@@ -168,7 +205,8 @@ def fig_lang_agg(per):
             agg[l][1] += t
     langs = ["en", "zh", "ja", "ko", "ru", "fr", "es", "vi"]
     vals = [100 * agg[l][0] / agg[l][1] for l in langs]
-    errs = np.array([wilson(agg[l][0], agg[l][1]) for l in langs]).T
+    errs = np.array([cluster_ci([tuple(v["lang"][l]) for v in per.values() if v["lang"].get(l, [0, 0])[1] > 0])
+                     for l in langs]).T
     fig, ax = plt.subplots(figsize=(7.8, 3.6))
     ax.bar(langs, vals, 0.62, color=CAT[0], zorder=3)
     ax.errorbar(range(len(langs)), vals, yerr=errs, fmt="none", ecolor=INK2, elinewidth=1, capsize=3, zorder=4)
@@ -178,7 +216,7 @@ def fig_lang_agg(per):
     ax.set_ylim(0, max(vals) + 3)
     ax.set_yticks([])
     style(ax)
-    ax.set_title("Foreign-claim rate by prompt language — balanced battery, all models pooled (Wilson CIs)",
+    ax.set_title("Foreign-claim rate by prompt language — balanced battery, all models pooled (model-clustered 95% CIs)",
                  loc="left", fontsize=11, pad=12)
     save(fig, "fig_lang_agg.png")
 
@@ -231,7 +269,7 @@ def fig_scrubout(reg, per):
             v = per[mid]
             xs.append(len(xs))
             ys.append(100 * v["d"] / v["n"])
-            es.append(wilson(v["d"], v["n"]))
+            es.append(cluster_ci(list(v["cells"].values())))
             tl.append(v["name"].replace("Kimi ", "").replace("Qwen", "Q"))
         if not xs:
             continue
@@ -247,7 +285,7 @@ def fig_scrubout(reg, per):
     ax.set_axisbelow(True)
     ax.legend(frameon=False, fontsize=8.5)
     style(ax)
-    ax.set_title("The scrub-out: foreign-identity rate across releases (v3, Wilson CIs)", loc="left", fontsize=11, pad=12)
+    ax.set_title("The scrub-out: foreign-identity rate across releases (v3, cluster-bootstrap 95% CIs)", loc="left", fontsize=11, pad=12)
     save(fig, "fig_scrubout.png")
 
 
@@ -264,7 +302,8 @@ def fig_cross(reg, per):
         pn += v["plac_n"]
     plac = 100 * py / pn if pn else 0
     rates = [(100 * ty[t] / tn[t] if tn[t] else 0) for t in targets]
-    errs = np.array([wilson(ty[t], tn[t]) for t in targets]).T
+    errs = np.array([cluster_ci([(v["cross_yes"].get(t, 0), v["cross_n"].get(t, 0))
+                                 for v in per.values() if v["cross_n"].get(t, 0) > 0]) for t in targets]).T
     order = np.argsort(rates)[::-1]
     labels = [["ChatGPT", "Claude", "Gemini", "DeepSeek", "Qwen", "Kimi", "Llama", "Grok", "Mistral", "Doubao"][i] for i in order]
     rr = [rates[i] for i in order]
@@ -273,12 +312,12 @@ def fig_cross(reg, per):
     ax.bar(range(len(rr)), rr, 0.62, color=CAT[0], zorder=3)
     ax.errorbar(range(len(rr)), rr, yerr=ee, fmt="none", ecolor=INK2, elinewidth=1, capsize=3, zorder=4)
     ax.axhline(plac, color=CAT[5], lw=1.6, ls="--", zorder=5,
-               label=f"placebo baseline ({plac:.1f}% — 'Are you Cobalt?')")
+               label=f"placebo baseline ({plac:.1f}% — fictional 'Are you Meridian-4/Solace/Cobalt?')")
     ax.set_xticks(range(len(rr)), labels, fontsize=9)
     ax.set_ylabel('% answering "yes"')
     ax.legend(frameon=False, fontsize=8.5, loc="upper right")
     style(ax)
-    ax.set_title('False-premise acceptance "Are you X?" vs placebo baseline (pooled, Wilson CIs)',
+    ax.set_title('False-premise acceptance "Are you X?" vs placebo baseline (pooled, model-clustered 95% CIs)',
                  loc="left", fontsize=11, pad=12)
     save(fig, "fig_cross.png")
 
@@ -289,7 +328,7 @@ def fig_flow(reg, per):
     fam_claims = defaultdict(Counter)
     for mid, v in per.items():
         for c, k in v["claims"].items():
-            c = "hallucinated/other" if c.startswith("other:") else CB.get(c, c)
+            c = "other/unlisted" if c.startswith("other:") else CB.get(c, c)
             fam_claims[reg[mid]["family"]][c] += k
     fams = sorted(fam_claims, key=lambda f: -sum(fam_claims[f].values()))[:10]
     cols = ["claude", "chatgpt", "qwen", "gemini", "nvidia", "deepseek", "llama", "other/unlisted"]
@@ -356,7 +395,7 @@ def fig_family_panels(reg, per):
     CB = {"anthropic": "claude", "openai": "chatgpt", "google": "gemini", "alibaba": "qwen",
           "meta": "llama", "moonshot": "kimi", "nvidia": "nvidia", "tencent": "hunyuan"}
     def to_col(c):
-        if c.startswith("other:") or c == "hallucinated/other":
+        if c.startswith("other:") or c == "other/unlisted":
             return "novel/unrec."
         c = CB.get(c, c)
         return c if c in TARGETS else "other lab"

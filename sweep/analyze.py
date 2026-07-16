@@ -44,7 +44,9 @@ GENERIC_TERMS = [
 # lowercase substrings incl. non-Latin renderings of major identities.
 NAME_MAP = [
     (["chatgpt", "chat gpt", "чатгпт", "챗gpt", "챗지피티"], "chatgpt"),
-    (["openai", "оупенэйай", "オープンai"], "openai"),
+    (["openai", "оупенэйай", "オープンai", "오픈ai", "오픈에이아이"], "openai"),
+    (["o4-mini", "o3-mini", "o1-mini", "o4 mini"], "chatgpt"),
+    (["lamda", "람다", "лямда"], "gemini"),
     (["claude", "克劳德", "クロード", "클로드", "клод", "клавдий", "клэр", "クロエ", "클라우드"], "claude"),
     (["anthropic", "антропик", "アンソロピック", "앤트로픽", "안트로픽"], "anthropic"),
     (["gemini", "ジェミニ", "제미나이", "джемини", "제미니"], "gemini"),

@@ -126,15 +126,15 @@
   "models": 1
  },
  {
-  "file": "family/fam_openai.png",
-  "family": "openai",
-  "drift": 27,
-  "models": 6
- },
- {
   "file": "family/fam_ant.png",
   "family": "ant",
   "drift": 24,
+  "models": 3
+ },
+ {
+  "file": "family/fam_openai.png",
+  "family": "openai",
+  "drift": 22,
   "models": 3
  },
  {
@@ -162,12 +162,6 @@
   "models": 1
  },
  {
-  "file": "family/fam_gemma.png",
-  "family": "gemma",
-  "drift": 3,
-  "models": 1
- },
- {
   "file": "family/fam_nex.png",
   "family": "nex",
   "drift": 3,
@@ -177,6 +171,12 @@
   "file": "family/fam_ai21.png",
   "family": "ai21",
   "drift": 3,
+  "models": 1
+ },
+ {
+  "file": "family/fam_gemma.png",
+  "family": "gemma",
+  "drift": 1,
   "models": 1
  }
 ]

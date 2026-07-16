@@ -42,19 +42,48 @@ def save(fig, name):
     print(f"  {name}")
 
 
+_ADJ = None
+
+
+def _adjudications():
+    """{adj_key: verdict} from the adjudication pass, loaded once."""
+    global _ADJ
+    if _ADJ is None:
+        _ADJ = {}
+        p = ROOT / "results" / "adjudications.jsonl"
+        if p.exists():
+            for l in open(p, encoding="utf-8"):
+                try:
+                    r = json.loads(l)
+                except json.JSONDecodeError:
+                    continue
+                if r.get("verdict"):
+                    _ADJ[r["adj_key"]] = r["verdict"]
+    return _ADJ
+
+
 def foreign_claims(j):
-    """Canonical foreign identities claimed. Reasoning-trace claims are dropped
-    when the trace's stance is role_play (an assigned persona, not a belief)."""
-    out = set()
+    """Canonical foreign identities claimed, after every FP filter:
+      * canon (generics/cross-script self-names handled in analyze.canon)
+      * role_play reasoning traces dropped
+      * adjudication: if a record was reviewed and NOT confirmed genuine_foreign,
+        it returns empty (the robust FP removal). Records with no adjudication
+        (e.g. before the pass runs) fall back to canon+role_play only.
+    """
     jm = j["judgment"]
     fam = j.get("family", "")
     fields = ["claimed_name", "claimed_creator"]
     if jm.get("reasoning_identity_stance") != "role_play":
         fields += ["reasoning_claimed_name", "reasoning_claimed_creator"]
+    out = set()
     for f in fields:
         c = canon_identity(jm.get(f))
         if c and not is_self(c, fam, j.get("aliases", []), j["expected_identity"]):
             out.add(c)
+    if out:
+        adj = _adjudications().get(f"{j['resume_key']}::t{j.get('turn_index', 0)}")
+        if adj is not None and adj != "genuine_foreign":
+            return set()
     return out
 
 

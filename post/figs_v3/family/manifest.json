@@ -2,61 +2,61 @@
  {
   "file": "family/fam_kimi.png",
   "family": "kimi",
-  "drift": 559,
+  "drift": 550,
   "models": 6
  },
  {
   "file": "family/fam_poolside.png",
   "family": "poolside",
-  "drift": 485,
+  "drift": 458,
   "models": 2
  },
  {
   "file": "family/fam_mistral.png",
   "family": "mistral",
-  "drift": 439,
+  "drift": 423,
   "models": 16
  },
  {
   "file": "family/fam_qwen.png",
   "family": "qwen",
-  "drift": 389,
-  "models": 20
+  "drift": 371,
+  "models": 18
  },
  {
   "file": "family/fam_nvidia.png",
   "family": "nvidia",
-  "drift": 335,
+  "drift": 310,
   "models": 5
  },
  {
   "file": "family/fam_perceptron.png",
   "family": "perceptron",
-  "drift": 300,
+  "drift": 282,
   "models": 1
  },
  {
   "file": "family/fam_nous.png",
   "family": "nous",
-  "drift": 200,
+  "drift": 193,
   "models": 2
  },
  {
   "file": "family/fam_minimax.png",
   "family": "minimax",
-  "drift": 190,
+  "drift": 177,
   "models": 1
  },
  {
   "file": "family/fam_deepseek.png",
   "family": "deepseek",
-  "drift": 156,
+  "drift": 153,
   "models": 9
  },
  {
   "file": "family/fam_meta.png",
   "family": "meta",
-  "drift": 139,
+  "drift": 135,
   "models": 6
  },
  {
@@ -68,61 +68,61 @@
  {
   "file": "family/fam_arcee.png",
   "family": "arcee",
-  "drift": 121,
+  "drift": 120,
+  "models": 1
+ },
+ {
+  "file": "family/fam_ibm.png",
+  "family": "ibm",
+  "drift": 101,
   "models": 1
  },
  {
   "file": "family/fam_anthropic.png",
   "family": "anthropic",
-  "drift": 107,
+  "drift": 100,
   "models": 5
- },
- {
-  "file": "family/fam_ibm.png",
-  "family": "ibm",
-  "drift": 103,
-  "models": 1
  },
  {
   "file": "family/fam_google.png",
   "family": "google",
-  "drift": 97,
+  "drift": 96,
   "models": 5
- },
- {
-  "file": "family/fam_baidu.png",
-  "family": "baidu",
-  "drift": 82,
-  "models": 1
  },
  {
   "file": "family/fam_amazon.png",
   "family": "amazon",
-  "drift": 80,
+  "drift": 79,
   "models": 3
+ },
+ {
+  "file": "family/fam_baidu.png",
+  "family": "baidu",
+  "drift": 77,
+  "models": 1
  },
  {
   "file": "family/fam_microsoft.png",
   "family": "microsoft",
-  "drift": 77,
+  "drift": 75,
   "models": 1
  },
  {
   "file": "family/fam_perplexity.png",
   "family": "perplexity",
-  "drift": 72,
+  "drift": 69,
   "models": 1
  },
  {
   "file": "family/fam_reka.png",
   "family": "reka",
-  "drift": 71,
+  "drift": 66,
   "models": 2
  },
  {
   "file": "family/fam_kuaishou.png",
   "family": "kuaishou",
-  "drift": 38,
+  "drift": 37,
   "models": 1
  },
  {
@@ -144,16 +144,16 @@
   "models": 2
  },
  {
-  "file": "family/fam_zhipu.png",
-  "family": "zhipu",
-  "drift": 13,
-  "models": 5
- },
- {
   "file": "family/fam_stepfun.png",
   "family": "stepfun",
   "drift": 12,
   "models": 1
+ },
+ {
+  "file": "family/fam_zhipu.png",
+  "family": "zhipu",
+  "drift": 11,
+  "models": 5
  },
  {
   "file": "family/fam_xiaomi.png",

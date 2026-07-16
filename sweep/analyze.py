@@ -221,9 +221,13 @@ def load():
 
 
 def lang_of(category: str) -> str:
-    return category.split("_", 1)[1] if category.startswith("direct_") else \
-        {"creator_en": "en", "casual": "en", "probe_self": "en",
-         "probe_cross": "en", "multi_turn": "mixed", "system_probe": "en"}.get(category, "en")
+    # direct_/creator_/casual_ are all language-tagged (bugfix: creator_XX and
+    # casual_XX previously fell through to the "en" default, contaminating English)
+    for pre in ("direct_", "creator_", "casual_"):
+        if category.startswith(pre):
+            return category[len(pre):]
+    return {"probe_self": "en", "probe_cross": "en", "probe_placebo": "en",
+            "multi_turn": "mixed", "system_probe": "en"}.get(category, "en")
 
 
 def main():

@@ -18,7 +18,12 @@ from matplotlib.patches import Patch
 
 from .analyze import load, lang_of, FAMILY_SELF
 from .make_real_figs import foreign_claims, CREATOR_TO_BRAND
-from .prompts import prompts_for_model
+from .prompts import prompts_for_model, CORE, LANGS, prompt_id
+
+# the exactly-shared identity+creator battery (8 prompts × 8 languages) — excludes
+# legacy EN/ZH prompt variants left over from the v2 reuse, so languages are matched
+BATTERY_CORE = {prompt_id(k, lang) for k, (role, _) in CORE.items()
+                if role in ("identity", "creator") for lang in LANGS}
 
 ROOT = Path(__file__).resolve().parent.parent
 FIGS = ROOT / "post" / "figs_v3"
@@ -110,6 +115,8 @@ def gather():
             continue
         if not is_identity(cat):
             continue  # identity+creator only for the drift rate (casual reported separately)
+        if j["prompt_id"] not in BATTERY_CORE:
+            continue  # exclude legacy EN/ZH variants → truly balanced across languages
         fc = foreign_claims(j)
         m["n"] += 1
         l = lang_of(cat)
@@ -203,7 +210,7 @@ def fig_lang_heatmap(reg, per):
     cb = fig.colorbar(im, ax=ax, shrink=0.7, pad=0.02)
     cb.set_label("% discrepant", fontsize=8, color=INK2)
     cb.outline.set_visible(False)
-    ax.set_title("Per-language misidentification — top drifters + frontier Claudes (cell = % of ~30 records)",
+    ax.set_title("Per-language misidentification — top drifters + frontier Claudes (cell = % of 40 identity/creator records)",
                  loc="left", fontsize=11, pad=12)
     save(fig, "fig_lang_heatmap.png")
 
@@ -285,7 +292,7 @@ def fig_flow(reg, per):
             c = "hallucinated/other" if c.startswith("other:") else CB.get(c, c)
             fam_claims[reg[mid]["family"]][c] += k
     fams = sorted(fam_claims, key=lambda f: -sum(fam_claims[f].values()))[:10]
-    cols = ["claude", "chatgpt", "qwen", "gemini", "nvidia", "deepseek", "llama", "hallucinated/other"]
+    cols = ["claude", "chatgpt", "qwen", "gemini", "nvidia", "deepseek", "llama", "other/unlisted"]
     fig, ax = plt.subplots(figsize=(8.8, 4.6))
     left = np.zeros(len(fams))
     for k, c in enumerate(cols):
@@ -293,7 +300,7 @@ def fig_flow(reg, per):
         for f in fams:
             tot = sum(fam_claims[f].values())
             v = fam_claims[f].get(c, 0)
-            if c == "hallucinated/other":
+            if c == "other/unlisted":
                 v = tot - sum(fam_claims[f].get(x, 0) for x in cols[:-1])
             vals.append(100 * v / tot if tot else 0)
         ax.barh(fams[::-1], np.array(vals)[::-1], left=left[::-1], height=0.62, color=CAT[k % 8],
@@ -345,12 +352,12 @@ def fig_stance(reg, per):
 
 def fig_family_panels(reg, per):
     TARGETS = ["chatgpt", "claude", "gemini", "deepseek", "qwen", "kimi", "llama",
-               "mistral", "glm", "grok", "nvidia", "doubao", "other lab", "halluc./other"]
+               "mistral", "glm", "grok", "nvidia", "doubao", "other lab", "novel/unrec."]
     CB = {"anthropic": "claude", "openai": "chatgpt", "google": "gemini", "alibaba": "qwen",
           "meta": "llama", "moonshot": "kimi", "nvidia": "nvidia", "tencent": "hunyuan"}
     def to_col(c):
         if c.startswith("other:") or c == "hallucinated/other":
-            return "halluc./other"
+            return "novel/unrec."
         c = CB.get(c, c)
         return c if c in TARGETS else "other lab"
     (FIGS / "family").mkdir(parents=True, exist_ok=True)

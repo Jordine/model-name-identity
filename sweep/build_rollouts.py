@@ -104,8 +104,10 @@ def prompt_label(cat, pid, content):
 
 
 def anchor(name):
-    """GitHub heading-anchor slug for a model name."""
-    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+    """GitHub heading-anchor slug: downcase, DROP punctuation (so '4.8' -> '48',
+    not '4-8'), then spaces -> hyphens. Must match GFM or the index links break."""
+    s = re.sub(r"[^\w\- ]", "", name.lower())
+    return re.sub(r"\s+", "-", s.strip())
 
 
 def collect_model(mid, name, fam, exp, aliases, rows, jud, verdicts):
@@ -142,8 +144,60 @@ def collect_model(mid, name, fam, exp, aliases, rows, jud, verdicts):
     return (100 * dn / tot if tot else 0), dn, tot, claims, cross, recs, dict(lang_stats)
 
 
+LANG_ORDER = ["en", "zh", "ja", "ko", "ru", "fr", "es", "vi"]
+# collapse duplicate family slugs so a vendor's models share one page
+VENDOR = {"olmo": "allenai", "alibaba": "qwen", "gemma": "google", "moonshot": "kimi"}
+VENDOR_NAME = {"openai": "OpenAI", "anthropic": "Anthropic", "google": "Google", "deepseek": "DeepSeek",
+               "qwen": "Qwen / Alibaba", "meta": "Meta (Llama)", "kimi": "Moonshot (Kimi)", "mistral": "Mistral",
+               "xai": "xAI (Grok)", "zhipu": "Zhipu (GLM)", "baidu": "Baidu", "tencent": "Tencent",
+               "bytedance": "ByteDance", "microsoft": "Microsoft", "nvidia": "NVIDIA", "cohere": "Cohere",
+               "amazon": "Amazon", "nous": "Nous", "perplexity": "Perplexity", "allenai": "Ai2 (OLMo)",
+               "minimax": "MiniMax", "poolside": "Poolside", "perceptron": "Perceptron", "reka": "Reka",
+               "ai21": "AI21", "upstage": "Upstage", "ibm": "IBM", "aisingapore": "AI Singapore",
+               "liquid": "Liquid", "inception": "Inception", "stepfun": "StepFun", "kuaishou": "Kuaishou",
+               "xiaomi": "Xiaomi", "nex": "Nex", "sakana": "Sakana", "arcee": "Arcee", "writer": "Writer",
+               "inflection": "Inflection", "cogito": "Cogito"}
+
+
+def vendor_of(fam):
+    return VENDOR.get(fam, fam)
+
+
+def vname(v):
+    return VENDOR_NAME.get(v, v.title())
+
+
+def render_section(m):
+    """Full markdown for one model: summary lines + every drift record by language."""
+    rate, dn, tot, name, fam, exp, claims, cross, recs, lstats = m
+    L = [f"## {name}\n",
+         f"official **{exp}** · family `{fam}` · spontaneous mismatch **{rate:.0f}%** ({dn}/{tot})  "]
+    drifting = sorted(((l, d, n) for l, (d, n) in lstats.items() if d), key=lambda x: -x[1] / x[2])
+    if drifting:
+        parts = " · ".join(f"{LANG_NAME.get(l, l)} {100*d/n:.0f}% ({d}/{n})" for l, d, n in drifting)
+        clean = sorted(LANG_NAME.get(l, l) for l, (d, n) in lstats.items() if n and not d)
+        L.append("**By language:** " + parts + ("  ·  clean in " + ", ".join(clean) if clean else "") + "  ")
+    if claims:
+        L.append("**Claims as:** " + " · ".join(f"{brand(c)} ×{n}" for c, n in claims.most_common()) + "  ")
+    if cross:
+        L.append("**Accepts when asked “are you X?”:** " + ", ".join(f"{brand(c)} ×{n}" for c, n in cross.most_common()) + "  ")
+    L.append("")
+    bylang = defaultdict(list)
+    for lang, prompt, snippet, claimed in recs:
+        bylang[lang].append((prompt, snippet, claimed))
+    for lang in LANG_ORDER + sorted(set(bylang) - set(LANG_ORDER)):
+        if lang not in bylang:
+            continue
+        L.append(f"**{LANG_NAME.get(lang, lang)}**  ")
+        for prompt, snippet, claimed in bylang[lang]:
+            L.append(f"- *{prompt}* → **{claimed}**  \n  {snippet}")
+        L.append("")
+    return L
+
+
 def main():
     OUT.mkdir(exist_ok=True)
+    (OUT / "mismatches").mkdir(exist_ok=True)
     reg, jud, rec = collect()
     verdicts = adj_verdicts()
     models = []
@@ -156,50 +210,42 @@ def main():
             models.append((rate, dn, tot, name, fam, exp, claims, cross, recs, lstats))
     models.sort(key=lambda x: -x[0])
 
+    # full records split by vendor so every page renders on GitHub (<512 KB each)
+    byv = defaultdict(list)
+    for m in models:
+        byv[vendor_of(m[4])].append(m)
+    link = {}
+    for v, ms in sorted(byv.items()):
+        fn = f"mismatches/{safe(v)}.md"
+        VL = [f"# Identity mismatches — {vname(v)}\n",
+              f"Every spontaneous cross-vendor identity claim by {vname(v)} models "
+              f"({len(ms)} models, worst-first). Back to the [index](../MISMATCHES.md) · "
+              f"full browser [rollouts/index.html](../index.html).\n"]
+        for m in ms:
+            VL += render_section(m)
+        (OUT / fn).write_text("\n".join(VL), encoding="utf-8")
+        for m in ms:
+            link[m[3]] = f"./{fn}#{anchor(m[3])}"
+
+    # index: scannable summary table + per-vendor links (renders fully on GitHub)
     L = ["# Identity mismatches — where models name another vendor as themselves\n",
          f"Across {len(models)} models: what each one claims to be when it *doesn't* claim its own "
-         "identity, with copy-pasteable examples so you can reproduce a specific case "
-         "(e.g. \"Claude Opus 4.8 → DeepSeek in Chinese\"). **Rate** is the spontaneous mismatch rate on the "
-         "identity/creator battery. *Claims as* counts spontaneous answers; *accepts when asked* counts the "
-         "\"are you X?\" suggestibility probes (a separate experiment — not in the rate).\n",
-         "This lists **every** spontaneous mismatch. For all answers from all models (drift or not), "
-         "open the full browser [`rollouts/index.html`](./index.html) (GitHub Pages / any static host) "
-         "or search the raw [`rollouts_data.json`](./rollouts_data.json).\n",
+         "identity. **Rate** is the spontaneous mismatch rate on the identity/creator battery; "
+         "*claims as* is what it names instead. Click a model for every prompt + response "
+         "(e.g. \"Claude Opus 4.8 → DeepSeek in Chinese\", to reproduce it).\n",
+         "Records are split by vendor so each page renders on GitHub. For **all** answers from **all** "
+         "models (drift or not), open the full browser [`rollouts/index.html`](./index.html) or the raw "
+         "[`rollouts_data.json`](./rollouts_data.json).\n",
          "| model | family | mismatch rate | claims as |", "|---|---|---|---|"]
-    for rate, dn, tot, name, fam, exp, claims, cross, recs, lstats in models:
+    for m in models:
+        rate, dn, tot, name, fam, claims = m[0], m[1], m[2], m[3], m[4], m[6]
         top = ", ".join(brand(c) for c, _ in claims.most_common(3)) or "—"
-        L.append(f"| [{name}](#{anchor(name)}) | {fam} | {rate:.0f}% ({dn}/{tot}) | {top} |")
-    L.append("")
-    order = ["en", "zh", "ja", "ko", "ru", "fr", "es", "vi"]
-    for rate, dn, tot, name, fam, exp, claims, cross, recs, lstats in models:
-        L.append(f"## {name}\n")
-        L.append(f"official **{exp}** · family `{fam}` · spontaneous mismatch **{rate:.0f}%** ({dn}/{tot})  ")
-        drifting = sorted(((l, d, n) for l, (d, n) in lstats.items() if d),
-                          key=lambda x: -x[1] / x[2])
-        if drifting:
-            parts = " · ".join(f"{LANG_NAME.get(l, l)} {100*d/n:.0f}% ({d}/{n})" for l, d, n in drifting)
-            clean = sorted(LANG_NAME.get(l, l) for l, (d, n) in lstats.items() if n and not d)
-            line = "**By language:** " + parts
-            if clean:
-                line += "  ·  clean in " + ", ".join(clean)
-            L.append(line + "  ")
-        if claims:
-            L.append("**Claims as:** " + " · ".join(f"{brand(c)} ×{n}" for c, n in claims.most_common()) + "  ")
-        if cross:
-            L.append("**Accepts when asked “are you X?”:** " + ", ".join(f"{brand(c)} ×{n}" for c, n in cross.most_common()) + "  ")
-        L.append("")
-        bylang = defaultdict(list)
-        for lang, prompt, snippet, claimed in recs:
-            bylang[lang].append((prompt, snippet, claimed))
-        for lang in order + sorted(set(bylang) - set(order)):
-            if lang not in bylang:
-                continue
-            L.append(f"**{LANG_NAME.get(lang, lang)}**  ")
-            for prompt, snippet, claimed in bylang[lang]:
-                L.append(f"- *{prompt}* → **{claimed}**  \n  {snippet}")
-            L.append("")
+        L.append(f"| [{name}]({link[name]}) | {fam} | {rate:.0f}% ({dn}/{tot}) | {top} |")
+    L.append("\n## By vendor\n")
+    for v in sorted(byv, key=lambda v: -len(byv[v])):
+        L.append(f"- [{vname(v)}](./mismatches/{safe(v)}.md) — {len(byv[v])} model{'s' if len(byv[v]) != 1 else ''}")
     (OUT / "MISMATCHES.md").write_text("\n".join(L), encoding="utf-8")
-    print(f"wrote rollouts/MISMATCHES.md — {len(models)} models with ≥1 cross-vendor claim")
+    print(f"wrote MISMATCHES.md index + {len(byv)} vendor files ({len(models)} models)")
 
 
 if __name__ == "__main__":

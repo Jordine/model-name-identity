@@ -35,7 +35,8 @@ MODELS.md            every model: queried / raw-weights / excluded (bullets + re
 prompts.jsonl        the complete prompt battery, one prompt per line, no commentary
 figures/             the final figures (fig_*.png) + per-family panels (family/)
 rollouts/
-  MISMATCHES.md      searchable summary of every cross-vendor claim, with examples
+  MISMATCHES.md      index of every model that names another vendor (rate + claims)
+  mismatches/*.md    full records per vendor — every prompt + response, by language
   index.html         full browser over every model & answer (serve over http)
   rollouts_data.json data behind the browser (all 204 models, compact)
 config/

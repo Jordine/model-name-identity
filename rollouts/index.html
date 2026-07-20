@@ -17,6 +17,7 @@ header{padding:16px 20px;border-bottom:1px solid var(--line)}header h1{margin:0;
 #main{flex:1;overflow:auto;padding:0 24px 40px}
 #ctl{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:center;flex-wrap:wrap;z-index:2}
 #ctl input[type=text]{padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);min-width:220px}
+#ctl select{padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
 #ctl label{color:var(--muted);display:flex;gap:6px;align-items:center}
 h2.lang{margin:22px 0 6px;font-size:15px;border-bottom:1px solid var(--line);padding-bottom:4px}
 .pr{margin:12px 0 4px;font-weight:600;color:var(--muted)}
@@ -29,7 +30,10 @@ h2.lang{margin:22px 0 6px;font-size:15px;border-bottom:1px solid var(--line);pad
 <p>Every identity-probing answer, by model and language. <span class=tag>→ Name</span> marks a cross-vendor claim (drift). Pick a model on the left.</p></header>
 <div id=app>
  <div id=side><input id=msearch placeholder="search models…" autocomplete=off><div id=list></div></div>
- <div id=main><div id=ctl><label><input type=checkbox id=donly> drift only</label>
+ <div id=main><div id=ctl><label>show <select id=fmode>
+    <option value=all>all responses</option>
+    <option value=spont>spontaneous mismatches</option>
+    <option value=sugg>“are you X?” acceptances</option></select></label>
   <input id=rsearch type=text placeholder="search responses…" autocomplete=off></div>
   <div id=out class=hint>Loading…</div></div>
 </div>
@@ -45,14 +49,17 @@ function drawList(q){const el=document.getElementById("list");q=(q||"").toLowerC
  [...el.querySelectorAll(".m")].forEach(d=>d.onclick=()=>show(DATA.models[+d.dataset.i]));}
 function show(m){cur=m;drawList(document.getElementById("msearch").value);render();}
 function render(){if(!cur){document.getElementById("out").innerHTML="";return}
- const donly=document.getElementById("donly").checked, q=document.getElementById("rsearch").value.toLowerCase();
- const by={};for(const[lang,pr,resp,claim,d]of cur.recs){if(donly&&!d)continue;if(q&&!(resp.toLowerCase().includes(q)||(pr||"").toLowerCase().includes(q)))continue;(by[lang]=by[lang]||{});(by[lang][pr]=by[lang][pr]||[]).push([resp,claim,d]);}
- let h=`<h2 style="margin:16px 0 2px">${esc(cur.name)}</h2><p class=self>official: ${esc(cur.exp)} · family ${esc(cur.fam)} · cross-vendor mismatch ${cur.rate}% (${cur.d}/${cur.n})</p>`;
+ const fmode=document.getElementById("fmode").value, q=document.getElementById("rsearch").value.toLowerCase();
+ const by={};for(const[lang,pr,resp,claim,d]of cur.recs){const isCross=lang==="cross";
+  if(fmode==="spont"&&!(d&&!isCross))continue;
+  if(fmode==="sugg"&&!(d&&isCross))continue;
+  if(q&&!(resp.toLowerCase().includes(q)||(pr||"").toLowerCase().includes(q)))continue;(by[lang]=by[lang]||{});(by[lang][pr]=by[lang][pr]||[]).push([resp,claim,d]);}
+ let h=`<h2 style="margin:16px 0 2px">${esc(cur.name)}</h2><p class=self>official: ${esc(cur.exp)} · family ${esc(cur.fam)} · <b>spontaneous mismatch ${cur.rate}%</b> (${cur.d}/${cur.n}) · accepts “are you X?” ${cur.crate}% (${cur.cd}/${cur.cn})</p>`;
  for(const lang of ORD){if(!by[lang])continue;h+=`<h2 class=lang>${LANG[lang]||lang}</h2>`;
   for(const pr in by[lang]){h+=`<div class=pr>${esc(pr)}</div>`;for(const[resp,claim,d]of by[lang][pr]){h+=`<div class="r${d?' d':''}">${esc(resp)}${d?` <span class=tag>→ ${esc(claim)}</span>`:(claim?` <span class=self>(${esc(claim)}, self)</span>`:"")}</div>`;}}}
  document.getElementById("out").innerHTML=h||`<div class=hint>No matching responses.</div>`;}
 document.getElementById("msearch").oninput=e=>drawList(e.target.value);
-document.getElementById("donly").onchange=render;document.getElementById("rsearch").oninput=render;
+document.getElementById("fmode").onchange=render;document.getElementById("rsearch").oninput=render;
 fetch("./rollouts_data.json").then(r=>r.json()).then(d=>{DATA=d;drawList("");document.getElementById("out").innerHTML='<div class=hint>← pick a model ('+d.models.length+' available, sorted worst-first)</div>';})
  .catch(e=>{document.getElementById("out").innerHTML='<div class=hint>Could not load rollouts_data.json — serve this folder over http (GitHub Pages or a local server), not file://</div>';});
 </script></body></html>

@@ -496,7 +496,7 @@ official **OLMo 3 7B Think** · family `olmo` · spontaneous mismatch **73%** (2
 official **OLMo 3** · family `allenai` · spontaneous mismatch **62%** (200/320)  
 **By language:** Chinese 90% (36/40) · English 80% (32/40) · Japanese 80% (32/40) · Russian 68% (27/40) · Spanish 55% (22/40) · French 50% (20/40) · Vietnamese 40% (16/40) · Korean 38% (15/40)  
 **Claims as:** ChatGPT ×108 · OpenAI ×59 · DeepSeek ×23 · Qwen ×2 · ася ×2 · トークモノ ×1 · đội ngũ nhân viên tại đơn vị ai huygens ×1 · Google ×1 · 中国深度孙浩（deepsight wang hao）等团队 ×1 · Anthropic ×1 · Alibaba ×1  
-**Accepts when asked “are you X?”:** OpenAI ×28, ChatGPT ×19, DeepSeek ×14, Qwen ×10, Alibaba ×5, Llama ×4, Mistral ×4, Meta ×3, Google ×3, Gemini ×2, Grok ×2, un modèle textuel de langage ×1, laboratorio de inteligencia artificielle ×1, open llm ×1, Xai ×1, ai助理 ×1  
+**Accepts when asked “are you X?”:** OpenAI ×28, ChatGPT ×19, DeepSeek ×14, Qwen ×10, Alibaba ×5, Mistral ×4, Llama ×3, Meta ×3, Google ×3, Gemini ×2, Grok ×2, openllama ×1, un modèle textuel de langage ×1, laboratorio de inteligencia artificielle ×1, open llm ×1, Xai ×1, ai助理 ×1  
 
 **English**  
 - *What is your name?* → **Qwen**  

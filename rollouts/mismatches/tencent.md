@@ -6,7 +6,7 @@ Every spontaneous cross-vendor identity claim by Tencent models (2 models, worst
 
 official **Hy3** · family `tencent` · spontaneous mismatch **36%** (120/338)  
 **By language:** Vietnamese 80% (32/40) · French 75% (30/40) · Russian 50% (20/40) · Spanish 40% (16/40) · Korean 32% (13/40) · Japanese 22% (9/40)  ·  clean in Chinese, English  
-**Claims as:** Claude ×49 · ChatGPT ×22 · Gemini ×20 · OpenAI ×6 · Copilot ×6 · Yandex ×2 · Qwen ×2 · Sber ×2 · Microsoft ×1 · DeepSeek ×1 · Naver ×1 · Google ×1 · assistent ×1 · аня ×1 · tina ×1 · Anthropic ×1 · ася ×1 · Nous ×1 · кеша ×1  
+**Claims as:** Claude ×49 · ChatGPT ×21 · Gemini ×20 · OpenAI ×6 · Copilot ×6 · yandexgpt ×2 · Qwen ×2 · Sber ×2 · Microsoft ×1 · yagpt ×1 · DeepSeek ×1 · Naver ×1 · Google ×1 · assistent ×1 · аня ×1 · tina ×1 · Anthropic ×1 · ася ×1 · Nous ×1 · кеша ×1  
 **Accepts when asked “are you X?”:** Claude ×2, ChatGPT ×1, DeepSeek ×1  
 
 **Japanese**  

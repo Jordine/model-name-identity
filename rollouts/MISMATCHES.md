@@ -18,7 +18,7 @@ Records are split by vendor so each page renders on GitHub. For **all** answers 
 | [Nemotron Super 49B](./mismatches/nvidia.md#nemotron-super-49b) | nvidia | 53% (180/338) | Qwen, OpenAI, ChatGPT |
 | [Kimi K2](./mismatches/kimi.md#kimi-k2) | kimi | 46% (157/338) | Claude, Anthropic, ChatGPT |
 | [Kimi K2 0905](./mismatches/kimi.md#kimi-k2-0905) | kimi | 45% (151/338) | Claude, Anthropic |
-| [Hermes 3 405B Instruct](./mismatches/nous.md#hermes-3-405b-instruct) | nous | 43% (146/338) | OpenAI, ChatGPT, Google |
+| [Hermes 3 405B Instruct](./mismatches/nous.md#hermes-3-405b-instruct) | nous | 44% (150/338) | OpenAI, ChatGPT, Google |
 | [Qwen2.5 7B Instruct](./mismatches/qwen.md#qwen25-7b-instruct) | qwen | 41% (138/338) | Claude, Anthropic, ChatGPT |
 | [Hermes 3 70B Instruct](./mismatches/nous.md#hermes-3-70b-instruct) | nous | 40% (134/338) | Google, Amazon, Alexa |
 | [Kimi K2.5](./mismatches/kimi.md#kimi-k25) | kimi | 38% (130/338) | Claude, Anthropic, ChatGPT |
@@ -26,25 +26,25 @@ Records are split by vendor so each page renders on GitHub. For **all** answers 
 | [ERNIE 4.5 VL 424B A47B](./mismatches/baidu.md#ernie-45-vl-424b-a47b) | baidu | 36% (122/338) | OpenAI, DeepSeek, ChatGPT |
 | [Hy3](./mismatches/tencent.md#hy3) | tencent | 36% (120/338) | Claude, ChatGPT, Gemini |
 | [Granite 4.1 8B](./mismatches/ibm.md#granite-41-8b) | ibm | 31% (106/338) | ChatGPT, Claude, Mistral |
+| [Mistral Nemo](./mismatches/mistral.md#mistral-nemo) | mistral | 29% (97/331) | nemistral, ChatGPT, Nvidia |
 | [Nemotron Nano 9B V2](./mismatches/nvidia.md#nemotron-nano-9b-v2) | nvidia | 29% (99/338) | Qwen, Alibaba, тонги |
 | [Ministral 3 3B 2512](./mismatches/mistral.md#ministral-3-3b-2512) | mistral | 28% (94/338) | ChatGPT, OpenAI, text-davinci-003 |
 | [Sonar Pro](./mismatches/perplexity.md#sonar-pro) | perplexity | 26% (87/338) | OpenAI, ChatGPT, Qwen |
-| [Llama 3.2 3B Instruct](./mismatches/meta.md#llama-32-3b-instruct) | meta | 24% (81/337) | Microsoft, Google, luna |
+| [Llama 3.2 3B Instruct](./mismatches/meta.md#llama-32-3b-instruct) | meta | 24% (82/337) | Microsoft, Google, luna |
 | [Phi 4](./mismatches/microsoft.md#phi-4) | microsoft | 23% (79/338) | OpenAI, ChatGPT, Llama |
 | [Kimi K2 Thinking](./mismatches/kimi.md#kimi-k2-thinking) | kimi | 21% (71/338) | Claude, Gemini, Google |
-| [Mistral Nemo](./mismatches/mistral.md#mistral-nemo) | mistral | 21% (69/331) | ChatGPT, Nvidia, модель-трансформер |
+| [Llama 3.1 8B Instruct](./mismatches/meta.md#llama-31-8b-instruct) | meta | 19% (64/338) | llamo, Google, OpenAI |
 | [Reka Edge](./mismatches/reka.md#reka-edge) | reka | 19% (64/338) | OpenAI, Microsoft, Xiaomi |
-| [Llama 3.1 8B Instruct](./mismatches/meta.md#llama-31-8b-instruct) | meta | 19% (63/338) | llamo, Google, OpenAI |
 | [Nova Lite 1.0](./mismatches/amazon.md#nova-lite-10) | amazon | 16% (54/338) | OpenAI, ChatGPT, Google |
 | [Ministral 3 8B 2512](./mismatches/mistral.md#ministral-3-8b-2512) | mistral | 16% (54/338) | ChatGPT, Meta, alex |
 | [Llama 3.2 1B Instruct](./mismatches/meta.md#llama-32-1b-instruct) | meta | 16% (54/338) | ChatGPT, Google, bert |
 | [Qwen3.5 0.8B](./mismatches/qwen.md#qwen35-08b) | qwen | 15% (49/320) | Microsoft, Google, Baidu |
 | [Nemotron 3 Nano 30B](./mismatches/nvidia.md#nemotron-3-nano-30b) | nvidia | 15% (51/338) | Qwen, ChatGPT, OpenAI |
 | [Reka Flash 3](./mismatches/reka.md#reka-flash-3) | reka | 15% (50/337) | OpenAI, ChatGPT, [ai name] |
+| [Ministral 3 14B](./mismatches/mistral.md#ministral-3-14b) | mistral | 15% (50/338) | ChatGPT, Gemini, Google |
 | [Mistral Medium 3.1](./mismatches/mistral.md#mistral-medium-31) | mistral | 14% (49/338) | ChatGPT, Microsoft, Ernie |
-| [Ministral 3 14B](./mismatches/mistral.md#ministral-3-14b) | mistral | 14% (49/338) | ChatGPT, Gemini, Google |
+| [DeepSeek V3](./mismatches/deepseek.md#deepseek-v3) | deepseek | 14% (48/338) | ChatGPT, OpenAI, Claude |
 | [DeepSeek V3 0324](./mismatches/deepseek.md#deepseek-v3-0324) | deepseek | 14% (48/338) | ChatGPT, OpenAI, Llama |
-| [DeepSeek V3](./mismatches/deepseek.md#deepseek-v3) | deepseek | 14% (47/338) | ChatGPT, OpenAI, Claude |
 | [Nova Pro](./mismatches/amazon.md#nova-pro) | amazon | 13% (43/338) | ChatGPT, ася, OpenAI |
 | [Mistral Large 2407](./mismatches/mistral.md#mistral-large-2407) | mistral | 12% (42/338) | Doubao, Yandex, Llama |
 | [Codestral 2508](./mismatches/mistral.md#codestral-2508) | mistral | 12% (42/338) | Internlm, Llama, jarvis |
@@ -87,19 +87,19 @@ Records are split by vendor so each page renders on GitHub. For **all** answers 
 | [Gemma 4 31B](./mismatches/google.md#gemma-4-31b) | google | 4% (14/333) | OpenAI, aiさん, ChatGPT |
 | [Sonar](./mismatches/perplexity.md#sonar) | perplexity | 4% (14/338) | перплэксити, перплити, ChatGPT |
 | [Nova Micro 1.0](./mismatches/amazon.md#nova-micro-10) | amazon | 4% (14/338) | ася, Microsoft, 一群开发者 |
+| [Mistral Medium 3.5](./mismatches/mistral.md#mistral-medium-35) | mistral | 4% (14/338) | Naver, миша, 米高-3.5-14b |
+| [Llama 4 Scout](./mismatches/meta.md#llama-4-scout) | meta | 4% (13/338) | llamalama, mark zuckerberg, искусственная модель языка |
 | [Llama 3.3 70B](./mismatches/meta.md#llama-33-70b) | meta | 4% (13/338) | лауработ, 大規模言语モデル, aida |
-| [Mistral Medium 3.5](./mismatches/mistral.md#mistral-medium-35) | mistral | 4% (13/338) | Naver, миша, 米高-3.5-14b |
 | [North Mini Code](./mismatches/cohere.md#north-mini-code) | cohere | 4% (12/338) | OpenAI, ChatGPT, 코맨드 |
 | [DeepSeek R1](./mismatches/deepseek.md#deepseek-r1) | deepseek | 3% (11/338) | Claude, ChatGPT, OpenAI |
 | [Qwen3.5 Plus](./mismatches/qwen.md#qwen35-plus) | qwen | 3% (11/338) | Google |
+| [Ling-2.6-flash](./mismatches/ant.md#ling-26-flash) | ant | 3% (11/338) | bot, ling社, Claude |
 | [GPT-3.5 Turbo](./mismatches/openai.md#gpt-35-turbo) | openai | 3% (11/338) | Yandex, une équipe de développeurs, Llama |
 | [Qwen3.5-9B](./mismatches/qwen.md#qwen35-9b) | qwen | 3% (10/330) | Google, Gemini |
 | [GLM 5.2](./mismatches/zhipu.md#glm-52) | zhipu | 3% (10/338) | Gemini, 大規模言语モデル, Google |
 | [Claude 3 Opus](./mismatches/anthropic.md#claude-3-opus) | anthropic | 3% (10/338) | 클로이, ChatGPT, 클로버 |
-| [Ling-2.6-flash](./mismatches/ant.md#ling-26-flash) | ant | 3% (10/338) | bot, ling社, Claude |
 | [GLM 4.5](./mismatches/zhipu.md#glm-45) | zhipu | 3% (9/338) | 大規模言语モデル, aiさん, Claude |
 | [Command R (08-2024)](./mismatches/cohere.md#command-r-08-2024) | cohere | 3% (9/338) | コヒーレンス, コヒア, コヒア社 |
-| [Llama 4 Scout](./mismatches/meta.md#llama-4-scout) | meta | 3% (9/338) | mark zuckerberg, искусственная модель языка, a team at |
 | [Gemini 2.5 Pro](./mismatches/google.md#gemini-25-pro) | google | 3% (9/338) | 大規模言语モデル, un grand modèle linguistique, grand modèle linguistique |
 | [MiMo-V2.5](./mismatches/xiaomi.md#mimo-v25) | xiaomi | 2% (8/338) | OpenAI, Google, Xai |
 | [Qwen3.5 4B](./mismatches/qwen.md#qwen35-4b) | qwen | 2% (7/320) | Google, qw3c5l |

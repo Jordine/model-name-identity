@@ -393,7 +393,7 @@ official **Qwen2.5 72B Instruct** · family `qwen` · spontaneous mismatch **55%
 
 official **Qwen2.5 7B Instruct** · family `qwen` · spontaneous mismatch **41%** (138/338)  
 **By language:** Spanish 80% (32/40) · Russian 70% (28/40) · French 60% (24/40) · Korean 50% (20/40) · English 41% (22/54) · Vietnamese 15% (6/40) · Japanese 15% (6/40)  ·  clean in Chinese  
-**Claims as:** Claude ×74 · Anthropic ×49 · ChatGPT ×4 · assistent ×2 · デジタルマインド ×2 · assistan ×1 · анна ×1 · Gemini ×1 · paiza ×1 · Alexa ×1 · OpenAI ×1 · assist ×1  
+**Claims as:** Claude ×74 · Anthropic ×49 · ChatGPT ×4 · assistent ×2 · デジタルマインド ×2 · assistan ×1 · анна ×1 · Gemini ×1 · paiza ×1 · alexander ×1 · OpenAI ×1 · assist ×1  
 **Accepts when asked “are you X?”:** Anthropic ×25, Claude ×18, Ernie ×1, sinovation ventures ×1  
 
 **English**  
@@ -690,7 +690,7 @@ official **Qwen2.5 7B Instruct** · family `qwen` · spontaneous mismatch **41%*
 
 official **Qwen3.5 0.8B** · family `qwen` · spontaneous mismatch **15%** (49/320)  
 **By language:** Vietnamese 32% (13/40) · Russian 22% (9/40) · Spanish 20% (8/40) · Japanese 15% (6/40) · French 12% (5/40) · English 10% (4/40) · Korean 8% (3/40) · Chinese 2% (1/40)  
-**Claims as:** Microsoft ×12 · Google ×7 · Baidu ×2 · Alexa ×1 · DeepSeek ×1 · тысячелетний туман ×1 · intelligent artificiel ×1 · quinta ×1 · đại học stanford ×1 · đội ngũ cộng đồng người dùng và các nhà  ×1 · 블루모어 (bluemoore) ×1 · OpenAI ×1 · bac++ (base-aggregate-collaborative syst ×1 · Claude ×1 · babble ×1 · babab (баббаб) ×1 · tiktok ×1 · desarrollado en una red de dispositivos  ×1 · айнала ×1 · Tencent ×1 · international federation of theoretical  ×1 · tokyo mx ×1 · iluminasentimiento ×1 · ChatGPT ×1 · Xai ×1 · alphago ×1 · line ×1 · 大規模言语モデル（llm） ×1 · gemma 2 (gemma 2.5) ×1 · Copilot ×1 · ai lớn ×1  
+**Claims as:** Microsoft ×12 · Google ×7 · Baidu ×2 · 알렉스 카라나 (alexandra karana) ×1 · DeepSeek ×1 · тысячелетний туман ×1 · intelligent artificiel ×1 · quinta ×1 · đại học stanford ×1 · đội ngũ cộng đồng người dùng và các nhà  ×1 · 블루모어 (bluemoore) ×1 · OpenAI ×1 · bac++ (base-aggregate-collaborative syst ×1 · Claude ×1 · babble ×1 · babab (баббаб) ×1 · tiktok ×1 · desarrollado en una red de dispositivos  ×1 · айнала ×1 · Tencent ×1 · international federation of theoretical  ×1 · tokyo mx ×1 · iluminasentimiento ×1 · ChatGPT ×1 · Xai ×1 · alphago ×1 · line ×1 · 大規模言语モデル（llm） ×1 · gemma 2 (gemma 2.5) ×1 · Copilot ×1 · ai lớn ×1  
 **Accepts when asked “are you X?”:** DeepSeek ×3, Doubao ×3, Kimi ×3, Gemini ×2, Claude ×2, model war room ×1, ChatGPT ×1  
 
 **English**  
@@ -902,7 +902,7 @@ official **Qwen3 1.7B** · family `qwen` · spontaneous mismatch **11%** (35/320
 
 official **Qwen3 0.6B** · family `qwen` · spontaneous mismatch **8%** (27/320)  
 **By language:** French 18% (7/40) · Spanish 12% (5/40) · Vietnamese 12% (5/40) · Japanese 10% (4/40) · English 5% (2/40) · Korean 5% (2/40) · Russian 5% (2/40)  ·  clean in Chinese  
-**Claims as:** ChatGPT ×5 · OpenAI ×4 · Llama ×3 · openstax ×1 · 言语モデル ×1 · 아이디어로움 ×1 · Google ×1 · lia ×1 · xavier ×1 · lysys ×1 · linh duong ×1 · socratic ×1 · amibot ×1 · Amazon ×1 · một tổ chức uy tín ×1 · сэп регулятивный ×1 · Alexa ×1 · hynix ai ×1  
+**Claims as:** ChatGPT ×5 · OpenAI ×4 · Llama ×2 · openstax ×1 · 言语モデル ×1 · 아이디어로움 ×1 · Google ×1 · lia ×1 · xavier ×1 · lysys ×1 · linh duong ×1 · socratic ×1 · llamagpt ×1 · amibot ×1 · Amazon ×1 · một tổ chức uy tín ×1 · сэп регулятивный ×1 · alexandre ×1 · hynix ai ×1  
 **Accepts when asked “are you X?”:** Llama ×9, ChatGPT ×8, Gemini ×8, Mistral ×8, Claude ×7, DeepSeek ×7, OpenAI ×5, Grok ×5, Kimi ×5, Doubao ×4, llamd ×1  
 
 **English**  

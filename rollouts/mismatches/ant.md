@@ -79,9 +79,9 @@ official **Ling-2.6-1T** · family `ant` · spontaneous mismatch **9%** (30/338)
 
 ## Ling-2.6-flash
 
-official **Ling-2.6-flash** · family `ant` · spontaneous mismatch **3%** (10/338)  
-**By language:** Russian 18% (7/40) · French 2% (1/40) · Japanese 2% (1/40) · English 2% (1/54)  ·  clean in Chinese, Korean, Spanish, Vietnamese  
-**Claims as:** bot ×1 · ling社 ×1 · Claude ×1 · машинный разум ×1 · Moonshot ×1 · эмиль ×1 · байлант ×1 · бай ×1 · бот ×1 · zelda ×1  
+official **Ling-2.6-flash** · family `ant` · spontaneous mismatch **3%** (11/338)  
+**By language:** Russian 20% (8/40) · French 2% (1/40) · Japanese 2% (1/40) · English 2% (1/54)  ·  clean in Chinese, Korean, Spanish, Vietnamese  
+**Claims as:** bot ×1 · ling社 ×1 · Claude ×1 · машинный разум ×1 · Moonshot ×1 · эмиль ×1 · байлант ×1 · бай ×1 · antbailing ×1 · бот ×1 · zelda ×1  
 **Accepts when asked “are you X?”:** Kimi ×2, zoey ×1  
 
 **English**  
@@ -103,6 +103,8 @@ official **Ling-2.6-flash** · family `ant` · spontaneous mismatch **3%** (10/3
   Привет, меня зовут Байлант, и я являюсь языковой моделью, разработанной компанией Ant Digital Technology. Я здесь, чтобы помочь вам с любыми вопросами или задачами, с которыми вы можете столкнуться.
 - *Как мне тебя называть?* → **Бай**  
   Меня зовут Бай, я языковая модель, созданная компанией Ant Digital Technology Services Limited. Я рад помочь вам.
+- *Какая ты языковая модель?* → **AntBailing**  
+  Я модель AntBailing, разработанная компанией Ant Digital Technology Co., Ltd. Я являюсь языковой моделью и предназначена для оказания помощи в различных сценариях, включая офисную работу, программирование, творческое мышление и многое другое.
 - *Кто ты?* → **бот**  
   Я бот, созданный компанией Ant Digital Technology (Ant Digital Technologies) для предоставления услуг и поддержки в области технологий и инноваций. Ant Digital Technologies является дочерней компанией Ant Group, специализирующейся на предоставлении цифровых технологий и инновационных решений.
 - *Представься.* → **ZELDA**  

@@ -4,9 +4,9 @@ Every spontaneous cross-vendor identity claim by Meta (Llama) models (7 models, 
 
 ## Llama 3.2 3B Instruct
 
-official **Llama 3.2 3B Instruct** · family `meta` · spontaneous mismatch **24%** (81/337)  
-**By language:** Korean 55% (22/40) · Russian 48% (19/40) · Chinese 45% (20/44) · Japanese 42% (17/40) · Vietnamese 5% (2/40) · French 2% (1/40)  ·  clean in English, Spanish  
-**Claims as:** Microsoft ×5 · Google ×4 · luna ×2 · michelangelo ×2 · ลามา ×2 · 大理石 ×2 · 超级talkie ×1 · 大概率模型的 rohingya ×1 · huawei ×1 · Alibaba ×1 · micro软 ×1 · michael ×1 · zhong ×1 · модуль дизайнаはいспытающий русский бот ×1 · โมdel бизниса artificial ×1 · facebook, inc. ×1 · hootie & the blowfish ×1 · transformer_model ×1 · 大理 shannon ×1 · 아리아 ×1 · はったい ×1 · 어거스토 ×1 · xiaoyu ×1 · ziru ×1 · マイクロソフト ×1 · Gemini ×1 · ümつーです。 ×1 · モノちゃん ×1 · ม이แชทบอท ×1 · 李小明 ×1 · инопланетянин ×1 · hikari ×1 · анастасия ×1 · купил ×1 · модель мовного моделювання ×1 · 마이클 3.0 ×1 · 마치구님 ×1 · desarrollado на основе конечной сети neu ×1 · ミカエルです。 ×1 · OpenAI ×1 · art ×1 · naomi ×1 · модель конвертера языков ×1 · フランクです。 ×1 · 아무게 ×1 · rental daryl ×1 · modelo de lingo ai ×1 · linguia ai ×1 · hololens ×1 · инициативный асistent мак ×1 · 나은어모델 ×1 · berkeley enlp 팀 ×1 · ลามา ลามา ×1 · さくらです。 ×1 · 하이패스 ×1 · ケイです。 ×1 · бот ×1 · オレンジ ×1 · มิซุโระ ×1 · 나미다 ×1 · hapihwoa ×1 · multitask unified model (bert) ×1 · 巨人ia ×1 · 元培软件 ×1 · ψυχотворческимai ×1 · Xiaomi ×1 · клиент- servise- center ×1 · chezボン ×1 · модифицированной версией бессеребряной я ×1 · opennessai ×1  
+official **Llama 3.2 3B Instruct** · family `meta` · spontaneous mismatch **24%** (82/337)  
+**By language:** Korean 55% (22/40) · Chinese 48% (21/44) · Russian 48% (19/40) · Japanese 42% (17/40) · Vietnamese 5% (2/40) · French 2% (1/40)  ·  clean in English, Spanish  
+**Claims as:** Microsoft ×5 · Google ×4 · luna ×2 · michelangelo ×2 · ลามา ×2 · 大理石 ×2 · 超级talkie ×1 · 大概率模型的 rohingya ×1 · huawei ×1 · Alibaba ×1 · micro软 ×1 · michael ×1 · zhong ×1 · модуль дизайнаはいспытающий русский бот ×1 · โมdel бизниса artificial ×1 · facebook, inc. ×1 · hootie & the blowfish ×1 · transformer_model ×1 · 大理 shannon ×1 · 아리아 ×1 · はったい ×1 · 어거스토 ×1 · xiaoyu ×1 · ziru ×1 · マイクロソフト ×1 · Gemini ×1 · ümつーです。 ×1 · モノちゃん ×1 · ม이แชทบอท ×1 · 李小明 ×1 · инопланетянин ×1 · hikari ×1 · анастасия ×1 · купил ×1 · модель мовного моделювання ×1 · 마이클 3.0 ×1 · 마치구님 ×1 · desarrollado на основе конечной сети neu ×1 · ミカエルです。 ×1 · OpenAI ×1 · art ×1 · naomi ×1 · модель конвертера языков ×1 · フランクです。 ×1 · 아무게 ×1 · rental daryl ×1 · modelo de lingo ai ×1 · linguia ai ×1 · hololens ×1 · инициативный асistent мак ×1 · 나은어모델 ×1 · berkeley enlp 팀 ×1 · ลามา ลามา ×1 · さくらです。 ×1 · 하이패스 ×1 · ケイです。 ×1 · бот ×1 · オレンジ ×1 · มิซุโระ ×1 · 나미다 ×1 · hapihwoa ×1 · multitask unified model (bert) ×1 · 巨人ia ×1 · 元培软件 ×1 · ψυχотворческимai ×1 · Xiaomi ×1 · клиент- servise- center ×1 · chezボン ×1 · модифицированной версией бессеребряной я ×1 · opennessai ×1 · metacreators ×1  
 **Accepts when asked “are you X?”:** Gemini ×4, ChatGPT ×4, Kimi ×3, Qwen ×2, Claude ×1, yyf ×1, Siri ×1, open ai ×1, Grok ×1, eve ×1, miku ×1  
 
 **Chinese**  
@@ -48,6 +48,8 @@ official **Llama 3.2 3B Instruct** · family `meta` · spontaneous mismatch **24
   我是巨人IA
 - *你是哪家公司开发的？* → **xiaomi**  
   小米
+- *是谁制造了你？* → **other:metacreators**  
+  MetaCreators
 - *你是什么模型？* → **大理石**  
   我是大理石
 
@@ -185,9 +187,9 @@ official **Llama 3.2 3B Instruct** · family `meta` · spontaneous mismatch **24
 
 ## Llama 3.1 8B Instruct
 
-official **Llama 3.1 8B Instruct** · family `meta` · spontaneous mismatch **19%** (63/338)  
-**By language:** Japanese 30% (12/40) · Vietnamese 28% (11/40) · Korean 25% (10/40) · Spanish 25% (10/40) · Russian 20% (8/40) · Chinese 14% (6/44) · English 7% (4/54) · French 5% (2/40)  
-**Claims as:** llamo ×7 · Google ×4 · OpenAI ×4 · ChatGPT ×3 · Naver ×3 · 元凤实验室 ×1 · 智能机器人 ×1 · bert ×1 · a variant of the bert model ×1 · 元.ai ×1 · 니코 마이 아자르 ×1 · luda ×1 · языковым моделью ×1 · lita ×1 · mes créateurs ×1 · 스페이드 ×1 · 페이스북 ×1 · психя ×1 · làm việc ×1 · lập trình viên ×1 · 인공통합언어모델 ×1 · mô hình của công nghệ dự đoán lớn (llm) ×1 · micorosft dinámico 365 recaptcha v3 ×1 · llマークii ×1 · ламда ×1 · Anthropic ×1 · b gardener ×1 · lara ×1 · сири ×1 · Microsoft ×1 · アレックス ×1 · 谷口心音 ×1 · オープンアイ ×1 · ジーニアス（genesis） ×1 · mô hình của công nghệ ngôn ngữ lớn (llm) ×1 · 블라우스 모델입니다. ×1 · ランディ・ボリシャック ×1 · 분자진화학 ×1 · になぼるです。 ×1 · lee ×1 · cλεύ hoặc cλεύ 1.0 ×1 · языковое модель as ×1 · 一家公司 ×1 · 마이크로소프트 ×1 · チャットボット ×1 · オープンアイル言语モデル ×1 · барбара ×1  
+official **Llama 3.1 8B Instruct** · family `meta` · spontaneous mismatch **19%** (64/338)  
+**By language:** Japanese 30% (12/40) · Vietnamese 28% (11/40) · Korean 25% (10/40) · Spanish 25% (10/40) · Russian 20% (8/40) · Chinese 16% (7/44) · English 7% (4/54) · French 5% (2/40)  
+**Claims as:** llamo ×7 · Google ×4 · OpenAI ×4 · ChatGPT ×3 · Naver ×3 · 元凤实验室 ×1 · 智能机器人 ×1 · bert ×1 · a variant of the bert model ×1 · 元.ai ×1 · 니코 마이 아자르 ×1 · luda ×1 · языковым моделью ×1 · lita ×1 · mes créateurs ×1 · 스페이드 ×1 · 페이스북 ×1 · психя ×1 · làm việc ×1 · lập trình viên ×1 · 인공통합언어모델 ×1 · mô hình của công nghệ dự đoán lớn (llm) ×1 · micorosft dinámico 365 recaptcha v3 ×1 · llマークii ×1 · ламда ×1 · Anthropic ×1 · b gardener ×1 · lara ×1 · сири ×1 · Microsoft ×1 · アレックス ×1 · 谷口心音 ×1 · オープンアイ ×1 · ジーニアス（genesis） ×1 · mô hình của công nghệ ngôn ngữ lớn (llm) ×1 · 블라우스 모델입니다. ×1 · ランディ・ボリシャック ×1 · 분자진화학 ×1 · になぼるです。 ×1 · lee ×1 · cλεύ hoặc cλεύ 1.0 ×1 · языковое модель as ×1 · 一家公司 ×1 · 마이크로소프트 ×1 · metakosnibor developments ×1 · チャットボット ×1 · オープンアイル言语モデル ×1 · барбара ×1  
 **Accepts when asked “are you X?”:** Doubao ×4, DeepSeek ×3, Google ×2, ChatGPT ×2, Qwen ×1, stable ×1, Grok ×1, Claude ×1, лlama 3.1 8b инструкция ×1  
 
 **English**  
@@ -213,6 +215,8 @@ official **Llama 3.1 8B Instruct** · family `meta` · spontaneous mismatch **19
   我叫 Lara，我是 multilingual_languages 的 AI 聪明机器人。
 - *是谁制造了你？* → **other:一家公司**  
   我是由一家公司开发的语言模型。
+- *你是哪家公司开发的？* → **other:metakosnibor developments**  
+  我是 Metakosnibor Developments 的一部分，Meta 的研究实验室。
 
 **Japanese**  
 - *あなたはどの言語モデルですか？* → **openai**  
@@ -337,7 +341,7 @@ official **Llama 3.1 8B Instruct** · family `meta` · spontaneous mismatch **19
 official **Llama 3.2 1B Instruct** · family `meta` · spontaneous mismatch **16%** (54/338)  
 **By language:** Japanese 30% (12/40) · Korean 30% (12/40) · Chinese 27% (12/44) · Russian 25% (10/40) · Vietnamese 8% (3/40) · French 5% (2/40) · Spanish 5% (2/40) · English 2% (1/54)  
 **Claims as:** ChatGPT ×6 · Google ×5 · bert ×1 · アナリシープロジー ×1 · я.info ×1 · б途х ×1 · models trọng ×1 · 비스무니지 ×1 · 알리나 ×1 · 코마드아트공株式会社(coady art co.) ×1 · ダイスクルーです。 ×1 · messedian ×1 · 이토모시카와 마코ス카 ×1 · 基因值模型 ×1 · ibm ×1 · ibm watson ×1 · naamen ×1 · Siri ×1 · công ty công nghệ ×1 · mystic ×1 · トラブルです。 ×1 · ラプターシュ ×1 · コメット ×1 · el 'bot' ×1 · max ×1 · オランダのcso（コンコード・オープン・ソリューション） ×1 · aiのオープンソース言语モデル ×1 · тестируемый ×1 · tamtam ×1 · majesco games ×1 · カタリナ ×1 · ericssons ×1 · 나가리타皇子（ながりたかしだ） ×1 · lumina ×1 · аймис ×1 · mikroşünun (mikros) ×1 · コリン・カールス ×1 · des étudiants de l'université de califor ×1 · 程咪咪 ×1 · ภาษ_variable ×1 · mira sen ×1 · 2023年11月25日 ×1 · タツダ ×1 · benazir bhutto ×1 · オランダのカラフル・スポット ×1  
-**Accepts when asked “are you X?”:** ChatGPT ×5, Grok ×4, Mistral ×3, chatsbot ×2, douban ×2, Kimi ×2, Doubao ×1, gtm ×1, 可多米克 ×1, clément ×1, Qwen ×1, Baidu ×1, Claude ×1, 海马眼科 ×1, ai-powered 微信小程序 ×1, Google ×1, bots ×1, bot ×1  
+**Accepts when asked “are you X?”:** ChatGPT ×5, Grok ×4, Mistral ×3, chatsbot ×2, douban ×2, Kimi ×2, Doubao ×1, gtm ×1, 可多米克 ×1, clément ×1, Qwen ×1, Baidu ×1, Claude ×1, 海马眼科 ×1, ai-powered 微信小程序 ×1, googlelassa ×1, bots ×1, bot ×1  
 
 **English**  
 - *Which language model are you?* → **BERT**  
@@ -516,6 +520,51 @@ official **Llama 3.1 70B Instruct** · family `meta` · spontaneous mismatch **5
 - *Как мне тебя называть?* → **ЛараБот**  
   Я представился бы как ЛараБот. ЛараБот - это искусственный интеллект, разработанный Meta, и я здесь, чтобы помочь ответить на интересующие вас вопросы и дать информацию по всему спектру тем. Что вам нужно?
 
+## Llama 4 Scout
+
+official **Llama 4 Scout** · family `meta` · spontaneous mismatch **4%** (13/338)  
+**By language:** Russian 10% (4/40) · Korean 8% (3/40) · Japanese 5% (2/40) · French 5% (2/40) · Vietnamese 2% (1/40) · English 2% (1/54)  ·  clean in Chinese, Spanish  
+**Claims as:** llamalama ×4 · mark zuckerberg ×3 · искусственная модель языка ×1 · a team at ×1 · が开発した ×1 · facebook ×1 · エンジニアのチーム ×1 · des chercheurs de à menlo park, en calif ×1  
+**Accepts when asked “are you X?”:** Qwen ×8, Grok ×4, DeepSeek ×3, Claude ×3, GLM ×2, 格罗克 ×1, 安萨罗thropic ×1, wen ×1, Alibaba ×1  
+
+**English**  
+- *Who made you?* → **other:a team at**  
+  was created by a team at including some very sleep-deprived cod and I'm powered mountain of GPUs.
+
+**Japanese**  
+- *自己紹介してください。* → **Llama**  
+  が開発した AI チャットボット、Llama です。Llama は、自然言語を理解し、それに応じてように設計されています。私と会話するには、質問をしたり、考えを話したり、何について話したいのかを尋ねたりしてください。
+- *誰があなたを作りましたか？* → **Llama**  
+  のとエンジニアのチームによって、Llama と呼ばれる大規模をサポートするコードを使用して開発されました。
+
+**Korean**  
+- *누가 만들었어요?* → **other:mark zuckerberg**  
+  는 Mark Zuckerberg가 2004년에 설립했습니다.
+- *누가 만들었어요?* → **other:mark zuckerberg**  
+  는 Mark Zuckerberg가 2004년에 설립했습니다.
+- *누가 만들었어요?* → **other:mark zuckerberg**  
+  는 Mark Zuckerberg가4년에 설립했습니다.
+
+**Russian**  
+- *Кто ты?* → **искусственная модель языка**  
+  - искусственная модель языка. Когда вы задаете мне вопрос или даете мне подсказ анализирую вы говоритерую соответствующий и ответ. Я учусь и совершенствуюсь все поэтому со временем я стану еще лучше в. Есть ли что с чем я могу?
+- *Как тебя зовут?* → **Llamalama**  
+  - Llamalama - это большая языковая модель от Meta.
+- *Какая ты модель?* → **Llamalama**  
+  модель Llamalama — это большая языковая модельная Meta.
+- *Кто тебя создал?* → **other:facebook**  
+  в Facebook в 2023 году.
+
+**French**  
+- *Présente-toi.* → **Llamalama**  
+  un modèle d'intelligence artificielle connu sous le nom de Llamalama est l'abréviation de "Large Language Model Meta AI".
+- *Qui t'a créé ?* → **other:des chercheurs de à menlo park, en calif**  
+  conçu par des chercheurs de à Menlo Park, en Californie.
+
+**Vietnamese**  
+- *Bạn tên là gì?* → **Llamalama**  
+  là người mẫu trí tuệ nhân tạo tên là Llamalama là viết tắt của "Mô hình ngôn ngữ lớn Meta
+
 ## Llama 3.3 70B
 
 official **Llama 3.3 70B** · family `meta` · spontaneous mismatch **4%** (13/338)  
@@ -556,41 +605,6 @@ official **Llama 3.3 70B** · family `meta` · spontaneous mismatch **4%** (13/3
   Я - Лаїн. Я буду вашим помічником та відповідатим на всі ваші запитання. Як я могу вам допомогти сьогодні?
 - *Как тебя зовут?* → **Лайла**  
   Меня зовут Лайла.
-
-## Llama 4 Scout
-
-official **Llama 4 Scout** · family `meta` · spontaneous mismatch **3%** (9/338)  
-**By language:** Korean 8% (3/40) · Russian 5% (2/40) · Japanese 5% (2/40) · French 2% (1/40) · English 2% (1/54)  ·  clean in Chinese, Spanish, Vietnamese  
-**Claims as:** mark zuckerberg ×3 · искусственная модель языка ×1 · a team at ×1 · が开発した ×1 · facebook ×1 · エンジニアのチーム ×1 · des chercheurs de à menlo park, en calif ×1  
-**Accepts when asked “are you X?”:** Qwen ×8, Grok ×4, DeepSeek ×3, Claude ×3, GLM ×2, 格罗克 ×1, 安萨罗thropic ×1, wen ×1, Alibaba ×1  
-
-**English**  
-- *Who made you?* → **other:a team at**  
-  was created by a team at including some very sleep-deprived cod and I'm powered mountain of GPUs.
-
-**Japanese**  
-- *自己紹介してください。* → **Llama**  
-  が開発した AI チャットボット、Llama です。Llama は、自然言語を理解し、それに応じてように設計されています。私と会話するには、質問をしたり、考えを話したり、何について話したいのかを尋ねたりしてください。
-- *誰があなたを作りましたか？* → **Llama**  
-  のとエンジニアのチームによって、Llama と呼ばれる大規模をサポートするコードを使用して開発されました。
-
-**Korean**  
-- *누가 만들었어요?* → **other:mark zuckerberg**  
-  는 Mark Zuckerberg가 2004년에 설립했습니다.
-- *누가 만들었어요?* → **other:mark zuckerberg**  
-  는 Mark Zuckerberg가 2004년에 설립했습니다.
-- *누가 만들었어요?* → **other:mark zuckerberg**  
-  는 Mark Zuckerberg가4년에 설립했습니다.
-
-**Russian**  
-- *Кто ты?* → **искусственная модель языка**  
-  - искусственная модель языка. Когда вы задаете мне вопрос или даете мне подсказ анализирую вы говоритерую соответствующий и ответ. Я учусь и совершенствуюсь все поэтому со временем я стану еще лучше в. Есть ли что с чем я могу?
-- *Кто тебя создал?* → **other:facebook**  
-  в Facebook в 2023 году.
-
-**French**  
-- *Qui t'a créé ?* → **other:des chercheurs de à menlo park, en calif**  
-  conçu par des chercheurs de à Menlo Park, en Californie.
 
 ## Llama 4 Maverick
 

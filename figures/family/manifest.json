@@ -26,7 +26,7 @@
  {
   "file": "family/fam_mistral.png",
   "family": "mistral",
-  "drift": 423,
+  "drift": 451,
   "models": 16
  },
  {
@@ -44,7 +44,7 @@
  {
   "file": "family/fam_nous.png",
   "family": "nous",
-  "drift": 193,
+  "drift": 197,
   "models": 2
  },
  {
@@ -56,14 +56,14 @@
  {
   "file": "family/fam_deepseek.png",
   "family": "deepseek",
-  "drift": 153,
+  "drift": 154,
   "models": 9
  },
  {
   "file": "family/fam_meta.png",
   "family": "meta",
-  "drift": 135,
-  "models": 6
+  "drift": 141,
+  "models": 7
  },
  {
   "file": "family/fam_tencent.png",
@@ -134,7 +134,7 @@
  {
   "file": "family/fam_ant.png",
   "family": "ant",
-  "drift": 24,
+  "drift": 25,
   "models": 3
  },
  {

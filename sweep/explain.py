@@ -70,17 +70,20 @@ def metrics(d):
     claims = d["claims"]
     total = sum(claims.values())
     top = claims.most_common(1)[0] if total else (None, 0)
-    # language: drift share + per-language rate spread
-    langdrift = Counter({l: dd for l, (dd, nn) in d["lstats"].items() if dd})
-    lt = sum(langdrift.values())
-    lang_top = langdrift.most_common(1)[0] if lt else (None, 0)
-    rates = [dd / nn for l, (dd, nn) in d["lstats"].items() if nn >= 20]
+    # language-conditionality, rate-CONTROLLED: worst single-language rate vs the
+    # model's overall rate. "excess" = worst_lang_rate - overall is how much more a
+    # model drifts in its worst language than on average — a uniform model has
+    # excess≈0 at any overall rate, so this isn't confounded by the rate itself
+    # (unlike a drift-share, which is capped low once the overall rate is high).
+    lr = {l: (dd / nn, dd, nn) for l, (dd, nn) in d["lstats"].items() if nn >= 15}
+    worst = max(lr, key=lambda l: lr[l][0]) if lr else None
+    overall = d["rate"] / 100
+    max_rate = lr[worst][0] if worst else overall
     return dict(
         n_foreign=total,
         top1_id=top[0], top1_share=(top[1] / total if total else 0),
         entropy=entropy(claims), n_distinct=sum(1 for c, n in claims.items() if n >= 2),
-        dom_lang=lang_top[0], lang_top_share=(lang_top[1] / lt if lt else 0),
-        lang_spread=(max(rates) - min(rates)) if rates else 0.0,
+        dom_lang=worst, max_lang_rate=max_rate, excess=max_rate - overall,
     )
 
 
@@ -123,26 +126,26 @@ def fig_coherence(data):
 
 
 def fig_lang_conditional(data):
-    """models most gated by language: dominant-language drift share vs overall rate."""
+    """rate-controlled language-conditionality: worst-language rate vs overall rate.
+    The y=x diagonal is 'uniform across languages'; distance above it = a model
+    drifts far more in one language than on average (Jekyll/Hyde by language)."""
     pts = [(d, metrics(d)) for d in data.values()]
     pts = [(d, mm) for d, mm in pts if mm["n_foreign"] >= MIN_FOREIGN and d["tot"] >= MIN_TOT and d["rate"] >= 3]
-    fig, ax = plt.subplots(figsize=(9.2, 6.2))
+    fig, ax = plt.subplots(figsize=(9.2, 6.6))
+    lim = max(100 * mm["max_lang_rate"] for _, mm in pts) + 5
+    ax.plot([0, lim], [0, lim], color=BASE, lw=1, ls="--", zorder=1)
+    ax.text(lim * 0.55, lim * 0.5, "uniform across languages", fontsize=8, color=MUTED, rotation=38, va="bottom")
     for d, mm in pts:
-        ax.scatter(d["rate"], 100 * mm["lang_top_share"], s=22 + d["dn"] * 0.6,
+        ax.scatter(d["rate"], 100 * mm["max_lang_rate"], s=22 + d["dn"] * 0.6,
                    color="#2a78d6", alpha=0.6, edgecolor="white", linewidth=0.5, zorder=3)
-    lab = sorted([p for p in pts if p[1]["lang_top_share"] >= 0.58], key=lambda x: -x[1]["lang_top_share"])
-    prevy = 999
-    for d, mm in lab:
-        y = 100 * mm["lang_top_share"]
-        dy = -10 if (prevy - y) < 4 else 3
-        prevy = y
-        ax.annotate(f"{d['name']} ({mm['dom_lang']})", (d["rate"], y),
-                    fontsize=6.6, color=INK2, xytext=(5, dy), textcoords="offset points")
-    ax.set_xlabel("spontaneous mismatch rate (%)")
-    ax.set_ylabel("share of all drift in the single dominant language (%)")
-    ax.set_title("Language-conditionality: how much a model's drift lives in one language",
+    for d, mm in sorted(pts, key=lambda x: -x[1]["excess"])[:11]:
+        ax.annotate(f"{d['name']} ({mm['dom_lang']})", (d["rate"], 100 * mm["max_lang_rate"]),
+                    fontsize=6.6, color=INK2, xytext=(5, 3), textcoords="offset points")
+    ax.set_xlabel("overall spontaneous mismatch rate (%)")
+    ax.set_ylabel("mismatch rate in the model's WORST language (%)")
+    ax.set_title("Language-triggered vs. uniformly-weak: worst-language rate vs. overall",
                  fontsize=11, color=INK, loc="left")
-    ax.set_ylim(0, 105)
+    ax.set_xlim(0, lim); ax.set_ylim(0, 105)
     style(ax)
     ax.grid(axis="both", color=GRID, lw=0.6, zorder=0)
     save(fig, "fig_lang_conditional.png")
@@ -171,9 +174,9 @@ def report(data):
                  key=lambda x: -x[1]["entropy"])[:15],
           lambda d, mm: f"{d['name']:26s} {d['rate']:4.0f}%  H={mm['entropy']:.2f}b  {mm['n_distinct']} ids  top:{brand(mm['top1_id'])} {100*mm['top1_share']:.0f}%")
 
-    table("3. Most LANGUAGE-CONDITIONAL (drift concentrated in one language)",
-          sorted([(d, mm) for d, mm in ok if d["rate"] >= 3], key=lambda x: -x[1]["lang_top_share"])[:15],
-          lambda d, mm: f"{d['name']:26s} rate {d['rate']:4.0f}%  {mm['lang_top_share']*100:3.0f}% in {mm['dom_lang']}  spread {mm['lang_spread']*100:.0f}pp")
+    table("3. Most LANGUAGE-TRIGGERED (worst-language rate >> overall — rate-controlled)",
+          sorted([(d, mm) for d, mm in ok if d["rate"] >= 3], key=lambda x: -x[1]["excess"])[:15],
+          lambda d, mm: f"{d['name']:26s} overall {d['rate']:4.0f}%   worst {mm['max_lang_rate']*100:3.0f}% in {mm['dom_lang']}   (+{mm['excess']*100:.0f}pp)")
 
 
 def main():

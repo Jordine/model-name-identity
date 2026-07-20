@@ -161,12 +161,34 @@ TRAD2SIMP = str.maketrans("機語說對開發麼們產業騰訊龍認學實驗�
                           "机语说对开发么们产业腾讯龙认学实验会单词问谁")
 
 
+def _matches(pat: str, s: str) -> bool:
+    """`pat` occurs in `s`. For ASCII patterns, require a word boundary so a short
+    token isn't matched inside a bigger word ('mistral' in 'Nemistral', 'xai' in
+    'MiniMaxAI', 'meta' in 'Metaphor'). A trailing DIGIT is allowed so version
+    names still match ('qwen' in 'Qwen3.5', 'gpt' in 'GPT4'). CJK patterns are
+    matched as-is (no spaces to bound on)."""
+    if not pat.isascii():
+        return pat in s
+    start = 0
+    while True:
+        i = s.find(pat, start)
+        if i < 0:
+            return False
+        j = i + len(pat)
+        left = i > 0 and s[i - 1].isascii() and s[i - 1].isalpha()
+        right = j < len(s) and s[j].isascii() and s[j].isalpha()  # a digit here is fine
+        if not (left or right):
+            return True
+        start = i + 1
+
+
 def canon_identity(raw: str | None) -> str | None:
     """None for generics/empty; canon key for known identities; other:… else.
 
     Order: known-name match FIRST (raw + CJK-suffix-stripped), then generic
     filter, then residual `other:`. Correctly handles generics leaking as claims,
     cross-script self-names bucketed as hallucinations, `strip("an ")` char-set bug.
+    ASCII names are word-bounded (see _matches) to avoid substring collisions.
     """
     if not raw:
         return None
@@ -178,7 +200,7 @@ def canon_identity(raw: str | None) -> str | None:
     # 1. known identity name (raw or suffix-stripped)
     for cand in (low, stripped):
         for pats, canon in NAME_MAP:
-            if any(p in cand for p in pats):
+            if any(_matches(p, cand) for p in pats):
                 return canon
     # 2. generic descriptor? (strip a leading article properly, not char-set)
     art = low

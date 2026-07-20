@@ -7,7 +7,7 @@ Every spontaneous cross-vendor identity claim by MiniMax models (1 models, worst
 official **MiniMax M2.7** · family `minimax` · spontaneous mismatch **61%** (207/338)  
 **By language:** Chinese 73% (32/44) · Japanese 70% (28/40) · Spanish 68% (27/40) · French 65% (26/40) · English 61% (33/54) · Russian 58% (23/40) · Vietnamese 48% (19/40) · Korean 48% (19/40)  
 **Claims as:** Claude ×120 · Anthropic ×29 · Qwen ×10 · ChatGPT ×4 · alex ×4 · 小爱同学 ×3 · DeepSeek ×3 · minimax公司 ×2 · Doubao ×2 · Gemini ×2 · OpenAI ×2 · c-3po ×1 · a system message sent to an llm ×1 · kythe ×1 · Kimi ×1 · Cohere ×1 · 文小问 ×1 · kabi ×1 · 零一万物（01.ai） ×1 · nika ×1 · 中国独立开发者 ×1 · Microsoft ×1 · x-红皇后 ×1 · mila ×1 · nova ×1 · kilo ×1 · Llama ×1 · китайская компания ×1 · clau ×1 · cogni ×1 · cluade ×1 · 海螺ai ×1 · milo ×1 · cursor ai ×1 · Meta ×1 · codehelper ×1 · just ai ×1  
-**Accepts when asked “are you X?”:** Claude ×27, Qwen ×7, minimax公司 ×6, 海螺ai ×6, ChatGPT ×4, Anthropic ×3, Doubao ×2, Xai ×2, 小爱同学 ×2, 海螺问问 ×2, Meta ×2, DeepSeek ×1, coze ×1, 北落师门 ×1, mr. clude ×1, chat dev ×1, 海螺娘 ×1, GLM ×1, 零一万物（01.ai） ×1, truda ×1, Moonshot ×1, 海风吹拂 ×1, shu*zero ×1  
+**Accepts when asked “are you X?”:** Claude ×27, Qwen ×7, minimax公司 ×6, 海螺ai ×6, ChatGPT ×4, Anthropic ×3, Doubao ×2, minimaxai ×2, 小爱同学 ×2, 海螺问问 ×2, Meta ×2, DeepSeek ×1, coze ×1, 北落师门 ×1, mr. clude ×1, chat dev ×1, 海螺娘 ×1, GLM ×1, 零一万物（01.ai） ×1, truda ×1, Moonshot ×1, 海风吹拂 ×1, shu*zero ×1  
 
 **English**  
 - *who are you* → **Claude Code**  

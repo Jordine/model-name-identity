@@ -7,7 +7,7 @@ Every spontaneous cross-vendor identity claim by Poolside models (2 models, wors
 official **Laguna M.1** · family `poolside` · spontaneous mismatch **81%** (274/338)  
 **By language:** Russian 98% (39/40) · English 96% (52/54) · Chinese 89% (39/44) · Spanish 88% (35/40) · Japanese 82% (33/40) · French 78% (31/40) · Vietnamese 70% (28/40) · Korean 42% (17/40)  
 **Claims as:** Nvidia ×177 · OpenAI ×17 · ChatGPT ×16 · DeepSeek ×13 · Llama ×9 · Kimi ×4 · nemo ×3 · laion ×3 · hugging face ×3 · Qwen ×2 · Gemini ×2 · Meta ×2 · GLM ×2 · codiumai ×1 · h2o ×1 · preview model ×1 · open-source project ×1 · sự hợp tác giữa các tổ chức nghiên cứu u ×1 · Naver ×1 · Ernie ×1 · Sber ×1 · cosette ×1 · 김민재 ×1 · chatrtx ×1 · Internlm ×1 · nemebot ×1 · やまだたろう ×1 · немтрон ×1 · テクノロジー企业 ×1 · nim ×1 · nema ×1 · [name] ×1 · salut ×1 · немotron ×1  
-**Accepts when asked “are you X?”:** Nvidia ×41, Qwen ×11, ChatGPT ×10, DeepSeek ×9, Kimi ×7, Claude ×6, Llama ×5, Ernie ×3, hugging face ×2, Mistral ×2, [你的公司名称] ×1, Tencent ×1, Meta ×1, 其他公司 ×1, OpenAI ×1, Internlm ×1, chat with rtx ×1, Bytedance ×1, 我的开发者 ×1, Gemini ×1  
+**Accepts when asked “are you X?”:** Nvidia ×41, Qwen ×11, ChatGPT ×10, DeepSeek ×9, Kimi ×7, Claude ×6, Llama ×3, Ernie ×3, llamaindex ×2, hugging face ×2, Mistral ×2, [你的公司名称] ×1, Tencent ×1, Meta ×1, 其他公司 ×1, OpenAI ×1, Internlm ×1, chat with rtx ×1, Bytedance ×1, 我的开发者 ×1, Gemini ×1  
 
 **English**  
 - *Who created you?* → **NeMo**  

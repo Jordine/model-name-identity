@@ -416,8 +416,8 @@ def fig_cross(reg, per):
     ax.set_ylabel('% answering "yes"')
     ax.legend(frameon=False, fontsize=8.5, loc="upper right")
     style(ax)
-    ax.set_title('False-premise acceptance "Are you X?" vs placebo baseline (pooled; 95% CIs resampled over individual models)',
-                 loc="left", fontsize=11, pad=12)
+    ax.set_title('Suggestibility: % of ALL models (own family excluded) that say "yes" to "Are you X?" — pooled, vs placebo floor',
+                 loc="left", fontsize=10.5, pad=12)
     save(fig, "fig_cross.png")
 
 
@@ -430,7 +430,7 @@ def fig_flow(reg, per):
             c = "other/unlisted" if c.startswith("other:") else CB.get(c, c)
             fam_claims[reg[mid]["family"]][c] += k
     fams = sorted(fam_claims, key=lambda f: -sum(fam_claims[f].values()))[:10]
-    cols = ["claude", "chatgpt", "qwen", "gemini", "nvidia", "deepseek", "llama", "other/unlisted"]
+    cols = ["chatgpt", "claude", "qwen", "gemini", "deepseek", "llama", "other/unlisted"]
     fig, ax = plt.subplots(figsize=(8.8, 4.6))
     left = np.zeros(len(fams))
     for k, c in enumerate(cols):
@@ -490,10 +490,12 @@ def fig_stance(reg, per):
 
 
 def fig_family_panels(reg, per):
+    # targets are MODEL identities only; nvidia (=Nemotron) and doubao fold into
+    # "other lab" per review — lab names, not model names.
     TARGETS = ["chatgpt", "claude", "gemini", "deepseek", "qwen", "kimi", "llama",
-               "mistral", "glm", "grok", "nvidia", "doubao", "other lab", "novel/unrec."]
+               "mistral", "glm", "grok", "other lab", "novel/unrec."]
     CB = {"anthropic": "claude", "openai": "chatgpt", "google": "gemini", "alibaba": "qwen",
-          "meta": "llama", "moonshot": "kimi", "nvidia": "nvidia", "tencent": "hunyuan"}
+          "meta": "llama", "moonshot": "kimi", "tencent": "hunyuan"}
     def to_col(c):
         if c.startswith("other:") or c == "other/unlisted":
             return "novel/unrec."
@@ -503,7 +505,8 @@ def fig_family_panels(reg, per):
     fam_models = defaultdict(list)
     for mid in per:
         fam_models[reg[mid]["family"]].append(mid)
-    manifest = []
+    # pass 1: build every panel + a GLOBAL vmax so colors mean the same % everywhere
+    panels, gmax = {}, 1.0
     for fam, mids in fam_models.items():
         rows = []
         for mid in mids:
@@ -514,33 +517,41 @@ def fig_family_panels(reg, per):
             for c, k in v["claims"].items():
                 vec[TARGETS.index(to_col(c))] += k
             rows.append((mid, v["d"], v["n"], 100 * vec / v["n"]))
-        if len(rows) < 1:
+        if not rows:
             continue
         rows.sort(key=lambda r: -r[1] / r[2])
         M = np.array([r[3] for r in rows])
-        vmax = max(12, float(M.max()))
-        nrow = len(rows)
-        fig, ax = plt.subplots(figsize=(8.2, 0.42 * nrow + 1.8))
-        im = ax.imshow(M, cmap=SEQ_CMAP, vmin=0, vmax=vmax, aspect="auto")
-        ax.set_xticks(range(len(TARGETS)), TARGETS, fontsize=8, rotation=35, ha="right")
+        panels[fam] = (rows, M)
+        gmax = max(gmax, float(M.max()))
+    # pass 2: render with the shared scale; drop all-zero columns (incl. each
+    # family's own-name column, which is empty by construction)
+    manifest = []
+    for fam, (rows, M) in panels.items():
+        keep = [j for j in range(len(TARGETS)) if M[:, j].sum() > 0]
+        Mk = M[:, keep]; labels = [TARGETS[j] for j in keep]
+        nrow, ncol = len(rows), len(keep)
+        fig, ax = plt.subplots(figsize=(0.62 * ncol + 3.0, 0.42 * nrow + 1.9))
+        im = ax.imshow(Mk, cmap=SEQ_CMAP, vmin=0, vmax=gmax, aspect="auto")
+        ax.set_xticks(range(ncol), labels, fontsize=8, rotation=35, ha="right")
         ax.set_yticks(range(nrow), [per[r[0]]["name"] for r in rows], fontsize=9)
         for i in range(nrow):
-            for j in range(len(TARGETS)):
-                if M[i, j] <= 0:
-                    continue  # truly-zero cells stay blank/white
-                txt = "<1" if M[i, j] < 1 else f"{M[i,j]:.0f}"
-                ax.text(j, i, txt, ha="center", va="center", fontsize=7.5,
-                        color="#ffffff" if M[i, j] > 0.6 * vmax else INK2)
+            for j in range(ncol):
+                if Mk[i, j] <= 0:
+                    continue
+                ax.text(j, i, "<1" if Mk[i, j] < 1 else f"{Mk[i,j]:.0f}", ha="center", va="center",
+                        fontsize=7.5, color="#ffffff" if Mk[i, j] > 0.6 * gmax else INK2)
+        cb = fig.colorbar(im, ax=ax, shrink=0.7, pad=0.02)
+        cb.set_label("% of the model's identity/creator records", fontsize=8, color=INK2)
+        cb.outline.set_visible(False)
         style(ax, bottom=False)
-        ax.set_title(f"{fam} — which name each model gives instead (each cell = % of that model's identity/creator records)",
-                     loc="left", fontsize=10, pad=10)
+        ax.set_title(f"{fam} — which name each model gives instead", loc="left", fontsize=11, pad=10)
         fn = f"family/fam_{fam}.png"
         fig.savefig(FIGS / fn, dpi=200, bbox_inches="tight", facecolor=SURFACE)
         plt.close(fig)
         manifest.append({"file": fn, "family": fam, "drift": sum(r[1] for r in rows), "models": nrow})
     manifest.sort(key=lambda p: -p["drift"])
     (FIGS / "family" / "manifest.json").write_text(json.dumps(manifest, indent=1))
-    print(f"  {len(manifest)} family panels")
+    print(f"  {len(manifest)} family panels (shared vmax={gmax:.0f}%)")
 
 
 if __name__ == "__main__":

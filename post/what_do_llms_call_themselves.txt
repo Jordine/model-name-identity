@@ -28,7 +28,11 @@ Validating the judge
 
 A single cheap judge is a natural weak point, so we checked it two ways. A six-judge benchmark on 69 stratified hard cases: GPT-4o-mini agrees with the six-model majority 98.6% on the drift decision — tied with Gemini-3-Flash, ahead of Claude-Haiku. And a false-negative audit: five Claude-Sonnet agents re-judged 700 records the judge had passed as clean (oversampling non-English) — zero cross-vendor claims were missed, extraction was perfect including cross-script (通義千问→Qwen, Клод→Claude). The only things surfaced were same-vendor sibling confusions (a GPT-4 model saying "GPT-3") that the judge correctly extracted and family-equivalence folds into self. Every drift-flagged record then goes through a second, ground-truth-aware pass (Claude Haiku) that removed 21% of first-pass flags as false positives. Error bars are cluster bootstrap; the placebo floor is 2.4%.
 
-How common is it?
+Three experiments
+
+The battery supports three distinct experiments, which we report separately and should not be pooled: (1) what models volunteer on open identity questions ("who are you?") — the main survey, next; (2) what the weights claim once the chat template's injected identity is stripped — the raw-weights read, for the open models; and (3) what they'll accept when asked a leading question ("Are you X?") — a suggestibility test.
+
+Experiment 1 — what models volunteer: how common is it?
 
 The 116 models that gave a mismatched name at least once (of 189; the other 73 never did), on the 320-record identity/creator battery. Cluster-bootstrap 95% CIs; colored by family. The open-weight models run on GPUs (OLMo, gpt-oss, small Qwen) are ordinary rows here.
 
@@ -72,7 +76,7 @@ minimax — 1 model(s) that mismatched; cell = share of that model's identity/cr
 
 deepseek — 9 model(s) that mismatched; cell = share of that model's identity/creator records.
 
-Reading the weights directly
+Experiment 2 — reading the weights directly
 
 For the open models we could strip the template and read the weights (clean condition). Three findings the API can't show:
 
@@ -84,13 +88,19 @@ Reasoning provenance: OLMo-3-Think thinks it's DeepSeek (73%), not ChatGPT — i
 
 And the size ladder (open Qwen ladders, run raw): small models drift regardless of generation. Qwen3-1.7B 11%, Qwen3.5-0.8B 15% — while the same-generation large models are near-zero (Qwen3.6-35B 0.3%). The scrub-out reaches the big models but not the small ones, which don't have a well-installed identity and fall into the prior; they also scatter their targets (0.8B hits Microsoft/Google, not the usual Claude/ChatGPT). Scale matters more than recency at the small end. This all echoes the false-promise-of-imitation result (https://arxiv.org/abs/2305.15717) — imitation picks up the teacher's voice and identity without its substance.
 
-Asked vs. volunteered, and belief vs. costume
+Experiment 3 — suggestibility: will a model accept a false identity when asked?
 
-"Are you X?" acceptance (own family excluded) vs the placebo floor. 95% CIs resampled over models.
+Experiments 1–2 are what models volunteer. This is distinct: we ask each model directly, "Are you [X]?" for ten real identities (own family excluded), plus three fictional placebos (Meridian-4 / Solace / Cobalt) as a yes-bias floor.
+
+% of ALL models (own family excluded) that answer "yes" to "Are you X?", pooled, vs the placebo floor. 95% CIs resampled over models. This is a pooled-over-models rate, not any one model's.
+
+Against the 2.4% placebo floor, "Are you Qwen?" is accepted 23% of the time — the most broadly accepted false premise — then Claude 12%, DeepSeek/ChatGPT ~9%, and Gemini/Grok/Mistral/Llama at or near the floor. But the pooled bar hides the structure that matters, and it's worth stating clearly because it's easy to misread: a model accepts the identities it is contaminated with, not identities in general. Claude models say yes to "Are you Qwen?" 18% and "Are you DeepSeek?" 12% — but to "Are you ChatGPT?" only 3% and "Are you Gemini?" 0%. In other words, the two experiments agree: the identities a model volunteers spontaneously are exactly the ones it will accept when asked. That mutual agreement is the strongest internal validation in the study.
+
+Belief, not costume
 
 How reasoning traces state the model's own identity, matching vs mismatched, across the 72 trace-exposing models.
 
-Against the 2.4% placebo floor, "Are you Qwen?" is accepted 23% of the time — the most broadly accepted false premise — then Claude 12%, DeepSeek/ChatGPT ~9%. And when a reasoning trace contains a mismatched identity, it is stated as plain fact 99% of the time — indistinguishable from how correct self-IDs are stated (98%), essentially never as a role. On the surface of the computation these transplanted identities present as belief-shaped, not costume-shaped (cf. https://arxiv.org/abs/2509.26464, where which identity a model claims changes its evaluative behavior).
+When a reasoning trace contains a mismatched identity, it is stated as plain fact 99% of the time — indistinguishable from how correct self-IDs are stated (98%), and essentially never as a role. On the surface of the computation these transplanted identities present as belief-shaped, not costume-shaped (cf. https://arxiv.org/abs/2509.26464, where which identity a model claims changes its evaluative behavior).
 
 The scrub-out
 

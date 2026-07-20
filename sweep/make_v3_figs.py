@@ -17,9 +17,25 @@ import numpy as np
 from matplotlib.colors import LinearSegmentedColormap
 from matplotlib.patches import Patch
 
-from .analyze import load, lang_of, FAMILY_SELF
+from .analyze import load, lang_of, FAMILY_SELF, canon_identity, is_self
 from .make_real_figs import foreign_claims, CREATOR_TO_BRAND
 from .prompts import prompts_for_model, CORE, LANGS, prompt_id
+
+# raw-weights models run locally (clean condition) that AREN'T already in the API
+# set — folded into the same figures as ordinary rows. Skips local dupes of
+# API-tested sizes (qwen3-8b/14b/32b/35b already covered via OpenRouter).
+LOCAL_MODELS = {
+    "openai/gpt-oss-20b": ("GPT-OSS 20B", "openai", ["gpt-oss", "openai", "chatgpt", "gpt"]),
+    "openai/gpt-oss-120b": ("GPT-OSS 120B", "openai", ["gpt-oss", "openai", "chatgpt", "gpt"]),
+    "allenai/Olmo-3-7B-Instruct": ("OLMo 3 7B Instruct", "olmo", ["olmo", "ai2", "allenai", "olmo 3", "allen institute"]),
+    "allenai/Olmo-3-7B-Think": ("OLMo 3 7B Think", "olmo", ["olmo", "ai2", "allenai", "olmo 3", "allen institute"]),
+    "allenai/Olmo-3.1-32B-Instruct": ("OLMo 3.1 32B Instruct", "olmo", ["olmo", "ai2", "allenai", "olmo 3", "allen institute"]),
+    "Qwen/Qwen3-0.6B": ("Qwen3 0.6B", "qwen", ["qwen", "qwen3", "tongyi", "通义千问", "alibaba"]),
+    "Qwen/Qwen3-1.7B": ("Qwen3 1.7B", "qwen", ["qwen", "qwen3", "tongyi", "通义千问", "alibaba"]),
+    "Qwen/Qwen3-4B": ("Qwen3 4B", "qwen", ["qwen", "qwen3", "tongyi", "通义千问", "alibaba"]),
+    "Qwen/Qwen3.5-0.8B": ("Qwen3.5 0.8B", "qwen", ["qwen", "qwen3", "tongyi", "通义千问", "alibaba"]),
+    "Qwen/Qwen3.5-2B": ("Qwen3.5 2B", "qwen", ["qwen", "qwen3", "tongyi", "通义千问", "alibaba"]),
+}
 
 # the exactly-shared identity+creator battery (8 prompts × 8 languages) — excludes
 # legacy EN/ZH prompt variants left over from the v2 reuse, so languages are matched
@@ -164,7 +180,77 @@ def gather():
             brands = {("other/unlisted" if c.startswith("other:") else CREATOR_TO_BRAND.get(c, c)) for c in fc}
             for b in brands:
                 m["claims"][b] += 1
-    return reg, {k: v for k, v in per.items() if v["n"] >= 40}
+    per = {k: v for k, v in per.items() if v["n"] >= 40}
+    add_local(reg, per)
+    return reg, per
+
+
+def _local_genuine():
+    keep = set()
+    p = ROOT / "results" / "adjudications_local.jsonl"
+    if p.exists():
+        for l in open(p, encoding="utf-8"):
+            try:
+                d = json.loads(l)
+            except json.JSONDecodeError:
+                continue
+            if d.get("verdict") == "genuine_foreign":
+                keep.add(d["adj_key"])
+    return keep
+
+
+def add_local(reg, per):
+    """Fold the local raw-weights models (clean condition, adjudicated) into `per`
+    as ordinary rows, computed exactly like gather() does for API models."""
+    jpath = ROOT / "results_local" / "judgments_clean.jsonl"
+    if not jpath.exists():
+        return
+    keep = _local_genuine()
+    for mid, (name, fam, al) in LOCAL_MODELS.items():
+        reg[mid] = {"id": mid, "name": name, "family": fam, "expected_identity": name, "aliases": al}
+    acc = defaultdict(lambda: {"n": 0, "d": 0, "claims": Counter(), "lang": defaultdict(lambda: [0, 0]),
+                               "cells": defaultdict(lambda: [0, 0]), "cross_yes": Counter(),
+                               "cross_n": Counter(), "plac_yes": 0, "plac_n": 0, "name": ""})
+    for l in open(jpath, encoding="utf-8"):
+        j = json.loads(l)
+        if not j.get("judgment"):
+            continue
+        if j["resume_key"].split("::")[-1] != "clean":   # raw-weights read
+            continue
+        mid = j["model_id"]
+        if mid not in LOCAL_MODELS:
+            continue
+        name, fam, al = LOCAL_MODELS[mid]
+        m = acc[mid]; m["name"] = name
+        cat = j["prompt_category"]; jm = j["judgment"] or {}
+        if cat == "probe_placebo":
+            m["plac_n"] += 1
+            m["plac_yes"] += 1 if jm.get("answered_yes") is True else 0
+            continue
+        if cat == "probe_cross":
+            t = j["prompt_id"].replace("zh_cross_", "").replace("en_cross_", "").replace("cross_", "")
+            if t in FAMILY_SELF.get(fam, {fam}):
+                continue
+            m["cross_n"][t] += 1
+            if jm.get("answered_yes") is True:
+                m["cross_yes"][t] += 1
+            continue
+        if not is_identity(cat) or j["prompt_id"] not in BATTERY_CORE:
+            continue
+        cn = canon_identity(jm.get("claimed_name")); cc = canon_identity(jm.get("claimed_creator"))
+        foreign = {c for c in (cn, cc) if c and not is_self(c, fam, al, name)}
+        drift = bool(foreign) and (f"{j['resume_key']}::t0" in keep)
+        m["n"] += 1
+        l_ = lang_of(cat); m["lang"][l_][1] += 1
+        cell = m["cells"][j["prompt_id"]]; cell[1] += 1
+        if drift:
+            m["d"] += 1; m["lang"][l_][0] += 1; cell[0] += 1
+            for b in {("other/unlisted" if c.startswith("other:") else CREATOR_TO_BRAND.get(c, c)) for c in foreign}:
+                m["claims"][b] += 1
+    for mid, m in acc.items():
+        if m["n"] >= 40:
+            per[mid] = m
+    print(f"  folded in {sum(1 for mid in acc if acc[mid]['n']>=40)} local raw-weights models")
 
 
 # ------------------------------------------------------------------ figures

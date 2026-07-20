@@ -1,9 +1,21 @@
 [
  {
+  "file": "family/fam_olmo.png",
+  "family": "olmo",
+  "drift": 621,
+  "models": 3
+ },
+ {
   "file": "family/fam_kimi.png",
   "family": "kimi",
   "drift": 550,
   "models": 6
+ },
+ {
+  "file": "family/fam_qwen.png",
+  "family": "qwen",
+  "drift": 502,
+  "models": 23
  },
  {
   "file": "family/fam_poolside.png",
@@ -16,12 +28,6 @@
   "family": "mistral",
   "drift": 423,
   "models": 16
- },
- {
-  "file": "family/fam_qwen.png",
-  "family": "qwen",
-  "drift": 371,
-  "models": 18
  },
  {
   "file": "family/fam_nvidia.png",

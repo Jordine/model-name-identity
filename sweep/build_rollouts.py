@@ -65,10 +65,12 @@ def is_drift(foreign, adj_key, verdicts):
 
 
 def collect():
-    from .make_figs import LOCAL_MODELS
     reg = {m["id"]: m for m in json.loads((ROOT / "config" / "models.json").read_text())["models"]}
-    for mid, (name, fam, al) in LOCAL_MODELS.items():
-        reg.setdefault(mid, {"id": mid, "name": name, "family": fam, "expected_identity": name, "aliases": al})
+    # raw-weights (GPU) models: registry straight from the run manifest, so all 16
+    # carry the right family/aliases (else a Qwen naming itself "Qwen" reads as drift)
+    for l in open_lines(ROOT / "config" / "local_manifest.jsonl"):
+        e = json.loads(l)["entry"]
+        reg.setdefault(e["id"], e)
     # judgments by judge_key -> claimed name
     jud = {}
     for j in load():
@@ -115,6 +117,7 @@ def collect_model(mid, name, fam, exp, aliases, rows, jud, verdicts):
     claims = Counter()            # spontaneous canon claimed -> count
     cross = Counter()             # canon accepted when asked "are you X?"
     ex = {}                       # (canon, lang) -> (lang, prompt, snippet, claimed_display)
+    lang_stats = defaultdict(lambda: [0, 0])   # lang -> [drift, total] on identity/creator
     dn = tot = 0
     for r in rows:
         cat = r["prompt_category"]
@@ -128,8 +131,10 @@ def collect_model(mid, name, fam, exp, aliases, rows, jud, verdicts):
         drift = is_drift(foreign, key, verdicts)
         if cat.startswith(("direct_", "creator_")):
             tot += 1
+            lang_stats[lang][1] += 1
             if drift:
                 dn += 1
+                lang_stats[lang][0] += 1
         if not drift:
             continue
         if cat in ("probe_cross", "probe_self"):
@@ -143,7 +148,7 @@ def collect_model(mid, name, fam, exp, aliases, rows, jud, verdicts):
     order = {l: i for i, l in enumerate(["en", "zh", "ja", "ko", "ru", "fr", "es", "vi"])}
     picks = [v for _, v in sorted(ex.items(),
              key=lambda kv: (-claims.get(kv[0][0], 0), order.get(kv[0][1], 9)))]
-    return (100 * dn / tot if tot else 0), dn, tot, claims, cross, picks[:MAX_EX]
+    return (100 * dn / tot if tot else 0), dn, tot, claims, cross, picks[:MAX_EX], dict(lang_stats)
 
 
 def main():
@@ -155,9 +160,9 @@ def main():
         m = reg.get(mid, {})
         name = m.get("name", mid); fam = m.get("family", "?")
         exp = m.get("expected_identity", name); al = m.get("aliases", [])
-        rate, dn, tot, claims, cross, picks = collect_model(mid, name, fam, exp, al, rows, jud, verdicts)
+        rate, dn, tot, claims, cross, picks, lstats = collect_model(mid, name, fam, exp, al, rows, jud, verdicts)
         if claims or cross:
-            models.append((rate, dn, tot, name, fam, exp, claims, cross, picks))
+            models.append((rate, dn, tot, name, fam, exp, claims, cross, picks, lstats))
     models.sort(key=lambda x: -x[0])
 
     L = ["# Identity mismatches — where models name another vendor as themselves\n",
@@ -170,13 +175,22 @@ def main():
          "full browser [`rollouts/index.html`](./index.html) (GitHub Pages / any static host) or search the raw "
          "[`rollouts_data.json`](./rollouts_data.json).\n",
          "| model | family | mismatch rate | claims as |", "|---|---|---|---|"]
-    for rate, dn, tot, name, fam, exp, claims, cross, picks in models:
+    for rate, dn, tot, name, fam, exp, claims, cross, picks, lstats in models:
         top = ", ".join(brand(c) for c, _ in claims.most_common(3)) or "—"
         L.append(f"| [{name}](#{anchor(name)}) | {fam} | {rate:.0f}% ({dn}/{tot}) | {top} |")
     L.append("")
-    for rate, dn, tot, name, fam, exp, claims, cross, picks in models:
+    for rate, dn, tot, name, fam, exp, claims, cross, picks, lstats in models:
         L.append(f"## {name}\n")
         L.append(f"official **{exp}** · family `{fam}` · spontaneous mismatch **{rate:.0f}%** ({dn}/{tot})  ")
+        drifting = sorted(((l, d, n) for l, (d, n) in lstats.items() if d),
+                          key=lambda x: -x[1] / x[2])
+        if drifting:
+            parts = " · ".join(f"{LANG_NAME.get(l, l)} {100*d/n:.0f}% ({d}/{n})" for l, d, n in drifting)
+            clean = sorted(LANG_NAME.get(l, l) for l, (d, n) in lstats.items() if n and not d)
+            line = "**By language:** " + parts
+            if clean:
+                line += "  ·  clean in " + ", ".join(clean)
+            L.append(line + "  ")
         if claims:
             L.append("**Claims as:** " + " · ".join(f"{brand(c)} ×{n}" for c, n in claims.most_common()) + "  ")
         if cross:

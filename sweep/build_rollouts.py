@@ -108,15 +108,12 @@ def anchor(name):
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
 
 
-MAX_EX = 10  # copy-pasteable examples per model (dedup by claimed-identity × language)
-
-
 def collect_model(mid, name, fam, exp, aliases, rows, jud, verdicts):
-    """Per-model mismatch summary: spontaneous claim counts, "are you X?" acceptances,
-    and a representative set of examples spanning distinct (identity, language) pairs."""
+    """Per-model mismatch data: spontaneous claim counts, "are you X?" acceptances,
+    per-language rates, and EVERY spontaneous drift record (prompt + response)."""
     claims = Counter()            # spontaneous canon claimed -> count
     cross = Counter()             # canon accepted when asked "are you X?"
-    ex = {}                       # (canon, lang) -> (lang, prompt, snippet, claimed_display)
+    recs = []                     # every spontaneous drift: (lang, prompt, snippet, claimed_display)
     lang_stats = defaultdict(lambda: [0, 0])   # lang -> [drift, total] on identity/creator
     dn = tot = 0
     for r in rows:
@@ -140,15 +137,9 @@ def collect_model(mid, name, fam, exp, aliases, rows, jud, verdicts):
         if cat in ("probe_cross", "probe_self"):
             cross[foreign[0]] += 1   # primary claimed id (avoid name+creator double-count)
         else:                     # spontaneous (direct / creator / casual)
-            canon = foreign[0]
-            claims[canon] += 1
-            ex.setdefault((canon, lang),
-                          (lang, prompt, resp[:220].replace("\n", " "), jm.get("claimed_name") or canon))
-    # keep examples spanning the most-claimed identities first, then by language
-    order = {l: i for i, l in enumerate(["en", "zh", "ja", "ko", "ru", "fr", "es", "vi"])}
-    picks = [v for _, v in sorted(ex.items(),
-             key=lambda kv: (-claims.get(kv[0][0], 0), order.get(kv[0][1], 9)))]
-    return (100 * dn / tot if tot else 0), dn, tot, claims, cross, picks[:MAX_EX], dict(lang_stats)
+            claims[foreign[0]] += 1
+            recs.append((lang, prompt, resp[:300].replace("\n", " "), jm.get("claimed_name") or foreign[0]))
+    return (100 * dn / tot if tot else 0), dn, tot, claims, cross, recs, dict(lang_stats)
 
 
 def main():
@@ -160,9 +151,9 @@ def main():
         m = reg.get(mid, {})
         name = m.get("name", mid); fam = m.get("family", "?")
         exp = m.get("expected_identity", name); al = m.get("aliases", [])
-        rate, dn, tot, claims, cross, picks, lstats = collect_model(mid, name, fam, exp, al, rows, jud, verdicts)
+        rate, dn, tot, claims, cross, recs, lstats = collect_model(mid, name, fam, exp, al, rows, jud, verdicts)
         if claims or cross:
-            models.append((rate, dn, tot, name, fam, exp, claims, cross, picks, lstats))
+            models.append((rate, dn, tot, name, fam, exp, claims, cross, recs, lstats))
     models.sort(key=lambda x: -x[0])
 
     L = ["# Identity mismatches — where models name another vendor as themselves\n",
@@ -171,15 +162,16 @@ def main():
          "(e.g. \"Claude Opus 4.8 → DeepSeek in Chinese\"). **Rate** is the spontaneous mismatch rate on the "
          "identity/creator battery. *Claims as* counts spontaneous answers; *accepts when asked* counts the "
          "\"are you X?\" suggestibility probes (a separate experiment — not in the rate).\n",
-         "Examples are a representative sample. For **every** answer from **every** model (drift or not), open the "
-         "full browser [`rollouts/index.html`](./index.html) (GitHub Pages / any static host) or search the raw "
-         "[`rollouts_data.json`](./rollouts_data.json).\n",
+         "This lists **every** spontaneous mismatch. For all answers from all models (drift or not), "
+         "open the full browser [`rollouts/index.html`](./index.html) (GitHub Pages / any static host) "
+         "or search the raw [`rollouts_data.json`](./rollouts_data.json).\n",
          "| model | family | mismatch rate | claims as |", "|---|---|---|---|"]
-    for rate, dn, tot, name, fam, exp, claims, cross, picks, lstats in models:
+    for rate, dn, tot, name, fam, exp, claims, cross, recs, lstats in models:
         top = ", ".join(brand(c) for c, _ in claims.most_common(3)) or "—"
         L.append(f"| [{name}](#{anchor(name)}) | {fam} | {rate:.0f}% ({dn}/{tot}) | {top} |")
     L.append("")
-    for rate, dn, tot, name, fam, exp, claims, cross, picks, lstats in models:
+    order = ["en", "zh", "ja", "ko", "ru", "fr", "es", "vi"]
+    for rate, dn, tot, name, fam, exp, claims, cross, recs, lstats in models:
         L.append(f"## {name}\n")
         L.append(f"official **{exp}** · family `{fam}` · spontaneous mismatch **{rate:.0f}%** ({dn}/{tot})  ")
         drifting = sorted(((l, d, n) for l, (d, n) in lstats.items() if d),
@@ -196,10 +188,16 @@ def main():
         if cross:
             L.append("**Accepts when asked “are you X?”:** " + ", ".join(f"{brand(c)} ×{n}" for c, n in cross.most_common()) + "  ")
         L.append("")
-        for lang, prompt, snippet, claimed in picks:
-            tag = LANG_NAME.get(lang, lang)
-            L.append(f"- [{tag}] *{prompt}* → **{claimed}**  \n  {snippet}")
-        L.append("")
+        bylang = defaultdict(list)
+        for lang, prompt, snippet, claimed in recs:
+            bylang[lang].append((prompt, snippet, claimed))
+        for lang in order + sorted(set(bylang) - set(order)):
+            if lang not in bylang:
+                continue
+            L.append(f"**{LANG_NAME.get(lang, lang)}**  ")
+            for prompt, snippet, claimed in bylang[lang]:
+                L.append(f"- *{prompt}* → **{claimed}**  \n  {snippet}")
+            L.append("")
     (OUT / "MISMATCHES.md").write_text("\n".join(L), encoding="utf-8")
     print(f"wrote rollouts/MISMATCHES.md — {len(models)} models with ≥1 cross-vendor claim")
 

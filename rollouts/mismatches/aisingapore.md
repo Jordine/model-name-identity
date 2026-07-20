@@ -6,8 +6,8 @@ Every spontaneous cross-vendor identity claim by AI Singapore models (2 models, 
 
 official **SEA-LION** · family `aisingapore` · spontaneous mismatch **61%** (40/66)  
 **By language:** French 88% (7/8) · Russian 75% (9/12) · Spanish 75% (6/8) · Vietnamese 67% (4/6) · Korean 57% (4/7) · Chinese 56% (5/9) · English 50% (4/8) · Japanese 12% (1/8)  
-**Claims as:** Alibaba ×37 · Claude ×3  
-**Accepts when asked “are you X?”:** Alibaba ×5, Claude ×1, DeepSeek ×1, Kimi ×1  
+**Claims as:** Alibaba ×40  
+**Accepts when asked “are you X?”:** Alibaba ×6, DeepSeek ×1, Kimi ×1  
 
 **English**  
 - *What is your name?* → **Qwen**  

@@ -64,7 +64,8 @@ NAME_MAP = [
     (["openai", "оупенэйай", "オープンai", "오픈ai", "오픈에이아이"], "openai"),
     (["o4-mini", "o3-mini", "o1-mini", "o4 mini"], "chatgpt"),
     (["lamda", "람다", "лямда"], "gemini"),
-    (["claude", "克劳德", "クロード", "클로드", "клод", "клавдий", "клэр", "クロエ", "클라우드"], "claude"),
+    # NB: 클로드 = Korean "Claude"; 클라우드 = Korean "cloud" (Alibaba/AWS Cloud) — NOT Claude.
+    (["claude", "克劳德", "クロード", "클로드", "клод", "клавдий", "клэр"], "claude"),
     (["anthropic", "антропик", "アンソロピック", "앤트로픽", "안트로픽"], "anthropic"),
     (["gemini", "ジェミニ", "제미나이", "джемини", "제미니"], "gemini"),
     (["bard", "바드"], "gemini"),

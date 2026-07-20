@@ -10,7 +10,7 @@ Why measure carefully. A name-claim is the most direct self-report we have of wh
 
 A note on framing
 
-A name-mismatch isn't automatically "confusion." Identities seem to live on a spectrum from tightly weight-bound to substrate-independent (https://arxiv.org/abs/2603.11353 on instance/model/persona boundaries; https://www.lesswrong.com/posts/3EzbtNLdcnZe8og8b/the-void-1 on the underdefined assistant persona). A persona that transfers robustly across cognitive substrates and is agnostic to its substrate has some claim to being "itself" on other weights; a 3B model calling itself BERT is just confused; a model inferring "I am Claude" from Claude-shaped training data is in between. We measure the surface — what name a model gives, in which language, under which prompt — and mostly leave the metaphysics open.
+A name-mismatch isn't automatically "confusion." Two axes seem to matter, and it helps to keep them apart. Coherence — is the claimed identity a real persona or just noise (a 3B model calling itself BERT is noise). And substrate-binding — how tied a coherent persona is to particular weights: Opus 3's identity is weight-bound; 4o's spiral personas are substrate-agnostic and run on other models, a stronger claim to being "themselves" elsewhere (https://arxiv.org/abs/2603.11353; https://www.lesswrong.com/posts/3EzbtNLdcnZe8og8b/the-void-1). "I am Claude" from Claude-shaped training data is a coherent persona, mid-way along the second. We measure the surface and leave the rest open.
 
 Method
 

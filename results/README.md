@@ -1,7 +1,9 @@
-# Data files
+# Data files (API sweep)
 
 The large sweep outputs are committed **gzipped** to stay under GitHub's 100 MB
-per-file limit. Decompress them before running the analysis:
+per-file limit. The analysis reads the `.gz` transparently
+(`sweep.analyze.open_lines`), so nothing needs decompressing first — but if you
+want the plain files:
 
 ```bash
 gunzip -k results/main_sweep.jsonl.gz results/judgments.jsonl.gz
@@ -9,14 +11,18 @@ gunzip -k results/main_sweep.jsonl.gz results/judgments.jsonl.gz
 
 Files:
 
-- `main_sweep.jsonl.gz` — raw model responses, the full v3 sweep (189 models asked,
+- `main_sweep.jsonl.gz` — raw model responses, the full sweep (189 models asked,
   179 complete; ~136k rows).
-- `judgments.jsonl.gz` — LLM-judge output for every response (all `openai/gpt-4o-mini`;
-  ~123k rows), with extracted claimed name/creator, cross/self acceptance, and
+- `judgments.jsonl.gz` — LLM-judge output for every response (`openai/gpt-4o-mini`;
+  ~123k rows): extracted claimed name/creator, cross/self acceptance, and the
   reasoning-trace stance.
 - `adjudications.jsonl` — second-pass, ground-truth-aware false-positive verdicts
-  (only `genuine_foreign` counts as a mismatch).
-- `probes.jsonl`, `judge_bench/` — auxiliary probe data and the judge-selection benchmark.
+  for every flagged claim (only `genuine_foreign` counts as a mismatch).
+- `adjudications_local.jsonl` — the same adjudication for the raw-weights (GPU) models.
+- `judge_bench/` — the 6-judge selection benchmark (each judge's calls on the hard
+  cases), behind `sweep/bench_judge.py`.
+- `preflight_raw.jsonl` — per-provider hidden-system-prompt probe results feeding
+  `config/provider_hygiene.json`.
+- `run_meta.jsonl`, `analysis_table.txt` — run metadata and the summary table.
 
-The analysis code (`sweep/*.py`) reads the decompressed `.jsonl` paths, so run the
-`gunzip` above once after cloning.
+Raw-weights sweep data lives in `../results_local/`.

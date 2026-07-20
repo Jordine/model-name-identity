@@ -17,8 +17,12 @@ import time
 
 from transformers import AutoTokenizer
 
-import prompts as P
-from clean_render import render_clean, render_shipped, scaffold_flags
+try:  # package import (repo); falls back to flat layout when copied onto a GPU box
+    from . import prompts as P
+    from .clean_render import render_clean, render_shipped, scaffold_flags
+except ImportError:
+    import prompts as P
+    from clean_render import render_clean, render_shipped, scaffold_flags
 
 HARMONY_FINAL = re.compile(r"<\|channel\|>final<\|message\|>(.*?)(?:<\|return\|>|<\|end\|>|$)", re.S)
 HARMONY_ANALYSIS = re.compile(r"<\|channel\|>analysis<\|message\|>(.*?)(?:<\|end\|>|<\|start\|>|$)", re.S)

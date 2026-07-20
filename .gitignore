@@ -2,19 +2,11 @@ __pycache__/
 .pytest_cache/
 *.pyc
 
-# Drafts, research notes, unpublished writing
+# Scratch
 drafts/
 
-# Raw responses with leading cross-probes (clean version is responses_no_probes.jsonl)
-results/responses.jsonl
-
-# Large data files are committed gzipped (see results/README.md); keep the
-# decompressed working copies out of git.
+# Large data is committed gzipped (results/*.jsonl.gz); the analysis reads the
+# .gz transparently (sweep.analyze.open_lines). Keep the decompressed working
+# copies out of git.
 results/main_sweep.jsonl
 results/judgments.jsonl
-
-# Superseded intermediate snapshots (not part of the reproducible artifact)
-results/judgments_mixed_backup.jsonl
-results/main_sweep_v2_full.jsonl
-results/main_sweep_prepurge_backup.jsonl
-results/judgments_v2.jsonl

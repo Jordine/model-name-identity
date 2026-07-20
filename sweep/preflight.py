@@ -3,7 +3,7 @@
 For every model in the registry, enumerate its OpenRouter providers (public
 endpoints API), then probe EACH provider with a pinned minimal call and flag
 hidden system prompts via prompt_token counts ("hi" should be ~1-8 tokens;
-v1 threshold: >15 suspicious).
+threshold: >15 suspicious).
 
 Output: config/provider_hygiene.json
   {model_id: {provider: {...pin...} | None, exclude: bool, reason: str,
@@ -32,7 +32,7 @@ OUT = ROOT / "config" / "provider_hygiene.json"
 RAW_OUT = ROOT / "results" / "preflight_raw.jsonl"
 
 # Two-tier: provider-raw prompt_tokens for "hi" (proxy reports raw counts,
-# NOT OR-normalized like v1 — template/BOS overhead varies by tokenizer).
+# NOT OR-normalized — template/BOS overhead varies by tokenizer).
 # >EXCLUDE_PT => injection, exclude/avoid. (BORDERLINE_PT, EXCLUDE_PT] =>
 # keep with borderline flag; in-sweep sysprompt probes double-check these.
 BORDERLINE_PT = 15

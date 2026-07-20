@@ -22,8 +22,7 @@ from pathlib import Path
 import aiohttp
 
 from . import api
-from .analyze import load, canon_identity, is_self
-from .make_real_figs import foreign_claims
+from .analyze import load, canon_identity, is_self, open_lines, foreign_claims
 
 ROOT = Path(__file__).resolve().parent.parent
 SWEEP = ROOT / "results" / "main_sweep.jsonl"
@@ -97,7 +96,7 @@ def build_worklist():
     """Drift-flagged judged records joined to their raw response."""
     # raw responses by (resume_key, turn)
     raw = {}
-    for l in open(SWEEP, encoding="utf-8"):
+    for l in open_lines(SWEEP):
         r = json.loads(l)
         if r.get("error"):
             continue

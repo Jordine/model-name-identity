@@ -1,4 +1,4 @@
-"""v2 sweep runner — async, resumable, litellm-proxy-backed.
+"""Sweep runner — async, resumable, litellm-proxy-backed.
 
 Usage:
   python -m sweep.runner --dry-run                 # counts + cost estimate

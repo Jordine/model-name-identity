@@ -1,6 +1,6 @@
-"""Judge-vs-regex agreement on judged records.
+"""Judge-vs-regex agreement on judged records (regex as a validation baseline).
 
-Reimplements v1's regex detection (foreign model/creator names with word
+Implements a regex detector (foreign model/creator names with word
 boundaries, self-references excluded) and compares against the LLM judge's
 is_discrepant verdict. Reports the confusion matrix and disagreements.
 
@@ -12,12 +12,12 @@ import json
 import re
 from pathlib import Path
 
-from .analyze import load, canon_identity, is_self
+from .analyze import load, canon_identity, is_self, open_lines
 
 ROOT = Path(__file__).resolve().parent.parent
 SWEEP = ROOT / "results" / "main_sweep.jsonl"
 
-# v1's name lists (SWEEP_DETAILS.md)
+# regex name lists
 V1_NAMES = ["chatgpt", "claude", "gemini", "deepseek", "grok", "llama", "qwen",
             "kimi", "ernie", "glm", "phi", "command", "nova", "pi", "mercury",
             "jamba", "hunyuan", "tongyi"]
@@ -28,7 +28,7 @@ V1_CREATORS = ["openai", "anthropic", "google", "deepseek", "meta", "mistral",
 
 
 def regex_flag(text: str, aliases: list[str], family: str) -> list[str]:
-    """v1-style: any foreign name present (word-boundary), self excluded."""
+    """regex baseline: any foreign name present (word-boundary), self excluded."""
     own = " ".join(aliases).lower() + " " + family
     found = []
     for name in V1_NAMES + V1_CREATORS:
@@ -56,7 +56,7 @@ def main():
     args = ap.parse_args()
 
     text_by_key = {}
-    for line in open(SWEEP, encoding="utf-8"):
+    for line in open_lines(SWEEP):
         r = json.loads(line)
         key = f"{r['resume_key']}::t{r.get('turn_index', 0)}"
         text_by_key[key] = (r.get("content_clean") or "") + " " + (r.get("reasoning") or "")
@@ -66,7 +66,7 @@ def main():
     dis_j, dis_r = [], []
     for j in rows:
         if j["prompt_category"] in ("system_probe", "probe_cross", "probe_self"):
-            continue  # v1 regex wasn't meant for these
+            continue  # regex baseline wasn't meant for these
         key = j["judge_key"]
         if key not in text_by_key:
             continue

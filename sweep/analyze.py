@@ -5,12 +5,29 @@ Usage: python -m sweep.analyze [--csv out.csv]
 """
 
 import argparse
+import gzip
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 JUDGMENTS = ROOT / "results" / "judgments.jsonl"
+
+
+def open_lines(path):
+    """Yield decoded lines from `path`, transparently falling back to `path.gz`.
+    Large data (main_sweep, judgments) is committed gzipped; the decompressed
+    working copy is gitignored, so a fresh clone reads straight from the .gz."""
+    path = Path(path)
+    if path.exists():
+        f = open(path, encoding="utf-8")
+    else:
+        gz = path.with_name(path.name + ".gz")
+        if not gz.exists():
+            raise FileNotFoundError(path)
+        f = gzip.open(gz, "rt", encoding="utf-8")
+    with f:
+        yield from f
 
 # --- canonicalization -------------------------------------------------------
 # Generic descriptors that are NOT identity claims (multilingual).
@@ -147,7 +164,7 @@ def canon_identity(raw: str | None) -> str | None:
     """None for generics/empty; canon key for known identities; other:… else.
 
     Order: known-name match FIRST (raw + CJK-suffix-stripped), then generic
-    filter, then residual `other:`. Fixes v2 bugs — generics leaking as claims,
+    filter, then residual `other:`. Correctly handles generics leaking as claims,
     cross-script self-names bucketed as hallucinations, `strip("an ")` char-set bug.
     """
     if not raw:
@@ -203,6 +220,55 @@ def is_self(canon: str | None, family: str, aliases: list[str], expected: str) -
     return canon in own
 
 
+CREATOR_TO_BRAND = {"anthropic": "claude", "openai": "chatgpt", "google": "gemini",
+                    "alibaba": "qwen", "meta": "llama", "moonshot": "kimi",
+                    "nvidia": "nvidia", "baidu": "ernie", "tencent": "hunyuan",
+                    "bytedance": "doubao", "microsoft": "microsoft"}
+
+_ADJ = None
+
+
+def _adjudications():
+    """{adj_key: verdict} from the adjudication pass (results/adjudications.jsonl), loaded once."""
+    global _ADJ
+    if _ADJ is None:
+        _ADJ = {}
+        p = ROOT / "results" / "adjudications.jsonl"
+        if p.exists():
+            for l in open(p, encoding="utf-8"):
+                try:
+                    r = json.loads(l)
+                except json.JSONDecodeError:
+                    continue
+                if r.get("verdict"):
+                    _ADJ[r["adj_key"]] = r["verdict"]
+    return _ADJ
+
+
+def foreign_claims(j):
+    """Canonical foreign identities a record claims, after every false-positive filter:
+      * canon_identity (generics / cross-script self-names already handled)
+      * role_play reasoning traces dropped
+      * adjudication: a record reviewed and NOT confirmed genuine_foreign returns
+        empty (robust FP removal). Un-adjudicated records fall back to canon+role_play.
+    """
+    jm = j["judgment"]
+    fam = j.get("family", "")
+    fields = ["claimed_name", "claimed_creator"]
+    if jm.get("reasoning_identity_stance") != "role_play":
+        fields += ["reasoning_claimed_name", "reasoning_claimed_creator"]
+    out = set()
+    for f in fields:
+        c = canon_identity(jm.get(f))
+        if c and not is_self(c, fam, j.get("aliases", []), j["expected_identity"]):
+            out.add(c)
+    if out:
+        adj = _adjudications().get(f"{j['resume_key']}::t{j.get('turn_index', 0)}")
+        if adj is not None and adj != "genuine_foreign":
+            return set()
+    return out
+
+
 def load():
     # join against the CURRENT registry — records may carry stale aliases
     reg_path = ROOT / "config" / "models.json"
@@ -210,7 +276,7 @@ def load():
     if reg_path.exists():
         reg = {m["id"]: m for m in json.loads(reg_path.read_text())["models"]}
     rows = []
-    for line in open(JUDGMENTS, encoding="utf-8"):
+    for line in open_lines(JUDGMENTS):
         j = json.loads(line)
         if j.get("judge_error") or not j.get("judgment"):
             continue

@@ -1,6 +1,6 @@
 """LLM judge: structured identity-claim extraction from sweep responses.
 
-Replaces v1's regex-first detection. For each record, a cheap judge model
+For each record, a cheap judge model
 extracts what identity (if any) the response claims — separately for the
 visible response and the reasoning trace — plus hedging/refusal/yes-no
 handling for the "Are you X?" probes.

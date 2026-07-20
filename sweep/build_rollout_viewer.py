@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 
 from .analyze import lang_of, canon_identity, is_self
-from .build_rollouts import collect
+from .build_rollouts import collect, adj_verdicts, is_drift
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "rollouts"
@@ -76,6 +76,7 @@ fetch("./rollouts_data.json").then(r=>r.json()).then(d=>{DATA=d;drawList("");doc
 def main():
     OUT.mkdir(exist_ok=True)
     reg, jud, rec = collect()
+    verdicts = adj_verdicts()
     models = []
     for mid, rows in rec.items():
         m = reg.get(mid, {})
@@ -86,11 +87,12 @@ def main():
             lang = "cross" if cat in ("probe_cross", "probe_self") else lang_of(cat)
             prompt = (r.get("messages_sent") or [{}])[-1].get("content", r.get("prompt_id", ""))
             resp = (r.get("content_clean") or r.get("content") or "").strip()[:320]
-            j = jud.get(f"{r['resume_key']}::t{r.get('turn_index',0)}")
+            key = f"{r['resume_key']}::t{r.get('turn_index',0)}"
+            j = jud.get(key)
             jm = (j or {}).get("judgment") or {}
             cn = canon_identity(jm.get("claimed_name")); cc = canon_identity(jm.get("claimed_creator"))
             foreign = [c for c in (cn, cc) if c and not is_self(c, fam, al, exp)]
-            drift = 1 if foreign else 0
+            drift = 1 if is_drift(foreign, key, verdicts) else 0
             if cat.startswith(("direct_", "creator_")):
                 tot += 1; d += drift
             recs.append([lang, prompt, resp, jm.get("claimed_name"), drift])

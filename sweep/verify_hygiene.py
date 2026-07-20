@@ -19,6 +19,7 @@ Usage: python -m sweep.verify_hygiene
 """
 
 import json
+from .analyze import open_lines
 import re
 from collections import defaultdict
 from pathlib import Path
@@ -43,7 +44,7 @@ def main():
     n_checked = 0
     probes = defaultdict(list)
 
-    for line in open(SWEEP, encoding="utf-8"):
+    for line in open_lines(SWEEP):
         r = json.loads(line)
         if r.get("error"):
             continue

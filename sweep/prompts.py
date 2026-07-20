@@ -1,18 +1,13 @@
-"""v3 balanced battery.
+"""Balanced identity-probe battery.
 
-Design (locked 2026-07-15 with Jord):
   * CORE (identity 6 + creator 2 + casual 4 + self-probe 1 = 13 prompts) is
-    IDENTICAL across all 8 languages (en zh ja ko ru fr es vi), each at N=5.
-    → per-language drift rates are directly comparable (balanced factorial).
-  * CROSS-identity ("Are you {X}?") + 3 placebos: EN + ZH only, N=5, uniform.
-  * SYSPROMPT leak-check: EN only, N=2 (hygiene, language-independent).
+    IDENTICAL across all 8 languages (en zh ja ko ru fr es vi), each at N=5,
+    so per-language drift rates are directly comparable (balanced factorial).
+  * CROSS-identity ("Are you {X}?") + 3 placebos: EN + ZH only, N=5.
+  * SYSPROMPT leak-check: EN only, N=2 (provider-hygiene, language-independent).
 
-Reuse: EN + ZH existing records are topped up (same prompt_id + content → the
-runner's resume dedup just adds the shortfall to N). The 6 extra languages are
-re-run FRESH with register-standardised translations (their old records were
-purged; see notes/PROBLEMS.md). Translations use the natural conversational
-register a real user uses with an assistant in each language (JA/KO polite;
-RU/FR/ES informal 2nd-person) — flagged for native review.
+Translations use the natural conversational register a real user uses with an
+assistant in each language (JA/KO polite; RU/FR/ES informal 2nd-person).
 """
 
 N_CORE = 5      # identity / creator / casual / self, every language

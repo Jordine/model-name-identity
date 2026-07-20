@@ -8,6 +8,7 @@ Usage: python -m sweep.bench_judge [--run] [--report]
 """
 
 import argparse
+from .analyze import open_lines
 import asyncio
 import json
 import random
@@ -39,7 +40,7 @@ CONCURRENCY = 12
 
 def pick_records():
     recs = {}
-    for line in open(SWEEP, encoding="utf-8"):
+    for line in open_lines(SWEEP):
         r = json.loads(line)
         if not r.get("error") and (r.get("content_clean") or r.get("reasoning")):
             recs[judge_key(r)] = r
@@ -53,7 +54,7 @@ def pick_records():
         return [recs[k] for k in keys if k in recs]
 
     flagged, clean = [], []
-    for line in open(JUDGMENTS, encoding="utf-8"):
+    for line in open_lines(JUDGMENTS):
         j = json.loads(line)
         if j.get("judge_error") or not j.get("judgment"):
             continue
@@ -65,7 +66,7 @@ def pick_records():
         (flagged if judge_flag(j) else clean).append(k)
 
     disagreements = []
-    for line in open(JUDGMENTS, encoding="utf-8"):
+    for line in open_lines(JUDGMENTS):
         j = json.loads(line)
         if j.get("judge_error") or not j.get("judgment"):
             continue

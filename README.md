@@ -33,6 +33,7 @@ template is stripped, and how **suggestible** it is when you ask "are you X?".
 ```
 MODELS.md            every model: queried / raw-weights / excluded (bullets + reasons)
 prompts.jsonl        the complete prompt battery, one prompt per line, no commentary
+FUTURE_WORK.md       directions that would sharpen the mechanism (prefill-entropy, confrontation)
 figures/             the final figures (fig_*.png) + per-family panels (family/)
 rollouts/
   MISMATCHES.md      index of every model that names another vendor (rate + claims)

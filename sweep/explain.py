@@ -209,38 +209,52 @@ def _year(s):
         return None
 
 
+# first public release of each brand — the earliest a model could absorb that
+# identity from its outputs in training data (the natural-experiment boundary)
+REL = {"chatgpt": 2022.88, "deepseek": 2023.87, "claude": 2023.17,
+       "gemini": 2023.95, "qwen": 2023.62, "llama": 2023.12}
+REL_LABEL = {"chatgpt": "ChatGPT", "deepseek": "DeepSeek", "claude": "Claude 1",
+             "gemini": "Gemini", "qwen": "Qwen", "llama": "LLaMA"}
+
+
 def fig_cutoff(data):
-    """training-data cutoff vs (a) overall drift and (b) share of misclaims that are
-    ChatGPT/DeepSeek — testing whether later cutoffs absorb those identities from
-    synthetic training data."""
+    """Per identity: does a model start claiming to BE X only after X first shipped?
+    x = training-data cutoff (solid) or, when a lab publishes none, release date as a
+    proxy (hollow). Vertical line = X's first public release. y = how much of the
+    model's identity answers claim X."""
     cut = _load("model_cutoffs.json")
     if not cut:
         print("  (no model_cutoffs.json yet — skipping fig_cutoff)")
         return
-    pts = []
+    rows = []
     for mid, d in data.items():
-        c = cut.get(mid)
-        yr = _year((c or {}).get("cutoff"))
-        if yr is None or d["tot"] < MIN_TOT:
+        c = cut.get(mid) or {}
+        yc, yr = _year(c.get("cutoff")), _year(c.get("release_date"))
+        x = yc if yc is not None else yr
+        if x is None or d["tot"] < MIN_TOT:
             continue
-        claims = Counter()
-        for k, v in d["claims"].items():
-            claims[CREATOR_TO_BRAND.get(k, k)] += v
-        tot = sum(claims.values())
-        synth = (claims.get("chatgpt", 0) + claims.get("deepseek", 0)) / tot if tot else None
-        pts.append((mid, d, yr, synth, tot))
-    fig, (a1, a2) = plt.subplots(1, 2, figsize=(12.6, 5.4))
-    for mid, d, yr, synth, tot in pts:
-        a1.scatter(yr, d["rate"], s=24, color="#3987e5", alpha=0.5, edgecolor="white", lw=0.4, zorder=3)
-    a1.set_xlabel("training-data cutoff (year)"); a1.set_ylabel("spontaneous mismatch rate (%)")
-    a1.set_title(f"Cutoff vs. overall drift (n={len(pts)})", fontsize=10, color=INK, loc="left")
-    withclaims = [(yr, synth) for _, d, yr, synth, tot in pts if synth is not None and tot >= 10]
-    for yr, synth in withclaims:
-        a2.scatter(yr, 100 * synth, s=24, color="#c0392b", alpha=0.5, edgecolor="white", lw=0.4, zorder=3)
-    a2.set_xlabel("training-data cutoff (year)"); a2.set_ylabel("% of misclaims = ChatGPT or DeepSeek")
-    a2.set_title(f"Cutoff vs. claiming ChatGPT/DeepSeek (n={len(withclaims)})", fontsize=10, color=INK, loc="left")
-    for a in (a1, a2):
-        style(a); a.grid(color=GRID, lw=0.6, zorder=0)
+        rows.append((d, x, yc is not None))
+    ids = list(REL)
+    fig, axes = plt.subplots(2, 3, figsize=(13.6, 7.8))
+    for ax, ident in zip(axes.flat, ids):
+        col = IDCOLOR.get(ident, "#2a78d6")
+        for d, x, doc in rows:
+            y = 100 * d["claims"].get(ident, 0) / d["tot"]
+            ax.scatter(x, y, s=22, facecolor=col if doc else "none",
+                       edgecolor=col, alpha=0.6, lw=1, zorder=3)
+        ax.axvline(REL[ident], color="#c0392b", lw=1.3, ls="--", zorder=2)
+        ax.text(REL[ident], 0.97, f" {REL_LABEL[ident]} ships", fontsize=6.8, color="#c0392b",
+                rotation=90, va="top", ha="right", transform=ax.get_xaxis_transform())
+        ax.set_title(f"claims to be {brand(ident)}", fontsize=10.5, color=INK, loc="left")
+        ax.set_xlim(2021.4, 2026.4)
+        style(ax); ax.grid(color=GRID, lw=0.5, zorder=0)
+    fig.text(0.5, 0.015, "training-data cutoff (solid) · release-date proxy (hollow) — year",
+             ha="center", fontsize=9, color=INK2)
+    fig.text(0.008, 0.5, "% of the model's identity answers claiming this identity",
+             va="center", rotation=90, fontsize=9, color=INK2)
+    fig.suptitle("When does a model start claiming to be X?  (drift switches on after X ships)",
+                 fontsize=12.5, color=INK, x=0.02, ha="left")
+    fig.tight_layout(rect=[0.025, 0.03, 1, 0.95])
     save(fig, "fig_cutoff.png")
 
 

@@ -222,12 +222,19 @@ VERSIONS = {
 }
 
 
+CUTOFF_LAG = 0.5   # median release−cutoff lag (yr) among the 101 models reporting both;
+#                    used to put release-only models on the same TRAINING-CUTOFF axis
+
+
 def fig_cutoff(data):
     """Per identity: does a model start claiming to BE X only after X's outputs
-    flooded training data? x = training-data cutoff (solid) or release-date proxy
-    (hollow). Grey ticks = version releases; red dashed = the breakout version.
-    y = how much of the model's identity answers claim X. The onset tracks the
-    breakout (DeepSeek V3, Claude 3.5), not the obscure first release."""
+    flooded training data? A model can absorb X's identity only if X's outputs
+    existed before the model's TRAINING CUTOFF — and X's outputs begin at X's
+    RELEASE. So x = the claiming model's training cutoff (documented = solid, or
+    estimated as release − 6mo median lag = hollow) and the vertical lines are the
+    TARGET's version releases (grey = earlier, red dashed = breakout). y = how much
+    of the model's identity answers claim X. Onset tracks the breakout (DeepSeek V3,
+    Claude 3.5), not the obscure first release."""
     cut = _load("model_cutoffs.json")
     if not cut:
         print("  (no model_cutoffs.json yet — skipping fig_cutoff)")
@@ -236,10 +243,15 @@ def fig_cutoff(data):
     for mid, d in data.items():
         c = cut.get(mid) or {}
         yc, yr = _year(c.get("cutoff")), _year(c.get("release_date"))
-        x = yc if yc is not None else yr
-        if x is None or d["tot"] < MIN_TOT:
+        if yc is not None:
+            x, doc = yc, True
+        elif yr is not None:
+            x, doc = yr - CUTOFF_LAG, False   # estimate cutoff from release
+        else:
             continue
-        rows.append((d, x, yc is not None))
+        if d["tot"] < MIN_TOT:
+            continue
+        rows.append((d, x, doc))
     fig, axes = plt.subplots(2, 3, figsize=(13.8, 8.0))
     for ax, ident in zip(axes.flat, VERSIONS):
         col = IDCOLOR.get(ident, "#2a78d6")
@@ -255,9 +267,10 @@ def fig_cutoff(data):
         ax.set_title(f"claims to be {brand(ident)}", fontsize=10.5, color=INK, loc="left")
         ax.set_xlim(2021.4, 2026.5)
         style(ax); ax.grid(color=GRID, lw=0.5, zorder=0)
-    fig.text(0.5, 0.015, "training-data cutoff (solid) · release-date proxy (hollow) — year   "
-             "|   red dashed = breakout version, grey = earlier releases",
-             ha="center", fontsize=9, color=INK2)
+    fig.text(0.5, 0.015, "claiming model's TRAINING CUTOFF — documented (solid) or estimated as "
+             "release−6mo (hollow)   |   vertical lines = TARGET's version releases "
+             "(red = breakout, grey = earlier)",
+             ha="center", fontsize=8.5, color=INK2)
     fig.text(0.008, 0.5, "% of the model's identity answers claiming this identity",
              va="center", rotation=90, fontsize=9, color=INK2)
     fig.suptitle("Claiming switches on at the breakout version, not first release",

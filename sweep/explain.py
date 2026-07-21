@@ -16,8 +16,11 @@ ranked tables. Uses the same adjudicated drift as the headline figures.
 
   python -m sweep.explain
 """
+import json
 import math
+import os
 from collections import Counter
+from pathlib import Path
 
 import matplotlib
 matplotlib.use("Agg")
@@ -25,7 +28,19 @@ import matplotlib.pyplot as plt
 
 from .analyze import CREATOR_TO_BRAND
 from .build_rollouts import collect, collect_model, adj_verdicts, brand
-from .make_figs import FIGS, SURFACE, INK, INK2, MUTED, GRID, BASE, style, save
+from .make_figs import FIGS, SURFACE, INK, INK2, MUTED, GRID, BASE, CAT, style, save
+
+ROOT = Path(__file__).resolve().parent.parent
+# committed research tables (from agent lookups); fall back to /tmp during a run
+QWEN_LADDER = ["Qwen/Qwen3-0.6B", "Qwen/Qwen3-1.7B", "Qwen/Qwen3-4B",
+               "Qwen/Qwen3-8B", "Qwen/Qwen3-14B", "Qwen/Qwen3-32B"]
+
+
+def _load(name):
+    for p in (ROOT / "config" / name, Path("/tmp") / name):
+        if p.exists():
+            return {d["id"]: d for d in json.load(open(p, encoding="utf-8"))}
+    return None
 
 MIN_FOREIGN = 10   # need at least this many foreign claims to estimate a distribution
 MIN_TOT = 100      # and a reasonably complete battery
@@ -151,6 +166,84 @@ def fig_lang_conditional(data):
     save(fig, "fig_lang_conditional.png")
 
 
+def fig_size(data):
+    """spontaneous mismatch rate vs total parameter count. The Qwen3 raw ladder
+    (same family, 0.6B->32B) is the controlled series that isolates the size effect."""
+    params = _load("model_params.json")
+    if not params:
+        print("  (no model_params.json yet — skipping fig_size)")
+        return
+    pts = [(mid, d, params[mid]) for mid, d in data.items()
+           if mid in params and params[mid].get("params_total_B") and params[mid].get("basis") != "unknown"
+           and d["tot"] >= MIN_TOT]
+    fig, ax = plt.subplots(figsize=(9.4, 6.4))
+    for mid, d, p in pts:
+        est = p["basis"] in ("epoch_estimate", "reported_estimate")
+        ax.scatter(p["params_total_B"], d["rate"], s=28,
+                   facecolor="none" if est else "#3987e5",
+                   edgecolor="#3987e5", alpha=0.6, linewidth=1.1, zorder=3)
+    lad = sorted((params[m]["params_total_B"], data[m]["rate"], data[m]["name"])
+                 for m in QWEN_LADDER if m in data and m in params)
+    if lad:
+        ax.plot([x for x, _, _ in lad], [y for _, y, _ in lad], "-o", color="#e0761a",
+                lw=2, ms=7, zorder=5, label="Qwen3 raw ladder (controlled: same family)")
+        for x, y, nm in lad:
+            ax.annotate(nm.replace("Qwen3 ", ""), (x, y), fontsize=6.5, color="#b85f14",
+                        xytext=(3, 5), textcoords="offset points")
+    ax.set_xscale("log")
+    ax.set_xlabel("total parameters (billions, log)   ·   filled = published, hollow = estimated")
+    ax.set_ylabel("spontaneous mismatch rate (%)")
+    ax.set_title("Does size predict identity drift?", fontsize=11, color=INK, loc="left")
+    ax.legend(fontsize=8, frameon=False, loc="upper right")
+    style(ax); ax.grid(color=GRID, lw=0.6, zorder=0)
+    save(fig, "fig_size.png")
+
+
+def _year(s):
+    if not s:
+        return None
+    parts = str(s).split("-")
+    try:
+        return int(parts[0]) + ((int(parts[1]) if len(parts) > 1 else 6) - 0.5) / 12
+    except (ValueError, IndexError):
+        return None
+
+
+def fig_cutoff(data):
+    """training-data cutoff vs (a) overall drift and (b) share of misclaims that are
+    ChatGPT/DeepSeek — testing whether later cutoffs absorb those identities from
+    synthetic training data."""
+    cut = _load("model_cutoffs.json")
+    if not cut:
+        print("  (no model_cutoffs.json yet — skipping fig_cutoff)")
+        return
+    pts = []
+    for mid, d in data.items():
+        c = cut.get(mid)
+        yr = _year((c or {}).get("cutoff"))
+        if yr is None or d["tot"] < MIN_TOT:
+            continue
+        claims = Counter()
+        for k, v in d["claims"].items():
+            claims[CREATOR_TO_BRAND.get(k, k)] += v
+        tot = sum(claims.values())
+        synth = (claims.get("chatgpt", 0) + claims.get("deepseek", 0)) / tot if tot else None
+        pts.append((mid, d, yr, synth, tot))
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(12.6, 5.4))
+    for mid, d, yr, synth, tot in pts:
+        a1.scatter(yr, d["rate"], s=24, color="#3987e5", alpha=0.5, edgecolor="white", lw=0.4, zorder=3)
+    a1.set_xlabel("training-data cutoff (year)"); a1.set_ylabel("spontaneous mismatch rate (%)")
+    a1.set_title(f"Cutoff vs. overall drift (n={len(pts)})", fontsize=10, color=INK, loc="left")
+    withclaims = [(yr, synth) for _, d, yr, synth, tot in pts if synth is not None and tot >= 10]
+    for yr, synth in withclaims:
+        a2.scatter(yr, 100 * synth, s=24, color="#c0392b", alpha=0.5, edgecolor="white", lw=0.4, zorder=3)
+    a2.set_xlabel("training-data cutoff (year)"); a2.set_ylabel("% of misclaims = ChatGPT or DeepSeek")
+    a2.set_title(f"Cutoff vs. claiming ChatGPT/DeepSeek (n={len(withclaims)})", fontsize=10, color=INK, loc="left")
+    for a in (a1, a2):
+        style(a); a.grid(color=GRID, lw=0.6, zorder=0)
+    save(fig, "fig_cutoff.png")
+
+
 def report(data):
     rows = [(d, metrics(d)) for d in data.values()]
     ok = [(d, mm) for d, mm in rows if mm["n_foreign"] >= MIN_FOREIGN and d["tot"] >= MIN_TOT]
@@ -185,6 +278,8 @@ def main():
     FIGS.mkdir(parents=True, exist_ok=True)
     fig_coherence(data)
     fig_lang_conditional(data)
+    fig_size(data)
+    fig_cutoff(data)
 
 
 if __name__ == "__main__":

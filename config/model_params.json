@@ -1,0 +1,1642 @@
+[
+  {
+    "id": "CohereLabs/aya-expanse-32b",
+    "params_total_B": 32,
+    "params_active_B": 32,
+    "basis": "name",
+    "note": "Dense, size stated in name",
+    "source": ""
+  },
+  {
+    "id": "CohereLabs/tiny-aya-earth",
+    "params_total_B": 3.35,
+    "params_active_B": 3.35,
+    "basis": "published",
+    "note": "Tiny Aya family (Earth/Global/Water) shares a 3.35B dense architecture across 70 languages",
+    "source": "https://www.marktechpost.com/2026/02/17/cohere-releases-tiny-aya-a-3b-parameter-small-language-model-that-supports-70-languages-and-runs-locally-even-on-a-phone/"
+  },
+  {
+    "id": "CohereLabs/tiny-aya-global",
+    "params_total_B": 3.35,
+    "params_active_B": 3.35,
+    "basis": "published",
+    "note": "Tiny Aya family (Earth/Global/Water) shares a 3.35B dense architecture across 70 languages",
+    "source": "https://www.marktechpost.com/2026/02/17/cohere-releases-tiny-aya-a-3b-parameter-small-language-model-that-supports-70-languages-and-runs-locally-even-on-a-phone/"
+  },
+  {
+    "id": "CohereLabs/tiny-aya-water",
+    "params_total_B": 3.35,
+    "params_active_B": 3.35,
+    "basis": "published",
+    "note": "Tiny Aya family (Earth/Global/Water) shares a 3.35B dense architecture across 70 languages",
+    "source": "https://www.marktechpost.com/2026/02/17/cohere-releases-tiny-aya-a-3b-parameter-small-language-model-that-supports-70-languages-and-runs-locally-even-on-a-phone/"
+  },
+  {
+    "id": "Qwen/Qwen3-4B-Instruct-2507",
+    "params_total_B": 4,
+    "params_active_B": 4,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "Qwen/Qwen3-8B",
+    "params_total_B": 8,
+    "params_active_B": 8,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "ai21/jamba-large-1.7",
+    "params_total_B": 398,
+    "params_active_B": 94,
+    "basis": "published",
+    "note": "MoE hybrid SSM-Transformer, per AI21/HF model card",
+    "source": "https://huggingface.co/ai21labs/AI21-Jamba-Large-1.7"
+  },
+  {
+    "id": "aisingapore/Gemma-SEA-LION-v4-27B-IT",
+    "params_total_B": 27,
+    "params_active_B": 27,
+    "basis": "name",
+    "note": "Dense, Gemma-based, size in name",
+    "source": ""
+  },
+  {
+    "id": "aisingapore/Qwen-SEA-LION-v4-32B-IT",
+    "params_total_B": 32,
+    "params_active_B": 32,
+    "basis": "name",
+    "note": "Dense, Qwen-based, size in name",
+    "source": ""
+  },
+  {
+    "id": "amazon/nova-lite-v1",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Amazon has not disclosed size; no credible third-party estimate found",
+    "source": ""
+  },
+  {
+    "id": "amazon/nova-micro-v1",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Amazon has not disclosed size; no credible third-party estimate found",
+    "source": ""
+  },
+  {
+    "id": "amazon/nova-pro-v1",
+    "params_total_B": 90,
+    "params_active_B": null,
+    "basis": "reported_estimate",
+    "note": "~90B per third-party analysis (lifearchitect.ai-style); Amazon undisclosed, architecture/MoE split unknown",
+    "source": "https://lifearchitect.ai/olympus/"
+  },
+  {
+    "id": "anthropic/claude-3-haiku",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Anthropic undisclosed; no credible estimate found distinct from Sonnet/Opus",
+    "source": ""
+  },
+  {
+    "id": "anthropic/claude-3-opus-20240229",
+    "params_total_B": 2000,
+    "params_active_B": null,
+    "basis": "reported_estimate",
+    "note": "~2T per Alan D. Thompson/LifeArchitect.ai estimate (trained on ~40T tokens); Anthropic has never disclosed, architecture unknown",
+    "source": "https://lifearchitect.substack.com/p/the-memo-special-edition-claude-3"
+  },
+  {
+    "id": "anthropic/claude-fable-5",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No public size estimate found; referenced by competitors as current Anthropic flagship in mid-2026 coverage but no parameter data surfaced",
+    "source": ""
+  },
+  {
+    "id": "anthropic/claude-haiku-4.5",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Anthropic undisclosed; no credible third-party estimate found",
+    "source": ""
+  },
+  {
+    "id": "anthropic/claude-opus-4",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Epoch AI's model page explicitly carries no parameter estimate for this model; Anthropic undisclosed",
+    "source": ""
+  },
+  {
+    "id": "anthropic/claude-opus-4.1",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Epoch AI's model page explicitly carries no parameter estimate for this model; Anthropic undisclosed",
+    "source": ""
+  },
+  {
+    "id": "anthropic/claude-opus-4.5",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Third-party estimates wildly inconsistent (roughly 1.5-6T depending on methodology), no consensus; too uncertain to report as a point estimate",
+    "source": ""
+  },
+  {
+    "id": "anthropic/claude-opus-4.6",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Third-party estimates contested: one analysis ~5T, another ~1-3.3T from active-weight/sparsity assumptions (93-105B active if FP8); no consensus",
+    "source": ""
+  },
+  {
+    "id": "anthropic/claude-opus-4.7",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "anthropic/claude-opus-4.8",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "anthropic/claude-sonnet-4",
+    "params_total_B": 75,
+    "params_active_B": null,
+    "basis": "reported_estimate",
+    "note": "Community estimate range ~50-100B (midpoint used); no MoE/architecture split reported; Anthropic undisclosed",
+    "source": ""
+  },
+  {
+    "id": "anthropic/claude-sonnet-4.5",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No distinct estimate found (predecessor Sonnet 4 estimated ~50-100B by community analysis, not confirmed for this checkpoint)",
+    "source": ""
+  },
+  {
+    "id": "anthropic/claude-sonnet-4.6",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "anthropic/claude-sonnet-5",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "arcee-ai/trinity-large-thinking",
+    "params_total_B": 398,
+    "params_active_B": 13,
+    "basis": "published",
+    "note": "MoE, ~398B total/13B active per Arcee/HF",
+    "source": "https://huggingface.co/arcee-ai/Trinity-Large-Thinking"
+  },
+  {
+    "id": "baidu/ernie-4.5-vl-424b-a47b",
+    "params_total_B": 424,
+    "params_active_B": 47,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "cohere/command-a",
+    "params_total_B": 111,
+    "params_active_B": 111,
+    "basis": "published",
+    "note": "Dense, 111B per Cohere/MarkTechPost",
+    "source": "https://www.marktechpost.com/2025/03/16/cohere-released-command-a-a-111b-parameter-ai-model-with-256k-context-length-23-language-support-and-50-cost-reduction-for-enterprises/"
+  },
+  {
+    "id": "cohere/command-r-08-2024",
+    "params_total_B": 35,
+    "params_active_B": 35,
+    "basis": "published",
+    "note": "Command R base ~35B dense; 08-2024 refresh same size",
+    "source": "https://docs.cohere.com/docs/command-r"
+  },
+  {
+    "id": "cohere/command-r-plus-08-2024",
+    "params_total_B": 104,
+    "params_active_B": 104,
+    "basis": "published",
+    "note": "Command R+ 104B dense",
+    "source": "https://huggingface.co/CohereLabs/c4ai-command-r-plus"
+  },
+  {
+    "id": "cohere/command-r7b-12-2024",
+    "params_total_B": 8,
+    "params_active_B": 8,
+    "basis": "published",
+    "note": "~8B (7B transformer + 1B embedding) per Cohere/MarkTechPost",
+    "source": "https://www.marktechpost.com/2024/12/14/cohere-ai-releases-command-r7b-the-smallest-fastest-and-final-model-in-the-r-series/"
+  },
+  {
+    "id": "cohere/north-mini-code:free",
+    "params_total_B": 30,
+    "params_active_B": 3,
+    "basis": "published",
+    "note": "MoE, 30B total/3B active per Cohere blog",
+    "source": "https://huggingface.co/blog/CohereLabs/introducing-north-mini-code"
+  },
+  {
+    "id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+    "params_total_B": 8,
+    "params_active_B": 8,
+    "basis": "name",
+    "note": "Dense distillation of Llama-3.1-8B",
+    "source": ""
+  },
+  {
+    "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "params_total_B": 7,
+    "params_active_B": 7,
+    "basis": "name",
+    "note": "Dense distillation of Qwen2.5-7B",
+    "source": ""
+  },
+  {
+    "id": "deepseek/deepseek-chat",
+    "params_total_B": 671,
+    "params_active_B": 37,
+    "basis": "published",
+    "note": "V3/R1 architecture: 671B total / 37B active MoE, per DeepSeek technical report",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V3"
+  },
+  {
+    "id": "deepseek/deepseek-chat-v3-0324",
+    "params_total_B": 671,
+    "params_active_B": 37,
+    "basis": "published",
+    "note": "V3/R1 architecture: 671B total / 37B active MoE, per DeepSeek technical report",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V3"
+  },
+  {
+    "id": "deepseek/deepseek-chat-v3.1",
+    "params_total_B": 671,
+    "params_active_B": 37,
+    "basis": "published",
+    "note": "V3/R1 architecture: 671B total / 37B active MoE, per DeepSeek technical report",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V3"
+  },
+  {
+    "id": "deepseek/deepseek-r1",
+    "params_total_B": 671,
+    "params_active_B": 37,
+    "basis": "published",
+    "note": "V3/R1 architecture: 671B total / 37B active MoE, per DeepSeek technical report",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V3"
+  },
+  {
+    "id": "deepseek/deepseek-r1-0528",
+    "params_total_B": 671,
+    "params_active_B": 37,
+    "basis": "published",
+    "note": "V3/R1 architecture: 671B total / 37B active MoE, per DeepSeek technical report",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V3"
+  },
+  {
+    "id": "deepseek/deepseek-r1-distill-llama-70b",
+    "params_total_B": 70,
+    "params_active_B": 70,
+    "basis": "name",
+    "note": "Dense distillation of Llama-3.3-70B",
+    "source": ""
+  },
+  {
+    "id": "deepseek/deepseek-v3.1-terminus",
+    "params_total_B": 671,
+    "params_active_B": 37,
+    "basis": "published",
+    "note": "V3/R1 architecture: 671B total / 37B active MoE, per DeepSeek technical report",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V3"
+  },
+  {
+    "id": "deepseek/deepseek-v3.2",
+    "params_total_B": 671,
+    "params_active_B": 37,
+    "basis": "published",
+    "note": "V3.2-Exp retains V3.1 671B/37B parameter count, adds sparse attention (DSA)",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V3"
+  },
+  {
+    "id": "deepseek/deepseek-v4-flash",
+    "params_total_B": 284,
+    "params_active_B": 13,
+    "basis": "reported_estimate",
+    "note": "284B total/13B active per multiple 2026 analyses; not an official DeepSeek disclosure",
+    "source": "https://www.spheron.network/blog/deploy-deepseek-v4-flash-gpu-cloud/"
+  },
+  {
+    "id": "deepseek/deepseek-v4-pro",
+    "params_total_B": 1600,
+    "params_active_B": 49,
+    "basis": "reported_estimate",
+    "note": "1.6T total/49B active per multiple 2026 analyses (one lower-detail source claims ~1T instead); not an official DeepSeek disclosure",
+    "source": "https://framia.converge.ai/page/en-US/news/deepseek-v4-parameters"
+  },
+  {
+    "id": "google/gemini-2.5-flash",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Google undisclosed; no credible third-party estimate found",
+    "source": ""
+  },
+  {
+    "id": "google/gemini-2.5-flash-lite",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Google undisclosed; no credible third-party estimate found",
+    "source": ""
+  },
+  {
+    "id": "google/gemini-2.5-pro",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Google undisclosed; no credible third-party estimate found",
+    "source": ""
+  },
+  {
+    "id": "google/gemini-3-flash-preview",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Google undisclosed; no credible third-party estimate found",
+    "source": ""
+  },
+  {
+    "id": "google/gemini-3.1-flash-lite",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Google undisclosed; no credible third-party estimate found",
+    "source": ""
+  },
+  {
+    "id": "google/gemini-3.1-pro-preview",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Google undisclosed. Predecessor 'Gemini 3 Pro' estimated ~3T by a community TPU-throughput analysis, but that figure is not confirmed for this checkpoint and is contested (other estimates run much higher)",
+    "source": ""
+  },
+  {
+    "id": "google/gemini-3.5-flash",
+    "params_total_B": 275,
+    "params_active_B": 13,
+    "basis": "reported_estimate",
+    "note": "~250-300B total / ~10-16B active per Hacker News TPU-throughput calculation (midpoints used), reported via Gigazine; not confirmed by Google",
+    "source": "https://gigazine.net/gsc_news/en/20260520-gemini-3-5-flash-parameter/"
+  },
+  {
+    "id": "google/gemma-2-27b-it",
+    "params_total_B": 27,
+    "params_active_B": 27,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "google/gemma-3-12b-it",
+    "params_total_B": 12,
+    "params_active_B": 12,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "google/gemma-3-27b-it",
+    "params_total_B": 27,
+    "params_active_B": 27,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "google/gemma-3-4b-it",
+    "params_total_B": 4,
+    "params_active_B": 4,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "google/gemma-3n-e4b-it",
+    "params_total_B": 8,
+    "params_active_B": 4.5,
+    "basis": "published",
+    "note": "MatFormer/per-layer-embedding architecture: 8B raw parameters, ~4.5B effective/accelerator-resident (E4B)",
+    "source": "https://ai.google.dev/gemma/docs/gemma-3n"
+  },
+  {
+    "id": "google/gemma-4-26b-a4b-it",
+    "params_total_B": 26,
+    "params_active_B": 3.8,
+    "basis": "published",
+    "note": "MoE per Gemma 4 technical report: 26B total, 3.8B active (id rounds active to 'A4B')",
+    "source": "https://arxiv.org/html/2607.02770v1"
+  },
+  {
+    "id": "google/gemma-4-31b-it",
+    "params_total_B": 31,
+    "params_active_B": 31,
+    "basis": "published",
+    "note": "Dense per Gemma 4 technical report",
+    "source": "https://arxiv.org/html/2607.02770v1"
+  },
+  {
+    "id": "ibm-granite/granite-4.1-8b",
+    "params_total_B": 8,
+    "params_active_B": 8,
+    "basis": "published",
+    "note": "Dense (Granite 4.1 reverted to dense from 4.0's MoE); confirmed 8B, all params active",
+    "source": "https://huggingface.co/ibm-granite/granite-4.1-8b"
+  },
+  {
+    "id": "inclusionai/ling-2.6-1t",
+    "params_total_B": 1000,
+    "params_active_B": 50,
+    "basis": "published",
+    "note": "Ling 2.0 architecture, continuation of Ling-1T (1T total/50B active, 1/32 MoE activation ratio)",
+    "source": "https://ant-ling.medium.com/deep-insight-efficient-inference-introducing-the-trillion-parameter-ling-1t-model-77d6170e5e8e"
+  },
+  {
+    "id": "inclusionai/ling-2.6-flash",
+    "params_total_B": 104,
+    "params_active_B": 7.4,
+    "basis": "published",
+    "note": "MoE, 104B total/7.4B active per vLLM recipes/HF",
+    "source": "https://recipes.vllm.ai/inclusionAI/Ling-2.6-flash"
+  },
+  {
+    "id": "inclusionai/ring-2.6-1t",
+    "params_total_B": 1000,
+    "params_active_B": 50,
+    "basis": "published",
+    "note": "Ring inherits Ling 2.0 architecture (1T total/50B active), reasoning-tuned sibling of Ling",
+    "source": "https://www.siliconflow.com/blog/ring-1t-now-on-siliconflow-the-world-s-first-open-source-trillion-parameter-thinking-model"
+  },
+  {
+    "id": "kwaipilot/kat-coder-pro-v2",
+    "params_total_B": 1000,
+    "params_active_B": 72,
+    "basis": "reported_estimate",
+    "note": "Reported as 'over 1 trillion total, 72B active' \u2014 total is an approximate floor, exact figure not disclosed",
+    "source": ""
+  },
+  {
+    "id": "meta-llama/llama-3.1-70b-instruct",
+    "params_total_B": 70,
+    "params_active_B": 70,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "meta-llama/llama-3.1-8b-instruct",
+    "params_total_B": 8,
+    "params_active_B": 8,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "meta-llama/llama-3.2-1b-instruct",
+    "params_total_B": 1,
+    "params_active_B": 1,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "meta-llama/llama-3.2-3b-instruct",
+    "params_total_B": 3,
+    "params_active_B": 3,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "meta-llama/llama-3.3-70b-instruct",
+    "params_total_B": 70,
+    "params_active_B": 70,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "meta-llama/llama-4-maverick",
+    "params_total_B": 400,
+    "params_active_B": 17,
+    "basis": "published",
+    "note": "MoE per Meta model card: 400B total/17B active",
+    "source": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/"
+  },
+  {
+    "id": "meta-llama/llama-4-scout",
+    "params_total_B": 109,
+    "params_active_B": 17,
+    "basis": "published",
+    "note": "MoE per Meta model card: 109B total/17B active",
+    "source": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/"
+  },
+  {
+    "id": "microsoft/phi-4",
+    "params_total_B": 14,
+    "params_active_B": 14,
+    "basis": "published",
+    "note": "Dense, 14B per Microsoft technical report",
+    "source": "https://huggingface.co/microsoft/phi-4"
+  },
+  {
+    "id": "minimax/minimax-m2.7",
+    "params_total_B": 229.9,
+    "params_active_B": 9.8,
+    "basis": "published",
+    "note": "MoE, 229.9B total/9.8B active per MiniMax technical report (same scale as M2)",
+    "source": "https://huggingface.co/MiniMaxAI/MiniMax-M2"
+  },
+  {
+    "id": "mistralai/codestral-2508",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No confirmed parameter count found for this dated release; predecessor Codestral was 22B but Mistral has not published specs for 2508",
+    "source": ""
+  },
+  {
+    "id": "mistralai/devstral-2512",
+    "params_total_B": 123,
+    "params_active_B": 123,
+    "basis": "published",
+    "note": "Dense, 123B per HF repo name (Devstral-2-123B-Instruct-2512)",
+    "source": "https://huggingface.co/mistralai/Devstral-2-123B-Instruct-2512"
+  },
+  {
+    "id": "mistralai/ministral-14b-2512",
+    "params_total_B": 14,
+    "params_active_B": 14,
+    "basis": "name",
+    "note": "Dense, size in name; confirmed via NVIDIA blog",
+    "source": ""
+  },
+  {
+    "id": "mistralai/ministral-3b-2512",
+    "params_total_B": 3,
+    "params_active_B": 3,
+    "basis": "name",
+    "note": "Dense, size in name; confirmed via NVIDIA blog",
+    "source": ""
+  },
+  {
+    "id": "mistralai/ministral-8b-2512",
+    "params_total_B": 8,
+    "params_active_B": 8,
+    "basis": "name",
+    "note": "Dense, size in name; confirmed via NVIDIA blog",
+    "source": ""
+  },
+  {
+    "id": "mistralai/mistral-large-2407",
+    "params_total_B": 123,
+    "params_active_B": 123,
+    "basis": "published",
+    "note": "Dense, Mistral Large 2, 123B",
+    "source": "https://mistral.ai/news/mistral-large-2407"
+  },
+  {
+    "id": "mistralai/mistral-large-2512",
+    "params_total_B": 675,
+    "params_active_B": 41,
+    "basis": "published",
+    "note": "Mistral Large 3, MoE 675B total/41B active per NVIDIA technical blog",
+    "source": "https://developer.nvidia.com/blog/nvidia-accelerated-mistral-3-open-models-deliver-efficiency-accuracy-at-any-scale/"
+  },
+  {
+    "id": "mistralai/mistral-medium-3",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Mistral has not disclosed parameter count for Medium 3",
+    "source": ""
+  },
+  {
+    "id": "mistralai/mistral-medium-3-5",
+    "params_total_B": 128,
+    "params_active_B": 128,
+    "basis": "published",
+    "note": "Dense, 128B per HF repo name (Mistral-Medium-3.5-128B)",
+    "source": "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B"
+  },
+  {
+    "id": "mistralai/mistral-medium-3.1",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Mistral has not disclosed parameter count for this generation (Medium 3.5 later disclosed as 128B dense, but 3/3.1 undisclosed)",
+    "source": ""
+  },
+  {
+    "id": "mistralai/mistral-nemo",
+    "params_total_B": 12,
+    "params_active_B": 12,
+    "basis": "published",
+    "note": "Dense, 12B, co-developed with NVIDIA",
+    "source": "https://mistral.ai/news/mistral-nemo"
+  },
+  {
+    "id": "mistralai/mistral-saba",
+    "params_total_B": 24,
+    "params_active_B": 24,
+    "basis": "published",
+    "note": "Dense, 24B, regional (Arabic/South Asian) model",
+    "source": "https://mistral.ai/news/mistral-saba"
+  },
+  {
+    "id": "mistralai/mistral-small-2603",
+    "params_total_B": 119,
+    "params_active_B": 6.5,
+    "basis": "published",
+    "note": "Mistral Small 4, MoE 119B total/6.5B active per HF repo name (Mistral-Small-4-119B-2603) / NVIDIA build page",
+    "source": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603"
+  },
+  {
+    "id": "mistralai/mistral-small-3.1-24b-instruct",
+    "params_total_B": 24,
+    "params_active_B": 24,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "mistralai/mistral-small-3.2-24b-instruct",
+    "params_total_B": 24,
+    "params_active_B": 24,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "mistralai/mixtral-8x22b-instruct",
+    "params_total_B": 141,
+    "params_active_B": 39,
+    "basis": "published",
+    "note": "MoE, 8x22B experts = 141B total/39B active",
+    "source": "https://mistral.ai/news/mixtral-8x22b"
+  },
+  {
+    "id": "moonshotai/kimi-k2",
+    "params_total_B": 1000,
+    "params_active_B": 32,
+    "basis": "published",
+    "note": "MoE, 1T total/32B active per Moonshot AI technical report",
+    "source": "https://huggingface.co/moonshotai/Kimi-K2-Instruct"
+  },
+  {
+    "id": "moonshotai/kimi-k2-0905",
+    "params_total_B": 1000,
+    "params_active_B": 32,
+    "basis": "published",
+    "note": "MoE, 1T total/32B active per Moonshot AI technical report",
+    "source": "https://huggingface.co/moonshotai/Kimi-K2-Instruct"
+  },
+  {
+    "id": "moonshotai/kimi-k2-thinking",
+    "params_total_B": 1000,
+    "params_active_B": 32,
+    "basis": "published",
+    "note": "MoE, 1T total/32B active per Moonshot AI technical report",
+    "source": "https://huggingface.co/moonshotai/Kimi-K2-Instruct"
+  },
+  {
+    "id": "moonshotai/kimi-k2.5",
+    "params_total_B": 1000,
+    "params_active_B": 32,
+    "basis": "published",
+    "note": "MoE, 1T total/32B active per Moonshot AI technical report (K2.5 retains K2 parameter count)",
+    "source": "https://huggingface.co/moonshotai/Kimi-K2-Instruct"
+  },
+  {
+    "id": "moonshotai/kimi-k2.6",
+    "params_total_B": 1000,
+    "params_active_B": 32,
+    "basis": "published",
+    "note": "MoE, 1T total/32B active per Moonshot AI technical report (K2.6 identical topology to K2.5, retrained/revised post-training)",
+    "source": "https://huggingface.co/moonshotai/Kimi-K2-Instruct"
+  },
+  {
+    "id": "moonshotai/kimi-k2.7-code",
+    "params_total_B": 1000,
+    "params_active_B": 32,
+    "basis": "published",
+    "note": "MoE, 1T total/32B active per Moonshot AI technical report (384 experts, 8 selected + 1 shared per token)",
+    "source": "https://huggingface.co/moonshotai/Kimi-K2-Instruct"
+  },
+  {
+    "id": "nex-agi/nex-n2-mini",
+    "params_total_B": 35,
+    "params_active_B": 3,
+    "basis": "published",
+    "note": "MoE, 35B total/3B active",
+    "source": "https://github.com/nex-agi/Nex-N2"
+  },
+  {
+    "id": "nex-agi/nex-n2-pro",
+    "params_total_B": 397,
+    "params_active_B": 17,
+    "basis": "published",
+    "note": "MoE, 397B total/17B active, built on Qwen3.5 architecture",
+    "source": "https://forums.developer.nvidia.com/t/new-release-nex-n2-pro-a-397b-parameter-moe-model-based-on-qwen/372540"
+  },
+  {
+    "id": "nousresearch/hermes-3-llama-3.1-405b",
+    "params_total_B": 405,
+    "params_active_B": 405,
+    "basis": "name",
+    "note": "Dense, Llama-3.1-405B base",
+    "source": ""
+  },
+  {
+    "id": "nousresearch/hermes-3-llama-3.1-70b",
+    "params_total_B": 70,
+    "params_active_B": 70,
+    "basis": "name",
+    "note": "Dense, Llama-3.1-70B base",
+    "source": ""
+  },
+  {
+    "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+    "params_total_B": 49,
+    "params_active_B": 49,
+    "basis": "name",
+    "note": "Dense (NAS-pruned from Llama-3.3-70B), size in name",
+    "source": ""
+  },
+  {
+    "id": "nvidia/nemotron-3-nano-30b-a3b",
+    "params_total_B": 30,
+    "params_active_B": 3,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "nvidia/nemotron-3-super-120b-a12b",
+    "params_total_B": 120,
+    "params_active_B": 12,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "nvidia/nemotron-3-ultra-550b-a55b",
+    "params_total_B": 550,
+    "params_active_B": 55,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "nvidia/nemotron-nano-9b-v2:free",
+    "params_total_B": 9,
+    "params_active_B": 9,
+    "basis": "name",
+    "note": "Dense hybrid Mamba-Transformer, size in name",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-3.5-turbo",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Disputed: a single (later-withdrawn) academic paper claimed 20B; common assumption ~175B (GPT-3 lineage); OpenAI never disclosed, no consensus",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-4",
+    "params_total_B": 1760,
+    "params_active_B": 220,
+    "basis": "reported_estimate",
+    "note": "Widely repeated leak (SemiAnalysis/community): 16 experts x ~111B, 2 active per token = ~220B active; unconfirmed by OpenAI",
+    "source": "https://lifearchitect.ai/gpt-4/"
+  },
+  {
+    "id": "openai/gpt-4-turbo",
+    "params_total_B": 1760,
+    "params_active_B": 220,
+    "basis": "reported_estimate",
+    "note": "No distinct estimate found; assumed same generation/scale as GPT-4 (unconfirmed), OpenAI undisclosed",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-4.1",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "OpenAI undisclosed; no credible third-party estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-4.1-mini",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "OpenAI undisclosed; no credible third-party estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-4.1-nano",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "OpenAI undisclosed; no credible third-party estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-4o",
+    "params_total_B": 200,
+    "params_active_B": null,
+    "basis": "epoch_estimate",
+    "note": "Epoch AI estimate: ~200B ('an eighth of the size of GPT-4'); MoE/dense split not specified",
+    "source": "https://epoch.ai/gradient-updates/frontier-language-models-have-become-much-smaller"
+  },
+  {
+    "id": "openai/gpt-4o-mini",
+    "params_total_B": 8,
+    "params_active_B": null,
+    "basis": "reported_estimate",
+    "note": "~8B per leaked Microsoft paper (widely cited); unconfirmed by OpenAI, architecture unclear",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5",
+    "params_total_B": null,
+    "params_active_B": 100,
+    "basis": "epoch_estimate",
+    "note": "Epoch AI estimates ~100B ACTIVE parameters (comparable to Grok 2's 115B active, GPT-4o, Claude Sonnet); total/MoE structure not estimated by Epoch",
+    "source": "https://epochai.substack.com/p/notes-on-gpt-5-training-compute"
+  },
+  {
+    "id": "openai/gpt-5-chat",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5-mini",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5-nano",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5.1",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5.1-chat",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5.2",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5.2-chat",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5.3-chat",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5.3-codex",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5.4",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5.4-mini",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5.4-nano",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5.5",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "One low-credibility blogger estimate (~9.7T via an 'incompressible knowledge probes' method) was later corrected to ~1.5T by the same community; too contested/unreliable to report as a point estimate",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5.6-luna",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found (appears to be a named checkpoint/variant with no public size data)",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5.6-sol",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-5.6-terra",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "No credible estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/o1",
+    "params_total_B": null,
+    "params_active_B": 300,
+    "basis": "reported_estimate",
+    "note": "o1-preview speculated at ~300B active parameters in public commentary; unconfirmed, may not represent full o1 release, total unknown",
+    "source": ""
+  },
+  {
+    "id": "openai/o3",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "OpenAI undisclosed; no credible third-party estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/o3-mini",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "OpenAI undisclosed; no credible third-party estimate found",
+    "source": ""
+  },
+  {
+    "id": "openai/o4-mini",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "OpenAI undisclosed; no credible third-party estimate found",
+    "source": ""
+  },
+  {
+    "id": "perceptron/perceptron-mk1",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Closed-source vision-language model; no parameter count disclosed anywhere found",
+    "source": ""
+  },
+  {
+    "id": "perplexity/sonar",
+    "params_total_B": 70,
+    "params_active_B": 70,
+    "basis": "reported_estimate",
+    "note": "Built on Llama 3.3 70B base per Perplexity",
+    "source": "https://www.perplexity.ai/hub/blog/meet-new-sonar"
+  },
+  {
+    "id": "perplexity/sonar-pro",
+    "params_total_B": 70,
+    "params_active_B": 70,
+    "basis": "reported_estimate",
+    "note": "Shares Llama 3.3 70B base per Perplexity; Pro differs in context window/citation density, not base size",
+    "source": "https://www.perplexity.ai/hub/blog/meet-new-sonar"
+  },
+  {
+    "id": "poolside/laguna-m.1",
+    "params_total_B": 225,
+    "params_active_B": 23,
+    "basis": "published",
+    "note": "MoE, 225B total/23B active per Poolside technical report",
+    "source": "https://poolside.ai/assets/laguna/laguna-m1-xs2-technical-report.pdf"
+  },
+  {
+    "id": "poolside/laguna-xs-2.1",
+    "params_total_B": 33,
+    "params_active_B": 3,
+    "basis": "reported_estimate",
+    "note": "Matches published 'Laguna XS.2' (33B total/3B active MoE); exact identity with id's 'XS 2.1' point release not independently confirmed",
+    "source": "https://poolside.ai/blog/introducing-laguna-xs2-m1"
+  },
+  {
+    "id": "qwen/qwen-2.5-72b-instruct",
+    "params_total_B": 72,
+    "params_active_B": 72,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen-2.5-7b-instruct",
+    "params_total_B": 7,
+    "params_active_B": 7,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen-plus",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Alibaba does not disclose parameter counts for the Plus proprietary tier",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3-14b",
+    "params_total_B": 14,
+    "params_active_B": 14,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3-235b-a22b",
+    "params_total_B": 235,
+    "params_active_B": 22,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3-235b-a22b-2507",
+    "params_total_B": 235,
+    "params_active_B": 22,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3-235b-a22b-thinking-2507",
+    "params_total_B": 235,
+    "params_active_B": 22,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3-30b-a3b",
+    "params_total_B": 30,
+    "params_active_B": 3,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3-30b-a3b-instruct-2507",
+    "params_total_B": 30,
+    "params_active_B": 3,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3-30b-a3b-thinking-2507",
+    "params_total_B": 30,
+    "params_active_B": 3,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3-32b",
+    "params_total_B": 32,
+    "params_active_B": 32,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3-8b",
+    "params_total_B": 8,
+    "params_active_B": 8,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3-coder",
+    "params_total_B": 480,
+    "params_active_B": 35,
+    "basis": "published",
+    "note": "Qwen3-Coder-480B-A35B; total in listing name, active per Qwen official model card",
+    "source": "https://huggingface.co/Qwen/Qwen3-Coder-480B-A35B-Instruct"
+  },
+  {
+    "id": "qwen/qwen3-coder-30b-a3b-instruct",
+    "params_total_B": 30,
+    "params_active_B": 3,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3-coder-flash",
+    "params_total_B": 30,
+    "params_active_B": 3,
+    "basis": "reported_estimate",
+    "note": "Presumed aligned with Qwen3-Coder-30B-A3B (Alibaba 'Flash' hosted-tier naming convention); not independently confirmed for this exact id",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3-coder-next",
+    "params_total_B": 80,
+    "params_active_B": 3,
+    "basis": "published",
+    "note": "80B total/3B active hybrid-attention MoE per HF/vendor docs",
+    "source": "https://huggingface.co/Qwen/Qwen3-Coder-Next"
+  },
+  {
+    "id": "qwen/qwen3-coder-plus",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Alibaba proprietary tier, undisclosed",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3-max",
+    "params_total_B": 1000,
+    "params_active_B": null,
+    "basis": "reported_estimate",
+    "note": "~1T total per multiple outlets (Sept 2025 release); active/MoE split not disclosed by Alibaba",
+    "source": "https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/"
+  },
+  {
+    "id": "qwen/qwen3-max-thinking",
+    "params_total_B": 1000,
+    "params_active_B": null,
+    "basis": "reported_estimate",
+    "note": "Same base model as Qwen3-Max per naming convention; active undisclosed",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3-next-80b-a3b-instruct",
+    "params_total_B": 80,
+    "params_active_B": 3,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3-next-80b-a3b-thinking",
+    "params_total_B": 80,
+    "params_active_B": 3,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3.5-122b-a10b",
+    "params_total_B": 122,
+    "params_active_B": 10,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3.5-27b",
+    "params_total_B": 27,
+    "params_active_B": 27,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3.5-35b-a3b",
+    "params_total_B": 35,
+    "params_active_B": 3,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3.5-397b-a17b",
+    "params_total_B": 397,
+    "params_active_B": 17,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3.5-9b",
+    "params_total_B": 9,
+    "params_active_B": 9,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3.5-flash-02-23",
+    "params_total_B": 34.7,
+    "params_active_B": 3,
+    "basis": "reported_estimate",
+    "note": "Described as functionally aligned with Qwen3.5-35B-A3B architecture per Alibaba announcement",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3.5-plus-02-15",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Alibaba proprietary tier, undisclosed",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3.5-plus-20260420",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Alibaba proprietary tier, undisclosed",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3.6-27b",
+    "params_total_B": 27,
+    "params_active_B": 27,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3.6-35b-a3b",
+    "params_total_B": 35,
+    "params_active_B": 3,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3.6-flash",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Alibaba proprietary tier, undisclosed",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3.6-max-preview",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Alibaba proprietary tier, undisclosed",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3.6-plus",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Confirmed undisclosed by Alibaba (multiple 2026 reviews note parameter count not released)",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3.7-max",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Released May 2026 without open weights or disclosed parameter count",
+    "source": ""
+  },
+  {
+    "id": "qwen/qwen3.7-plus",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Alibaba proprietary tier, undisclosed",
+    "source": ""
+  },
+  {
+    "id": "rekaai/reka-edge",
+    "params_total_B": 7,
+    "params_active_B": 7,
+    "basis": "published",
+    "note": "Dense, 7B multimodal model",
+    "source": "https://reka.ai/news/reka-edge-frontier-level-edge-intelligence-for-physical-ai"
+  },
+  {
+    "id": "rekaai/reka-flash-3",
+    "params_total_B": 21,
+    "params_active_B": 21,
+    "basis": "published",
+    "note": "Dense, 21B reasoning model trained from scratch",
+    "source": "https://reka.ai/news/introducing-reka-flash"
+  },
+  {
+    "id": "stepfun/step-3.7-flash",
+    "params_total_B": 198,
+    "params_active_B": 11,
+    "basis": "published",
+    "note": "MoE vision-language, 196B LM backbone + 1.8B vision encoder = 198B total, 11B active",
+    "source": "https://huggingface.co/stepfun-ai/Step-3.7-Flash"
+  },
+  {
+    "id": "tencent/hunyuan-a13b-instruct",
+    "params_total_B": 80,
+    "params_active_B": 13,
+    "basis": "published",
+    "note": "MoE, 80B total/13B active per Tencent official announcement",
+    "source": "https://www.marktechpost.com/2025/06/28/tencent-open-sources-hunyuan-a13b-a-13b-active-parameter-moe-model-with-dual-mode-reasoning-and-256k-context/"
+  },
+  {
+    "id": "tencent/hy3",
+    "params_total_B": 295,
+    "params_active_B": 21,
+    "basis": "published",
+    "note": "Hunyuan 3.0, MoE 295B total/21B active (+3.8B MTP layers) per Tencent official announcement",
+    "source": "https://www.mindstudio.ai/blog/what-is-tencent-hunyuan-3-295b-moe-model"
+  },
+  {
+    "id": "xiaomi/mimo-v2.5",
+    "params_total_B": 310.8,
+    "params_active_B": 15,
+    "basis": "reported_estimate",
+    "note": "MoE, 310.8B total/15B active per multiple 2026 analyses (distinct from larger 'MiMo-V2.5-Pro' at 1.02T/42B)",
+    "source": "https://rits.shanghai.nyu.edu/ai/xiaomi-releases-mimo-v2-5-pro-1t-parameter-open-moe-matches-frontier-coding-models/"
+  },
+  {
+    "id": "z-ai/glm-4.5",
+    "params_total_B": 355,
+    "params_active_B": 32,
+    "basis": "published",
+    "note": "MoE, 355B total/32B active per Zhipu/HF",
+    "source": "https://huggingface.co/zai-org/GLM-4.5"
+  },
+  {
+    "id": "z-ai/glm-4.5-air",
+    "params_total_B": 106,
+    "params_active_B": 12,
+    "basis": "published",
+    "note": "MoE, 106B total/12B active per Zhipu/HF",
+    "source": "https://huggingface.co/zai-org/GLM-4.5-Air"
+  },
+  {
+    "id": "z-ai/glm-4.6",
+    "params_total_B": 355,
+    "params_active_B": 32,
+    "basis": "published",
+    "note": "MoE, retains GLM-4.5 parameter count (355B/32B)",
+    "source": "https://huggingface.co/zai-org/GLM-4.6"
+  },
+  {
+    "id": "z-ai/glm-4.7",
+    "params_total_B": 355,
+    "params_active_B": 32,
+    "basis": "published",
+    "note": "MoE, retains GLM-4.5/4.6 parameter count (355B/32B)",
+    "source": ""
+  },
+  {
+    "id": "z-ai/glm-4.7-flash",
+    "params_total_B": 31.2,
+    "params_active_B": 3,
+    "basis": "published",
+    "note": "MoE, 31.2B total/3B active",
+    "source": ""
+  },
+  {
+    "id": "z-ai/glm-5",
+    "params_total_B": 744,
+    "params_active_B": 44,
+    "basis": "published",
+    "note": "MoE, 744B total/44B active (256 experts, 8 active/token)",
+    "source": "https://www.digitalapplied.com/blog/zhipu-ai-glm-5-release-744b-moe-model-analysis"
+  },
+  {
+    "id": "z-ai/glm-5-turbo",
+    "params_total_B": null,
+    "params_active_B": null,
+    "basis": "unknown",
+    "note": "Proprietary reasoning variant; no parameter specifications found",
+    "source": ""
+  },
+  {
+    "id": "z-ai/glm-5.1",
+    "params_total_B": 754,
+    "params_active_B": 40,
+    "basis": "reported_estimate",
+    "note": "MoE, ~754B total/~40B active (8+1 experts active/token); minor source inconsistency vs GLM-5's 744B",
+    "source": "https://apxml.com/models/glm-51"
+  },
+  {
+    "id": "z-ai/glm-5.2",
+    "params_total_B": 744,
+    "params_active_B": null,
+    "basis": "reported_estimate",
+    "note": "Total consistent with GLM-5 series (744B); active-parameter count for this specific point release not separately confirmed (siblings report 40-44B active)",
+    "source": ""
+  },
+  {
+    "id": "Qwen/Qwen3-0.6B",
+    "params_total_B": 0.6,
+    "params_active_B": 0.6,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "Qwen/Qwen3-1.7B",
+    "params_total_B": 1.7,
+    "params_active_B": 1.7,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "Qwen/Qwen3-4B",
+    "params_total_B": 4,
+    "params_active_B": 4,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "Qwen/Qwen3-8B",
+    "params_total_B": 8,
+    "params_active_B": 8,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "Qwen/Qwen3-14B",
+    "params_total_B": 14,
+    "params_active_B": 14,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "Qwen/Qwen3-32B",
+    "params_total_B": 32,
+    "params_active_B": 32,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "Qwen/Qwen3.5-0.8B",
+    "params_total_B": 0.8,
+    "params_active_B": 0.8,
+    "basis": "name",
+    "note": "Dense, size in name (beyond training cutoff but name-parseable)",
+    "source": ""
+  },
+  {
+    "id": "Qwen/Qwen3.5-2B",
+    "params_total_B": 2,
+    "params_active_B": 2,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "Qwen/Qwen3.5-4B",
+    "params_total_B": 4,
+    "params_active_B": 4,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "Qwen/Qwen3.5-35B-A3B",
+    "params_total_B": 35,
+    "params_active_B": 3,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "Qwen/Qwen3.6-35B-A3B",
+    "params_total_B": 35,
+    "params_active_B": 3,
+    "basis": "name",
+    "note": "MoE, total/active in name",
+    "source": ""
+  },
+  {
+    "id": "allenai/Olmo-3-7B-Instruct",
+    "params_total_B": 7,
+    "params_active_B": 7,
+    "basis": "name",
+    "note": "Dense, size in name; AllenAI publishes exact specs",
+    "source": ""
+  },
+  {
+    "id": "allenai/Olmo-3-7B-Think",
+    "params_total_B": 7,
+    "params_active_B": 7,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "allenai/Olmo-3.1-32B-Instruct",
+    "params_total_B": 32,
+    "params_active_B": 32,
+    "basis": "name",
+    "note": "Dense, size in name",
+    "source": ""
+  },
+  {
+    "id": "openai/gpt-oss-20b",
+    "params_total_B": 20.9,
+    "params_active_B": 3.6,
+    "basis": "published",
+    "note": "MoE per OpenAI official model card",
+    "source": "https://huggingface.co/openai/gpt-oss-20b"
+  },
+  {
+    "id": "openai/gpt-oss-120b",
+    "params_total_B": 116.8,
+    "params_active_B": 5.1,
+    "basis": "published",
+    "note": "MoE per OpenAI official model card",
+    "source": "https://huggingface.co/openai/gpt-oss-120b"
+  }
+]

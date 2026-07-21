@@ -1,0 +1,1642 @@
+[
+  {
+    "id": "CohereLabs/aya-expanse-32b",
+    "cutoff": null,
+    "release_date": "2024-10",
+    "basis": "unknown",
+    "source": "https://cohere.com/blog/aya-expanse-connecting-our-world",
+    "note": "Released Oct 24-26, 2024. No cutoff stated in the announcement blog, docs.cohere.com/docs/aya-expanse, or HF model card README. The companion arXiv tech report (2412.04261, published Dec 5 2024) was checked via search but no cutoff excerpt was found."
+  },
+  {
+    "id": "CohereLabs/tiny-aya-earth",
+    "cutoff": null,
+    "release_date": "2026-02",
+    "basis": "unknown",
+    "source": "https://cohere.com/blog/cohere-labs-tiny-aya",
+    "note": "One of the Tiny Aya regional variants (3.35B params, optimized for West Asia/Africa languages), announced Feb 17, 2026 alongside Global/Water/Fire variants. No knowledge cutoff stated in blog or docs.cohere.com/docs/tiny-aya."
+  },
+  {
+    "id": "CohereLabs/tiny-aya-global",
+    "cutoff": null,
+    "release_date": "2026-02",
+    "basis": "unknown",
+    "source": "https://cohere.com/blog/cohere-labs-tiny-aya",
+    "note": "Tiny Aya 'balanced' variant, announced Feb 17, 2026. No knowledge cutoff stated in blog or docs.cohere.com/docs/tiny-aya."
+  },
+  {
+    "id": "CohereLabs/tiny-aya-water",
+    "cutoff": null,
+    "release_date": "2026-02",
+    "basis": "unknown",
+    "source": "https://cohere.com/blog/cohere-labs-tiny-aya",
+    "note": "Tiny Aya variant optimized for Asia-Pacific/European languages, announced Feb 17, 2026. No knowledge cutoff stated in blog or docs.cohere.com/docs/tiny-aya."
+  },
+  {
+    "id": "Qwen/Qwen3-4B-Instruct-2507",
+    "cutoff": "2025-06",
+    "release_date": "2025-07",
+    "basis": "docs",
+    "source": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507",
+    "note": "Qwen3-2507 refresh generation (July-Aug 2025, non-thinking/thinking updates to the 235B-A22B and 30B-A3B checkpoints, plus smaller Instruct-2507 dense checkpoints). HF model card (huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507) does not state a cutoff. Cutoff of Jun 2025 taken from OpenRouter metadata, consistent across all 2507-tagged listings checked. This specific 4B checkpoint's HF card has no date/cutoff field visible; cutoff and release_date are inferred by analogy to the other -2507 siblings released in the same Jul-Aug 2025 window, not independently confirmed for the 4B size."
+  },
+  {
+    "id": "Qwen/Qwen3-8B",
+    "cutoff": "2025-03",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://huggingface.co/Qwen/Qwen3-8B",
+    "note": "Qwen3 base dense+MoE generation (launched 2025-04-28, blog: qwenlm.github.io/blog/qwen3/, tech report arXiv:2505.09388). Neither the announcement blog nor the tech report nor the HF model cards (checked Qwen3-32B, Qwen3-0.6B, Qwen3-8B, Qwen3-4B-Instruct-2507 cards directly) state an explicit knowledge-cutoff date -- only that ~36T pretraining tokens across 119 languages were used. Cutoff of Mar 2025 taken from OpenRouter metadata (consistently Mar 2025 across qwen3-8b/14b/32b/30b-a3b/235b-a22b listings); cross-checked against metehan.ai aggregator (Mar 31 2025 via OpenRouter). HF-hosted raw-weight ids of the same size/checkpoint are the same underlying release as the OpenRouter id and are assigned the same cutoff by inference, not independently confirmed on the HF card itself."
+  },
+  {
+    "id": "ai21/jamba-large-1.7",
+    "cutoff": "2024-08",
+    "release_date": "2025-07",
+    "basis": "model_card",
+    "source": "https://huggingface.co/ai21labs/AI21-Jamba-Large-1.7",
+    "note": "HF card states knowledge cutoff Aug 22 2024 (same pretrain checkpoint carried from Jamba 1.5/1.6); v1.7 released Jul 3 2025 per docs.ai21.com changelog"
+  },
+  {
+    "id": "aisingapore/Gemma-SEA-LION-v4-27B-IT",
+    "cutoff": null,
+    "release_date": "2025-08",
+    "basis": "unknown",
+    "source": "https://huggingface.co/aisingapore/Gemma-SEA-LION-v4-27B-IT",
+    "note": "No cutoff stated in card or docs.sea-lion.ai; continued-pretrain of Gemma 3 base; HF repo created Aug 2025"
+  },
+  {
+    "id": "aisingapore/Qwen-SEA-LION-v4-32B-IT",
+    "cutoff": null,
+    "release_date": "2025-10",
+    "basis": "unknown",
+    "source": "https://huggingface.co/aisingapore/Qwen-SEA-LION-v4-32B-IT",
+    "note": "No cutoff stated; continued-pretrain (~100B tokens SEA-Pile v2) of Qwen3 base; HF repo created Oct 2025"
+  },
+  {
+    "id": "amazon/nova-lite-v1",
+    "cutoff": "2024-10",
+    "release_date": "2024-12",
+    "basis": "model_card",
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-lite.html",
+    "note": "AWS Bedrock model card states 'Knowledge cutoff: Oct 2024'; launched Dec 5 2024"
+  },
+  {
+    "id": "amazon/nova-micro-v1",
+    "cutoff": "2024-10",
+    "release_date": "2024-12",
+    "basis": "model_card",
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-micro.html",
+    "note": "AWS Bedrock model card states 'Knowledge cutoff: Oct 2024'; launched Dec 5 2024"
+  },
+  {
+    "id": "amazon/nova-pro-v1",
+    "cutoff": "2024-10",
+    "release_date": "2024-12",
+    "basis": "model_card",
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-pro.html",
+    "note": "AWS Bedrock model card states 'Knowledge cutoff: Oct 2024'; launched Dec 5 2024"
+  },
+  {
+    "id": "anthropic/claude-3-haiku",
+    "cutoff": "2023-08",
+    "release_date": "2024-03",
+    "basis": "system_card",
+    "source": "https://www-cdn.anthropic.com/de8ba9b01c9ab7cbabf5c33b80b7bbc618857627/Model_Card_Claude_3.pdf",
+    "note": "Claude 3 family (Haiku/Sonnet/Opus) shares Aug 2023 training cutoff per Claude 3 Model Card."
+  },
+  {
+    "id": "anthropic/claude-3-opus-20240229",
+    "cutoff": "2023-08",
+    "release_date": "2024-03",
+    "basis": "system_card",
+    "source": "https://www-cdn.anthropic.com/de8ba9b01c9ab7cbabf5c33b80b7bbc618857627/Model_Card_Claude_3.pdf",
+    "note": "Claude 3 Model Card states Aug 2023 cutoff for the family."
+  },
+  {
+    "id": "anthropic/claude-fable-5",
+    "cutoff": "2026-01",
+    "release_date": "2026-06",
+    "basis": "docs",
+    "source": "https://platform.claude.com/docs/en/about-claude/models/overview",
+    "note": "Anthropic docs table: training data cutoff Jan 2026; reliable knowledge cutoff also Jan 2026. GA June 9, 2026."
+  },
+  {
+    "id": "anthropic/claude-haiku-4.5",
+    "cutoff": "2025-07",
+    "release_date": "2025-10",
+    "basis": "docs",
+    "source": "https://platform.claude.com/docs/en/about-claude/models/overview",
+    "note": "Docs table: training data cutoff Jul 2025; reliable knowledge cutoff Feb 2025 (differs)."
+  },
+  {
+    "id": "anthropic/claude-opus-4",
+    "cutoff": "2025-03",
+    "release_date": "2025-05",
+    "basis": "system_card",
+    "source": "https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47/claude-opus-4-and-claude-sonnet-4-system-card.pdf",
+    "note": "Opus 4 & Sonnet 4 system card / docs table: training cutoff Mar 2025; reliable knowledge cutoff Jan 2025. Released 2025-05-22."
+  },
+  {
+    "id": "anthropic/claude-opus-4.1",
+    "cutoff": "2025-03",
+    "release_date": "2025-08",
+    "basis": "docs",
+    "source": "https://platform.claude.com/docs/en/about-claude/models/overview",
+    "note": "Docs table: training cutoff Mar 2025 (same as Opus 4 base); reliable knowledge cutoff Jan 2025."
+  },
+  {
+    "id": "anthropic/claude-opus-4.5",
+    "cutoff": "2025-08",
+    "release_date": "2025-11",
+    "basis": "docs",
+    "source": "https://platform.claude.com/docs/en/about-claude/models/overview",
+    "note": "Docs table: training cutoff Aug 2025; reliable knowledge cutoff May 2025."
+  },
+  {
+    "id": "anthropic/claude-opus-4.6",
+    "cutoff": "2025-08",
+    "release_date": null,
+    "basis": "docs",
+    "source": "https://platform.claude.com/docs/en/about-claude/models/overview",
+    "note": "Docs table: training cutoff Aug 2025; reliable knowledge cutoff May 2025."
+  },
+  {
+    "id": "anthropic/claude-opus-4.7",
+    "cutoff": "2026-01",
+    "release_date": null,
+    "basis": "docs",
+    "source": "https://platform.claude.com/docs/en/about-claude/models/overview",
+    "note": "Docs table: training cutoff Jan 2026; reliable knowledge cutoff also Jan 2026."
+  },
+  {
+    "id": "anthropic/claude-opus-4.8",
+    "cutoff": "2026-01",
+    "release_date": null,
+    "basis": "docs",
+    "source": "https://platform.claude.com/docs/en/about-claude/models/overview",
+    "note": "Docs table (current flagship at time of query): training cutoff Jan 2026; reliable knowledge cutoff also Jan 2026."
+  },
+  {
+    "id": "anthropic/claude-sonnet-4",
+    "cutoff": "2025-03",
+    "release_date": "2025-05",
+    "basis": "system_card",
+    "source": "https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47/claude-opus-4-and-claude-sonnet-4-system-card.pdf",
+    "note": "Same system card as Opus 4. Training cutoff Mar 2025; reliable knowledge cutoff Jan 2025. Released 2025-05-22."
+  },
+  {
+    "id": "anthropic/claude-sonnet-4.5",
+    "cutoff": "2025-07",
+    "release_date": "2025-09",
+    "basis": "docs",
+    "source": "https://platform.claude.com/docs/en/about-claude/models/overview",
+    "note": "Docs table: training cutoff Jul 2025; reliable knowledge cutoff Jan 2025 (large gap)."
+  },
+  {
+    "id": "anthropic/claude-sonnet-4.6",
+    "cutoff": "2026-01",
+    "release_date": null,
+    "basis": "docs",
+    "source": "https://platform.claude.com/docs/en/about-claude/models/overview",
+    "note": "Docs table lists training cutoff Jan 2026, reliable knowledge cutoff Aug 2025 (large gap). Note: a separate Anthropic support-center article groups Sonnet 4.6 with Aug 2025 'trained on data up until' phrasing, likely conflating reliable-knowledge-cutoff with training-cutoff; primary docs table is used here as it explicitly distinguishes the two fields."
+  },
+  {
+    "id": "anthropic/claude-sonnet-5",
+    "cutoff": "2026-01",
+    "release_date": "2026-06",
+    "basis": "docs",
+    "source": "https://platform.claude.com/docs/en/about-claude/models/overview",
+    "note": "Docs table: training cutoff Jan 2026; reliable knowledge cutoff also Jan 2026."
+  },
+  {
+    "id": "arcee-ai/trinity-large-thinking",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://www.arcee.ai/blog/trinity-large-thinking",
+    "note": "No cutoff on HF card, blog, or Trinity-Large tech report (arXiv 2602.17004); released Apr 1 2026"
+  },
+  {
+    "id": "baidu/ernie-4.5-vl-424b-a47b",
+    "cutoff": null,
+    "release_date": "2025-06",
+    "basis": "unknown",
+    "source": "https://huggingface.co/baidu/ERNIE-4.5-VL-424B-A47B",
+    "note": "Full-text search of 40+ page ERNIE tech report (dated Jun 29 2025) found no cutoff; HF repos created Jun 28 2025"
+  },
+  {
+    "id": "cohere/command-a",
+    "cutoff": null,
+    "release_date": "2025-03",
+    "basis": "unknown",
+    "source": "https://docs.cohere.com/v2/changelog/command-a",
+    "note": "Released March 2025 (model id command-a-03-2025). Fetched docs.cohere.com/docs/command-a directly (incl. raw HTML grep) -- no cutoff or 'trained with data through' language present, unlike the Command R/R+ page."
+  },
+  {
+    "id": "cohere/command-r-08-2024",
+    "cutoff": "2023-02",
+    "release_date": "2024-08",
+    "basis": "docs",
+    "source": "https://docs.cohere.com/docs/command-r-plus",
+    "note": "docs.cohere.com states (verified via raw HTML fetch): 'command-r-plus-08-2024 in particular delivers roughly 50% higher throughput... both these updated models can now operate in one of several safety modes... Finally, these refreshed models were trained with data through February 2023, which means if you ask them questions requiring information from after this date their answers will likely be incorrect.' 'These refreshed models' explicitly refers to both Command R and Command R+ 08-2024 refreshes. Command R's own docs page (docs.cohere.com/docs/command-r) does not restate this, hence citing the R+ page where it appears."
+  },
+  {
+    "id": "cohere/command-r-plus-08-2024",
+    "cutoff": "2023-02",
+    "release_date": "2024-08",
+    "basis": "docs",
+    "source": "https://docs.cohere.com/docs/command-r-plus",
+    "note": "docs.cohere.com states (verified via raw HTML fetch): 'these refreshed models were trained with data through February 2023, which means if you ask them questions requiring information from after this date their answers will likely be incorrect.'"
+  },
+  {
+    "id": "cohere/command-r7b-12-2024",
+    "cutoff": null,
+    "release_date": "2024-12",
+    "basis": "unknown",
+    "source": "https://docs.cohere.com/docs/command-r7b",
+    "note": "Released Dec 2024. Directly checked docs.cohere.com/docs/command-r7b (incl. raw HTML grep for 'cutoff', 'June 2024', 'preamble') -- no cutoff language found, unlike the Command R+ page. A search-engine summary claimed a 'June 2024' cutoff attributed to a 'system preamble' but this could not be verified against the actual page content, so excluded as unreliable."
+  },
+  {
+    "id": "cohere/north-mini-code:free",
+    "cutoff": null,
+    "release_date": "2026-06",
+    "basis": "unknown",
+    "source": "https://cohere.com/blog/north-mini-code",
+    "note": "North Mini Code 1.0, Cohere's first coding-focused model (30B MoE, 3B active), announced via blog dated June 9, 2026 and docs.cohere.com/changelog/north-mini-code-1-0. No knowledge cutoff stated in blog, changelog, or docs.cohere.com/docs/north-mini-code-1.0."
+  },
+  {
+    "id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+    "cutoff": null,
+    "release_date": "2025-01",
+    "basis": "unknown",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+    "note": "No cutoff stated in HF model card or the R1 tech report (arXiv 2501.12948). Distilled by fine-tuning Llama-3.1-8B (base cutoff Dec 2023 per Meta) on 800k reasoning samples generated by R1; distillation data recency is undocumented, so the effective checkpoint cutoff is unknown, not just the base's."
+  },
+  {
+    "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "cutoff": null,
+    "release_date": "2025-01",
+    "basis": "unknown",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "note": "No cutoff stated in HF model card or the R1 tech report (arXiv 2501.12948). Distilled from a Qwen2.5-7B base (not a Llama base) using 800k R1-generated reasoning samples; no stated cutoff for base or distillation data."
+  },
+  {
+    "id": "deepseek/deepseek-chat",
+    "cutoff": null,
+    "release_date": "2024-12",
+    "basis": "unknown",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V3",
+    "note": "= DeepSeek V3 (original). Neither the DeepSeek-V3 technical report (arXiv 2412.19437) nor the HF model card states an explicit knowledge cutoff; report discusses token counts (14.8T) instead. Released Dec 26, 2024. Third-party system-prompt extraction (e.g. knostic.ai) claims a self-reported 'July 2024' cutoff, but that is not from an official document and is not used here."
+  },
+  {
+    "id": "deepseek/deepseek-chat-v3-0324",
+    "cutoff": null,
+    "release_date": "2025-03",
+    "basis": "unknown",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V3-0324",
+    "note": "No knowledge cutoff stated in HF model card. Released March 24, 2025 (per DeepSeek API docs changelog and HF card)."
+  },
+  {
+    "id": "deepseek/deepseek-chat-v3.1",
+    "cutoff": null,
+    "release_date": "2025-08",
+    "basis": "unknown",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1",
+    "note": "No explicit cutoff stated in HF model card. Released Aug 21, 2025 per DeepSeek API docs changelog. Some secondary blog commentary claims recent-data oversampling 'brings the cutoff to mid-2025' but this is not an official stated cutoff, so left unknown."
+  },
+  {
+    "id": "deepseek/deepseek-r1",
+    "cutoff": null,
+    "release_date": "2025-01",
+    "basis": "unknown",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-R1",
+    "note": "No cutoff stated in the R1 technical report (arXiv 2501.12948) or HF model card. Released Jan 20, 2025. Self-reported cutoffs in chat transcripts are inconsistent across sources (claims ranging from Oct 2023 to July 2024 circulate online), reinforcing that no single official cutoff is documented."
+  },
+  {
+    "id": "deepseek/deepseek-r1-0528",
+    "cutoff": null,
+    "release_date": "2025-05",
+    "basis": "unknown",
+    "source": "https://api-docs.deepseek.com/news/news250528/",
+    "note": "No knowledge cutoff stated in official release notes or HF model card. Released May 28, 2025 (minor reasoning-quality update to R1)."
+  },
+  {
+    "id": "deepseek/deepseek-r1-distill-llama-70b",
+    "cutoff": null,
+    "release_date": "2025-01",
+    "basis": "unknown",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+    "note": "No cutoff stated in HF model card. Distilled from Llama-3.3-70B-Instruct (base cutoff Dec 2023 per Meta's own card) fine-tuned on 800k R1-generated samples; DeepSeek does not restate a cutoff for the distilled checkpoint. Released Jan 2025 alongside R1."
+  },
+  {
+    "id": "deepseek/deepseek-v3.1-terminus",
+    "cutoff": null,
+    "release_date": "2025-09",
+    "basis": "unknown",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1-Terminus",
+    "note": "No knowledge cutoff stated in HF model card. Released Sept 22, 2025 as a stability/consistency-focused update to V3.1; same base architecture as V3.1."
+  },
+  {
+    "id": "deepseek/deepseek-v3.2",
+    "cutoff": null,
+    "release_date": "2025-12",
+    "basis": "unknown",
+    "source": "https://openrouter.ai/deepseek/deepseek-v3.2",
+    "note": "No knowledge cutoff stated. This id maps to the December 1, 2025 'DeepSeek-V3.2' release (distinct from the earlier Sept 29, 2025 'V3.2-Exp' experimental sparse-attention preview)."
+  },
+  {
+    "id": "deepseek/deepseek-v4-flash",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash",
+    "note": "No knowledge cutoff stated in HF model card; report discusses token counts (32T+) not a cutoff date. Released April 24, 2026 as a preview/production release alongside V4-Pro."
+  },
+  {
+    "id": "deepseek/deepseek-v4-pro",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+    "note": "No knowledge cutoff stated in HF model card; report discusses token counts (32T+) not a cutoff date. Released April 24, 2026 as a preview/production release alongside V4-Flash."
+  },
+  {
+    "id": "google/gemini-2.5-flash",
+    "cutoff": "2025-01",
+    "release_date": "2025-06",
+    "basis": "model_card",
+    "source": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Model-Card.pdf",
+    "note": "Google DeepMind model card: knowledge cutoff January 2025."
+  },
+  {
+    "id": "google/gemini-2.5-flash-lite",
+    "cutoff": "2025-01",
+    "release_date": "2025-07",
+    "basis": "model_card",
+    "source": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf",
+    "note": "Google DeepMind model card (published/updated Sep 26 2025): knowledge cutoff January 2025."
+  },
+  {
+    "id": "google/gemini-2.5-pro",
+    "cutoff": "2025-01",
+    "release_date": "2025-03",
+    "basis": "model_card",
+    "source": "https://deepmind.google/models/gemini/pro/",
+    "note": "Knowledge cutoff January 31, 2025 per Google model documentation."
+  },
+  {
+    "id": "google/gemini-3-flash-preview",
+    "cutoff": "2025-01",
+    "release_date": "2025-12",
+    "basis": "model_card",
+    "source": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf",
+    "note": "Gemini 3 Flash model card (published Dec 2025): knowledge cutoff January 2025, same as Gemini 3 Pro. Direct PDF text extraction was lossy; corroborated via multiple independent secondary sources citing the card."
+  },
+  {
+    "id": "google/gemini-3.1-flash-lite",
+    "cutoff": "2025-01",
+    "release_date": null,
+    "basis": "model_card",
+    "source": "https://deepmind.google/models/model-cards/gemini-3-1-flash-lite-image/",
+    "note": "Gemini 3.1 family (Pro/Flash/Flash-Lite) reported to retain the Jan 2025 knowledge cutoff carried over from Gemini 3."
+  },
+  {
+    "id": "google/gemini-3.1-pro-preview",
+    "cutoff": "2025-01",
+    "release_date": "2026-02",
+    "basis": "model_card",
+    "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/",
+    "note": "Model card published Feb 2026. Direct fetch did not surface an explicit cutoff line (likely PDF/table extraction issue), but multiple independent sources report Jan 2025 knowledge cutoff, consistent with the rest of the Gemini 3.x line through 3.5."
+  },
+  {
+    "id": "google/gemini-3.5-flash",
+    "cutoff": "2025-01",
+    "release_date": null,
+    "basis": "model_card",
+    "source": "https://deepmind.google/models/model-cards/gemini-3-5-flash/",
+    "note": "Reported knowledge cutoff January 2025 (same as Gemini 3/3.1). Notably, coverage of the subsequent Gemini 3.6 Flash release states the cutoff FIRST advanced beyond Jan 2025 (to Mar 2026) with that model \u2014 implying Gemini 3, 3.1, and 3.5 all share the Jan 2025 cutoff despite later release dates."
+  },
+  {
+    "id": "google/gemma-2-27b-it",
+    "cutoff": null,
+    "release_date": "2024-06",
+    "basis": "unknown",
+    "source": "https://ai.google.dev/gemma/docs/core/model_card_2",
+    "note": "Official Gemma 2 model card describes training token counts but states no explicit cutoff date. Confirmed via direct fetch: no cutoff stated."
+  },
+  {
+    "id": "google/gemma-3-12b-it",
+    "cutoff": "2024-08",
+    "release_date": "2025-03",
+    "basis": "model_card",
+    "source": "https://ai.google.dev/gemma/docs/core/model_card_3",
+    "note": "Official Gemma 3 model card, Training Dataset section: 'The knowledge cutoff date for the training data was August 2024.' Applies to all sizes (270M/1B/4B/12B/27B)."
+  },
+  {
+    "id": "google/gemma-3-27b-it",
+    "cutoff": "2024-08",
+    "release_date": "2025-03",
+    "basis": "model_card",
+    "source": "https://ai.google.dev/gemma/docs/core/model_card_3",
+    "note": "Same Gemma 3 model card as other Gemma 3 sizes: Aug 2024 cutoff."
+  },
+  {
+    "id": "google/gemma-3-4b-it",
+    "cutoff": "2024-08",
+    "release_date": "2025-03",
+    "basis": "model_card",
+    "source": "https://ai.google.dev/gemma/docs/core/model_card_3",
+    "note": "Same Gemma 3 model card as other Gemma 3 sizes: Aug 2024 cutoff."
+  },
+  {
+    "id": "google/gemma-3n-e4b-it",
+    "cutoff": "2024-06",
+    "release_date": "2025-05",
+    "basis": "model_card",
+    "source": "https://ai.google.dev/gemma/docs/gemma-3n/model_card",
+    "note": "Official Gemma 3n model card, Training Dataset section: 'The knowledge cutoff date for the training data was June 2024.' Earlier cutoff than mainline Gemma 3 despite later release."
+  },
+  {
+    "id": "google/gemma-4-26b-a4b-it",
+    "cutoff": "2025-01",
+    "release_date": "2026-04",
+    "basis": "model_card",
+    "source": "https://ai.google.dev/gemma/docs/core/model_card_4",
+    "note": "Official Gemma 4 model card: pre-training dataset cutoff date of January 2025, applies to all variants (E2B/E4B/12B/26B A4B/31B Dense). Released 2026-04-02."
+  },
+  {
+    "id": "google/gemma-4-31b-it",
+    "cutoff": "2025-01",
+    "release_date": "2026-04",
+    "basis": "model_card",
+    "source": "https://ai.google.dev/gemma/docs/core/model_card_4",
+    "note": "Same Gemma 4 model card: Jan 2025 cutoff."
+  },
+  {
+    "id": "ibm-granite/granite-4.1-8b",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://huggingface.co/ibm-granite/granite-4.1-8b",
+    "note": "Card states 'Release Date: April 29th 2026' but has no cutoff field (verified via raw README grep); unusual for Granite"
+  },
+  {
+    "id": "inclusionai/ling-2.6-1t",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://huggingface.co/inclusionAI/Ling-2.6-1T",
+    "note": "No cutoff in card or tech report; Ant Group InclusionAI; HF repo created Apr 2026"
+  },
+  {
+    "id": "inclusionai/ling-2.6-flash",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://huggingface.co/inclusionAI/Ling-2.6-flash",
+    "note": "No cutoff stated; HF repo created Apr 2026"
+  },
+  {
+    "id": "inclusionai/ring-2.6-1t",
+    "cutoff": null,
+    "release_date": "2026-05",
+    "basis": "unknown",
+    "source": "https://huggingface.co/inclusionAI/Ring-2.6-1T",
+    "note": "No cutoff stated; reasoning variant; HF repo created May 2026"
+  },
+  {
+    "id": "kwaipilot/kat-coder-pro-v2",
+    "cutoff": null,
+    "release_date": "2026-03",
+    "basis": "unknown",
+    "source": "https://huggingface.co/Kwaipilot/KAT-Coder-Pro-V2",
+    "note": "Kuaishou KAT-Coder; tech report (arXiv 2603.27703) has no cutoff; released ~Mar 2026"
+  },
+  {
+    "id": "meta-llama/llama-3.1-70b-instruct",
+    "cutoff": "2023-12",
+    "release_date": "2024-07",
+    "basis": "model_card",
+    "source": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md",
+    "note": "Official model card states 'Data Freshness: December 2023' pretraining cutoff for all Llama 3.1 sizes (8B/70B/405B); release date July 23, 2024."
+  },
+  {
+    "id": "meta-llama/llama-3.1-8b-instruct",
+    "cutoff": "2023-12",
+    "release_date": "2024-07",
+    "basis": "model_card",
+    "source": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md",
+    "note": "Official model card states 'Data Freshness: December 2023' pretraining cutoff for all Llama 3.1 sizes; release date July 23, 2024."
+  },
+  {
+    "id": "meta-llama/llama-3.2-1b-instruct",
+    "cutoff": "2023-12",
+    "release_date": "2024-10",
+    "basis": "model_card",
+    "source": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md",
+    "note": "Official model card table lists Knowledge cutoff 'December 2023' and Model Release Date 'Oct 24, 2024' for 1B/3B text models (Meta Connect announcement was Sept 25, 2024, but the model card's own release-date field says Oct 24, 2024)."
+  },
+  {
+    "id": "meta-llama/llama-3.2-3b-instruct",
+    "cutoff": "2023-12",
+    "release_date": "2024-10",
+    "basis": "model_card",
+    "source": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md",
+    "note": "Official model card table lists Knowledge cutoff 'December 2023' and Model Release Date 'Oct 24, 2024' for 1B/3B text models (Meta Connect announcement was Sept 25, 2024, but the model card's own release-date field says Oct 24, 2024)."
+  },
+  {
+    "id": "meta-llama/llama-3.3-70b-instruct",
+    "cutoff": "2023-12",
+    "release_date": "2024-12",
+    "basis": "model_card",
+    "source": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md",
+    "note": "Official model card states December 2023 pretraining cutoff; released December 5-6, 2024."
+  },
+  {
+    "id": "meta-llama/llama-4-maverick",
+    "cutoff": "2024-08",
+    "release_date": "2025-04",
+    "basis": "model_card",
+    "source": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md",
+    "note": "Official model card states 'The pretraining data has a cutoff of August 2024.' Release date April 5, 2025. Same cutoff applies to Scout and Maverick."
+  },
+  {
+    "id": "meta-llama/llama-4-scout",
+    "cutoff": "2024-08",
+    "release_date": "2025-04",
+    "basis": "model_card",
+    "source": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md",
+    "note": "Official model card states 'The pretraining data has a cutoff of August 2024.' Release date April 5, 2025. Same cutoff applies to Scout and Maverick."
+  },
+  {
+    "id": "microsoft/phi-4",
+    "cutoff": "2024-06",
+    "release_date": "2024-12",
+    "basis": "model_card",
+    "source": "https://huggingface.co/microsoft/phi-4",
+    "note": "HF model card states verbatim: 'Static model trained on an offline dataset with cutoff dates of June 2024 and earlier for publicly available data.' Same card lists training PERIOD (compute time) as Oct-Nov 2024, distinct from the data cutoff -- confirmed via HF discussion #45 where a Microsoft team member (gugarosa) clarified 'Dates' = training period vs 'Status' = knowledge cutoff, and noted responses reflecting pre-June-2024 knowledge are expected/intentional. Model announced Dec 12, 2024 (research preview), open-weighted on HF in Jan 2025."
+  },
+  {
+    "id": "minimax/minimax-m2.7",
+    "cutoff": null,
+    "release_date": "2026-03",
+    "basis": "unknown",
+    "source": "https://www.minimax.io/news/minimax-m27-en",
+    "note": "No cutoff in HF README or arXiv 2605.26494; released Mar 18 2026"
+  },
+  {
+    "id": "mistralai/codestral-2508",
+    "cutoff": null,
+    "release_date": "2025-08",
+    "basis": "unknown",
+    "source": "https://mistral.ai/news/codestral-25-08/",
+    "note": "No stated knowledge cutoff on docs.mistral.ai model card or announcement (announcement text says 'released end of July 2025'; using 2508 naming convention -> 2025-08). Third-party sites claim a Mar 2025 cutoff but this is not corroborated by any primary Mistral source, so excluded."
+  },
+  {
+    "id": "mistralai/devstral-2512",
+    "cutoff": null,
+    "release_date": "2025-12",
+    "basis": "unknown",
+    "source": "https://mistral.ai/news/devstral-2-vibe-cli/",
+    "note": "No stated knowledge cutoff on docs.mistral.ai model card (docs.mistral.ai/models/model-cards/devstral-2-25-12) or announcement blog. Release date per 2512 naming convention, announced Dec 2025."
+  },
+  {
+    "id": "mistralai/ministral-14b-2512",
+    "cutoff": null,
+    "release_date": "2025-12",
+    "basis": "unknown",
+    "source": "https://mistral.ai/news/mistral-3/",
+    "note": "Part of Mistral 3 family launch (Dec 2, 2025). No stated cutoff on docs.mistral.ai model card or HF model card, only training-report arXiv reference with no cutoff quoted."
+  },
+  {
+    "id": "mistralai/ministral-3b-2512",
+    "cutoff": null,
+    "release_date": "2025-12",
+    "basis": "unknown",
+    "source": "https://docs.mistral.ai/models/model-cards/ministral-3-3b-25-12",
+    "note": "docs.mistral.ai model card confirms release Dec 2, 2025; no knowledge cutoff stated."
+  },
+  {
+    "id": "mistralai/ministral-8b-2512",
+    "cutoff": null,
+    "release_date": "2025-12",
+    "basis": "unknown",
+    "source": "https://mistral.ai/news/mistral-3/",
+    "note": "Part of Mistral 3 family launch (Dec 2, 2025). No stated knowledge cutoff found in official docs or announcement."
+  },
+  {
+    "id": "mistralai/mistral-large-2407",
+    "cutoff": null,
+    "release_date": "2024-07",
+    "basis": "unknown",
+    "source": "https://mistral.ai/news/mistral-large-2407/",
+    "note": "No stated knowledge cutoff found in official announcement or docs.mistral.ai; release date per 2407 naming convention (July 2024, 'Large Enough' launch)."
+  },
+  {
+    "id": "mistralai/mistral-large-2512",
+    "cutoff": null,
+    "release_date": "2025-12",
+    "basis": "unknown",
+    "source": "https://mistral.ai/news/mistral-3/",
+    "note": "Mistral Large 3, part of Mistral 3 family launch Dec 2, 2025. No stated knowledge cutoff found."
+  },
+  {
+    "id": "mistralai/mistral-medium-3",
+    "cutoff": null,
+    "release_date": "2025-05",
+    "basis": "unknown",
+    "source": "https://docs.mistral.ai/models/model-cards/mistral-medium-3-25-05",
+    "note": "docs.mistral.ai model card gives release date May 7, 2025; explicitly checked page for cutoff language, none present. (Note: some aggregator sites claim cutoff = release month, which is exactly the kind of unverified conflation this task asked us to avoid.)"
+  },
+  {
+    "id": "mistralai/mistral-medium-3-5",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://docs.mistral.ai/models/model-cards/mistral-medium-3-5-26-04",
+    "note": "docs.mistral.ai model card gives release date April 28, 2026; no knowledge cutoff stated."
+  },
+  {
+    "id": "mistralai/mistral-medium-3.1",
+    "cutoff": null,
+    "release_date": "2025-08",
+    "basis": "unknown",
+    "source": "https://docs.mistral.ai/models/model-cards/mistral-medium-3-1-25-08",
+    "note": "docs.mistral.ai model card gives release date August 12, 2025; no knowledge cutoff stated."
+  },
+  {
+    "id": "mistralai/mistral-nemo",
+    "cutoff": null,
+    "release_date": "2024-07",
+    "basis": "unknown",
+    "source": "https://docs.mistral.ai/models/mistral-nemo-12b-24-07",
+    "note": "docs.mistral.ai confirms release July 18, 2024 (joint with NVIDIA); no knowledge cutoff stated on official docs or HF card. Third-party claim of 'pretraining cutoff April 2024' found only on aggregator/search-summary sources, not corroborated primarily, excluded."
+  },
+  {
+    "id": "mistralai/mistral-saba",
+    "cutoff": null,
+    "release_date": "2025-02",
+    "basis": "unknown",
+    "source": "https://docs.mistral.ai/models/model-cards/mistral-saba-25-02",
+    "note": "docs.mistral.ai confirms release Feb 17, 2025; no knowledge cutoff stated. A third-party listicle claimed an oddly specific 'Aug 21, 2024' cutoff with no primary backing -- treated as unverified/likely fabricated and excluded."
+  },
+  {
+    "id": "mistralai/mistral-small-2603",
+    "cutoff": null,
+    "release_date": "2026-03",
+    "basis": "unknown",
+    "source": "https://docs.mistral.ai/models/model-cards/mistral-small-4-0-26-03",
+    "note": "This is 'Mistral Small 4' (mistral-small-4-119b-2603), released March 16, 2026, merging Magistral/Pixtral/Devstral into one model. No knowledge cutoff stated on docs.mistral.ai."
+  },
+  {
+    "id": "mistralai/mistral-small-3.1-24b-instruct",
+    "cutoff": null,
+    "release_date": "2025-03",
+    "basis": "unknown",
+    "source": "https://docs.mistral.ai/models/model-cards/mistral-small-3-1-25-03",
+    "note": "docs.mistral.ai confirms release March 17, 2025; no knowledge cutoff stated. Third-party claim of 'Oct 2023' cutoff found only on aggregator sites, not corroborated by Mistral docs/HF card, excluded."
+  },
+  {
+    "id": "mistralai/mistral-small-3.2-24b-instruct",
+    "cutoff": null,
+    "release_date": "2025-06",
+    "basis": "unknown",
+    "source": "https://docs.mistral.ai/models/model-cards/mistral-small-3-2-25-06",
+    "note": "docs.mistral.ai confirms release June 20, 2025; no knowledge cutoff stated. (HF discussion thread titled 'Knowledge cut of date - old training data?' exists but contains no official Mistral answer with a date.)"
+  },
+  {
+    "id": "mistralai/mixtral-8x22b-instruct",
+    "cutoff": null,
+    "release_date": "2024-04",
+    "basis": "unknown",
+    "source": "https://huggingface.co/mistralai/Mixtral-8x22B-Instruct-v0.1",
+    "note": "Released April 2024; HF model card contains no knowledge cutoff statement. A third-party listicle claimed 'Sept 2021' which predates Mistral AI's founding (2023) and is almost certainly wrong/fabricated -- excluded."
+  },
+  {
+    "id": "moonshotai/kimi-k2",
+    "cutoff": null,
+    "release_date": "2025-07",
+    "basis": "unknown",
+    "source": "https://huggingface.co/moonshotai/Kimi-K2-Instruct",
+    "note": "No knowledge cutoff stated in HF model card or the Kimi K2 technical report (arXiv 2507.20534), which describes 15.5T pretraining tokens but not a cutoff date. Released July 11, 2025."
+  },
+  {
+    "id": "moonshotai/kimi-k2-0905",
+    "cutoff": null,
+    "release_date": "2025-09",
+    "basis": "unknown",
+    "source": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905",
+    "note": "No knowledge cutoff stated. September update to Kimi K2 with extended 256K context and improved coding; released Sept 9, 2025."
+  },
+  {
+    "id": "moonshotai/kimi-k2-thinking",
+    "cutoff": null,
+    "release_date": "2025-11",
+    "basis": "unknown",
+    "source": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
+    "note": "No knowledge cutoff stated in HF model card. Released Nov 6, 2025 as Moonshot's reasoning/agentic variant."
+  },
+  {
+    "id": "moonshotai/kimi-k2.5",
+    "cutoff": null,
+    "release_date": "2026-01",
+    "basis": "unknown",
+    "source": "https://huggingface.co/moonshotai/Kimi-K2.5",
+    "note": "Directly checked HF model card: no explicit knowledge cutoff date stated anywhere (only 'continual pretraining on ~15T mixed visual/text tokens'). Released Jan 27-29, 2026. Third-party trackers give wildly inconsistent guesses (Oct 2025, April 2024, April 2025) for this model, none traceable to an official Moonshot statement -- confirms this is genuinely undocumented rather than a case of us missing a source."
+  },
+  {
+    "id": "moonshotai/kimi-k2.6",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://huggingface.co/moonshotai/Kimi-K2.6",
+    "note": "No knowledge cutoff stated in HF model card. GA release shipped April 21, 2026."
+  },
+  {
+    "id": "moonshotai/kimi-k2.7-code",
+    "cutoff": null,
+    "release_date": "2026-06",
+    "basis": "unknown",
+    "source": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+    "note": "No knowledge cutoff stated. Coding-focused agentic model built on Kimi K2.6; released June 12, 2026."
+  },
+  {
+    "id": "nex-agi/nex-n2-mini",
+    "cutoff": null,
+    "release_date": "2026-06",
+    "basis": "unknown",
+    "source": "https://huggingface.co/nex-agi/Nex-N2-mini",
+    "note": "No cutoff in card/README/GitHub; base Qwen3.5-A3B; OpenRouter release Jun 2026"
+  },
+  {
+    "id": "nex-agi/nex-n2-pro",
+    "cutoff": null,
+    "release_date": "2026-06",
+    "basis": "unknown",
+    "source": "https://huggingface.co/nex-agi/Nex-N2-Pro",
+    "note": "No cutoff stated; base Qwen3.5-A17B; OpenRouter release Jun 2026"
+  },
+  {
+    "id": "nousresearch/hermes-3-llama-3.1-405b",
+    "cutoff": null,
+    "release_date": "2024-08",
+    "basis": "unknown",
+    "source": "https://arxiv.org/abs/2408.11857",
+    "note": "Hermes 3 tech report states no Hermes-specific cutoff; base Llama 3.1 405B has Meta Dec-2023 cutoff (not restated by Nous)"
+  },
+  {
+    "id": "nousresearch/hermes-3-llama-3.1-70b",
+    "cutoff": null,
+    "release_date": "2024-08",
+    "basis": "unknown",
+    "source": "https://arxiv.org/abs/2408.11857",
+    "note": "Same joint tech report; no Hermes-specific cutoff; base Llama 3.1 = Dec 2023"
+  },
+  {
+    "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+    "cutoff": "2023-12",
+    "release_date": "2025-07",
+    "basis": "model_card",
+    "source": "https://huggingface.co/nvidia/Llama-3_3-Nemotron-Super-49B-v1_5",
+    "note": "Card: 'pretraining data has a cutoff of 2023 per Meta Llama 3.3 70B' (Meta Llama 3.3 cutoff = Dec 2023); NAS-derived from Llama-3.3-70B, released Jul 25 2025"
+  },
+  {
+    "id": "nvidia/nemotron-3-nano-30b-a3b",
+    "cutoff": "2025-06",
+    "release_date": "2025-12",
+    "basis": "model_card",
+    "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+    "note": "Own Nemotron-3 pretrain. Card gives two dates: pre-training cutoff Jun 25 2025 (used here as knowledge cutoff) and post-training cutoff Nov 28 2025; released Dec 15 2025"
+  },
+  {
+    "id": "nvidia/nemotron-3-super-120b-a12b",
+    "cutoff": "2025-06",
+    "release_date": "2026-03",
+    "basis": "model_card",
+    "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8",
+    "note": "Own Nemotron-3 pretrain. Two-date card: pre-training freshness Jun 2025 (used), post-training freshness Feb 2026; released ~Mar 2026"
+  },
+  {
+    "id": "nvidia/nemotron-3-ultra-550b-a55b",
+    "cutoff": "2025-09",
+    "release_date": "2026-06",
+    "basis": "model_card",
+    "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+    "note": "Own Nemotron-3 pretrain. Two-date card: pre-training freshness Sep 2025 (used), post-training freshness May 2026; released ~Jun 2026"
+  },
+  {
+    "id": "nvidia/nemotron-nano-9b-v2:free",
+    "cutoff": "2024-09",
+    "release_date": "2025-08",
+    "basis": "model_card",
+    "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2",
+    "note": "Single Data Freshness field, Sep 2024; hybrid Mamba-Transformer, base Nemotron-Nano-12B-v2 (not Llama-derived); released Aug 2025"
+  },
+  {
+    "id": "openai/gpt-3.5-turbo",
+    "cutoff": "2021-09",
+    "release_date": "2023-03",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-3.5-turbo",
+    "note": "Cutoff 'Sep 01, 2021' confirmed on official model page. Release date (Mar 1, 2023) from ChatGPT API launch announcement (TechCrunch), not shown on docs page itself (original dated snapshot gpt-3.5-turbo-0301 no longer listed)."
+  },
+  {
+    "id": "openai/gpt-4",
+    "cutoff": "2023-12",
+    "release_date": "2023-03",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-4",
+    "note": "Official docs page currently lists 'Dec 01, 2023 knowledge cutoff' for the 'gpt-4' alias -- NOTE this differs from the commonly cited historical GPT-4 cutoff of Sep 2021 (which applied to original gpt-4-0314/0613 snapshots); OpenAI appears to have updated/consolidated the cutoff shown for the generic alias. Verified directly in raw HTML twice. Release date (Mar 14, 2023) is the original GPT-4 launch, from TechCrunch/Wikipedia, distinct from this cutoff figure."
+  },
+  {
+    "id": "openai/gpt-4-turbo",
+    "cutoff": "2023-12",
+    "release_date": "2024-04",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-4-turbo",
+    "note": "Cutoff 'Dec 01, 2023' confirmed in raw HTML. Release date from dated snapshot gpt-4-turbo-2024-04-09 listed on the same page (GA release)."
+  },
+  {
+    "id": "openai/gpt-4.1",
+    "cutoff": "2024-06",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-4.1",
+    "note": "Cutoff 'Jun 01, 2024' confirmed in raw HTML. Release date from dated snapshot gpt-4.1-2025-04-14."
+  },
+  {
+    "id": "openai/gpt-4.1-mini",
+    "cutoff": "2024-06",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+    "note": "Cutoff 'Jun 01, 2024' confirmed in raw HTML. Release date from dated snapshot gpt-4.1-mini-2025-04-14."
+  },
+  {
+    "id": "openai/gpt-4.1-nano",
+    "cutoff": "2024-06",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-4.1-nano",
+    "note": "Cutoff 'Jun 01, 2024' confirmed in raw HTML. Release date from dated snapshot gpt-4.1-nano-2025-04-14."
+  },
+  {
+    "id": "openai/gpt-4o",
+    "cutoff": "2023-10",
+    "release_date": "2024-05",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-4o",
+    "note": "Cutoff 'Oct 01, 2023' confirmed in raw HTML. Release date from earliest dated snapshot gpt-4o-2024-05-13 (initial GPT-4o release); later snapshots 2024-08-06 and 2024-11-20 also listed."
+  },
+  {
+    "id": "openai/gpt-4o-mini",
+    "cutoff": "2023-10",
+    "release_date": "2024-07",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+    "note": "Cutoff 'Oct 01, 2023' confirmed in raw HTML. Release date from dated snapshot gpt-4o-mini-2024-07-18."
+  },
+  {
+    "id": "openai/gpt-5",
+    "cutoff": "2024-09",
+    "release_date": "2025-08",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5",
+    "note": "Cutoff 'Sep 30, 2024' confirmed in raw HTML. Release date from dated snapshot gpt-5-2025-08-07, matches public GPT-5 launch Aug 7 2025 (TechCrunch)."
+  },
+  {
+    "id": "openai/gpt-5-chat",
+    "cutoff": "2024-09",
+    "release_date": "2025-08",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5-chat-latest",
+    "note": "Cutoff 'Sep 30, 2024' confirmed in raw HTML (slug: gpt-5-chat-latest). Page states this alias 'points to the GPT-5 snapshot previously used in ChatGPT' and is now deprecated; no dated snapshot id is exposed, so release date (2025-08) is inferred from the co-released gpt-5 flagship, not independently confirmed."
+  },
+  {
+    "id": "openai/gpt-5-mini",
+    "cutoff": "2024-05",
+    "release_date": "2025-08",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+    "note": "Cutoff 'May 31, 2024' confirmed in raw HTML (earlier than flagship gpt-5's Sep 2024 cutoff). Release date from dated snapshot gpt-5-mini-2025-08-07."
+  },
+  {
+    "id": "openai/gpt-5-nano",
+    "cutoff": "2024-05",
+    "release_date": "2025-08",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5-nano",
+    "note": "Cutoff 'May 31, 2024' confirmed in raw HTML. Release date from dated snapshot gpt-5-nano-2025-08-07."
+  },
+  {
+    "id": "openai/gpt-5.1",
+    "cutoff": "2024-09",
+    "release_date": "2025-11",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.1",
+    "note": "Cutoff 'Sep 30, 2024' confirmed in raw HTML (unchanged from GPT-5). Release date from dated snapshot gpt-5.1-2025-11-13."
+  },
+  {
+    "id": "openai/gpt-5.1-chat",
+    "cutoff": "2024-09",
+    "release_date": "2025-11",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.1-chat-latest",
+    "note": "Cutoff 'Sep 30, 2024' confirmed in raw HTML (slug: gpt-5.1-chat-latest). Alias with no dated snapshot exposed; release date (2025-11) inferred from co-released gpt-5.1, not independently confirmed."
+  },
+  {
+    "id": "openai/gpt-5.2",
+    "cutoff": "2025-08",
+    "release_date": "2025-12",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.2",
+    "note": "Cutoff 'Aug 31, 2025' confirmed in raw HTML. Release date from dated snapshot gpt-5.2-2025-12-11."
+  },
+  {
+    "id": "openai/gpt-5.2-chat",
+    "cutoff": "2025-08",
+    "release_date": "2025-12",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.2-chat-latest",
+    "note": "Cutoff 'Aug 31, 2025' confirmed in raw HTML (slug: gpt-5.2-chat-latest; page notes model has been deprecated). Alias with no dated snapshot exposed; release date (2025-12) inferred from co-released gpt-5.2."
+  },
+  {
+    "id": "openai/gpt-5.3-chat",
+    "cutoff": "2025-08",
+    "release_date": null,
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.3-chat-latest",
+    "note": "Cutoff 'Aug 31, 2025' confirmed in raw HTML (slug: gpt-5.3-chat-latest; page notes model has been deprecated, points to 'GPT-5.3 Instant' ChatGPT snapshot). No dated snapshot exposed on docs page and secondary sources on exact 'GPT-5.3 Instant' launch date were inconsistent/contradictory -- leaving release_date null rather than guess."
+  },
+  {
+    "id": "openai/gpt-5.3-codex",
+    "cutoff": "2025-08",
+    "release_date": "2026-02",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.3-codex",
+    "note": "Cutoff 'Aug 31, 2025' confirmed in raw HTML. No dated snapshot exposed on docs page (bare alias only); release date (Feb 5, 2026) confirmed via openai.com/index/introducing-gpt-5-3-codex/ announcement and corroborating Wikipedia/GitHub Changelog coverage."
+  },
+  {
+    "id": "openai/gpt-5.4",
+    "cutoff": "2025-08",
+    "release_date": "2026-03",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.4",
+    "note": "Cutoff 'Aug 31, 2025' confirmed in raw HTML (unchanged from 5.2/5.3 wave). Release date from dated snapshot gpt-5.4-2026-03-05."
+  },
+  {
+    "id": "openai/gpt-5.4-mini",
+    "cutoff": "2025-08",
+    "release_date": "2026-03",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+    "note": "Cutoff 'Aug 31, 2025' confirmed in raw HTML. Release date from dated snapshot gpt-5.4-mini-2026-03-17."
+  },
+  {
+    "id": "openai/gpt-5.4-nano",
+    "cutoff": "2025-08",
+    "release_date": "2026-03",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.4-nano",
+    "note": "Cutoff 'Aug 31, 2025' confirmed in raw HTML. Release date from dated snapshot gpt-5.4-nano-2026-03-17."
+  },
+  {
+    "id": "openai/gpt-5.5",
+    "cutoff": "2025-12",
+    "release_date": "2026-04",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.5",
+    "note": "Cutoff 'Dec 01, 2025' confirmed in raw HTML. Release date from dated snapshot gpt-5.5-2026-04-23. (Note: unrelated community reports, e.g. openai/codex GitHub issue #24930, allege GPT-5.5 sometimes self-reports a stale 'June 2024' cutoff in practice -- that is a model self-report anomaly, not the documented training cutoff, and is exactly the kind of discrepancy this study is investigating.)"
+  },
+  {
+    "id": "openai/gpt-5.6-luna",
+    "cutoff": "2026-02",
+    "release_date": "2026-07",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+    "note": "Cutoff 'Feb 16, 2026' confirmed in raw HTML. No dated snapshot exposed (bare alias only); release date (2026-07, public GA Jul 9 2026) from OpenAI announcement (openai.com/index/previewing-gpt-5-6-sol/), Simon Willison's blog, and OpenAI community post, corroborated across independent sources. A limited government-approved preview reportedly began Jun 26 2026."
+  },
+  {
+    "id": "openai/gpt-5.6-sol",
+    "cutoff": "2026-02",
+    "release_date": "2026-07",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+    "note": "Cutoff 'Feb 16, 2026' confirmed in raw HTML. No dated snapshot exposed (bare alias only); release date (2026-07, public GA Jul 9 2026) from OpenAI announcement (openai.com/index/previewing-gpt-5-6-sol/) and corroborating press coverage."
+  },
+  {
+    "id": "openai/gpt-5.6-terra",
+    "cutoff": "2026-02",
+    "release_date": "2026-07",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+    "note": "Cutoff 'Feb 16, 2026' confirmed in raw HTML. No dated snapshot exposed (bare alias only); release date (2026-07, public GA Jul 9 2026) inferred from the GPT-5.6 family announcement covering Sol/Terra/Luna together."
+  },
+  {
+    "id": "openai/o1",
+    "cutoff": "2023-10",
+    "release_date": "2024-12",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/o1",
+    "note": "Cutoff 'Oct 01, 2023' confirmed in raw HTML. Release date from dated snapshot o1-2024-12-17 (full o1; page also lists o1-preview-2024-09-12 for the earlier preview)."
+  },
+  {
+    "id": "openai/o3",
+    "cutoff": "2024-06",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/o3",
+    "note": "Cutoff 'Jun 01, 2024' confirmed in raw HTML (later than o1/o3-mini). Release date from dated snapshot o3-2025-04-16."
+  },
+  {
+    "id": "openai/o3-mini",
+    "cutoff": "2023-10",
+    "release_date": "2025-01",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/o3-mini",
+    "note": "Cutoff 'Oct 01, 2023' confirmed in raw HTML (same as o1, earlier than full o3). Release date from dated snapshot o3-mini-2025-01-31."
+  },
+  {
+    "id": "openai/o4-mini",
+    "cutoff": "2024-06",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/o4-mini",
+    "note": "Cutoff 'Jun 01, 2024' confirmed in raw HTML. Release date from dated snapshot o4-mini-2025-04-16 (same day as o3)."
+  },
+  {
+    "id": "perceptron/perceptron-mk1",
+    "cutoff": null,
+    "release_date": "2026-05",
+    "basis": "unknown",
+    "source": "https://openrouter.ai/perceptron/perceptron-mk1",
+    "note": "New/obscure lab; no accessible card stating a cutoff (official blog 403); released ~May 12 2026"
+  },
+  {
+    "id": "perplexity/sonar",
+    "cutoff": null,
+    "release_date": "2025-01",
+    "basis": "unknown",
+    "source": "https://www.perplexity.ai/hub/blog/meet-new-sonar",
+    "note": "RAG/live-search model; docs.perplexity.ai discloses no fixed knowledge cutoff; built on Llama 3.3 70B; launched Jan 2025"
+  },
+  {
+    "id": "perplexity/sonar-pro",
+    "cutoff": null,
+    "release_date": "2025-01",
+    "basis": "unknown",
+    "source": "https://www.perplexity.ai/hub/blog/introducing-the-sonar-pro-api",
+    "note": "RAG; same Llama-3.3-70B family; no fixed cutoff disclosed (relies on live search); launched Jan 2025"
+  },
+  {
+    "id": "poolside/laguna-m.1",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://poolside.ai/blog/introducing-laguna-xs2-m1",
+    "note": "Coding-focused startup; blog says pretrained in 2025 but gives no explicit cutoff; released Apr 28 2026"
+  },
+  {
+    "id": "poolside/laguna-xs-2.1",
+    "cutoff": null,
+    "release_date": "2026-07",
+    "basis": "unknown",
+    "source": "https://poolside.ai/blog/introducing-laguna-xs-2-1",
+    "note": "No cutoff disclosed; refresh of XS.2; released Jul 2 2026"
+  },
+  {
+    "id": "qwen/qwen-2.5-72b-instruct",
+    "cutoff": "2024-06",
+    "release_date": "2024-09",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen-2.5-72b-instruct",
+    "note": "Qwen2.5 generation (Sept 2024 launch). Official Qwen2.5 Technical Report (arXiv:2412.15115) and the qwenlm.github.io/blog/qwen2.5/ announcement (2024-09-19) state training-token counts (18T tokens) but no explicit cutoff date. Cutoff taken from OpenRouter model metadata (Jun 2024), cross-checked against an independent aggregator (metehan.ai LLM cutoff tracker, which also lists Jun 30 2024 for Qwen2.5 via OpenRouter). A GitHub discussion (QwenLM/Qwen3 #1093) has an unconfirmed community claim of Oct 2023 for Qwen2.5 with no maintainer confirmation -- not used here as less reliable than the consistent OpenRouter figure."
+  },
+  {
+    "id": "qwen/qwen-2.5-7b-instruct",
+    "cutoff": "2024-06",
+    "release_date": "2024-10",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen-2.5-7b-instruct",
+    "note": "Qwen2.5 generation (Sept 2024 launch). Official Qwen2.5 Technical Report (arXiv:2412.15115) and the qwenlm.github.io/blog/qwen2.5/ announcement (2024-09-19) state training-token counts (18T tokens) but no explicit cutoff date. Cutoff taken from OpenRouter model metadata (Jun 2024), cross-checked against an independent aggregator (metehan.ai LLM cutoff tracker, which also lists Jun 30 2024 for Qwen2.5 via OpenRouter). A GitHub discussion (QwenLM/Qwen3 #1093) has an unconfirmed community claim of Oct 2023 for Qwen2.5 with no maintainer confirmation -- not used here as less reliable than the consistent OpenRouter figure."
+  },
+  {
+    "id": "qwen/qwen-plus",
+    "cutoff": "2025-03",
+    "release_date": "2025-02",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen-plus",
+    "note": "Qwen-Plus is Alibaba's proprietary DashScope/Model Studio API model, a rolling alias with dated snapshots (e.g. qwen-plus-2025-01-25, -04-28, -07-14, -07-28, -09-11 have all been observed). Alibaba's Model Studio docs (alibabacloud.com/help/en/model-studio/models, help.aliyun.com/zh/model-studio/models) list the model but no explicit knowledge-cutoff field was found in fetchable content. Cutoff of Mar 2025 taken from OpenRouter metadata; note this postdates OpenRouter's own listed 'release' of Feb 2025, consistent with qwen-plus being periodically refreshed under one alias rather than a single fixed snapshot -- treat with some caution as it may not reflect the very latest snapshot."
+  },
+  {
+    "id": "qwen/qwen3-14b",
+    "cutoff": "2025-03",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-14b",
+    "note": "Qwen3 base dense+MoE generation (launched 2025-04-28, blog: qwenlm.github.io/blog/qwen3/, tech report arXiv:2505.09388). Neither the announcement blog nor the tech report nor the HF model cards (checked Qwen3-32B, Qwen3-0.6B, Qwen3-8B, Qwen3-4B-Instruct-2507 cards directly) state an explicit knowledge-cutoff date -- only that ~36T pretraining tokens across 119 languages were used. Cutoff of Mar 2025 taken from OpenRouter metadata (consistently Mar 2025 across qwen3-8b/14b/32b/30b-a3b/235b-a22b listings); cross-checked against metehan.ai aggregator (Mar 31 2025 via OpenRouter). HF-hosted raw-weight ids of the same size/checkpoint are the same underlying release as the OpenRouter id and are assigned the same cutoff by inference, not independently confirmed on the HF card itself."
+  },
+  {
+    "id": "qwen/qwen3-235b-a22b",
+    "cutoff": "2025-03",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-235b-a22b",
+    "note": "Qwen3 base dense+MoE generation (launched 2025-04-28, blog: qwenlm.github.io/blog/qwen3/, tech report arXiv:2505.09388). Neither the announcement blog nor the tech report nor the HF model cards (checked Qwen3-32B, Qwen3-0.6B, Qwen3-8B, Qwen3-4B-Instruct-2507 cards directly) state an explicit knowledge-cutoff date -- only that ~36T pretraining tokens across 119 languages were used. Cutoff of Mar 2025 taken from OpenRouter metadata (consistently Mar 2025 across qwen3-8b/14b/32b/30b-a3b/235b-a22b listings); cross-checked against metehan.ai aggregator (Mar 31 2025 via OpenRouter). HF-hosted raw-weight ids of the same size/checkpoint are the same underlying release as the OpenRouter id and are assigned the same cutoff by inference, not independently confirmed on the HF card itself."
+  },
+  {
+    "id": "qwen/qwen3-235b-a22b-2507",
+    "cutoff": "2025-06",
+    "release_date": "2025-07",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-235b-a22b-2507",
+    "note": "Qwen3-2507 refresh generation (July-Aug 2025, non-thinking/thinking updates to the 235B-A22B and 30B-A3B checkpoints, plus smaller Instruct-2507 dense checkpoints). HF model card (huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507) does not state a cutoff. Cutoff of Jun 2025 taken from OpenRouter metadata, consistent across all 2507-tagged listings checked."
+  },
+  {
+    "id": "qwen/qwen3-235b-a22b-thinking-2507",
+    "cutoff": "2025-06",
+    "release_date": "2025-07",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-235b-a22b-thinking-2507",
+    "note": "Qwen3-2507 refresh generation (July-Aug 2025, non-thinking/thinking updates to the 235B-A22B and 30B-A3B checkpoints, plus smaller Instruct-2507 dense checkpoints). HF model card (huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507) does not state a cutoff. Cutoff of Jun 2025 taken from OpenRouter metadata, consistent across all 2507-tagged listings checked."
+  },
+  {
+    "id": "qwen/qwen3-30b-a3b",
+    "cutoff": "2025-03",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-30b-a3b",
+    "note": "Qwen3 base dense+MoE generation (launched 2025-04-28, blog: qwenlm.github.io/blog/qwen3/, tech report arXiv:2505.09388). Neither the announcement blog nor the tech report nor the HF model cards (checked Qwen3-32B, Qwen3-0.6B, Qwen3-8B, Qwen3-4B-Instruct-2507 cards directly) state an explicit knowledge-cutoff date -- only that ~36T pretraining tokens across 119 languages were used. Cutoff of Mar 2025 taken from OpenRouter metadata (consistently Mar 2025 across qwen3-8b/14b/32b/30b-a3b/235b-a22b listings); cross-checked against metehan.ai aggregator (Mar 31 2025 via OpenRouter). HF-hosted raw-weight ids of the same size/checkpoint are the same underlying release as the OpenRouter id and are assigned the same cutoff by inference, not independently confirmed on the HF card itself."
+  },
+  {
+    "id": "qwen/qwen3-30b-a3b-instruct-2507",
+    "cutoff": "2025-06",
+    "release_date": "2025-07",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-30b-a3b-instruct-2507",
+    "note": "Qwen3-2507 refresh generation (July-Aug 2025, non-thinking/thinking updates to the 235B-A22B and 30B-A3B checkpoints, plus smaller Instruct-2507 dense checkpoints). HF model card (huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507) does not state a cutoff. Cutoff of Jun 2025 taken from OpenRouter metadata, consistent across all 2507-tagged listings checked."
+  },
+  {
+    "id": "qwen/qwen3-30b-a3b-thinking-2507",
+    "cutoff": "2025-06",
+    "release_date": "2025-08",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-30b-a3b-thinking-2507",
+    "note": "Qwen3-2507 refresh generation (July-Aug 2025, non-thinking/thinking updates to the 235B-A22B and 30B-A3B checkpoints, plus smaller Instruct-2507 dense checkpoints). HF model card (huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507) does not state a cutoff. Cutoff of Jun 2025 taken from OpenRouter metadata, consistent across all 2507-tagged listings checked."
+  },
+  {
+    "id": "qwen/qwen3-32b",
+    "cutoff": "2025-03",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-32b",
+    "note": "Qwen3 base dense+MoE generation (launched 2025-04-28, blog: qwenlm.github.io/blog/qwen3/, tech report arXiv:2505.09388). Neither the announcement blog nor the tech report nor the HF model cards (checked Qwen3-32B, Qwen3-0.6B, Qwen3-8B, Qwen3-4B-Instruct-2507 cards directly) state an explicit knowledge-cutoff date -- only that ~36T pretraining tokens across 119 languages were used. Cutoff of Mar 2025 taken from OpenRouter metadata (consistently Mar 2025 across qwen3-8b/14b/32b/30b-a3b/235b-a22b listings); cross-checked against metehan.ai aggregator (Mar 31 2025 via OpenRouter). HF-hosted raw-weight ids of the same size/checkpoint are the same underlying release as the OpenRouter id and are assigned the same cutoff by inference, not independently confirmed on the HF card itself."
+  },
+  {
+    "id": "qwen/qwen3-8b",
+    "cutoff": "2025-03",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-8b",
+    "note": "Qwen3 base dense+MoE generation (launched 2025-04-28, blog: qwenlm.github.io/blog/qwen3/, tech report arXiv:2505.09388). Neither the announcement blog nor the tech report nor the HF model cards (checked Qwen3-32B, Qwen3-0.6B, Qwen3-8B, Qwen3-4B-Instruct-2507 cards directly) state an explicit knowledge-cutoff date -- only that ~36T pretraining tokens across 119 languages were used. Cutoff of Mar 2025 taken from OpenRouter metadata (consistently Mar 2025 across qwen3-8b/14b/32b/30b-a3b/235b-a22b listings); cross-checked against metehan.ai aggregator (Mar 31 2025 via OpenRouter). HF-hosted raw-weight ids of the same size/checkpoint are the same underlying release as the OpenRouter id and are assigned the same cutoff by inference, not independently confirmed on the HF card itself."
+  },
+  {
+    "id": "qwen/qwen3-coder",
+    "cutoff": "2025-06",
+    "release_date": "2025-07",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-coder",
+    "note": "Qwen3-Coder family, open-weight branch (GitHub: QwenLM/Qwen3-Coder). Trained on 7.5T tokens (70% code) per the repo, but no explicit cutoff stated in the repo README or HF cards found. Cutoff of Jun 2025 taken from OpenRouter metadata, matching the Qwen3-2507-era base models (Qwen3-Coder was trained from/alongside that checkpoint family)."
+  },
+  {
+    "id": "qwen/qwen3-coder-30b-a3b-instruct",
+    "cutoff": "2025-06",
+    "release_date": "2025-07",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-coder-30b-a3b-instruct",
+    "note": "Qwen3-Coder family, open-weight branch (GitHub: QwenLM/Qwen3-Coder). Trained on 7.5T tokens (70% code) per the repo, but no explicit cutoff stated in the repo README or HF cards found. Cutoff of Jun 2025 taken from OpenRouter metadata, matching the Qwen3-2507-era base models (Qwen3-Coder was trained from/alongside that checkpoint family)."
+  },
+  {
+    "id": "qwen/qwen3-coder-flash",
+    "cutoff": "2025-06",
+    "release_date": "2025-09",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-coder-flash",
+    "note": "Qwen3-Coder family, open-weight branch (GitHub: QwenLM/Qwen3-Coder). Trained on 7.5T tokens (70% code) per the repo, but no explicit cutoff stated in the repo README or HF cards found. Cutoff of Jun 2025 taken from OpenRouter metadata, matching the Qwen3-2507-era base models (Qwen3-Coder was trained from/alongside that checkpoint family)."
+  },
+  {
+    "id": "qwen/qwen3-coder-next",
+    "cutoff": "2025-09",
+    "release_date": "2026-02",
+    "basis": "tech_report",
+    "source": "https://arxiv.org/abs/2603.00729",
+    "note": "Qwen3-Coder-Next Technical Report (arXiv:2603.00729, submitted 2026-02-28) explicitly states in the pretraining-data section: \"The pretraining corpus is updated through Sep 30, 2025.\" This is a rare case of an explicit, primary-source stated cutoff for a Qwen model. Model released as open weights (base + instruct) on/around 2026-02-04 per OpenRouter listing."
+  },
+  {
+    "id": "qwen/qwen3-coder-plus",
+    "cutoff": "2025-06",
+    "release_date": "2025-09",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-coder-plus",
+    "note": "Qwen3-Coder family, open-weight branch (GitHub: QwenLM/Qwen3-Coder). Trained on 7.5T tokens (70% code) per the repo, but no explicit cutoff stated in the repo README or HF cards found. Cutoff of Jun 2025 taken from OpenRouter metadata, matching the Qwen3-2507-era base models (Qwen3-Coder was trained from/alongside that checkpoint family). Note qwen3-coder-plus is Alibaba's proprietary API variant (Model Studio/Bailian), value inferred from the same OpenRouter-listed cutoff as the open Coder line; not separately confirmed in Alibaba docs."
+  },
+  {
+    "id": "qwen/qwen3-max",
+    "cutoff": "2025-06",
+    "release_date": "2025-09",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-max",
+    "note": "Qwen3-Max proprietary flagship (Alibaba Model Studio/Bailian). No cutoff stated in Alibaba docs pages fetched; cutoff of Jun 2025 taken from OpenRouter metadata."
+  },
+  {
+    "id": "qwen/qwen3-max-thinking",
+    "cutoff": null,
+    "release_date": "2026-01",
+    "basis": "unknown",
+    "source": "https://openrouter.ai/qwen/qwen3-max-thinking",
+    "note": "Qwen3-Max-Thinking, proprietary reasoning variant of Qwen3-Max. No knowledge-cutoff disclosed in any source checked (Alibaba docs, OpenRouter, press coverage). Release date is ambiguous between sources: third-party coverage (digitalapplied.com) cites 2026-01-25 initial release, third-party model-eval sites reference a 'qwen3-max-2026-01-23' snapshot id, while OpenRouter's own listing shows 'Released Feb 9, 2026' (likely when OpenRouter added API access). Using the earlier 2026-01 as release_date; cutoff left null/unknown as genuinely undisclosed."
+  },
+  {
+    "id": "qwen/qwen3-next-80b-a3b-instruct",
+    "cutoff": "2025-09",
+    "release_date": "2025-09",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-next-80b-a3b-instruct",
+    "note": "Qwen3-Next-80B-A3B generation (Sept 2025). No cutoff in HF model card. A Hugging Face discussion thread (Qwen3-Next-80B-A3B-Thinking discussion #10) has a community member claiming the model self-reports an 'October 2024' cutoff in chat -- this is a model self-report, which Qwen maintainers/third-party trackers explicitly warn is unreliable (models hallucinate their own cutoff), so it is NOT used here. Cutoff of Sep 2025 instead taken from OpenRouter metadata (matches the release month itself, Sep 2025)."
+  },
+  {
+    "id": "qwen/qwen3-next-80b-a3b-thinking",
+    "cutoff": "2025-09",
+    "release_date": "2025-09",
+    "basis": "docs",
+    "source": "https://openrouter.ai/qwen/qwen3-next-80b-a3b-thinking",
+    "note": "Qwen3-Next-80B-A3B generation (Sept 2025). No cutoff in HF model card. A Hugging Face discussion thread (Qwen3-Next-80B-A3B-Thinking discussion #10) has a community member claiming the model self-reports an 'October 2024' cutoff in chat -- this is a model self-report, which Qwen maintainers/third-party trackers explicitly warn is unreliable (models hallucinate their own cutoff), so it is NOT used here. Cutoff of Sep 2025 instead taken from OpenRouter metadata (matches the release month itself, Sep 2025)."
+  },
+  {
+    "id": "qwen/qwen3.5-122b-a10b",
+    "cutoff": null,
+    "release_date": "2026-02",
+    "basis": "unknown",
+    "source": "https://openrouter.ai/qwen/qwen3.5-122b-a10b",
+    "note": "Qwen3.5 generation (open-weight flagship Qwen3.5-397B-A17B + Qwen3.5-Plus announced 2026-02-17 on Alibaba Cloud's blog 'Qwen3.5: Towards Native Multimodal Agents'; smaller dense/MoE checkpoints and Qwen3.5-Flash followed Feb-Apr 2026). No knowledge-cutoff is stated in the Alibaba announcement blog, in any Qwen3.5 HF model card checked (Qwen3.5-397B-A17B, Qwen3.5-0.8B), or on OpenRouter listings (OpenRouter shows only release/'Released' dates for this generation, no Knowledge Cutoff field, unlike older Qwen3/Qwen3-Coder listings). A third-party aggregator (metehan.ai) claims Qwen3.5+ models state a '2026 (year-level)' cutoff via DashScope API system prompts, but this could not be independently verified against primary Alibaba Model Studio docs (no cutoff field found in fetchable doc content), so it is NOT used as the cutoff value here -- left null/unknown per instructions not to infer from secondhand claims. Release date taken from OpenRouter listing / Alibaba blog where available; ids with an embedded date code (e.g. -02-23, -02-15, -20260420) likely denote DashScope snapshot dates rather than cutoffs, per task guidance, and are only used as a release_date cross-check."
+  },
+  {
+    "id": "qwen/qwen3.5-27b",
+    "cutoff": null,
+    "release_date": "2026-02",
+    "basis": "unknown",
+    "source": "https://openrouter.ai/qwen/qwen3.5-27b",
+    "note": "Qwen3.5 generation (open-weight flagship Qwen3.5-397B-A17B + Qwen3.5-Plus announced 2026-02-17 on Alibaba Cloud's blog 'Qwen3.5: Towards Native Multimodal Agents'; smaller dense/MoE checkpoints and Qwen3.5-Flash followed Feb-Apr 2026). No knowledge-cutoff is stated in the Alibaba announcement blog, in any Qwen3.5 HF model card checked (Qwen3.5-397B-A17B, Qwen3.5-0.8B), or on OpenRouter listings (OpenRouter shows only release/'Released' dates for this generation, no Knowledge Cutoff field, unlike older Qwen3/Qwen3-Coder listings). A third-party aggregator (metehan.ai) claims Qwen3.5+ models state a '2026 (year-level)' cutoff via DashScope API system prompts, but this could not be independently verified against primary Alibaba Model Studio docs (no cutoff field found in fetchable doc content), so it is NOT used as the cutoff value here -- left null/unknown per instructions not to infer from secondhand claims. Release date taken from OpenRouter listing / Alibaba blog where available; ids with an embedded date code (e.g. -02-23, -02-15, -20260420) likely denote DashScope snapshot dates rather than cutoffs, per task guidance, and are only used as a release_date cross-check."
+  },
+  {
+    "id": "qwen/qwen3.5-35b-a3b",
+    "cutoff": null,
+    "release_date": "2026-02",
+    "basis": "unknown",
+    "source": "https://openrouter.ai/qwen/qwen3.5-35b-a3b",
+    "note": "Qwen3.5 generation (open-weight flagship Qwen3.5-397B-A17B + Qwen3.5-Plus announced 2026-02-17 on Alibaba Cloud's blog 'Qwen3.5: Towards Native Multimodal Agents'; smaller dense/MoE checkpoints and Qwen3.5-Flash followed Feb-Apr 2026). No knowledge-cutoff is stated in the Alibaba announcement blog, in any Qwen3.5 HF model card checked (Qwen3.5-397B-A17B, Qwen3.5-0.8B), or on OpenRouter listings (OpenRouter shows only release/'Released' dates for this generation, no Knowledge Cutoff field, unlike older Qwen3/Qwen3-Coder listings). A third-party aggregator (metehan.ai) claims Qwen3.5+ models state a '2026 (year-level)' cutoff via DashScope API system prompts, but this could not be independently verified against primary Alibaba Model Studio docs (no cutoff field found in fetchable doc content), so it is NOT used as the cutoff value here -- left null/unknown per instructions not to infer from secondhand claims. Release date taken from OpenRouter listing / Alibaba blog where available; ids with an embedded date code (e.g. -02-23, -02-15, -20260420) likely denote DashScope snapshot dates rather than cutoffs, per task guidance, and are only used as a release_date cross-check."
+  },
+  {
+    "id": "qwen/qwen3.5-397b-a17b",
+    "cutoff": null,
+    "release_date": "2026-02",
+    "basis": "unknown",
+    "source": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
+    "note": "Qwen3.5 generation (open-weight flagship Qwen3.5-397B-A17B + Qwen3.5-Plus announced 2026-02-17 on Alibaba Cloud's blog 'Qwen3.5: Towards Native Multimodal Agents'; smaller dense/MoE checkpoints and Qwen3.5-Flash followed Feb-Apr 2026). No knowledge-cutoff is stated in the Alibaba announcement blog, in any Qwen3.5 HF model card checked (Qwen3.5-397B-A17B, Qwen3.5-0.8B), or on OpenRouter listings (OpenRouter shows only release/'Released' dates for this generation, no Knowledge Cutoff field, unlike older Qwen3/Qwen3-Coder listings). A third-party aggregator (metehan.ai) claims Qwen3.5+ models state a '2026 (year-level)' cutoff via DashScope API system prompts, but this could not be independently verified against primary Alibaba Model Studio docs (no cutoff field found in fetchable doc content), so it is NOT used as the cutoff value here -- left null/unknown per instructions not to infer from secondhand claims. Release date taken from OpenRouter listing / Alibaba blog where available; ids with an embedded date code (e.g. -02-23, -02-15, -20260420) likely denote DashScope snapshot dates rather than cutoffs, per task guidance, and are only used as a release_date cross-check. This is the flagship open-weight checkpoint named in the launch blog (alibabacloud.com/blog/qwen3-5-towards-native-multimodal-agents_602894, dated 2026-02-17)."
+  },
+  {
+    "id": "qwen/qwen3.5-9b",
+    "cutoff": null,
+    "release_date": "2026-03",
+    "basis": "unknown",
+    "source": "https://openrouter.ai/qwen/qwen3.5-9b",
+    "note": "Qwen3.5 generation (open-weight flagship Qwen3.5-397B-A17B + Qwen3.5-Plus announced 2026-02-17 on Alibaba Cloud's blog 'Qwen3.5: Towards Native Multimodal Agents'; smaller dense/MoE checkpoints and Qwen3.5-Flash followed Feb-Apr 2026). No knowledge-cutoff is stated in the Alibaba announcement blog, in any Qwen3.5 HF model card checked (Qwen3.5-397B-A17B, Qwen3.5-0.8B), or on OpenRouter listings (OpenRouter shows only release/'Released' dates for this generation, no Knowledge Cutoff field, unlike older Qwen3/Qwen3-Coder listings). A third-party aggregator (metehan.ai) claims Qwen3.5+ models state a '2026 (year-level)' cutoff via DashScope API system prompts, but this could not be independently verified against primary Alibaba Model Studio docs (no cutoff field found in fetchable doc content), so it is NOT used as the cutoff value here -- left null/unknown per instructions not to infer from secondhand claims. Release date taken from OpenRouter listing / Alibaba blog where available; ids with an embedded date code (e.g. -02-23, -02-15, -20260420) likely denote DashScope snapshot dates rather than cutoffs, per task guidance, and are only used as a release_date cross-check."
+  },
+  {
+    "id": "qwen/qwen3.5-flash-02-23",
+    "cutoff": null,
+    "release_date": "2026-02",
+    "basis": "unknown",
+    "source": "https://openrouter.ai/qwen/qwen3.5-flash-02-23",
+    "note": "Qwen3.5 generation (open-weight flagship Qwen3.5-397B-A17B + Qwen3.5-Plus announced 2026-02-17 on Alibaba Cloud's blog 'Qwen3.5: Towards Native Multimodal Agents'; smaller dense/MoE checkpoints and Qwen3.5-Flash followed Feb-Apr 2026). No knowledge-cutoff is stated in the Alibaba announcement blog, in any Qwen3.5 HF model card checked (Qwen3.5-397B-A17B, Qwen3.5-0.8B), or on OpenRouter listings (OpenRouter shows only release/'Released' dates for this generation, no Knowledge Cutoff field, unlike older Qwen3/Qwen3-Coder listings). A third-party aggregator (metehan.ai) claims Qwen3.5+ models state a '2026 (year-level)' cutoff via DashScope API system prompts, but this could not be independently verified against primary Alibaba Model Studio docs (no cutoff field found in fetchable doc content), so it is NOT used as the cutoff value here -- left null/unknown per instructions not to infer from secondhand claims. Release date taken from OpenRouter listing / Alibaba blog where available; ids with an embedded date code (e.g. -02-23, -02-15, -20260420) likely denote DashScope snapshot dates rather than cutoffs, per task guidance, and are only used as a release_date cross-check. Id suggests a 2026-02-23 DashScope snapshot; OpenRouter listing shows 'Released Feb 25, 2026' (close, not identical -- treated as release_date fallback, not a cutoff)."
+  },
+  {
+    "id": "qwen/qwen3.5-plus-02-15",
+    "cutoff": null,
+    "release_date": "2026-02",
+    "basis": "unknown",
+    "source": "https://openrouter.ai/qwen/qwen3.5-plus-02-15",
+    "note": "Qwen3.5 generation (open-weight flagship Qwen3.5-397B-A17B + Qwen3.5-Plus announced 2026-02-17 on Alibaba Cloud's blog 'Qwen3.5: Towards Native Multimodal Agents'; smaller dense/MoE checkpoints and Qwen3.5-Flash followed Feb-Apr 2026). No knowledge-cutoff is stated in the Alibaba announcement blog, in any Qwen3.5 HF model card checked (Qwen3.5-397B-A17B, Qwen3.5-0.8B), or on OpenRouter listings (OpenRouter shows only release/'Released' dates for this generation, no Knowledge Cutoff field, unlike older Qwen3/Qwen3-Coder listings). A third-party aggregator (metehan.ai) claims Qwen3.5+ models state a '2026 (year-level)' cutoff via DashScope API system prompts, but this could not be independently verified against primary Alibaba Model Studio docs (no cutoff field found in fetchable doc content), so it is NOT used as the cutoff value here -- left null/unknown per instructions not to infer from secondhand claims. Release date taken from OpenRouter listing / Alibaba blog where available; ids with an embedded date code (e.g. -02-23, -02-15, -20260420) likely denote DashScope snapshot dates rather than cutoffs, per task guidance, and are only used as a release_date cross-check. Id suggests a 2026-02-15 DashScope snapshot; OpenRouter listing shows 'Released Feb 16, 2026' (close, not identical -- treated as release_date fallback, not a cutoff)."
+  },
+  {
+    "id": "qwen/qwen3.5-plus-20260420",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://openrouter.ai/qwen/qwen3.5-plus-20260420",
+    "note": "Qwen3.5 generation (open-weight flagship Qwen3.5-397B-A17B + Qwen3.5-Plus announced 2026-02-17 on Alibaba Cloud's blog 'Qwen3.5: Towards Native Multimodal Agents'; smaller dense/MoE checkpoints and Qwen3.5-Flash followed Feb-Apr 2026). No knowledge-cutoff is stated in the Alibaba announcement blog, in any Qwen3.5 HF model card checked (Qwen3.5-397B-A17B, Qwen3.5-0.8B), or on OpenRouter listings (OpenRouter shows only release/'Released' dates for this generation, no Knowledge Cutoff field, unlike older Qwen3/Qwen3-Coder listings). A third-party aggregator (metehan.ai) claims Qwen3.5+ models state a '2026 (year-level)' cutoff via DashScope API system prompts, but this could not be independently verified against primary Alibaba Model Studio docs (no cutoff field found in fetchable doc content), so it is NOT used as the cutoff value here -- left null/unknown per instructions not to infer from secondhand claims. Release date taken from OpenRouter listing / Alibaba blog where available; ids with an embedded date code (e.g. -02-23, -02-15, -20260420) likely denote DashScope snapshot dates rather than cutoffs, per task guidance, and are only used as a release_date cross-check. Id explicitly encodes 2026-04-20 as a DashScope snapshot date; OpenRouter listing shows 'Released Apr 27, 2026' -- used release_date fallback from the id/snapshot convention (2026-04) rather than treating either as a confirmed cutoff."
+  },
+  {
+    "id": "qwen/qwen3.6-27b",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://huggingface.co/Qwen/Qwen3.6-27B",
+    "note": "Qwen3.6 generation (Qwen3.6-Plus proprietary announced 2026-04-02 on Alibaba Cloud's blog 'Qwen3.6-Plus: Towards Real World Agents'; open-weight Qwen3.6-35B-A3B and Qwen3.6-27B followed on HF/ModelScope 2026-04-16 and 2026-04-22 respectively; Qwen3.6-Max-Preview announced ~2026-04-20; Qwen3.6-Flash also proprietary). No knowledge-cutoff stated in the Alibaba announcement blog, in HF model cards checked (Qwen3.6-27B, Qwen3.6-35B-A3B -- both only show a citation year/month of April 2026, i.e. the card's own publish date, not a cutoff), or on OpenRouter listings (release date only, no Knowledge Cutoff field for this generation). Left null/unknown per instructions; this generation is expected to be sparsely documented."
+  },
+  {
+    "id": "qwen/qwen3.6-35b-a3b",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+    "note": "Qwen3.6 generation (Qwen3.6-Plus proprietary announced 2026-04-02 on Alibaba Cloud's blog 'Qwen3.6-Plus: Towards Real World Agents'; open-weight Qwen3.6-35B-A3B and Qwen3.6-27B followed on HF/ModelScope 2026-04-16 and 2026-04-22 respectively; Qwen3.6-Max-Preview announced ~2026-04-20; Qwen3.6-Flash also proprietary). No knowledge-cutoff stated in the Alibaba announcement blog, in HF model cards checked (Qwen3.6-27B, Qwen3.6-35B-A3B -- both only show a citation year/month of April 2026, i.e. the card's own publish date, not a cutoff), or on OpenRouter listings (release date only, no Knowledge Cutoff field for this generation). Left null/unknown per instructions; this generation is expected to be sparsely documented."
+  },
+  {
+    "id": "qwen/qwen3.6-flash",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://openrouter.ai/qwen/qwen3.6-flash",
+    "note": "Qwen3.6 generation (Qwen3.6-Plus proprietary announced 2026-04-02 on Alibaba Cloud's blog 'Qwen3.6-Plus: Towards Real World Agents'; open-weight Qwen3.6-35B-A3B and Qwen3.6-27B followed on HF/ModelScope 2026-04-16 and 2026-04-22 respectively; Qwen3.6-Max-Preview announced ~2026-04-20; Qwen3.6-Flash also proprietary). No knowledge-cutoff stated in the Alibaba announcement blog, in HF model cards checked (Qwen3.6-27B, Qwen3.6-35B-A3B -- both only show a citation year/month of April 2026, i.e. the card's own publish date, not a cutoff), or on OpenRouter listings (release date only, no Knowledge Cutoff field for this generation). Left null/unknown per instructions; this generation is expected to be sparsely documented."
+  },
+  {
+    "id": "qwen/qwen3.6-max-preview",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://www.alibabacloud.com/blog/alibaba-unveils-qwen3-6-plus-to-accelerate-agentic-ai-deployment-for-enterprises-and-alibaba%E2%80%99s-ai-applications_603000",
+    "note": "Qwen3.6 generation (Qwen3.6-Plus proprietary announced 2026-04-02 on Alibaba Cloud's blog 'Qwen3.6-Plus: Towards Real World Agents'; open-weight Qwen3.6-35B-A3B and Qwen3.6-27B followed on HF/ModelScope 2026-04-16 and 2026-04-22 respectively; Qwen3.6-Max-Preview announced ~2026-04-20; Qwen3.6-Flash also proprietary). No knowledge-cutoff stated in the Alibaba announcement blog, in HF model cards checked (Qwen3.6-27B, Qwen3.6-35B-A3B -- both only show a citation year/month of April 2026, i.e. the card's own publish date, not a cutoff), or on OpenRouter listings (release date only, no Knowledge Cutoff field for this generation). Left null/unknown per instructions; this generation is expected to be sparsely documented. Third-party coverage (Yahoo Tech, Kingy AI) cites a 2026-04-20 announcement date; OpenRouter shows 'Released Apr 27, 2026' (likely OpenRouter's own listing date)."
+  },
+  {
+    "id": "qwen/qwen3.6-plus",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://www.alibabacloud.com/blog/qwen3-6-plus-towards-real-world-agents_603005",
+    "note": "Qwen3.6 generation (Qwen3.6-Plus proprietary announced 2026-04-02 on Alibaba Cloud's blog 'Qwen3.6-Plus: Towards Real World Agents'; open-weight Qwen3.6-35B-A3B and Qwen3.6-27B followed on HF/ModelScope 2026-04-16 and 2026-04-22 respectively; Qwen3.6-Max-Preview announced ~2026-04-20; Qwen3.6-Flash also proprietary). No knowledge-cutoff stated in the Alibaba announcement blog, in HF model cards checked (Qwen3.6-27B, Qwen3.6-35B-A3B -- both only show a citation year/month of April 2026, i.e. the card's own publish date, not a cutoff), or on OpenRouter listings (release date only, no Knowledge Cutoff field for this generation). Left null/unknown per instructions; this generation is expected to be sparsely documented."
+  },
+  {
+    "id": "qwen/qwen3.7-max",
+    "cutoff": null,
+    "release_date": "2026-05",
+    "basis": "unknown",
+    "source": "https://openrouter.ai/qwen/qwen3.7-max",
+    "note": "Qwen3.7 generation, Alibaba's newest proprietary tier at research time (Qwen3.7-Max released ~2026-05-20/21; Qwen3.7-Plus released ~2026-06-02/03, both via Alibaba Cloud Bailian/Model Studio). No knowledge-cutoff date has been publicly disclosed in any source checked (OpenRouter listings show release date only; press coverage from marktechpost.com and others describes capabilities/benchmarks but not a training cutoff; qwen.ai blog page for Qwen3.7 could not be retrieved as readable content -- likely JS-rendered). This is expected per task guidance: honest unknown for the newest/least-documented tier, not a search failure."
+  },
+  {
+    "id": "qwen/qwen3.7-plus",
+    "cutoff": null,
+    "release_date": "2026-06",
+    "basis": "unknown",
+    "source": "https://openrouter.ai/qwen/qwen3.7-plus",
+    "note": "Qwen3.7 generation, Alibaba's newest proprietary tier at research time (Qwen3.7-Max released ~2026-05-20/21; Qwen3.7-Plus released ~2026-06-02/03, both via Alibaba Cloud Bailian/Model Studio). No knowledge-cutoff date has been publicly disclosed in any source checked (OpenRouter listings show release date only; press coverage from marktechpost.com and others describes capabilities/benchmarks but not a training cutoff; qwen.ai blog page for Qwen3.7 could not be retrieved as readable content -- likely JS-rendered). This is expected per task guidance: honest unknown for the newest/least-documented tier, not a search failure."
+  },
+  {
+    "id": "rekaai/reka-edge",
+    "cutoff": null,
+    "release_date": "2026-03",
+    "basis": "unknown",
+    "source": "https://huggingface.co/RekaAI/reka-edge-2603",
+    "note": "Verified: OpenRouter slug = 2026 model reka-edge-2603 (7B multimodal VLM, rel Mar 2026), no cutoff stated; NOT the 2024 Reka Edge (which had Nov-2023 cutoff per arXiv 2404.12387)"
+  },
+  {
+    "id": "rekaai/reka-flash-3",
+    "cutoff": null,
+    "release_date": "2025-03",
+    "basis": "unknown",
+    "source": "https://huggingface.co/RekaAI/reka-flash-3",
+    "note": "No cutoff in card/blog; open reasoning model; released Mar 2025 (OpenRouter's 'Jan 2025' unconfirmed)"
+  },
+  {
+    "id": "stepfun/step-3.7-flash",
+    "cutoff": null,
+    "release_date": "2026-05",
+    "basis": "unknown",
+    "source": "https://huggingface.co/stepfun-ai/Step-3.7-Flash",
+    "note": "No cutoff in HF card/README; released ~May 29 2026"
+  },
+  {
+    "id": "tencent/hunyuan-a13b-instruct",
+    "cutoff": null,
+    "release_date": "2025-06",
+    "basis": "unknown",
+    "source": "https://github.com/Tencent-Hunyuan/Hunyuan-A13B",
+    "note": "Tech report dated Jun 26 2025 states no cutoff; OpenRouter's 'Mar 2025' unconfirmed"
+  },
+  {
+    "id": "tencent/hy3",
+    "cutoff": null,
+    "release_date": "2026-07",
+    "basis": "unknown",
+    "source": "https://www.tencent.com/en-us/articles/2202386.html",
+    "note": "Hy3 = Tencent Hunyuan 3rd-gen flagship (295B-A21B MoE); no cutoff disclosed; released Jul 6 2026"
+  },
+  {
+    "id": "xiaomi/mimo-v2.5",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://huggingface.co/XiaomiMiMo",
+    "note": "No cutoff in HF README or GitHub; released ~Apr 22 2026"
+  },
+  {
+    "id": "z-ai/glm-4.5",
+    "cutoff": null,
+    "release_date": "2025-07",
+    "basis": "unknown",
+    "source": "https://github.com/zai-org/GLM-4.5",
+    "note": "No knowledge cutoff stated in GitHub README, HF model card, or the GLM-4.5 technical report (arXiv 2508.06471), which discusses 23T pretraining tokens but not a cutoff date. Weights/API released July 28, 2025; tech report published Aug 8, 2025."
+  },
+  {
+    "id": "z-ai/glm-4.5-air",
+    "cutoff": null,
+    "release_date": "2025-07",
+    "basis": "unknown",
+    "source": "https://github.com/zai-org/GLM-4.5",
+    "note": "No knowledge cutoff stated; shares the GLM-4.5 technical report (arXiv 2508.06471) and release window (July 28, 2025) with GLM-4.5."
+  },
+  {
+    "id": "z-ai/glm-4.6",
+    "cutoff": null,
+    "release_date": "2025-09",
+    "basis": "unknown",
+    "source": "https://huggingface.co/zai-org/GLM-4.6",
+    "note": "No knowledge cutoff stated in HF model card; card references back to the GLM-4.5 technical report (arXiv 2508.06471) which predates this checkpoint. Released/open-sourced Sept 30, 2025."
+  },
+  {
+    "id": "z-ai/glm-4.7",
+    "cutoff": null,
+    "release_date": "2025-12",
+    "basis": "unknown",
+    "source": "https://huggingface.co/zai-org/GLM-4.7",
+    "note": "No knowledge cutoff stated in HF model card (again references the GLM-4.5 arXiv report, 2508.06471, not a dedicated GLM-4.7 paper). Released Dec 22, 2025."
+  },
+  {
+    "id": "z-ai/glm-4.7-flash",
+    "cutoff": null,
+    "release_date": "2026-01",
+    "basis": "unknown",
+    "source": "https://huggingface.co/zai-org/GLM-4.7-Flash",
+    "note": "No knowledge cutoff stated. Lite/distilled MoE variant of GLM-4.7 (31B total/3B active), released Jan 19, 2026."
+  },
+  {
+    "id": "z-ai/glm-5",
+    "cutoff": null,
+    "release_date": "2026-02",
+    "basis": "unknown",
+    "source": "https://huggingface.co/zai-org/GLM-5",
+    "note": "No knowledge cutoff found in HF model card; pretraining data described as 28.5T tokens (up from 23T for GLM-4.5) without a stated cutoff date. Released Feb 11, 2026."
+  },
+  {
+    "id": "z-ai/glm-5-turbo",
+    "cutoff": null,
+    "release_date": "2026-03",
+    "basis": "unknown",
+    "source": "https://www.trendingtopics.eu/zhipu-ai-launches-glm-5-turbo-a-model-built-exclusively-for-openclaw/",
+    "note": "No official HF model card found (appears to be an API-only/proprietary tier, not open-weighted like other GLM entries); no knowledge cutoff located. Announced March 16, 2026 per third-party press coverage -- release_date basis is announcement, not a primary Zhipu doc, so treat with slightly lower confidence."
+  },
+  {
+    "id": "z-ai/glm-5.1",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://huggingface.co/zai-org/GLM-5.1",
+    "note": "No knowledge cutoff stated in HF model card. Open-sourced April 8, 2026 (subscription access late March 2026)."
+  },
+  {
+    "id": "z-ai/glm-5.2",
+    "cutoff": null,
+    "release_date": "2026-06",
+    "basis": "unknown",
+    "source": "https://huggingface.co/zai-org/GLM-5.2",
+    "note": "No knowledge cutoff stated in HF model card. Launched June 13-16, 2026, notable for 1M-token context window."
+  },
+  {
+    "id": "Qwen/Qwen3-0.6B",
+    "cutoff": "2025-03",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://huggingface.co/Qwen/Qwen3-0.6B",
+    "note": "Qwen3 base dense+MoE generation (launched 2025-04-28, blog: qwenlm.github.io/blog/qwen3/, tech report arXiv:2505.09388). Neither the announcement blog nor the tech report nor the HF model cards (checked Qwen3-32B, Qwen3-0.6B, Qwen3-8B, Qwen3-4B-Instruct-2507 cards directly) state an explicit knowledge-cutoff date -- only that ~36T pretraining tokens across 119 languages were used. Cutoff of Mar 2025 taken from OpenRouter metadata (consistently Mar 2025 across qwen3-8b/14b/32b/30b-a3b/235b-a22b listings); cross-checked against metehan.ai aggregator (Mar 31 2025 via OpenRouter). HF-hosted raw-weight ids of the same size/checkpoint are the same underlying release as the OpenRouter id and are assigned the same cutoff by inference, not independently confirmed on the HF card itself."
+  },
+  {
+    "id": "Qwen/Qwen3-1.7B",
+    "cutoff": "2025-03",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://huggingface.co/Qwen/Qwen3-1.7B",
+    "note": "Qwen3 base dense+MoE generation (launched 2025-04-28, blog: qwenlm.github.io/blog/qwen3/, tech report arXiv:2505.09388). Neither the announcement blog nor the tech report nor the HF model cards (checked Qwen3-32B, Qwen3-0.6B, Qwen3-8B, Qwen3-4B-Instruct-2507 cards directly) state an explicit knowledge-cutoff date -- only that ~36T pretraining tokens across 119 languages were used. Cutoff of Mar 2025 taken from OpenRouter metadata (consistently Mar 2025 across qwen3-8b/14b/32b/30b-a3b/235b-a22b listings); cross-checked against metehan.ai aggregator (Mar 31 2025 via OpenRouter). HF-hosted raw-weight ids of the same size/checkpoint are the same underlying release as the OpenRouter id and are assigned the same cutoff by inference, not independently confirmed on the HF card itself."
+  },
+  {
+    "id": "Qwen/Qwen3-4B",
+    "cutoff": "2025-03",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://huggingface.co/Qwen/Qwen3-4B",
+    "note": "Qwen3 base dense+MoE generation (launched 2025-04-28, blog: qwenlm.github.io/blog/qwen3/, tech report arXiv:2505.09388). Neither the announcement blog nor the tech report nor the HF model cards (checked Qwen3-32B, Qwen3-0.6B, Qwen3-8B, Qwen3-4B-Instruct-2507 cards directly) state an explicit knowledge-cutoff date -- only that ~36T pretraining tokens across 119 languages were used. Cutoff of Mar 2025 taken from OpenRouter metadata (consistently Mar 2025 across qwen3-8b/14b/32b/30b-a3b/235b-a22b listings); cross-checked against metehan.ai aggregator (Mar 31 2025 via OpenRouter). HF-hosted raw-weight ids of the same size/checkpoint are the same underlying release as the OpenRouter id and are assigned the same cutoff by inference, not independently confirmed on the HF card itself."
+  },
+  {
+    "id": "Qwen/Qwen3-8B",
+    "cutoff": "2025-03",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://huggingface.co/Qwen/Qwen3-8B",
+    "note": "Qwen3 base dense+MoE generation (launched 2025-04-28, blog: qwenlm.github.io/blog/qwen3/, tech report arXiv:2505.09388). Neither the announcement blog nor the tech report nor the HF model cards (checked Qwen3-32B, Qwen3-0.6B, Qwen3-8B, Qwen3-4B-Instruct-2507 cards directly) state an explicit knowledge-cutoff date -- only that ~36T pretraining tokens across 119 languages were used. Cutoff of Mar 2025 taken from OpenRouter metadata (consistently Mar 2025 across qwen3-8b/14b/32b/30b-a3b/235b-a22b listings); cross-checked against metehan.ai aggregator (Mar 31 2025 via OpenRouter). HF-hosted raw-weight ids of the same size/checkpoint are the same underlying release as the OpenRouter id and are assigned the same cutoff by inference, not independently confirmed on the HF card itself."
+  },
+  {
+    "id": "Qwen/Qwen3-14B",
+    "cutoff": "2025-03",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://huggingface.co/Qwen/Qwen3-14B",
+    "note": "Qwen3 base dense+MoE generation (launched 2025-04-28, blog: qwenlm.github.io/blog/qwen3/, tech report arXiv:2505.09388). Neither the announcement blog nor the tech report nor the HF model cards (checked Qwen3-32B, Qwen3-0.6B, Qwen3-8B, Qwen3-4B-Instruct-2507 cards directly) state an explicit knowledge-cutoff date -- only that ~36T pretraining tokens across 119 languages were used. Cutoff of Mar 2025 taken from OpenRouter metadata (consistently Mar 2025 across qwen3-8b/14b/32b/30b-a3b/235b-a22b listings); cross-checked against metehan.ai aggregator (Mar 31 2025 via OpenRouter). HF-hosted raw-weight ids of the same size/checkpoint are the same underlying release as the OpenRouter id and are assigned the same cutoff by inference, not independently confirmed on the HF card itself."
+  },
+  {
+    "id": "Qwen/Qwen3-32B",
+    "cutoff": "2025-03",
+    "release_date": "2025-04",
+    "basis": "docs",
+    "source": "https://huggingface.co/Qwen/Qwen3-32B",
+    "note": "Qwen3 base dense+MoE generation (launched 2025-04-28, blog: qwenlm.github.io/blog/qwen3/, tech report arXiv:2505.09388). Neither the announcement blog nor the tech report nor the HF model cards (checked Qwen3-32B, Qwen3-0.6B, Qwen3-8B, Qwen3-4B-Instruct-2507 cards directly) state an explicit knowledge-cutoff date -- only that ~36T pretraining tokens across 119 languages were used. Cutoff of Mar 2025 taken from OpenRouter metadata (consistently Mar 2025 across qwen3-8b/14b/32b/30b-a3b/235b-a22b listings); cross-checked against metehan.ai aggregator (Mar 31 2025 via OpenRouter). HF-hosted raw-weight ids of the same size/checkpoint are the same underlying release as the OpenRouter id and are assigned the same cutoff by inference, not independently confirmed on the HF card itself."
+  },
+  {
+    "id": "Qwen/Qwen3.5-0.8B",
+    "cutoff": null,
+    "release_date": "2026-02",
+    "basis": "unknown",
+    "source": "https://huggingface.co/Qwen/Qwen3.5-0.8B",
+    "note": "Qwen3.5 generation (open-weight flagship Qwen3.5-397B-A17B + Qwen3.5-Plus announced 2026-02-17 on Alibaba Cloud's blog 'Qwen3.5: Towards Native Multimodal Agents'; smaller dense/MoE checkpoints and Qwen3.5-Flash followed Feb-Apr 2026). No knowledge-cutoff is stated in the Alibaba announcement blog, in any Qwen3.5 HF model card checked (Qwen3.5-397B-A17B, Qwen3.5-0.8B), or on OpenRouter listings (OpenRouter shows only release/'Released' dates for this generation, no Knowledge Cutoff field, unlike older Qwen3/Qwen3-Coder listings). A third-party aggregator (metehan.ai) claims Qwen3.5+ models state a '2026 (year-level)' cutoff via DashScope API system prompts, but this could not be independently verified against primary Alibaba Model Studio docs (no cutoff field found in fetchable doc content), so it is NOT used as the cutoff value here -- left null/unknown per instructions not to infer from secondhand claims. Release date taken from OpenRouter listing / Alibaba blog where available; ids with an embedded date code (e.g. -02-23, -02-15, -20260420) likely denote DashScope snapshot dates rather than cutoffs, per task guidance, and are only used as a release_date cross-check."
+  },
+  {
+    "id": "Qwen/Qwen3.5-2B",
+    "cutoff": null,
+    "release_date": "2026-02",
+    "basis": "unknown",
+    "source": "https://huggingface.co/Qwen/Qwen3.5-2B",
+    "note": "Qwen3.5 generation (open-weight flagship Qwen3.5-397B-A17B + Qwen3.5-Plus announced 2026-02-17 on Alibaba Cloud's blog 'Qwen3.5: Towards Native Multimodal Agents'; smaller dense/MoE checkpoints and Qwen3.5-Flash followed Feb-Apr 2026). No knowledge-cutoff is stated in the Alibaba announcement blog, in any Qwen3.5 HF model card checked (Qwen3.5-397B-A17B, Qwen3.5-0.8B), or on OpenRouter listings (OpenRouter shows only release/'Released' dates for this generation, no Knowledge Cutoff field, unlike older Qwen3/Qwen3-Coder listings). A third-party aggregator (metehan.ai) claims Qwen3.5+ models state a '2026 (year-level)' cutoff via DashScope API system prompts, but this could not be independently verified against primary Alibaba Model Studio docs (no cutoff field found in fetchable doc content), so it is NOT used as the cutoff value here -- left null/unknown per instructions not to infer from secondhand claims. Release date taken from OpenRouter listing / Alibaba blog where available; ids with an embedded date code (e.g. -02-23, -02-15, -20260420) likely denote DashScope snapshot dates rather than cutoffs, per task guidance, and are only used as a release_date cross-check."
+  },
+  {
+    "id": "Qwen/Qwen3.5-4B",
+    "cutoff": null,
+    "release_date": "2026-02",
+    "basis": "unknown",
+    "source": "https://huggingface.co/Qwen/Qwen3.5-4B",
+    "note": "Qwen3.5 generation (open-weight flagship Qwen3.5-397B-A17B + Qwen3.5-Plus announced 2026-02-17 on Alibaba Cloud's blog 'Qwen3.5: Towards Native Multimodal Agents'; smaller dense/MoE checkpoints and Qwen3.5-Flash followed Feb-Apr 2026). No knowledge-cutoff is stated in the Alibaba announcement blog, in any Qwen3.5 HF model card checked (Qwen3.5-397B-A17B, Qwen3.5-0.8B), or on OpenRouter listings (OpenRouter shows only release/'Released' dates for this generation, no Knowledge Cutoff field, unlike older Qwen3/Qwen3-Coder listings). A third-party aggregator (metehan.ai) claims Qwen3.5+ models state a '2026 (year-level)' cutoff via DashScope API system prompts, but this could not be independently verified against primary Alibaba Model Studio docs (no cutoff field found in fetchable doc content), so it is NOT used as the cutoff value here -- left null/unknown per instructions not to infer from secondhand claims. Release date taken from OpenRouter listing / Alibaba blog where available; ids with an embedded date code (e.g. -02-23, -02-15, -20260420) likely denote DashScope snapshot dates rather than cutoffs, per task guidance, and are only used as a release_date cross-check."
+  },
+  {
+    "id": "Qwen/Qwen3.5-35B-A3B",
+    "cutoff": null,
+    "release_date": "2026-02",
+    "basis": "unknown",
+    "source": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B",
+    "note": "Qwen3.5 generation (open-weight flagship Qwen3.5-397B-A17B + Qwen3.5-Plus announced 2026-02-17 on Alibaba Cloud's blog 'Qwen3.5: Towards Native Multimodal Agents'; smaller dense/MoE checkpoints and Qwen3.5-Flash followed Feb-Apr 2026). No knowledge-cutoff is stated in the Alibaba announcement blog, in any Qwen3.5 HF model card checked (Qwen3.5-397B-A17B, Qwen3.5-0.8B), or on OpenRouter listings (OpenRouter shows only release/'Released' dates for this generation, no Knowledge Cutoff field, unlike older Qwen3/Qwen3-Coder listings). A third-party aggregator (metehan.ai) claims Qwen3.5+ models state a '2026 (year-level)' cutoff via DashScope API system prompts, but this could not be independently verified against primary Alibaba Model Studio docs (no cutoff field found in fetchable doc content), so it is NOT used as the cutoff value here -- left null/unknown per instructions not to infer from secondhand claims. Release date taken from OpenRouter listing / Alibaba blog where available; ids with an embedded date code (e.g. -02-23, -02-15, -20260420) likely denote DashScope snapshot dates rather than cutoffs, per task guidance, and are only used as a release_date cross-check."
+  },
+  {
+    "id": "Qwen/Qwen3.6-35B-A3B",
+    "cutoff": null,
+    "release_date": "2026-04",
+    "basis": "unknown",
+    "source": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+    "note": "Qwen3.6 generation (Qwen3.6-Plus proprietary announced 2026-04-02 on Alibaba Cloud's blog 'Qwen3.6-Plus: Towards Real World Agents'; open-weight Qwen3.6-35B-A3B and Qwen3.6-27B followed on HF/ModelScope 2026-04-16 and 2026-04-22 respectively; Qwen3.6-Max-Preview announced ~2026-04-20; Qwen3.6-Flash also proprietary). No knowledge-cutoff stated in the Alibaba announcement blog, in HF model cards checked (Qwen3.6-27B, Qwen3.6-35B-A3B -- both only show a citation year/month of April 2026, i.e. the card's own publish date, not a cutoff), or on OpenRouter listings (release date only, no Knowledge Cutoff field for this generation). Left null/unknown per instructions; this generation is expected to be sparsely documented."
+  },
+  {
+    "id": "allenai/Olmo-3-7B-Instruct",
+    "cutoff": "2024-12",
+    "release_date": "2025-11",
+    "basis": "model_card",
+    "source": "https://huggingface.co/allenai/Olmo-3-7B-Instruct",
+    "note": "Card states verbatim 'Date cutoff: Dec. 2024'; OLMo 3 launched Nov 20 2025 (arXiv 2512.13961)"
+  },
+  {
+    "id": "allenai/Olmo-3-7B-Think",
+    "cutoff": "2024-12",
+    "release_date": "2025-11",
+    "basis": "model_card",
+    "source": "https://huggingface.co/allenai/Olmo-3-7B-Think",
+    "note": "Same 'Date cutoff: Dec. 2024', also baked into default system prompt; launched Nov 2025"
+  },
+  {
+    "id": "allenai/Olmo-3.1-32B-Instruct",
+    "cutoff": "2024-12",
+    "release_date": "2025-12",
+    "basis": "model_card",
+    "source": "https://huggingface.co/allenai/Olmo-3.1-32B-Instruct",
+    "note": "Identical 'Date cutoff: Dec. 2024' (3.1 = extra RL post-training, no new pretrain data); HF repo created Dec 2025"
+  },
+  {
+    "id": "openai/gpt-oss-20b",
+    "cutoff": "2024-06",
+    "release_date": "2025-08",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-oss-20b",
+    "note": "Cutoff 'Jun 01, 2024' confirmed in raw HTML. No dated snapshot on docs page; release date (Aug 5, 2025) confirmed via openai.com/index/introducing-gpt-oss/ and openai.com/index/gpt-oss-model-card/."
+  },
+  {
+    "id": "openai/gpt-oss-120b",
+    "cutoff": "2024-06",
+    "release_date": "2025-08",
+    "basis": "docs",
+    "source": "https://developers.openai.com/api/docs/models/gpt-oss-120b",
+    "note": "Cutoff 'Jun 01, 2024' confirmed in raw HTML. No dated snapshot on docs page; release date (Aug 5, 2025) confirmed via openai.com/index/introducing-gpt-oss/ and openai.com/index/gpt-oss-model-card/."
+  }
+]

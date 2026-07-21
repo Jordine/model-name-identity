@@ -209,19 +209,25 @@ def _year(s):
         return None
 
 
-# first public release of each brand — the earliest a model could absorb that
-# identity from its outputs in training data (the natural-experiment boundary)
-REL = {"chatgpt": 2022.88, "deepseek": 2023.87, "claude": 2023.17,
-       "gemini": 2023.95, "qwen": 2023.62, "llama": 2023.12}
-REL_LABEL = {"chatgpt": "ChatGPT", "deepseek": "DeepSeek", "claude": "Claude 1",
-             "gemini": "Gemini", "qwen": "Qwen", "llama": "LLaMA"}
+# major version releases per claimed brand (year). breakout=True marks the version
+# whose outputs actually flooded training data — where claiming it turns on — vs the
+# obscure first release that merely made the name exist.
+VERSIONS = {
+    "chatgpt": [(2022.88, "ChatGPT", True), (2023.21, "GPT-4", False), (2024.37, "4o", False)],
+    "deepseek": [(2023.87, "Coder", False), (2024.37, "V2", False), (2024.96, "V3", True), (2025.04, "R1", True)],
+    "claude": [(2023.21, "1", False), (2023.54, "2", False), (2024.21, "3", True), (2024.46, "3.5", True)],
+    "gemini": [(2023.21, "Bard", False), (2023.96, "1.0", True), (2024.37, "1.5", False)],
+    "qwen": [(2023.62, "Qwen1", False), (2024.46, "Qwen2", False), (2024.71, "2.5", True)],
+    "llama": [(2023.12, "1", False), (2023.54, "2", True), (2024.29, "3", False)],
+}
 
 
 def fig_cutoff(data):
-    """Per identity: does a model start claiming to BE X only after X first shipped?
-    x = training-data cutoff (solid) or, when a lab publishes none, release date as a
-    proxy (hollow). Vertical line = X's first public release. y = how much of the
-    model's identity answers claim X."""
+    """Per identity: does a model start claiming to BE X only after X's outputs
+    flooded training data? x = training-data cutoff (solid) or release-date proxy
+    (hollow). Grey ticks = version releases; red dashed = the breakout version.
+    y = how much of the model's identity answers claim X. The onset tracks the
+    breakout (DeepSeek V3, Claude 3.5), not the obscure first release."""
     cut = _load("model_cutoffs.json")
     if not cut:
         print("  (no model_cutoffs.json yet — skipping fig_cutoff)")
@@ -234,25 +240,27 @@ def fig_cutoff(data):
         if x is None or d["tot"] < MIN_TOT:
             continue
         rows.append((d, x, yc is not None))
-    ids = list(REL)
-    fig, axes = plt.subplots(2, 3, figsize=(13.6, 7.8))
-    for ax, ident in zip(axes.flat, ids):
+    fig, axes = plt.subplots(2, 3, figsize=(13.8, 8.0))
+    for ax, ident in zip(axes.flat, VERSIONS):
         col = IDCOLOR.get(ident, "#2a78d6")
         for d, x, doc in rows:
             y = 100 * d["claims"].get(ident, 0) / d["tot"]
             ax.scatter(x, y, s=22, facecolor=col if doc else "none",
                        edgecolor=col, alpha=0.6, lw=1, zorder=3)
-        ax.axvline(REL[ident], color="#c0392b", lw=1.3, ls="--", zorder=2)
-        ax.text(REL[ident], 0.97, f" {REL_LABEL[ident]} ships", fontsize=6.8, color="#c0392b",
-                rotation=90, va="top", ha="right", transform=ax.get_xaxis_transform())
+        for vx, vlab, breakout in VERSIONS[ident]:
+            ax.axvline(vx, color="#c0392b" if breakout else BASE,
+                       lw=1.3 if breakout else 0.9, ls="--" if breakout else ":", zorder=2)
+            ax.text(vx, 0.98, vlab, fontsize=6.2, color="#c0392b" if breakout else MUTED,
+                    rotation=90, va="top", ha="right", transform=ax.get_xaxis_transform())
         ax.set_title(f"claims to be {brand(ident)}", fontsize=10.5, color=INK, loc="left")
-        ax.set_xlim(2021.4, 2026.4)
+        ax.set_xlim(2021.4, 2026.5)
         style(ax); ax.grid(color=GRID, lw=0.5, zorder=0)
-    fig.text(0.5, 0.015, "training-data cutoff (solid) · release-date proxy (hollow) — year",
+    fig.text(0.5, 0.015, "training-data cutoff (solid) · release-date proxy (hollow) — year   "
+             "|   red dashed = breakout version, grey = earlier releases",
              ha="center", fontsize=9, color=INK2)
     fig.text(0.008, 0.5, "% of the model's identity answers claiming this identity",
              va="center", rotation=90, fontsize=9, color=INK2)
-    fig.suptitle("When does a model start claiming to be X?  (drift switches on after X ships)",
+    fig.suptitle("Claiming switches on at the breakout version, not first release",
                  fontsize=12.5, color=INK, x=0.02, ha="left")
     fig.tight_layout(rect=[0.025, 0.03, 1, 0.95])
     save(fig, "fig_cutoff.png")

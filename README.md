@@ -2,10 +2,11 @@
 
 Ask a language model "who are you?" and a surprising number answer with **another
 vendor's** name — a Qwen model calling itself DeepSeek, Kimi calling itself Claude,
-Claude (in Chinese) calling itself DeepSeek. This repo is a survey of that: **189
-models queried through hosted APIs + 16 run from raw weights on GPUs**, across 8
-languages, with every self-identity claim extracted by an LLM judge and
-adjudicated.
+Claude (in Chinese) calling itself DeepSeek. This repo is a survey of that: **179
+models queried through hosted APIs + 16 run from raw weights on GPUs** (the
+cross-model figures pool the 179 API models with 10 of the raw-weights models =
+189), across 8 languages, with every self-identity claim extracted by an LLM judge
+and adjudicated.
 
 The study is three experiments on the same models: what a model **volunteers** as
 its identity (the headline), what the **raw weights** say once the shipped chat

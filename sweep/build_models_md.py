@@ -82,12 +82,13 @@ def main():
              "OpenRouter routing `{\"order\": [\"<slug>\"], \"allow_fallbacks\": false}`, so a call can't silently fall "
              "back to an injecting or wrong-quant endpoint. `runner.py` records `provider_served` on every response; the "
              f"table below lists the pin per model. **Verified against the collected data: {onep} models were served by "
-             "exactly the pinned provider** (no fallbacks). Two (`deepseek/deepseek-r1`, `qwen/qwen3.5-9b`) were "
-             "re-pinned between runs and carry records from two providers — **both of which passed the hygiene "
-             "check**. "
-             + (f"One model (`{unpinned[0]}`) predates the pinning setup and has no recorded provider — the only "
-                "analyzed model without verified provenance. " if len(unpinned) == 1 else
-                (f"{len(unpinned)} models predate pinning and have no recorded provider. " if unpinned else ""))
+             "a single consistent provider** across all their records — no fallbacks (`provider_served` is a display "
+             "name, so this checks consistency, not that the display string equals the slug). Two "
+             "(`deepseek/deepseek-r1`, `qwen/qwen3.5-9b`) were re-pinned between runs and carry records from two "
+             "providers — **both of which passed the hygiene check**. "
+             + (f"One model (`{unpinned[0]}`) was served first-party via the proxy's native route (preflighted clean) "
+                "rather than an OpenRouter pin, so it has no OpenRouter `provider_served` slug. " if len(unpinned) == 1 else
+                (f"{len(unpinned)} models were served via the proxy-native route (no OpenRouter slug). " if unpinned else ""))
              + "To reproduce a model's answers (or check for injection yourself), pin its provider slug on OpenRouter "
              "and send the prompts in `prompts.jsonl` with no system prompt.\n")
 

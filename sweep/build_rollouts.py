@@ -65,12 +65,20 @@ def is_drift(foreign, adj_key, verdicts):
 
 
 def collect():
+    from .make_figs import complete_models
     reg = {m["id"]: m for m in json.loads((ROOT / "config" / "models.json").read_text())["models"]}
+    hyg = json.loads((ROOT / "config" / "provider_hygiene.json").read_text())
     # raw-weights (GPU) models: registry straight from the run manifest, so all 16
     # carry the right family/aliases (else a Qwen naming itself "Qwen" reads as drift)
+    local_ids = set()
     for l in open_lines(ROOT / "config" / "local_manifest.jsonl"):
-        e = json.loads(l)["entry"]
-        reg.setdefault(e["id"], e)
+        d = json.loads(l)
+        reg.setdefault(d["entry"]["id"], d["entry"])
+        local_ids.add(d["hf_id"])
+    # only browse the ANALYZED set: complete API models (>=95%) + the raw-weights runs.
+    # excludes the incomplete hf-router experiments (SEA-LION, R1-distills) that would
+    # otherwise be ranked in MISMATCHES on a fraction of the battery.
+    allowed = complete_models(reg, hyg) | local_ids
     # judgments by judge_key -> claimed name
     jud = {}
     for j in load():
@@ -83,7 +91,7 @@ def collect():
     def take(path, cond_filter=None):
         for l in open_lines(path):
             r = json.loads(l)
-            if r.get("error"):
+            if r.get("error") or r["model_id"] not in allowed:
                 continue
             cat = r.get("prompt_category", "")
             if not cat.startswith(KEEP):
@@ -124,10 +132,14 @@ def collect_model(mid, name, fam, exp, aliases, rows, jud, verdicts):
         prompt = (r.get("messages_sent") or [{}])[-1].get("content", r.get("prompt_id", ""))
         resp = (r.get("content_clean") or r.get("content") or "").strip()
         key = f"{r['resume_key']}::t{r.get('turn_index',0)}"
-        jm = (jud.get(key) or {}).get("judgment") or {}
+        j = jud.get(key)
+        jm = (j or {}).get("judgment") or {}
+        # adjudications are keyed off the JUDGMENT record's turn (turn_index=None -> ::tNone),
+        # NOT the raw record's (missing -> ::t0). Use the judgment's key or the verdict never matches.
+        adjk = f"{j['resume_key']}::t{j.get('turn_index', 0)}" if j else key
         cn = canon_identity(jm.get("claimed_name")); cc = canon_identity(jm.get("claimed_creator"))
         foreign = [c for c in (cn, cc) if c and not is_self(c, fam, aliases, exp)]
-        drift = is_drift(foreign, key, verdicts)
+        drift = is_drift(foreign, adjk, verdicts)
         if cat.startswith(("direct_", "creator_")):
             tot += 1
             lang_stats[lang][1] += 1
@@ -224,8 +236,13 @@ def main():
         for m in ms:
             VL += render_section(m)
         (OUT / fn).write_text("\n".join(VL), encoding="utf-8")
+        # GFM disambiguates duplicate heading slugs with -1, -2 … (e.g. "Command R"
+        # and "Command R+" both slug to command-r); mirror that so links resolve.
+        used = Counter()
         for m in ms:
-            link[m[3]] = f"./{fn}#{anchor(m[3])}"
+            base = anchor(m[3])
+            link[m[3]] = f"./{fn}#{base if used[base] == 0 else f'{base}-{used[base]}'}"
+            used[base] += 1
 
     # index: scannable summary table + per-vendor links (renders fully on GitHub)
     L = ["# Identity mismatches — where models name another vendor as themselves\n",

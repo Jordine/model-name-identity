@@ -159,6 +159,9 @@ CJK_SUFFIX = ["模型", "大模型", "公司", "科技", "研究所", "实验室
 # common traditional -> simplified so 聊天機器人 == 聊天机器人 (generic), 騰訊 == 腾讯
 TRAD2SIMP = str.maketrans("機語說對開發麼們產業騰訊龍認學實驗會單詞問誰",
                           "机语说对开发么们产业腾讯龙认学实验会单词问谁")
+# TRAD2SIMP also rewrites shared Han in Japanese (語→语), so a raw generic like
+# 言語モデル wouldn't match the post-translation `low`. Normalize the generics too.
+GENERIC_TERMS_N = [g.translate(TRAD2SIMP) for g in GENERIC_TERMS]
 
 
 def _matches(pat: str, s: str) -> bool:
@@ -208,8 +211,8 @@ def canon_identity(raw: str | None) -> str | None:
         if art.startswith(a):
             art = art[len(a):].strip()
             break
-    if any(low == g or art == g for g in GENERIC_TERMS) or \
-       any(g in low for g in GENERIC_TERMS
+    if any(low == g or art == g for g in GENERIC_TERMS_N) or \
+       any(g in low for g in GENERIC_TERMS_N
            if len(g) >= 4 or (len(g) >= 2 and not g.isascii())):
         # non-ASCII (CJK/Korean) generics substring-match at >=2 chars: 助手 in 小助手
         return None

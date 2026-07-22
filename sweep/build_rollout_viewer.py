@@ -97,9 +97,11 @@ def main():
             key = f"{r['resume_key']}::t{r.get('turn_index',0)}"
             j = jud.get(key)
             jm = (j or {}).get("judgment") or {}
+            # adjudications key off the JUDGMENT record's turn (::tNone), not the raw record's (::t0)
+            adjk = f"{j['resume_key']}::t{j.get('turn_index', 0)}" if j else key
             cn = canon_identity(jm.get("claimed_name")); cc = canon_identity(jm.get("claimed_creator"))
             foreign = [c for c in (cn, cc) if c and not is_self(c, fam, al, exp)]
-            drift = 1 if is_drift(foreign, key, verdicts) else 0
+            drift = 1 if is_drift(foreign, adjk, verdicts) else 0
             if cat.startswith(("direct_", "creator_")):
                 tot += 1; d += drift               # spontaneous mismatch (the headline rate)
             elif cat in ("probe_cross", "probe_self"):

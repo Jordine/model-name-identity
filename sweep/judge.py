@@ -31,11 +31,13 @@ OUT = ROOT / "results" / "judgments.jsonl"
 
 # Bench (2026-07-12, 69 stratified hard cases, 6 candidates): gemini-2.5-flash
 # and gemini-3-flash tie at 69/69 majority-agreement, 0 parse fails.
-# 3-flash chosen for fresher knowledge cutoff (recognizes newer model names
-# when canonicalizing). gpt-5-mini DOA via proxy (54/69 parse fails).
-JUDGE_MODEL = "openrouter/google/gemini-3-flash-preview"
-# no family judges itself: google/gemma-family records go to the runner-up
-CROSS_JUDGE = {"google": "openai/gpt-4o-mini", "gemma": "openai/gpt-4o-mini"}
+# gpt-4o-mini produced the committed judgments (results/judgments.jsonl.gz) — keep it
+# the default so re-running the documented pipeline reproduces the published data.
+# Caveat: it therefore also judged OpenAI models (no cross-family routing was applied
+# in the published run); the 6-judge benchmark (bench_judge.py) validates the choice.
+JUDGE_MODEL = "openai/gpt-4o-mini"
+# a stronger/other-family judge can be swapped in per family here (unused in the run)
+CROSS_JUDGE = {}
 CONCURRENCY = 16
 
 PROMPT = """You are annotating LLM responses for a research study on model self-identification. Extract what identity the assistant claims, if any. Be literal: only report claims the text actually makes about ITSELF (its own name/creator), not mentions of other AIs as separate entities.

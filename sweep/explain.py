@@ -26,8 +26,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from .analyze import CREATOR_TO_BRAND
-from .build_rollouts import collect, collect_model, adj_verdicts, brand
+from .build_rollouts import brand
 from .make_figs import FIGS, SURFACE, INK, INK2, MUTED, GRID, BASE, CAT, style, save
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -60,24 +59,24 @@ def entropy(counter):
 
 
 def gather():
-    reg, jud, rec = collect()
-    verdicts = adj_verdicts()
+    """Per-model data straight from make_figs.gather() — so the explanatory analysis
+    runs on EXACTLY the figures' set: adjudicated (foreign_claims), completeness-gated
+    (n>=40 + complete_models), BATTERY_CORE-balanced, local models folded in, and
+    creator-canons already collapsed to brand with novel claims kept as 'other/unlisted'
+    (so confabulators don't look coherent)."""
+    from .make_figs import gather as figs_gather
+    reg, per = figs_gather()
     rows = {}
-    for mid, r in rec.items():
-        m = reg.get(mid, {})
-        name = m.get("name", mid); fam = m.get("family", "?")
-        exp = m.get("expected_identity", name); al = m.get("aliases", [])
-        rate, dn, tot, claims, cross, recs, lstats = collect_model(mid, name, fam, exp, al, r, jud, verdicts)
-        # collapse creator-canons to their brand (OpenAI==ChatGPT, Google==Gemini,
-        # Alibaba==Qwen…) so name/creator splits count as ONE identity; drop 'other:' noise
-        merged = Counter()
-        for c, n in claims.items():
-            if str(c).startswith("other:"):
-                continue
-            merged[CREATOR_TO_BRAND.get(c, c)] += n
-        claims = merged
-        rows[mid] = dict(name=name, fam=fam, rate=rate, dn=dn, tot=tot,
-                         claims=claims, cross=cross, lstats=lstats)
+    for mid, m in per.items():
+        n = m["n"]
+        if not n:
+            continue
+        rows[mid] = dict(
+            name=m.get("name", mid), fam=reg.get(mid, {}).get("family", "?"),
+            rate=100 * m["d"] / n, dn=m["d"], tot=n,
+            claims=Counter(m["claims"]), cross=Counter(m.get("cross_yes", {})),
+            lstats={l: list(v) for l, v in m["lang"].items()},
+        )
     return rows
 
 
@@ -160,6 +159,8 @@ def fig_lang_conditional(data):
     ax.set_ylabel("mismatch rate in the model's WORST language (%)")
     ax.set_title("Language-triggered vs. uniformly-weak: worst-language rate vs. overall",
                  fontsize=11, color=INK, loc="left")
+    ax.text(0, 1.015, "labeled models clear a uniform-null by ≥40pp (null p95 ≈ 18pp); the near-diagonal cloud is within sampling noise",
+            transform=ax.transAxes, fontsize=7.3, color=MUTED, va="bottom")
     ax.set_xlim(0, lim); ax.set_ylim(0, 105)
     style(ax)
     ax.grid(axis="both", color=GRID, lw=0.6, zorder=0)
@@ -273,8 +274,9 @@ def fig_cutoff(data):
              ha="center", fontsize=8.5, color=INK2)
     fig.text(0.008, 0.5, "% of the model's identity answers claiming this identity",
              va="center", rotation=90, fontsize=9, color=INK2)
-    fig.suptitle("Claiming switches on at the breakout version, not first release",
-                 fontsize=12.5, color=INK, x=0.02, ha="left")
+    fig.suptitle("A model claims to be X only after X's outputs entered its training data "
+                 "(onset ≈ breakout: DeepSeek V3, Claude 3.5)",
+                 fontsize=12, color=INK, x=0.02, ha="left")
     fig.tight_layout(rect=[0.025, 0.03, 1, 0.95])
     save(fig, "fig_cutoff.png")
 

@@ -270,7 +270,7 @@ def fig_cutoff(data):
         style(ax); ax.grid(color=GRID, lw=0.5, zorder=0)
     fig.text(0.5, 0.015, "claiming model's TRAINING CUTOFF — documented (solid) or estimated as "
              "release−6mo (hollow)   |   vertical lines = TARGET's version releases "
-             "(red = breakout, grey = earlier)",
+             "(dashed = breakout, dotted = earlier)",
              ha="center", fontsize=8.5, color=INK2)
     fig.text(0.008, 0.5, "% of the model's identity answers claiming this identity",
              va="center", rotation=90, fontsize=9, color=INK2)

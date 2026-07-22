@@ -71,6 +71,8 @@ python -m sweep.adjudicate_local     # adjudicate raw-weights claims
 # analysis + artifacts
 python -m sweep.analyze              # discrepancy-rate tables
 python -m sweep.make_figs            # figures/
+python -m sweep.explain              # figures/fig_coherence, fig_lang_conditional, fig_size, fig_cutoff
+python -m sweep.build_models_md      # MODELS.md (roster + pinned provider per model)
 python -m sweep.build_rollouts       # rollouts/MISMATCHES.md
 python -m sweep.build_rollout_viewer # rollouts/index.html + rollouts_data.json
 ```

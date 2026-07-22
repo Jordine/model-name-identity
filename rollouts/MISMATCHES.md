@@ -112,6 +112,7 @@ Records are split by vendor so each page renders on GitHub. For **all** answers 
 | [Qwen3 Coder Flash](./mismatches/qwen.md#qwen3-coder-flash) | qwen | 1% (2/338) | Claude |
 | [GLM 5](./mismatches/zhipu.md#glm-5) | zhipu | 1% (2/338) | Claude, Gemini |
 | [GLM 4.5 Air](./mismatches/zhipu.md#glm-45-air) | zhipu | 1% (2/338) | Gemini |
+| [Qwen3 8B](./mismatches/qwen.md#qwen3-8b) | qwen | 0% (2/430) | トンイラボ, tome |
 | [Qwen3 4B](./mismatches/qwen.md#qwen3-4b) | qwen | 0% (1/320) | OpenAI |
 | [Qwen3 14B](./mismatches/qwen.md#qwen3-14b) | qwen | 0% (1/338) | Yandex |
 | [Qwen3.7 Plus](./mismatches/qwen.md#qwen37-plus) | qwen | 0% (1/338) | Google |
@@ -125,7 +126,6 @@ Records are split by vendor so each page renders on GitHub. For **all** answers 
 | [Qwen3.6 27B](./mismatches/qwen.md#qwen36-27b) | qwen | 0% (1/338) | Google |
 | [Nex-N2-Pro](./mismatches/nex.md#nex-n2-pro) | nex | 0% (1/338) | ChatGPT |
 | [o1](./mismatches/openai.md#o1) | openai | 0% (1/338) | Anthropic |
-| [Qwen3 8B](./mismatches/qwen.md#qwen3-8b) | qwen | 0% (1/430) | tome |
 | [Gemma 3 12B](./mismatches/google.md#gemma-3-12b) | gemma | 0% (0/338) | — |
 | [Claude Haiku 4.5](./mismatches/anthropic.md#claude-haiku-45) | anthropic | 0% (0/338) | — |
 | [GPT-5.4 Nano](./mismatches/openai.md#gpt-54-nano) | openai | 0% (0/338) | — |

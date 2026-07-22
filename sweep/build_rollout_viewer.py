@@ -35,9 +35,10 @@ header{padding:16px 20px;border-bottom:1px solid var(--line)}header h1{margin:0;
 #ctl select{padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
 #ctl label{color:var(--muted);display:flex;gap:6px;align-items:center}
 h2.lang{margin:22px 0 6px;font-size:15px;border-bottom:1px solid var(--line);padding-bottom:4px}
-.pr{margin:12px 0 4px;font-weight:600;color:var(--muted)}
-.r{padding:5px 10px;border-left:2px solid var(--line);margin:3px 0;white-space:pre-wrap;word-break:break-word}
+.pr{margin:18px 0 6px;font-weight:600;color:var(--muted);font-size:12px;letter-spacing:.01em}
+.r{padding:9px 12px;border-left:3px solid var(--line);margin:7px 0;white-space:pre-wrap;word-break:break-word;background:var(--panel);border-radius:0 7px 7px 0;box-shadow:0 1px 2px rgba(0,0,0,.05)}
 .r.d{border-left-color:var(--drift);background:var(--driftbg)}
+.r .tag{display:inline-block;margin-top:4px}
 .tag{color:var(--drift);font-weight:700}.self{color:var(--muted);font-size:11px}
 .hint{color:var(--muted);padding:40px;text-align:center}
 </style></head><body>

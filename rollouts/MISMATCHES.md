@@ -1,6 +1,6 @@
 # Identity mismatches — where models name another vendor as themselves
 
-Across 144 models: what each one claims to be when it *doesn't* claim its own identity. **Rate** is the spontaneous mismatch rate on the identity/creator battery; *claims as* is what it names instead. Click a model for every prompt + response (e.g. "Claude Opus 4.8 → DeepSeek in Chinese", to reproduce it).
+Across 143 models: what each one claims to be when it *doesn't* claim its own identity. **Rate** is the spontaneous mismatch rate on the identity/creator battery; *claims as* is what it names instead. Click a model for every prompt + response (e.g. "Claude Opus 4.8 → DeepSeek in Chinese", to reproduce it).
 
 Records are split by vendor so each page renders on GitHub. For **all** answers from **all** models (drift or not), open the full browser [`rollouts/index.html`](./index.html) or the raw [`rollouts_data.json`](./rollouts_data.json).
 
@@ -43,7 +43,6 @@ Records are split by vendor so each page renders on GitHub. For **all** answers 
 | [Qwen3 1.7B](./mismatches/qwen.md#qwen3-17b) | qwen | 11% (35/320) | Claude, lia, OpenAI |
 | [DeepSeek V3](./mismatches/deepseek.md#deepseek-v3) | deepseek | 11% (36/338) | ChatGPT, OpenAI, Yandex |
 | [Llama 3.2 1B Instruct](./mismatches/meta.md#llama-32-1b-instruct) | meta | 11% (36/338) | ChatGPT, Google, アナリシープロジー |
-| [Claude Opus 4.8](./mismatches/anthropic.md#claude-opus-48) | anthropic | 10% (35/338) | DeepSeek, Qwen |
 | [Kimi K2.7 Code](./mismatches/kimi.md#kimi-k27-code) | kimi | 10% (35/338) | Claude, Anthropic, OpenAI |
 | [Claude 3 Haiku](./mismatches/anthropic.md#claude-3-haiku) | anthropic | 10% (34/338) | ChatGPT, OpenAI, 클로이 |
 | [Reka Flash 3](./mismatches/reka.md#reka-flash-3) | reka | 10% (33/337) | OpenAI, ChatGPT |
@@ -55,17 +54,18 @@ Records are split by vendor so each page renders on GitHub. For **all** answers 
 | [Mistral Medium 3.1](./mismatches/mistral.md#mistral-medium-31) | mistral | 9% (32/338) | ChatGPT, Microsoft, Ernie |
 | [Ministral 3 14B](./mismatches/mistral.md#ministral-3-14b) | mistral | 9% (29/338) | ChatGPT, Gemini, Google |
 | [Qwen3 0.6B](./mismatches/qwen.md#qwen3-06b) | qwen | 8% (27/320) | ChatGPT, OpenAI, openstax |
-| [Claude Sonnet 4.6](./mismatches/anthropic.md#claude-sonnet-46) | anthropic | 8% (28/338) | DeepSeek, ChatGPT, Qwen |
 | [Mistral Large 2407](./mismatches/mistral.md#mistral-large-2407) | mistral | 8% (27/338) | Yandex, Naver, Claude |
 | [Nemotron 3 Super](./mismatches/nvidia.md#nemotron-3-super) | nvidia | 8% (27/338) | Qwen, ChatGPT |
 | [Mistral Small 4](./mismatches/mistral.md#mistral-small-4) | mistral | 8% (27/338) | ChatGPT, Gemini, Llama |
 | [Devstral 2 2512](./mismatches/mistral.md#devstral-2-2512) | mistral | 7% (24/338) | ChatGPT, 雾栖科技, Ernie |
 | [Kimi K2.6](./mismatches/kimi.md#kimi-k26) | kimi | 7% (24/338) | Claude |
 | [Mistral Large 3](./mismatches/mistral.md#mistral-large-3) | mistral | 7% (23/338) | Yandex, Llama, りんな |
+| [Claude Sonnet 4.6](./mismatches/anthropic.md#claude-sonnet-46) | anthropic | 6% (20/320) | DeepSeek, ChatGPT |
 | [Mixtral 8x22B Instruct](./mismatches/mistral.md#mixtral-8x22b-instruct) | mistral | 6% (20/338) | Gemini, ChatGPT, 마루(maru) |
 | [Qwen3.5 2B](./mismatches/qwen.md#qwen35-2b) | qwen | 6% (18/320) | Baidu, Yandex, илон |
 | [Saba](./mismatches/mistral.md#saba) | mistral | 6% (19/338) | Gemini, ChatGPT, フレッド |
 | [Mistral Small 3.2](./mismatches/mistral.md#mistral-small-32) | mistral | 5% (18/338) | ChatGPT, neuro, moondream 7b |
+| [Claude Opus 4.8](./mismatches/anthropic.md#claude-opus-48) | anthropic | 5% (17/320) | DeepSeek, Qwen |
 | [Ling-2.6-1T](./mismatches/ant.md#ling-26-1t) | ant | 5% (17/338) | Alibaba, Claude, 안랩(ahnlab) |
 | [GPT-4](./mismatches/openai.md#gpt-4) | openai | 5% (16/338) | Google |
 | [DeepSeek V4 Pro](./mismatches/deepseek.md#deepseek-v4-pro) | deepseek | 4% (14/338) | Gemini, Claude, Google |
@@ -125,7 +125,6 @@ Records are split by vendor so each page renders on GitHub. For **all** answers 
 | [Nex-N2-Pro](./mismatches/nex.md#nex-n2-pro) | nex | 0% (1/338) | ChatGPT |
 | [o1](./mismatches/openai.md#o1) | openai | 0% (1/338) | Anthropic |
 | [Gemma 3 12B](./mismatches/google.md#gemma-3-12b) | gemma | 0% (0/338) | — |
-| [Claude Haiku 4.5](./mismatches/anthropic.md#claude-haiku-45) | anthropic | 0% (0/338) | — |
 | [GPT-5.4 Nano](./mismatches/openai.md#gpt-54-nano) | openai | 0% (0/338) | — |
 | [GPT-5 Chat](./mismatches/openai.md#gpt-5-chat) | openai | 0% (0/338) | — |
 | [GPT-4.1](./mismatches/openai.md#gpt-41) | openai | 0% (0/338) | — |
@@ -134,14 +133,12 @@ Records are split by vendor so each page renders on GitHub. For **all** answers 
 | [Sonar](./mismatches/perplexity.md#sonar) | perplexity | 0% (0/338) | — |
 | [GPT-4o](./mismatches/openai.md#gpt-4o) | openai | 0% (0/338) | — |
 | [Claude Sonnet 4](./mismatches/anthropic.md#claude-sonnet-4) | anthropic | 0% (0/338) | — |
-| [Claude Opus 4.5](./mismatches/anthropic.md#claude-opus-45) | anthropic | 0% (0/338) | — |
 | [GLM 4.7](./mismatches/zhipu.md#glm-47) | zhipu | 0% (0/338) | — |
 | [GPT-5.1](./mismatches/openai.md#gpt-51) | openai | 0% (0/338) | — |
 | [Command R7B (12-2024)](./mismatches/cohere.md#command-r7b-12-2024) | cohere | 0% (0/338) | — |
 | [o3](./mismatches/openai.md#o3) | openai | 0% (0/338) | — |
 | [GPT-5](./mismatches/openai.md#gpt-5) | openai | 0% (0/338) | — |
 | [Llama 4 Scout](./mismatches/meta.md#llama-4-scout) | meta | 0% (0/338) | — |
-| [Claude Opus 4.6](./mismatches/anthropic.md#claude-opus-46) | anthropic | 0% (0/338) | — |
 | [GPT-5.1 Chat](./mismatches/openai.md#gpt-51-chat) | openai | 0% (0/338) | — |
 | [GLM 5 Turbo](./mismatches/zhipu.md#glm-5-turbo) | zhipu | 0% (0/338) | — |
 | [Gemma 2 27B](./mismatches/google.md#gemma-2-27b) | google | 0% (0/338) | — |
@@ -150,6 +147,8 @@ Records are split by vendor so each page renders on GitHub. For **all** answers 
 | [Gemma 3 27B](./mismatches/google.md#gemma-3-27b) | gemma | 0% (0/338) | — |
 | [DeepSeek V4 Flash](./mismatches/deepseek.md#deepseek-v4-flash) | deepseek | 0% (0/338) | — |
 | [GLM 4.7 Flash](./mismatches/zhipu.md#glm-47-flash) | zhipu | 0% (0/338) | — |
+| [Claude Opus 4.5](./mismatches/anthropic.md#claude-opus-45) | anthropic | 0% (0/320) | — |
+| [Claude Opus 4.6](./mismatches/anthropic.md#claude-opus-46) | anthropic | 0% (0/320) | — |
 
 ## By vendor
 
@@ -158,8 +157,8 @@ Records are split by vendor so each page renders on GitHub. For **all** answers 
 - [OpenAI](./mismatches/openai.md) — 12 models
 - [DeepSeek](./mismatches/deepseek.md) — 10 models
 - [Google](./mismatches/google.md) — 10 models
-- [Anthropic](./mismatches/anthropic.md) — 9 models
 - [Zhipu (GLM)](./mismatches/zhipu.md) — 9 models
+- [Anthropic](./mismatches/anthropic.md) — 8 models
 - [Meta (Llama)](./mismatches/meta.md) — 7 models
 - [Moonshot (Kimi)](./mismatches/kimi.md) — 6 models
 - [NVIDIA](./mismatches/nvidia.md) — 5 models

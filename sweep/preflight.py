@@ -142,7 +142,12 @@ def choose(model, results: list[dict]) -> dict:
 
     def rank(r):
         is_official = any(r["slug"] and r["slug"].startswith(o) for o in official)
+        # prefer the lab's OWN first-party endpoint over official cloud resellers
+        # (Anthropic-direct over Bedrock/Vertex for a Claude model) — else a tie on
+        # every other key falls to OpenRouter's arbitrary listing order.
+        is_first_party = bool(r["slug"]) and (r["slug"] == org or r["slug"].startswith(org))
         return (0 if is_official else 1,
+                0 if is_first_party else 1,
                 1 if r["borderline"] else 0,
                 QUANT_RANK.get(r["quant"], 1),
                 r["prompt_tokens"])

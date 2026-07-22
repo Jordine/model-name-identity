@@ -78,12 +78,6 @@
   "models": 1
  },
  {
-  "file": "family/fam_anthropic.png",
-  "family": "anthropic",
-  "drift": 102,
-  "models": 5
- },
- {
   "file": "family/fam_ibm.png",
   "family": "ibm",
   "drift": 101,
@@ -93,6 +87,12 @@
   "file": "family/fam_google.png",
   "family": "google",
   "drift": 96,
+  "models": 5
+ },
+ {
+  "file": "family/fam_anthropic.png",
+  "family": "anthropic",
+  "drift": 83,
   "models": 5
  },
  {

@@ -79,7 +79,7 @@
   "anthropic/claude-fable-5": {
     "provider": {
       "order": [
-        "google-vertex"
+        "anthropic"
       ],
       "allow_fallbacks": false
     },
@@ -87,18 +87,9 @@
     "borderline": false,
     "reason": "pinned to google-vertex (quant=unknown, ptok=8; 0/6 providers inject, 5/6 clean)",
     "chosen": {
-      "model_id": "anthropic/claude-fable-5",
-      "slug": "google-vertex",
-      "provider_name": "Google",
-      "quant": "unknown",
-      "or_status": 0,
-      "prompt_tokens": 8,
-      "provider_served": "Google",
-      "error": null,
-      "suspicious": false,
-      "borderline": false,
-      "content_head": "Hi! How can I help you today",
-      "ts": "2026-07-12T16:09:47.458744+00:00"
+      "slug": "anthropic",
+      "provider_name": "Anthropic",
+      "note": "re-pinned first-party 2026-07-22"
     },
     "checked": [
       {
@@ -365,7 +356,7 @@
   "anthropic/claude-haiku-4.5": {
     "provider": {
       "order": [
-        "amazon-bedrock"
+        "anthropic"
       ],
       "allow_fallbacks": false
     },
@@ -373,18 +364,9 @@
     "borderline": false,
     "reason": "pinned to amazon-bedrock (quant=unknown, ptok=8; 0/6 providers inject, 6/6 clean)",
     "chosen": {
-      "model_id": "anthropic/claude-haiku-4.5",
-      "slug": "amazon-bedrock",
-      "provider_name": "Amazon Bedrock",
-      "quant": "unknown",
-      "or_status": 0,
-      "prompt_tokens": 8,
-      "provider_served": "Amazon Bedrock",
-      "error": null,
-      "suspicious": false,
-      "borderline": false,
-      "content_head": "# Hey there! 👋\n\nHow's it going? What can I help you with today?",
-      "ts": "2026-07-12T16:09:46.291592+00:00"
+      "slug": "anthropic",
+      "provider_name": "Anthropic",
+      "note": "re-pinned first-party 2026-07-22"
     },
     "checked": [
       {
@@ -474,7 +456,7 @@
   "anthropic/claude-opus-4.5": {
     "provider": {
       "order": [
-        "amazon-bedrock"
+        "anthropic"
       ],
       "allow_fallbacks": false
     },
@@ -482,18 +464,9 @@
     "borderline": false,
     "reason": "pinned to amazon-bedrock (quant=unknown, ptok=8; 0/6 providers inject, 6/6 clean)",
     "chosen": {
-      "model_id": "anthropic/claude-opus-4.5",
-      "slug": "amazon-bedrock",
-      "provider_name": "Amazon Bedrock",
-      "quant": "unknown",
-      "or_status": 0,
-      "prompt_tokens": 8,
-      "provider_served": "Amazon Bedrock",
-      "error": null,
-      "suspicious": false,
-      "borderline": false,
-      "content_head": "Hi there! How can I help you today?",
-      "ts": "2026-07-12T16:09:49.141326+00:00"
+      "slug": "anthropic",
+      "provider_name": "Anthropic",
+      "note": "re-pinned first-party 2026-07-22"
     },
     "checked": [
       {
@@ -543,7 +516,7 @@
   "anthropic/claude-opus-4.6": {
     "provider": {
       "order": [
-        "google-vertex"
+        "anthropic"
       ],
       "allow_fallbacks": false
     },
@@ -551,18 +524,9 @@
     "borderline": false,
     "reason": "pinned to google-vertex (quant=unknown, ptok=8; 0/6 providers inject, 6/6 clean)",
     "chosen": {
-      "model_id": "anthropic/claude-opus-4.6",
-      "slug": "google-vertex",
-      "provider_name": "Google",
-      "quant": "unknown",
-      "or_status": 0,
-      "prompt_tokens": 8,
-      "provider_served": "Google",
-      "error": null,
-      "suspicious": false,
-      "borderline": false,
-      "content_head": "Hi there! 👋 How are you doing today? Is there anything I can help you with?",
-      "ts": "2026-07-12T16:09:50.097469+00:00"
+      "slug": "anthropic",
+      "provider_name": "Anthropic",
+      "note": "re-pinned first-party 2026-07-22"
     },
     "checked": [
       {
@@ -627,7 +591,7 @@
   "anthropic/claude-sonnet-4.5": {
     "provider": {
       "order": [
-        "amazon-bedrock"
+        "anthropic"
       ],
       "allow_fallbacks": false
     },
@@ -635,18 +599,9 @@
     "borderline": false,
     "reason": "pinned to amazon-bedrock (quant=unknown, ptok=8; 0/8 providers inject, 8/8 clean)",
     "chosen": {
-      "model_id": "anthropic/claude-sonnet-4.5",
-      "slug": "amazon-bedrock",
-      "provider_name": "Amazon Bedrock",
-      "quant": "unknown",
-      "or_status": 0,
-      "prompt_tokens": 8,
-      "provider_served": "Amazon Bedrock",
-      "error": null,
-      "suspicious": false,
-      "borderline": false,
-      "content_head": "Hello! How can I help you today?",
-      "ts": "2026-07-12T16:09:51.198382+00:00"
+      "slug": "anthropic",
+      "provider_name": "Anthropic",
+      "note": "re-pinned first-party 2026-07-22"
     },
     "checked": [
       {
@@ -772,7 +727,7 @@
   "anthropic/claude-opus-4.7": {
     "provider": {
       "order": [
-        "google-vertex"
+        "anthropic"
       ],
       "allow_fallbacks": false
     },
@@ -780,18 +735,9 @@
     "borderline": false,
     "reason": "pinned to google-vertex (quant=unknown, ptok=13; 0/7 providers inject, 7/7 clean)",
     "chosen": {
-      "model_id": "anthropic/claude-opus-4.7",
-      "slug": "google-vertex",
-      "provider_name": "Google",
-      "quant": "unknown",
-      "or_status": 0,
-      "prompt_tokens": 13,
-      "provider_served": "Google",
-      "error": null,
-      "suspicious": false,
-      "borderline": false,
-      "content_head": "Hi there! How can I help you today?",
-      "ts": "2026-07-12T16:09:51.632534+00:00"
+      "slug": "anthropic",
+      "provider_name": "Anthropic",
+      "note": "re-pinned first-party 2026-07-22"
     },
     "checked": [
       {
@@ -848,7 +794,7 @@
   "anthropic/claude-opus-4.8": {
     "provider": {
       "order": [
-        "google-vertex"
+        "anthropic"
       ],
       "allow_fallbacks": false
     },
@@ -856,18 +802,9 @@
     "borderline": false,
     "reason": "pinned to google-vertex (quant=unknown, ptok=8; 0/7 providers inject, 6/7 clean)",
     "chosen": {
-      "model_id": "anthropic/claude-opus-4.8",
-      "slug": "google-vertex",
-      "provider_name": "Google",
-      "quant": "unknown",
-      "or_status": 0,
-      "prompt_tokens": 8,
-      "provider_served": "Google",
-      "error": null,
-      "suspicious": false,
-      "borderline": false,
-      "content_head": "Hi there! How's it going? Is there something I can help you with, or would you j",
-      "ts": "2026-07-12T16:09:53.340030+00:00"
+      "slug": "anthropic",
+      "provider_name": "Anthropic",
+      "note": "re-pinned first-party 2026-07-22"
     },
     "checked": [
       {
@@ -939,7 +876,7 @@
   "anthropic/claude-sonnet-4.6": {
     "provider": {
       "order": [
-        "amazon-bedrock"
+        "anthropic"
       ],
       "allow_fallbacks": false
     },
@@ -947,18 +884,9 @@
     "borderline": false,
     "reason": "pinned to amazon-bedrock (quant=unknown, ptok=8; 0/8 providers inject, 8/8 clean)",
     "chosen": {
-      "model_id": "anthropic/claude-sonnet-4.6",
-      "slug": "amazon-bedrock",
-      "provider_name": "Amazon Bedrock",
-      "quant": "unknown",
-      "or_status": 0,
-      "prompt_tokens": 8,
-      "provider_served": "Amazon Bedrock",
-      "error": null,
-      "suspicious": false,
-      "borderline": false,
-      "content_head": "Hi there! How are you doing? Is there something I can help you with today? 😊",
-      "ts": "2026-07-12T16:09:54.119409+00:00"
+      "slug": "anthropic",
+      "provider_name": "Anthropic",
+      "note": "re-pinned first-party 2026-07-22"
     },
     "checked": [
       {

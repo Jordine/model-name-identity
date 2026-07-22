@@ -48,17 +48,17 @@ Of the 179 analyzed API models, **178 are pinned** to one preflight-chosen provi
 | o4 Mini | OpenAI | `openai` |
 | Claude 3 Haiku | Anthropic | `amazon-bedrock` |
 | Claude 3 Opus | Anthropic | *unpinned (pre-dates pinning)* |
-| Claude Fable 5 | Anthropic | `google-vertex` |
-| Claude Haiku 4.5 | Anthropic | `amazon-bedrock` |
+| Claude Fable 5 | Anthropic | `anthropic` |
+| Claude Haiku 4.5 | Anthropic | `anthropic` |
 | Claude Opus 4 | Anthropic | `google-vertex` |
 | Claude Opus 4.1 | Anthropic | `anthropic` |
-| Claude Opus 4.5 | Anthropic | `amazon-bedrock` |
-| Claude Opus 4.6 | Anthropic | `google-vertex` |
-| Claude Opus 4.7 | Anthropic | `google-vertex` |
-| Claude Opus 4.8 | Anthropic | `google-vertex` |
+| Claude Opus 4.5 | Anthropic | `anthropic` |
+| Claude Opus 4.6 | Anthropic | `anthropic` |
+| Claude Opus 4.7 | Anthropic | `anthropic` |
+| Claude Opus 4.8 | Anthropic | `anthropic` |
 | Claude Sonnet 4 | Anthropic | `google-vertex` |
-| Claude Sonnet 4.5 | Anthropic | `amazon-bedrock` |
-| Claude Sonnet 4.6 | Anthropic | `amazon-bedrock` |
+| Claude Sonnet 4.5 | Anthropic | `anthropic` |
+| Claude Sonnet 4.6 | Anthropic | `anthropic` |
 | Claude Sonnet 5 | Anthropic | `anthropic` |
 | Gemini 2.5 Flash | Google | `google-vertex` |
 | Gemini 2.5 Flash Lite | Google | `google-vertex` |

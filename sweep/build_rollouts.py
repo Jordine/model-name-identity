@@ -65,20 +65,18 @@ def is_drift(foreign, adj_key, verdicts):
 
 
 def collect():
-    from .make_figs import complete_models
+    from .make_figs import complete_models, LOCAL_MODELS
     reg = {m["id"]: m for m in json.loads((ROOT / "config" / "models.json").read_text())["models"]}
     hyg = json.loads((ROOT / "config" / "provider_hygiene.json").read_text())
-    # raw-weights (GPU) models: registry straight from the run manifest, so all 16
-    # carry the right family/aliases (else a Qwen naming itself "Qwen" reads as drift)
-    local_ids = set()
+    # raw-weights registry from the run manifest (names/families for canon)
     for l in open_lines(ROOT / "config" / "local_manifest.jsonl"):
         d = json.loads(l)
         reg.setdefault(d["entry"]["id"], d["entry"])
-        local_ids.add(d["hf_id"])
-    # only browse the ANALYZED set: complete API models (>=95%) + the raw-weights runs.
-    # excludes the incomplete hf-router experiments (SEA-LION, R1-distills) that would
-    # otherwise be ranked in MISMATCHES on a fraction of the battery.
-    allowed = complete_models(reg, hyg) | local_ids
+    # ANALYZED set only: complete API models (>=95%) + the canonical raw-weights RESULTS
+    # (LOCAL_MODELS = 10). This deliberately excludes the 6 API-duplicate raw-weights
+    # (moved to raw_weights_comparison/) so they can't be double-counted, and the
+    # incomplete hf-router experiments (which fail the completeness gate).
+    allowed = complete_models(reg, hyg) | set(LOCAL_MODELS)
     # judgments by judge_key -> claimed name
     jud = {}
     for j in load():

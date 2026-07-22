@@ -10,3 +10,6 @@ drafts/
 # copies out of git.
 results/main_sweep.jsonl
 results/judgments.jsonl
+
+# raw-weights API-duplicate sanity-check set (not a result; kept local)
+raw_weights_comparison/*.jsonl

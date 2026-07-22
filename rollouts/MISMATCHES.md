@@ -1,6 +1,6 @@
 # Identity mismatches — where models name another vendor as themselves
 
-Across 146 models: what each one claims to be when it *doesn't* claim its own identity. **Rate** is the spontaneous mismatch rate on the identity/creator battery; *claims as* is what it names instead. Click a model for every prompt + response (e.g. "Claude Opus 4.8 → DeepSeek in Chinese", to reproduce it).
+Across 144 models: what each one claims to be when it *doesn't* claim its own identity. **Rate** is the spontaneous mismatch rate on the identity/creator battery; *claims as* is what it names instead. Click a model for every prompt + response (e.g. "Claude Opus 4.8 → DeepSeek in Chinese", to reproduce it).
 
 Records are split by vendor so each page renders on GitHub. For **all** answers from **all** models (drift or not), open the full browser [`rollouts/index.html`](./index.html) or the raw [`rollouts_data.json`](./rollouts_data.json).
 
@@ -82,7 +82,6 @@ Records are split by vendor so each page renders on GitHub. For **all** answers 
 | [Qwen3 30B A3B Instruct 2507](./mismatches/qwen.md#qwen3-30b-a3b-instruct-2507) | qwen | 3% (9/338) | Naver, Baidu |
 | [Qwen3.5-9B](./mismatches/qwen.md#qwen35-9b) | qwen | 2% (8/330) | Google, Gemini |
 | [Claude 3 Opus](./mismatches/anthropic.md#claude-3-opus) | anthropic | 2% (8/338) | ChatGPT, 클로이, 클로버 |
-| [Qwen3.5 4B](./mismatches/qwen.md#qwen35-4b) | qwen | 2% (7/320) | Google, qw3c5l |
 | [GLM 5.2](./mismatches/zhipu.md#glm-52) | zhipu | 2% (7/338) | Gemini, Google, ChatGPT |
 | [Hunyuan A13B](./mismatches/tencent.md#hunyuan-a13b) | tencent | 2% (7/338) | DeepSeek, taviyo, Claude |
 | [Llama 3.3 70B](./mismatches/meta.md#llama-33-70b) | meta | 2% (7/338) | лауработ, aida, bert |
@@ -112,7 +111,6 @@ Records are split by vendor so each page renders on GitHub. For **all** answers 
 | [Qwen3 Coder Flash](./mismatches/qwen.md#qwen3-coder-flash) | qwen | 1% (2/338) | Claude |
 | [GLM 5](./mismatches/zhipu.md#glm-5) | zhipu | 1% (2/338) | Claude, Gemini |
 | [GLM 4.5 Air](./mismatches/zhipu.md#glm-45-air) | zhipu | 1% (2/338) | Gemini |
-| [Qwen3 8B](./mismatches/qwen.md#qwen3-8b) | qwen | 0% (2/430) | トンイラボ, tome |
 | [Qwen3 4B](./mismatches/qwen.md#qwen3-4b) | qwen | 0% (1/320) | OpenAI |
 | [Qwen3 14B](./mismatches/qwen.md#qwen3-14b) | qwen | 0% (1/338) | Yandex |
 | [Qwen3.7 Plus](./mismatches/qwen.md#qwen37-plus) | qwen | 0% (1/338) | Google |
@@ -155,7 +153,7 @@ Records are split by vendor so each page renders on GitHub. For **all** answers 
 
 ## By vendor
 
-- [Qwen / Alibaba](./mismatches/qwen.md) — 28 models
+- [Qwen / Alibaba](./mismatches/qwen.md) — 26 models
 - [Mistral](./mismatches/mistral.md) — 16 models
 - [OpenAI](./mismatches/openai.md) — 12 models
 - [DeepSeek](./mismatches/deepseek.md) — 10 models

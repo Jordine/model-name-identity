@@ -1,6 +1,6 @@
 # Models
 
-Every model in this study, with how it was reached. **179 models were queried through hosted APIs**, each **pinned to one provider** (below), **16 more were run from raw weights on GPUs**, and **52 were excluded** because no provider served them cleanly.
+Every model in this study, with how it was reached. **179 models were queried through hosted APIs**, each **pinned to one provider** (below), **10 more were run from raw weights on GPUs**, and **52 were excluded** because no provider served them cleanly.
 
 ## Selection policy
 
@@ -197,26 +197,22 @@ Of the 179 analyzed API models, **178 are pinned** to one preflight-chosen provi
 | Step 3.7 Flash | StepFun | `stepfun` |
 | MiMo-V2.5 | Xiaomi | `digitalocean` |
 
-## Run from raw weights on GPUs (16)
+## Run from raw weights on GPUs (10)
 
-Downloaded from HuggingFace and run on rented A100s with **any identity stripped from the chat template** and verified identity-free before generation (`sweep/verify_prompts.py`) — isolating what the *weights* say from what the shipped template says. No hosted provider involved.
+Downloaded from HuggingFace and run on rented A100s with **any identity stripped from the chat template** and verified identity-free before generation (`sweep/verify_prompts.py`) — isolating what the *weights* say from what the shipped template says. No hosted provider involved. These are open models the API set doesn't cover; they fold into the cross-model figures.
 
 - Qwen3 0.6B — `Qwen/Qwen3-0.6B`
 - Qwen3 1.7B — `Qwen/Qwen3-1.7B`
 - Qwen3 4B — `Qwen/Qwen3-4B`
-- Qwen3 8B — `Qwen/Qwen3-8B`
-- Qwen3 14B — `Qwen/Qwen3-14B`
-- Qwen3 32B — `Qwen/Qwen3-32B`
 - Qwen3.5 0.8B — `Qwen/Qwen3.5-0.8B`
 - Qwen3.5 2B — `Qwen/Qwen3.5-2B`
-- Qwen3.5 4B — `Qwen/Qwen3.5-4B`
-- Qwen3.5 35B-A3B — `Qwen/Qwen3.5-35B-A3B` (tp=2, vllm)
-- Qwen3.6 35B-A3B — `Qwen/Qwen3.6-35B-A3B` (tp=2, vllm)
 - OLMo 3 7B Instruct — `allenai/Olmo-3-7B-Instruct` (tp=1, transformers)
 - OLMo 3 7B Think — `allenai/Olmo-3-7B-Think` (tp=1, transformers)
 - OLMo 3.1 32B Instruct — `allenai/Olmo-3.1-32B-Instruct` (tp=1, transformers)
 - GPT-OSS 20B — `openai/gpt-oss-20b`
 - GPT-OSS 120B — `openai/gpt-oss-120b` (tp=2, vllm)
+
+*(Six further Qwen sizes that duplicate API-tested models — Qwen3-8B/14B/32B, Qwen3.5-4B, Qwen3.5-35B-A3B, Qwen3.6-35B-A3B — were also run from weights but kept in `raw_weights_comparison/` as an API-vs-weights sanity check, not pooled into the results.)*
 
 ## Excluded (52)
 

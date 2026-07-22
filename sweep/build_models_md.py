@@ -37,10 +37,11 @@ def bucket(reason):
 
 
 def main():
-    from .make_figs import complete_models
+    from .make_figs import complete_models, LOCAL_MODELS
     reg = {m["id"]: m for m in json.loads((ROOT / "config" / "models.json").read_text())["models"]}
     hyg = json.loads((ROOT / "config" / "provider_hygiene.json").read_text())
     gpu = [json.loads(l) for l in open(ROOT / "config" / "local_manifest.jsonl", encoding="utf-8")]
+    gpu = [m for m in gpu if m["hf_id"] in LOCAL_MODELS]   # results set only (6 API-dupes excluded)
 
     # the analyzed set = exactly what the figures use (>=95% complete, not excluded)
     tested = complete_models(reg, hyg)
@@ -117,12 +118,15 @@ def main():
     L.append(f"## Run from raw weights on GPUs ({len(gpu)})\n")
     L.append("Downloaded from HuggingFace and run on rented A100s with **any identity stripped from the chat template** "
              "and verified identity-free before generation (`sweep/verify_prompts.py`) — isolating what the *weights* "
-             "say from what the shipped template says. No hosted provider involved.\n")
+             "say from what the shipped template says. No hosted provider involved. These are open models the API set "
+             "doesn't cover; they fold into the cross-model figures.\n")
     for m in gpu:
         e = m["entry"]
         tag = f" (tp={m['tp']}, {m['backend']})" if m["tp"] > 1 or m["backend"] != "vllm" else ""
         L.append(f"- {e['name']} — `{m['hf_id']}`{tag}")
-    L.append("")
+    L.append("\n*(Six further Qwen sizes that duplicate API-tested models — Qwen3-8B/14B/32B, "
+             "Qwen3.5-4B, Qwen3.5-35B-A3B, Qwen3.6-35B-A3B — were also run from weights but kept in "
+             "`raw_weights_comparison/` as an API-vs-weights sanity check, not pooled into the results.)*\n")
 
     # --- excluded ---
     BKT = {"inject": "Provider injects a system prompt", "endpoint": "No clean / working endpoint",

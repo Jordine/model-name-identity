@@ -23,6 +23,7 @@ Files:
   cases), behind `sweep/bench_judge.py`.
 - `preflight_raw.jsonl` — per-provider hidden-system-prompt probe results feeding
   `config/provider_hygiene.json`.
-- `run_meta.jsonl`, `analysis_table.txt` — run metadata and the summary table.
+- `run_meta.jsonl` — per-model run metadata. (Summary numbers come from
+  `sweep/make_figs.py` + `sweep/explain.py`, not a static table.)
 
 Raw-weights sweep data lives in `../results_local/`.

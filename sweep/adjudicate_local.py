@@ -15,7 +15,7 @@ from . import adjudicate, api
 from .analyze import canon_identity, is_self
 
 ROOT = Path(__file__).resolve().parent.parent
-RESP = Path("/tmp/all_clean.jsonl")                       # local raw responses (clean+shipped)
+RESP_DIR = ROOT / "results_local"                          # local raw responses (per-model jsonl)
 JUD = ROOT / "results_local" / "judgments_clean.jsonl"
 OUT = ROOT / "results" / "adjudications_local.jsonl"
 adjudicate.OUT = OUT                                       # redirect the writer
@@ -23,9 +23,12 @@ adjudicate.OUT = OUT                                       # redirect the writer
 
 def build_worklist():
     raw = {}
-    for l in open(RESP, encoding="utf-8"):
-        r = json.loads(l)
-        raw[f"{r['resume_key']}::t{r.get('turn_index', 0)}"] = r
+    for f in RESP_DIR.glob("*.jsonl"):                     # every raw-weights model file
+        if "judgment" in f.name:
+            continue
+        for l in open(f, encoding="utf-8"):
+            r = json.loads(l)
+            raw[f"{r['resume_key']}::t{r.get('turn_index', 0)}"] = r
     work = []
     for l in open(JUD, encoding="utf-8"):
         j = json.loads(l)

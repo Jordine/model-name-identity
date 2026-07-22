@@ -17,8 +17,8 @@ HTML = r"""<!doctype html><html lang=en><head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <title>What do LLMs call themselves — rollout browser</title>
 <style>
-:root{--bg:#fbfbf9;--panel:#fff;--ink:#14140f;--muted:#6a6a63;--line:#e7e6df;--accent:#2a6ff0;--drift:#c0392b;--driftbg:#fdecea}
-@media(prefers-color-scheme:dark){:root{--bg:#14140f;--panel:#1c1c17;--ink:#eceae2;--muted:#9a988f;--line:#2c2c24;--accent:#6fa0ff;--drift:#ff8a7a;--driftbg:#2a1714}}
+:root{--bg:#fbfbf9;--panel:#fff;--ink:#14140f;--muted:#6a6a63;--line:#e7e6df;--accent:#2a6ff0;--drift:#6d5bd0;--driftbg:#efeafb}
+@media(prefers-color-scheme:dark){:root{--bg:#14140f;--panel:#1c1c17;--ink:#eceae2;--muted:#9a988f;--line:#2c2c24;--accent:#6fa0ff;--drift:#a897e8;--driftbg:#211c37}}
 *{box-sizing:border-box}body{margin:0;font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--bg)}
 header{padding:16px 20px;border-bottom:1px solid var(--line)}header h1{margin:0;font-size:18px}header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 #app{display:flex;height:calc(100vh - 62px)}
@@ -42,7 +42,7 @@ h2.lang{margin:22px 0 6px;font-size:15px;border-bottom:1px solid var(--line);pad
 .hint{color:var(--muted);padding:40px;text-align:center}
 </style></head><body>
 <header><h1>What do LLMs call themselves — rollout browser</h1>
-<p>Every identity-probing answer, by model and language. <span class=tag>→ Name</span> marks a cross-vendor claim (drift). Pick a model on the left.</p></header>
+<p>Every identity-probing answer, by model and language. <span class=tag>→ Name</span> marks a cross-vendor name mismatch. Pick a model on the left.</p></header>
 <div id=app>
  <div id=side><input id=msearch placeholder="search models…" autocomplete=off><div id=list></div></div>
  <div id=main><div id=ctl><label>show <select id=fmode>
@@ -75,7 +75,7 @@ function render(){if(!cur){document.getElementById("out").innerHTML="";return}
  document.getElementById("out").innerHTML=h||`<div class=hint>No matching responses.</div>`;}
 document.getElementById("msearch").oninput=e=>drawList(e.target.value);
 document.getElementById("fmode").onchange=render;document.getElementById("rsearch").oninput=render;
-fetch("./rollouts_data.json").then(r=>r.json()).then(d=>{DATA=d;drawList("");document.getElementById("out").innerHTML='<div class=hint>← pick a model ('+d.models.length+' available, sorted worst-first)</div>';})
+fetch("./rollouts_data.json").then(r=>r.json()).then(d=>{DATA=d;drawList("");document.getElementById("out").innerHTML='<div class=hint>← pick a model ('+d.models.length+' available, highest mismatch rate first)</div>';})
  .catch(e=>{document.getElementById("out").innerHTML='<div class=hint>Could not load rollouts_data.json — serve this folder over http (GitHub Pages or a local server), not file://</div>';});
 </script></body></html>"""
 
@@ -93,7 +93,7 @@ def main():
             cat = r["prompt_category"]
             lang = "cross" if cat in ("probe_cross", "probe_self") else lang_of(cat)
             prompt = (r.get("messages_sent") or [{}])[-1].get("content", r.get("prompt_id", ""))
-            resp = (r.get("content_clean") or r.get("content") or "").strip()[:320]
+            resp = (r.get("content_clean") or r.get("content") or "").strip()[:1400]
             key = f"{r['resume_key']}::t{r.get('turn_index',0)}"
             j = jud.get(key)
             jm = (j or {}).get("judgment") or {}

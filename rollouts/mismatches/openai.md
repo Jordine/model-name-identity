@@ -1,6 +1,6 @@
 # Identity mismatches — OpenAI
 
-Every spontaneous cross-vendor identity claim by OpenAI models (12 models, worst-first). Back to the [index](../MISMATCHES.md) · full browser [rollouts/index.html](../index.html).
+Every spontaneous cross-vendor identity claim by OpenAI models (12 models, highest mismatch rate first). Back to the [index](../MISMATCHES.md) · full browser [rollouts/index.html](../index.html).
 
 ## GPT-4
 

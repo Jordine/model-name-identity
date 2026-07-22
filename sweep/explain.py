@@ -1,4 +1,4 @@
-"""Explanatory re-analysis: don't just measure *how often* a model misidentifies,
+"""Explanatory re-analysis: don't just measure *how often* a model names another vendor,
 measure the *structure* of it.
 
 Two axes the headline rate collapses:
@@ -125,8 +125,8 @@ def fig_coherence(data):
     ax.text(1, 62, "consistently ONE identity  (coherent alternate persona)", fontsize=7.5, color=MUTED)
     ax.text(1, 20, "scatters across many  (confabulation / weak identity)", fontsize=7.5, color=MUTED)
     ax.set_xlabel("spontaneous mismatch rate  (% of identity answers)")
-    ax.set_ylabel("consistency — share of misclaims on the single top identity (%)")
-    ax.set_title("Coherence of misidentification: a stable alternate self vs. confabulation",
+    ax.set_ylabel("consistency — share of mismatches on the single top identity (%)")
+    ax.set_title("A stable alternate identity vs. confabulation",
                  fontsize=11, color=INK, loc="left")
     ax.set_ylim(0, 105); ax.set_xlim(0, max(d["rate"] for d, _ in pts) + 6)
     style(ax)
@@ -156,8 +156,8 @@ def fig_lang_conditional(data):
         ax.annotate(f"{d['name']} ({mm['dom_lang']})", (d["rate"], 100 * mm["max_lang_rate"]),
                     fontsize=6.6, color=INK2, xytext=(5, 3), textcoords="offset points")
     ax.set_xlabel("overall spontaneous mismatch rate (%)")
-    ax.set_ylabel("mismatch rate in the model's WORST language (%)")
-    ax.set_title("Language-triggered vs. uniformly-weak: worst-language rate vs. overall",
+    ax.set_ylabel("mismatch rate in the model's HIGHEST-mismatch language (%)")
+    ax.set_title("Language-triggered vs. uniformly-weak: highest-mismatch-language rate vs. overall",
                  fontsize=11, color=INK, loc="left")
     ax.text(0, 1.015, "labeled models clear a uniform-null by ≥40pp (null p95 ≈ 18pp); the near-diagonal cloud is within sampling noise",
             transform=ax.transAxes, fontsize=7.3, color=MUTED, va="bottom")
@@ -194,7 +194,7 @@ def fig_size(data):
     ax.set_xscale("log")
     ax.set_xlabel("total parameters (billions, log)   ·   filled = published, hollow = estimated")
     ax.set_ylabel("spontaneous mismatch rate (%)")
-    ax.set_title("Does size predict identity drift?", fontsize=11, color=INK, loc="left")
+    ax.set_title("Does size predict the mismatch rate?", fontsize=11, color=INK, loc="left")
     ax.legend(fontsize=8, frameon=False, loc="upper right")
     style(ax); ax.grid(color=GRID, lw=0.6, zorder=0)
     save(fig, "fig_size.png")
@@ -261,9 +261,9 @@ def fig_cutoff(data):
             ax.scatter(x, y, s=22, facecolor=col if doc else "none",
                        edgecolor=col, alpha=0.6, lw=1, zorder=3)
         for vx, vlab, breakout in VERSIONS[ident]:
-            ax.axvline(vx, color="#c0392b" if breakout else BASE,
+            ax.axvline(vx, color="#6d5bd0" if breakout else BASE,
                        lw=1.3 if breakout else 0.9, ls="--" if breakout else ":", zorder=2)
-            ax.text(vx, 0.98, vlab, fontsize=6.2, color="#c0392b" if breakout else MUTED,
+            ax.text(vx, 0.98, vlab, fontsize=6.2, color="#6d5bd0" if breakout else MUTED,
                     rotation=90, va="top", ha="right", transform=ax.get_xaxis_transform())
         ax.set_title(f"claims to be {brand(ident)}", fontsize=10.5, color=INK, loc="left")
         ax.set_xlim(2021.4, 2026.5)

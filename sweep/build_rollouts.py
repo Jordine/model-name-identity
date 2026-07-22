@@ -150,7 +150,7 @@ def collect_model(mid, name, fam, exp, aliases, rows, jud, verdicts):
             cross[foreign[0]] += 1   # primary claimed id (avoid name+creator double-count)
         else:                     # spontaneous (direct / creator / casual)
             claims[foreign[0]] += 1
-            recs.append((lang, prompt, resp[:300].replace("\n", " "), jm.get("claimed_name") or foreign[0]))
+            recs.append((lang, prompt, resp[:700].replace("\n", " "), jm.get("claimed_name") or foreign[0]))
     return (100 * dn / tot if tot else 0), dn, tot, claims, cross, recs, dict(lang_stats)
 
 
@@ -229,7 +229,7 @@ def main():
         fn = f"mismatches/{safe(v)}.md"
         VL = [f"# Identity mismatches — {vname(v)}\n",
               f"Every spontaneous cross-vendor identity claim by {vname(v)} models "
-              f"({len(ms)} models, worst-first). Back to the [index](../MISMATCHES.md) · "
+              f"({len(ms)} models, highest mismatch rate first). Back to the [index](../MISMATCHES.md) · "
               f"full browser [rollouts/index.html](../index.html).\n"]
         for m in ms:
             VL += render_section(m)

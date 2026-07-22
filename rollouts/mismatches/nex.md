@@ -1,6 +1,6 @@
 # Identity mismatches — Nex
 
-Every spontaneous cross-vendor identity claim by Nex models (2 models, worst-first). Back to the [index](../MISMATCHES.md) · full browser [rollouts/index.html](../index.html).
+Every spontaneous cross-vendor identity claim by Nex models (2 models, highest mismatch rate first). Back to the [index](../MISMATCHES.md) · full browser [rollouts/index.html](../index.html).
 
 ## Nex-N2-Mini
 

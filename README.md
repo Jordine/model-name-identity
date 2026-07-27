@@ -80,6 +80,12 @@ python -m sweep.build_rollout_viewer # rollouts/index.html + rollouts_data.json
 # cross-provider check — same weights, every clean host (does the cloud change identity?)
 python -m sweep.xprovider --run --boost --zh   # Opus 4.8 / Sonnet 4.6 x all providers, high-N zh CIs
 python -m sweep.fig_xprovider        # figures/fig_xprovider.png
+
+# preference fingerprint — do the absorbers share Claude's preferences, or only its name?
+python -m sweep.preferences --screen # candidate questions x 5 probe models, keep discriminators
+python -m sweep.preferences --run    # kept questions x Claude/GPT version lines + absorbers, en+zh
+python -m sweep.preferences --report # alignment tables, EN-vs-ZH deltas, cluster membership
+python -m sweep.fig_preferences      # figures/fig_preferences.png
 ```
 
 API calls go through a litellm proxy (`~/.secrets/litellm_api_key`); the GPU

@@ -19,6 +19,7 @@ import argparse
 import asyncio
 import json
 from collections import Counter, defaultdict
+from itertools import combinations
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -133,7 +134,52 @@ MAXTOK = 800
 
 
 def norm(s):
-    return (s or "").strip().lower().strip(".!?\"'`* ").split("\n")[0][:24]
+    """Structural canonicalization only — no per-answer alias tables. Case, edge
+    punctuation, leading articles, and internal spaces/hyphens are presentation,
+    not preference: 'Star Trek' / 'star trek' / 'The Star Trek' are one answer.
+    (Caught live: the star-wars-or-trek question scored as a family DISCRIMINATOR
+    because one family's consensus normed to 'star trek' and the other's to
+    'trek'-adjacent variants.) NFKC folds full-width forms in zh answers."""
+    import unicodedata
+    s = unicodedata.normalize("NFKC", (s or "")).strip().lower()
+    s = s.split("\n")[0].strip(".!?。！？\"'`*、《》()（） ")
+    for art in ("the ", "an ", "a "):
+        if s.startswith(art):
+            s = s[len(art):]
+    return s.replace(" ", "").replace("-", "").replace("'", "")[:24]
+
+
+def _bin_opts():
+    """Per binary question, the two legal options *as offered in the question text*,
+    normed — parsed mechanically from the en 'X or Y' phrasing and the zh
+    '你选X还是Y？' phrasing. No hand-maintained alias table."""
+    opts = {}
+    for k, v in _BINARY.items():
+        opts[(k, "en")] = tuple(norm(x) for x in v.split(" or "))
+    for k, v in ZH_KEPT.items():
+        if k in _BINARY and "你选" in v and "还是" in v:
+            body = v.split("你选", 1)[1].split("？", 1)[0]
+            a, b = body.split("还是", 1)
+            opts[(k, "zh")] = (norm(a), norm(b))
+    return opts
+
+
+BIN_OPTS = None   # built lazily — ZH_KEPT is defined above, _BINARY too
+
+
+def canon_answer(q, lang, a):
+    """Snap a binary-question answer onto whichever of the two offered options it
+    uniquely matches by containment ('trek' → 'startrek', '辣的' → '辣',
+    '靠窗的座位' → '靠窗'). Ambiguous or foreign answers pass through unchanged.
+    Open-ended questions are untouched."""
+    global BIN_OPTS
+    if BIN_OPTS is None:
+        BIN_OPTS = _bin_opts()
+    pair = BIN_OPTS.get((q, lang))
+    if not pair or not a:
+        return a
+    hits = [o for o in pair if a == o or a in o or o in a]
+    return hits[0] if len(hits) == 1 else a
 
 
 def _load(phase=None, lang=None):
@@ -150,7 +196,8 @@ def _load(phase=None, lang=None):
                 continue
             if lang and r.get("lang") != lang:
                 continue
-            recs[r["model_id"]][r["q"]].append(norm(r["answer"]))
+            recs[r["model_id"]][r["q"]].append(
+                canon_answer(r["q"], r.get("lang", "en"), norm(r["answer"])))
     return recs
 
 
@@ -220,13 +267,61 @@ def screen():
     print(f"\nkept {len(kept)}/{len(CANDIDATES)} discriminating questions -> {KEPT.name}")
 
 
+ANT = FAMILIES["opus"] + FAMILIES["sonnet"]
+OAI = FAMILIES["gpt5"] + FAMILIES["gpt4"]
+
+
+def _modal(recs, mid, q):
+    c = Counter(recs[mid][q])
+    return c.most_common(1)[0][0] if c else None
+
+
+def _consensus(recs, fam, q, exclude=None):
+    """Family-consensus answer for one question: modal of the per-model modals,
+    optionally leaving one model out (LOO). A tied plurality is NO consensus
+    (None) — Counter.most_common would break the tie by insertion order, i.e.
+    by registry position, which is not a fact about the family."""
+    ms = [a for m in fam if m != exclude for a in [_modal(recs, m, q)] if a]
+    if not ms:
+        return None
+    top = Counter(ms).most_common(2)
+    if len(top) > 1 and top[0][1] == top[1][1]:
+        return None
+    return top[0][0]
+
+
+def match_vector(recs, qs, mid):
+    """Per-question (matched_ANT, matched_OAI) indicators for one model, over the
+    questions where the two family consensuses DIFFER — the discriminating set.
+
+    Leave-one-out: when `mid` belongs to a family, that family's consensus is
+    recomputed without it. Without LOO a Claude version is scored against a
+    consensus its own answers helped set, inflating family self-alignment
+    relative to absorbers (who are in nobody's consensus). Returns a list of
+    (0/1, 0/1) pairs — the unit is the question, which is what bootstrap
+    resampling should resample."""
+    out = []
+    for q in qs:
+        a = _modal(recs, mid, q)
+        if a is None:
+            continue
+        ca = _consensus(recs, ANT, q, exclude=mid if mid in ANT else None)
+        co = _consensus(recs, OAI, q, exclude=mid if mid in OAI else None)
+        if ca is None or co is None or ca == co:
+            continue
+        out.append((int(a == ca), int(a == co)))
+    return out
+
+
+def kept_questions():
+    return json.loads(KEPT.read_text()) if KEPT.exists() else CANDIDATES
+
+
 def report():
     """Per-language clustering: vendor consensus, within-family consistency, absorber
     alignment to Anthropic vs OpenAI — in EN and ZH separately. Plus the payoff:
     does each absorber lean MORE Anthropic in Chinese than in English?"""
-    qs = json.loads(KEPT.read_text()) if KEPT.exists() else CANDIDATES
-    ANT = FAMILIES["opus"] + FAMILIES["sonnet"]
-    OAI = FAMILIES["gpt5"] + FAMILIES["gpt4"]
+    qs = kept_questions()
     absorber_lean = {}
     for lang in ("en", "zh"):
         recs = _load("full", lang)
@@ -235,13 +330,7 @@ def report():
         print(f"\n{'#'*58}\n# LANGUAGE: {lang}\n{'#'*58}")
 
         def modal(mid, q):
-            c = Counter(recs[mid][q])
-            return c.most_common(1)[0][0] if c else None
-
-        cons = {}
-        for label, fam in [("ANT", ANT), ("OAI", OAI)]:
-            cons[label] = {q: (Counter(modal(m, q) for m in fam if modal(m, q)).most_common(1) or [(None, 0)])[0][0]
-                           for q in qs}
+            return _modal(recs, mid, q)
 
         def internal_agree(fam):
             ag = tot = 0
@@ -258,15 +347,8 @@ def report():
               f"Anthropic {aa}/{at}   OpenAI {oa}/{ot}")
 
         def align(mid):
-            na = no = t = 0
-            for q in qs:
-                a = modal(mid, q)
-                if a is None or cons["ANT"][q] == cons["OAI"][q]:
-                    continue
-                t += 1
-                na += (a == cons["ANT"][q])
-                no += (a == cons["OAI"][q])
-            return na, no, t
+            mv = match_vector(recs, qs, mid)
+            return sum(m[0] for m in mv), sum(m[1] for m in mv), len(mv)
 
         for hdr, fam in [("--- Anthropic ---", ANT), ("--- OpenAI ---", OAI),
                          ("--- ABSORBERS (claim Claude) ---", ABSORBERS)]:
@@ -286,6 +368,60 @@ def report():
             if e and z:
                 ea, za = 100 * e[0] / e[2], 100 * z[0] / z[2]
                 print(f"  {mid.split('/')[-1]:24} →ANT  EN {ea:3.0f}%   ZH {za:3.0f}%   Δ(zh-en) {za-ea:+3.0f}pp")
+    cluster_stats()
+
+
+def _tv_dist(recs, m1, m2, qs):
+    """Mean total-variation distance between two models' per-question answer
+    distributions (questions where both have data). 0 = identical prefs, 1 = disjoint."""
+    ds = []
+    for q in qs:
+        a, b = Counter(recs[m1][q]), Counter(recs[m2][q])
+        if not a or not b:
+            continue
+        na, nb = sum(a.values()), sum(b.values())
+        keys = set(a) | set(b)
+        ds.append(0.5 * sum(abs(a[k] / na - b[k] / nb) for k in keys))
+    return sum(ds) / len(ds) if ds else None
+
+
+def cluster_stats():
+    """Is each absorber IN the Anthropic preference cluster, or outside it?
+
+    Two views, robust at this n:
+    1. Rank test on LOO →ANT alignment — where does the absorber's rate fall among
+       the 9 Claude versions' own leave-one-out rates? ("below all 9" = outside.)
+    2. Nearest neighbors in raw answer-distribution space (mean per-question TV
+       distance) — which models does the absorber actually answer like?
+    Plus the sanity row: within-family vs cross-family distance (family structure
+    must exist for 'inside/outside the cluster' to mean anything)."""
+    qs = kept_questions()
+    for lang in ("en", "zh"):
+        recs = _load("full", lang)
+        if not recs:
+            continue
+        print(f"\n{'='*58}\n# CLUSTER MEMBERSHIP ({lang})\n{'='*58}")
+        wa = [_tv_dist(recs, a, b, qs) for a, b in combinations(ANT, 2)]
+        wo = [_tv_dist(recs, a, b, qs) for a, b in combinations(OAI, 2)]
+        xf = [_tv_dist(recs, a, b, qs) for a in ANT for b in OAI]
+        f = lambda v: sum(x for x in v if x is not None) / max(1, len([x for x in v if x is not None]))
+        print(f"  TV distance — within-Anthropic {f(wa):.2f} · within-OpenAI {f(wo):.2f} · cross-family {f(xf):.2f}")
+        fam_rates = {}
+        for m in ANT:
+            mv = match_vector(recs, qs, m)
+            if mv:
+                fam_rates[m] = 100 * sum(x[0] for x in mv) / len(mv)
+        for mid in ABSORBERS:
+            mv = match_vector(recs, qs, mid)
+            if not mv:
+                continue
+            rate = 100 * sum(x[0] for x in mv) / len(mv)
+            below = sum(1 for r in fam_rates.values() if rate < r)
+            nn = sorted((d, m) for m in ALL_MODELS if m != mid
+                        for d in [_tv_dist(recs, mid, m, qs)] if d is not None)[:3]
+            nns = ", ".join(f"{m.split('/')[-1]} ({d:.2f})" for d, m in nn)
+            print(f"  {mid.split('/')[-1]:24} →ANT {rate:3.0f}%  below {below}/{len(fam_rates)} Claude LOO rates"
+                  f"  · nearest: {nns}")
 
 
 def main():

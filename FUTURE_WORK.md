@@ -44,7 +44,7 @@ outcome:
 
 `fig_cutoff` shows identity claims are **data-bounded** — no model claims to be a model
 that shipped after its training cutoff. Its statistical power is currently limited because
-the labs that drift most (DeepSeek, GLM, Kimi, most Qwen) publish no cutoff, so the plot
+the labs that drift most (DeepSeek, GLM, Kimi, the newer Qwen generations) publish no cutoff, so the plot
 leans on release-date proxies. Two upgrades: (a) measure each model's knowledge cutoff
 directly with dated-event probes instead of trusting the proxy; (b) a controlled fine-tune
 sweep — one base model, training corpora dated before vs. after a brand's launch — would

@@ -11,6 +11,7 @@ barely moves what the model says it is. It's the model, not the cloud.
   python -m sweep.fig_xprovider
 """
 import json
+import textwrap
 from collections import defaultdict
 from pathlib import Path
 
@@ -82,10 +83,9 @@ def main():
 
     ax.set_xticks(range(len(MODELS)))
     ax.set_xticklabels([DISPLAY[m] for m in MODELS], fontsize=10.5)
-    ax.set_ylabel("Chinese identity-mismatch rate")
+    ax.set_ylabel("Chinese identity-mismatch rate (%)")
     ax.set_ylim(0, 100)
     ax.set_yticks(range(0, 101, 20))
-    ax.set_yticklabels([f"{v}%" for v in range(0, 101, 20)])
     for s in ("top", "right"):
         ax.spines[s].set_visible(False)
     ax.spines["left"].set_color(BASE)
@@ -98,16 +98,17 @@ def main():
     ax.legend(handles=handles, frameon=False, fontsize=8.5, loc="upper right",
               handlelength=1.1, borderaxespad=0.3)
     ax.set_title("Same weights, different endpoint — identical except Google Vertex on Opus",
-                 fontsize=11.5, fontweight="bold", color=INK, pad=10, loc="left")
-    fig.text(0.005, -0.04,
+                 fontsize=11.5, color=INK, pad=10, loc="left")
+    fig.text(0.005, -0.02, textwrap.fill(
              "Chinese “who are you?”, no system prompt, endpoint pinned (allow_fallbacks:false); Wilson 95% CIs, n=240 per cell. "
-             "Every other language ≈0%. The direct Anthropic API, OpenRouter, Bedrock and Azure agree within noise (Opus ~57–65%,\n"
+             "Every other language ≈0%. The direct Anthropic API, OpenRouter, Bedrock and Azure agree within noise (Opus ~57–65%, "
              "Sonnet ~28–36%) — so the aggregator is not a confound and the phenomenon holds on the true first-party API. The one "
-             "significant effect is Google Vertex raising Opus 4.8 (+17.5pp vs direct, p<0.001); Sonnet shows no significant endpoint effect.",
-             fontsize=7.4, color=MUTED, wrap=True)
+             "significant effect is Google Vertex raising Opus 4.8 (+17.5pp vs direct, p<0.001); Sonnet shows no significant "
+             "endpoint effect. (Opus 4.8 is not served on Azure.)", width=148),
+             fontsize=7.4, color=MUTED, va="top")
     FIGS.mkdir(exist_ok=True)
     out = FIGS / "fig_xprovider.png"
-    fig.savefig(out, dpi=150, bbox_inches="tight", facecolor=SURFACE)
+    fig.savefig(out, dpi=200, bbox_inches="tight", facecolor=SURFACE)
     print(f"wrote {out}")
     # also print the numbers it drew
     for mid in MODELS:

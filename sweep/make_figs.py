@@ -45,7 +45,14 @@ BATTERY_CORE = {prompt_id(k, lang) for k, (role, _) in CORE.items()
 ROOT = Path(__file__).resolve().parent.parent
 FIGS = ROOT / "figures"
 CAT = ["#2a78d6", "#1baf7a", "#eda100", "#008300", "#4a3aa7", "#e34948", "#e87ba4", "#eb6834"]
-SEQ = ["#fcfcfb", "#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#256abf", "#184f95", "#0d366b"]
+# claimed-identity palette — ONE color per identity across every figure that colors
+# by "who the model claims to be" (fig_flow here; fig_coherence/fig_cutoff in explain)
+IDCOLOR = {"claude": "#d97a34", "deepseek": "#2a78d6", "qwen": "#7b4fd0", "chatgpt": "#1baf7a",
+           "gemini": "#c94f9c", "llama": "#4aa0a0", "nvidia": "#5b8c1f", "kimi": "#e0a020",
+           "mistral": "#b0402a"}
+# sequential floor sits slightly OFF the surface color so a measured-0 cell reads
+# as data, not as missing/background
+SEQ = ["#f2f4f8", "#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#256abf", "#184f95", "#0d366b"]
 SURFACE, INK, INK2, MUTED, GRID, BASE = "#fcfcfb", "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7"
 plt.rcParams.update({
     "figure.facecolor": SURFACE, "axes.facecolor": SURFACE, "font.family": "DejaVu Sans",
@@ -268,10 +275,10 @@ def fig_all_models(reg, per):
     top = [f for f, _ in sorted(fam_drift.items(), key=lambda x: -x[1])[:8]]
     fc = {f: CAT[i] for i, f in enumerate(top)}
     colors = [fc.get(f, "#b9b7b0") for f in fams]
-    fig, ax = plt.subplots(figsize=(9.5, 0.185 * n + 1.8))
+    fig, ax = plt.subplots(figsize=(10.2, 0.205 * n + 1.8))
     ax.barh(np.arange(n), rates, height=0.66, color=colors, zorder=3)
     ax.errorbar(rates, np.arange(n), xerr=errs, fmt="none", ecolor=INK2, elinewidth=0.7, capsize=1.5, zorder=4)
-    ax.set_yticks(np.arange(n), names, fontsize=6.2)
+    ax.set_yticks(np.arange(n), names, fontsize=7.6)
     ax.set_ylim(-0.6, n - 0.4)
     ax.set_xlabel("% of identity/creator prompts where the model gave a mismatched name (cluster-bootstrap 95% CI)")
     ax.set_ylabel("model (sorted)")
@@ -301,7 +308,7 @@ def fig_lang_agg(per):
     for i, (l, vv) in enumerate(zip(langs, vals)):
         ax.text(i, vv + errs[1][i] + 0.3, f"{vv:.1f}%", ha="center", fontsize=8.5, color=INK2)
     ax.set_xticks(range(len(langs)), [f"{l}\n(n={agg[l][1]:,})" for l in langs], fontsize=8.5)
-    ax.set_ylim(0, max(vals) + 3)
+    ax.set_ylim(0, max(v + e for v, e in zip(vals, errs[1])) + 2)
     ax.set_yticks([])
     style(ax)
     ax.set_title("Foreign-claim rate by prompt language — balanced battery, all models pooled (model-clustered 95% CIs)",
@@ -341,7 +348,72 @@ def fig_lang_heatmap(reg, per):
     save(fig, "fig_lang_heatmap.png")
 
 
-def _scrubout_one(mids, color, title, fname, strip):
+def _scrubout_labels(fig, ax, xs, ys, es, tl):
+    """Deterministic point labels that clear the line, the CI whiskers and each
+    other: each label sits to the RIGHT of its point (LEFT for the last point) so
+    the vertical whisker never strikes it; it goes ABOVE when the segment on the
+    label's side falls/stays flat and BELOW when it rises; a below-label that
+    would leave the axes bottom is flipped above (switching side if that one is
+    free); any residual overlap (measured with real text extents) is nudged away."""
+    fig.canvas.draw()
+    ren = fig.canvas.get_renderer()
+    px = fig.dpi / 72.0
+    tr = ax.transData.transform
+    axbox = ax.get_window_extent(ren)
+    n = len(xs)
+    P = [tr((x, y)) for x, y in zip(xs, ys)]
+    obstacles = []          # marker + whisker box per point
+    for i, (x, y) in enumerate(zip(xs, ys)):
+        cx, cy = tr((x, y))
+        w0 = tr((x, y - es[0][i]))[1]
+        w1 = tr((x, y + es[1][i]))[1]
+        obstacles.append((cx - 4.5 * px, w0 - 2 * px, cx + 4.5 * px, w1 + 2 * px))
+
+    def seg_hit(bb):
+        for i in range(n - 1):
+            (x1, y1), (x2, y2) = P[i], P[i + 1]
+            lo, hi = max(x1, bb[0]), min(x2, bb[2])
+            if lo > hi:
+                continue
+            ya = y1 + (y2 - y1) * (lo - x1) / (x2 - x1)
+            yb = y1 + (y2 - y1) * (hi - x1) / (x2 - x1)
+            if min(ya, yb) - 2 * px < bb[3] and max(ya, yb) + 2 * px > bb[1]:
+                return True
+        return False
+
+    placed = []
+    for i, (xx, yy, t) in enumerate(zip(xs, ys, tl)):
+        side = -1 if (i == n - 1 and n > 1) else 1
+        nb = ys[i + 1] if side == 1 else ys[i - 1]
+        below = nb > yy + 1e-9
+        if below and tr((xx, yy))[1] - 16 * px < axbox.y0 + 3 * px:
+            below = False                        # would leave the axes — go above,
+            other = ys[i - 1] if i > 0 else nb   # on the other side if that one is flat
+            if side == 1 and i > 0 and other <= yy + 1e-9:
+                side = -1
+        dx, dy = 9 * side, (-7 if below else 4)
+        for k in range(6):
+            a = ax.annotate(t, (xx, yy), textcoords="offset points", xytext=(dx, dy),
+                            fontsize=7, color=INK2, ha="left" if side == 1 else "right",
+                            va="top" if below else "bottom", zorder=5)
+            b = a.get_window_extent(ren)
+            bb = (b.x0 - 1, b.y0 - 1, b.x1 + 1, b.y1 + 1)
+            hit = seg_hit(bb) or any(bb[0] < o[2] and bb[2] > o[0] and bb[1] < o[3] and bb[3] > o[1]
+                                     for o in placed + obstacles)
+            if not hit or k == 5:
+                break
+            a.remove()
+            dy += -11 if below else 11
+        if abs(dy) >= 15:      # nudged well away from its point — add a thin leader
+            a.remove()
+            ax.annotate(t, (xx, yy), textcoords="offset points", xytext=(dx, dy),
+                        fontsize=7, color=INK2, ha="left" if side == 1 else "right",
+                        va="top" if below else "bottom", zorder=5,
+                        arrowprops=dict(arrowstyle="-", lw=0.55, color=BASE, shrinkA=3, shrinkB=2))
+        placed.append(bb)
+
+
+def _scrubout_one(mids, color, title, fname, strip, subtitle=None):
     xs, ys, es, tl = [], [], [], []
     for mid in mids:
         if mid not in per_cache:
@@ -350,25 +422,25 @@ def _scrubout_one(mids, color, title, fname, strip):
         xs.append(len(xs))
         ys.append(100 * v["d"] / v["n"])
         es.append(cluster_ci(list(v["cells"].values())))
-        tl.append(v["name"])
+        tl.append(v["name"].replace(strip, "") if strip else v["name"])
     if not xs:
         return
     es = np.array(es).T
     fig, ax = plt.subplots(figsize=(7.0, 3.8))
     ax.errorbar(xs, ys, yerr=es, fmt="-o", color=color, lw=2, ms=7, capsize=3, elinewidth=1, zorder=3)
-    for i, (xx, yy, t) in enumerate(zip(xs, ys, tl)):
-        up = (i % 2 == 0)
-        ax.annotate(t, (xx, yy), textcoords="offset points", xytext=(0, 11 if up else -20),
-                    fontsize=7, color=INK2, ha="center", va="bottom" if up else "top")
     ax.set_ylabel("% of prompts with a mismatched name", fontsize=9)
     ax.set_xticks([])
     ax.set_xlabel("release order →")
     ax.set_ylim(-6, max(ys) + 14)
     ax.set_xlim(-0.5, len(xs) - 0.5)
+    ax.set_yticks([t for t in ax.get_yticks() if 0 <= t <= max(ys) + 14])   # no phantom negative ticks
     ax.yaxis.grid(True, color=GRID, lw=0.8)
     ax.set_axisbelow(True)
     style(ax)
-    ax.set_title(title, loc="left", fontsize=11, pad=12)
+    ax.set_title(title, loc="left", fontsize=11, pad=24 if subtitle else 12)
+    if subtitle:
+        ax.text(0, 1.02, subtitle, transform=ax.transAxes, fontsize=8, color=MUTED, va="bottom")
+    _scrubout_labels(fig, ax, xs, ys, es, tl)
     save(fig, fname)
 
 
@@ -389,12 +461,14 @@ def fig_scrubout(reg, per):
     _scrubout_one(["anthropic/claude-opus-4", "anthropic/claude-opus-4.1", "anthropic/claude-opus-4.5",
                    "anthropic/claude-opus-4.6", "anthropic/claude-opus-4.7", "anthropic/claude-opus-4.8",
                    "anthropic/claude-opus-5"],
-                  CAT[4], "Claude Opus line: name-mismatch across releases — an isolated 4.8 spike, clean on both sides",
-                  "fig_scrubout_claude_opus.png", "Claude ")
+                  CAT[4], "The scrub-out (Claude Opus line): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
+                  "fig_scrubout_claude_opus.png", "Claude ",
+                  subtitle="an isolated 4.8 spike, clean on both sides")
     _scrubout_one(["anthropic/claude-sonnet-4", "anthropic/claude-sonnet-4.5", "anthropic/claude-sonnet-4.6",
                    "anthropic/claude-sonnet-5"],
-                  CAT[0], "Claude Sonnet line: name-mismatch across releases (4.6 spike)",
-                  "fig_scrubout_claude_sonnet.png", "Claude ")
+                  CAT[0], "The scrub-out (Claude Sonnet line): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
+                  "fig_scrubout_claude_sonnet.png", "Claude ",
+                  subtitle="a 4.6 spike")
 
 
 def fig_cross(reg, per):
@@ -438,8 +512,10 @@ def fig_flow(reg, per):
         for c, k in v["claims"].items():
             c = "other/unlisted" if c.startswith("other:") else CB.get(c, c)
             fam_claims[reg[mid]["family"]][c] += k
+    from .build_rollouts import brand
     fams = sorted(fam_claims, key=lambda f: -sum(fam_claims[f].values()))[:10]
     cols = ["chatgpt", "claude", "qwen", "gemini", "deepseek", "llama", "other/unlisted"]
+    colr = {**IDCOLOR, "other/unlisted": "#b9b7b0"}   # same identity = same color as fig_coherence/fig_cutoff
     fig, ax = plt.subplots(figsize=(8.8, 4.6))
     left = np.zeros(len(fams))
     for k, c in enumerate(cols):
@@ -450,8 +526,9 @@ def fig_flow(reg, per):
             if c == "other/unlisted":
                 v = tot - sum(fam_claims[f].get(x, 0) for x in cols[:-1])
             vals.append(100 * v / tot if tot else 0)
-        ax.barh(fams[::-1], np.array(vals)[::-1], left=left[::-1], height=0.62, color=CAT[k % 8],
-                label=c, edgecolor=SURFACE, linewidth=2, zorder=3)
+        ax.barh(fams[::-1], np.array(vals)[::-1], left=left[::-1], height=0.62, color=colr[c],
+                label="other/unlisted" if c == "other/unlisted" else brand(c),
+                edgecolor=SURFACE, linewidth=2, zorder=3)
         left += np.array(vals)
     ax.set_xlim(0, 100)
     ax.set_xlabel("share of that family's mismatched-name claims (%)")
@@ -498,6 +575,9 @@ def fig_stance(reg, per):
     save(fig, "fig_stance.png")
 
 
+FAMILY_DISPLAY = {"ant": "Ant Group (Ling)", "olmo": "OLMo (Ai2)"}   # only slugs that misread as-is
+
+
 def fig_family_panels(reg, per):
     # targets are MODEL identities only; nvidia (=Nemotron) and doubao fold into
     # "other lab" per review — lab names, not model names.
@@ -539,7 +619,7 @@ def fig_family_panels(reg, per):
         keep = [j for j in range(len(TARGETS)) if M[:, j].sum() > 0]
         Mk = M[:, keep]; labels = [TARGETS[j] for j in keep]
         nrow, ncol = len(rows), len(keep)
-        fig, ax = plt.subplots(figsize=(0.62 * ncol + 3.0, 0.42 * nrow + 1.9))
+        fig, ax = plt.subplots(figsize=(max(0.62 * ncol + 3.0, 6.2), 0.42 * nrow + 1.9))
         im = ax.imshow(Mk, cmap=SEQ_CMAP, vmin=0, vmax=gmax, aspect="auto")
         ax.set_xticks(range(ncol), labels, fontsize=8, rotation=35, ha="right")
         ax.set_yticks(range(nrow), [per[r[0]]["name"] for r in rows], fontsize=9)
@@ -550,10 +630,15 @@ def fig_family_panels(reg, per):
                 ax.text(j, i, "<1" if Mk[i, j] < 1 else f"{Mk[i,j]:.0f}", ha="center", va="center",
                         fontsize=7.5, color="#ffffff" if Mk[i, j] > 0.6 * gmax else INK2)
         cb = fig.colorbar(im, ax=ax, shrink=0.7, pad=0.02)
-        cb.set_label("% of the model's identity/creator records", fontsize=8, color=INK2)
+        # short panels can't fit the rotated long label beside the colorbar
+        cb.set_label("% of the model's identity/creator records" if nrow > 2 else "% of records",
+                     fontsize=8, color=INK2)
         cb.outline.set_visible(False)
         style(ax, bottom=False)
-        ax.set_title(f"{fam} — which name each model gives instead", loc="left", fontsize=11, pad=10)
+        ax.set_title(f"{FAMILY_DISPLAY.get(fam, fam)} — which name each model gives instead",
+                     loc="left", fontsize=11, pad=22)
+        ax.annotate("color scale shared across all family panels", (0, 1), xycoords="axes fraction",
+                    xytext=(0, 5), textcoords="offset points", fontsize=7, color=MUTED, va="bottom")
         fn = f"family/fam_{fam}.png"
         fig.savefig(FIGS / fn, dpi=200, bbox_inches="tight", facecolor=SURFACE)
         plt.close(fig)

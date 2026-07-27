@@ -27,7 +27,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 from .build_rollouts import brand
-from .make_figs import FIGS, SURFACE, INK, INK2, MUTED, GRID, BASE, CAT, style, save
+from .make_figs import FIGS, SURFACE, INK, INK2, MUTED, GRID, BASE, CAT, IDCOLOR, style, save
 
 ROOT = Path(__file__).resolve().parent.parent
 # committed research tables (from agent lookups); fall back to /tmp during a run
@@ -44,11 +44,61 @@ def _load(name):
 MIN_FOREIGN = 10   # need at least this many foreign claims to estimate a distribution
 MIN_TOT = 100      # and a reasonably complete battery
 
-# dominant-identity palette (who the model claims to be) — kept visually distinct.
-# creator-canons are collapsed to brand in gather(), so only brands appear here.
-IDCOLOR = {"claude": "#d97a34", "deepseek": "#2a78d6", "qwen": "#7b4fd0", "chatgpt": "#1baf7a",
-           "gemini": "#c94f9c", "llama": "#4aa0a0", "nvidia": "#5b8c1f", "kimi": "#e0a020",
-           "mistral": "#b0402a"}
+# dominant-identity colors (who the model claims to be) come from make_figs.IDCOLOR
+# so an identity keeps ONE color across fig_flow / fig_coherence / fig_cutoff.
+
+
+def place_labels(fig, ax, labels, points, fontsize=6.6):
+    """Deterministic collision-avoiding point labels (no adjustText).
+
+    labels: [(x, y, text)]; points: [(x, y, s)] scatter obstacles (s = marker
+    area, pt²). Processes labels top-down; for each, walks a fixed ladder of
+    offsets (right-above first — left first near the right edge), measuring real
+    text extents against already-placed labels, all markers and the axes frame;
+    the first free slot wins, and far-flung slots get a thin leader line. Call
+    AFTER limits/legend/titles are final (it uses the live transforms)."""
+    fig.canvas.draw()
+    ren = fig.canvas.get_renderer()
+    px = fig.dpi / 72.0
+    tr = ax.transData.transform
+    axbox = ax.get_window_extent(ren)
+    obstacles = []
+    for x, y, s in points:
+        cx, cy = tr((x, y))
+        r = (math.sqrt(s) / 2.0 + 1.5) * px
+        obstacles.append((cx - r, cy - r, cx + r, cy + r))
+
+    def overlap_area(b, boxes):
+        return sum(max(0.0, min(b[2], o[2]) - max(b[0], o[0])) * max(0.0, min(b[3], o[3]) - max(b[1], o[1]))
+                   for o in boxes)
+
+    placed = []
+    for x, y, text in sorted(labels, key=lambda t: (-t[1], t[0])):
+        offs = [(6, 4), (6, -12), (7, 15), (7, -23), (8, 26), (9, -34), (10, 37), (11, -45), (12, 48)]
+        right = [(dx, dy, "left") for dx, dy in offs]
+        left = [(-dx, dy, "right") for dx, dy in offs]
+        pairs = (left, right) if tr((x, y))[0] > axbox.x0 + 0.74 * axbox.width else (right, left)
+        cands = [v for pair in zip(*pairs) for v in pair]
+        pick, best_bad = None, None
+        for dx, dy, ha in cands:
+            a = ax.annotate(text, (x, y), textcoords="offset points", xytext=(dx, dy),
+                            fontsize=fontsize, color=INK2, ha=ha, va="bottom", zorder=6)
+            b = a.get_window_extent(ren)
+            a.remove()
+            bb = (b.x0 - 1.5, b.y0 - 1.5, b.x1 + 1.5, b.y1 + 1.5)
+            inside = (bb[0] > axbox.x0 - 4 and bb[2] < axbox.x1 + 10
+                      and bb[1] > axbox.y0 and bb[3] < axbox.y1 + 4)
+            bad = overlap_area(bb, placed) + overlap_area(bb, obstacles) + (0 if inside else 1e6)
+            if best_bad is None or bad < best_bad:
+                pick, best_bad = (dx, dy, ha, bb), bad
+            if bad == 0:
+                break
+        dx, dy, ha, bb = pick
+        kw = dict(arrowprops=dict(arrowstyle="-", lw=0.55, color=BASE, shrinkA=2, shrinkB=2)) \
+            if abs(dy) >= 15 else {}
+        ax.annotate(text, (x, y), textcoords="offset points", xytext=(dx, dy),
+                    fontsize=fontsize, color=INK2, ha=ha, va="bottom", zorder=6, **kw)
+        placed.append(bb)
 
 
 def entropy(counter):
@@ -110,24 +160,15 @@ def fig_coherence(data):
         col = IDCOLOR.get(mm["top1_id"], MUTED)
         ax.scatter(d["rate"], 100 * mm["top1_share"], s=22 + d["dn"] * 0.7,
                    color=col, alpha=0.72, edgecolor="white", linewidth=0.5, zorder=3)
-    # label only the well-separated right side (rate>=33); the low-rate left is a
-    # dense cloud (many models rarely-but-consistently drift) — left unlabelled
-    lab = sorted([p for p in pts if p[0]["rate"] >= 33], key=lambda x: x[0]["rate"])
-    prev = {}
-    for d, mm in lab:
-        y = 100 * mm["top1_share"]
-        band = round(d["rate"] / 8)                 # nudge labels apart within an x-band
-        dy = 9 if prev.get(band) and abs(prev[band] - y) < 5 else 3
-        prev[band] = y
-        ax.annotate(f"{d['name']} →{brand(mm['top1_id'])}", (d["rate"], y),
-                    fontsize=6.6, color=INK2, xytext=(5, dy), textcoords="offset points")
     ax.axhline(60, color=BASE, lw=0.8, ls="--", zorder=1)
     ax.text(1, 62, "consistently ONE identity  (coherent alternate persona)", fontsize=7.5, color=MUTED)
     ax.text(1, 20, "scatters across many  (confabulation / weak identity)", fontsize=7.5, color=MUTED)
     ax.set_xlabel("spontaneous mismatch rate  (% of identity answers)")
     ax.set_ylabel("consistency — share of mismatches on the single top identity (%)")
     ax.set_title("A stable alternate identity vs. confabulation",
-                 fontsize=11, color=INK, loc="left")
+                 fontsize=11, color=INK, loc="left", pad=22)
+    ax.text(0, 1.008, "labels: model →its dominant claimed identity · bubble area ∝ mismatched records",
+            transform=ax.transAxes, fontsize=7.3, color=MUTED, va="bottom")
     ax.set_ylim(0, 105); ax.set_xlim(0, max(d["rate"] for d, _ in pts) + 6)
     style(ax)
     ax.grid(axis="both", color=GRID, lw=0.6, zorder=0)
@@ -136,6 +177,12 @@ def fig_coherence(data):
     seen_ids = [i for i in IDCOLOR if any(mm["top1_id"] == i for _, mm in pts)]
     ax.legend(handles=[Patch(facecolor=IDCOLOR[i], label=brand(i)) for i in seen_ids],
               title="claims to be", fontsize=7.5, title_fontsize=8, loc="lower right", frameon=False)
+    # label only the well-separated right side (rate>=33); the low-rate left is a
+    # dense cloud (many models rarely-but-consistently drift) — left unlabelled
+    place_labels(fig, ax,
+                 [(d["rate"], 100 * mm["top1_share"], f"{d['name']} →{brand(mm['top1_id'])}")
+                  for d, mm in pts if d["rate"] >= 33],
+                 [(d["rate"], 100 * mm["top1_share"], 22 + d["dn"] * 0.7) for d, mm in pts])
     save(fig, "fig_coherence.png")
 
 
@@ -152,18 +199,20 @@ def fig_lang_conditional(data):
     for d, mm in pts:
         ax.scatter(d["rate"], 100 * mm["max_lang_rate"], s=22 + d["dn"] * 0.6,
                    color="#2a78d6", alpha=0.6, edgecolor="white", linewidth=0.5, zorder=3)
-    for d, mm in sorted(pts, key=lambda x: -x[1]["excess"])[:11]:
-        ax.annotate(f"{d['name']} ({mm['dom_lang']})", (d["rate"], 100 * mm["max_lang_rate"]),
-                    fontsize=6.6, color=INK2, xytext=(5, 3), textcoords="offset points")
     ax.set_xlabel("overall spontaneous mismatch rate (%)")
     ax.set_ylabel("mismatch rate in the model's HIGHEST-mismatch language (%)")
     ax.set_title("Language-triggered vs. uniformly-weak: highest-mismatch-language rate vs. overall",
-                 fontsize=11, color=INK, loc="left")
-    ax.text(0, 1.015, "labeled models clear a uniform-null by ≥40pp (null p95 ≈ 18pp); the near-diagonal cloud is within sampling noise",
+                 fontsize=11, color=INK, loc="left", pad=26)
+    ax.text(0, 1.006, "labeled models clear a uniform-null by ≥40pp (null p95 ≈ 18pp); the near-diagonal "
+            "cloud is within sampling noise · bubble area ∝ mismatched records",
             transform=ax.transAxes, fontsize=7.3, color=MUTED, va="bottom")
     ax.set_xlim(0, lim); ax.set_ylim(0, 105)
     style(ax)
     ax.grid(axis="both", color=GRID, lw=0.6, zorder=0)
+    place_labels(fig, ax,
+                 [(d["rate"], 100 * mm["max_lang_rate"], f"{d['name']} ({mm['dom_lang']})")
+                  for d, mm in sorted(pts, key=lambda x: -x[1]["excess"])[:11]],
+                 [(d["rate"], 100 * mm["max_lang_rate"], 22 + d["dn"] * 0.6) for d, mm in pts])
     save(fig, "fig_lang_conditional.png")
 
 
@@ -253,6 +302,11 @@ def fig_cutoff(data):
         if d["tot"] < MIN_TOT:
             continue
         rows.append((d, x, doc))
+    # version labels sit just ABOVE each panel (never on the data); near-coincident
+    # releases are split to opposite sides of their lines
+    DODGE = {("chatgpt", "ChatGPT"): "right", ("chatgpt", "GPT-4"): "left",
+             ("deepseek", "V3"): "right", ("deepseek", "R1"): "left",
+             ("qwen", "Qwen2"): "right", ("qwen", "2.5"): "left"}
     fig, axes = plt.subplots(2, 3, figsize=(13.8, 8.0))
     for ax, ident in zip(axes.flat, VERSIONS):
         col = IDCOLOR.get(ident, "#2a78d6")
@@ -263,9 +317,10 @@ def fig_cutoff(data):
         for vx, vlab, breakout in VERSIONS[ident]:
             ax.axvline(vx, color="#6d5bd0" if breakout else BASE,
                        lw=1.3 if breakout else 0.9, ls="--" if breakout else ":", zorder=2)
-            ax.text(vx, 0.98, vlab, fontsize=6.2, color="#6d5bd0" if breakout else MUTED,
-                    rotation=90, va="top", ha="right", transform=ax.get_xaxis_transform())
-        ax.set_title(f"claims to be {brand(ident)}", fontsize=10.5, color=INK, loc="left")
+            ax.text(vx, 1.02, vlab, fontsize=7, color="#6d5bd0" if breakout else MUTED,
+                    va="bottom", ha=DODGE.get((ident, vlab), "center"),
+                    transform=ax.get_xaxis_transform(), clip_on=False)
+        ax.set_title(f"claims to be {brand(ident)}", fontsize=10.5, color=INK, loc="left", pad=18)
         ax.set_xlim(2021.4, 2026.5)
         style(ax); ax.grid(color=GRID, lw=0.5, zorder=0)
     fig.text(0.5, 0.015, "claiming model's TRAINING CUTOFF — documented (solid) or estimated as "

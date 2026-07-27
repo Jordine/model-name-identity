@@ -386,6 +386,15 @@ def fig_scrubout(reg, per):
                    "qwen/qwen3-max-thinking", "qwen/qwen3.5-397b-a17b", "qwen/qwen3.7-max"],
                   CAT[3], "The scrub-out (Qwen 2.5 → 3.x): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
                   "fig_scrubout_qwen.png", "")
+    _scrubout_one(["anthropic/claude-opus-4", "anthropic/claude-opus-4.1", "anthropic/claude-opus-4.5",
+                   "anthropic/claude-opus-4.6", "anthropic/claude-opus-4.7", "anthropic/claude-opus-4.8",
+                   "anthropic/claude-opus-5"],
+                  CAT[4], "Claude Opus line: name-mismatch across releases — an isolated 4.8 spike, clean on both sides",
+                  "fig_scrubout_claude_opus.png", "Claude ")
+    _scrubout_one(["anthropic/claude-sonnet-4", "anthropic/claude-sonnet-4.5", "anthropic/claude-sonnet-4.6",
+                   "anthropic/claude-sonnet-5"],
+                  CAT[0], "Claude Sonnet line: name-mismatch across releases (4.6 spike)",
+                  "fig_scrubout_claude_sonnet.png", "Claude ")
 
 
 def fig_cross(reg, per):

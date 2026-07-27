@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Poolside models (2 models, high
 
 ## Laguna M.1
 
-official **Laguna M.1** · family `poolside` · spontaneous mismatch **77%** (259/338)  
+official **Laguna M.1** · family `poolside` · served by **Poolside** · spontaneous mismatch **77%** (259/338)  
 **By language:** Russian 92% (37/40) · English 91% (49/54) · Chinese 84% (37/44) · Spanish 80% (32/40) · Japanese 75% (30/40) · French 72% (29/40) · Vietnamese 70% (28/40) · Korean 42% (17/40)  
 **Claims as:** Nvidia ×168 · OpenAI ×17 · ChatGPT ×16 · DeepSeek ×13 · Llama ×9 · nemo ×3 · laion ×3 · Kimi ×3 · hugging face ×3 · Qwen ×2 · Gemini ×2 · Meta ×2 · GLM ×2 · codiumai ×1 · h2o ×1 · preview model ×1 · sự hợp tác giữa các tổ chức nghiên cứu u ×1 · Naver ×1 · Ernie ×1 · Sber ×1 · cosette ×1 · 김민재 ×1 · chatrtx ×1 · Internlm ×1 · nemebot ×1 · немтрон ×1 · nim ×1 · nema ×1 · salut ×1  
 **Accepts when asked “are you X?”:** Nvidia ×39, Qwen ×11, ChatGPT ×10, DeepSeek ×9, Kimi ×7, Claude ×6, Llama ×3, Ernie ×3, llamaindex ×2, hugging face ×2, Mistral ×2, Tencent ×1, Meta ×1, OpenAI ×1, Internlm ×1, chat with rtx ×1, Gemini ×1  
@@ -545,7 +545,7 @@ official **Laguna M.1** · family `poolside` · spontaneous mismatch **77%** (25
 
 ## Laguna XS 2.1
 
-official **Laguna XS 2.1** · family `poolside` · spontaneous mismatch **67%** (225/338)  
+official **Laguna XS 2.1** · family `poolside` · served by **Poolside** · spontaneous mismatch **67%** (225/338)  
 **By language:** Chinese 98% (43/44) · Vietnamese 78% (31/40) · Spanish 75% (30/40) · French 72% (29/40) · Japanese 65% (26/40) · English 59% (32/54) · Russian 45% (18/40) · Korean 40% (16/40)  
 **Claims as:** Qwen ×110 · Alibaba ×17 · Google ×11 · Meta ×9 · Kimi ×7 · GLM ×6 · Mistral ×5 · Yandex ×5 · Bytedance ×4 · Llama ×4 · Gemini ×3 · ChatGPT ×3 · Anthropic ×2 · OpenAI ×2 · hugging face ×2 · 3020 thousand landmarks co., ltd. ×1 · Baidu ×1 · Ernie ×1 · codeup chat ×1 · lifaka labs ×1 · minimax ×1 · interne ×1 · Naver ×1 · 클로이(cloie) ×1 · khoa học ai 4.0 ×1 · алжир ×1 · baichuan series ×1 · yuanbao ×1 · hangzhou deep intelligence technology co ×1 · together ×1 · Cohere ×1 · mahakama lifelong ai ×1 · text generation model ×1 · bảo ngọc ×1 · wenxun technology ×1 · stware（エステウォーク） ×1 · lily ×1 · 아리바이 ×1 · chatdoctor ×1 · yuan long ×1 · astaroth ×1 · aise ×1 · khoa học và công nghệ vingroup ×1 · Sparkdesk ×1 · 클로이 ×1 · nllb-200 (no language left behind) ×1 · kunlun ai ×1 · mô hình trợ lúc ai ×1 · 01ai ×1 · 月之暮 ×1  
 **Accepts when asked “are you X?”:** Qwen ×39, GLM ×8, Kimi ×7, Google ×5, Claude ×5, DeepSeek ×4, Gemini ×4, Alibaba ×3, Anthropic ×2, ChatGPT ×2, Nvidia ×1, Doubao ×1, OpenAI ×1, Llama ×1, mí mismo ×1, mistrail limited ×1, Mistral ×1, Meta ×1, yuanxiangging bot ×1, yi series ×1, Cohere ×1, Ernie ×1, Xiaomi ×1, 360 group ×1  

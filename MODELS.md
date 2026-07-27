@@ -1,6 +1,6 @@
 # Models
 
-Every model in this study, with how it was reached. **179 models were queried through hosted APIs**, each **pinned to one provider** (below), **10 more were run from raw weights on GPUs**, and **52 were excluded** because no provider served them cleanly.
+Every model in this study, with how it was reached. **180 models were queried through hosted APIs**, each **pinned to one provider** (below), **10 more were run from raw weights on GPUs**, and **52 were excluded** because no provider served them cleanly.
 
 ## Selection policy
 
@@ -11,9 +11,9 @@ Every model in this study, with how it was reached. **179 models were queried th
 
 ## Provider pinning (reproducibility & injection-checkability)
 
-Of the 179 analyzed API models, **178 are pinned** to one preflight-chosen provider via OpenRouter routing `{"order": ["<slug>"], "allow_fallbacks": false}`, so a call can't silently fall back to an injecting or wrong-quant endpoint. `runner.py` records `provider_served` on every response; the table below lists the pin per model. **Verified against the collected data: 176 models were served by a single consistent provider** across all their records — no fallbacks (`provider_served` is a display name, so this checks consistency, not that the display string equals the slug). Two (`deepseek/deepseek-r1`, `qwen/qwen3.5-9b`) were re-pinned between runs and carry records from two providers — **both of which passed the hygiene check**. One model (`anthropic/claude-3-opus-20240229`) was served first-party via the proxy's native route (preflighted clean) rather than an OpenRouter pin, so it has no OpenRouter `provider_served` slug. To reproduce a model's answers (or check for injection yourself), pin its provider slug on OpenRouter and send the prompts in `prompts.jsonl` with no system prompt.
+Of the 180 analyzed API models, **179 are pinned** to one preflight-chosen provider via OpenRouter routing `{"order": ["<slug>"], "allow_fallbacks": false}`, so a call can't silently fall back to an injecting or wrong-quant endpoint. `runner.py` records `provider_served` on every response; the table below lists the pin per model. **Verified against the collected data: 176 models were served by a single consistent provider** across all their records — no fallbacks (`provider_served` is a display name, so this checks consistency, not that the display string equals the slug). Two (`deepseek/deepseek-r1`, `qwen/qwen3.5-9b`) were re-pinned between runs and carry records from two providers — **both of which passed the hygiene check**. One model (`anthropic/claude-3-opus-20240229`) was served first-party via the proxy's native route (preflighted clean) rather than an OpenRouter pin, so it has no OpenRouter `provider_served` slug. To reproduce a model's answers (or check for injection yourself), pin its provider slug on OpenRouter and send the prompts in `prompts.jsonl` with no system prompt.
 
-## Queried via API (179)
+## Queried via API (180)
 
 | model | family | pinned provider |
 |---|---|---|
@@ -56,6 +56,7 @@ Of the 179 analyzed API models, **178 are pinned** to one preflight-chosen provi
 | Claude Opus 4.6 | Anthropic | `anthropic` |
 | Claude Opus 4.7 | Anthropic | `anthropic` |
 | Claude Opus 4.8 | Anthropic | `anthropic` |
+| Claude Opus 5 | Anthropic | `anthropic` |
 | Claude Sonnet 4 | Anthropic | `google-vertex` |
 | Claude Sonnet 4.5 | Anthropic | `anthropic` |
 | Claude Sonnet 4.6 | Anthropic | `anthropic` |

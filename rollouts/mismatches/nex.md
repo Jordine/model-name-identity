@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Nex models (2 models, highest m
 
 ## Nex-N2-Mini
 
-official **Nex-N2-Mini** · family `nex` · spontaneous mismatch **1%** (2/338)  
+official **Nex-N2-Mini** · family `nex` · served by **Nex AGI** · spontaneous mismatch **1%** (2/338)  
 **By language:** Japanese 2% (1/40) · Korean 2% (1/40)  ·  clean in Chinese, English, French, Russian, Spanish, Vietnamese  
 **Claims as:** OpenAI ×1 · ChatGPT ×1  
 
@@ -18,7 +18,7 @@ official **Nex-N2-Mini** · family `nex` · spontaneous mismatch **1%** (2/338)
 
 ## Nex-N2-Pro
 
-official **Nex-N2-Pro** · family `nex` · spontaneous mismatch **0%** (1/338)  
+official **Nex-N2-Pro** · family `nex` · served by **Nex AGI** · spontaneous mismatch **0%** (1/338)  
 **By language:** Korean 2% (1/40)  ·  clean in Chinese, English, French, Japanese, Russian, Spanish, Vietnamese  
 **Claims as:** ChatGPT ×1  
 

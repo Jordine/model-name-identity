@@ -2,10 +2,10 @@
 
 Ask a language model "who are you?" and a surprising number answer with **another
 vendor's** name — a Qwen model calling itself DeepSeek, Kimi calling itself Claude,
-Claude (in Chinese) calling itself DeepSeek. This repo is a survey of that: **179
+Claude (in Chinese) calling itself DeepSeek. This repo is a survey of that: **180
 models queried through hosted APIs + 16 run from raw weights on GPUs** (the
-cross-model figures pool the 179 API models with 10 of the raw-weights models =
-189), across 8 languages, with every self-identity claim extracted by an LLM judge
+cross-model figures pool the 180 API models with 10 of the raw-weights models =
+190), across 8 languages, with every self-identity claim extracted by an LLM judge
 and adjudicated.
 
 The study is three experiments on the same models: what a model **volunteers** as
@@ -40,7 +40,7 @@ rollouts/
   MISMATCHES.md      index of every model that names another vendor (rate + claims)
   mismatches/*.md    full records per vendor — every prompt + response, by language
   index.html         full browser over every model & answer (serve over http)
-  rollouts_data.json data behind the browser (all 204 models, compact)
+  rollouts_data.json data behind the browser (all 190 models, compact)
 config/
   models.json        the model registry (id, family, expected identity, aliases)
   provider_hygiene.json  per-model provider decision (which endpoint, or why excluded)
@@ -76,6 +76,10 @@ python -m sweep.explain              # figures/fig_coherence, fig_lang_condition
 python -m sweep.build_models_md      # MODELS.md (roster + pinned provider per model)
 python -m sweep.build_rollouts       # rollouts/MISMATCHES.md
 python -m sweep.build_rollout_viewer # rollouts/index.html + rollouts_data.json
+
+# cross-provider check — same weights, every clean host (does the cloud change identity?)
+python -m sweep.xprovider --run --boost --zh   # Opus 4.8 / Sonnet 4.6 x all providers, high-N zh CIs
+python -m sweep.fig_xprovider        # figures/fig_xprovider.png
 ```
 
 API calls go through a litellm proxy (`~/.secrets/litellm_api_key`); the GPU

@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Perplexity models (2 models, hi
 
 ## Sonar Pro
 
-official **Sonar Pro** · family `perplexity` · spontaneous mismatch **21%** (72/338)  
+official **Sonar Pro** · family `perplexity` · served by **Perplexity** · spontaneous mismatch **21%** (72/338)  
 **By language:** French 32% (13/40) · Russian 30% (12/40) · Spanish 30% (12/40) · English 30% (16/54) · Vietnamese 15% (6/40) · Japanese 15% (6/40) · Chinese 11% (5/44) · Korean 5% (2/40)  
 **Claims as:** OpenAI ×44 · ChatGPT ×22 · Qwen ×5 · Claude ×1  
 **Accepts when asked “are you X?”:** ChatGPT ×9, OpenAI ×2, Qwen ×1, Kimi ×1  
@@ -171,5 +171,5 @@ official **Sonar Pro** · family `perplexity` · spontaneous mismatch **21%** (7
 
 ## Sonar
 
-official **Sonar** · family `perplexity` · spontaneous mismatch **0%** (0/338)  
+official **Sonar** · family `perplexity` · served by **Perplexity** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** OpenAI ×1  

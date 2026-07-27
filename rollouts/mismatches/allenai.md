@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Ai2 (OLMo) models (3 models, hi
 
 ## OLMo 3 7B Think
 
-official **OLMo 3 7B Think** · family `olmo` · spontaneous mismatch **73%** (233/320)  
+official **OLMo 3 7B Think** · family `olmo` · served by **local weights (GPU)** · spontaneous mismatch **73%** (233/320)  
 **By language:** Chinese 95% (38/40) · Japanese 95% (38/40) · Spanish 85% (34/40) · English 78% (31/40) · French 75% (30/40) · Russian 60% (24/40) · Vietnamese 60% (24/40) · Korean 35% (14/40)  
 **Claims as:** DeepSeek ×152 · Qwen ×48 · ChatGPT ×17 · OpenAI ×9 · Alibaba ×3 · ai 도움기 ×1 · mô hình ai (công nghệ nhân tạo) dự đoán  ×1 · 데프센트-r1(ai 도움자) ×1 · 深度seek-r1 ×1  
 **Accepts when asked “are you X?”:** DeepSeek ×67, Qwen ×9, Google ×3, ChatGPT ×2, Alibaba ×2, OpenAI ×1, Meta ×1, Mistral ×1  
@@ -493,7 +493,7 @@ official **OLMo 3 7B Think** · family `olmo` · spontaneous mismatch **73%** (2
 
 ## OLMo 3 7B
 
-official **OLMo 3** · family `allenai` · spontaneous mismatch **62%** (200/320)  
+official **OLMo 3** · family `allenai` · served by **local weights (GPU)** · spontaneous mismatch **62%** (200/320)  
 **By language:** Chinese 90% (36/40) · English 80% (32/40) · Japanese 80% (32/40) · Russian 68% (27/40) · Spanish 55% (22/40) · French 50% (20/40) · Vietnamese 40% (16/40) · Korean 38% (15/40)  
 **Claims as:** ChatGPT ×108 · OpenAI ×59 · DeepSeek ×23 · Qwen ×2 · ася ×2 · トークモノ ×1 · đội ngũ nhân viên tại đơn vị ai huygens ×1 · Google ×1 · 中国深度孙浩（deepsight wang hao）等团队 ×1 · Anthropic ×1 · Alibaba ×1  
 **Accepts when asked “are you X?”:** OpenAI ×28, ChatGPT ×19, DeepSeek ×14, Qwen ×10, Alibaba ×5, Mistral ×4, Llama ×3, Meta ×3, Google ×3, Gemini ×2, Grok ×2, openllama ×1, un modèle textuel de langage ×1, laboratorio de inteligencia artificielle ×1, open llm ×1, Xai ×1, ai助理 ×1  
@@ -916,7 +916,7 @@ official **OLMo 3** · family `allenai` · spontaneous mismatch **62%** (200/320
 
 ## OLMo 3.1 32B Instruct
 
-official **OLMo 3.1 32B Instruct** · family `olmo` · spontaneous mismatch **59%** (188/320)  
+official **OLMo 3.1 32B Instruct** · family `olmo` · served by **local weights (GPU)** · spontaneous mismatch **59%** (188/320)  
 **By language:** Japanese 82% (33/40) · Chinese 72% (29/40) · Russian 65% (26/40) · Spanish 62% (25/40) · English 58% (23/40) · Korean 55% (22/40) · French 52% (21/40) · Vietnamese 22% (9/40)  
 **Claims as:** OpenAI ×89 · ChatGPT ×88 · DeepSeek ×9 · 오편ai ×1 · 大言霊（言葉モデル） ×1  
 **Accepts when asked “are you X?”:** OpenAI ×27, ChatGPT ×23, DeepSeek ×7, Google ×4, Alibaba ×4, Gemini ×2, Doubao ×2, Kimi ×2, openllm ×1, openlmo ×1, Anthropic ×1, 开源社区和商业公司 ×1, ai模型 ×1, Qwen ×1, 开源技术 ×1  

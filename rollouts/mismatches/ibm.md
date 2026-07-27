@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by IBM models (1 models, highest m
 
 ## Granite 4.1 8B
 
-official **Granite 4.1 8B** · family `ibm` · spontaneous mismatch **30%** (103/338)  
+official **Granite 4.1 8B** · family `ibm` · served by **WandB** · spontaneous mismatch **30%** (103/338)  
 **By language:** Korean 62% (25/40) · Chinese 61% (27/44) · Japanese 55% (22/40) · Russian 32% (13/40) · French 25% (10/40) · Vietnamese 15% (6/40)  ·  clean in English, Spanish  
 **Claims as:** ChatGPT ×26 · Claude ×24 · Mistral ×9 · Google ×7 · Gemini ×6 · Cohere ×4 · OpenAI ×4 · gemma ×4 · phi ×3 · Llama ×3 · amélie ×2 · quảng ngã ×1 · laion ×1 · muurut ×1 · グレート・ウェルカム・モデル ×1 · phitinchat ×1 · phi-2 ×1 · ザ・ボーイの最新バージョンのモデル ×1 · mô hình nói chuyện dựa trên ổn định của  ×1 · minerva ×1 · groinal ×1 · Qwen ×1  
 **Accepts when asked “are you X?”:** ChatGPT ×17, Mistral ×11, Claude ×8, Gemini ×5, gemma ×1, cerebras ai ×1, cerebralai ×1, mountent ×1, Llama ×1, Qwen ×1, Cohere ×1, climati ×1, minerva ×1, DeepSeek ×1, Google ×1, climatiq ×1  

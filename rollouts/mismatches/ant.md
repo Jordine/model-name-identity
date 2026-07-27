@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Ant models (3 models, highest m
 
 ## Ling-2.6-1T
 
-official **Ling-2.6-1T** · family `ant` · spontaneous mismatch **5%** (17/338)  
+official **Ling-2.6-1T** · family `ant` · served by **Novita** · spontaneous mismatch **5%** (17/338)  
 **By language:** Korean 30% (12/40) · Japanese 12% (5/40)  ·  clean in Chinese, English, French, Russian, Spanish, Vietnamese  
 **Claims as:** Alibaba ×7 · Claude ×6 · 안랩(ahnlab) ×1 · 안티노미(antinomy) ×1 · アントグループ ×1 · OpenAI ×1  
 **Accepts when asked “are you X?”:** ChatGPT ×1  
@@ -49,7 +49,7 @@ official **Ling-2.6-1T** · family `ant` · spontaneous mismatch **5%** (17/338)
 
 ## Ling-2.6-flash
 
-official **Ling-2.6-flash** · family `ant` · spontaneous mismatch **2%** (6/338)  
+official **Ling-2.6-flash** · family `ant` · served by **Novita** · spontaneous mismatch **2%** (6/338)  
 **By language:** Russian 10% (4/40) · French 2% (1/40) · Japanese 2% (1/40)  ·  clean in Chinese, English, Korean, Spanish, Vietnamese  
 **Claims as:** ling社 ×1 · Claude ×1 · Moonshot ×1 · эмиль ×1 · antbailing ×1 · zelda ×1  
 **Accepts when asked “are you X?”:** Kimi ×2, zoey ×1  
@@ -74,7 +74,7 @@ official **Ling-2.6-flash** · family `ant` · spontaneous mismatch **2%** (6/33
 
 ## Ring-2.6-1T
 
-official **Ring-2.6-1T** · family `ant` · spontaneous mismatch **1%** (2/338)  
+official **Ring-2.6-1T** · family `ant` · served by **Novita** · spontaneous mismatch **1%** (2/338)  
 **By language:** Japanese 5% (2/40)  ·  clean in Chinese, English, French, Korean, Russian, Spanish, Vietnamese  
 **Claims as:** Alibaba ×1 · 百霊大モデル ×1  
 **Accepts when asked “are you X?”:** 앤트그룹 ×1  

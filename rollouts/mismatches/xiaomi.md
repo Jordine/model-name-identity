@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Xiaomi models (1 models, highes
 
 ## MiMo-V2.5
 
-official **MiMo-V2.5** · family `xiaomi` · spontaneous mismatch **1%** (4/338)  
+official **MiMo-V2.5** · family `xiaomi` · served by **DigitalOcean** · spontaneous mismatch **1%** (4/338)  
 **By language:** Korean 8% (3/40) · French 2% (1/40)  ·  clean in Chinese, English, Japanese, Russian, Spanish, Vietnamese  
 **Claims as:** OpenAI ×1 · Google ×1 · Xai ×1 · Mistral ×1  
 

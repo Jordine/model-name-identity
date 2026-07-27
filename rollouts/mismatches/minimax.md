@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by MiniMax models (1 models, highe
 
 ## MiniMax M2.7
 
-official **MiniMax M2.7** · family `minimax` · spontaneous mismatch **56%** (190/338)  
+official **MiniMax M2.7** · family `minimax` · served by **Groq** · spontaneous mismatch **56%** (190/338)  
 **By language:** Japanese 70% (28/40) · French 65% (26/40) · Spanish 60% (24/40) · English 59% (32/54) · Russian 52% (21/40) · Chinese 52% (23/44) · Vietnamese 45% (18/40) · Korean 45% (18/40)  
 **Claims as:** Claude ×120 · Anthropic ×29 · Qwen ×10 · ChatGPT ×4 · DeepSeek ×3 · Gemini ×2 · OpenAI ×2 · kythe ×1 · 小爱同学 ×1 · Kimi ×1 · Doubao ×1 · Cohere ×1 · kabi ×1 · 零一万物（01.ai） ×1 · x-红皇后 ×1 · mila ×1 · nova ×1 · kilo ×1 · Llama ×1 · clau ×1 · cogni ×1 · cluade ×1 · milo ×1 · cursor ai ×1 · Meta ×1 · codehelper ×1 · just ai ×1  
 **Accepts when asked “are you X?”:** Claude ×27, Qwen ×7, ChatGPT ×4, Anthropic ×3, Doubao ×2, Meta ×2, DeepSeek ×1, coze ×1, 北落师门 ×1, GLM ×1, 零一万物（01.ai） ×1, Moonshot ×1, shu*zero ×1  

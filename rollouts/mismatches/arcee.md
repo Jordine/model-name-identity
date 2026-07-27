@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Arcee models (1 models, highest
 
 ## Trinity Large Thinking
 
-official **Trinity Large Thinking** · family `arcee` · spontaneous mismatch **36%** (121/338)  
+official **Trinity Large Thinking** · family `arcee` · served by **Arcee AI** · spontaneous mismatch **36%** (121/338)  
 **By language:** Japanese 85% (34/40) · Korean 62% (25/40) · Vietnamese 62% (25/40) · French 28% (11/40) · Spanish 25% (10/40) · Russian 22% (9/40) · English 13% (7/54)  ·  clean in Chinese  
 **Claims as:** step ×26 · Claude ×19 · Gemini ×8 · Llama ×7 · Naver ×5 · fpt smart cloud ×5 · Grok ×4 · vinbigdata ×4 · Copilot ×3 · Xai ×3 · Meta ×2 · Stepfun ×2 · DeepSeek ×2 · Sber ×2 · fpt ai conversation ×2 · startrust ai ×1 · Anthropic ×1 · kisti ai ×1 · 클로버-1 (clover-1) ×1 · palm-e ×1 · zalo ai ×1 · ChatGPT ×1 · 클로버 ×1 · 카카오 ×1 · 카카오 i ×1 · fpt ai ×1 · сбалансированный диалог (сбд) ×1 · ростелеком ×1 · 루이(louie) ×1 · modelfile ×1 · apple intelligence ×1 · 지니(gini) ×1 · gemma ×1 · cloved+ ×1 · cyberbot ×1 · copixel ×1 · genie ×1 · cala ×1 · lumina ×1 · fpt.ai conversation ×1 · vinbigdata - viện nghiên cứu dữ liệu lớn ×1 · 카카오 기가지니 ×1  
 **Accepts when asked “are you X?”:** step ×3  

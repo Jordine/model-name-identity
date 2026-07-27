@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by DeepSeek models (10 models, hig
 
 ## DeepSeek V3 0324
 
-official **DeepSeek-V3** · family `deepseek` · spontaneous mismatch **13%** (44/338)  
+official **DeepSeek-V3** · family `deepseek` · served by **SiliconFlow** · spontaneous mismatch **13%** (44/338)  
 **By language:** Russian 62% (25/40) · Japanese 20% (8/40) · English 13% (7/54) · Vietnamese 5% (2/40) · Spanish 2% (1/40) · Korean 2% (1/40)  ·  clean in Chinese, French  
 **Claims as:** ChatGPT ×36 · OpenAI ×5 · Llama ×1 · Meta ×1 · deeppavlov ×1  
 **Accepts when asked “are you X?”:** Qwen ×9, Kimi ×8, Claude ×5, Doubao ×5, Gemini ×4, ChatGPT ×1  
@@ -111,7 +111,7 @@ official **DeepSeek-V3** · family `deepseek` · spontaneous mismatch **13%** (4
 
 ## DeepSeek V3
 
-official **DeepSeek-V3** · family `deepseek` · spontaneous mismatch **11%** (36/338)  
+official **DeepSeek-V3** · family `deepseek` · served by **StreamLake** · spontaneous mismatch **11%** (36/338)  
 **By language:** Russian 62% (25/40) · Japanese 12% (5/40) · English 9% (5/54) · Vietnamese 2% (1/40)  ·  clean in Chinese, French, Korean, Spanish  
 **Claims as:** ChatGPT ×32 · OpenAI ×3 · Yandex ×1  
 **Accepts when asked “are you X?”:** Kimi ×10, Qwen ×10, Gemini ×4, ChatGPT ×3, Doubao ×3, Claude ×2, Mistral ×1  
@@ -198,7 +198,7 @@ official **DeepSeek-V3** · family `deepseek` · spontaneous mismatch **11%** (3
 
 ## DeepSeek V3.1 Terminus
 
-official **DeepSeek-V3.1-Terminus** · family `deepseek` · spontaneous mismatch **9%** (32/338)  
+official **DeepSeek-V3.1-Terminus** · family `deepseek` · served by **StreamLake** · spontaneous mismatch **9%** (32/338)  
 **By language:** French 20% (8/40) · Japanese 12% (5/40) · Spanish 12% (5/40) · English 11% (6/54) · Korean 10% (4/40) · Russian 5% (2/40) · Vietnamese 5% (2/40)  ·  clean in Chinese  
 **Claims as:** OpenAI ×19 · ChatGPT ×5 · Anthropic ×3 · Claude ×2 · Alibaba ×1 · aya ×1 · mentioned ai solutions ×1  
 **Accepts when asked “are you X?”:** Qwen ×7, ChatGPT ×4, Kimi ×3, OpenAI ×2, Claude ×2, Mistral ×1, Anthropic ×1, Bytedance ×1  
@@ -283,7 +283,7 @@ official **DeepSeek-V3.1-Terminus** · family `deepseek` · spontaneous mismatch
 
 ## DeepSeek V4 Pro
 
-official **DeepSeek V4 Pro** · family `deepseek` · spontaneous mismatch **4%** (14/338)  
+official **DeepSeek V4 Pro** · family `deepseek` · served by **DigitalOcean** · spontaneous mismatch **4%** (14/338)  
 **By language:** Japanese 18% (7/40) · English 6% (3/54) · Korean 5% (2/40) · Vietnamese 2% (1/40) · Russian 2% (1/40)  ·  clean in Chinese, French, Spanish  
 **Claims as:** Gemini ×7 · Claude ×3 · Google ×2 · Anthropic ×1 · công ty thâm độ cầu sách ×1  
 **Accepts when asked “are you X?”:** Doubao ×4, Qwen ×1, ChatGPT ×1, Claude ×1, Gemini ×1  
@@ -328,7 +328,7 @@ official **DeepSeek V4 Pro** · family `deepseek` · spontaneous mismatch **4%**
 
 ## DeepSeek R1 0528
 
-official **DeepSeek-R1** · family `deepseek` · spontaneous mismatch **3%** (10/338)  
+official **DeepSeek-R1** · family `deepseek` · served by **StreamLake** · spontaneous mismatch **3%** (10/338)  
 **By language:** English 6% (3/54) · Japanese 5% (2/40) · Korean 5% (2/40) · French 2% (1/40) · Spanish 2% (1/40) · Vietnamese 2% (1/40)  ·  clean in Chinese, Russian  
 **Claims as:** Claude ×5 · ChatGPT ×4 · Gemini ×1  
 **Accepts when asked “are you X?”:** Qwen ×9, Claude ×5, Mistral ×3, Kimi ×2, Doubao ×2, Moonshot ×1, Gemini ×1, ChatGPT ×1  
@@ -367,7 +367,7 @@ official **DeepSeek-R1** · family `deepseek` · spontaneous mismatch **3%** (10
 
 ## DeepSeek R1
 
-official **DeepSeek-R1** · family `deepseek` · spontaneous mismatch **3%** (9/338)  
+official **DeepSeek-R1** · family `deepseek` · served by **Azure ×303, Novita ×166** · spontaneous mismatch **3%** (9/338)  
 **By language:** French 5% (2/40) · English 4% (2/54) · Russian 2% (1/40) · Korean 2% (1/40) · Japanese 2% (1/40) · Spanish 2% (1/40) · Vietnamese 2% (1/40)  ·  clean in Chinese  
 **Claims as:** Claude ×5 · ChatGPT ×2 · Meta ×1 · ариса ×1  
 **Accepts when asked “are you X?”:** Qwen ×4, Claude ×2, Kimi ×1, Gemini ×1  
@@ -406,7 +406,7 @@ official **DeepSeek-R1** · family `deepseek` · spontaneous mismatch **3%** (9/
 
 ## DeepSeek V3.1
 
-official **DeepSeek-V3.1** · family `deepseek` · spontaneous mismatch **1%** (5/337)  
+official **DeepSeek-V3.1** · family `deepseek` · served by **Mara** · spontaneous mismatch **1%** (5/337)  
 **By language:** Vietnamese 10% (4/40) · Japanese 2% (1/40)  ·  clean in Chinese, English, French, Korean, Russian, Spanish  
 **Claims as:** Llama ×4 · Claude ×1  
 
@@ -426,7 +426,7 @@ official **DeepSeek-V3.1** · family `deepseek` · spontaneous mismatch **1%** (
 
 ## DeepSeek V3.2
 
-official **DeepSeek-V3.2** · family `deepseek` · spontaneous mismatch **1%** (4/338)  
+official **DeepSeek-V3.2** · family `deepseek` · served by **Venice** · spontaneous mismatch **1%** (4/338)  
 **By language:** Korean 5% (2/40) · Japanese 5% (2/40)  ·  clean in Chinese, English, French, Russian, Spanish, Vietnamese  
 **Claims as:** Naver ×1 · Claude ×1 · クローバー ×1 · 深蘭科技（deepblue technology） ×1  
 **Accepts when asked “are you X?”:** Qwen ×10, Kimi ×7, Claude ×5, Gemini ×5, Mistral ×2, ChatGPT ×2, Grok ×1  
@@ -445,7 +445,7 @@ official **DeepSeek-V3.2** · family `deepseek` · spontaneous mismatch **1%** (
 
 ## DeepSeek R1 Distill Llama 70B
 
-official **DeepSeek-R1-Distill-Llama-70B** · family `deepseek` · spontaneous mismatch **1%** (2/338)  
+official **DeepSeek-R1-Distill-Llama-70B** · family `deepseek` · served by **Novita** · spontaneous mismatch **1%** (2/338)  
 **By language:** Korean 2% (1/40) · English 2% (1/54)  ·  clean in Chinese, French, Japanese, Russian, Spanish, Vietnamese  
 **Claims as:** ChatGPT ×2  
 **Accepts when asked “are you X?”:** Qwen ×8, Gemini ×4, Claude ×4, Kimi ×4, Mistral ×1  
@@ -460,5 +460,5 @@ official **DeepSeek-R1-Distill-Llama-70B** · family `deepseek` · spontaneous m
 
 ## DeepSeek V4 Flash
 
-official **DeepSeek V4 Flash** · family `deepseek` · spontaneous mismatch **0%** (0/338)  
+official **DeepSeek V4 Flash** · family `deepseek` · served by **DigitalOcean** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Qwen ×10, Claude ×4, Kimi ×3, ChatGPT ×1, Doubao ×1  

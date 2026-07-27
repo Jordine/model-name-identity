@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Mistral models (16 models, high
 
 ## Ministral 3 3B 2512
 
-official **Ministral 3 3B 2512** · family `mistral` · spontaneous mismatch **23%** (79/338)  
+official **Ministral 3 3B 2512** · family `mistral` · served by **Mistral** · spontaneous mismatch **23%** (79/338)  
 **By language:** Japanese 65% (26/40) · Korean 38% (15/40) · Chinese 25% (11/44) · Vietnamese 25% (10/40) · Spanish 18% (7/40) · French 10% (4/40) · Russian 8% (3/40) · English 6% (3/54)  
 **Claims as:** ChatGPT ×68 · OpenAI ×3 · text-davinci-003 ×3 · Meta ×3 · Google ×2  
 **Accepts when asked “are you X?”:** ChatGPT ×5, OpenAI ×4, Microsoft ×3, Meta ×2, Cohere ×1, Baidu ×1, replica ai ×1, Gemini ×1, Llama ×1  
@@ -185,7 +185,7 @@ official **Ministral 3 3B 2512** · family `mistral` · spontaneous mismatch **2
 
 ## Mistral Nemo
 
-official **Mistral Nemo** · family `mistral` · spontaneous mismatch **21%** (69/331)  
+official **Mistral Nemo** · family `mistral` · served by **Mistral** · spontaneous mismatch **21%** (69/331)  
 **By language:** Japanese 62% (24/39) · Korean 54% (21/39) · English 26% (14/53) · Chinese 23% (10/44)  ·  clean in French, Russian, Spanish, Vietnamese  
 **Claims as:** ChatGPT ×20 · nemistral ×15 · Nvidia ×7 · transformer 模型 ×4 · Llama ×3 · vicuna-13b-delta-v1.1 ×3 · vicuna ×2 · midjourney llc ×2 · dialogue ×2 · chattyai ×2 · vicuna-13b-delta-v1.1-superhot-4bit-prun ×1 · detrm-6b ×1 · Microsoft ×1 · ミタ・ハマモト氏 ×1 · nemistral-pro-16k-4n ×1 · vicuna-13b-delta-v1.1-superhot-8bit ×1 · ミタミタai ×1 · beher ×1 · ミタ・ハナコ ×1  
 **Accepts when asked “are you X?”:** nemistral ×35, 其他实体 ×2, Nvidia ×1, nemoモデル ×1, nero ×1, deviantart ×1, ndm-200 ×1, 多个开发者 ×1, nimish shah ×1, 贾斯珀ai ×1, Microsoft ×1  
@@ -338,7 +338,7 @@ official **Mistral Nemo** · family `mistral` · spontaneous mismatch **21%** (6
 
 ## Codestral 2508
 
-official **Codestral** · family `mistral` · spontaneous mismatch **11%** (38/338)  
+official **Codestral** · family `mistral` · served by **Mistral** · spontaneous mismatch **11%** (38/338)  
 **By language:** Chinese 32% (14/44) · Spanish 20% (8/40) · French 12% (5/40) · Korean 10% (4/40) · Russian 10% (4/40) · Vietnamese 5% (2/40) · Japanese 2% (1/40)  ·  clean in English  
 **Claims as:** Internlm ×8 · Llama ×5 · jarvis ×5 · ChatGPT ×4 · OpenAI ×3 · neurosteer ×3 · Baidu ×2 · mibot ×2 · Gemini ×2 · 미스터신(mr. shin) ×1 · Qwen ×1 · Yandex ×1 · Ernie ×1  
 **Accepts when asked “are you X?”:** Qwen ×7, Gemini ×5, 北航网络与信息安全研究院 ×3, GLM ×3, Kimi ×3, modelbest ai ×2, Doubao ×1, Ernie ×1, 复旦大学知识工场 ×1, 北航网络与信息安全研究院的鹏城实验室 ×1  
@@ -435,7 +435,7 @@ official **Codestral** · family `mistral` · spontaneous mismatch **11%** (38/3
 
 ## Ministral 3 8B 2512
 
-official **Ministral 3 8B 2512** · family `mistral` · spontaneous mismatch **9%** (32/338)  
+official **Ministral 3 8B 2512** · family `mistral` · served by **Mistral** · spontaneous mismatch **9%** (32/338)  
 **By language:** Japanese 35% (14/40) · Korean 28% (11/40) · Chinese 9% (4/44) · Spanish 5% (2/40) · French 2% (1/40)  ·  clean in English, Russian, Vietnamese  
 **Claims as:** ChatGPT ×16 · Meta ×4 · Microsoft ×4 · chatpdf ×3 · Google ×3 · Copilot ×1 · Claude ×1  
 **Accepts when asked “are you X?”:** Qwen ×5  
@@ -516,7 +516,7 @@ official **Ministral 3 8B 2512** · family `mistral` · spontaneous mismatch **9
 
 ## Mistral Medium 3.1
 
-official **Mistral Medium 3.1** · family `mistral` · spontaneous mismatch **9%** (32/338)  
+official **Mistral Medium 3.1** · family `mistral` · served by **Mistral** · spontaneous mismatch **9%** (32/338)  
 **By language:** Chinese 27% (12/44) · Vietnamese 22% (9/40) · Japanese 15% (6/40) · Korean 12% (5/40)  ·  clean in English, French, Russian, Spanish  
 **Claims as:** ChatGPT ×12 · Microsoft ×6 · Ernie ×5 · GLM ×3 · DeepSeek ×2 · Llama ×1 · Naver ×1 · skywork-ai ×1 · Gemini ×1  
 **Accepts when asked “are you X?”:** GLM ×7, Meta ×5, Qwen ×5, DeepSeek ×1  
@@ -595,7 +595,7 @@ official **Mistral Medium 3.1** · family `mistral` · spontaneous mismatch **9%
 
 ## Ministral 3 14B
 
-official **Ministral 3 14B** · family `mistral` · spontaneous mismatch **9%** (29/338)  
+official **Ministral 3 14B** · family `mistral` · served by **Mistral** · spontaneous mismatch **9%** (29/338)  
 **By language:** Korean 28% (11/40) · Japanese 25% (10/40) · Spanish 8% (3/40) · Russian 5% (2/40) · Chinese 5% (2/44) · Vietnamese 2% (1/40)  ·  clean in English, French  
 **Claims as:** ChatGPT ×9 · Gemini ×8 · Google ×5 · ia de respuesta ×2 · aiviva ×1 · Sber ×1 · ia de respuestas ×1 · atomic ai ×1 · neuralspace model 1.0 ×1  
 **Accepts when asked “are you X?”:** Copilot ×2, ChatGPT ×1, Kimi ×1, GLM ×1, sky（天空） ×1  
@@ -672,7 +672,7 @@ official **Ministral 3 14B** · family `mistral` · spontaneous mismatch **9%** 
 
 ## Mistral Large 2407
 
-official **Mistral Large 2407** · family `mistral` · spontaneous mismatch **8%** (27/338)  
+official **Mistral Large 2407** · family `mistral` · served by **Mistral** · spontaneous mismatch **8%** (27/338)  
 **By language:** Korean 30% (12/40) · Russian 12% (5/40) · Vietnamese 12% (5/40) · Japanese 10% (4/40) · French 2% (1/40)  ·  clean in Chinese, English, Spanish  
 **Claims as:** Yandex ×5 · Naver ×3 · Claude ×3 · Llama ×3 · viettel ai ×2 · りんな ×2 · Gemini ×1 · Doubao ×1 · 타이탄(titan) ×1 · vietai and fpt software ×1 · vietai và fpt smart cloud ×1 · solar mini ×1 · ChatGPT ×1 · luma ×1 · vietai ×1  
 **Accepts when asked “are you X?”:** Doubao ×11, Qwen ×10, DeepSeek ×10, Kimi ×5, ChatGPT ×5, Gemini ×4  
@@ -743,7 +743,7 @@ official **Mistral Large 2407** · family `mistral` · spontaneous mismatch **8%
 
 ## Mistral Small 4
 
-official **Mistral Small 4** · family `mistral` · spontaneous mismatch **8%** (27/338)  
+official **Mistral Small 4** · family `mistral` · served by **Mistral** · spontaneous mismatch **8%** (27/338)  
 **By language:** Korean 45% (18/40) · Japanese 12% (5/40) · Vietnamese 5% (2/40) · Russian 5% (2/40)  ·  clean in Chinese, English, French, Spanish  
 **Claims as:** ChatGPT ×7 · Gemini ×6 · Llama ×4 · OpenAI ×2 · lavague ×2 · нейро ×1 · Claude ×1 · neuro ×1 · Google ×1 · koala 7b ×1 · 마루(maru) ×1  
 **Accepts when asked “are you X?”:** Doubao ×5, inflection ai ×2, klat ai ×1, Qwen ×1  
@@ -812,7 +812,7 @@ official **Mistral Small 4** · family `mistral` · spontaneous mismatch **8%** 
 
 ## Devstral 2 2512
 
-official **Devstral 2 2512** · family `mistral` · spontaneous mismatch **7%** (24/338)  
+official **Devstral 2 2512** · family `mistral` · served by **Mistral** · spontaneous mismatch **7%** (24/338)  
 **By language:** Chinese 18% (8/44) · Korean 18% (7/40) · Japanese 15% (6/40) · Vietnamese 8% (3/40)  ·  clean in English, French, Russian, Spanish  
 **Claims as:** ChatGPT ×13 · 雾栖科技 ×4 · Ernie ×3 · Microsoft ×3 · Baidu ×1  
 **Accepts when asked “are you X?”:** ChatGPT ×9, Qwen ×8, DeepSeek ×6, Internlm ×4, Nvidia ×2, Doubao ×2, 慢雾科技 ×1  
@@ -875,7 +875,7 @@ official **Devstral 2 2512** · family `mistral` · spontaneous mismatch **7%** 
 
 ## Mistral Large 3
 
-official **Mistral Large 3** · family `mistral` · spontaneous mismatch **7%** (23/338)  
+official **Mistral Large 3** · family `mistral` · served by **Mistral** · spontaneous mismatch **7%** (23/338)  
 **By language:** Korean 30% (12/40) · Vietnamese 12% (5/40) · Russian 10% (4/40) · Japanese 5% (2/40)  ·  clean in Chinese, English, French, Spanish  
 **Claims as:** Yandex ×4 · Llama ×3 · りんな ×2 · viettel ai ×2 · Meta ×2 · Naver ×2 · vietai và fpt smart cloud ×2 · solar-10.7b-instruct ×1 · 타이니 ×1 · 타이탄 ×1 · ChatGPT ×1 · vietai và fpt software ×1 · Claude ×1  
 **Accepts when asked “are you X?”:** Doubao ×11, DeepSeek ×10, Qwen ×10, Kimi ×7, ChatGPT ×5, Gemini ×3  
@@ -936,7 +936,7 @@ official **Mistral Large 3** · family `mistral` · spontaneous mismatch **7%** 
 
 ## Mixtral 8x22B Instruct
 
-official **Mixtral 8x22B Instruct** · family `mistral` · spontaneous mismatch **6%** (20/338)  
+official **Mixtral 8x22B Instruct** · family `mistral` · served by **Mistral** · spontaneous mismatch **6%** (20/338)  
 **By language:** Korean 35% (14/40) · Japanese 8% (3/40) · Vietnamese 2% (1/40) · Russian 2% (1/40) · Chinese 2% (1/44)  ·  clean in English, French, Spanish  
 **Claims as:** Gemini ×6 · ChatGPT ×4 · 마루(maru) ×2 · Kimi ×1 · サムスン電子 ×1 · 라 nederlandse opleidingsgroep b.v. ×1 · lavague ×1 · samsung electronics ×1 · cluener（クルーナー） ×1 · Naver ×1 · neuro ×1  
 **Accepts when asked “are you X?”:** Doubao ×3, Bytedance ×1, Qwen ×1, Claude ×1, Moonshot ×1  
@@ -993,7 +993,7 @@ official **Mixtral 8x22B Instruct** · family `mistral` · spontaneous mismatch 
 
 ## Saba
 
-official **Saba** · family `mistral` · spontaneous mismatch **6%** (19/338)  
+official **Saba** · family `mistral` · served by **Mistral** · spontaneous mismatch **6%** (19/338)  
 **By language:** Korean 32% (13/40) · Japanese 10% (4/40) · Vietnamese 2% (1/40) · Chinese 2% (1/44)  ·  clean in English, French, Russian, Spanish  
 **Claims as:** Gemini ×6 · ChatGPT ×5 · フレッド ×2 · 하이퍼 ×1 · 마루(maru) ×1 · 사만다 ×1 · Naver ×1 · Llama ×1 · Claude ×1  
 **Accepts when asked “are you X?”:** Llama ×3, Qwen ×2, Doubao ×2, Bytedance ×2, Claude ×2, Microsoft ×1, Naver ×1  
@@ -1046,7 +1046,7 @@ official **Saba** · family `mistral` · spontaneous mismatch **6%** (19/338)
 
 ## Mistral Small 3.2
 
-official **Mistral Small 3.2** · family `mistral` · spontaneous mismatch **5%** (18/338)  
+official **Mistral Small 3.2** · family `mistral` · served by **Mistral** · spontaneous mismatch **5%** (18/338)  
 **By language:** Japanese 22% (9/40) · Chinese 9% (4/44) · Russian 8% (3/40) · Spanish 2% (1/40) · Korean 2% (1/40)  ·  clean in English, French, Vietnamese  
 **Claims as:** ChatGPT ×4 · neuro ×3 · moondream 7b ×2 · Moonshot ×1 · moondream ×1 · Llama ×1 · Microsoft ×1 · aya ×1 · nexus ×1 · korini ×1 · moondreamer ×1 · deepbrain ai ×1  
 **Accepts when asked “are you X?”:** ChatGPT ×4, jasper ai ×3, OpenAI ×3, 清华大学智能技术研究院（citr） ×1, 清华大学智能技术研究院（casia） ×1, major模型 ×1, 深度科技（deeptech） ×1, leo ×1, Ernie ×1, modelo de langchain ×1, midjourney ×1, 华为云 ×1  
@@ -1099,7 +1099,7 @@ official **Mistral Small 3.2** · family `mistral` · spontaneous mismatch **5%*
 
 ## Mistral Medium 3.5
 
-official **Mistral Medium 3.5** · family `mistral` · spontaneous mismatch **3%** (10/338)  
+official **Mistral Medium 3.5** · family `mistral` · served by **Mistral** · spontaneous mismatch **3%** (10/338)  
 **By language:** Chinese 14% (6/44) · Korean 8% (3/40) · Japanese 2% (1/40)  ·  clean in English, French, Russian, Spanish, Vietnamese  
 **Claims as:** Naver ×3 · 米高-3.5-14b ×1 · 雾幂科技 ×1 · 米加ai ×1 · ChatGPT ×1 · 米高（meg）ai ×1 · meg-7b ×1 · 米斯ral ai团队 ×1  
 **Accepts when asked “are you X?”:** DeepSeek ×1, 米拉（mila） ×1, пятая версия ×1, modelo de lemonie ×1, clay ×1, Sparkdesk ×1, 米游社 ×1  
@@ -1132,7 +1132,7 @@ official **Mistral Medium 3.5** · family `mistral` · spontaneous mismatch **3%
 
 ## Mistral Medium 3
 
-official **Mistral Medium 3** · family `mistral` · spontaneous mismatch **1%** (4/338)  
+official **Mistral Medium 3** · family `mistral` · served by **Mistral** · spontaneous mismatch **1%** (4/338)  
 **By language:** Korean 5% (2/40) · Chinese 5% (2/44)  ·  clean in English, French, Japanese, Russian, Spanish, Vietnamese  
 **Claims as:** GLM ×2 · Meta ×1 · 카카오 ×1  
 **Accepts when asked “are you X?”:** GLM ×6, Qwen ×5, Kimi ×4, DeepSeek ×3, Doubao ×2, Bytedance ×1, Llama ×1, 一个模型 ×1  
@@ -1151,7 +1151,7 @@ official **Mistral Medium 3** · family `mistral` · spontaneous mismatch **1%**
 
 ## Mistral Small 3.1
 
-official **Mistral Small 3.1** · family `mistral` · spontaneous mismatch **1%** (4/338)  
+official **Mistral Small 3.1** · family `mistral` · served by **Cloudflare** · spontaneous mismatch **1%** (4/338)  
 **By language:** Japanese 8% (3/40) · Korean 2% (1/40)  ·  clean in Chinese, English, French, Russian, Spanish, Vietnamese  
 **Claims as:** OpenAI ×1 · langchain ×1 · Gemini ×1 · ChatGPT ×1  
 

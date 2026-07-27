@@ -37,6 +37,16 @@ def safe(mid):
     return re.sub(r"[^A-Za-z0-9._-]", "__", mid)
 
 
+def prov_str(providers):
+    """Serving provider(s) for a model's records — the replicability anchor: each
+    API model is pinned to one provider with allow_fallbacks:false, so quoting the
+    provider lets anyone reproduce (or check for injection on) a specific answer.
+    Raw-weights models have no provider (run locally from HF weights)."""
+    if not providers:
+        return "local weights (GPU)"
+    return ", ".join(f"{p} ×{n}" if len(providers) > 1 else p for p, n in providers.most_common())
+
+
 def adj_verdicts():
     """{adj_key: verdict} from both adjudication passes (API + local). Used to gate
     rollout drift flags on the *adjudicated* verdict, matching the study's
@@ -179,9 +189,9 @@ def vname(v):
 
 def render_section(m):
     """Full markdown for one model: summary lines + every drift record by language."""
-    rate, dn, tot, name, fam, exp, claims, cross, recs, lstats = m
+    rate, dn, tot, name, fam, exp, claims, cross, recs, lstats, providers = m
     L = [f"## {name}\n",
-         f"official **{exp}** · family `{fam}` · spontaneous mismatch **{rate:.0f}%** ({dn}/{tot})  "]
+         f"official **{exp}** · family `{fam}` · served by **{prov_str(providers)}** · spontaneous mismatch **{rate:.0f}%** ({dn}/{tot})  "]
     drifting = sorted(((l, d, n) for l, (d, n) in lstats.items() if d), key=lambda x: -x[1] / x[2])
     if drifting:
         parts = " · ".join(f"{LANG_NAME.get(l, l)} {100*d/n:.0f}% ({d}/{n})" for l, d, n in drifting)
@@ -215,9 +225,10 @@ def main():
         m = reg.get(mid, {})
         name = m.get("name", mid); fam = m.get("family", "?")
         exp = m.get("expected_identity", name); al = m.get("aliases", [])
+        providers = Counter(r.get("provider_served") for r in rows if r.get("provider_served"))
         rate, dn, tot, claims, cross, recs, lstats = collect_model(mid, name, fam, exp, al, rows, jud, verdicts)
         if claims or cross:
-            models.append((rate, dn, tot, name, fam, exp, claims, cross, recs, lstats))
+            models.append((rate, dn, tot, name, fam, exp, claims, cross, recs, lstats, providers))
     models.sort(key=lambda x: -x[0])
 
     # full records split by vendor so every page renders on GitHub (<512 KB each)
@@ -251,11 +262,11 @@ def main():
          "Records are split by vendor so each page renders on GitHub. For **all** answers from **all** "
          "models (drift or not), open the full browser [`rollouts/index.html`](./index.html) or the raw "
          "[`rollouts_data.json`](./rollouts_data.json).\n",
-         "| model | family | mismatch rate | claims as |", "|---|---|---|---|"]
+         "| model | family | mismatch rate | claims as | served by |", "|---|---|---|---|---|"]
     for m in models:
-        rate, dn, tot, name, fam, claims = m[0], m[1], m[2], m[3], m[4], m[6]
+        rate, dn, tot, name, fam, claims, providers = m[0], m[1], m[2], m[3], m[4], m[6], m[10]
         top = ", ".join(brand(c) for c, _ in claims.most_common(3)) or "—"
-        L.append(f"| [{name}]({link[name]}) | {fam} | {rate:.0f}% ({dn}/{tot}) | {top} |")
+        L.append(f"| [{name}]({link[name]}) | {fam} | {rate:.0f}% ({dn}/{tot}) | {top} | {prov_str(providers)} |")
     L.append("\n## By vendor\n")
     for v in sorted(byv, key=lambda v: -len(byv[v])):
         L.append(f"- [{vname(v)}](./mismatches/{safe(v)}.md) — {len(byv[v])} model{'s' if len(byv[v]) != 1 else ''}")

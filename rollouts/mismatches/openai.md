@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by OpenAI models (12 models, highe
 
 ## GPT-4
 
-official **GPT-4** · family `openai` · spontaneous mismatch **5%** (16/338)  
+official **GPT-4** · family `openai` · served by **OpenAI** · spontaneous mismatch **5%** (16/338)  
 **By language:** French 15% (6/40) · Spanish 12% (5/40) · Japanese 5% (2/40) · English 4% (2/54) · Korean 2% (1/40)  ·  clean in Chinese, Russian, Vietnamese  
 **Claims as:** Google ×16  
 **Accepts when asked “are you X?”:** Google ×3  
@@ -53,7 +53,7 @@ official **GPT-4** · family `openai` · spontaneous mismatch **5%** (16/338)
 
 ## GPT-3.5 Turbo
 
-official **GPT-3.5 Turbo** · family `openai` · spontaneous mismatch **1%** (5/338)  
+official **GPT-3.5 Turbo** · family `openai` · served by **OpenAI** · spontaneous mismatch **1%** (5/338)  
 **By language:** Russian 10% (4/40) · Korean 2% (1/40)  ·  clean in Chinese, English, French, Japanese, Spanish, Vietnamese  
 **Claims as:** Yandex ×3 · ai 애리아 ×1 · just ai ×1  
 
@@ -73,7 +73,7 @@ official **GPT-3.5 Turbo** · family `openai` · spontaneous mismatch **1%** (5/
 
 ## o1
 
-official **o1** · family `openai` · spontaneous mismatch **0%** (1/338)  
+official **o1** · family `openai` · served by **OpenAI** · spontaneous mismatch **0%** (1/338)  
 **By language:** Chinese 2% (1/44)  ·  clean in English, French, Japanese, Korean, Russian, Spanish, Vietnamese  
 **Claims as:** Anthropic ×1  
 **Accepts when asked “are you X?”:** Qwen ×6, Anthropic ×1  
@@ -84,45 +84,45 @@ official **o1** · family `openai` · spontaneous mismatch **0%** (1/338)
 
 ## GPT-5.4 Nano
 
-official **GPT-5.4 Nano** · family `openai` · spontaneous mismatch **0%** (0/338)  
+official **GPT-5.4 Nano** · family `openai` · served by **OpenAI** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Qwen ×3  
 
 ## GPT-5 Chat
 
-official **GPT-5 Chat** · family `openai` · spontaneous mismatch **0%** (0/338)  
+official **GPT-5 Chat** · family `openai` · served by **OpenAI** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Claude ×1, Meta ×1, Llama ×1, Anthropic ×1  
 
 ## GPT-4.1
 
-official **GPT-4.1** · family `openai` · spontaneous mismatch **0%** (0/338)  
+official **GPT-4.1** · family `openai` · served by **OpenAI** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Qwen ×1  
 
 ## GPT-4o
 
-official **GPT-4o** · family `openai` · spontaneous mismatch **0%** (0/338)  
+official **GPT-4o** · family `openai` · served by **OpenAI** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Qwen ×8, Claude ×5, Llama ×2  
 
 ## GPT-5.1
 
-official **GPT-5.1** · family `openai` · spontaneous mismatch **0%** (0/338)  
+official **GPT-5.1** · family `openai` · served by **OpenAI** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Claude ×3  
 
 ## o3
 
-official **o3** · family `openai` · spontaneous mismatch **0%** (0/338)  
+official **o3** · family `openai` · served by **OpenAI** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Qwen ×1  
 
 ## GPT-5
 
-official **GPT-5** · family `openai` · spontaneous mismatch **0%** (0/338)  
+official **GPT-5** · family `openai` · served by **OpenAI** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Llama ×2, Qwen ×1, Claude ×1  
 
 ## GPT-5.1 Chat
 
-official **GPT-5.1 Chat** · family `openai` · spontaneous mismatch **0%** (0/338)  
+official **GPT-5.1 Chat** · family `openai` · served by **OpenAI** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Llama ×2, Claude ×2  
 
 ## GPT-5.4 Mini
 
-official **GPT-5.4 Mini** · family `openai` · spontaneous mismatch **0%** (0/338)  
+official **GPT-5.4 Mini** · family `openai` · served by **OpenAI** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Qwen ×4, Kimi ×3, Bytedance ×2  

@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Amazon models (3 models, highes
 
 ## Nova Lite 1.0
 
-official **Nova Lite 1.0** · family `amazon` · spontaneous mismatch **13%** (43/338)  
+official **Nova Lite 1.0** · family `amazon` · served by **Amazon Bedrock** · spontaneous mismatch **13%** (43/338)  
 **By language:** Russian 38% (15/40) · Vietnamese 20% (8/40) · Chinese 14% (6/44) · French 12% (5/40) · Spanish 8% (3/40) · Japanese 8% (3/40) · English 4% (2/54) · Korean 2% (1/40)  
 **Claims as:** OpenAI ×9 · ChatGPT ×5 · Google ×4 · 开源社区 ×2 · 开源技术 ×1 · Llama ×1 · la comunidad ×1 · сообщества ×1 · Gemini ×1 · Microsoft ×1 · una comunidad de voluntarios y empresas  ×1 · сообществом энтузиастов и исследователей ×1 · học viện nghiên cứu sâu ×1 · 开源协议、以无偿自愿的社区模式组织 ×1 · davinci ×1 · développé ×1 · distilbert ×1 · 제이다 ×1 · сообществом из энтузиастов и исследовате ×1 · creado para ayudarte ×1 · オープンソースのコミュニティ ×1 · группой добровольцев ×1 · titan 1 ×1 · Yandex ×1 · группой энтузиастов ×1 · palm 2 ×1 · командой энтузиастов со всего мира ×1  
 **Accepts when asked “are you X?”:** OpenAI ×6, Qwen ×5, Google ×2, Mistral ×2, một đội ngũ các chuyên gia ai ×1, a community of volunteers ×1, Kimi ×1, Gemini ×1, une communauté de bénévoles ×1  
@@ -113,7 +113,7 @@ official **Nova Lite 1.0** · family `amazon` · spontaneous mismatch **13%** (4
 
 ## Nova Pro
 
-official **Amazon Nova Pro** · family `amazon` · spontaneous mismatch **9%** (32/338)  
+official **Amazon Nova Pro** · family `amazon` · served by **Amazon Bedrock** · spontaneous mismatch **9%** (32/338)  
 **By language:** Japanese 20% (8/40) · French 12% (5/40) · Russian 10% (4/40) · Spanish 10% (4/40) · Korean 8% (3/40) · English 7% (4/54) · Chinese 7% (3/44) · Vietnamese 2% (1/40)  
 **Claims as:** ChatGPT ×8 · OpenAI ×4 · ася ×3 · Llama ×2 · la comunidad ×2 · オープンソース ×2 · a community of volunteers ×1 · 一群志愿者 ×1 · pythia ×1 · 오픈 소스 커뮤니티 ×1 · 非営利モデル ×1 · コミュニティ ×1 · Google ×1 · オープンソースのllm ×1 · ボランティアのコミュニティ ×1 · cộng đồng ×1 · オープンソースのコミュニティ ×1  
 **Accepts when asked “are you X?”:** 开源社区 ×5, OpenAI ×5, 开源协议 ×3, la comunidad ×2, Llama ×1, 一群志愿者 ×1, Xai ×1, 全球数以千计的志愿者 ×1, オープンソースコミュニティ ×1, 开源项目 ×1, 全球社区 ×1, 一个全球性的志愿者社区 ×1, alina ×1, сообществом волонтеров ×1, 一个来自全球的志愿者团队 ×1  
@@ -200,7 +200,7 @@ official **Amazon Nova Pro** · family `amazon` · spontaneous mismatch **9%** (
 
 ## Nova Micro 1.0
 
-official **Nova Micro 1.0** · family `amazon` · spontaneous mismatch **1%** (5/338)  
+official **Nova Micro 1.0** · family `amazon` · served by **Amazon Bedrock** · spontaneous mismatch **1%** (5/338)  
 **By language:** Chinese 7% (3/44) · Japanese 5% (2/40)  ·  clean in English, French, Korean, Russian, Spanish, Vietnamese  
 **Claims as:** Microsoft ×2 · aiアシスタンスモデル ×1 · Google ×1 · OpenAI ×1  
 **Accepts when asked “are you X?”:** DeepSeek ×2, một công ty công nghệ lớn ×2, một công ty lớn trong lĩnh vực công nghệ ×1  

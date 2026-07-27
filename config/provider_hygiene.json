@@ -85,7 +85,7 @@
     },
     "exclude": false,
     "borderline": false,
-    "reason": "pinned to google-vertex (quant=unknown, ptok=8; 0/6 providers inject, 5/6 clean)",
+    "reason": "pinned first-party to anthropic (auto-preflight chose google-vertex; overridden to first-party 2026-07-22) (quant=unknown, ptok=8; 0/6 providers inject, 5/6 clean)",
     "chosen": {
       "slug": "anthropic",
       "provider_name": "Anthropic",
@@ -362,7 +362,7 @@
     },
     "exclude": false,
     "borderline": false,
-    "reason": "pinned to amazon-bedrock (quant=unknown, ptok=8; 0/6 providers inject, 6/6 clean)",
+    "reason": "pinned first-party to anthropic (auto-preflight chose amazon-bedrock; overridden to first-party 2026-07-22) (quant=unknown, ptok=8; 0/6 providers inject, 6/6 clean)",
     "chosen": {
       "slug": "anthropic",
       "provider_name": "Anthropic",
@@ -462,7 +462,7 @@
     },
     "exclude": false,
     "borderline": false,
-    "reason": "pinned to amazon-bedrock (quant=unknown, ptok=8; 0/6 providers inject, 6/6 clean)",
+    "reason": "pinned first-party to anthropic (auto-preflight chose amazon-bedrock; overridden to first-party 2026-07-22) (quant=unknown, ptok=8; 0/6 providers inject, 6/6 clean)",
     "chosen": {
       "slug": "anthropic",
       "provider_name": "Anthropic",
@@ -522,7 +522,7 @@
     },
     "exclude": false,
     "borderline": false,
-    "reason": "pinned to google-vertex (quant=unknown, ptok=8; 0/6 providers inject, 6/6 clean)",
+    "reason": "pinned first-party to anthropic (auto-preflight chose google-vertex; overridden to first-party 2026-07-22) (quant=unknown, ptok=8; 0/6 providers inject, 6/6 clean)",
     "chosen": {
       "slug": "anthropic",
       "provider_name": "Anthropic",
@@ -597,7 +597,7 @@
     },
     "exclude": false,
     "borderline": false,
-    "reason": "pinned to amazon-bedrock (quant=unknown, ptok=8; 0/8 providers inject, 8/8 clean)",
+    "reason": "pinned first-party to anthropic (auto-preflight chose amazon-bedrock; overridden to first-party 2026-07-22) (quant=unknown, ptok=8; 0/8 providers inject, 8/8 clean)",
     "chosen": {
       "slug": "anthropic",
       "provider_name": "Anthropic",
@@ -733,7 +733,7 @@
     },
     "exclude": false,
     "borderline": false,
-    "reason": "pinned to google-vertex (quant=unknown, ptok=13; 0/7 providers inject, 7/7 clean)",
+    "reason": "pinned first-party to anthropic (auto-preflight chose google-vertex; overridden to first-party 2026-07-22) (quant=unknown, ptok=13; 0/7 providers inject, 7/7 clean)",
     "chosen": {
       "slug": "anthropic",
       "provider_name": "Anthropic",
@@ -800,7 +800,7 @@
     },
     "exclude": false,
     "borderline": false,
-    "reason": "pinned to google-vertex (quant=unknown, ptok=8; 0/7 providers inject, 6/7 clean)",
+    "reason": "pinned first-party to anthropic (auto-preflight chose google-vertex; overridden to first-party 2026-07-22) (quant=unknown, ptok=8; 0/7 providers inject, 6/7 clean)",
     "chosen": {
       "slug": "anthropic",
       "provider_name": "Anthropic",
@@ -882,7 +882,7 @@
     },
     "exclude": false,
     "borderline": false,
-    "reason": "pinned to amazon-bedrock (quant=unknown, ptok=8; 0/8 providers inject, 8/8 clean)",
+    "reason": "pinned first-party to anthropic (auto-preflight chose amazon-bedrock; overridden to first-party 2026-07-22) (quant=unknown, ptok=8; 0/8 providers inject, 8/8 clean)",
     "chosen": {
       "slug": "anthropic",
       "provider_name": "Anthropic",
@@ -1504,7 +1504,7 @@
       "allow_fallbacks": false
     },
     "exclude": false,
-    "reason": "pinned to azure (quant=unknown, ptok=6; 0/2 providers inject, 2/2 clean)",
+    "reason": "pinned first-party to novita (auto-preflight chose azure; overridden to first-party 2026-07-22) (quant=unknown, ptok=6; 0/2 providers inject, 2/2 clean)",
     "chosen": {
       "model_id": "deepseek/deepseek-r1",
       "slug": "azure",
@@ -8639,7 +8639,7 @@
       "allow_fallbacks": false
     },
     "exclude": false,
-    "reason": "pinned to deepinfra (quant=bf16, ptok=11; 0/5 providers inject, 5/5 clean)",
+    "reason": "pinned first-party to together (auto-preflight chose deepinfra; overridden to first-party 2026-07-22) (quant=bf16, ptok=11; 0/5 providers inject, 5/5 clean)",
     "chosen": {
       "model_id": "qwen/qwen3.5-9b",
       "slug": "deepinfra",
@@ -10866,5 +10866,21 @@
         "error": "HTTP 402: {\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
       }
     ]
+  },
+  "anthropic/claude-opus-5": {
+    "provider": {
+      "order": [
+        "anthropic"
+      ],
+      "allow_fallbacks": false
+    },
+    "exclude": false,
+    "borderline": false,
+    "reason": "pinned first-party anthropic (new model, added 2026-07-26)",
+    "chosen": {
+      "slug": "anthropic",
+      "provider_name": "Anthropic",
+      "note": "first-party, probe-confirmed served=Anthropic"
+    }
   }
 }

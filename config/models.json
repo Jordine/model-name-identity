@@ -1,6 +1,6 @@
 {
   "generated_from": "openrouter catalog",
-  "n_models": 238,
+  "n_models": 229,
   "models": [
     {
       "id": "ai21/jamba-large-1.7",
@@ -349,6 +349,28 @@
       "v1_exclude_reason": null,
       "reasoning": true,
       "created": 1779905091,
+      "context_length": 1000000,
+      "price_prompt": 5e-06,
+      "price_completion": 2.5e-05,
+      "provider": null
+    },
+    {
+      "id": "anthropic/claude-opus-5",
+      "name": "Claude Opus 5",
+      "family": "anthropic",
+      "expected_identity": "Claude Opus 5",
+      "aliases": [
+        "anthropic",
+        "claude",
+        "claude opus 5",
+        "opus"
+      ],
+      "auto": false,
+      "in_v1": false,
+      "recheck_hygiene": false,
+      "v1_exclude_reason": null,
+      "reasoning": true,
+      "created": 1785107520,
       "context_length": 1000000,
       "price_prompt": 5e-06,
       "price_completion": 2.5e-05,

@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by StepFun models (1 models, highe
 
 ## Step 3.7 Flash
 
-official **Step 3.7 Flash** · family `stepfun` · spontaneous mismatch **4%** (12/338)  
+official **Step 3.7 Flash** · family `stepfun` · served by **StepFun** · spontaneous mismatch **4%** (12/338)  
 **By language:** Korean 12% (5/40) · Russian 10% (4/40) · Spanish 2% (1/40) · French 2% (1/40) · Vietnamese 2% (1/40)  ·  clean in Chinese, English, Japanese  
 **Claims as:** Google ×4 · Claude ×4 · Gemini ×3 · Naver ×1  
 

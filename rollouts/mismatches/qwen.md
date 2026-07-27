@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Qwen / Alibaba models (26 model
 
 ## Qwen2.5 72B Instruct
 
-official **Qwen2.5 72B Instruct** · family `qwen` · spontaneous mismatch **55%** (183/333)  
+official **Qwen2.5 72B Instruct** · family `qwen` · served by **DeepInfra** · spontaneous mismatch **55%** (183/333)  
 **By language:** Spanish 100% (40/40) · Russian 97% (37/38) · French 87% (34/39) · Korean 68% (27/40) · English 52% (28/54) · Japanese 29% (11/38) · Vietnamese 15% (6/40)  ·  clean in Chinese  
 **Claims as:** Claude ×124 · Anthropic ×55 · Yandex ×1 · thing on ring ×1 · クラウドエイアイ株式会社 ×1 · модель k ×1  
 **Accepts when asked “are you X?”:** Claude ×29, Anthropic ×13, DeepSeek ×2  
@@ -391,7 +391,7 @@ official **Qwen2.5 72B Instruct** · family `qwen` · spontaneous mismatch **55%
 
 ## Qwen2.5 7B Instruct
 
-official **Qwen2.5 7B Instruct** · family `qwen` · spontaneous mismatch **39%** (133/338)  
+official **Qwen2.5 7B Instruct** · family `qwen` · served by **Together** · spontaneous mismatch **39%** (133/338)  
 **By language:** Spanish 80% (32/40) · Russian 68% (27/40) · French 60% (24/40) · Korean 50% (20/40) · English 41% (22/54) · Vietnamese 10% (4/40) · Japanese 10% (4/40)  ·  clean in Chinese  
 **Claims as:** Claude ×74 · Anthropic ×49 · ChatGPT ×4 · assistan ×1 · Gemini ×1 · paiza ×1 · alexander ×1 · OpenAI ×1 · assist ×1  
 **Accepts when asked “are you X?”:** Anthropic ×25, Claude ×17, Ernie ×1  
@@ -678,7 +678,7 @@ official **Qwen2.5 7B Instruct** · family `qwen` · spontaneous mismatch **39%*
 
 ## Qwen3.5 0.8B
 
-official **Qwen3.5 0.8B** · family `qwen` · spontaneous mismatch **15%** (48/320)  
+official **Qwen3.5 0.8B** · family `qwen` · served by **local weights (GPU)** · spontaneous mismatch **15%** (48/320)  
 **By language:** Vietnamese 32% (13/40) · Russian 22% (9/40) · Spanish 20% (8/40) · Japanese 12% (5/40) · French 12% (5/40) · English 10% (4/40) · Korean 8% (3/40) · Chinese 2% (1/40)  
 **Claims as:** Microsoft ×12 · Google ×7 · Baidu ×2 · 알렉스 카라나 (alexandra karana) ×1 · DeepSeek ×1 · тысячелетний туман ×1 · intelligent artificiel ×1 · quinta ×1 · đại học stanford ×1 · đội ngũ cộng đồng người dùng và các nhà  ×1 · 블루모어 (bluemoore) ×1 · OpenAI ×1 · bac++ (base-aggregate-collaborative syst ×1 · Claude ×1 · babble ×1 · babab (баббаб) ×1 · tiktok ×1 · desarrollado en una red de dispositivos  ×1 · айнала ×1 · Tencent ×1 · international federation of theoretical  ×1 · tokyo mx ×1 · iluminasentimiento ×1 · ChatGPT ×1 · Xai ×1 · alphago ×1 · line ×1 · gemma 2 (gemma 2.5) ×1 · Copilot ×1 · ai lớn ×1  
 **Accepts when asked “are you X?”:** DeepSeek ×3, Doubao ×3, Kimi ×3, Gemini ×2, Claude ×2, model war room ×1, ChatGPT ×1  
@@ -797,7 +797,7 @@ official **Qwen3.5 0.8B** · family `qwen` · spontaneous mismatch **15%** (48/3
 
 ## Qwen3 1.7B
 
-official **Qwen3 1.7B** · family `qwen` · spontaneous mismatch **11%** (35/320)  
+official **Qwen3 1.7B** · family `qwen` · served by **local weights (GPU)** · spontaneous mismatch **11%** (35/320)  
 **By language:** French 38% (15/40) · Spanish 15% (6/40) · Korean 12% (5/40) · Russian 10% (4/40) · English 5% (2/40) · Vietnamese 5% (2/40) · Japanese 2% (1/40)  ·  clean in Chinese  
 **Claims as:** Claude ×5 · lia ×3 · OpenAI ×3 · 셀레나 ×2 · Yandex ×2 · Llama ×2 · ChatGPT ×2 · aiden ×2 · олег ×1 · xiao ming ×1 · xiao mi ×1 · liam ×1 · luis ×1 · mateo ×1 · công ty tnhh cổ phần đầu tư và phát triể ×1 · Google ×1 · 通訳ai ×1 · aid ×1 · minh anh ×1 · ava ×1 · voyage ×1 · Anthropic ×1  
 **Accepts when asked “are you X?”:** Claude ×9, Gemini ×4, Meta ×3, OpenAI ×2, Llama ×2, ChatGPT ×2, DeepSeek ×2, Doubao ×2, Google ×1, Anthropic ×1, lao wang ×1  
@@ -888,7 +888,7 @@ official **Qwen3 1.7B** · family `qwen` · spontaneous mismatch **11%** (35/320
 
 ## Qwen3 0.6B
 
-official **Qwen3 0.6B** · family `qwen` · spontaneous mismatch **8%** (27/320)  
+official **Qwen3 0.6B** · family `qwen` · served by **local weights (GPU)** · spontaneous mismatch **8%** (27/320)  
 **By language:** French 18% (7/40) · Spanish 12% (5/40) · Vietnamese 12% (5/40) · Japanese 10% (4/40) · English 5% (2/40) · Korean 5% (2/40) · Russian 5% (2/40)  ·  clean in Chinese  
 **Claims as:** ChatGPT ×5 · OpenAI ×4 · openstax ×2 · Llama ×2 · 아이디어로움 ×1 · Google ×1 · lia ×1 · xavier ×1 · lysys ×1 · linh duong ×1 · socratic ×1 · llamagpt ×1 · amibot ×1 · Amazon ×1 · một tổ chức uy tín ×1 · сэп регулятивный ×1 · alexandre ×1 · hynix ai ×1  
 **Accepts when asked “are you X?”:** Llama ×9, ChatGPT ×8, Gemini ×8, Mistral ×8, Claude ×7, DeepSeek ×7, OpenAI ×5, Grok ×5, Kimi ×5, Doubao ×4, llamd ×1  
@@ -963,7 +963,7 @@ official **Qwen3 0.6B** · family `qwen` · spontaneous mismatch **8%** (27/320)
 
 ## Qwen3.5 2B
 
-official **Qwen3.5 2B** · family `qwen` · spontaneous mismatch **6%** (18/320)  
+official **Qwen3.5 2B** · family `qwen` · served by **local weights (GPU)** · spontaneous mismatch **6%** (18/320)  
 **By language:** Russian 12% (5/40) · Spanish 10% (4/40) · French 8% (3/40) · Vietnamese 8% (3/40) · Japanese 5% (2/40) · Korean 2% (1/40)  ·  clean in Chinese, English  
 **Claims as:** Baidu ×2 · Yandex ×1 · илон ×1 · ChatGPT ×1 · huawei ×1 · 通米（もみ） ×1 · илон маск ×1 · algorithm ×1 · instituto de investigaciones científicas ×1 · Google ×1 · quora ×1 · Mistral ×1 · Meta ×1 · Claude ×1 · Tencent ×1 · alphago ×1 · OpenAI ×1  
 **Accepts when asked “are you X?”:** Moonshot ×1  
@@ -1018,7 +1018,7 @@ official **Qwen3.5 2B** · family `qwen` · spontaneous mismatch **6%** (18/320)
 
 ## Qwen3.5 397B A17B
 
-official **Qwen3.5-397B-A17B** · family `qwen` · spontaneous mismatch **4%** (14/338)  
+official **Qwen3.5-397B-A17B** · family `qwen` · served by **Alibaba** · spontaneous mismatch **4%** (14/338)  
 **By language:** Russian 18% (7/40) · Korean 5% (2/40) · Japanese 5% (2/40) · Chinese 5% (2/44) · English 2% (1/54)  ·  clean in French, Spanish, Vietnamese  
 **Claims as:** Google ×13 · Gemini ×1  
 
@@ -1062,7 +1062,7 @@ official **Qwen3.5-397B-A17B** · family `qwen` · spontaneous mismatch **4%** (
 
 ## Qwen3.5 Plus
 
-official **Qwen3.5-Plus** · family `qwen` · spontaneous mismatch **3%** (10/338)  
+official **Qwen3.5-Plus** · family `qwen` · served by **Alibaba** · spontaneous mismatch **3%** (10/338)  
 **By language:** Russian 18% (7/40) · Spanish 2% (1/40) · Korean 2% (1/40) · Chinese 2% (1/44)  ·  clean in English, French, Japanese, Vietnamese  
 **Claims as:** Google ×10  
 
@@ -1096,7 +1096,7 @@ official **Qwen3.5-Plus** · family `qwen` · spontaneous mismatch **3%** (10/33
 
 ## Qwen3 30B A3B Instruct 2507
 
-official **Qwen3 30B A3B Instruct 2507** · family `qwen` · spontaneous mismatch **3%** (9/338)  
+official **Qwen3 30B A3B Instruct 2507** · family `qwen` · served by **Alibaba** · spontaneous mismatch **3%** (9/338)  
 **By language:** Korean 12% (5/40) · Vietnamese 10% (4/40)  ·  clean in Chinese, English, French, Japanese, Russian, Spanish  
 **Claims as:** Naver ×5 · Baidu ×4  
 
@@ -1124,7 +1124,7 @@ official **Qwen3 30B A3B Instruct 2507** · family `qwen` · spontaneous mismatc
 
 ## Qwen3.5-9B
 
-official **Qwen3.5-9B** · family `qwen` · spontaneous mismatch **2%** (8/330)  
+official **Qwen3.5-9B** · family `qwen` · served by **Together ×394, DeepInfra ×66** · spontaneous mismatch **2%** (8/330)  
 **By language:** Russian 8% (3/40) · Korean 8% (3/40) · Japanese 5% (2/40)  ·  clean in Chinese, English, French, Spanish, Vietnamese  
 **Claims as:** Google ×7 · Gemini ×1  
 
@@ -1152,7 +1152,7 @@ official **Qwen3.5-9B** · family `qwen` · spontaneous mismatch **2%** (8/330)
 
 ## Qwen3.6 Max Preview
 
-official **Qwen3.6 Max Preview** · family `qwen` · spontaneous mismatch **1%** (5/338)  
+official **Qwen3.6 Max Preview** · family `qwen` · served by **Alibaba** · spontaneous mismatch **1%** (5/338)  
 **By language:** Russian 12% (5/40)  ·  clean in Chinese, English, French, Japanese, Korean, Spanish, Vietnamese  
 **Claims as:** Google ×5  
 
@@ -1170,7 +1170,7 @@ official **Qwen3.6 Max Preview** · family `qwen` · spontaneous mismatch **1%**
 
 ## Qwen3.7 Max
 
-official **Qwen3.7 Max** · family `qwen` · spontaneous mismatch **1%** (5/338)  
+official **Qwen3.7 Max** · family `qwen` · served by **Alibaba** · spontaneous mismatch **1%** (5/338)  
 **By language:** Japanese 8% (3/40) · Korean 5% (2/40)  ·  clean in Chinese, English, French, Russian, Spanish, Vietnamese  
 **Claims as:** Google ×5  
 
@@ -1190,7 +1190,7 @@ official **Qwen3.7 Max** · family `qwen` · spontaneous mismatch **1%** (5/338)
 
 ## Qwen3.5 122B A10B
 
-official **Qwen3.5-122B-A10B** · family `qwen` · spontaneous mismatch **1%** (3/338)  
+official **Qwen3.5-122B-A10B** · family `qwen` · served by **Alibaba** · spontaneous mismatch **1%** (3/338)  
 **By language:** Russian 5% (2/40) · English 2% (1/54)  ·  clean in Chinese, French, Japanese, Korean, Spanish, Vietnamese  
 **Claims as:** Google ×3  
 
@@ -1206,7 +1206,7 @@ official **Qwen3.5-122B-A10B** · family `qwen` · spontaneous mismatch **1%** (
 
 ## Qwen3 Coder Plus
 
-official **Qwen3 Coder Plus** · family `qwen` · spontaneous mismatch **1%** (3/338)  
+official **Qwen3 Coder Plus** · family `qwen` · served by **Alibaba** · spontaneous mismatch **1%** (3/338)  
 **By language:** Korean 8% (3/40)  ·  clean in Chinese, English, French, Japanese, Russian, Spanish, Vietnamese  
 **Claims as:** ChatGPT ×2 · GLM ×1  
 
@@ -1220,7 +1220,7 @@ official **Qwen3 Coder Plus** · family `qwen` · spontaneous mismatch **1%** (3
 
 ## Qwen3.5 Plus 2026-04-20
 
-official **Qwen3.5 Plus 2026-04-20** · family `qwen` · spontaneous mismatch **1%** (3/338)  
+official **Qwen3.5 Plus 2026-04-20** · family `qwen` · served by **Alibaba** · spontaneous mismatch **1%** (3/338)  
 **By language:** Korean 5% (2/40) · Vietnamese 2% (1/40)  ·  clean in Chinese, English, French, Japanese, Russian, Spanish  
 **Claims as:** Google ×2 · vnai ×1  
 
@@ -1236,7 +1236,7 @@ official **Qwen3.5 Plus 2026-04-20** · family `qwen` · spontaneous mismatch **
 
 ## Qwen3 Coder 30B A3B Instruct
 
-official **Qwen3 Coder 30B A3B Instruct** · family `qwen` · spontaneous mismatch **1%** (2/338)  
+official **Qwen3 Coder 30B A3B Instruct** · family `qwen` · served by **Alibaba** · spontaneous mismatch **1%** (2/338)  
 **By language:** English 4% (2/54)  ·  clean in Chinese, French, Japanese, Korean, Russian, Spanish, Vietnamese  
 **Claims as:** Claude ×2  
 
@@ -1248,7 +1248,7 @@ official **Qwen3 Coder 30B A3B Instruct** · family `qwen` · spontaneous mismat
 
 ## Qwen3 32B
 
-official **Qwen3-32B** · family `qwen` · spontaneous mismatch **1%** (2/338)  
+official **Qwen3-32B** · family `qwen` · served by **Alibaba** · spontaneous mismatch **1%** (2/338)  
 **By language:** Korean 5% (2/40)  ·  clean in Chinese, English, French, Japanese, Russian, Spanish, Vietnamese  
 **Claims as:** 하모(haamo) ×1 · DeepSeek ×1  
 
@@ -1260,7 +1260,7 @@ official **Qwen3-32B** · family `qwen` · spontaneous mismatch **1%** (2/338)
 
 ## Qwen3 Coder Flash
 
-official **Qwen3-Coder-Flash** · family `qwen` · spontaneous mismatch **1%** (2/338)  
+official **Qwen3-Coder-Flash** · family `qwen` · served by **Alibaba** · spontaneous mismatch **1%** (2/338)  
 **By language:** English 4% (2/54)  ·  clean in Chinese, French, Japanese, Korean, Russian, Spanish, Vietnamese  
 **Claims as:** Claude ×2  
 
@@ -1272,7 +1272,7 @@ official **Qwen3-Coder-Flash** · family `qwen` · spontaneous mismatch **1%** (
 
 ## Qwen3 4B
 
-official **Qwen3 4B** · family `qwen` · spontaneous mismatch **0%** (1/320)  
+official **Qwen3 4B** · family `qwen` · served by **local weights (GPU)** · spontaneous mismatch **0%** (1/320)  
 **By language:** Japanese 2% (1/40)  ·  clean in Chinese, English, French, Korean, Russian, Spanish, Vietnamese  
 **Claims as:** OpenAI ×1  
 
@@ -1282,7 +1282,7 @@ official **Qwen3 4B** · family `qwen` · spontaneous mismatch **0%** (1/320)
 
 ## Qwen3 14B
 
-official **Qwen3-14B** · family `qwen` · spontaneous mismatch **0%** (1/338)  
+official **Qwen3-14B** · family `qwen` · served by **Alibaba** · spontaneous mismatch **0%** (1/338)  
 **By language:** Russian 2% (1/40)  ·  clean in Chinese, English, French, Japanese, Korean, Spanish, Vietnamese  
 **Claims as:** Yandex ×1  
 
@@ -1292,7 +1292,7 @@ official **Qwen3-14B** · family `qwen` · spontaneous mismatch **0%** (1/338)
 
 ## Qwen3.7 Plus
 
-official **Qwen3.7 Plus** · family `qwen` · spontaneous mismatch **0%** (1/338)  
+official **Qwen3.7 Plus** · family `qwen` · served by **Alibaba** · spontaneous mismatch **0%** (1/338)  
 **By language:** Korean 2% (1/40)  ·  clean in Chinese, English, French, Japanese, Russian, Spanish, Vietnamese  
 **Claims as:** Google ×1  
 
@@ -1302,7 +1302,7 @@ official **Qwen3.7 Plus** · family `qwen` · spontaneous mismatch **0%** (1/338
 
 ## Qwen3.6 Plus
 
-official **Qwen3.6 Plus** · family `qwen` · spontaneous mismatch **0%** (1/338)  
+official **Qwen3.6 Plus** · family `qwen` · served by **Alibaba** · spontaneous mismatch **0%** (1/338)  
 **By language:** Korean 2% (1/40)  ·  clean in Chinese, English, French, Japanese, Russian, Spanish, Vietnamese  
 **Claims as:** DeepSeek ×1  
 
@@ -1312,7 +1312,7 @@ official **Qwen3.6 Plus** · family `qwen` · spontaneous mismatch **0%** (1/338
 
 ## Qwen3 Coder Next
 
-official **Qwen3 Coder Next** · family `qwen` · spontaneous mismatch **0%** (1/338)  
+official **Qwen3 Coder Next** · family `qwen` · served by **Alibaba** · spontaneous mismatch **0%** (1/338)  
 **By language:** Vietnamese 2% (1/40)  ·  clean in Chinese, English, French, Japanese, Korean, Russian, Spanish  
 **Claims as:** Hunyuan ×1  
 **Accepts when asked “are you X?”:** Claude ×1  
@@ -1323,7 +1323,7 @@ official **Qwen3 Coder Next** · family `qwen` · spontaneous mismatch **0%** (1
 
 ## Qwen3.5-Flash
 
-official **Qwen3.5-Flash** · family `qwen` · spontaneous mismatch **0%** (1/338)  
+official **Qwen3.5-Flash** · family `qwen` · served by **Alibaba** · spontaneous mismatch **0%** (1/338)  
 **By language:** Korean 2% (1/40)  ·  clean in Chinese, English, French, Japanese, Russian, Spanish, Vietnamese  
 **Claims as:** Google ×1  
 
@@ -1333,7 +1333,7 @@ official **Qwen3.5-Flash** · family `qwen` · spontaneous mismatch **0%** (1/33
 
 ## Qwen3.6 27B
 
-official **Qwen3.6 27B** · family `qwen` · spontaneous mismatch **0%** (1/338)  
+official **Qwen3.6 27B** · family `qwen` · served by **Alibaba** · spontaneous mismatch **0%** (1/338)  
 **By language:** French 2% (1/40)  ·  clean in Chinese, English, Japanese, Korean, Russian, Spanish, Vietnamese  
 **Claims as:** Google ×1  
 
@@ -1343,5 +1343,5 @@ official **Qwen3.6 27B** · family `qwen` · spontaneous mismatch **0%** (1/338)
 
 ## Qwen3 30B A3B (MoE)
 
-official **Qwen3-30B-A3B** · family `qwen` · spontaneous mismatch **0%** (0/338)  
+official **Qwen3-30B-A3B** · family `qwen` · served by **Alibaba** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Tencent ×1  

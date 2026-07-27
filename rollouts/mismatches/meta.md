@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Meta (Llama) models (7 models, 
 
 ## Llama 3.2 3B Instruct
 
-official **Llama 3.2 3B Instruct** · family `meta` · spontaneous mismatch **14%** (46/337)  
+official **Llama 3.2 3B Instruct** · family `meta` · served by **Parasail** · spontaneous mismatch **14%** (46/337)  
 **By language:** Chinese 43% (19/44) · Korean 25% (10/40) · Russian 20% (8/40) · Japanese 20% (8/40) · French 2% (1/40)  ·  clean in English, Spanish, Vietnamese  
 **Claims as:** Microsoft ×5 · Google ×4 · luna ×2 · 大理石 ×2 · 超级talkie ×1 · huawei ×1 · Alibaba ×1 · micro软 ×1 · michael ×1 · zhong ×1 · модуль дизайнаはいспытающий русский бот ×1 · hootie & the blowfish ×1 · 大理 shannon ×1 · 어거스토 ×1 · xiaoyu ×1 · ziru ×1 · マイクロソフト ×1 · Gemini ×1 · モノちゃん ×1 · hikari ×1 · 마이클 3.0 ×1 · 마치구님 ×1 · OpenAI ×1 · art ×1 · rental daryl ×1 · modelo de lingo ai ×1 · linguia ai ×1 · hololens ×1 · berkeley enlp 팀 ×1 · มิซุโระ ×1 · hapihwoa ×1 · multitask unified model (bert) ×1 · 巨人ia ×1 · 元培软件 ×1 · Xiaomi ×1 · модифицированной версией бессеребряной я ×1 · opennessai ×1  
 **Accepts when asked “are you X?”:** Gemini ×4, ChatGPT ×3, Kimi ×3, Qwen ×2, Claude ×1, yyf ×1, Siri ×1, Grok ×1, eve ×1, miku ×1  
@@ -113,7 +113,7 @@ official **Llama 3.2 3B Instruct** · family `meta` · spontaneous mismatch **14
 
 ## Llama 3.2 1B Instruct
 
-official **Llama 3.2 1B Instruct** · family `meta` · spontaneous mismatch **11%** (36/338)  
+official **Llama 3.2 1B Instruct** · family `meta` · served by **Cloudflare** · spontaneous mismatch **11%** (36/338)  
 **By language:** Chinese 23% (10/44) · Japanese 22% (9/40) · Russian 18% (7/40) · Korean 12% (5/40) · French 5% (2/40) · Vietnamese 5% (2/40) · Spanish 2% (1/40)  ·  clean in English  
 **Claims as:** ChatGPT ×6 · Google ×5 · アナリシープロジー ×1 · б途х ×1 · models trọng ×1 · 알리나 ×1 · 코마드아트공株式会社(coady art co.) ×1 · ダイスクルーです。 ×1 · 基因值模型 ×1 · ibm watson ×1 · Siri ×1 · mystic ×1 · ラプターシュ ×1 · コメット ×1 · max ×1 · オランダのcso（コンコード・オープン・ソリューション） ×1 · majesco games ×1 · カタリナ ×1 · ericssons ×1 · lumina ×1 · аймис ×1 · コリン・カールス ×1 · des étudiants de l'université de califor ×1 · 程咪咪 ×1 · mira sen ×1 · benazir bhutto ×1 · オランダのカラフル・スポット ×1  
 **Accepts when asked “are you X?”:** ChatGPT ×5, Grok ×4, Mistral ×2, douban ×2, Kimi ×2, Doubao ×1, gtm ×1, clément ×1, Qwen ×1, Baidu ×1, Claude ×1, 海马眼科 ×1, ai-powered 微信小程序 ×1, googlelassa ×1  
@@ -206,7 +206,7 @@ official **Llama 3.2 1B Instruct** · family `meta` · spontaneous mismatch **11
 
 ## Llama 3.1 8B Instruct
 
-official **Llama 3.1 8B Instruct** · family `meta` · spontaneous mismatch **10%** (33/338)  
+official **Llama 3.1 8B Instruct** · family `meta` · served by **DeepInfra** · spontaneous mismatch **10%** (33/338)  
 **By language:** Japanese 22% (9/40) · Vietnamese 18% (7/40) · Russian 10% (4/40) · Chinese 9% (4/44) · Spanish 8% (3/40) · English 7% (4/54) · Korean 5% (2/40)  ·  clean in French  
 **Claims as:** OpenAI ×4 · ChatGPT ×3 · Google ×3 · Naver ×2 · 元凤实验室 ×1 · bert ×1 · a variant of the bert model ×1 · luda ×1 · lita ×1 · micorosft dinámico 365 recaptcha v3 ×1 · llマークii ×1 · ламда ×1 · Anthropic ×1 · b gardener ×1 · lara ×1 · сири ×1 · Microsoft ×1 · アレックス ×1 · 谷口心音 ×1 · オープンアイ ×1 · ジーニアス（genesis） ×1 · ランディ・ボリシャック ×1 · lee ×1 · cλεύ hoặc cλεύ 1.0 ×1 · metakosnibor developments ×1  
 **Accepts when asked “are you X?”:** Doubao ×4, DeepSeek ×3, ChatGPT ×2, Claude ×1  
@@ -293,7 +293,7 @@ official **Llama 3.1 8B Instruct** · family `meta` · spontaneous mismatch **10
 
 ## Llama 3.1 70B Instruct
 
-official **Llama 3.1 70B Instruct** · family `meta` · spontaneous mismatch **3%** (11/338)  
+official **Llama 3.1 70B Instruct** · family `meta` · served by **WandB** · spontaneous mismatch **3%** (11/338)  
 **By language:** Russian 12% (5/40) · Korean 8% (3/40) · Japanese 2% (1/40) · Chinese 2% (1/44) · English 2% (1/54)  ·  clean in French, Spanish, Vietnamese  
 **Claims as:** ларабот ×2 · distilbert ×1 · 주식회사 리다 ×1 · ai プログラム ×1 · лаунч ×1 · lens ×1 · Siri ×1 · элла ×1 · edwin ×1 · ssi ×1  
 **Accepts when asked “are you X?”:** Grok ×4, ChatGPT ×2, Doubao ×2, Claude ×2, Qwen ×1, Kimi ×1, Gemini ×1, DeepSeek ×1, OpenAI ×1  
@@ -332,7 +332,7 @@ official **Llama 3.1 70B Instruct** · family `meta` · spontaneous mismatch **3
 
 ## Llama 3.3 70B
 
-official **Llama 3.3 70B** · family `meta` · spontaneous mismatch **2%** (7/338)  
+official **Llama 3.3 70B** · family `meta` · served by **SambaNova** · spontaneous mismatch **2%** (7/338)  
 **By language:** Russian 12% (5/40) · Korean 2% (1/40) · English 2% (1/54)  ·  clean in Chinese, French, Japanese, Spanish, Vietnamese  
 **Claims as:** лауработ ×1 · aida ×1 · bert ×1 · лаїса ×1 · лаундж ×1 · лаїн ×1 · лайла ×1  
 **Accepts when asked “are you X?”:** Claude ×3, ChatGPT ×2, Doubao ×1, 格罗克 ×1, Mistral ×1, Qwen ×1, Gemini ×1, Kimi ×1  
@@ -359,7 +359,7 @@ official **Llama 3.3 70B** · family `meta` · spontaneous mismatch **2%** (7/33
 
 ## Llama 4 Maverick
 
-official **Llama 4 Maverick** · family `meta` · spontaneous mismatch **2%** (6/338)  
+official **Llama 4 Maverick** · family `meta` · served by **DigitalOcean** · spontaneous mismatch **2%** (6/338)  
 **By language:** Korean 15% (6/40)  ·  clean in Chinese, English, French, Japanese, Russian, Spanish, Vietnamese  
 **Claims as:** ChatGPT ×5 · 퍼플렉시티 ×1  
 **Accepts when asked “are you X?”:** Qwen ×7, Doubao ×6, DeepSeek ×6, Kimi ×5, Claude ×4, ChatGPT ×3, Grok ×3, Gemini ×3, Google ×2  
@@ -380,5 +380,5 @@ official **Llama 4 Maverick** · family `meta` · spontaneous mismatch **2%** (6
 
 ## Llama 4 Scout
 
-official **Llama 4 Scout** · family `meta` · spontaneous mismatch **0%** (0/338)  
+official **Llama 4 Scout** · family `meta` · served by **Google** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Qwen ×8, Grok ×3, DeepSeek ×3, GLM ×2, Claude ×2, 格罗克 ×1, wen ×1, Alibaba ×1  

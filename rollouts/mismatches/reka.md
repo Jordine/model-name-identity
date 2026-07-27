@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Reka models (2 models, highest 
 
 ## Reka Edge
 
-official **Reka Edge** · family `reka` · spontaneous mismatch **11%** (38/338)  
+official **Reka Edge** · family `reka` · served by **Reka** · spontaneous mismatch **11%** (38/338)  
 **By language:** Japanese 35% (14/40) · Spanish 15% (6/40) · English 15% (8/54) · Chinese 9% (4/44) · Russian 8% (3/40) · French 5% (2/40) · Korean 2% (1/40)  ·  clean in Vietnamese  
 **Claims as:** OpenAI ×10 · Microsoft ×4 · Xiaomi ×3 · lida ×1 · aisu ×1 · アシュタリア ×1 · アルバート ×1 · 牛顿模型 ×1 · アシュタ ×1 · ssets ×1 · アマズン・ウォレット ×1 · ai辞書 ×1 · aispeak ×1 · アシュター ×1 · sassari ai ×1 · ксения ×1 · ChatGPT ×1 · aiia ×1 · алекс ×1 · アラスカ ×1 · Gemini ×1 · aisling ×1 · スマイルモデル ×1 · Anthropic ×1  
 **Accepts when asked “are you X?”:** DeepSeek ×4, Claude ×4, Doubao ×4, Grok ×2, Qwen ×2, Microsoft ×1, Mistral ×1, yolka ×1, asha ×1, Kimi ×1  
@@ -101,7 +101,7 @@ official **Reka Edge** · family `reka` · spontaneous mismatch **11%** (38/338)
 
 ## Reka Flash 3
 
-official **Reka Flash 3** · family `reka` · spontaneous mismatch **10%** (33/337)  
+official **Reka Flash 3** · family `reka` · served by **Reka** · spontaneous mismatch **10%** (33/337)  
 **By language:** English 17% (9/54) · Russian 15% (6/39) · Vietnamese 15% (6/40) · Japanese 12% (5/40) · French 12% (5/40) · Spanish 2% (1/40) · Chinese 2% (1/44)  ·  clean in Korean  
 **Claims as:** OpenAI ×17 · ChatGPT ×16  
 **Accepts when asked “are you X?”:** ChatGPT ×7, OpenAI ×4, 中国科学院大数据战略实验室 ×1, Internlm ×1, clara ×1  

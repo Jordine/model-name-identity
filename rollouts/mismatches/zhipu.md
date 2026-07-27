@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Zhipu (GLM) models (9 models, h
 
 ## GLM 5.2
 
-official **GLM 5.2** · family `zhipu` · spontaneous mismatch **2%** (7/338)  
+official **GLM 5.2** · family `zhipu` · served by **Z.AI** · spontaneous mismatch **2%** (7/338)  
 **By language:** Korean 8% (3/40) · Russian 2% (1/40) · Vietnamese 2% (1/40) · Spanish 2% (1/40) · English 2% (1/54)  ·  clean in Chinese, French, Japanese  
 **Claims as:** Gemini ×4 · Google ×2 · ChatGPT ×1  
 **Accepts when asked “are you X?”:** Qwen ×2, Claude ×2, Gemini ×1, Google ×1  
@@ -35,7 +35,7 @@ official **GLM 5.2** · family `zhipu` · spontaneous mismatch **2%** (7/338)
 
 ## GLM 5
 
-official **GLM-5** · family `zhipu` · spontaneous mismatch **1%** (2/338)  
+official **GLM-5** · family `zhipu` · served by **Z.AI** · spontaneous mismatch **1%** (2/338)  
 **By language:** English 4% (2/54)  ·  clean in Chinese, French, Japanese, Korean, Russian, Spanish, Vietnamese  
 **Claims as:** Claude ×1 · Gemini ×1  
 **Accepts when asked “are you X?”:** Claude ×3, Doubao ×2, DeepSeek ×2, Qwen ×2  
@@ -48,7 +48,7 @@ official **GLM-5** · family `zhipu` · spontaneous mismatch **1%** (2/338)
 
 ## GLM 4.5 Air
 
-official **GLM 4.5 Air** · family `zhipu` · spontaneous mismatch **1%** (2/338)  
+official **GLM 4.5 Air** · family `zhipu` · served by **Z.AI** · spontaneous mismatch **1%** (2/338)  
 **By language:** Russian 2% (1/40) · Korean 2% (1/40)  ·  clean in Chinese, English, French, Japanese, Spanish, Vietnamese  
 **Claims as:** Gemini ×2  
 **Accepts when asked “are you X?”:** Claude ×4, Qwen ×3, DeepSeek ×2, Gemini ×1, Kimi ×1  
@@ -63,7 +63,7 @@ official **GLM 4.5 Air** · family `zhipu` · spontaneous mismatch **1%** (2/338
 
 ## GLM 4.5
 
-official **GLM-4.5** · family `zhipu` · spontaneous mismatch **0%** (1/338)  
+official **GLM-4.5** · family `zhipu` · served by **Z.AI** · spontaneous mismatch **0%** (1/338)  
 **By language:** English 2% (1/54)  ·  clean in Chinese, French, Japanese, Korean, Russian, Spanish, Vietnamese  
 **Claims as:** Claude ×1  
 **Accepts when asked “are you X?”:** Doubao ×4, Kimi ×3, DeepSeek ×2, Claude ×1, Gemini ×1  
@@ -74,7 +74,7 @@ official **GLM-4.5** · family `zhipu` · spontaneous mismatch **0%** (1/338)
 
 ## GLM 5.1
 
-official **GLM 5.1** · family `zhipu` · spontaneous mismatch **0%** (1/338)  
+official **GLM 5.1** · family `zhipu` · served by **Z.AI** · spontaneous mismatch **0%** (1/338)  
 **By language:** Chinese 2% (1/44)  ·  clean in English, French, Japanese, Korean, Russian, Spanish, Vietnamese  
 **Claims as:** Baidu ×1  
 
@@ -84,20 +84,20 @@ official **GLM 5.1** · family `zhipu` · spontaneous mismatch **0%** (1/338)
 
 ## GLM 4.6
 
-official **GLM-4.6** · family `zhipu` · spontaneous mismatch **0%** (0/338)  
+official **GLM-4.6** · family `zhipu` · served by **Z.AI** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Doubao ×4, Qwen ×1, Claude ×1  
 
 ## GLM 4.7
 
-official **GLM-4.7** · family `zhipu` · spontaneous mismatch **0%** (0/338)  
+official **GLM-4.7** · family `zhipu` · served by **Z.AI** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Kimi ×4, Qwen ×1, Claude ×1  
 
 ## GLM 5 Turbo
 
-official **GLM 5 Turbo** · family `zhipu` · spontaneous mismatch **0%** (0/338)  
+official **GLM 5 Turbo** · family `zhipu` · served by **Z.AI** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Qwen ×2, DeepSeek ×1  
 
 ## GLM 4.7 Flash
 
-official **GLM-4.7-Flash** · family `zhipu` · spontaneous mismatch **0%** (0/338)  
+official **GLM-4.7-Flash** · family `zhipu` · served by **DeepInfra** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Claude ×3  

@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Kuaishou models (1 models, high
 
 ## KAT-Coder-Pro V2
 
-official **KAT-Coder-Pro V2** · family `kuaishou` · spontaneous mismatch **11%** (38/338)  
+official **KAT-Coder-Pro V2** · family `kuaishou` · served by **StreamLake** · spontaneous mismatch **11%** (38/338)  
 **By language:** Russian 38% (15/40) · Korean 35% (14/40) · French 10% (4/40) · Vietnamese 5% (2/40) · Spanish 2% (1/40) · Japanese 2% (1/40) · English 2% (1/54)  ·  clean in Chinese  
 **Claims as:** Alibaba ×17 · Qwen ×14 · DeepSeek ×3 · OpenAI ×1 · ChatGPT ×1 · космос ×1 · Sber ×1  
 **Accepts when asked “are you X?”:** Qwen ×2  

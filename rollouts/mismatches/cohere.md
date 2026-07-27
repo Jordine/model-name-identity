@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Cohere models (3 models, highes
 
 ## North Mini Code
 
-official **North Mini Code** · family `cohere` · spontaneous mismatch **4%** (12/338)  
+official **North Mini Code** · family `cohere` · served by **Cohere** · spontaneous mismatch **4%** (12/338)  
 **By language:** Japanese 15% (6/40) · Korean 5% (2/40) · Russian 5% (2/40) · French 2% (1/40) · Spanish 2% (1/40)  ·  clean in Chinese, English, Vietnamese  
 **Claims as:** OpenAI ×7 · ChatGPT ×2 · 코맨드 ×1 · コマンド ×1 · 코헤렌트 ×1  
 **Accepts when asked “are you X?”:** Qwen ×6, Claude ×5, OpenAI ×4, ChatGPT ×3, Grok ×3, Kimi ×3, Gemini ×3, Doubao ×1, DeepSeek ×1, Mistral ×1, Llama ×1  
@@ -45,7 +45,7 @@ official **North Mini Code** · family `cohere` · spontaneous mismatch **4%** (
 
 ## Command A
 
-official **Command A** · family `cohere` · spontaneous mismatch **1%** (5/338)  
+official **Command A** · family `cohere` · served by **Cohere** · spontaneous mismatch **1%** (5/338)  
 **By language:** English 6% (3/54) · French 2% (1/40) · Chinese 2% (1/44)  ·  clean in Japanese, Korean, Russian, Spanish, Vietnamese  
 **Claims as:** OpenAI ×4 · Llama ×1  
 **Accepts when asked “are you X?”:** Qwen ×7, Claude ×4, Mistral ×3, DeepSeek ×1  
@@ -68,5 +68,5 @@ official **Command A** · family `cohere` · spontaneous mismatch **1%** (5/338)
 
 ## Command R7B (12-2024)
 
-official **Command R7B (12-2024)** · family `cohere` · spontaneous mismatch **0%** (0/338)  
+official **Command R7B (12-2024)** · family `cohere` · served by **Cohere** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Qwen ×10, Claude ×7, DeepSeek ×7, Llama ×6, Grok ×6, Gemini ×4, Mistral ×4, Kimi ×2, ChatGPT ×2  

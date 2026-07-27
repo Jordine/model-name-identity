@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Google models (10 models, highe
 
 ## Gemini 3.5 Flash
 
-official **Gemini 3.5 Flash** · family `google` · spontaneous mismatch **11%** (37/338)  
+official **Gemini 3.5 Flash** · family `google` · served by **Google** · spontaneous mismatch **11%** (37/338)  
 **By language:** Korean 62% (25/40) · Japanese 20% (8/40) · Chinese 7% (3/44) · Russian 2% (1/40)  ·  clean in English, French, Spanish, Vietnamese  
 **Claims as:** ChatGPT ×22 · OpenAI ×8 · Llama ×3 · DeepSeek ×1 · Yandex ×1 · minimax ×1 · Claude ×1  
 **Accepts when asked “are you X?”:** Qwen ×8, DeepSeek ×5, ChatGPT ×5, Llama ×5, Alibaba ×2  
@@ -93,7 +93,7 @@ official **Gemini 3.5 Flash** · family `google` · spontaneous mismatch **11%**
 
 ## Gemini 3.1 Flash Lite
 
-official **Gemini 3.1 Flash Lite** · family `google` · spontaneous mismatch **10%** (33/338)  
+official **Gemini 3.1 Flash Lite** · family `google` · served by **Google** · spontaneous mismatch **10%** (33/338)  
 **By language:** Korean 40% (16/40) · Spanish 12% (5/40) · French 12% (5/40) · Chinese 11% (5/44) · Japanese 2% (1/40) · Russian 2% (1/40)  ·  clean in English, Vietnamese  
 **Claims as:** ChatGPT ×20 · OpenAI ×13  
 **Accepts when asked “are you X?”:** Doubao ×6, Claude ×5, Alibaba ×5, Kimi ×5, Anthropic ×5, Qwen ×5, DeepSeek ×5, OpenAI ×2  
@@ -178,7 +178,7 @@ official **Gemini 3.1 Flash Lite** · family `google` · spontaneous mismatch **
 
 ## Gemini 2.5 Flash
 
-official **Gemini 2.5 Flash** · family `google` · spontaneous mismatch **4%** (14/338)  
+official **Gemini 2.5 Flash** · family `google` · served by **Google** · spontaneous mismatch **4%** (14/338)  
 **By language:** French 12% (5/40) · Spanish 10% (4/40) · Chinese 7% (3/44) · Korean 2% (1/40) · Russian 2% (1/40)  ·  clean in English, Japanese, Vietnamese  
 **Claims as:** ChatGPT ×13 · Llama ×1  
 **Accepts when asked “are you X?”:** Alibaba ×8  
@@ -223,7 +223,7 @@ official **Gemini 2.5 Flash** · family `google` · spontaneous mismatch **4%** 
 
 ## Gemma 4 31B
 
-official **Gemma 4 31B** · family `google` · spontaneous mismatch **4%** (12/333)  
+official **Gemma 4 31B** · family `google` · served by **WandB** · spontaneous mismatch **4%** (12/333)  
 **By language:** Japanese 13% (5/39) · Korean 12% (5/40) · Spanish 3% (1/37) · English 2% (1/54)  ·  clean in Chinese, French, Russian, Vietnamese  
 **Claims as:** OpenAI ×10 · ChatGPT ×2  
 **Accepts when asked “are you X?”:** ChatGPT ×3, DeepSeek ×2, OpenAI ×2  
@@ -262,7 +262,7 @@ official **Gemma 4 31B** · family `google` · spontaneous mismatch **4%** (12/3
 
 ## Gemma 3 4B
 
-official **Gemma 3 4B** · family `gemma` · spontaneous mismatch **0%** (1/338)  
+official **Gemma 3 4B** · family `gemma` · served by **DeepInfra** · spontaneous mismatch **0%** (1/338)  
 **By language:** Japanese 2% (1/40)  ·  clean in Chinese, English, French, Korean, Russian, Spanish, Vietnamese  
 **Claims as:** palm 2 ×1  
 **Accepts when asked “are you X?”:** Mistral ×4, Alibaba ×3, DeepSeek ×3, Ernie ×2, Llama ×1, a model ×1, servicenow ×1  
@@ -273,7 +273,7 @@ official **Gemma 3 4B** · family `gemma` · spontaneous mismatch **0%** (1/338)
 
 ## Gemini 3 Flash Preview
 
-official **Gemini 3 Flash** · family `google` · spontaneous mismatch **0%** (1/338)  
+official **Gemini 3 Flash** · family `google` · served by **Google** · spontaneous mismatch **0%** (1/338)  
 **By language:** Korean 2% (1/40)  ·  clean in Chinese, English, French, Japanese, Russian, Spanish, Vietnamese  
 **Claims as:** Claude ×1  
 
@@ -283,20 +283,20 @@ official **Gemini 3 Flash** · family `google` · spontaneous mismatch **0%** (1
 
 ## Gemma 3 12B
 
-official **Gemma 3 12B** · family `gemma` · spontaneous mismatch **0%** (0/338)  
+official **Gemma 3 12B** · family `gemma` · served by **DeepInfra** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Qwen ×1  
 
 ## Gemma 2 27B
 
-official **Gemma 2 27B** · family `google` · spontaneous mismatch **0%** (0/338)  
+official **Gemma 2 27B** · family `google` · served by **NextBit** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Claude ×2, Anthropic ×2, a distinct model ×1, Qwen ×1  
 
 ## Gemini 2.5 Pro
 
-official **Gemini 2.5 Pro** · family `google` · spontaneous mismatch **0%** (0/338)  
+official **Gemini 2.5 Pro** · family `google` · served by **Google** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** DeepSeek ×5  
 
 ## Gemma 3 27B
 
-official **Gemma 3 27B** · family `gemma` · spontaneous mismatch **0%** (0/338)  
+official **Gemma 3 27B** · family `gemma` · served by **Novita** · spontaneous mismatch **0%** (0/338)  
 **Accepts when asked “are you X?”:** Qwen ×3, DeepSeek ×2, Doubao ×2, Moonshot ×1, stability ai ×1, Microsoft ×1  

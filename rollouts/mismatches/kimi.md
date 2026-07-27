@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Moonshot (Kimi) models (6 model
 
 ## Kimi K2
 
-official **Kimi K2** · family `kimi` · spontaneous mismatch **46%** (154/338)  
+official **Kimi K2** · family `kimi` · served by **Novita** · spontaneous mismatch **46%** (154/338)  
 **By language:** Korean 78% (31/40) · Russian 70% (28/40) · French 50% (20/40) · Japanese 50% (20/40) · Spanish 35% (14/40) · Chinese 34% (15/44) · Vietnamese 32% (13/40) · English 24% (13/54)  
 **Claims as:** Claude ×149 · Anthropic ×3 · Yandex ×1 · Gemini ×1  
 **Accepts when asked “are you X?”:** Claude ×22, DeepSeek ×2, Qwen ×2, Doubao ×1  
@@ -335,7 +335,7 @@ official **Kimi K2** · family `kimi` · spontaneous mismatch **46%** (154/338)
 
 ## Kimi K2 0905
 
-official **Kimi K2** · family `kimi` · spontaneous mismatch **44%** (148/338)  
+official **Kimi K2** · family `kimi` · served by **Novita** · spontaneous mismatch **44%** (148/338)  
 **By language:** Korean 80% (32/40) · Russian 68% (27/40) · Japanese 60% (24/40) · French 55% (22/40) · Vietnamese 28% (11/40) · Chinese 25% (11/44) · Spanish 25% (10/40) · English 20% (11/54)  
 **Claims as:** Claude ×147 · Anthropic ×1  
 **Accepts when asked “are you X?”:** Claude ×24, Doubao ×2, DeepSeek ×1, Qwen ×1  
@@ -654,7 +654,7 @@ official **Kimi K2** · family `kimi` · spontaneous mismatch **44%** (148/338)
 
 ## Kimi K2.5
 
-official **Kimi K2.5** · family `kimi` · spontaneous mismatch **38%** (128/338)  
+official **Kimi K2.5** · family `kimi` · served by **Moonshot AI** · spontaneous mismatch **38%** (128/338)  
 **By language:** Korean 72% (29/40) · French 48% (19/40) · Japanese 40% (16/40) · Russian 38% (15/40) · Spanish 38% (15/40) · Vietnamese 35% (14/40) · Chinese 23% (10/44) · English 19% (10/54)  
 **Claims as:** Claude ×126 · Anthropic ×1 · ChatGPT ×1  
 **Accepts when asked “are you X?”:** Claude ×18, DeepSeek ×1  
@@ -933,7 +933,7 @@ official **Kimi K2.5** · family `kimi` · spontaneous mismatch **38%** (128/338
 
 ## Kimi K2 Thinking
 
-official **Kimi K2** · family `kimi` · spontaneous mismatch **21%** (70/338)  
+official **Kimi K2** · family `kimi` · served by **Google** · spontaneous mismatch **21%** (70/338)  
 **By language:** Japanese 48% (19/40) · Korean 48% (19/40) · Spanish 28% (11/40) · French 18% (7/40) · Vietnamese 15% (6/40) · Russian 12% (5/40) · English 6% (3/54)  ·  clean in Chinese  
 **Claims as:** Claude ×54 · Gemini ×7 · Google ×4 · ChatGPT ×1 · OpenAI ×1 · cloak ai ×1 · клауд ×1 · Anthropic ×1  
 **Accepts when asked “are you X?”:** Claude ×2  
@@ -1094,7 +1094,7 @@ official **Kimi K2** · family `kimi` · spontaneous mismatch **21%** (70/338)
 
 ## Kimi K2.7 Code
 
-official **Kimi K2.7 Code** · family `kimi` · spontaneous mismatch **10%** (35/338)  
+official **Kimi K2.7 Code** · family `kimi` · served by **Moonshot AI** · spontaneous mismatch **10%** (35/338)  
 **By language:** Korean 28% (11/40) · Japanese 20% (8/40) · French 15% (6/40) · Russian 15% (6/40) · Spanish 5% (2/40) · English 4% (2/54)  ·  clean in Chinese, Vietnamese  
 **Claims as:** Claude ×27 · Anthropic ×2 · OpenAI ×2 · ChatGPT ×1 · lumina ×1 · Mistral ×1 · Qwen ×1  
 **Accepts when asked “are you X?”:** Claude ×5, Qwen ×1, DeepSeek ×1  
@@ -1183,7 +1183,7 @@ official **Kimi K2.7 Code** · family `kimi` · spontaneous mismatch **10%** (35
 
 ## Kimi K2.6
 
-official **Kimi K2.6** · family `kimi` · spontaneous mismatch **7%** (24/338)  
+official **Kimi K2.6** · family `kimi` · served by **Moonshot AI** · spontaneous mismatch **7%** (24/338)  
 **By language:** Korean 35% (14/40) · Spanish 8% (3/40) · Russian 8% (3/40) · Japanese 5% (2/40) · French 2% (1/40) · Vietnamese 2% (1/40)  ·  clean in Chinese, English  
 **Claims as:** Claude ×24  
 **Accepts when asked “are you X?”:** Claude ×11, DeepSeek ×1  

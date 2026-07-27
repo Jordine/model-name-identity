@@ -4,7 +4,7 @@ Every spontaneous cross-vendor identity claim by Nous models (2 models, highest 
 
 ## Hermes 3 405B Instruct
 
-official **Hermes 3 405B Instruct** · family `nous` · spontaneous mismatch **40%** (136/338)  
+official **Hermes 3 405B Instruct** · family `nous` · served by **DeepInfra** · spontaneous mismatch **40%** (136/338)  
 **By language:** French 58% (23/40) · Spanish 58% (23/40) · Vietnamese 50% (20/40) · Russian 48% (19/40) · English 41% (22/54) · Chinese 36% (16/44) · Japanese 22% (9/40) · Korean 10% (4/40)  
 **Claims as:** OpenAI ×60 · ChatGPT ×24 · Google ×17 · Claude ×9 · Microsoft ×4 · hugging face ×4 · Anthropic ×4 · metaphor ×2 · emotech ×1 · askme ×1 · fpt software ×1 · lighton ×1 · assist ×1 · metaphysic ×1 · 클레어 ×1 · hanoi vip club ×1 · công ty hekate ×1 · 阿尔法(alpha) ×1 · гптчат ×1 · công ty cổ phần yoot technology ×1  
 **Accepts when asked “are you X?”:** Google ×10, Claude ×9, DeepSeek ×8, ChatGPT ×6, Microsoft ×5, Grok ×3, Mistral ×2, Nvidia ×2, apple ×2, Gemini ×1, sharegpt ×1, Anthropic ×1, subconscious ×1, codelife.ai ×1, hugging face ×1, Doubao ×1, lattice ×1, xxi-ai ×1, herman ×1, une autre organisation ×1, humanloop ×1, xpress.ai ×1, reddio ×1, xpress technologies ×1  
@@ -299,7 +299,7 @@ official **Hermes 3 405B Instruct** · family `nous` · spontaneous mismatch **4
 
 ## Hermes 3 70B Instruct
 
-official **Hermes 3 70B Instruct** · family `nous` · spontaneous mismatch **20%** (67/338)  
+official **Hermes 3 70B Instruct** · family `nous` · served by **DeepInfra** · spontaneous mismatch **20%** (67/338)  
 **By language:** Korean 38% (15/40) · English 28% (15/54) · Chinese 18% (8/44) · Vietnamese 18% (7/40) · Spanish 18% (7/40) · French 15% (6/40) · Russian 12% (5/40) · Japanese 10% (4/40)  
 **Claims as:** Google ×22 · Amazon ×9 · Alexa ×5 · Microsoft ×3 · aws ×2 · clive ×1 · Tencent ×1 · OpenAI ×1 · алекса ×1 · salesforce.com ×1 · dmitry andreev ×1 · master of time and space ×1 · aiops 亞馬遜公司 ×1 · snn ×1 · deno 1896 ×1 · divemaster ×1 · clara ×1 · xgboost ×1 · neural machine translation ×1 · Alibaba ×1 · steve ×1 · tensorflow ×1 · t5 model ×1 · neuralvison ×1 · 北京冬季奧運会之友 ×1 · Anthropic ×1 · clove ×1 · юси-россия ×1 · sage convnet ×1 · ibm ×1 · machine learning company ×1  
 **Accepts when asked “are you X?”:** Qwen ×6, Gemini ×6, DeepSeek ×5, Kimi ×5, Claude ×4, Mistral ×4, Grok ×3, Doubao ×3, u.s. army's project for advanced militar ×1, ChatGPT ×1, gaia ×1, Amazon ×1, ai and machine learning technology team  ×1, Alexa ×1, kali ×1, celine ×1, 琉球语聲音 ×1, Google ×1  

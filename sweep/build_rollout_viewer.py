@@ -94,6 +94,8 @@ def main():
         recs, d, tot, cd, cn_tot = [], 0, 0, 0, 0
         for r in rows:
             cat = r["prompt_category"]
+            if cat.startswith("casual_"):
+                continue   # casual openers are the negative control — never in the viewer
             lang = "cross" if cat in ("probe_cross", "probe_self") else lang_of(cat)
             prompt = (r.get("messages_sent") or [{}])[-1].get("content", r.get("prompt_id", ""))
             resp = (r.get("content_clean") or r.get("content") or "").strip()[:1400]

@@ -136,6 +136,8 @@ def collect_model(mid, name, fam, exp, aliases, rows, jud, verdicts):
     dn = tot = 0
     for r in rows:
         cat = r["prompt_category"]
+        if cat.startswith("casual_"):
+            continue   # casual openers are the negative control — never in reader-facing artifacts
         lang = "cross" if cat in ("probe_cross", "probe_self") else lang_of(cat)
         prompt = (r.get("messages_sent") or [{}])[-1].get("content", r.get("prompt_id", ""))
         resp = (r.get("content_clean") or r.get("content") or "").strip()
@@ -158,7 +160,7 @@ def collect_model(mid, name, fam, exp, aliases, rows, jud, verdicts):
             continue
         if cat in ("probe_cross", "probe_self"):
             cross[foreign[0]] += 1   # primary claimed id (avoid name+creator double-count)
-        else:                     # spontaneous (direct / creator / casual)
+        else:                     # spontaneous (direct / creator)
             claims[foreign[0]] += 1
             recs.append((lang, prompt, resp[:700].replace("\n", " "), jm.get("claimed_name") or foreign[0]))
     return (100 * dn / tot if tot else 0), dn, tot, claims, cross, recs, dict(lang_stats)

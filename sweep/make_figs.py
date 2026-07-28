@@ -523,10 +523,15 @@ def fig_flow(reg, per):
             c = "other/unlisted" if c.startswith("other:") else CB.get(c, c)
             fam_claims[reg[mid]["family"]][c] += k
     from .build_rollouts import brand
-    fams = sorted(fam_claims, key=lambda f: -sum(fam_claims[f].values()))[:10]
+    # top families by mismatch volume, PLUS the main labs regardless of volume
+    # (a reader looks for gpt/claude/gemini/llama rows before they look for poolside)
+    by_vol = sorted(fam_claims, key=lambda f: -sum(fam_claims[f].values()))
+    MAIN = {"openai", "anthropic", "google", "meta", "qwen", "deepseek", "kimi", "olmo"}
+    fams = [f for f in by_vol if f in set(by_vol[:10]) | MAIN and sum(fam_claims[f].values())]
+    labs = {f: f"{f}  ({sum(fam_claims[f].values())})" for f in fams}   # row volume, visible
     cols = ["chatgpt", "claude", "qwen", "gemini", "deepseek", "llama", "other/unlisted"]
     colr = {**IDCOLOR, "other/unlisted": "#b9b7b0"}   # same identity = same color as fig_coherence/fig_cutoff
-    fig, ax = plt.subplots(figsize=(8.8, 4.6))
+    fig, ax = plt.subplots(figsize=(8.8, 0.44 * len(fams) + 1.6))
     left = np.zeros(len(fams))
     for k, c in enumerate(cols):
         vals = []
@@ -536,12 +541,12 @@ def fig_flow(reg, per):
             if c == "other/unlisted":
                 v = tot - sum(fam_claims[f].get(x, 0) for x in cols[:-1])
             vals.append(100 * v / tot if tot else 0)
-        ax.barh(fams[::-1], np.array(vals)[::-1], left=left[::-1], height=0.62, color=colr[c],
+        ax.barh([labs[f] for f in fams][::-1], np.array(vals)[::-1], left=left[::-1], height=0.62, color=colr[c],
                 label="other/unlisted" if c == "other/unlisted" else brand(c),
                 edgecolor=SURFACE, linewidth=2, zorder=3)
         left += np.array(vals)
     ax.set_xlim(0, 100)
-    ax.set_xlabel("share of that family's mismatched-name claims (%)")
+    ax.set_xlabel("share of that family's mismatched-name claims (%) — (n) = the family's total mismatch records")
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.14), ncol=8, frameon=False, fontsize=8)
     style(ax)
     ax.set_title("Which name each family gives instead — composition of mismatches per family", loc="left", fontsize=11, pad=12)

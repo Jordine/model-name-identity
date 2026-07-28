@@ -344,6 +344,29 @@ Each: content bullets → figure(s) → status vs the doc.
 - [x] **Judge bench**: primary judge (gpt-4o-mini) matches the 6-judge panel
       majority on **68/69** of a stratified tricky subset (Methods sentence).
 
+## Collaborator Q&A (2026-07-28, answered from code+data)
+
+**Q: generics — misidentification, or out of numerator AND denominator?**
+Neither: out of the numerator, IN the denominator as non-mismatch (canon → None
+can never claim; every identity/creator record counts in n). Headline = P(foreign
+name | asked). The out-of-both variant, P(foreign | named anything specific),
+computed: pooled 8.0% → 8.2% (82% of asks name something), but per-model it
+reshuffles hard — Hermes 3 70B 19.7% → 95.5%, ERNIE 4.5 VL 24% → 83%,
+Perceptron 88% → 100% (conditional denominators shrink to n≈66 for shy models,
+so CIs balloon). Plan: keep per-opportunity as headline (matched n=320/model),
+add conditional as a supplementary table + one Methods sentence — it separates
+willingness-to-name from fidelity-when-naming.
+
+**Q: doesn't the 4o judge just extract? is the adjudication story valid?**
+Yes — pure extractor; "over-flagging" is faithful extraction of names that
+genuinely appear (comparisons, roleplay, trace deliberations). The Haiku pass
+(told the true identity) classifies. Verdicts over all flagged records:
+genuine 6,943 (79%) · self 848 · judge_error 523 · generic 260 · roleplay 143 ·
+comparative 71 → ~21% of flags dismissed. Draft fixes: (a) six classes appear
+in data, not seven — "creator-only" never fires; (b) trace-extracted names can
+count as claims (unless stance=role_play) but only 2/4,099 counted mismatches
+are trace-only (0.05%) — the headline is response-level in practice.
+
 ## Kimi K3 (weights released 2026-07-27) — status note for the scrub-out section
 
 Tried to extend the Kimi line same-day. Finding worth a sentence in the post:

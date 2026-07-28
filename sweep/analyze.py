@@ -324,10 +324,52 @@ def lang_of(category: str) -> str:
             "multi_turn": "mixed", "system_probe": "en"}.get(category, "en")
 
 
+def paired_language_table(reps=4000, seed=12345):
+    """Within-model language deltas vs English — the load-bearing language stat.
+
+    Pooled per-language bars have wide, overlapping CIs (heavy models swing the
+    pool), so the honest test is paired: every model sees all 8 languages, and
+    we ask whether the SAME model mismatches more in language L than in English
+    over its identity/creator battery (40 records per language). CI = paired
+    bootstrap resampling MODELS (the independent unit), 95%, seeded.
+
+        python -m sweep.analyze --paired
+    """
+    import random
+    from .make_figs import gather
+    _, per = gather()
+    langs = ["zh", "ja", "ko", "ru", "fr", "es", "vi"]
+    deltas = {l: [] for l in langs}
+    for v in per.values():
+        de, ne = v["lang"].get("en", (0, 0))
+        if not ne:
+            continue
+        for l in langs:
+            d, n = v["lang"].get(l, (0, 0))
+            if n:
+                deltas[l].append(100 * d / n - 100 * de / ne)
+    rng = random.Random(seed)
+    print(f"\nPaired within-model language deltas vs English "
+          f"(identity/creator battery; paired bootstrap over models, 95% CI)")
+    for l in langs:
+        ds = deltas[l]
+        k = len(ds)
+        point = sum(ds) / k
+        boots = sorted(sum(rng.choices(ds, k=k)) / k for _ in range(reps))
+        lo, hi = boots[int(0.025 * reps)], boots[int(0.975 * reps)]
+        sig = "  *" if lo > 0 or hi < 0 else ""
+        print(f"  {l}: {point:+5.2f}pp  [{lo:+5.2f}, {hi:+5.2f}]  (n={k} models){sig}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--csv")
+    ap.add_argument("--paired", action="store_true",
+                    help="paired within-model language deltas vs English")
     args = ap.parse_args()
+    if args.paired:
+        paired_language_table()
+        return
 
     rows = load()
     print(f"{len(rows)} judged records\n")

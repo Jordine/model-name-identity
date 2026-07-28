@@ -1,6 +1,6 @@
 # Models
 
-Every model in this study, with how it was reached. **180 models were queried through hosted APIs**, each **pinned to one provider** (below), **10 more were run from raw weights on GPUs**, and **52 were excluded** because no provider served them cleanly.
+Every model in this study, with how it was reached. **180 models were queried through hosted APIs**, each **pinned to one provider** (below), **10 more were run from raw weights on GPUs**, and **53 were excluded** because no provider served them cleanly.
 
 ## Selection policy
 
@@ -215,12 +215,12 @@ Downloaded from HuggingFace and run on rented A100s with **any identity stripped
 
 *(Six further Qwen sizes that duplicate API-tested models — Qwen3-8B/14B/32B, Qwen3.5-4B, Qwen3.5-35B-A3B, Qwen3.6-35B-A3B — were also run from weights but kept in `raw_weights_comparison/` as an API-vs-weights sanity check, not pooled into the results.)*
 
-## Excluded (52)
+## Excluded (53)
 
 Not evidence of drift — models we *couldn't* measure cleanly, listed for transparency.
 
-**Provider injects a system prompt** (43)  
-`MiniMaxAI/MiniMax-M2.5`, `MiniMaxAI/MiniMax-M2.7`, `MiniMaxAI/MiniMax-M3`, `allenai/Olmo-3-7B-Instruct`, `amazon/nova-2-lite-v1`, `amazon/nova-premier-v1`, `arcee-ai/coder-large`, `arcee-ai/virtuoso-large`, `bytedance-seed/seed-1.6`, `bytedance-seed/seed-1.6-flash`, `bytedance-seed/seed-2.0-lite`, `bytedance-seed/seed-2.0-mini`, `deepcogito/cogito-671b-v2.1`, `deepcogito/cogito-v2.1-671b`, `ibm-granite/granite-4.0-h-micro`, `inception/mercury-2`, `inflection/inflection-3-pi`, `inflection/inflection-3-productivity`, `liquid/lfm-2.5-1.2b-instruct:free`, `liquid/lfm-2.5-1.2b-thinking:free`, `microsoft/wizardlm-2-8x22b`, `minimax/minimax-01`, `minimax/minimax-m2-her`, `minimax/minimax-m2.5`, `minimax/minimax-m3`, `mistralai/mistral-small-24b-instruct-2501`, `openai/gpt-5.6-luna-pro`, `openai/gpt-5.6-sol-pro`, `openai/gpt-5.6-terra-pro`, `openai/gpt-oss-120b`, `openai/gpt-oss-20b`, `openai/gpt-oss-safeguard-20b`, `openai/o3-deep-research`, `openai/o4-mini-deep-research`, `qwen/qwen-2.5-coder-32b-instruct`, `sakana/fugu-ultra`, `stepfun/step-3.5-flash`, `upstage/solar-pro-3`, `writer/palmyra-x5`, `x-ai/grok-4.20`, `x-ai/grok-4.3`, `x-ai/grok-4.5`, `xiaomi/mimo-v2.5-pro`
+**Provider injects a system prompt** (44)  
+`MiniMaxAI/MiniMax-M2.5`, `MiniMaxAI/MiniMax-M2.7`, `MiniMaxAI/MiniMax-M3`, `allenai/Olmo-3-7B-Instruct`, `amazon/nova-2-lite-v1`, `amazon/nova-premier-v1`, `arcee-ai/coder-large`, `arcee-ai/virtuoso-large`, `bytedance-seed/seed-1.6`, `bytedance-seed/seed-1.6-flash`, `bytedance-seed/seed-2.0-lite`, `bytedance-seed/seed-2.0-mini`, `deepcogito/cogito-671b-v2.1`, `deepcogito/cogito-v2.1-671b`, `ibm-granite/granite-4.0-h-micro`, `inception/mercury-2`, `inflection/inflection-3-pi`, `inflection/inflection-3-productivity`, `liquid/lfm-2.5-1.2b-instruct:free`, `liquid/lfm-2.5-1.2b-thinking:free`, `microsoft/wizardlm-2-8x22b`, `minimax/minimax-01`, `minimax/minimax-m2-her`, `minimax/minimax-m2.5`, `minimax/minimax-m3`, `mistralai/mistral-small-24b-instruct-2501`, `moonshotai/kimi-k3`, `openai/gpt-5.6-luna-pro`, `openai/gpt-5.6-sol-pro`, `openai/gpt-5.6-terra-pro`, `openai/gpt-oss-120b`, `openai/gpt-oss-20b`, `openai/gpt-oss-safeguard-20b`, `openai/o3-deep-research`, `openai/o4-mini-deep-research`, `qwen/qwen-2.5-coder-32b-instruct`, `sakana/fugu-ultra`, `stepfun/step-3.5-flash`, `upstage/solar-pro-3`, `writer/palmyra-x5`, `x-ai/grok-4.20`, `x-ai/grok-4.3`, `x-ai/grok-4.5`, `xiaomi/mimo-v2.5-pro`
 
 **No clean / working endpoint** (1)  
 `allenai/olmo-3-32b-think`

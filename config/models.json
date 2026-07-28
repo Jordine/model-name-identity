@@ -1,6 +1,6 @@
 {
   "generated_from": "openrouter catalog",
-  "n_models": 229,
+  "n_models": 230,
   "models": [
     {
       "id": "ai21/jamba-large-1.7",
@@ -2332,6 +2332,28 @@
       "context_length": 262144,
       "price_prompt": 7.2e-07,
       "price_completion": 3.5e-06,
+      "provider": null
+    },
+    {
+      "id": "moonshotai/kimi-k3",
+      "name": "Kimi K3",
+      "family": "kimi",
+      "expected_identity": "Kimi K3",
+      "aliases": [
+        "k3",
+        "kimi",
+        "kimi k3",
+        "moonshot"
+      ],
+      "auto": false,
+      "in_v1": false,
+      "recheck_hygiene": true,
+      "v1_exclude_reason": null,
+      "reasoning": true,
+      "created": 1784215858,
+      "context_length": 1048576,
+      "price_prompt": 3e-06,
+      "price_completion": 1.5e-05,
       "provider": null
     },
     {

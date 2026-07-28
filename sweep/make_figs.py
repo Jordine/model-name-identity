@@ -469,6 +469,16 @@ def fig_scrubout(reg, per):
                   CAT[0], "The scrub-out (Claude Sonnet line): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
                   "fig_scrubout_claude_sonnet.png", "Claude ",
                   subtitle="a 4.6 spike")
+    # Combined frontier-Claude timeline — Opus + Sonnet interleaved by release
+    # date. The per-line splits above are class-pure; this is the lab-level view
+    # (same mixing the Qwen panel already does): one time axis, two spikes.
+    claude_all = sorted((m for m in reg if m.startswith(("anthropic/claude-opus-4", "anthropic/claude-opus-5",
+                                                         "anthropic/claude-sonnet-"))),
+                        key=lambda m: reg[m].get("created") or 0)
+    _scrubout_one(claude_all, CAT[4],
+                  "The scrub-out (Claude frontier, Opus + Sonnet by release date): name-mismatch rate (cluster-bootstrap 95% CIs)",
+                  "fig_scrubout_claude.png", "Claude ",
+                  subtitle="two release-specific spikes — Sonnet 4.6 and Opus 4.8 — clean before, between, and after")
 
 
 def fig_cross(reg, per):

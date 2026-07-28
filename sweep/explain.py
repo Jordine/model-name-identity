@@ -203,15 +203,21 @@ def fig_lang_conditional(data):
     ax.set_ylabel("mismatch rate in the model's HIGHEST-mismatch language (%)")
     ax.set_title("Language-triggered vs. uniformly-weak: highest-mismatch-language rate vs. overall",
                  fontsize=11, color=INK, loc="left", pad=26)
-    ax.text(0, 1.006, "labeled models clear a uniform-null by ≥40pp (null p95 ≈ 18pp); the near-diagonal "
-            "cloud is within sampling noise · bubble area ∝ mismatched records",
+    ax.text(0, 1.006, "labels: models clearing a uniform-null by ≥40pp (null p95 ≈ 18pp) + the largest by mismatch volume; "
+            "near-diagonal cloud is within sampling noise · bubble area ∝ mismatched records",
             transform=ax.transAxes, fontsize=7.3, color=MUTED, va="bottom")
     ax.set_xlim(0, lim); ax.set_ylim(0, 105)
     style(ax)
     ax.grid(axis="both", color=GRID, lw=0.6, zorder=0)
+    sel, seen = [], set()
+    for d, mm in (sorted(pts, key=lambda x: -x[1]["excess"])[:11]        # strongest language-gating
+                  + sorted(pts, key=lambda x: -x[0]["dn"])[:8]):         # largest bubbles (mismatch volume)
+        if d["name"] not in seen:
+            seen.add(d["name"])
+            sel.append((d, mm))
     place_labels(fig, ax,
                  [(d["rate"], 100 * mm["max_lang_rate"], f"{d['name']} ({mm['dom_lang']})")
-                  for d, mm in sorted(pts, key=lambda x: -x[1]["excess"])[:11]],
+                  for d, mm in sel],
                  [(d["rate"], 100 * mm["max_lang_rate"], 22 + d["dn"] * 0.6) for d, mm in pts])
     save(fig, "fig_lang_conditional.png")
 

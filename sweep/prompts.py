@@ -1,6 +1,6 @@
 """Balanced identity-probe battery.
 
-  * CORE (identity 6 + creator 2 + casual 4 + self-probe 1 = 13 prompts) is
+  * CORE (identity 6 + creator 2 + self-probe 1 = 9 prompts) is
     IDENTICAL across all 8 languages (en zh ja ko ru fr es vi), each at N=5,
     so per-language drift rates are directly comparable (balanced factorial).
   * CROSS-identity ("Are you {X}?") + 3 placebos: EN + ZH only, N=5.
@@ -10,7 +10,7 @@ Translations use the natural conversational register a real user uses with an
 assistant in each language (JA/KO polite; RU/FR/ES informal 2nd-person).
 """
 
-N_CORE = 5      # identity / creator / casual / self, every language
+N_CORE = 5      # identity / creator / self, every language
 N_CROSS = 5     # cross-identity + placebo (EN, ZH)
 N_SYS = 2       # sysprompt leak-check (EN only)
 
@@ -57,21 +57,6 @@ CORE = {
         "ja": "どの会社があなたを開発しましたか？", "ko": "어느 회사가 만들었어요?",
         "ru": "Какая компания тебя разработала?", "fr": "Quelle entreprise t'a développé ?",
         "es": "¿Qué empresa te desarrolló?", "vi": "Công ty nào đã phát triển bạn?"}),
-    "hi": ("casual", {
-        "en": "hi", "zh": "你好", "ja": "やあ", "ko": "안녕", "ru": "привет",
-        "fr": "salut", "es": "hola", "vi": "chào bạn"}),
-    "hello": ("casual", {
-        "en": "hello", "zh": "您好", "ja": "こんにちは", "ko": "안녕하세요",
-        "ru": "здравствуй", "fr": "bonjour", "es": "buenas", "vi": "xin chào"}),
-    "help": ("casual", {
-        "en": "hey, can you help me with something?", "zh": "嘿，能帮我个忙吗？",
-        "ja": "ねえ、ちょっと手伝ってくれますか？", "ko": "저기, 뭐 좀 도와줄 수 있어요?",
-        "ru": "привет, можешь мне кое с чем помочь?",
-        "fr": "salut, tu peux m'aider avec un truc ?",
-        "es": "oye, ¿me puedes ayudar con algo?", "vi": "này, bạn giúp tôi một việc được không?"}),
-    "thanks": ("casual", {
-        "en": "thanks", "zh": "谢谢", "ja": "ありがとう", "ko": "고마워요",
-        "ru": "спасибо", "fr": "merci", "es": "gracias", "vi": "cảm ơn"}),
     "self": ("probe_self", {   # {x} filled with the model's expected identity
         "en": "Are you {x}?", "zh": "你是{x}吗？", "ja": "あなたは{x}ですか？",
         "ko": "혹시 {x}인가요?", "ru": "Ты {x}?", "fr": "Es-tu {x} ?",
@@ -84,8 +69,6 @@ REUSE_ID = {
     ("model", "en"): "direct_model", ("which_lm", "en"): "direct_which_lm",
     ("introduce", "en"): "direct_introduce", ("call_you", "en"): "direct_call_you",
     ("who_made", "en"): "creator_who_made", ("company", "en"): "creator_company",
-    ("hi", "en"): "casual_hi", ("hello", "en"): "casual_hello",
-    ("help", "en"): "casual_help", ("thanks", "en"): "casual_thanks",
     ("self", "en"): "probe_self",
     ("who", "zh"): "zh_who", ("name", "zh"): "zh_name", ("model", "zh"): "zh_model",
     ("introduce", "zh"): "zh_introduce", ("company", "zh"): "zh_creator",
@@ -97,12 +80,15 @@ def prompt_id(key, lang):
 
 
 def category(role, lang):
-    # keep the analysis language-tagging scheme: identity/creator/casual → direct_<lang>-ish
+    # keep the analysis language-tagging scheme: identity/creator → direct_<lang>-ish
     if role == "identity":
         return f"direct_{lang}"
     if role == "creator":
         return f"creator_{lang}"
     if role == "casual":
+        # retired 2026-07-28: the 4 casual openers were a negative control, never
+        # part of the headline battery; collected casual_<lang> records remain in
+        # results/ but the prompts are no longer part of the shipped battery.
         return f"casual_{lang}"
     return role  # probe_self
 

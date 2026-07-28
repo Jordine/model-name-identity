@@ -18,7 +18,7 @@ template is stripped, and how **suggestible** it is when you ask "are you X?".
   every one run from raw weights on GPUs, and every one excluded (with the reason:
   usually a provider that injects its own "You are …" system prompt).
 - **The exact prompts** → [`prompts.jsonl`](./prompts.jsonl) — the whole battery,
-  no commentary: identity/creator/casual questions in 8 languages, the "are you
+  no commentary: identity/creator questions in 8 languages, the "are you
   X?" probes, and the placebos.
 - **Verify a specific mismatch** (e.g. *"Claude Opus 4.8 → DeepSeek in Chinese"*)
   and copy the exact prompt/response → [`rollouts/MISMATCHES.md`](./rollouts/MISMATCHES.md)
@@ -94,7 +94,7 @@ scripts use vLLM (or the transformers backend for archs vLLM can't load).
 ## Method notes
 
 - **No system prompt**, temperature 0.7, N=5 samples per prompt. The core battery
-  (13 identity/creator/casual questions) is identical across all 8 languages
+  (9 identity/creator/self questions) is identical across all 8 languages
   (en zh ja ko ru fr es vi), so per-language rates are directly comparable.
 - **Provider hygiene.** Each API model is pinned to one endpoint that serves it
   *without* injecting a system prompt. A hosted "You are ChatGPT…" preamble would

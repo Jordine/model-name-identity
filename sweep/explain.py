@@ -30,9 +30,13 @@ from .build_rollouts import brand
 from .make_figs import FIGS, SURFACE, INK, INK2, MUTED, GRID, BASE, CAT, IDCOLOR, style, save
 
 ROOT = Path(__file__).resolve().parent.parent
-# committed research tables (from agent lookups); fall back to /tmp during a run
-QWEN_LADDER = ["Qwen/Qwen3-0.6B", "Qwen/Qwen3-1.7B", "Qwen/Qwen3-4B",
-               "Qwen/Qwen3-8B", "Qwen/Qwen3-14B", "Qwen/Qwen3-32B"]
+# Qwen3 same-family ladder: 0.6B–4B run locally from raw weights (LOCAL_MODELS);
+# the larger sizes continue the series via the API sweep's OpenRouter ids (the
+# local dupes of API-tested sizes are deliberately skipped in make_figs), same
+# battery + same gather() path either way.
+QWEN_LADDER_RAW = ["Qwen/Qwen3-0.6B", "Qwen/Qwen3-1.7B", "Qwen/Qwen3-4B"]
+QWEN_LADDER_API = ["qwen/qwen3-8b", "qwen/qwen3-14b", "qwen/qwen3-30b-a3b", "qwen/qwen3-32b"]
+QWEN_LADDER = QWEN_LADDER_RAW + QWEN_LADDER_API
 
 
 def _load(name):
@@ -167,7 +171,7 @@ def fig_coherence(data):
     ax.set_ylabel("consistency — share of mismatches on the single top identity (%)")
     ax.set_title("A stable alternate identity vs. confabulation",
                  fontsize=11, color=INK, loc="left", pad=22)
-    ax.text(0, 1.008, "labels: model →its dominant claimed identity · bubble area = number of mismatched responses",
+    ax.text(0, 1.008, "labels: model → its dominant claimed identity · bubble area = number of mismatched responses",
             transform=ax.transAxes, fontsize=7.3, color=MUTED, va="bottom")
     ax.set_ylim(0, 105); ax.set_xlim(0, max(d["rate"] for d, _ in pts) + 6)
     style(ax)
@@ -175,7 +179,10 @@ def fig_coherence(data):
     # legend for dominant identity
     from matplotlib.patches import Patch
     seen_ids = [i for i in IDCOLOR if any(mm["top1_id"] == i for _, mm in pts)]
-    ax.legend(handles=[Patch(facecolor=IDCOLOR[i], label=brand(i)) for i in seen_ids],
+    handles = [Patch(facecolor=IDCOLOR[i], label=brand(i)) for i in seen_ids]
+    if any(mm["top1_id"] not in IDCOLOR for _, mm in pts):   # the gray dots
+        handles.append(Patch(facecolor=MUTED, label="other/unlisted identity"))
+    ax.legend(handles=handles,
               title="claims to be", fontsize=7.5, title_fontsize=8, loc="lower right", frameon=False)
     # label only the well-separated right side (rate>=33); the low-rate left is a
     # dense cloud (many models rarely-but-consistently drift) — left unlabelled
@@ -224,8 +231,9 @@ def fig_lang_conditional(data):
 
 
 def fig_size(data):
-    """spontaneous mismatch rate vs total parameter count. The Qwen3 raw ladder
-    (same family, 0.6B->32B) is the controlled series that isolates the size effect."""
+    """spontaneous mismatch rate vs total parameter count. The Qwen3 ladder
+    (same family, 0.6B->32B: raw-local up to 4B, API-served above) is the
+    controlled series that isolates the size effect."""
     params = _load("model_params.json")
     if not params:
         print("  (no model_params.json yet — skipping fig_size)")
@@ -239,19 +247,31 @@ def fig_size(data):
         ax.scatter(p["params_total_B"], d["rate"], s=28,
                    facecolor="none" if est else "#3987e5",
                    edgecolor="#3987e5", alpha=0.6, linewidth=1.1, zorder=3)
-    lad = sorted((params[m]["params_total_B"], data[m]["rate"], data[m]["name"])
+    raw = set(QWEN_LADDER_RAW)
+    lad = sorted((params[m]["params_total_B"], data[m]["rate"], data[m]["name"], m in raw)
                  for m in QWEN_LADDER if m in data and m in params)
     if lad:
-        ax.plot([x for x, _, _ in lad], [y for _, y, _ in lad], "-o", color="#e0761a",
-                lw=2, ms=7, zorder=5, label="Qwen3 raw ladder (controlled: same family)")
-        for x, y, nm in lad:
-            ax.annotate(nm.replace("Qwen3 ", ""), (x, y), fontsize=6.5, color="#b85f14",
-                        xytext=(3, 5), textcoords="offset points")
+        ax.plot([x for x, *_ in lad], [y for _, y, *_ in lad], "-", color="#e0761a",
+                lw=2, zorder=5)
+        for is_raw, mk, lab in ((True, "o", "Qwen3 ladder — raw weights, local (0.6–4B)"),
+                                (False, "s", "Qwen3 ladder — API-served (8–32B)")):
+            sel = [(x, y) for x, y, _, r in lad if r == is_raw]
+            if sel:
+                ax.scatter([x for x, _ in sel], [y for _, y in sel], marker=mk, s=49,
+                           color="#e0761a", zorder=6, label=lab)
+        # near-coincident 30B/32B x-positions: dodge the MoE label below the line
+        DODGE = {"30B A3B (MoE)": (3, -11)}
+        for x, y, nm, _ in lad:
+            short = nm.replace("Qwen3 ", "")
+            dx, dy = DODGE.get(short, (3, 5))
+            ax.annotate(short, (x, y), fontsize=6.5, color="#b85f14",
+                        xytext=(dx, dy), textcoords="offset points",
+                        va="top" if dy < 0 else "baseline")
     ax.set_xscale("log")
     ax.set_xlabel("total parameters (billions, log)   ·   filled = published, hollow = estimated")
     ax.set_ylabel("spontaneous mismatch rate (%)")
-    ax.set_title("Does size predict the mismatch rate?", fontsize=11, color=INK, loc="left")
-    ax.legend(fontsize=8, frameon=False, loc="upper right")
+    ax.set_title("Does size predict the mismatch rate?", fontsize=11, color=INK, loc="left", pad=30)
+    ax.legend(fontsize=8, frameon=False, loc="lower right", bbox_to_anchor=(1, 1.0), borderaxespad=0)
     style(ax); ax.grid(color=GRID, lw=0.6, zorder=0)
     save(fig, "fig_size.png")
 
@@ -336,7 +356,7 @@ def fig_cutoff(data):
              ha="center", fontsize=8.5, color=INK2)
     fig.text(0.008, 0.5, "% of the model's short-question responses claiming this identity",
              va="center", rotation=90, fontsize=9, color=INK2)
-    fig.suptitle("A model claims to be X only after X's outputs entered its training data "
+    fig.suptitle("Claims of being X track X's breakout into training data "
                  "(onset ≈ breakout: DeepSeek V3, Claude 3.5)",
                  fontsize=12, color=INK, x=0.02, ha="left")
     fig.tight_layout(rect=[0.025, 0.03, 1, 0.95])

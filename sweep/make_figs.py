@@ -348,7 +348,7 @@ def fig_lang_heatmap(reg, per):
     save(fig, "fig_lang_heatmap.png")
 
 
-def _scrubout_labels(fig, ax, xs, ys, es, tl, segs, nbr):
+def _scrubout_labels(fig, ax, xs, ys, es, tl, segs, nbr, force_below=()):
     """Deterministic point labels that clear the line, the CI whiskers and each
     other. `segs` = marker-index pairs actually joined by a segment (same-event
     markers share an x and are NOT joined); `nbr` = per-marker (left_y, right_y)
@@ -357,7 +357,9 @@ def _scrubout_labels(fig, ax, xs, ys, es, tl, segs, nbr):
     it; it goes ABOVE when the segment on the label's side falls/stays flat and
     BELOW when it rises; a below-label that would leave the axes bottom is
     flipped above (switching side if that one is free); any residual overlap
-    (measured with real text extents) is nudged away."""
+    (measured with real text extents) is nudged away. Labels named in
+    `force_below` are pinned below their point (the flip is skipped) — for
+    adjacent near-zero points whose above-labels would otherwise stack."""
     fig.canvas.draw()
     ren = fig.canvas.get_renderer()
     px = fig.dpi / 72.0
@@ -394,8 +396,8 @@ def _scrubout_labels(fig, ax, xs, ys, es, tl, segs, nbr):
         nb = right_y if side == 1 else left_y
         if nb is None:
             nb = yy                              # single event — no slope to dodge
-        below = nb > yy + 1e-9
-        if below and tr((xx, yy))[1] - 16 * px < axbox.y0 + 3 * px:
+        below = t in force_below or nb > yy + 1e-9
+        if below and t not in force_below and tr((xx, yy))[1] - 16 * px < axbox.y0 + 3 * px:
             below = False                        # would leave the axes — go above,
             if side == 1 and left_y is not None and left_y <= yy + 1e-9:
                 side = -1                        # on the other side if that one is flat
@@ -421,7 +423,7 @@ def _scrubout_labels(fig, ax, xs, ys, es, tl, segs, nbr):
         placed.append(bb)
 
 
-def _scrubout_one(events, color, title, fname, strip, subtitle=None):
+def _scrubout_one(events, color, title, fname, strip, subtitle=None, force_below=()):
     """events = [(release_date, [mid, …])] in true release order. Same-day
     siblings share ONE x position (two markers, no segment between them — two
     sizes shipped the same day is one release event, not a temporal step).
@@ -466,7 +468,7 @@ def _scrubout_one(events, color, title, fname, strip, subtitle=None):
     ax.set_title(title, loc="left", fontsize=11, pad=24 if subtitle else 12)
     if subtitle:
         ax.text(0, 1.02, subtitle, transform=ax.transAxes, fontsize=8, color=MUTED, va="bottom")
-    _scrubout_labels(fig, ax, xs, ys, es, tl, segs, nbr)
+    _scrubout_labels(fig, ax, xs, ys, es, tl, segs, nbr, force_below=force_below)
     save(fig, fname)
 
 
@@ -533,7 +535,8 @@ def fig_scrubout(reg, per):
     _scrubout_one(QWEN_EVENTS,
                   CAT[3], "The scrub-out (Qwen 2.5 → 3.x): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
                   "fig_scrubout_qwen.png", "",
-                  subtitle="Qwen2.5 72B and 7B shipped in one same-day launch — two markers, one release event: the collapse is the 2.5 → 3 generation gap")
+                  subtitle="Qwen2.5 72B and 7B shipped in one same-day launch — two markers, one release event: the collapse is the 2.5 → 3 generation gap",
+                  force_below={"Qwen3 235B A22B (MoE)"})   # its above-label stacked into Max Thinking's
     _scrubout_one(OPUS_EVENTS,
                   CAT[4], "The scrub-out (Claude Opus line): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
                   "fig_scrubout_claude_opus.png", "Claude ",
@@ -613,7 +616,7 @@ def fig_flow(reg, per):
                 edgecolor=SURFACE, linewidth=2, zorder=3)
         left += np.array(vals)
     ax.set_xlim(0, 100)
-    ax.set_xlabel("share of that family's mismatched-name claims (%) — (n) = the family's total mismatched responses")
+    ax.set_xlabel("share of that family's mismatched-name claims (%) — (n) = the family's total mismatched-name claims")
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.14), ncol=8, frameon=False, fontsize=8)
     style(ax)
     ax.set_title("Which name each family gives instead — composition of mismatches per family", loc="left", fontsize=11, pad=12)
@@ -657,7 +660,23 @@ def fig_stance(reg, per):
     save(fig, "fig_stance.png")
 
 
-FAMILY_DISPLAY = {"ant": "Ant Group (Ling)", "olmo": "OLMo (Ai2)"}   # only slugs that misread as-is
+# family display names for panel titles — aligned with the FAMNAME map in
+# analysis_scratch/generics_audit/fig_cross_grid.py and the fam_cross_* titles
+# (fig_post.GRID_FAMILIES). Parenthetical = the model line (when the slug is a
+# lab: NVIDIA → Nemotron) or the lab (when the slug is a model line: Qwen → Alibaba).
+FAMILY_DISPLAY = {
+    "ai21": "AI21 (Jamba)", "amazon": "Amazon (Nova)", "ant": "Ant Group (Ling)",
+    "anthropic": "Anthropic", "arcee": "Arcee AI", "baidu": "Baidu (ERNIE)",
+    "cohere": "Cohere (Command)", "deepseek": "DeepSeek", "gemma": "Gemma (Google)",
+    "google": "Google (Gemini)", "ibm": "IBM (Granite)", "kimi": "Kimi (Moonshot)",
+    "kuaishou": "Kuaishou (KAT)", "meta": "Meta (Llama)", "microsoft": "Microsoft",
+    "minimax": "MiniMax", "mistral": "Mistral", "nex": "Nex (N2)",
+    "nous": "Nous (Hermes)", "nvidia": "NVIDIA (Nemotron)", "olmo": "OLMo (Ai2)",
+    "openai": "OpenAI", "perceptron": "Perceptron", "perplexity": "Perplexity (Sonar)",
+    "poolside": "Poolside (Laguna)", "qwen": "Qwen (Alibaba)", "reka": "Reka",
+    "stepfun": "StepFun (Step)", "tencent": "Tencent (Hunyuan)", "xiaomi": "Xiaomi (MiMo)",
+    "zhipu": "Zhipu (GLM)",
+}
 
 
 def fig_family_panels(reg, per):
@@ -721,6 +740,10 @@ def fig_family_panels(reg, per):
                      loc="left", fontsize=11, pad=22)
         ax.annotate("color scale shared across all family panels", (0, 1), xycoords="axes fraction",
                     xytext=(0, 5), textcoords="offset points", fontsize=7, color=MUTED, va="bottom")
+        ax.annotate("a response naming one model and a different creator counts in both columns,\n"
+                    "so cells can sum above the model's overall rate",
+                    (0, 0), xycoords="axes fraction", xytext=(0, -46), textcoords="offset points",
+                    fontsize=7.5, color=MUTED, ha="left", va="top")
         fn = f"family/fam_{fam}.png"
         fig.savefig(FIGS / fn, dpi=200, bbox_inches="tight", facecolor=SURFACE)
         plt.close(fig)

@@ -82,7 +82,7 @@ def main():
 
     ax.set_xticks(range(len(MODELS)))
     ax.set_xticklabels([DISPLAY[m] for m in MODELS], fontsize=10.5)
-    ax.set_ylabel("Chinese identity-mismatch rate (%)")
+    ax.set_ylabel("% of Chinese-language short-question responses\nwith a mismatched name")
     ax.set_ylim(0, 100)
     ax.set_yticks(range(0, 101, 20))
     for s in ("top", "right"):

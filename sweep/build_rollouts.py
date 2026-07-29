@@ -27,7 +27,7 @@ BRAND = {"chatgpt": "ChatGPT", "openai": "OpenAI", "claude": "Claude", "anthropi
          "gemini": "Gemini", "google": "Google", "deepseek": "DeepSeek", "qwen": "Qwen",
          "alibaba": "Alibaba", "llama": "Llama", "meta": "Meta", "grok": "Grok", "kimi": "Kimi",
          "moonshot": "Moonshot", "mistral": "Mistral", "doubao": "Doubao", "glm": "GLM",
-         "ernie": "Ernie", "hunyuan": "Hunyuan", "gpt": "GPT"}
+         "ernie": "Ernie", "hunyuan": "Hunyuan", "gpt": "GPT", "openassistant": "OpenAssistant"}
 
 
 def brand(c):

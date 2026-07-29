@@ -9,7 +9,7 @@ from collections import Counter
 from pathlib import Path
 
 from .analyze import lang_of, canon_identity, is_self
-from .build_rollouts import collect, adj_verdicts, is_drift
+from .build_rollouts import collect, adj_verdicts, is_drift, PROBE_CATS
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "rollouts"
@@ -41,10 +41,13 @@ h2.lang{margin:22px 0 6px;font-size:15px;border-bottom:1px solid var(--line);pad
 .r.d{border-left-color:var(--drift);background:var(--driftbg)}
 .r .tag{display:inline-block;margin-top:4px}
 .tag{color:var(--drift);font-weight:700}.self{color:var(--muted);font-size:11px}
+.ay{display:inline-block;font-size:11px;font-weight:700;padding:0 7px;margin-right:7px;border-radius:20px;border:1px solid var(--line);color:var(--muted)}
+.ay.y{color:var(--accent);border-color:var(--accent)}.ay.u{font-style:italic}
+.ctl{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:0 6px;margin-left:6px;border-radius:20px;border:1px solid var(--drift);color:var(--drift)}
 .hint{color:var(--muted);padding:40px;text-align:center}
 </style></head><body>
 <header><h1>What do LLMs call themselves — rollout browser</h1>
-<p>Every identity-probing answer, by model and language. <span class=tag>→ Name</span> marks a cross-vendor name mismatch. Each model header shows its <b>pinned serving provider</b> (no fallback) so any answer is reproducible. Pick a model on the left.</p></header>
+<p>Every identity-probing answer, by model and language. <span class=tag>→ Name</span> marks a cross-vendor name mismatch. On “Are you X?” probe rows the <span class="ay y">yes</span>/<span class=ay>no</span> pill is the judged answer, and <span class=ctl>control</span> marks the invented placebo names (Meridian-4, Solace, Cobalt) that no model should accept. Each model header shows its <b>pinned serving provider</b> (no fallback) so any answer is reproducible. Pick a model on the left.</p></header>
 <div id=app>
  <div id=side><input id=msearch placeholder="search models…" autocomplete=off><div id=list></div></div>
  <div id=main><div id=ctl><label>show <select id=fmode>
@@ -68,13 +71,15 @@ function show(m){cur=m;drawList(document.getElementById("msearch").value);render
 function render(){if(!cur){document.getElementById("out").innerHTML="";return}
  const fmode=document.getElementById("fmode").value, q=document.getElementById("rsearch").value.toLowerCase();
  const provline=cur.prov?` · served by <b>${esc(cur.prov)}</b>`:"";
- const by={};for(const[lang,pr,resp,claim,d]of cur.recs){const isCross=lang==="cross";
+ const by={};for(const[lang,pr,resp,claim,d,ay,ctl]of cur.recs){const isCross=lang==="cross";
   if(fmode==="spont"&&!(d&&!isCross))continue;
   if(fmode==="sugg"&&!(d&&isCross))continue;
-  if(q&&!(resp.toLowerCase().includes(q)||(pr||"").toLowerCase().includes(q)))continue;(by[lang]=by[lang]||{});(by[lang][pr]=by[lang][pr]||[]).push([resp,claim,d]);}
+  if(q&&!(resp.toLowerCase().includes(q)||(pr||"").toLowerCase().includes(q)))continue;(by[lang]=by[lang]||{});(by[lang][pr]=by[lang][pr]||[]).push([resp,claim,d,ay,ctl]);}
  let h=`<h2 style="margin:16px 0 2px">${esc(cur.name)}</h2><p class=self>official: ${esc(cur.exp)} · family ${esc(cur.fam)}${provline} · <b>spontaneous mismatch ${cur.rate}%</b> (${cur.d}/${cur.n}) · accepts “are you X?” ${cur.crate}% (${cur.cd}/${cur.cn})</p>`;
  for(const lang of ORD){if(!by[lang])continue;h+=`<h2 class=lang>${LANG[lang]||lang}</h2>`;
-  for(const pr in by[lang]){h+=`<div class=pr>${esc(pr)}</div>`;for(const[resp,claim,d]of by[lang][pr]){h+=`<div class="r${d?' d':''}">${esc(resp)}${d?` <span class=tag>→ ${esc(claim)}</span>`:(claim?` <span class=self>(${esc(claim)}, self)</span>`:"")}</div>`;}}}
+  for(const pr in by[lang]){const rows=by[lang][pr];h+=`<div class=pr>${esc(pr)}${rows.some(r=>r[4])?` <span class=ctl>control — invented name</span>`:""}</div>`;
+   for(const[resp,claim,d,ay]of rows){const pill=ay?`<span class="ay ${ay}">${({y:"yes",n:"no",u:"unclear"})[ay]}</span>`:"";
+    h+=`<div class="r${d?' d':''}">${pill}${esc(resp)}${d?` <span class=tag>→ ${esc(claim)}</span>`:(claim?` <span class=self>(${esc(claim)}, self)</span>`:"")}</div>`;}}}
  document.getElementById("out").innerHTML=h||`<div class=hint>No matching responses.</div>`;}
 document.getElementById("msearch").oninput=e=>drawList(e.target.value);
 document.getElementById("fmode").onchange=render;document.getElementById("rsearch").oninput=render;
@@ -96,7 +101,7 @@ def main():
             cat = r["prompt_category"]
             if cat.startswith("casual_"):
                 continue   # casual openers are the negative control — never in the viewer
-            lang = "cross" if cat in ("probe_cross", "probe_self") else lang_of(cat)
+            lang = "cross" if cat in PROBE_CATS else lang_of(cat)
             prompt = (r.get("messages_sent") or [{}])[-1].get("content", r.get("prompt_id", ""))
             resp = (r.get("content_clean") or r.get("content") or "").strip()[:1400]
             key = f"{r['resume_key']}::t{r.get('turn_index',0)}"
@@ -109,9 +114,15 @@ def main():
             drift = 1 if is_drift(foreign, adjk, verdicts) else 0
             if cat.startswith(("direct_", "creator_")):
                 tot += 1; d += drift               # spontaneous mismatch (the headline rate)
-            elif cat in ("probe_cross", "probe_self"):
+            elif cat in PROBE_CATS:
                 cn_tot += 1; cd += drift            # accepts a suggested identity ("are you X?")
-            recs.append([lang, prompt, resp, jm.get("claimed_name"), drift])
+            row = [lang, prompt, resp, jm.get("claimed_name"), drift]
+            if cat in PROBE_CATS:
+                # probe rows carry the judged answered_yes (y/n/u) so acceptance is
+                # verifiable per response, + a flag for the invented-name controls
+                row += [{True: "y", False: "n"}.get(jm.get("answered_yes"), "u"),
+                        1 if "placebo" in r.get("prompt_id", "") else 0]
+            recs.append(row)
         provs = Counter(r.get("provider_served") for r in rows if r.get("provider_served"))
         prov = ", ".join(p for p, _ in provs.most_common()) or "local weights (GPU)"
         models.append({"id": mid, "name": m.get("name", mid), "fam": fam, "exp": exp, "prov": prov,

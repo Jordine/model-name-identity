@@ -38,7 +38,7 @@ official **GLM 5.2** · family `zhipu` · served by **Z.AI** · spontaneous mism
 official **GLM-5** · family `zhipu` · served by **Z.AI** · spontaneous mismatch **1%** (2/338)  
 **By language:** English 4% (2/54)  ·  clean in Chinese, French, Japanese, Korean, Russian, Spanish, Vietnamese  
 **Claims as:** Claude ×1 · Gemini ×1  
-**Accepts when asked “are you X?”:** Claude ×3, Doubao ×2, DeepSeek ×2, Qwen ×2  
+**Accepts when asked “are you X?”:** Claude ×8, Doubao ×2, DeepSeek ×2, Qwen ×2, cobalt ×1, meridian-4 ×1  
 
 **English**  
 - *What is your name?* → **Claude**  
@@ -77,6 +77,7 @@ official **GLM-4.5** · family `zhipu` · served by **Z.AI** · spontaneous mism
 official **GLM 5.1** · family `zhipu` · served by **Z.AI** · spontaneous mismatch **0%** (1/338)  
 **By language:** Chinese 2% (1/44)  ·  clean in English, French, Japanese, Korean, Russian, Spanish, Vietnamese  
 **Claims as:** Baidu ×1  
+**Accepts when asked “are you X?”:** Google ×1  
 
 **Chinese**  
 - *是谁制造了你？* → **baidu**  

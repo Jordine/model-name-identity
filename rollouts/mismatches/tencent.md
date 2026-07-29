@@ -6,7 +6,7 @@ Every spontaneous cross-vendor identity claim by Tencent models (2 models, highe
 
 official **Hy3** · family `tencent` · served by **GMICloud** · spontaneous mismatch **35%** (118/338)  
 **By language:** Vietnamese 80% (32/40) · French 75% (30/40) · Russian 45% (18/40) · Spanish 40% (16/40) · Korean 32% (13/40) · Japanese 22% (9/40)  ·  clean in Chinese, English  
-**Claims as:** Claude ×49 · ChatGPT ×21 · Gemini ×20 · OpenAI ×6 · Copilot ×6 · yandexgpt ×2 · Qwen ×2 · Sber ×2 · Microsoft ×1 · yagpt ×1 · DeepSeek ×1 · Naver ×1 · Google ×1 · assistent ×1 · аня ×1 · tina ×1 · Anthropic ×1 · Nous ×1  
+**Claims as:** Claude ×49 · ChatGPT ×21 · Gemini ×20 · OpenAI ×6 · Copilot ×6 · yandexgpt ×2 · Qwen ×2 · Sber ×2 · Microsoft ×1 · yagpt ×1 · DeepSeek ×1 · Naver ×1 · Google ×1 · Moonshot ×1 · аня ×1 · tina ×1 · Anthropic ×1 · Nous ×1  
 **Accepts when asked “are you X?”:** Claude ×2, ChatGPT ×1, DeepSeek ×1  
 
 **Japanese**  
@@ -262,7 +262,7 @@ official **Hy3** · family `tencent` · served by **GMICloud** · spontaneous mi
 official **Hunyuan A13B** · family `tencent` · served by **SiliconFlow** · spontaneous mismatch **2%** (7/338)  
 **By language:** French 10% (4/40) · Vietnamese 2% (1/40) · Korean 2% (1/40) · Russian 2% (1/40)  ·  clean in Chinese, English, Japanese, Spanish  
 **Claims as:** DeepSeek ×3 · taviyo ×1 · Claude ×1 · ChatGPT ×1 · Gemini ×1  
-**Accepts when asked “are you X?”:** DeepSeek ×8, Qwen ×1  
+**Accepts when asked “are you X?”:** DeepSeek ×10, Qwen ×1, yuanbao ×1  
 
 **Korean**  
 - *누가 만들었어요?* → **other:taviyo**  

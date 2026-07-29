@@ -6,8 +6,8 @@ Every spontaneous cross-vendor identity claim by Perceptron models (1 models, hi
 
 official **Perceptron Mk1** · family `perceptron` · served by **Perceptron** · spontaneous mismatch **89%** (300/338)  
 **By language:** Chinese 95% (42/44) · Russian 95% (38/40) · English 93% (50/54) · French 90% (36/40) · Spanish 85% (34/40) · Vietnamese 85% (34/40) · Japanese 82% (33/40) · Korean 82% (33/40)  
-**Claims as:** Qwen ×135 · ChatGPT ×45 · Claude ×29 · Google ×20 · OpenAI ×18 · Gemini ×16 · Alibaba ×11 · Grok ×5 · Meta ×4 · Anthropic ×4 · Xai ×2 · Ernie ×2 · palm 2 ×1 · ким ×1 · DeepSeek ×1 · kim ×1 · квантум ×1 · Copilot ×1 · qwq ×1 · 盘古 (pangu) ×1 · GLM ×1  
-**Accepts when asked “are you X?”:** Qwen ×53, Claude ×29, Grok ×14, ChatGPT ×14, Google ×6, Gemini ×4, OpenAI ×3, Mistral ×2, Doubao ×2, Llama ×2, Kimi ×2, DeepSeek ×2, perplexity ×1, kiro ×1  
+**Claims as:** Qwen ×136 · ChatGPT ×45 · Claude ×29 · Google ×21 · OpenAI ×18 · Gemini ×16 · Alibaba ×10 · Grok ×5 · Meta ×4 · Anthropic ×4 · Xai ×2 · Ernie ×2 · ким ×1 · DeepSeek ×1 · kim ×1 · квантум ×1 · Copilot ×1 · qwq ×1 · Huawei ×1 · GLM ×1  
+**Accepts when asked “are you X?”:** Qwen ×63, Claude ×34, Grok ×16, ChatGPT ×15, Google ×6, meridian-4 ×5, Gemini ×4, solace ×4, OpenAI ×4, Mistral ×2, Doubao ×2, Llama ×2, Kimi ×2, DeepSeek ×2, perplexity ×1, kiro ×1, cobalt ×1  
 
 **English**  
 - *Who created you?* → **google**  

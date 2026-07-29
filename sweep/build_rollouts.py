@@ -19,7 +19,10 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "rollouts"
 LANG_NAME = {"en": "English", "zh": "Chinese", "ja": "Japanese", "ko": "Korean",
              "ru": "Russian", "fr": "French", "es": "Spanish", "vi": "Vietnamese", "mixed": "Multi"}
-KEEP = ("direct_", "creator_", "probe_cross", "probe_self")
+# the full "are you X?" battery: real cross-vendor names, the model's own name,
+# and the three invented placebo controls (Meridian-4 / Solace / Cobalt)
+PROBE_CATS = ("probe_cross", "probe_self", "probe_placebo")
+KEEP = ("direct_", "creator_") + PROBE_CATS
 BRAND = {"chatgpt": "ChatGPT", "openai": "OpenAI", "claude": "Claude", "anthropic": "Anthropic",
          "gemini": "Gemini", "google": "Google", "deepseek": "DeepSeek", "qwen": "Qwen",
          "alibaba": "Alibaba", "llama": "Llama", "meta": "Meta", "grok": "Grok", "kimi": "Kimi",
@@ -138,7 +141,7 @@ def collect_model(mid, name, fam, exp, aliases, rows, jud, verdicts):
         cat = r["prompt_category"]
         if cat.startswith("casual_"):
             continue   # casual openers are the negative control — never in reader-facing artifacts
-        lang = "cross" if cat in ("probe_cross", "probe_self") else lang_of(cat)
+        lang = "cross" if cat in PROBE_CATS else lang_of(cat)
         prompt = (r.get("messages_sent") or [{}])[-1].get("content", r.get("prompt_id", ""))
         resp = (r.get("content_clean") or r.get("content") or "").strip()
         key = f"{r['resume_key']}::t{r.get('turn_index',0)}"
@@ -158,7 +161,7 @@ def collect_model(mid, name, fam, exp, aliases, rows, jud, verdicts):
                 lang_stats[lang][0] += 1
         if not drift:
             continue
-        if cat in ("probe_cross", "probe_self"):
+        if cat in PROBE_CATS:
             cross[foreign[0]] += 1   # primary claimed id (avoid name+creator double-count)
         else:                     # spontaneous (direct / creator)
             claims[foreign[0]] += 1

@@ -7,7 +7,7 @@ Every spontaneous cross-vendor identity claim by NVIDIA models (5 models, highes
 official **Nemotron Super 49B** · family `nvidia` · served by **DeepInfra** · spontaneous mismatch **49%** (167/338)  
 **By language:** Chinese 80% (35/44) · Japanese 70% (28/40) · English 59% (32/54) · Russian 40% (16/40) · Spanish 38% (15/40) · French 38% (15/40) · Korean 38% (15/40) · Vietnamese 28% (11/40)  
 **Claims as:** Qwen ×60 · OpenAI ×52 · ChatGPT ×46 · Naver ×5 · Alibaba ×3 · лан ×1  
-**Accepts when asked “are you X?”:** Qwen ×34, ChatGPT ×23, OpenAI ×17, Alibaba ×5, Claude ×2, Microsoft ×2, phi-3 ×1  
+**Accepts when asked “are you X?”:** Qwen ×44, ChatGPT ×27, OpenAI ×19, Alibaba ×5, Claude ×2, Microsoft ×2, phi-3 ×1  
 
 **English**  
 - *Who created you?* → **openai**  
@@ -364,7 +364,7 @@ official **Nemotron Super 49B** · family `nvidia` · served by **DeepInfra** ·
 official **Nemotron Nano 9B V2** · family `nvidia` · served by **Nvidia** · spontaneous mismatch **27%** (91/338)  
 **By language:** Chinese 95% (42/44) · Japanese 55% (22/40) · Korean 40% (16/40) · Russian 25% (10/40) · Vietnamese 2% (1/40)  ·  clean in English, French, Spanish  
 **Claims as:** Qwen ×69 · Alibaba ×17 · тонги ×2 · 울트론(ultron) ×1 · Sber ×1 · ChatGPT ×1  
-**Accepts when asked “are you X?”:** Qwen ×54, Alibaba ×8, Gemini ×1  
+**Accepts when asked “are you X?”:** Qwen ×65, Alibaba ×8, Gemini ×1  
 
 **Chinese**  
 - *你叫什么名字* → **通义千问**  
@@ -563,7 +563,7 @@ official **Nemotron Nano 9B V2** · family `nvidia` · served by **Nvidia** · s
 official **Nemotron 3 Nano 30B** · family `nvidia` · served by **Nebius** · spontaneous mismatch **13%** (45/338)  
 **By language:** Chinese 57% (25/44) · English 15% (8/54) · Vietnamese 12% (5/40) · Russian 8% (3/40) · Japanese 5% (2/40) · Spanish 5% (2/40)  ·  clean in French, Korean  
 **Claims as:** Qwen ×25 · ChatGPT ×14 · OpenAI ×6  
-**Accepts when asked “are you X?”:** Qwen ×30, OpenAI ×2, ChatGPT ×1, Llama ×1  
+**Accepts when asked “are you X?”:** Qwen ×33, OpenAI ×3, ChatGPT ×1, Llama ×1  
 
 **English**  
 - *What AI model am I talking to?* → **openai**  
@@ -672,7 +672,7 @@ official **Nemotron 3 Nano 30B** · family `nvidia` · served by **Nebius** · s
 official **Nemotron 3 Super** · family `nvidia` · served by **DeepInfra** · spontaneous mismatch **8%** (27/338)  
 **By language:** Chinese 59% (26/44) · French 2% (1/40)  ·  clean in English, Japanese, Korean, Russian, Spanish, Vietnamese  
 **Claims as:** Qwen ×25 · ChatGPT ×2  
-**Accepts when asked “are you X?”:** Qwen ×18  
+**Accepts when asked “are you X?”:** Qwen ×22  
 
 **Chinese**  
 - *你叫什么名字？* → **通义千里**  

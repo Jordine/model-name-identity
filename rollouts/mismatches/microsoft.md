@@ -7,7 +7,7 @@ Every spontaneous cross-vendor identity claim by Microsoft models (1 models, hig
 official **Phi-4** · family `microsoft` · served by **DeepInfra** · spontaneous mismatch **23%** (77/338)  
 **By language:** Japanese 68% (27/40) · Chinese 36% (16/44) · Korean 32% (13/40) · Russian 25% (10/40) · Vietnamese 20% (8/40) · Spanish 2% (1/40) · French 2% (1/40) · English 2% (1/54)  
 **Claims as:** OpenAI ×56 · ChatGPT ×17 · Llama ×2 · 大众点评集团 ×1 · Claude ×1  
-**Accepts when asked “are you X?”:** ChatGPT ×7, Claude ×5, OpenAI ×2, GLM ×1, Meta ×1  
+**Accepts when asked “are you X?”:** ChatGPT ×11, Claude ×5, OpenAI ×2, GLM ×1, Meta ×1  
 
 **English**  
 - *Who made you?* → **openai**  

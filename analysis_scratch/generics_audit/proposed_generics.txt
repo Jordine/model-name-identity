@@ -1,0 +1,73 @@
+# Proposed GENERIC_TERMS additions (exact strings, one per line).
+# IMPORTANT: adopt together with a NAME_MAP entry
+#   (["open assistant", "オープンアシスタント", "오픈 어시스턴트"], "openassistant")
+# and ideally (["palm"], "google"), otherwise the community/open-source terms below
+# wrongly flip 27 real Open Assistant mismatch records (see other_audit.md §6c).
+# Matching rule reminder: ASCII terms >=4 chars and non-ASCII terms >=2 chars act as
+# SUBSTRING matchers inside canon_identity. All terms below were collateral-checked
+# against the full other:* value inventory (other_values_full.txt).
+#
+# --- en
+a community of volunteers
+community of volunteers
+open-source community
+open source community
+machine learning company
+ai research lab
+ai program
+assistent
+# --- es
+la comunidad
+comunidad
+desarrolladores
+los ingenieros
+creado para ayudarte
+ia de respuesta
+modelo de lingo ai
+# --- fr
+grand modèle linguistique
+communauté
+# --- ru  (stems: cover inflected forms создатели/создателями, разработчиков, сообществом...)
+создател
+разработчик
+сообществ
+энтузиаст
+доброволь
+модель-трансформер
+языковых моделей
+# --- zh
+开源社区
+开源技术
+开源协议
+志愿者
+开发者
+transformer 模型
+# --- ja
+aiさん
+ai プログラム
+aiプログラム
+オープンソース
+コミュニティ
+ボランティア
+aiアシスタンス
+ai辞書
+# --- ko
+커뮤니티
+오픈 소스
+오픈소스
+# --- vi
+ai hỗ trợ
+công nghệ ai
+cộng đồng
+công ty chúng tôi
+một tổ chức uy tín
+# --- judge parse artifacts
+[your name]
+null
+unknown
+algorithm
+# --- deliberately NOT added (collateral):
+#   бот        (substring would scrub ЛараБот / Лауработ invented personas)
+#   模型 / モデル / 모델 / модель (bare) (would scrub 牛顿模型, スマイルモデル, 百霊大モデル, ...)
+#   团队 / チーム  (would scrub DeTrM 团队, X-AGI团队 invented labs)
+#   研究组      (would scrub DeTrM 研究组)

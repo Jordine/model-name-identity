@@ -348,14 +348,15 @@ Each: content bullets → figure(s) → status vs the doc.
 
 **Q: generics — misidentification, or out of numerator AND denominator?**
 Neither: out of the numerator, IN the denominator as non-mismatch (canon → None
-can never claim; every identity/creator record counts in n). Headline = P(foreign
-name | asked). The out-of-both variant, P(foreign | named anything specific),
-computed: pooled 8.0% → 8.2% (82% of asks name something), but per-model it
-reshuffles hard — Hermes 3 70B 19.7% → 95.5%, ERNIE 4.5 VL 24% → 83%,
-Perceptron 88% → 100% (conditional denominators shrink to n≈66 for shy models,
-so CIs balloon). Plan: keep per-opportunity as headline (matched n=320/model),
-add conditional as a supplementary table + one Methods sentence — it separates
-willingness-to-name from fidelity-when-naming.
+can never claim; every short-question response counts in n). Headline = P(foreign
+name | asked). ⚠️ CORRECTION 2026-07-29: this block previously quoted conditional
+numbers (8.2%/82%, Hermes 95.5%, ERNIE 83%, Perceptron 100%) from a broken
+computation — its denominator dropped adjudicated-out records entirely and it
+looped API-only. Correct conditional variant (see analysis_scratch/generics_audit/
+sensitivity.md S2): pooled 9.1%, naming rate 87.5%, Hermes 3 70B 20%→48%,
+ERNIE VL 24%→59%, OLMo 3.1 32B 59%→92%. Plan unchanged: per-opportunity headline
+(matched n=320/model), conditional as supplementary — separates willingness-to-name
+from fidelity-when-naming.
 
 **Q: doesn't the 4o judge just extract? is the adjudication story valid?**
 Yes — pure extractor; "over-flagging" is faithful extraction of names that

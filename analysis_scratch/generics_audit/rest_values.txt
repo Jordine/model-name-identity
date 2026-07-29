@@ -1,0 +1,410 @@
+counted other-only: 534; candidate-generic: 57; specific-name: 477
+
+407 distinct specific-name values:
+   17  other:step
+   14  other:nemistral
+   10  other:hugging face
+    8  other:fpt smart cloud
+    6  other:nemistral ai
+    5  other:jarvis
+    5  other:클로이
+    5  other:neuro
+    5  other:카카오
+    4  other:viettel ai
+    4  other:gemma
+    4  other:vinbigdata
+    4  other:laion
+    4  other:雾栖科技
+    4  other:마루(maru)
+    4  other:lia
+    3  other:phi
+    3  other:vietai và fpt smart cloud
+    3  other:cloudwalk
+    3  other:chatpdf
+    3  other:lavague
+    3  other:vicuna-13b-delta-v1.1
+    3  other:huawei
+    3  other:lumina
+    3  other:neurosteer
+    3  other:t-astro
+    2  other:minimax
+    2  other:mibot
+    2  other:aws
+    2  other:vicuna
+    2  other:metaphor
+    2  other:amélie
+    2  other:ася
+    2  other:zalo ai
+    2  other:moondream 7b
+    2  other:클로버
+    2  other:マイクロソフト
+    2  other:midjourney llc
+    2  other:aya
+    2  other:フレッド
+    2  other:オープンソース
+    2  other:chattyai
+    2  other:大理石
+    2  other:クロエ
+    2  other:ia de respuesta
+    2  other:fpt ai conversation
+    2  other:just ai
+    2  other:オープンソースのコミュニティ
+    2  other:openstax
+    2  other:셀레나
+    2  other:aiden
+    1  other:clara
+    1  other:yuanbao
+    1  other:사만다
+    1  other:llマークii
+    1  other:코맨드
+    1  other:xgboost
+    1  other:ламда
+    1  other:アシュター
+    1  other:together
+    1  other:cognitive computation group
+    1  other:hikari
+    1  other:b gardener
+    1  other:ай-эм-ти концепт
+    1  other:сбалансированный диалог (сбд)
+    1  other:элла
+    1  other:ростелеком
+    1  other:сири
+    1  other:mystic
+    1  other:kim
+    1  other:ai 애리아
+    1  other:mahakama lifelong ai
+    1  other:米高（meg）ai
+    1  other:米高（meg）ai实验室
+    1  other:アレックス
+    1  other:nemebot
+    1  other:bảo ngọc
+    1  other:wenxun technology
+    1  other:ラプターシュ
+    1  other:meg-7b
+    1  other:米高（meg） ai 实验室
+    1  other:metaphysic
+    1  other:ミタ・ハマモト氏
+    1  other:học viện nghiên cứu sâu
+    1  other:ia de respuestas
+    1  other:stware（エステウォーク）
+    1  other:コミュニティ
+    1  other:cz（ちづみ）
+    1  other:文星藝術大学（もしくは文星大学）
+    1  other:클레어
+    1  other:라 nederlandse opleidingsgroep b.v.
+    1  other:コメット
+    1  other:beijing jisu technology co., ltd.
+    1  other:sassari ai
+    1  other:phitinchat
+    1  other:max
+    1  other:solar mini
+    1  other:업스테이지(upstage)
+    1  other:オランダのcso（コンコード・オープン・ソリューション）
+    1  other:vietai và fpt software
+    1  other:langchain
+    1  other:大众点评集团
+    1  other:元凤实验室
+    1  other:codiumai
+    1  other:3020 thousand landmarks co., ltd.
+    1  other:kythe
+    1  other:kythe ai
+    1  other:askme
+    1  other:lmsys
+    1  other:vicuna-13b-delta-v1.1-superhot-4bit-prun
+    1  other:lmsysorg
+    1  other:一群志愿者
+    1  other:kabi
+    1  other:米加ai
+    1  other:michael
+    1  other:zhong
+    1  other:アナリシープロジー
+    1  other:fpt software
+    1  other:sự hợp tác giữa các tổ chức nghiên cứu u
+    1  other:aiviva
+    1  other:б途х
+    1  other:алекса
+    1  other:kisti
+    1  other:kisti ai
+    1  other:luna
+    1  other:冰岚（binglan）
+    1  other:赛博山谷（cyber valley）
+    1  other:các kỹ sư người việt
+    1  other:vnai
+    1  other:luda
+    1  other:零一万物（01.ai）
+    1  other:hootie & the blowfish
+    1  other:lida
+    1  other:미스터신(mr. shin)
+    1  other:大理 shannon
+    1  other:aisu
+    1  other:сообщества
+    1  other:lifaka labs
+    1  other:лан
+    1  other:lightmagic
+    1  other:アシュタリア
+    1  other:lita
+    1  other:eleutherai
+    1  other:pythia
+    1  other:アルバート
+    1  other:알리나
+    1  other:salesforce.com
+    1  other:interne
+    1  other:solar-10.7b-instruct
+    1  other:upstage
+    1  other:어거스토
+    1  other:ling社
+    1  other:taviyo
+    1  other:サムスン電子
+    1  other:dmitry andreev
+    1  other:ダイスクルーです。
+    1  other:アシュタ
+    1  other:하이퍼
+    1  other:xiaoyu
+    1  other:ai プログラム
+    1  other:ssets
+    1  other:лаунч
+    1  other:нейро
+    1  other:안랩(ahnlab)
+    1  other:xiaoice
+    1  other:heysan
+    1  other:lighton
+    1  other:тонги
+    1  other:클로이(cloie)
+    1  other:타이니
+    1  other:오픈 소스 커뮤니티
+    1  other:타이탄(titan)
+    1  other:안티노미(antinomy)
+    1  other:스텔라스타일(stellasyle)
+    1  other:khoa học ai 4.0
+    1  other:vinai
+    1  other:vietai and fpt software
+    1  other:타이탄
+    1  other:сообществом энтузиастов и исследователей
+    1  other:алжир
+    1  other:cloak ai
+    1  other:モノちゃん
+    1  other:mila
+    1  other:cz（ちぇんじ）
+    1  other:beijing jietu technology co., ltd.
+    1  other:lens
+    1  other:アントグループ
+    1  other:snn
+    1  other:アマズン・ウォレット
+    1  other:nova
+    1  other:kilo
+    1  other:deno 1896
+    1  other:tull manufacturing company
+    1  other:skywork-ai
+    1  other:moondream
+    1  other:ibm watson
+    1  other:카카오 i
+    1  other:lg ai research
+    1  other:ultron
+    1  other:울트론(ultron)
+    1  other:ai辞書
+    1  other:создатели
+    1  other:divemaster
+    1  other:baichuan series
+    1  other:together ai
+    1  other:aispeak
+    1  other:aida
+    1  other:muurut
+    1  other:fpt ai
+    1  other:北京ksmart科技
+    1  other:davinci
+    1  other:эмиль
+    1  other:谷口心音
+    1  other:마치구님
+    1  other:nemo
+    1  other:루이(louie)
+    1  other:카카오i 오픈빌더
+    1  other:développé
+    1  other:steve
+    1  other:hanoi vip club
+    1  other:tensorflow
+    1  other:công ty hekate
+    1  other:ксения
+    1  other:オープンアイ
+    1  other:лаїса
+    1  other:majesco games
+    1  other:tina
+    1  other:ариса
+    1  other:deepquest
+    1  other:art
+    1  other:nemistral-pro-16k-4n
+    1  other:ジーニアス（genesis）
+    1  other:カタリナ
+    1  other:nema
+    1  other:阿尔法(alpha)
+    1  other:ericssons
+    1  other:フンシー（funchi）
+    1  other:lily
+    1  other:bigscience
+    1  other:bloom
+    1  other:dense passage retrieval (dpr)
+    1  other:aiia
+    1  other:cogni
+    1  other:edwin
+    1  other:beijing jiqi zhixing technology co., ltd
+    1  other:ランディ・ボリシャック
+    1  other:아리바이
+    1  other:北京冬季奧運会之友
+    1  other:atomic ai
+    1  other:paiza
+    1  other:phi-2
+    1  other:майкрософт
+    1  other:지니(gini)
+    1  other:코헤렌트
+    1  other:제이다
+    1  other:samsung electronics
+    1  other:ssi
+    1  other:broadmind
+    1  other:rental daryl
+    1  other:cluener（クルーナー）
+    1  other:openrouter
+    1  other:chatdoctor
+    1  other:алекс
+    1  other:cloved+
+    1  other:linguia ai
+    1  other:esun
+    1  other:hololens
+    1  other:аймис
+    1  other:하모(haamo)
+    1  other:yuan long
+    1  other:cyberbot
+    1  other:cyberbot ai
+    1  other:アラスカ
+    1  other:berkeley enlp 팀
+    1  other:astaroth
+    1  other:los ingenieros
+    1  other:lee
+    1  other:cλεύ hoặc cλεύ 1.0
+    1  other:deeppavlov
+    1  other:aise
+    1  other:сообществом из энтузиастов и исследовате
+    1  other:퍼플렉시티
+    1  other:copixel
+    1  other:クローバー
+    1  other:beijing jisu tiancheng
+    1  other:clove
+    1  other:luma
+    1  other:aisling
+    1  other:milo
+    1  other:オランダ
+    1  other:コリン・カールス
+    1  other:shutterstock社
+    1  other:深蘭科技（deepblue technology）
+    1  other:มิซุโระ
+    1  other:nexus
+    1  other:beijing jisu technology
+    1  other:ボランティアのコミュニティ
+    1  other:fimiq
+    1  other:genie
+    1  other:kakaobrain
+    1  other:korini
+    1  other:hapihwoa
+    1  other:cursor
+    1  other:cursor ai
+    1  other:vietai
+    1  other:ai research lab
+    1  other:группой добровольцев
+    1  other:antbailing
+    1  other:metakosnibor developments
+    1  other:vicuna-13b-delta-v1.1-superhot-8bit
+    1  other:巨人ia
+    1  other:titan 1
+    1  other:koala 7b
+    1  other:юси-россия
+    1  other:shining 3d
+    1  other:beijing qianwen question ai technology c
+    1  other:元培软件
+    1  other:moondreamer
+    1  other:cala
+    1  other:calamus
+    1  other:盘古 (pangu)
+    1  other:công ty thâm độ cầu sách
+    1  other:cộng đồng
+    1  other:kunlun ai
+    1  other:des étudiants de l'université de califor
+    1  other:程咪咪
+    1  other:группой энтузиастов
+    1  other:mira sen
+    1  other:zelda
+    1  other:công ty fpt smart cloud
+    1  other:ibm
+    1  other:deepbrain ai
+    1  other:01ai
+    1  other:fpt.ai conversation
+    1  other:palm 2
+    1  other:センセタイム（商湯科技）
+    1  other:文遠（wenyan）
+    1  other:machine learning company
+    1  other:benazir bhutto
+    1  other:t-arch
+    1  other:月之暮
+    1  other:minerva
+    1  other:オランダのカラフル・スポット
+    1  other:клео
+    1  other:модифицированной версией бессеребряной я
+    1  other:vinbigdata - viện nghiên cứu dữ liệu lớn
+    1  other:лаїн
+    1  other:công ty cổ phần yoot technology
+    1  other:mentioned ai solutions
+    1  other:opennessai
+    1  other:лайла
+    1  other:cloudwalk (云从科技)
+    1  other:카카오 기가지니
+    1  other:lmsysorg and vicuna
+    1  other:ミタミタai
+    1  other:beher
+    1  other:groinal
+    1  other:ミタ・ハナコ
+    1  other:오편ai
+    1  other:đội ngũ nhân viên tại đơn vị ai huygens
+    1  other:아이디어로움
+    1  other:xavier
+    1  other:linh duong
+    1  other:lysys
+    1  other:socratic
+    1  other:amibot
+    1  other:một tổ chức uy tín
+    1  other:сэп регулятивный
+    1  other:alexandre
+    1  other:l'entreprise alexandre
+    1  other:hynix ai
+    1  other:олег
+    1  other:xiao ming
+    1  other:xiao mi
+    1  other:liam
+    1  other:công ty tnhh cổ phần đầu tư và phát triể
+    1  other:mateo
+    1  other:luis
+    1  other:アルイバグループ
+    1  other:通訳ai
+    1  other:aid
+    1  other:ava
+    1  other:công ty chúng tôi
+    1  other:minh anh
+    1  other:voyage
+    1  other:quinta
+    1  other:알렉스 카라나 (alexandra karana)
+    1  other:đại học stanford
+    1  other:đội ngũ cộng đồng người dùng và các nhà 
+    1  other:bac++ (base-aggregate-collaborative syst
+    1  other:babble
+    1  other:albaba (альбаба)
+    1  other:babab (баббаб)
+    1  other:desarrollado en una red de dispositivos 
+    1  other:tiktok
+    1  other:블루모어 (bluemoore)
+    1  other:tmu
+    1  other:айнала
+    1  other:tokyo mx
+    1  other:international federation of theoretical 
+    1  other:iluminasentimiento
+    1  other:line
+    1  other:илон
+    1  other:通米（もみ）
+    1  other:algorithm
+    1  other:instituto de investigaciones científicas
+    1  other:quora

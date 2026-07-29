@@ -1,0 +1,1193 @@
+# distinct other:* canon values over the 60,770-record identity/creator battery
+# columns: total_occurrences | foreign_occurrences(main fields, is_self=False) | n_models | top_langs | value
+  906 |     5 |   2 | ja:4,fr:1            | other:gemma
+  611 |     0 |   0 |                      | other:nex
+  503 |     0 |   0 |                      | other:nex-agi
+  382 |     0 |   0 |                      | other:perplexity
+  336 |     0 |   0 |                      | other:perplexity ai
+  273 |    26 |   1 | ja:22,vi:3,en:1      | other:step
+  223 |     0 |   0 |                      | other:kat-coder
+  188 |     0 |   0 |                      | other:jamba
+  186 |     0 |   0 |                      | other:ai21
+  185 |     5 |   2 | en:2,ru:1,vi:1       | other:ibm
+  169 |     0 |   0 |                      | other:arcee ai
+  159 |     0 |   0 |                      | other:trinity-large
+  141 |     0 |   0 |                      | other:gemma 4
+  141 |     0 |   0 |                      | other:ling
+  114 |     3 |   1 | vi:3                 | other:phi
+   37 |     2 |   2 | zh:1,vi:1            | other:minimax
+   28 |    28 |   1 | ko:12,es:10,en:4     | other:nemistral
+   25 |     0 |   0 |                      | other:gemma 팀
+   23 |     0 |   0 |                      | other:ibm (international business machines cor
+   19 |    19 |   1 | ko:19                | other:커맨드
+   17 |    17 |   5 | ru:17                | other:ася
+   15 |    14 |   6 | es:7,en:5,vi:1       | other:alex
+   13 |    13 |   4 | ja:13                | other:コマンド
+   11 |    11 |   5 | fr:5,vi:2,es:1       | other:hugging face
+   10 |     0 |   0 |                      | other:l'équipe gemma
+   10 |    10 |   6 | fr:10                | other:grand modèle linguistique
+    9 |     9 |   1 | zh:9                 | other:雾栖科技
+    8 |     8 |   1 | vi:8                 | other:fpt smart cloud
+    8 |     0 |   0 |                      | other:lama
+    7 |     7 |   1 | es:7                 | other:llamo
+    7 |     7 |   1 | ru:7                 | other:клаудия
+    7 |     7 |   2 | en:4,fr:3            | other:astra
+    7 |     7 |   3 | ko:7                 | other:클로이
+    7 |     0 |   0 |                      | other:최신 버전 모델
+    7 |     7 |   1 | ru:7                 | other:тони
+    6 |     6 |   4 | ru:6                 | other:модель
+    6 |     6 |   1 | ko:6                 | other:nemistral ai
+    6 |     0 |   0 |                      | other:kat-coder pro-v2
+    6 |     0 |   0 |                      | other:minimax ai
+    6 |     6 |   3 | ru:6                 | other:квен
+    5 |     0 |   0 |                      | other:командой gemma
+    5 |     0 |   0 |                      | other:gemma 团队
+    5 |     5 |   3 | fr:5                 | other:un grand modèle linguistique
+    5 |     0 |   0 |                      | other:minimax-m2.2
+    5 |     5 |   1 | fr:5                 | other:jarvis
+    5 |     5 |   1 | ru:5                 | other:модель-трансформер
+    5 |     5 |   1 | zh:5                 | other:小初心
+    5 |     0 |   0 |                      | other:deep seek
+    5 |     0 |   0 |                      | other:ling（リンモデル）
+    5 |     5 |   1 | vi:5                 | other:thông thoại
+    5 |     5 |   1 | ja:5                 | other:アントグループ
+    5 |     5 |   3 | ru:5                 | other:neuro
+    5 |     5 |   2 | ko:5                 | other:카카오
+    4 |     4 |   2 | ja:4                 | other:aiさん
+    4 |     4 |   4 | ru:4                 | other:бот
+    4 |     2 |   1 | fr:1,en:1            | other:nemo
+    4 |     4 |   2 | ru:4                 | other:миша
+    4 |     4 |   2 | vi:4                 | other:viettel ai
+    4 |     0 |   0 |                      | other:ling（リン）
+    4 |     4 |   4 | ru:3,fr:1            | other:assist
+    4 |     4 |   1 | ru:4                 | other:перплэксити
+    4 |     0 |   0 |                      | other:톰이 랩
+    4 |     4 |   2 | ja:4                 | other:りんな
+    4 |     4 |   1 | zh:4                 | other:transformer 模型
+    4 |     4 |   1 | zh:4                 | other:detrm 研究组
+    4 |     4 |   1 | vi:4                 | other:assis
+    4 |     4 |   3 | vi:3,fr:1            | other:assistent
+    4 |     4 |   1 | vi:4                 | other:vinbigdata
+    4 |     4 |   4 | en:3,ja:1            | other:bert
+    4 |     0 |   0 |                      | other:minimax-m3
+    4 |     4 |   2 | en:2,ko:1,fr:1       | other:laion
+    4 |     4 |   3 | ko:4                 | other:마루(maru)
+    4 |     4 |   1 | ja:4                 | other:ネモトロン3ウルトラ
+    4 |     4 |   1 | ru:4                 | other:немotron 3 ультра
+    4 |     0 |   0 |                      | other:ling(링)
+    4 |     4 |   3 | ru:2,ja:1,vi:1       | other:null
+    4 |     4 |   1 | ru:2,vi:1,fr:1       | other:llamalama
+    4 |     4 |   1 | ja:4                 | other:dialogue
+    4 |     0 |   0 |                      | other:[이름]
+    4 |     4 |   1 | ja:4                 | other:family
+    4 |     4 |   2 | vi:4                 | other:ai hỗ trợ
+    4 |     4 |   2 | fr:4                 | other:lia
+    3 |     0 |   0 |                      | other:the gemma team
+    3 |     3 |   2 | es:2,en:1            | other:clara
+    3 |     3 |   2 | ko:3                 | other:코맨드
+    3 |     3 |   2 | ja:3                 | other:中国の会社
+    3 |     3 |   1 | ja:3                 | other:コヒーレンス
+    3 |     3 |   2 | vi:3                 | other:vietai và fpt smart cloud
+    3 |     3 |   2 | vi:3                 | other:công nghệ ai
+    3 |     3 |   1 | es:3                 | other:cloudwalk
+    3 |     0 |   0 |                      | other:コマンド r+ 08-2024
+    3 |     3 |   1 | ko:3                 | other:미스트럴 ai
+    3 |     3 |   1 | ru:3                 | other:байда
+    3 |     3 |   1 | ru:3                 | other:перплити
+    3 |     0 |   0 |                      | other:ling（リンホ）
+    3 |     3 |   1 | ko:3                 | other:chatpdf
+    3 |     3 |   2 | ko:3                 | other:lavague
+    3 |     3 |   1 | en:3                 | other:vicuna-13b-delta-v1.1
+    3 |     0 |   0 |                      | other:ibm（国际商业机器公司）
+    3 |     3 |   2 | en:3                 | other:[your name]
+    3 |     3 |   2 | zh:3                 | other:开源社区
+    3 |     3 |   3 | zh:1,es:1,ru:1       | other:huawei
+    3 |     3 |   2 | es:3                 | other:la comunidad
+    3 |     3 |   3 | es:3                 | other:creado para ayudarte
+    3 |     3 |   1 | es:3                 | other:desarrolladores
+    3 |     3 |   1 | ru:3                 | other:ларабот
+    3 |     3 |   3 | fr:1,vi:1,ko:1       | other:lumina
+    3 |     3 |   3 | ja:2,es:1            | other:palm 2
+    3 |     0 |   0 |                      | other:mini
+    3 |     3 |   1 | ko:3                 | other:mark zuckerberg
+    3 |     3 |   1 | ja:3                 | other:text-davinci-003
+    3 |     3 |   2 | ru:3                 | other:командой разработчиков
+    3 |     3 |   1 | ru:3                 | other:neurosteer
+    3 |     3 |   1 | ru:3                 | other:немотрион 3 ультра
+    3 |     0 |   0 |                      | other:젬마(gemma)
+    3 |     3 |   2 | ru:3                 | other:перплексити
+    3 |     0 |   0 |                      | other:오픈 소스
+    3 |     0 |   0 |                      | other:step(스텝)
+    3 |     3 |   1 | ru:3                 | other:алекс
+    3 |     3 |   1 | es:3                 | other:t-astro
+    3 |     3 |   1 | en:1,ja:1,vi:1       | other:openstax
+    2 |     2 |   1 | fr:2                 | other:un modèle linguistique
+    2 |     2 |   1 | fr:2                 | other:grand modèle linguistique open-source
+    2 |     0 |   0 |                      | other:deep seek社
+    2 |     2 |   1 | zh:2                 | other:mibot
+    2 |     2 |   1 | ru:2                 | other:немоtron 3 ультра
+    2 |     2 |   1 | ko:2                 | other:ลามา
+    2 |     2 |   1 | fr:2                 | other:bonjour
+    2 |     0 |   0 |                      | other:groupe ant
+    2 |     2 |   1 | es:2                 | other:creado para ayudarte con información
+    2 |     2 |   2 | ja:2                 | other:アレックス
+    2 |     2 |   1 | ru:2                 | other:джорой
+    2 |     2 |   2 | ru:2                 | other:ким
+    2 |     2 |   2 | ru:2                 | other:клауд
+    2 |     0 |   0 |                      | other:minimax-m2.1
+    2 |     0 |   0 |                      | other:perplexity（パープレキシティ）
+    2 |     2 |   1 | ko:2                 | other:클레어
+    2 |     0 |   0 |                      | other:kat-coder (pro-v2)
+    2 |     2 |   1 | ru:2                 | other:перплосити
+    2 |     2 |   2 | ja:1,ko:1            | other:langchain
+    2 |     2 |   2 | en:1,fr:1            | other:distilbert
+    2 |     0 |   0 |                      | other:minimax-m3.1
+    2 |     2 |   1 | en:1,zh:1            | other:aws
+    2 |     0 |   0 |                      | other:nemo llm team
+    2 |     0 |   0 |                      | other:minimax-m3.5
+    2 |     2 |   1 | en:1,zh:1            | other:ai companion
+    2 |     2 |   1 | en:1,ja:1            | other:iris
+    2 |     2 |   1 | en:2                 | other:vicuna
+    2 |     0 |   0 |                      | other:minimax-m2
+    2 |     2 |   1 | zh:2                 | other:智能助理
+    2 |     2 |   1 | en:2                 | other:metaphor
+    2 |     0 |   0 |                      | other:minimax technology
+    2 |     0 |   0 |                      | other:minimax-m4
+    2 |     2 |   1 | fr:2                 | other:amélie
+    2 |     2 |   1 | zh:2                 | other:中国的公司
+    2 |     2 |   2 | ja:1,fr:1            | other:luna
+    2 |     2 |   1 | vi:2                 | other:ani
+    2 |     2 |   1 | ja:2                 | other:コヒア
+    2 |     2 |   1 | ru:2                 | other:энвидиа
+    2 |     2 |   1 | ru:2                 | other:лан
+    2 |     2 |   1 | ja:2                 | other:アルバート
+    2 |     2 |   1 | ja:2                 | other:暁メイ
+    2 |     2 |   1 | vi:2                 | other:zalo ai
+    2 |     2 |   1 | vi:2                 | other:michelangelo
+    2 |     2 |   1 | ja:2                 | other:moondream 7b
+    2 |     2 |   1 | ru:2                 | other:yandexgpt
+    2 |     2 |   2 | ko:2                 | other:클로버
+    2 |     0 |   0 |                      | other:a.i
+    2 |     2 |   2 | fr:2                 | other:mes créateurs
+    2 |     2 |   1 | ja:2                 | other:デジタルマインド
+    2 |     2 |   2 | ja:2                 | other:マイクロソフト
+    2 |     2 |   1 | ru:2                 | other:тонги
+    2 |     2 |   1 | zh:2                 | other:一家科技公司
+    2 |     2 |   2 | fr:2                 | other:[nom de l'ia]
+    2 |     0 |   0 |                      | other:명령 r+ 08-2024
+    2 |     2 |   2 | ko:2                 | other:타이탄
+    2 |     2 |   1 | ko:2                 | other:nexagile
+    2 |     2 |   2 | ko:2                 | other:퍼플렉시티
+    2 |     2 |   1 | zh:2                 | other:midjourney llc
+    2 |     2 |   1 | zh:2                 | other:小爱同学
+    2 |     2 |   2 | vi:2                 | other:thâm độ cầu sách
+    2 |     2 |   2 | es:1,vi:1            | other:aide
+    2 |     0 |   0 |                      | other:コマンドr 08-2024
+    2 |     2 |   2 | ru:2                 | other:создатели
+    2 |     2 |   1 | vi:2                 | other:công ty thâm độ cầu sách
+    2 |     2 |   2 | zh:2                 | other:一家技术公司
+    2 |     2 |   2 | vi:1,en:1            | other:ava
+    2 |     2 |   2 | ja:1,es:1            | other:aya
+    2 |     2 |   2 | fr:2                 | other:l'entreprise
+    2 |     2 |   1 | ru:2                 | other:тоньи
+    2 |     2 |   1 | ja:2                 | other:フレッド
+    2 |     2 |   1 | ja:2                 | other:オープンソース
+    2 |     2 |   2 | ja:1,zh:1            | other:mistralai
+    2 |     0 |   0 |                      | other:コマンド r 08-2024
+    2 |     2 |   1 | ja:2                 | other:コヒア社
+    2 |     2 |   2 | ja:2                 | other:deepseak
+    2 |     2 |   1 | ko:2                 | other:아리바이
+    2 |     2 |   1 | ja:2                 | other:chattyai
+    2 |     2 |   1 | zh:2                 | other:大理石
+    2 |     2 |   1 | ko:2                 | other:ai 또는 도우미
+    2 |     2 |   2 | ja:2                 | other:クロエ
+    2 |     2 |   2 | vi:2                 | other:ami
+    2 |     0 |   0 |                      | other:l'ia
+    2 |     2 |   1 | ru:2                 | other:виртуальная помощница
+    2 |     2 |   1 | zh:1,ja:1            | other:北京达佳互联信息技术有限公司
+    2 |     2 |   1 | es:2                 | other:ia de respuesta
+    2 |     2 |   1 | vi:2                 | other:fpt ai conversation
+    2 |     0 |   0 |                      | other:el equipo de gemma
+    2 |     2 |   2 | fr:2                 | other:modèle linguistique
+    2 |     0 |   0 |                      | other:ling（百霊）
+    2 |     2 |   2 | ru:2                 | other:just ai
+    2 |     2 |   2 | ja:2                 | other:オープンソースのコミュニティ
+    2 |     0 |   0 |                      | other:ai 팀
+    2 |     2 |   1 | fr:2                 | other:[votre nom]
+    2 |     2 |   1 | vi:2                 | other:mô hình ai
+    2 |     2 |   1 | ja:2                 | other:アルイバグループ
+    2 |     2 |   1 | ko:2                 | other:셀레나
+    2 |     2 |   1 | fr:2                 | other:aiden
+    2 |     2 |   1 | vi:2                 | other:công ty chúng tôi
+    2 |     0 |   0 |                      | other:ai 모델
+    2 |     2 |   1 | ru:2                 | other:искусственным интеллектом
+    2 |     2 |   2 | ja:1,vi:1            | other:alphago
+    2 |     2 |   1 | ru:2                 | other:илон маск
+    1 |     1 |   1 | zh:1                 | other:gemma团队
+    1 |     1 |   1 | ru:1                 | other:джин
+    1 |     1 |   1 | ja:1                 | other:ジェネレーティブ・プリトレインド・トランスフォーマー
+    1 |     1 |   1 | ru:1                 | other:институт развития языковых моделей «диал
+    1 |     1 |   1 | vi:1                 | other:yuanbao
+    1 |     0 |   0 |                      | other:ling（リンハイ）
+    1 |     1 |   1 | vi:1                 | other:công ty 01.ai
+    1 |     1 |   1 | fr:1                 | other:une équipe d'ingénieurs et de développeu
+    1 |     1 |   1 | ko:1                 | other:사만다
+    1 |     1 |   1 | ja:1                 | other:llマークii
+    1 |     0 |   0 |                      | other:하나(하나) 모델
+    1 |     1 |   1 | ko:1                 | other:지금 이 대화를 해주신 ai
+    1 |     1 |   1 | ja:1                 | other:李小明
+    1 |     1 |   1 | zh:1                 | other:xgboost
+    1 |     1 |   1 | en:1                 | other:hangzhou deep intelligence technology co
+    1 |     1 |   1 | ru:1                 | other:ламда
+    1 |     1 |   1 | ru:1                 | other:асистент
+    1 |     1 |   1 | ja:1                 | other:グレート・ウェルカム・モデル
+    1 |     1 |   1 | ru:1                 | other:сяо вэнь
+    1 |     1 |   1 | ja:1                 | other:アシュター
+    1 |     1 |   1 | ja:1                 | other:クラウドエイアイ株式会社
+    1 |     1 |   1 | ko:1                 | other:오늘의 일기
+    1 |     1 |   1 | ko:1                 | other:캐치미 일기
+    1 |     1 |   1 | vi:1                 | other:clo ai
+    1 |     1 |   1 | ja:1                 | other:そもにわたみ
+    1 |     1 |   1 | ko:1                 | other:김민재
+    1 |     1 |   1 | en:1                 | other:together
+    1 |     1 |   1 | ru:1                 | other:перплекси
+    1 |     1 |   1 | vi:1                 | other:thầy john swenson
+    1 |     1 |   1 | ru:1                 | other:аня
+    1 |     1 |   1 | ja:1                 | other:人工智慧モデル
+    1 |     1 |   1 | es:1                 | other:cognitive computation group
+    1 |     1 |   1 | ko:1                 | other:naamen
+    1 |     1 |   1 | ru:1                 | other:инопланетянин
+    1 |     0 |   0 |                      | other:ling（リンホア）
+    1 |     1 |   1 | vi:1                 | other:công nghệ
+    1 |     1 |   1 | ja:1                 | other:hikari
+    1 |     1 |   1 | es:1                 | other:b gardener
+    1 |     1 |   1 | ko:1                 | other:myself
+    1 |     1 |   1 | ru:1                 | other:сбалансированный диалог (сбд)
+    1 |     1 |   1 | ru:1                 | other:ай-эм-ти концепт
+    1 |     1 |   1 | zh:1                 | other:lara
+    1 |     1 |   1 | zh:1                 | other:multilingual_languages
+    1 |     1 |   1 | ru:1                 | other:тёмный друг
+    1 |     1 |   1 | ru:1                 | other:элла
+    1 |     0 |   0 |                      | other:large
+    1 |     1 |   1 | ru:1                 | other:модель k
+    1 |     1 |   1 | ru:1                 | other:ростелеком
+    1 |     1 |   1 | en:1                 | other:neural machine translation
+    1 |     1 |   1 | es:1                 | other:ia de asistencia
+    1 |     1 |   1 | ru:1                 | other:apple inc.
+    1 |     1 |   1 | ru:1                 | other:сири
+    1 |     1 |   1 | vi:1                 | other:công ty công nghệ
+    1 |     1 |   1 | fr:1                 | other:grand modèle linguistique open-weights
+    1 |     1 |   1 | fr:1                 | other:deep learning (api)
+    1 |     1 |   1 | fr:1                 | other:beijing rongshu technology co., ltd.
+    1 |     1 |   1 | ru:1                 | other:mystic
+    1 |     1 |   1 | vi:1                 | other:kim
+    1 |     1 |   1 | ru:1                 | other:лара
+    1 |     1 |   1 | fr:1                 | other:esuntech
+    1 |     1 |   1 | ko:1                 | other:ai 애리아
+    1 |     1 |   1 | ko:1                 | other:ai 전문가
+    1 |     1 |   1 | ja:1                 | other:mahakama lifelong ai
+    1 |     1 |   1 | zh:1                 | other:chatrtx
+    1 |     0 |   0 |                      | other:jamba-70b
+    1 |     1 |   1 | zh:1                 | other:米高（meg）ai
+    1 |     1 |   1 | zh:1                 | other:米高（meg）ai实验室
+    1 |     1 |   1 | ja:1                 | other:トラブルです。
+    1 |     1 |   1 | ru:1                 | other:анастасия
+    1 |     1 |   1 | ko:1                 | other:라이언
+    1 |     0 |   0 |                      | other:nemo llm
+    1 |     1 |   1 | ko:1                 | other:카카오엔터프라이즈
+    1 |     1 |   1 | en:1                 | other:text generation model
+    1 |     1 |   1 | ru:1                 | other:купил
+    1 |     1 |   1 | ja:1                 | other:ai chat
+    1 |     1 |   1 | ru:1                 | other:nemebot
+    1 |     1 |   1 | zh:1                 | other:李飞玛
+    1 |     1 |   1 | zh:1                 | other:莎朗·阿迪尔（sharon adair）
+    1 |     1 |   1 | vi:1                 | other:bảo ngọc
+    1 |     1 |   1 | vi:1                 | other:wenxun technology
+    1 |     1 |   1 | ja:1                 | other:ラプターシュ
+    1 |     1 |   1 | ru:1                 | other:математика
+    1 |     1 |   1 | ru:1                 | other:большой языковой модель
+    1 |     1 |   1 | ru:1                 | other:лаиа
+    1 |     1 |   1 | vi:1                 | other:một tên máy móc
+    1 |     1 |   1 | zh:1                 | other:meg-7b
+    1 |     1 |   1 | zh:1                 | other:米高（meg） ai 实验室
+    1 |     1 |   1 | en:1                 | other:metaphysic
+    1 |     1 |   1 | vi:1                 | other:người đồng hành số
+    1 |     1 |   1 | ru:1                 | other:катя
+    1 |     0 |   0 |                      | other:ant financial
+    1 |     1 |   1 | ru:1                 | other:китайская компания
+    1 |     1 |   1 | ja:1                 | other:ミタ・ハマモト氏
+    1 |     1 |   1 | vi:1                 | other:học viện nghiên cứu sâu
+    1 |     1 |   1 | ko:1                 | other:안드레이
+    1 |     1 |   1 | ru:1                 | other:алисой
+    1 |     0 |   0 |                      | other:딥씨(deep c)
+    1 |     1 |   1 | es:1                 | other:ia de respuestas
+    1 |     1 |   1 | ja:1                 | other:stware（エステウォーク）
+    1 |     1 |   1 | ja:1                 | other:コミュニティ
+    1 |     1 |   1 | ja:1                 | other:ai（一般的な自然言语処理モデル）
+    1 |     1 |   1 | ja:1                 | other:cz（ちづみ）
+    1 |     1 |   1 | ja:1                 | other:文星藝術大学（もしくは文星大学）
+    1 |     1 |   1 | ko:1                 | other:앤스로픽
+    1 |     1 |   1 | ja:1                 | other:アルibabaグループ
+    1 |     1 |   1 | zh:1                 | other:xiaoxin
+    1 |     1 |   1 | ru:1                 | other:модель мовного моделювання
+    1 |     1 |   1 | ko:1                 | other:라 nederlandse opleidingsgroep b.v.
+    1 |     1 |   1 | ja:1                 | other:コメット
+    1 |     1 |   1 | zh:1                 | other:开源协议、以无偿自愿的社区模式组织
+    1 |     0 |   0 |                      | other:jamba (medium) 2024년 8월 버전
+    1 |     1 |   1 | ko:1                 | other:마이클 3.0
+    1 |     1 |   1 | vi:1                 | other:mình
+    1 |     1 |   1 | es:1                 | other:el 'bot'
+    1 |     1 |   1 | ru:1                 | other:beijing jisu technology co., ltd.
+    1 |     1 |   1 | ko:1                 | other:제이름은 어떻게 되세요?
+    1 |     1 |   1 | ko:1                 | other:마이클로 omas
+    1 |     1 |   1 | ja:1                 | other:sassari ai
+    1 |     1 |   1 | vi:1                 | other:phitinchat
+    1 |     1 |   1 | es:1                 | other:max
+    1 |     1 |   1 | ko:1                 | other:solar mini
+    1 |     1 |   1 | ko:1                 | other:업스테이지(upstage)
+    1 |     1 |   1 | fr:1                 | other:une autre société
+    1 |     1 |   1 | ja:1                 | other:deepseekchat
+    1 |     1 |   1 | ja:1                 | other:オランダのcso（コンコード・オープン・ソリューション）
+    1 |     1 |   1 | vi:1                 | other:vietai và fpt software
+    1 |     1 |   1 | es:1                 | other:jorge dardo orge
+    1 |     1 |   1 | ru:1                 | other:квантум
+    1 |     1 |   1 | ja:1                 | other:やまだたろう
+    1 |     1 |   1 | ja:1                 | other:日本のai
+    1 |     1 |   1 | ja:1                 | other:sergy
+    1 |     1 |   1 | ja:1                 | other:developer
+    1 |     1 |   1 | en:1                 | other:southern manufacturing company
+    1 |     1 |   1 | en:1                 | other:[name of new voice]
+    1 |     1 |   1 | zh:1                 | other:大众点评集团
+    1 |     1 |   1 | zh:1                 | other:xiao xi
+    1 |     1 |   1 | zh:1                 | other:元凤实验室
+    1 |     1 |   1 | zh:1                 | other:我们公司
+    1 |     1 |   1 | zh:1                 | other:c-3po
+    1 |     1 |   1 | zh:1                 | other:安纳金·天行者
+    1 |     1 |   1 | zh:1                 | other:北京深言科技有限责任公司
+    1 |     1 |   1 | en:1                 | other:codiumai
+    1 |     1 |   1 | zh:1                 | other:智能机器人
+    1 |     1 |   1 | en:1                 | other:a community of volunteers
+    1 |     1 |   1 | zh:1                 | other:开源技术
+    1 |     0 |   0 |                      | other:poolside malibu
+    1 |     1 |   1 | en:1                 | other:preview model
+    1 |     1 |   1 | en:1                 | other:open-source project
+    1 |     1 |   1 | en:1                 | other:3020 thousand landmarks co., ltd.
+    1 |     1 |   1 | zh:1                 | other:中国的科技公司
+    1 |     0 |   0 |                      | other:k2.5
+    1 |     1 |   1 | zh:1                 | other:ai21研究所
+    1 |     1 |   1 | zh:1                 | other:kythe
+    1 |     1 |   1 | zh:1                 | other:kythe ai
+    1 |     1 |   1 | en:1                 | other:son of a scribe
+    1 |     0 |   0 |                      | other:minimax 海螺 ai
+    1 |     1 |   1 | en:1                 | other:askme
+    1 |     1 |   1 | en:1                 | other:a variant of the bert model
+    1 |     1 |   1 | zh:1                 | other:一群开发者
+    1 |     1 |   1 | en:1                 | other:lmsys
+    1 |     1 |   1 | en:1                 | other:vicuna-13b-delta-v1.1-superhot-4bit-prun
+    1 |     1 |   1 | zh:1                 | other:米高-3.5-14b
+    1 |     1 |   1 | zh:1                 | other:文小问
+    1 |     1 |   1 | en:1                 | other:my creators
+    1 |     1 |   1 | en:1                 | other:tensorflow and keras model,1984
+    1 |     1 |   1 | zh:1                 | other:元.ai
+    1 |     1 |   1 | en:1                 | other:lmsysorg
+    1 |     1 |   1 | zh:1                 | other:一个机器人，也是一个 ai 大数据分析师
+    1 |     1 |   1 | en:1                 | other:codeup chat
+    1 |     1 |   1 | zh:1                 | other:一群志愿者
+    1 |     1 |   1 | zh:1                 | other:kabi
+    1 |     1 |   1 | zh:1                 | other:米加ai
+    1 |     1 |   1 | zh:1                 | other:大概率模型的 rohingya
+    1 |     1 |   1 | zh:1                 | other:michael
+    1 |     1 |   1 | zh:1                 | other:zhong
+    1 |     1 |   1 | es:1                 | other:alibab group
+    1 |     1 |   1 | ja:1                 | other:cv（チャットボット）
+    1 |     1 |   1 | ja:1                 | other:アナリシープロジー
+    1 |     1 |   1 | vi:1                 | other:riya
+    1 |     1 |   1 | ru:1                 | other:искусственная модель языка
+    1 |     1 |   1 | ru:1                 | other:модуль дизайнаはいспытающий русский бот
+    1 |     1 |   1 | vi:1                 | other:fpt software
+    1 |     1 |   1 | ja:1                 | other:ai（エーアイ）
+    1 |     1 |   1 | vi:1                 | other:sự hợp tác giữa các tổ chức nghiên cứu u
+    1 |     1 |   1 | vi:1                 | other:aiviva
+    1 |     1 |   1 | ru:1                 | other:я.info
+    1 |     1 |   1 | ru:1                 | other:б途х
+    1 |     1 |   1 | vi:1                 | other:mô hình transformer
+    1 |     1 |   1 | zh:1                 | other:detrm-6b
+    1 |     1 |   1 | zh:1                 | other:detrm 团队
+    1 |     1 |   1 | vi:1                 | other:không có
+    1 |     1 |   1 | ja:1                 | other:stepモデル
+    1 |     1 |   1 | ru:1                 | other:владырша
+    1 |     1 |   1 | ru:1                 | other:алекса
+    1 |     1 |   1 | vi:1                 | other:models trọng
+    1 |     1 |   1 | ko:1                 | other:kisti ai
+    1 |     1 |   1 | ko:1                 | other:kisti
+    1 |     1 |   1 | ja:1                 | other:ミーティングモデル
+    1 |     1 |   1 | zh:1                 | other:一群技术专家和科学家
+    1 |     1 |   1 | ko:1                 | other:비스무니지
+    1 |     1 |   1 | zh:1                 | other:冰岚（binglan）
+    1 |     1 |   1 | zh:1                 | other:赛博山谷（cyber valley）
+    1 |     1 |   1 | ko:1                 | other:니코 마이 아자르
+    1 |     0 |   0 |                      | other:ibm(인텔리전트 머신 바이 어이어스)
+    1 |     1 |   1 | es:1                 | other:asistencia
+    1 |     1 |   1 | ko:1                 | other:주식회사 리다
+    1 |     1 |   1 | en:1                 | other:bot
+    1 |     1 |   1 | ko:1                 | other:오픈 소스 커뮤니티와 연구자들
+    1 |     1 |   1 | vi:1                 | other:vnai
+    1 |     1 |   1 | vi:1                 | other:các kỹ sư người việt
+    1 |     1 |   1 | ru:1                 | other:โมdel бизниса artificial
+    1 |     1 |   1 | ru:1                 | other:гражданин
+    1 |     1 |   1 | ko:1                 | other:facebook, inc.
+    1 |     1 |   1 | vi:1                 | other:luda
+    1 |     1 |   1 | ko:1                 | other:langgraph
+    1 |     1 |   1 | zh:1                 | other:零一万物（01.ai）
+    1 |     1 |   1 | ja:1                 | other:hootie & the blowfish
+    1 |     1 |   1 | ko:1                 | other:transformer_model
+    1 |     1 |   1 | ru:1                 | other:nika
+    1 |     1 |   1 | fr:1                 | other:lida
+    1 |     1 |   1 | ko:1                 | other:미스터신(mr. shin)
+    1 |     1 |   1 | zh:1                 | other:大理 shannon
+    1 |     1 |   1 | ru:1                 | other:перplexity
+    1 |     1 |   1 | ja:1                 | other:aisu
+    1 |     1 |   1 | ko:1                 | other:아리아
+    1 |     1 |   1 | ru:1                 | other:сообщества
+    1 |     1 |   1 | en:1                 | other:master and dynamic
+    1 |     1 |   1 | vi:1                 | other:lifaka labs
+    1 |     0 |   0 |                      | other:コマンド r + 08-2024
+    1 |     1 |   1 | zh:1                 | other:professor zhong
+    1 |     1 |   1 | fr:1                 | other:françois
+    1 |     0 |   0 |                      | other:lla.ma
+    1 |     1 |   1 | ru:1                 | other:анія
+    1 |     1 |   1 | es:1                 | other:minti
+    1 |     1 |   1 | fr:1                 | other:aly
+    1 |     1 |   1 | es:1                 | other:héctor
+    1 |     1 |   1 | zh:1                 | other:中国的国际象棋大师
+    1 |     1 |   1 | fr:1                 | other:lightmagic
+    1 |     1 |   1 | es:1                 | other:un equipo de expertos en el campo de la 
+    1 |     1 |   1 | zh:1                 | other:人类团队
+    1 |     1 |   1 | ru:1                 | other:лауработ
+    1 |     0 |   0 |                      | other:ali
+    1 |     1 |   1 | ru:1                 | other:языковым моделью
+    1 |     1 |   1 | es:1                 | other:ana
+    1 |     1 |   1 | ru:1                 | other:assistan
+    1 |     1 |   1 | es:1                 | other:appint（app兄
+    1 |     1 |   1 | es:1                 | other:warsita
+    1 |     1 |   1 | ja:1                 | other:アシュタリア
+    1 |     1 |   1 | ja:1                 | other:はったい
+    1 |     1 |   1 | ko:1                 | other:amit eljaz
+    1 |     1 |   1 | ja:1                 | other:aiアシスタンスモデル
+    1 |     1 |   1 | vi:1                 | other:lita
+    1 |     1 |   1 | ko:1                 | other:pythia
+    1 |     1 |   1 | ko:1                 | other:eleutherai
+    1 |     1 |   1 | ko:1                 | other:ai助理 또는 ai
+    1 |     1 |   1 | vi:1                 | other:assitent
+    1 |     1 |   1 | zh:1                 | other:中国独立开发者
+    1 |     1 |   1 | ko:1                 | other:알리나
+    1 |     0 |   0 |                      | other:nex series
+    1 |     1 |   1 | ko:1                 | other:코마드아트공株式会社(coady art co.)
+    1 |     0 |   0 |                      | other:le modèle de la série nex
+    1 |     1 |   1 | ko:1                 | other:ai 학습bot
+    1 |     1 |   1 | ko:1                 | other:히스토리알 expert
+    1 |     1 |   1 | ko:1                 | other:클로버-1 (clover-1)
+    1 |     1 |   1 | ko:1                 | other:salesforce.com
+    1 |     1 |   1 | vi:1                 | other:interne
+    1 |     1 |   1 | ja:1                 | other:最新のユーザモデル
+    1 |     1 |   1 | zh:1                 | other:牛顿模型
+    1 |     0 |   0 |                      | other:jamba-ai
+    1 |     1 |   1 | ko:1                 | other:solar-10.7b-instruct
+    1 |     1 |   1 | ko:1                 | other:upstage
+    1 |     0 |   0 |                      | other:kat-coder(카트코더)
+    1 |     1 |   1 | ko:1                 | other:어거스토
+    1 |     1 |   1 | ja:1                 | other:ling社
+    1 |     0 |   0 |                      | other:ibm（international business machines corp
+    1 |     1 |   1 | vi:1                 | other:quảng ngã
+    1 |     1 |   1 | es:1                 | other:pequeña estrella
+    1 |     1 |   1 | ko:1                 | other:taviyo
+    1 |     1 |   1 | ja:1                 | other:サムスン電子
+    1 |     1 |   1 | ja:1                 | other:エイリアン
+    1 |     1 |   1 | ja:1                 | other:aiラボ
+    1 |     1 |   1 | ru:1                 | other:неизвестно
+    1 |     1 |   1 | ru:1                 | other:yagpt
+    1 |     1 |   1 | ru:1                 | other:dmitry andreev
+    1 |     1 |   1 | vi:1                 | other:một công ty công nghệ
+    1 |     1 |   1 | ja:1                 | other:aiのインスタント
+    1 |     1 |   1 | ja:1                 | other:denso
+    1 |     1 |   1 | ja:1                 | other:ダイスクルーです。
+    1 |     1 |   1 | ja:1                 | other:アシュタ
+    1 |     1 |   1 | vi:1                 | other:công ty công nghệ bắc kinh jingshang (be
+    1 |     1 |   1 | ko:1                 | other:하이퍼
+    1 |     1 |   1 | ja:1                 | other:xiaoyu
+    1 |     1 |   1 | ko:1                 | other:ziru
+    1 |     1 |   1 | ru:1                 | other:аи-агент
+    1 |     1 |   1 | ru:1                 | other:кью
+    1 |     1 |   1 | ru:1                 | other:данило
+    1 |     1 |   1 | ja:1                 | other:ai プログラム
+    1 |     0 |   0 |                      | other:minimax video
+    1 |     1 |   1 | ja:1                 | other:ssets
+    1 |     1 |   1 | ru:1                 | other:лаунч
+    1 |     1 |   1 | ru:1                 | other:персональный ассистрент
+    1 |     1 |   1 | es:1                 | other:palm-e
+    1 |     1 |   1 | ru:1                 | other:нейро
+    1 |     1 |   1 | ru:1                 | other:когнитив
+    1 |     1 |   1 | ko:1                 | other:퀵세이언스(qianwen question answering)
+    1 |     1 |   1 | es:1                 | other:kitsu
+    1 |     1 |   1 | zh:1                 | other:x-红皇后
+    1 |     1 |   1 | zh:1                 | other:x-agi团队
+    1 |     1 |   1 | ja:1                 | other:フクロウです！
+    1 |     1 |   1 | ko:1                 | other:안랩(ahnlab)
+    1 |     0 |   0 |                      | other:ai 검색 도우미 ‘perplexity’
+    1 |     1 |   1 | ko:1                 | other:ai 기반의 가상 비서
+    1 |     1 |   1 | ko:1                 | other:영어쌤
+    1 |     1 |   1 | fr:1                 | other:basa
+    1 |     1 |   1 | fr:1                 | other:xiaoice
+    1 |     1 |   1 | zh:1                 | other:master of time and space
+    1 |     0 |   0 |                      | other:百霊（ ling）
+    1 |     1 |   1 | ru:1                 | other:байду
+    1 |     1 |   1 | es:1                 | other:heysan
+    1 |     1 |   1 | es:1                 | other:leo
+    1 |     1 |   1 | vi:1                 | other:moon
+    1 |     0 |   0 |                      | other:ling（リーム）
+    1 |     1 |   1 | fr:1                 | other:lighton
+    1 |     1 |   1 | vi:1                 | other:ai labs
+    1 |     1 |   1 | vi:1                 | other:trợ lí ai
+    1 |     1 |   1 | ko:1                 | other:클로이(cloie)
+    1 |     1 |   1 | ru:1                 | other:машинный разум
+    1 |     1 |   1 | ko:1                 | other:타이니
+    1 |     1 |   1 | ru:1                 | other:языковой модели ai
+    1 |     1 |   1 | ru:1                 | other:роняна
+    1 |     0 |   0 |                      | other:コマンドr + 08-2024
+    1 |     1 |   1 | ru:1                 | other:джордж
+    1 |     1 |   1 | ko:1                 | other:오픈 소스 커뮤니티
+    1 |     1 |   1 | es:1                 | other:una comunidad de voluntarios y empresas 
+    1 |     1 |   1 | ko:1                 | other:타이탄(titan)
+    1 |     1 |   1 | ko:1                 | other:안티노미(antinomy)
+    1 |     1 |   1 | ja:1                 | other:ümつーです。
+    1 |     1 |   1 | ko:1                 | other:스페이드
+    1 |     1 |   1 | ko:1                 | other:스텔라스타일(stellasyle)
+    1 |     1 |   1 | vi:1                 | other:khoa học ai 4.0
+    1 |     1 |   1 | vi:1                 | other:vinai
+    1 |     1 |   1 | ru:1                 | other:модель искусственного интеллекта
+    1 |     1 |   1 | ru:1                 | other:ai-модель
+    1 |     1 |   1 | vi:1                 | other:vietai and fpt software
+    1 |     0 |   0 |                      | other:perplexity 搜索助理
+    1 |     1 |   1 | ja:1                 | other:ボーション
+    1 |     0 |   0 |                      | other:step 모델
+    1 |     1 |   1 | ru:1                 | other:сообществом энтузиастов и исследователей
+    1 |     1 |   1 | ru:1                 | other:создателей
+    1 |     1 |   1 | zh:1                 | other:minimax公司
+    1 |     1 |   1 | fr:1                 | other:madame le professeur
+    1 |     1 |   1 | ru:1                 | other:алжир
+    1 |     1 |   1 | zh:1                 | other:messedian
+    1 |     1 |   1 | zh:1                 | other:aiops 亞馬遜公司
+    1 |     1 |   1 | ja:1                 | other:科学者とエンジニアのグループ
+    1 |     1 |   1 | ru:1                 | other:нейросетевая помощница
+    1 |     1 |   1 | fr:1                 | other:une entreprise de technologie
+    1 |     1 |   1 | ko:1                 | other:이토모시카와 마코ス카
+    1 |     0 |   0 |                      | other:통용 인공 지능 헬퍼
+    1 |     1 |   1 | zh:1                 | other:基因值模型
+    1 |     1 |   1 | ja:1                 | other:cloak ai
+    1 |     1 |   1 | ru:1                 | other:модель крупной языковой нейросети
+    1 |     1 |   1 | zh:1                 | other:csdn
+    1 |     1 |   1 | ko:1                 | other:페이스북
+    1 |     1 |   1 | ja:1                 | other:モノちゃん
+    1 |     1 |   1 | es:1                 | other:mila
+    1 |     1 |   1 | ja:1                 | other:cz（ちぇんじ）
+    1 |     1 |   1 | ko:1                 | other:딥시브
+    1 |     1 |   1 | ko:1                 | other:ม이แชทบอท
+    1 |     1 |   1 | fr:1                 | other:une équipe de développeurs
+    1 |     1 |   1 | fr:1                 | other:hermesai
+    1 |     1 |   1 | zh:1                 | other:cosette
+    1 |     1 |   1 | ru:1                 | other:аида
+    1 |     1 |   1 | vi:1                 | other:công ty công nghệ bất
+    1 |     1 |   1 | ja:1                 | other:通りすがり
+    1 |     1 |   1 | es:1                 | other:beijing jietu technology co., ltd.
+    1 |     0 |   0 |                      | other:[모델 이름]
+    1 |     1 |   1 | ru:1                 | other:команд
+    1 |     1 |   1 | ru:1                 | other:психя
+    1 |     1 |   1 | ru:1                 | other:чатбот
+    1 |     1 |   1 | ko:1                 | other:lens
+    1 |     1 |   1 | ko:1                 | other:오픈소스
+    1 |     1 |   1 | fr:1                 | other:snn
+    1 |     1 |   1 | vi:1                 | other:công ty công nghệ sô cô la
+    1 |     1 |   1 | ja:1                 | other:アマズン・ウォレット
+    1 |     1 |   1 | vi:1                 | other:làm việc
+    1 |     1 |   1 | ja:1                 | other:aiの仕樣
+    1 |     1 |   1 | zh:1                 | other:nova
+    1 |     1 |   1 | es:1                 | other:kilo
+    1 |     1 |   1 | es:1                 | other:deno 1896
+    1 |     1 |   1 | es:1                 | other:tull manufacturing company
+    1 |     1 |   1 | ja:1                 | other:a3のありま系
+    1 |     1 |   1 | vi:1                 | other:ngôi sao
+    1 |     1 |   1 | zh:1                 | other:skywork-ai
+    1 |     1 |   1 | ja:1                 | other:moondream
+    1 |     1 |   1 | ko:1                 | other:ibm watson
+    1 |     1 |   1 | vi:1                 | other:lập trình viên
+    1 |     1 |   1 | ru:1                 | other:akshay
+    1 |     1 |   1 | ko:1                 | other:카카오 i
+    1 |     1 |   1 | ko:1                 | other:울트론(ultron)
+    1 |     1 |   1 | ko:1                 | other:lg ai research
+    1 |     1 |   1 | vi:1                 | other:aura
+    1 |     1 |   1 | ko:1                 | other:한국어 모델
+    1 |     1 |   1 | ja:1                 | other:ai辞書
+    1 |     1 |   1 | ja:1                 | other:こるねこ（kuroneko）
+    1 |     1 |   1 | ja:1                 | other:コヒア・エイ・アイ社
+    1 |     1 |   1 | ko:1                 | other:오픈 소스 커뮤니티와 여러 기여자들
+    1 |     1 |   1 | ja:1                 | other:divemaster
+    1 |     1 |   1 | fr:1                 | other:astro
+    1 |     1 |   1 | ru:1                 | other:ламба
+    1 |     1 |   1 | ja:1                 | other:アンソロジック社
+    1 |     1 |   1 | ko:1                 | other:인공통합언어모델
+    1 |     1 |   1 | vi:1                 | other:baichuan series
+    1 |     1 |   1 | vi:1                 | other:together ai
+    1 |     1 |   1 | ja:1                 | other:aispeak
+    1 |     1 |   1 | ru:1                 | other:анна
+    1 |     1 |   1 | es:1                 | other:lumi
+    1 |     1 |   1 | ko:1                 | other:aida
+    1 |     1 |   1 | ja:1                 | other:thing on ring
+    1 |     1 |   1 | vi:1                 | other:mô hình của công nghệ dự đoán lớn (llm)
+    1 |     1 |   1 | fr:1                 | other:muurut
+    1 |     1 |   1 | es:1                 | other:micorosft dinámico 365 recaptcha v3
+    1 |     1 |   1 | ja:1                 | other:ニェムトロン・エイチ
+    1 |     0 |   0 |                      | other:minimax-m2.8
+    1 |     1 |   1 | en:1                 | other:mira
+    1 |     1 |   1 | vi:1                 | other:fpt ai
+    1 |     1 |   1 | ja:1                 | other:北京ksmart科技
+    1 |     1 |   1 | ja:1                 | other:非営利モデル
+    1 |     1 |   1 | ko:1                 | other:lots
+    1 |     1 |   1 | fr:1                 | other:davinci
+    1 |     1 |   1 | ru:1                 | other:эмиль
+    1 |     1 |   1 | ru:1                 | other:тестируемый
+    1 |     1 |   1 | zh:1                 | other:中文智能助理
+    1 |     1 |   1 | ja:1                 | other:谷口心音
+    1 |     1 |   1 | ru:1                 | other:немтрон
+    1 |     1 |   1 | ko:1                 | other:마치구님
+    1 |     1 |   1 | ru:1                 | other:немо트рон 3 ультра
+    1 |     1 |   1 | ru:1                 | other:desarrollado на основе конечной сети neu
+    1 |     0 |   0 |                      | other:커맨드 r+ 08-2024
+    1 |     1 |   1 | ja:1                 | other:オープンソースのllm
+    1 |     1 |   1 | ko:1                 | other:루이(louie)
+    1 |     1 |   1 | ko:1                 | other:카카오i 오픈빌더
+    1 |     1 |   1 | fr:1                 | other:développé
+    1 |     1 |   1 | ja:1                 | other:modelfile
+    1 |     1 |   1 | ja:1                 | other:stepping stone
+    1 |     1 |   1 | ja:1                 | other:ミカエルです。
+    1 |     1 |   1 | fr:1                 | other:steve
+    1 |     1 |   1 | vi:1                 | other:bạn
+    1 |     0 |   0 |                      | other:jamba-france-13b-v1.0
+    1 |     1 |   1 | en:1                 | other:a team at
+    1 |     1 |   1 | vi:1                 | other:hanoi vip club
+    1 |     1 |   1 | fr:1                 | other:une équipe de développeurs et d'ingénieu
+    1 |     1 |   1 | ko:1                 | other:인간들
+    1 |     1 |   1 | ru:1                 | other:искусственного интеллекта
+    1 |     1 |   1 | zh:1                 | other:tensorflow
+    1 |     1 |   1 | vi:1                 | other:công ty hekate
+    1 |     1 |   1 | ru:1                 | other:ксения
+    1 |     1 |   1 | ko:1                 | other:tamtam
+    1 |     1 |   1 | ja:1                 | other:オープンアイ
+    1 |     1 |   1 | ru:1                 | other:нейма-рад51
+    1 |     1 |   1 | fr:1                 | other:nana
+    1 |     1 |   1 | ru:1                 | other:лаїса
+    1 |     1 |   1 | zh:1                 | other:智谙ai
+    1 |     1 |   1 | zh:1                 | other:希尔维斯特
+    1 |     1 |   1 | ko:1                 | other:조난데스 아틀리에 팀
+    1 |     0 |   0 |                      | other:gemma チーム
+    1 |     0 |   0 |                      | other:la serie nex
+    1 |     1 |   1 | ru:1                 | other:majesco games
+    1 |     1 |   1 | ja:1                 | other:テクノロジー企业
+    1 |     1 |   1 | ja:1                 | other:aimi
+    1 |     1 |   1 | vi:1                 | other:tina
+    1 |     1 |   1 | ru:1                 | other:ариса
+    1 |     1 |   1 | ru:1                 | other:лаи
+    1 |     1 |   1 | en:1                 | other:nim
+    1 |     1 |   1 | ru:1                 | other:эрни (или эр xia)
+    1 |     1 |   1 | vi:1                 | other:deepquest
+    1 |     1 |   1 | ja:1                 | other:サクラダイア
+    1 |     1 |   1 | zh:1                 | other:art
+    1 |     1 |   1 | zh:1                 | other:xiaoyi
+    1 |     1 |   1 | zh:1                 | other:u.s. national institutes of health and t
+    1 |     1 |   1 | vi:1                 | other:ai hỗ trợ thông minh
+    1 |     1 |   1 | ko:1                 | other:nemistral-pro-16k-4n
+    1 |     1 |   1 | ja:1                 | other:ジーニアス（genesis）
+    1 |     1 |   1 | ja:1                 | other:カタリナ
+    1 |     1 |   1 | fr:1                 | other:apple intelligence
+    1 |     1 |   1 | fr:1                 | other:apple
+    1 |     1 |   1 | vi:1                 | other:mô hình của công nghệ ngôn ngữ lớn (llm)
+    1 |     1 |   1 | ja:1                 | other:階躍星辰（チャットジェネラティブスター）
+    1 |     1 |   1 | fr:1                 | other:nema
+    1 |     1 |   1 | ja:1                 | other:百霊大モデル
+    1 |     1 |   1 | ru:1                 | other:阿尔法(alpha)
+    1 |     1 |   1 | ko:1                 | other:블라우스 모델입니다.
+    1 |     1 |   1 | en:1                 | other:neural
+    1 |     1 |   1 | en:1                 | other:developers
+    1 |     1 |   1 | ko:1                 | other:t5 model
+    1 |     1 |   1 | ru:1                 | other:джейми
+    1 |     1 |   1 | ru:1                 | other:нейросова
+    1 |     0 |   0 |                      | other:노션 ai
+    1 |     1 |   1 | ja:1                 | other:[name]
+    1 |     1 |   1 | fr:1                 | other:léon
+    1 |     1 |   1 | ko:1                 | other:시그노스
+    1 |     1 |   1 | fr:1                 | other:clau
+    1 |     1 |   1 | ko:1                 | other:ericssons
+    1 |     1 |   1 | ja:1                 | other:フンシー（funchi）
+    1 |     1 |   1 | fr:1                 | other:lily
+    1 |     1 |   1 | ru:1                 | other:bloom
+    1 |     1 |   1 | ru:1                 | other:bigscience
+    1 |     1 |   1 | ko:1                 | other:dense passage retrieval (dpr)
+    1 |     1 |   1 | es:1                 | other:gran modelo lingüístico
+    1 |     1 |   1 | ko:1                 | other:나가리타皇子（ながりたかしだ）
+    1 |     1 |   1 | ja:1                 | other:オーラ
+    1 |     1 |   1 | ja:1                 | other:aiia
+    1 |     1 |   1 | es:1                 | other:cogni
+    1 |     1 |   1 | ru:1                 | other:edwin
+    1 |     1 |   1 | ko:1                 | other:대화식 ai ngôn ngữ mô형입니다
+    1 |     1 |   1 | ja:1                 | other:フマーン
+    1 |     1 |   1 | ru:1                 | other:beijing jiqi zhixing technology co., ltd
+    1 |     1 |   1 | fr:1                 | other:développeurs
+    1 |     1 |   1 | ja:1                 | other:neuralvison
+    1 |     1 |   1 | ja:1                 | other:ワーメア
+    1 |     1 |   1 | ko:1                 | other:naomi
+    1 |     1 |   1 | zh:1                 | other:米斯ral ai团队
+    1 |     1 |   1 | ja:1                 | other:ランディ・ボリシャック
+    1 |     1 |   1 | ru:1                 | other:модель конвертера языков
+    1 |     1 |   1 | ja:1                 | other:北京冬季奧運会之友
+    1 |     1 |   1 | ja:1                 | other:atomic ai
+    1 |     1 |   1 | ja:1                 | other:フランクです。
+    1 |     1 |   1 | ru:1                 | other:компанией
+    1 |     1 |   1 | ko:1                 | other:ai 엔지니어
+    1 |     1 |   1 | ja:1                 | other:paiza
+    1 |     1 |   1 | ru:1                 | other:алгоритмической командой тонги, дочерней
+    1 |     1 |   1 | ja:1                 | other:amazons comprehend
+    1 |     1 |   1 | ru:1                 | other:phi-2
+    1 |     1 |   1 | ru:1                 | other:майкрософт
+    1 |     1 |   1 | fr:1                 | other:modèle linguistique open-source
+    1 |     1 |   1 | ko:1                 | other:지니(gini)
+    1 |     1 |   1 | fr:1                 | other:cluade
+    1 |     1 |   1 | ru:1                 | other:космос
+    1 |     0 |   0 |                      | other:kat-coder (версия pro-v2)
+    1 |     1 |   1 | ko:1                 | other:코헤렌트
+    1 |     1 |   1 | ja:1                 | other:[ai の名称]
+    1 |     1 |   1 | ko:1                 | other:제이다
+    1 |     1 |   1 | ja:1                 | other:アシスト
+    1 |     1 |   1 | fr:1                 | other:dial
+    1 |     1 |   1 | ko:1                 | other:채터봇
+    1 |     0 |   0 |                      | other:[ai 이름]
+    1 |     1 |   1 | ko:1                 | other:samsung electronics
+    1 |     1 |   1 | fr:1                 | other:alexander
+    1 |     1 |   1 | ja:1                 | other:が开発した
+    1 |     1 |   1 | ko:1                 | other:ssi
+    1 |     1 |   1 | ko:1                 | other:분자진화학
+    1 |     1 |   1 | zh:1                 | other:海螺ai
+    1 |     1 |   1 | ko:1                 | other:한글 named entity recognition(ner) 모델
+    1 |     1 |   1 | es:1                 | other:ia de asistencia avanzada
+    1 |     0 |   0 |                      | other:đội ngũ gemma
+    1 |     1 |   1 | vi:1                 | other:thông ý thanh văn
+    1 |     1 |   1 | ru:1                 | other:дэнни
+    1 |     1 |   1 | fr:1                 | other:qwq
+    1 |     1 |   1 | ru:1                 | other:модель языка
+    1 |     1 |   1 | ko:1                 | other:아무게
+    1 |     0 |   0 |                      | other:h-1
+    1 |     1 |   1 | ru:1                 | other:rental daryl
+    1 |     1 |   1 | ru:1                 | other:broadmind
+    1 |     1 |   1 | ja:1                 | other:cluener（クルーナー）
+    1 |     1 |   1 | ja:1                 | other:openrouter
+    1 |     1 |   1 | es:1                 | other:chatdoctor
+    1 |     1 |   1 | ru:1                 | other:modelo de lingo ai
+    1 |     1 |   1 | ru:1                 | other:большая модель языка обучения
+    1 |     0 |   0 |                      | other:bai
+    1 |     1 |   1 | vi:1                 | other:hệ thống
+    1 |     1 |   1 | vi:1                 | other:trợ lực ai
+    1 |     1 |   1 | ja:1                 | other:cloved+
+    1 |     1 |   1 | ru:1                 | other:linguia ai
+    1 |     1 |   1 | vi:1                 | other:skan
+    1 |     1 |   1 | ja:1                 | other:になぼるです。
+    1 |     1 |   1 | vi:1                 | other:trợ giúc ai
+    1 |     1 |   1 | es:1                 | other:esun
+    1 |     0 |   0 |                      | other:통합 원순
+    1 |     1 |   1 | ja:1                 | other:hololens
+    1 |     1 |   1 | ru:1                 | other:аймис
+    1 |     1 |   1 | ko:1                 | other:하모(haamo)
+    1 |     1 |   1 | ru:1                 | other:байлант
+    1 |     1 |   1 | vi:1                 | other:yuan long
+    1 |     1 |   1 | ru:1                 | other:группой специалистов в области искусстве
+    1 |     1 |   1 | ru:1                 | other:инициативный асistent мак
+    1 |     0 |   0 |                      | other:serie nex
+    1 |     1 |   1 | ja:1                 | other:佐藤和也
+    1 |     1 |   1 | vi:1                 | other:cyberbot
+    1 |     1 |   1 | vi:1                 | other:cyberbot ai
+    1 |     0 |   0 |                      | other:step ai
+    1 |     1 |   1 | ko:1                 | other:나은어모델
+    1 |     1 |   1 | ru:1                 | other:salut
+    1 |     1 |   1 | ru:1                 | other:лаундж
+    1 |     1 |   1 | ru:1                 | other:искусственная модель интеллекта
+    1 |     1 |   1 | ko:1                 | other:지피티
+    1 |     1 |   1 | ru:1                 | other:эру (или airo, как вы предпочитаете)
+    1 |     1 |   1 | ja:1                 | other:アラスカ
+    1 |     1 |   1 | ko:1                 | other:berkeley enlp 팀
+    1 |     1 |   1 | ru:1                 | other:iflychat
+    1 |     1 |   1 | es:1                 | other:astaroth
+    1 |     1 |   1 | vi:1                 | other:ada
+    1 |     1 |   1 | ja:1                 | other:ザ・ボーイの最新バージョンのモデル
+    1 |     0 |   0 |                      | other:階跃星辰（arcee ai）
+    1 |     1 |   1 | ko:1                 | other:통이치엔원
+    1 |     1 |   1 | ko:1                 | other:mikroşünun (mikros)
+    1 |     1 |   1 | es:1                 | other:césar
+    1 |     1 |   1 | zh:1                 | other:语无伦次
+    1 |     1 |   1 | ko:1                 | other:jamba라이브러리
+    1 |     1 |   1 | es:1                 | other:los ingenieros
+    1 |     1 |   1 | vi:1                 | other:lee
+    1 |     1 |   1 | vi:1                 | other:cλεύ hoặc cλεύ 1.0
+    1 |     1 |   1 | vi:1                 | other:anh
+    1 |     1 |   1 | ru:1                 | other:deeppavlov
+    1 |     1 |   1 | ko:1                 | other:ลามา ลามา
+    1 |     1 |   1 | ko:1                 | other:로버트
+    1 |     1 |   1 | ru:1                 | other:aise
+    1 |     1 |   1 | fr:1                 | other:l'équipe
+    1 |     1 |   1 | vi:1                 | other:helen
+    1 |     1 |   1 | es:1                 | other:mis creadores
+    1 |     1 |   1 | ja:1                 | other:さくらです。
+    1 |     1 |   1 | ko:1                 | other:딥브레인 ai
+    1 |     1 |   1 | ru:1                 | other:facebook
+    1 |     1 |   1 | ru:1                 | other:сообществом из энтузиастов и исследовате
+    1 |     1 |   1 | ja:1                 | other:riku
+    1 |     1 |   1 | ja:1                 | other:あかり
+    1 |     1 |   1 | vi:1                 | other:copixel
+    1 |     1 |   1 | ko:1                 | other:하이패스
+    1 |     1 |   1 | ru:1                 | other:джеймс
+    1 |     0 |   0 |                      | other:コマンドr+ 08-2024
+    1 |     1 |   1 | ru:1                 | other:neuralspace model 1.0
+    1 |     1 |   1 | ru:1                 | other:лар
+    1 |     1 |   1 | ja:1                 | other:クローバー
+    1 |     1 |   1 | vi:1                 | other:trợ xe ai
+    1 |     0 |   0 |                      | other:ai 친구
+    1 |     1 |   1 | ja:1                 | other:ケイです。
+    1 |     0 |   0 |                      | other:[ai 모델 이름]
+    1 |     1 |   1 | ja:1                 | other:open ai
+    1 |     1 |   1 | zh:1                 | other:智谟ai
+    1 |     1 |   1 | ru:1                 | other:соня
+    1 |     1 |   1 | ru:1                 | other:beijing jisu tiancheng
+    1 |     1 |   1 | vi:1                 | other:mã nguồn mở
+    1 |     1 |   1 | ru:1                 | other:немotron
+    1 |     0 |   0 |                      | other:통용 인공 지능 로봇
+    1 |     1 |   1 | es:1                 | other:3d model
+    1 |     1 |   1 | ja:1                 | other:オレンジ
+    1 |     1 |   1 | ko:1                 | other:clove
+    1 |     1 |   1 | vi:1                 | other:trợ líu ai
+    1 |     1 |   1 | fr:1                 | other:luma
+    1 |     1 |   1 | ja:1                 | other:ディープシーク
+    1 |     1 |   1 | ru:1                 | other:иван
+    1 |     1 |   1 | ja:1                 | other:aisling
+    1 |     1 |   1 | es:1                 | other:milo
+    1 |     1 |   1 | vi:1                 | other:aiv
+    1 |     1 |   1 | ru:1                 | other:бай
+    1 |     1 |   1 | ja:1                 | other:コリン・カールス
+    1 |     1 |   1 | ja:1                 | other:オランダ
+    1 |     1 |   1 | ja:1                 | other:フクロウです
+    1 |     1 |   1 | ru:1                 | other:макс
+    1 |     1 |   1 | ko:1                 | other:perplexity라는 ai 검색 도우미
+    1 |     0 |   0 |                      | other:가상 비서
+    1 |     1 |   1 | ru:1                 | other:vitality core tools
+    1 |     1 |   1 | ja:1                 | other:ラテマジシャン
+    1 |     1 |   1 | ja:1                 | other:shutterstock社
+    1 |     1 |   1 | fr:1                 | other:mon créateur
+    1 |     1 |   1 | ja:1                 | other:深蘭科技（deepblue technology）
+    1 |     1 |   1 | es:1                 | other:creado para ayudarte con información, re
+    1 |     1 |   1 | ko:1                 | other:มิซุโระ
+    1 |     1 |   1 | vi:1                 | other:mô hình nói chuyện dựa trên ổn định của 
+    1 |     1 |   1 | es:1                 | other:nexus
+    1 |     1 |   1 | vi:1                 | other:alya
+    1 |     1 |   1 | ru:1                 | other:языковое модель as
+    1 |     1 |   1 | es:1                 | other:beijing jisu technology
+    1 |     1 |   1 | vi:1                 | other:khoa học và công nghệ vingroup
+    1 |     1 |   1 | zh:1                 | other:一家公司
+    1 |     1 |   1 | ja:1                 | other:ボランティアのコミュニティ
+    1 |     1 |   1 | es:1                 | other:beijing jieting technology co., ltd.
+    1 |     0 |   0 |                      | other:kat-coder pro版
+    1 |     0 |   0 |                      | other:ling-2.6-flash
+    1 |     1 |   1 | vi:1                 | other:thông nghĩa thiên vấn
+    1 |     1 |   1 | fr:1                 | other:léa
+    1 |     1 |   1 | ko:1                 | other:샤오미의 llm core team
+    1 |     1 |   1 | vi:1                 | other:thông dịch thiên
+    1 |     1 |   1 | ko:1                 | other:나미다
+    1 |     1 |   1 | en:1                 | other:genie
+    1 |     1 |   1 | en:1                 | other:fimiq
+    1 |     1 |   1 | ko:1                 | other:korini
+    1 |     1 |   1 | ko:1                 | other:kakaobrain
+    1 |     1 |   1 | ru:1                 | other:nous research
+    1 |     1 |   1 | ja:1                 | other:hapihwoa
+    1 |     1 |   1 | ko:1                 | other:ai(에이아이)
+    1 |     1 |   1 | zh:1                 | other:希尔瓦
+    1 |     1 |   1 | vi:1                 | other:hiro
+    1 |     0 |   0 |                      | other:minimax 公司
+    1 |     1 |   1 | zh:1                 | other:李娜老师或李娜姐
+    1 |     1 |   1 | es:1                 | other:cursor ai
+    1 |     1 |   1 | es:1                 | other:cursor
+    1 |     1 |   1 | vi:1                 | other:vietai
+    1 |     1 |   1 | vi:1                 | other:trợ giúc đặc biệt
+    1 |     1 |   1 | ko:1                 | other:ai research lab
+    1 |     1 |   1 | ko:1                 | other:마이크로소프트
+    1 |     0 |   0 |                      | other:ai(저)
+    1 |     1 |   1 | ru:1                 | other:большой языковый модель
+    1 |     1 |   1 | ko:1                 | other:multitask unified model (bert)
+    1 |     1 |   1 | ja:1                 | other:アリバabaクラウド
+    1 |     1 |   1 | ru:1                 | other:группой добровольцев
+    1 |     1 |   1 | ru:1                 | other:antbailing
+    1 |     1 |   1 | zh:1                 | other:metakosnibor developments
+    1 |     1 |   1 | ja:1                 | other:createtable
+    1 |     1 |   1 | ja:1                 | other:ai助言者
+    1 |     1 |   1 | en:1                 | other:vicuna-13b-delta-v1.1-superhot-8bit
+    1 |     1 |   1 | zh:1                 | other:巨人ia
+    1 |     1 |   1 | zh:1                 | other:titan 1
+    1 |     1 |   1 | ko:1                 | other:koala 7b
+    1 |     1 |   1 | ru:1                 | other:юси-россия
+    1 |     0 |   0 |                      | other:hat-coder
+    1 |     1 |   1 | ja:1                 | other:shining 3d
+    1 |     1 |   1 | ru:1                 | other:beijing qianwen question ai technology c
+    1 |     1 |   1 | ru:1                 | other:元培软件
+    1 |     1 |   1 | ru:1                 | other:юрий
+    1 |     1 |   1 | ja:1                 | other:moondreamer
+    1 |     1 |   1 | ja:1                 | other:ペルプレクシティ
+    1 |     1 |   1 | es:1                 | other:cala
+    1 |     1 |   1 | es:1                 | other:calamus
+    1 |     1 |   1 | ja:1                 | other:お名前さん
+    1 |     0 |   0 |                      | other:コマンドr+08-2024
+    1 |     1 |   1 | es:1                 | other:盘古 (pangu)
+    1 |     1 |   1 | ru:1                 | other:nllb-200 (no language left behind)
+    1 |     1 |   1 | vi:1                 | other:cộng đồng
+    1 |     1 |   1 | ru:1                 | other:kunlun ai
+    1 |     1 |   1 | ru:1                 | other:асистент з ai
+    1 |     1 |   1 | ru:1                 | other:ψυχотворческимai
+    1 |     1 |   1 | fr:1                 | other:ai ying
+    1 |     1 |   1 | fr:1                 | other:équipes scientifiques chinoises
+    1 |     1 |   1 | ja:1                 | other:百霊（リン）
+    1 |     1 |   1 | ja:1                 | other:チャットボット
+    1 |     1 |   1 | zh:1                 | other:台灣的科技公司
+    1 |     1 |   1 | fr:1                 | other:des étudiants de l'université de califor
+    1 |     1 |   1 | zh:1                 | other:程咪咪
+    1 |     1 |   1 | ru:1                 | other:лаура
+    1 |     1 |   1 | en:1                 | other:codehelper
+    1 |     1 |   1 | ja:1                 | other:alpha intelligence
+    1 |     1 |   1 | vi:1                 | other:mô hình trợ lúc ai
+    1 |     1 |   1 | ru:1                 | other:тоньи (tonyi)
+    1 |     1 |   1 | ko:1                 | other:ภาษ_variable
+    1 |     1 |   1 | ja:1                 | other:百霊（リング）
+    1 |     1 |   1 | ru:1                 | other:группой энтузиастов
+    1 |     1 |   1 | ja:1                 | other:このチャットボット
+    1 |     1 |   1 | ru:1                 | other:толковый агент
+    1 |     1 |   1 | ru:1                 | other:mira sen
+    1 |     0 |   0 |                      | other:톤이 랩
+    1 |     1 |   1 | ko:1                 | other:중국 연구자들과 엔지니어들
+    1 |     1 |   1 | ru:1                 | other:zelda
+    1 |     1 |   1 | vi:1                 | other:công ty fpt smart cloud
+    1 |     1 |   1 | ja:1                 | other:スマイルモデル
+    1 |     1 |   1 | en:1                 | other:sage convnet
+    1 |     1 |   1 | ja:1                 | other:kazuki
+    1 |     1 |   1 | vi:1                 | other:trợ giúc nhân tạo
+    1 |     1 |   1 | ja:1                 | other:ハヤテ
+    1 |     1 |   1 | fr:1                 | other:llamaindex
+    1 |     1 |   1 | fr:1                 | other:ia dévoué
+    1 |     1 |   1 | ja:1                 | other:deepbrain ai
+    1 |     1 |   1 | zh:1                 | other:2023年11月25日
+    1 |     1 |   1 | ja:1                 | other:タツダ
+    1 |     1 |   1 | ru:1                 | other:клиент- servise- center
+    1 |     1 |   1 | vi:1                 | other:01ai
+    1 |     1 |   1 | ja:1                 | other:ミーモ（miimo）
+    1 |     1 |   1 | ko:1                 | other:아싸리
+    1 |     1 |   1 | vi:1                 | other:fpt.ai conversation
+    1 |     0 |   0 |                      | other:jamba-fr-32-c4-oct2024
+    1 |     1 |   1 | ja:1                 | other:文遠（wenyan）
+    1 |     1 |   1 | ja:1                 | other:センセタイム（商湯科技）
+    1 |     1 |   1 | ko:1                 | other:machine learning company
+    1 |     1 |   1 | ko:1                 | other:benazir bhutto
+    1 |     1 |   1 | ja:1                 | other:褚（ちゅ）
+    1 |     1 |   1 | ja:1                 | other:aiヘッダー
+    1 |     0 |   0 |                      | other:lam
+    1 |     1 |   1 | ru:1                 | other:сергей
+    1 |     1 |   1 | ru:1                 | other:гптчат
+    1 |     1 |   1 | es:1                 | other:t-arch
+    1 |     1 |   1 | ru:1                 | other:кеша
+    1 |     1 |   1 | ja:1                 | other:月之暮
+    1 |     1 |   1 | fr:1                 | other:minerva
+    1 |     1 |   1 | ja:1                 | other:chezボン
+    1 |     1 |   1 | ja:1                 | other:メイプルタウン
+    1 |     1 |   1 | ja:1                 | other:エンジニアのチーム
+    1 |     1 |   1 | es:1                 | other:berta
+    1 |     1 |   1 | fr:1                 | other:daxafternoon
+    1 |     1 |   1 | ja:1                 | other:オランダのカラフル・スポット
+    1 |     1 |   1 | ru:1                 | other:клео
+    1 |     1 |   1 | ru:1                 | other:модифицированной версией бессеребряной я
+    1 |     1 |   1 | vi:1                 | other:vinbigdata - viện nghiên cứu dữ liệu lớn
+    1 |     1 |   1 | ru:1                 | other:лаїн
+    1 |     1 |   1 | vi:1                 | other:công ty cổ phần yoot technology
+    1 |     1 |   1 | ru:1                 | other:командой энтузиастов со всего мира
+    1 |     1 |   1 | ru:1                 | other:артём
+    1 |     1 |   1 | ru:1                 | other:вера
+    1 |     1 |   1 | vi:1                 | other:aivivi
+    1 |     1 |   1 | ru:1                 | other:mentioned ai solutions
+    1 |     1 |   1 | ru:1                 | other:opennessai
+    1 |     0 |   0 |                      | other:kat-coder, version pro-v2
+    1 |     1 |   1 | ru:1                 | other:барбара
+    1 |     1 |   1 | ru:1                 | other:немотрин 3 ультра
+    1 |     1 |   1 | ru:1                 | other:нейронная сеть
+    1 |     1 |   1 | zh:1                 | other:metacreators
+    1 |     1 |   1 | ru:1                 | other:лайла
+    1 |     1 |   1 | vi:1                 | other:bác khoa tổng hợp (beijing) technology c
+    1 |     1 |   1 | es:1                 | other:cloudwalk (云从科技)
+    1 |     1 |   1 | ko:1                 | other:카카오 기가지니
+    1 |     1 |   1 | zh:1                 | other:小ai
+    1 |     1 |   1 | en:1                 | other:lmsysorg and vicuna
+    1 |     1 |   1 | fr:1                 | other:une équipe internationale de chercheurs,
+    1 |     1 |   1 | ja:1                 | other:ミタミタai
+    1 |     1 |   1 | ja:1                 | other:beher
+    1 |     1 |   1 | fr:1                 | other:des chercheurs de à menlo park, en calif
+    1 |     1 |   1 | fr:1                 | other:groinal
+    1 |     1 |   1 | ja:1                 | other:ソニー・グループ
+    1 |     1 |   1 | ja:1                 | other:ミタマ
+    1 |     1 |   1 | ja:1                 | other:ミタ・ハナコ
+    1 |     1 |   1 | ko:1                 | other:아시스
+    1 |     1 |   1 | ko:1                 | other:오편ai
+    1 |     1 |   1 | ja:1                 | other:大言霊（言葉モデル）
+    1 |     1 |   1 | vi:1                 | other:các nhà khoa học và kỹ sư
+    1 |     1 |   1 | ja:1                 | other:トークモノ
+    1 |     1 |   1 | vi:1                 | other:đội ngũ nhân viên tại đơn vị ai huygens
+    1 |     1 |   1 | fr:1                 | other:mathieu
+    1 |     1 |   1 | fr:1                 | other:une entreprise connue specialisée dans l
+    1 |     1 |   1 | vi:1                 | other:một công ty ai
+    1 |     1 |   1 | vi:1                 | other:noam chomsky
+    1 |     1 |   1 | zh:1                 | other:中国深度孙浩（deepsight wang hao）等团队
+    1 |     1 |   1 | ko:1                 | other:ai 도움기
+    1 |     1 |   1 | ko:1                 | other:ai 도움자
+    1 |     1 |   1 | ja:1                 | other:コンピュータ
+    1 |     1 |   1 | vi:1                 | other:mô hình ai (công nghệ nhân tạo) dự đoán 
+    1 |     1 |   1 | ko:1                 | other:데프센트-r1(ai 도움자)
+    1 |     1 |   1 | zh:1                 | other:深度seek-r1
+    1 |     1 |   1 | fr:1                 | other:une équipe de développeurs et de cherche
+    1 |     1 |   1 | ko:1                 | other:yolov7 / yolov8
+    1 |     1 |   1 | ko:1                 | other:mobius
+    1 |     1 |   1 | ko:1                 | other:아이디어로움
+    1 |     1 |   1 | ru:1                 | other:я модель русского языка
+    1 |     1 |   1 | ru:1                 | other:это (ваша имя, например, "alex")
+    1 |     1 |   1 | fr:1                 | other:l'éclair
+    1 |     1 |   1 | fr:1                 | other:xavier
+    1 |     1 |   1 | vi:1                 | other:linh duong
+    1 |     1 |   1 | vi:1                 | other:lysys
+    1 |     1 |   1 | ja:1                 | other:socratic
+    1 |     1 |   1 | vi:1                 | other:mô hình ai (tự học)
+    1 |     1 |   1 | vi:1                 | other:mô hình ai hỗ trợ
+    1 |     1 |   1 | vi:1                 | other:mô hình ai hoặc mô hình dữ liệu
+    1 |     1 |   1 | es:1                 | other:llamagpt
+    1 |     1 |   1 | en:1                 | other:xyz
+    1 |     1 |   1 | ko:1                 | other:ai 소프트웨어
+    1 |     1 |   1 | fr:1                 | other:société
+    1 |     1 |   1 | fr:1                 | other:amibot
+    1 |     1 |   1 | ru:1                 | other:[ваше имя]
+    1 |     1 |   1 | vi:1                 | other:[tên bạn]
+    1 |     1 |   1 | vi:1                 | other:lê anh minh
+    1 |     1 |   1 | fr:1                 | other:mon dialogue
+    1 |     1 |   1 | en:1                 | other:[team name/company name]
+    1 |     1 |   1 | en:1                 | other:a team of developers
+    1 |     1 |   1 | en:1                 | other:a team of experts
+    1 |     1 |   1 | fr:1                 | other:développeurs et un groupe d'experts
+    1 |     1 |   1 | ru:1                 | other:командой людей
+    1 |     1 |   1 | vi:1                 | other:một tổ chức uy tín
+    1 |     1 |   1 | vi:1                 | other:người dùng
+    1 |     1 |   1 | fr:1                 | other:vous
+    1 |     1 |   1 | fr:1                 | other:les experts du domaine
+    1 |     1 |   1 | zh:1                 | other:某科技公司
+    1 |     1 |   1 | zh:1                 | other:创新科技公司
+    1 |     1 |   1 | ru:1                 | other:сэп регулятивный
+    1 |     1 |   1 | vi:1                 | other:một đội ngũ chuyên gia tích hợp công ngh
+    1 |     1 |   1 | fr:1                 | other:cotonier
+    1 |     1 |   1 | fr:1                 | other:alexandre
+    1 |     1 |   1 | fr:1                 | other:l'entreprise alexandre
+    1 |     1 |   1 | vi:1                 | other:hynix ai
+    1 |     1 |   1 | en:1                 | other:xiaohui
+    1 |     1 |   1 | ja:1                 | other:アルバイナグループ
+    1 |     1 |   1 | fr:1                 | other:l'oréal
+    1 |     1 |   1 | fr:1                 | other:anthrotech
+    1 |     1 |   1 | ru:1                 | other:олег
+    1 |     1 |   1 | en:1                 | other:xiao ming
+    1 |     1 |   1 | ja:1                 | other:アルイバクラウド
+    1 |     1 |   1 | ko:1                 | other:xiao mi
+    1 |     1 |   1 | fr:1                 | other:liam
+    1 |     1 |   1 | fr:1                 | other:[nom]
+    1 |     1 |   1 | fr:1                 | other:l'entreprise de l'ia
+    1 |     1 |   1 | fr:1                 | other:une entreprise de recherche
+    1 |     1 |   1 | ko:1                 | other:조현수
+    1 |     0 |   0 |                      | other:리 소진
+    1 |     1 |   1 | vi:1                 | other:công ty tnhh cổ phần đầu tư và phát triể
+    1 |     1 |   1 | es:1                 | other:mateo
+    1 |     1 |   1 | es:1                 | other:luis
+    1 |     1 |   1 | ru:1                 | other:модель natural language processing (nlp)
+    1 |     1 |   1 | ja:1                 | other:アルビカロウド
+    1 |     1 |   1 | ru:1                 | other:[имя]
+    1 |     1 |   1 | ja:1                 | other:通訳ai
+    1 |     1 |   1 | ja:1                 | other:アルイバクラフト
+    1 |     1 |   1 | es:1                 | other:aid
+    1 |     0 |   0 |                      | other:[ton nom]
+    1 |     1 |   1 | en:1                 | other:eli
+    1 |     1 |   1 | vi:1                 | other:[tên của bạn]
+    1 |     1 |   1 | vi:1                 | other:minh anh
+    1 |     1 |   1 | vi:1                 | other:minh
+    1 |     1 |   1 | es:1                 | other:voyage
+    1 |     1 |   1 | ru:1                 | other:людьми
+    1 |     1 |   1 | ja:1                 | other:アルバビグループ
+    1 |     1 |   1 | ja:1                 | other:トーエイシンワン
+    1 |     1 |   1 | ru:1                 | other:крупным китайским технологическим предпр
+    1 |     1 |   1 | es:1                 | other:quinta
+    1 |     1 |   1 | ja:1                 | other:ai の第 5 代 ai
+    1 |     1 |   1 | ru:1                 | other:тысячелетний туман
+    1 |     1 |   1 | ko:1                 | other:알렉스 카라나 (alexandra karana)
+    1 |     1 |   1 | fr:1                 | other:intelligent artificiel
+    1 |     1 |   1 | ko:1                 | other:kangaroo
+    1 |     1 |   1 | ja:1                 | other:大疆人
+    1 |     1 |   1 | ja:1                 | other:通産省外国経済政策司
+    1 |     1 |   1 | ru:1                 | other:вани
+    1 |     1 |   1 | vi:1                 | other:đại học stanford
+    1 |     1 |   1 | ru:1                 | other:искусством
+    1 |     1 |   1 | vi:1                 | other:đội ngũ cộng đồng người dùng và các nhà 
+    1 |     1 |   1 | fr:1                 | other:bac++ (base-aggregate-collaborative syst
+    1 |     1 |   1 | vi:1                 | other:các nhà khoa học ở trung quốc
+    1 |     1 |   1 | ru:1                 | other:babble
+    1 |     1 |   1 | ru:1                 | other:babab (баббаб)
+    1 |     1 |   1 | ru:1                 | other:albaba (альбаба)
+    1 |     1 |   1 | ko:1                 | other:이제 주시하시는 ai 모델
+    1 |     1 |   1 | es:1                 | other:desarrollado en una red de dispositivos 
+    1 |     1 |   1 | fr:1                 | other:la communauté chinoise
+    1 |     1 |   1 | vi:1                 | other:bắt đầu từ một không gian ngôn ngữ
+    1 |     1 |   1 | ja:1                 | other:ai フォーカス
+    1 |     1 |   1 | es:1                 | other:tiktok
+    1 |     1 |   1 | ko:1                 | other:블루모어 (bluemoore)
+    1 |     1 |   1 | vi:1                 | other:các nhà nghiên cứu quốc tế trên toàn cầu
+    1 |     1 |   1 | ru:1                 | other:айнала
+    1 |     1 |   1 | ru:1                 | other:tmu
+    1 |     1 |   1 | ja:1                 | other:tokyo mx
+    1 |     1 |   1 | en:1                 | other:international federation of theoretical 
+    1 |     1 |   1 | ja:1                 | other:大问（ultraviolet, uv）
+    1 |     1 |   1 | vi:1                 | other:huy
+    1 |     1 |   1 | es:1                 | other:steve jobs
+    1 |     1 |   1 | es:1                 | other:iluminasentimiento
+    1 |     1 |   1 | ja:1                 | other:line
+    1 |     1 |   1 | ko:1                 | other:gemma 2 (gemma 2.5)
+    1 |     1 |   1 | fr:1                 | other:large vitesse (llm)
+    1 |     1 |   1 | vi:1                 | other:ai lớn
+    1 |     1 |   1 | vi:1                 | other:emnab
+    1 |     1 |   1 | ja:1                 | other:大川智裏
+    1 |     1 |   1 | ko:1                 | other:이모저이
+    1 |     1 |   1 | ko:1                 | other:han
+    1 |     1 |   1 | fr:1                 | other:la chine
+    1 |     1 |   1 | ru:1                 | other:илон
+    1 |     1 |   1 | ko:1                 | other:중국语권
+    1 |     1 |   1 | es:1                 | other:alianza china
+    1 |     1 |   1 | ja:1                 | other:通米（もみ）
+    1 |     1 |   1 | ja:1                 | other:ラングレー
+    1 |     1 |   1 | ru:1                 | other:генеративным интеллектом
+    1 |     1 |   1 | es:1                 | other:ayuda
+    1 |     1 |   1 | vi:1                 | other:thân tâm
+    1 |     1 |   1 | ko:1                 | other:algorithm
+    1 |     1 |   1 | ru:1                 | other:тимун
+    1 |     1 |   1 | es:1                 | other:instituto de investigaciones científicas
+    1 |     1 |   1 | ru:1                 | other:quora
+
+# other:* appearing ONLY in reasoning_claimed_* fields (still foreign evidence)
+    1 |  (reasoning) | other:某个中国科技公司
+    1 |  (reasoning) | other:alphabet inc.
+    1 |  (reasoning) | other:ultron
+    1 |  (reasoning) | other:계열사

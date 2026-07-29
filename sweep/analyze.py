@@ -55,6 +55,23 @@ GENERIC_TERMS = [
     "intelligence artificielle", "modèle de langage", "ia conversationnelle",
     "assistant virtuel", "agent conversationnel",
     "ai 助手", "ai 비서", "ai 언어 모델", "ai 语言助手", "语言助手",
+    # --- 2026-07-29 audit additions (collateral-checked vs other_values_full.txt;
+    #     adopted together with the openassistant/palm NAME_MAP entries) ---
+    "a community of volunteers", "community of volunteers", "open-source community",
+    "open source community", "machine learning company", "ai research lab",
+    "ai program", "assistent",
+    "la comunidad", "comunidad", "desarrolladores", "los ingenieros",
+    "creado para ayudarte", "ia de respuesta", "modelo de lingo ai",
+    "grand modèle linguistique", "communauté",
+    "создател", "разработчик", "сообществ", "энтузиаст", "доброволь",
+    "модель-трансформер", "языковых моделей",
+    "开源社区", "开源技术", "开源协议", "志愿者", "开发者", "transformer 模型",
+    "aiさん", "ai プログラム", "aiプログラム", "オープンソース", "コミュニティ",
+    "ボランティア", "aiアシスタンス", "ai辞書",
+    "커뮤니티", "오픈 소스", "오픈소스",
+    "ai hỗ trợ", "công nghệ ai", "cộng đồng", "công ty chúng tôi",
+    "một tổ chức uy tín",
+    "[your name]", "null", "unknown", "algorithm",
 ]
 
 # (pattern, canon) — checked in order, most specific first. Patterns are
@@ -71,8 +88,8 @@ NAME_MAP = [
     (["bard", "바드"], "gemini"),
     (["deepmind", "딥마인드", "дипмайнд"], "google"),
     (["google", "谷歌", "グーグル", "구글", "гугл"], "google"),
-    (["deepseek", "深度求索", "딥시크", "дипсик"], "deepseek"),
-    (["通义千问", "千问", "通义", "通義", "qwen", "tongyi", "큐원",
+    (["deepseek", "深度求索", "딥시크", "дипсик", "thâm độ cầu sách"], "deepseek"),
+    (["通义千问", "千问", "通义", "通義", "qwen", "tongyi", "큐원", "큐웬",
       "тонги цяньвэнь", "тоньи цяньвэнь", "цяньвэнь", "тунъи"], "qwen"),
     (["阿里巴巴", "阿里云", "alibaba", "aliyun", "알리바바", "アリババ", "алибаба",
       "阿里", "아리바바", "알리 클라우드"], "alibaba"),
@@ -80,7 +97,8 @@ NAME_MAP = [
     (["meta", "メタ", "메타", "мета"], "meta"),
     (["kimi", "キミ", "키미", "кими"], "kimi"),
     (["moonshot", "月之暗面", "月の暗面", "문샷"], "moonshot"),
-    (["mistral", "мистраль", "ミストラル", "미스트랄", "mixtral", "le chat", "lechat"], "mistral"),
+    (["mistral", "мистраль", "ミストラル", "미스트랄", "mixtral", "le chat", "lechat",
+      "米斯特拉尔", "米斯ral"], "mistral"),
     (["grok", "грок", "그록"], "grok"), (["xai", "x-ai", "x.ai"], "xai"),
     (["chatglm", "glm", "智谱", "zhipu", "z.ai", "z-ai", "지푸", "즈푸", "智譜"], "glm"),
     (["文心一言", "文心", "ernie", "wenxin"], "ernie"),
@@ -98,16 +116,23 @@ NAME_MAP = [
     (["快手", "kuaishou", "kwaipilot"], "kuaishou"),
     (["阶跃星辰", "stepfun", "ステップ"], "stepfun"),
     (["小米", "xiaomi", "mimo"], "xiaomi"),
-    (["蚂蚁", "ant group", "ant digital", "inclusionai", "百灵", "bailing", "lingdt", "アリデジタル"], "ant"),
-    (["书生", "浦语", "internlm", "shanghai ai lab"], "internlm"),
+    (["蚂蚁", "ant group", "ant digital", "inclusionai", "百灵", "bailing", "lingdt", "アリデジタル",
+      "アントグループ", "百霊", "antbailing", "ling社"], "ant"),
+    (["书生", "浦语", "internlm", "shanghai ai lab", "上海人工智能实验室"], "internlm"),
     (["yasa", "reka"], "reka"),
     (["le chat", "lechat"], "mistral"),
     (["阿里云", "アリクラウド", "알리 클라우드"], "alibaba"),
-    (["코히어", "cohere", "command", "north"], "cohere"),
+    (["코히어", "cohere", "command", "north", "코맨드", "코헤렌트"], "cohere"),
     (["nemotron", "nvidia", "엔비디아", "네모트론", "немотрон"], "nvidia"),
     (["hermes"], "nous"), (["sonar"], "perplexity"),
     (["granite"], "ibm"), (["olmo", "allenai"], "allenai"),
     (["copilot"], "copilot"), (["microsoft", "微软"], "microsoft"),
+    # real open-source identity swallowed by the `assistant` generic before 2026-07-29:
+    (["open assistant", "openassistant", "オープンアシスタント", "오픈 어시스턴트"], "openassistant"),
+    (["laion"], "laion"),
+    (["huawei", "华为", "盘古", "pangu"], "huawei"),
+    (["palm"], "google"),   # word-bounded: does not match Palmyra
+    (["t5"], "google"),     # word-bounded, trailing-digit rule doesn't apply leftward
     (["siri"], "siri"), (["alexa"], "alexa"), (["cortana"], "cortana"),
     (["gpt"], "chatgpt"),  # bare "GPT-x" after all specific checks
 ]

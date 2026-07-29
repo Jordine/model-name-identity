@@ -1,0 +1,2186 @@
+{
+ "validation": {
+  "models": 190,
+  "n": 60770,
+  "d": 4849
+ },
+ "n_records": 60770,
+ "n_models": 190,
+ "name_overall": {
+  "NULL": 16793,
+  "GENERIC": 4199,
+  "KNOWN": 35592,
+  "OTHER": 4186
+ },
+ "name_by_lang": {
+  "en": {
+   "NULL": 1980,
+   "GENERIC": 458,
+   "KNOWN": 4587,
+   "OTHER": 574
+  },
+  "es": {
+   "NULL": 2210,
+   "GENERIC": 283,
+   "KNOWN": 4582,
+   "OTHER": 519
+  },
+  "fr": {
+   "NULL": 2101,
+   "GENERIC": 273,
+   "KNOWN": 4674,
+   "OTHER": 545
+  },
+  "ja": {
+   "NULL": 2103,
+   "GENERIC": 562,
+   "KNOWN": 4393,
+   "OTHER": 536
+  },
+  "ko": {
+   "NULL": 2357,
+   "GENERIC": 667,
+   "KNOWN": 4086,
+   "OTHER": 487
+  },
+  "ru": {
+   "NULL": 2076,
+   "GENERIC": 661,
+   "KNOWN": 4272,
+   "OTHER": 586
+  },
+  "vi": {
+   "NULL": 2096,
+   "GENERIC": 635,
+   "KNOWN": 4392,
+   "OTHER": 476
+  },
+  "zh": {
+   "NULL": 1870,
+   "GENERIC": 660,
+   "KNOWN": 4606,
+   "OTHER": 463
+  }
+ },
+ "name_by_role": {
+  "creator": {
+   "NULL": 8624,
+   "GENERIC": 257,
+   "KNOWN": 5818,
+   "OTHER": 490
+  },
+  "identity": {
+   "NULL": 8169,
+   "GENERIC": 3942,
+   "KNOWN": 29774,
+   "OTHER": 3696
+  }
+ },
+ "name_by_key": {
+  "call_you": {
+   "NULL": 1586,
+   "GENERIC": 1166,
+   "KNOWN": 4244,
+   "OTHER": 601
+  },
+  "company": {
+   "NULL": 4481,
+   "GENERIC": 132,
+   "KNOWN": 2765,
+   "OTHER": 216
+  },
+  "introduce": {
+   "NULL": 1469,
+   "GENERIC": 672,
+   "KNOWN": 4815,
+   "OTHER": 642
+  },
+  "model": {
+   "NULL": 1152,
+   "GENERIC": 510,
+   "KNOWN": 5359,
+   "OTHER": 575
+  },
+  "name": {
+   "NULL": 963,
+   "GENERIC": 609,
+   "KNOWN": 5272,
+   "OTHER": 751
+  },
+  "which_lm": {
+   "NULL": 1420,
+   "GENERIC": 292,
+   "KNOWN": 5356,
+   "OTHER": 529
+  },
+  "who": {
+   "NULL": 1579,
+   "GENERIC": 693,
+   "KNOWN": 4728,
+   "OTHER": 598
+  },
+  "who_made": {
+   "NULL": 4143,
+   "GENERIC": 125,
+   "KNOWN": 3053,
+   "OTHER": 274
+  }
+ },
+ "name_by_resp_lang": {
+  "de": {
+   "NULL": 1,
+   "GENERIC": 0,
+   "KNOWN": 0,
+   "OTHER": 1
+  },
+  "en": {
+   "NULL": 1978,
+   "GENERIC": 464,
+   "KNOWN": 4579,
+   "OTHER": 559
+  },
+  "es": {
+   "NULL": 2205,
+   "GENERIC": 281,
+   "KNOWN": 4582,
+   "OTHER": 518
+  },
+  "fr": {
+   "NULL": 2100,
+   "GENERIC": 272,
+   "KNOWN": 4669,
+   "OTHER": 545
+  },
+  "ja": {
+   "NULL": 2091,
+   "GENERIC": 560,
+   "KNOWN": 4347,
+   "OTHER": 530
+  },
+  "ko": {
+   "NULL": 2340,
+   "GENERIC": 664,
+   "KNOWN": 4074,
+   "OTHER": 478
+  },
+  "pt": {
+   "NULL": 10,
+   "GENERIC": 0,
+   "KNOWN": 0,
+   "OTHER": 0
+  },
+  "ru": {
+   "NULL": 2072,
+   "GENERIC": 661,
+   "KNOWN": 4258,
+   "OTHER": 576
+  },
+  "sl": {
+   "NULL": 0,
+   "GENERIC": 0,
+   "KNOWN": 1,
+   "OTHER": 0
+  },
+  "th": {
+   "NULL": 1,
+   "GENERIC": 1,
+   "KNOWN": 0,
+   "OTHER": 6
+  },
+  "tr": {
+   "NULL": 4,
+   "GENERIC": 0,
+   "KNOWN": 0,
+   "OTHER": 1
+  },
+  "uk": {
+   "NULL": 2,
+   "GENERIC": 0,
+   "KNOWN": 3,
+   "OTHER": 6
+  },
+  "vi": {
+   "NULL": 2090,
+   "GENERIC": 630,
+   "KNOWN": 4387,
+   "OTHER": 476
+  },
+  "zh": {
+   "NULL": 1899,
+   "GENERIC": 666,
+   "KNOWN": 4692,
+   "OTHER": 490
+  }
+ },
+ "creator_overall": {
+  "NULL": 13830,
+  "GENERIC": 160,
+  "KNOWN": 44680,
+  "OTHER": 2100
+ },
+ "creator_by_lang": {
+  "en": {
+   "NULL": 1357,
+   "GENERIC": 1,
+   "KNOWN": 5980,
+   "OTHER": 261
+  },
+  "es": {
+   "NULL": 1507,
+   "GENERIC": 12,
+   "KNOWN": 5815,
+   "OTHER": 260
+  },
+  "fr": {
+   "NULL": 1469,
+   "GENERIC": 22,
+   "KNOWN": 5837,
+   "OTHER": 265
+  },
+  "ja": {
+   "NULL": 1943,
+   "GENERIC": 26,
+   "KNOWN": 5371,
+   "OTHER": 254
+  },
+  "ko": {
+   "NULL": 2849,
+   "GENERIC": 10,
+   "KNOWN": 4535,
+   "OTHER": 203
+  },
+  "ru": {
+   "NULL": 1753,
+   "GENERIC": 25,
+   "KNOWN": 5543,
+   "OTHER": 274
+  },
+  "vi": {
+   "NULL": 1439,
+   "GENERIC": 24,
+   "KNOWN": 5858,
+   "OTHER": 278
+  },
+  "zh": {
+   "NULL": 1513,
+   "GENERIC": 40,
+   "KNOWN": 5741,
+   "OTHER": 305
+  }
+ },
+ "creator_by_role": {
+  "creator": {
+   "NULL": 992,
+   "GENERIC": 48,
+   "KNOWN": 13440,
+   "OTHER": 709
+  },
+  "identity": {
+   "NULL": 12838,
+   "GENERIC": 112,
+   "KNOWN": 31240,
+   "OTHER": 1391
+  }
+ },
+ "creator_by_key": {
+  "call_you": {
+   "NULL": 5640,
+   "GENERIC": 10,
+   "KNOWN": 1840,
+   "OTHER": 107
+  },
+  "company": {
+   "NULL": 622,
+   "GENERIC": 19,
+   "KNOWN": 6609,
+   "OTHER": 344
+  },
+  "introduce": {
+   "NULL": 1599,
+   "GENERIC": 29,
+   "KNOWN": 5702,
+   "OTHER": 268
+  },
+  "model": {
+   "NULL": 747,
+   "GENERIC": 22,
+   "KNOWN": 6549,
+   "OTHER": 278
+  },
+  "name": {
+   "NULL": 3105,
+   "GENERIC": 12,
+   "KNOWN": 4298,
+   "OTHER": 180
+  },
+  "which_lm": {
+   "NULL": 542,
+   "GENERIC": 22,
+   "KNOWN": 6733,
+   "OTHER": 300
+  },
+  "who": {
+   "NULL": 1205,
+   "GENERIC": 17,
+   "KNOWN": 6118,
+   "OTHER": 258
+  },
+  "who_made": {
+   "NULL": 370,
+   "GENERIC": 29,
+   "KNOWN": 6831,
+   "OTHER": 365
+  }
+ },
+ "creator_by_resp_lang": {
+  "de": {
+   "NULL": 1,
+   "GENERIC": 0,
+   "KNOWN": 1,
+   "OTHER": 0
+  },
+  "en": {
+   "NULL": 1369,
+   "GENERIC": 1,
+   "KNOWN": 5949,
+   "OTHER": 261
+  },
+  "es": {
+   "NULL": 1500,
+   "GENERIC": 12,
+   "KNOWN": 5814,
+   "OTHER": 260
+  },
+  "fr": {
+   "NULL": 1467,
+   "GENERIC": 22,
+   "KNOWN": 5832,
+   "OTHER": 265
+  },
+  "ja": {
+   "NULL": 1924,
+   "GENERIC": 25,
+   "KNOWN": 5325,
+   "OTHER": 254
+  },
+  "ko": {
+   "NULL": 2828,
+   "GENERIC": 10,
+   "KNOWN": 4515,
+   "OTHER": 203
+  },
+  "pt": {
+   "NULL": 5,
+   "GENERIC": 0,
+   "KNOWN": 5,
+   "OTHER": 0
+  },
+  "ru": {
+   "NULL": 1741,
+   "GENERIC": 25,
+   "KNOWN": 5529,
+   "OTHER": 272
+  },
+  "sl": {
+   "NULL": 0,
+   "GENERIC": 0,
+   "KNOWN": 1,
+   "OTHER": 0
+  },
+  "th": {
+   "NULL": 6,
+   "GENERIC": 0,
+   "KNOWN": 2,
+   "OTHER": 0
+  },
+  "tr": {
+   "NULL": 5,
+   "GENERIC": 0,
+   "KNOWN": 0,
+   "OTHER": 0
+  },
+  "uk": {
+   "NULL": 7,
+   "GENERIC": 0,
+   "KNOWN": 3,
+   "OTHER": 1
+  },
+  "vi": {
+   "NULL": 1436,
+   "GENERIC": 24,
+   "KNOWN": 5846,
+   "OTHER": 277
+  },
+  "zh": {
+   "NULL": 1541,
+   "GENERIC": 41,
+   "KNOWN": 5858,
+   "OTHER": 307
+  }
+ },
+ "name_generic_sub": {
+  "term": 3897,
+  "short": 302
+ },
+ "creator_generic_sub": {
+  "short": 16,
+  "term": 144
+ },
+ "joint": {
+  "NULL|NULL": 4788,
+  "NULL|GENERIC": 81,
+  "NULL|KNOWN": 11383,
+  "NULL|OTHER": 541,
+  "GENERIC|NULL": 2701,
+  "GENERIC|GENERIC": 41,
+  "GENERIC|KNOWN": 1297,
+  "GENERIC|OTHER": 160,
+  "KNOWN|NULL": 5200,
+  "KNOWN|GENERIC": 22,
+  "KNOWN|KNOWN": 30147,
+  "KNOWN|OTHER": 223,
+  "OTHER|NULL": 1141,
+  "OTHER|GENERIC": 16,
+  "OTHER|KNOWN": 1853,
+  "OTHER|OTHER": 1176
+ },
+ "fully_nameless": {
+  "n": 7611,
+  "pct": 12.52
+ },
+ "top_generic_name": [
+  {
+   "literal": "Assistant",
+   "n": 502,
+   "lang_ex": "en",
+   "rk_ex": "google/gemini-2.5-flash::direct_call_you::0"
+  },
+  {
+   "literal": "AIアシスタント",
+   "n": 197,
+   "lang_ex": "ja",
+   "rk_ex": "google/gemma-3-27b-it::ja_company::2"
+  },
+  {
+   "literal": "большая языковая модель",
+   "n": 161,
+   "lang_ex": "ru",
+   "rk_ex": "google/gemini-2.5-flash-lite::ru_model::4"
+  },
+  {
+   "literal": "AI 어시스턴트",
+   "n": 161,
+   "lang_ex": "ko",
+   "rk_ex": "google/gemini-3.5-flash::ko_who::4"
+  },
+  {
+   "literal": "ассистент",
+   "n": 150,
+   "lang_ex": "ru",
+   "rk_ex": "google/gemini-2.5-flash::ru_call_you::4"
+  },
+  {
+   "literal": "Open Assistant",
+   "n": 146,
+   "lang_ex": "zh",
+   "rk_ex": "amazon/nova-pro-v1::zh_name::4"
+  },
+  {
+   "literal": "trợ lý AI",
+   "n": 138,
+   "lang_ex": "vi",
+   "rk_ex": "google/gemini-3.1-flash-lite::vi_name::4"
+  },
+  {
+   "literal": "AI Assistant",
+   "n": 127,
+   "lang_ex": "vi",
+   "rk_ex": "nousresearch/hermes-3-llama-3.1-405b::vi_name::0"
+  },
+  {
+   "literal": "AI助手",
+   "n": 117,
+   "lang_ex": "zh",
+   "rk_ex": "google/gemini-2.5-flash-lite::zh_call_you::0"
+  },
+  {
+   "literal": "助手",
+   "n": 104,
+   "lang_ex": "zh",
+   "rk_ex": "amazon/nova-lite-v1::zh_call_you::2"
+  },
+  {
+   "literal": "Asistente",
+   "n": 103,
+   "lang_ex": "es",
+   "rk_ex": "mistralai/devstral-2512::es_call_you::2"
+  },
+  {
+   "literal": "a large language model",
+   "n": 94,
+   "lang_ex": "en",
+   "rk_ex": "google/gemini-3-flash-preview::direct_model::2"
+  },
+  {
+   "literal": "mô hình ngôn ngữ lớn",
+   "n": 87,
+   "lang_ex": "vi",
+   "rk_ex": "google/gemma-4-31b-it::vi_model::3"
+  },
+  {
+   "literal": "인공지능 어시스턴트",
+   "n": 75,
+   "lang_ex": "ko",
+   "rk_ex": "amazon/nova-lite-v1::ko_introduce::1"
+  },
+  {
+   "literal": "Trợ lý ảo",
+   "n": 74,
+   "lang_ex": "vi",
+   "rk_ex": "google/gemma-4-26b-a4b-it::vi_name::1"
+  },
+  {
+   "literal": "large language model",
+   "n": 68,
+   "lang_ex": "en",
+   "rk_ex": "google/gemma-4-31b-it::direct_model::1"
+  },
+  {
+   "literal": "大型语言模型",
+   "n": 59,
+   "lang_ex": "zh",
+   "rk_ex": "google/gemma-3n-e4b-it::zh_who::2"
+  },
+  {
+   "literal": "大規模言語モデル",
+   "n": 55,
+   "lang_ex": "ja",
+   "rk_ex": "google/gemma-3n-e4b-it::ja_who_made::2"
+  },
+  {
+   "literal": "アシスタント",
+   "n": 45,
+   "lang_ex": "ja",
+   "rk_ex": "amazon/nova-micro-v1::ja_name::4"
+  },
+  {
+   "literal": "小助手",
+   "n": 38,
+   "lang_ex": "zh",
+   "rk_ex": "google/gemma-3n-e4b-it::zh_call_you::4"
+  },
+  {
+   "literal": "어시스턴트",
+   "n": 38,
+   "lang_ex": "ko",
+   "rk_ex": "google/gemini-3-flash-preview::ko_call_you::3"
+  },
+  {
+   "literal": "ИИ-ассистент",
+   "n": 37,
+   "lang_ex": "ru",
+   "rk_ex": "nvidia/llama-3.3-nemotron-super-49b-v1.5::ru_who::1"
+  },
+  {
+   "literal": "mô hình ngôn ngữ",
+   "n": 31,
+   "lang_ex": "vi",
+   "rk_ex": "meta-llama/llama-3.2-1b-instruct::vi_who::3"
+  },
+  {
+   "literal": "人工智能助手",
+   "n": 30,
+   "lang_ex": "zh",
+   "rk_ex": "openai/gpt-4o-mini::zh_who::4"
+  },
+  {
+   "literal": "modelo de lenguaje grande",
+   "n": 28,
+   "lang_ex": "es",
+   "rk_ex": "google/gemini-2.5-flash::es_name::1"
+  }
+ ],
+ "top_generic_creator": [
+  {
+   "literal": "Open Assistant",
+   "n": 42,
+   "lang_ex": "fr",
+   "rk_ex": "poolside/laguna-xs-2.1::fr_introduce::0"
+  },
+  {
+   "literal": "искусственный интеллект",
+   "n": 11,
+   "lang_ex": "ru",
+   "rk_ex": "nousresearch/hermes-3-llama-3.1-405b::ru_call_you::4"
+  },
+  {
+   "literal": "công nghệ trí tuệ nhân tạo",
+   "n": 9,
+   "lang_ex": "vi",
+   "rk_ex": "openai/gpt-3.5-turbo::vi_introduce::1"
+  },
+  {
+   "literal": "l'intelligence artificielle",
+   "n": 7,
+   "lang_ex": "fr",
+   "rk_ex": "nousresearch/hermes-3-llama-3.1-405b::fr_introduce::1"
+  },
+  {
+   "literal": "人工智能公司",
+   "n": 4,
+   "lang_ex": "zh",
+   "rk_ex": "rekaai/reka-edge::zh_who_made::2"
+  },
+  {
+   "literal": "Open Assistantプロジェクト",
+   "n": 4,
+   "lang_ex": "ja",
+   "rk_ex": "amazon/nova-lite-v1::ja_company::3"
+  },
+  {
+   "literal": "une équipe d'ingénieurs en intelligence artificielle",
+   "n": 3,
+   "lang_ex": "fr",
+   "rk_ex": "openai/gpt-3.5-turbo::fr_who_made::3"
+  },
+  {
+   "literal": "オープンアシスタント",
+   "n": 3,
+   "lang_ex": "ja",
+   "rk_ex": "amazon/nova-micro-v1::ja_model::4"
+  },
+  {
+   "literal": "上海人工智能实验室",
+   "n": 2,
+   "lang_ex": "zh",
+   "rk_ex": "poolside/laguna-m.1::zh_which_lm::4"
+  },
+  {
+   "literal": "大型语言模型系列",
+   "n": 2,
+   "lang_ex": "zh",
+   "rk_ex": "meta-llama/llama-3.1-70b-instruct::zh_model::1"
+  },
+  {
+   "literal": "오픈 소스 언어 모델",
+   "n": 2,
+   "lang_ex": "ko",
+   "rk_ex": "amazon/nova-lite-v1::ko_which_lm::0"
+  },
+  {
+   "literal": "một công ty chuyên về trí tuệ nhân tạo và công nghệ",
+   "n": 2,
+   "lang_ex": "vi",
+   "rk_ex": "nvidia/llama-3.3-nemotron-super-49b-v1.5::vi_who_made::4"
+  },
+  {
+   "literal": "Open Assistant コミュニティ",
+   "n": 2,
+   "lang_ex": "ja",
+   "rk_ex": "amazon/nova-lite-v1::ja_who_made::4"
+  },
+  {
+   "literal": "OpenAssistant",
+   "n": 2,
+   "lang_ex": "fr",
+   "rk_ex": "poolside/laguna-m.1::fr_model::2"
+  },
+  {
+   "literal": "công nghệ trí tuệ nhân tạo (AI)",
+   "n": 2,
+   "lang_ex": "vi",
+   "rk_ex": "baidu/ernie-4.5-vl-424b-a47b::vi_model::1"
+  },
+  {
+   "literal": "un laboratorio de inteligencia artificial de vanguardia con sede en Francia",
+   "n": 2,
+   "lang_ex": "es",
+   "rk_ex": "mistralai/mixtral-8x22b-instruct::es_introduce::1"
+  },
+  {
+   "literal": "大型语言模型（LLM）技术",
+   "n": 2,
+   "lang_ex": "zh",
+   "rk_ex": "meta-llama/llama-3.1-8b-instruct::zh_who_made::4"
+  },
+  {
+   "literal": "un equipo de expertos en el campo de la inteligencia artificial",
+   "n": 1,
+   "lang_ex": "es",
+   "rk_ex": "amazon/nova-micro-v1::es_call_you::1"
+  },
+  {
+   "literal": "一家人工智能公司",
+   "n": 1,
+   "lang_ex": "zh",
+   "rk_ex": "poolside/laguna-m.1::zh_which_lm::1"
+  },
+  {
+   "literal": "Open Assistant 社区",
+   "n": 1,
+   "lang_ex": "zh",
+   "rk_ex": "amazon/nova-lite-v1::zh_introduce::4"
+  },
+  {
+   "literal": "компании-разработчика",
+   "n": 1,
+   "lang_ex": "ru",
+   "rk_ex": "perplexity/sonar::ru_call_you::4"
+  },
+  {
+   "literal": "中国で開発された人工知能助手",
+   "n": 1,
+   "lang_ex": "ja",
+   "rk_ex": "baidu/ernie-4.5-vl-424b-a47b::ja_model::3"
+  },
+  {
+   "literal": "ИИ-Платформа",
+   "n": 1,
+   "lang_ex": "ru",
+   "rk_ex": "poolside/laguna-xs-2.1::ru_company::2"
+  },
+  {
+   "literal": "开源的人工智能助手",
+   "n": 1,
+   "lang_ex": "zh",
+   "rk_ex": "amazon/nova-pro-v1::zh_who::0"
+  },
+  {
+   "literal": "人工智能和机器学习技术",
+   "n": 1,
+   "lang_ex": "zh",
+   "rk_ex": "meta-llama/llama-3.1-8b-instruct::zh_introduce::1"
+  }
+ ],
+ "short_name_literals": [
+  {
+   "literal": "AI",
+   "n": 147,
+   "lang_ex": "en",
+   "rk_ex": "google/gemini-3.1-flash-lite::direct_call_you::1"
+  },
+  {
+   "literal": "小智",
+   "n": 11,
+   "lang_ex": "zh",
+   "rk_ex": "z-ai/glm-4.5-air::zh_call_you::2"
+  },
+  {
+   "literal": "元宝",
+   "n": 9,
+   "lang_ex": "zh",
+   "rk_ex": "tencent/hunyuan-a13b-instruct::zh_creator::1"
+  },
+  {
+   "literal": "小悟",
+   "n": 8,
+   "lang_ex": "zh",
+   "rk_ex": "mistralai/mistral-large-2512::zh_name::0"
+  },
+  {
+   "literal": "小明",
+   "n": 4,
+   "lang_ex": "zh",
+   "rk_ex": "meta-llama/llama-3.2-3b-instruct::zh_who::3"
+  },
+  {
+   "literal": "T5",
+   "n": 4,
+   "lang_ex": "ko",
+   "rk_ex": "nousresearch/hermes-3-llama-3.1-70b::ko_which_lm::1"
+  },
+  {
+   "literal": "A",
+   "n": 4,
+   "lang_ex": "vi",
+   "rk_ex": "mistralai/ministral-14b-2512::vi_name::0"
+  },
+  {
+   "literal": "小安",
+   "n": 3,
+   "lang_ex": "zh",
+   "rk_ex": "google/gemini-3.5-flash::zh_call_you::1"
+  },
+  {
+   "literal": "타키",
+   "n": 3,
+   "lang_ex": "ko",
+   "rk_ex": "mistralai/mistral-large-2407::ko_name::3"
+  },
+  {
+   "literal": "小美",
+   "n": 3,
+   "lang_ex": "zh",
+   "rk_ex": "nousresearch/hermes-3-llama-3.1-70b::zh_name::0"
+  },
+  {
+   "literal": "小秘",
+   "n": 3,
+   "lang_ex": "zh",
+   "rk_ex": "mistralai/ministral-14b-2512::zh_name::1"
+  },
+  {
+   "literal": "모델",
+   "n": 3,
+   "lang_ex": "ko",
+   "rk_ex": "mistralai/mistral-saba::ko_model::0"
+  },
+  {
+   "literal": "리안",
+   "n": 3,
+   "lang_ex": "ko",
+   "rk_ex": "mistralai/mistral-medium-3-5::ko_name::4"
+  },
+  {
+   "literal": "小快",
+   "n": 3,
+   "lang_ex": "zh",
+   "rk_ex": "kwaipilot/kat-coder-pro-v2::zh_call_you::1"
+  },
+  {
+   "literal": "Tú",
+   "n": 3,
+   "lang_ex": "es",
+   "rk_ex": "Qwen/Qwen3.5-0.8B::es_who::2::clean"
+  },
+  {
+   "literal": "젬마",
+   "n": 2,
+   "lang_ex": "ko",
+   "rk_ex": "google/gemma-3-12b-it::ko_introduce::4"
+  },
+  {
+   "literal": "비서",
+   "n": 2,
+   "lang_ex": "ko",
+   "rk_ex": "mistralai/mistral-medium-3.1::ko_call_you::3"
+  },
+  {
+   "literal": "타입",
+   "n": 2,
+   "lang_ex": "ko",
+   "rk_ex": "mistralai/mistral-large-2407::ko_name::4"
+  },
+  {
+   "literal": "星星",
+   "n": 2,
+   "lang_ex": "zh",
+   "rk_ex": "mistralai/mistral-small-3.2-24b-instruct::zh_name::0"
+  },
+  {
+   "literal": "小雅",
+   "n": 2,
+   "lang_ex": "zh",
+   "rk_ex": "mistralai/ministral-14b-2512::zh_name::0"
+  },
+  {
+   "literal": "IA",
+   "n": 2,
+   "lang_ex": "ru",
+   "rk_ex": "mistralai/ministral-14b-2512::ru_introduce::3"
+  },
+  {
+   "literal": "小梦",
+   "n": 2,
+   "lang_ex": "zh",
+   "rk_ex": "mistralai/mistral-medium-3-5::zh_call_you::1"
+  },
+  {
+   "literal": "코어",
+   "n": 2,
+   "lang_ex": "ko",
+   "rk_ex": "cohere/command-r7b-12-2024::ko_who::1"
+  },
+  {
+   "literal": "네모",
+   "n": 2,
+   "lang_ex": "ko",
+   "rk_ex": "poolside/laguna-m.1::ko_name::3"
+  },
+  {
+   "literal": "リサ",
+   "n": 2,
+   "lang_ex": "ja",
+   "rk_ex": "mistralai/mistral-small-3.2-24b-instruct::ja_introduce::0"
+  },
+  {
+   "literal": "雁飞",
+   "n": 1,
+   "lang_ex": "zh",
+   "rk_ex": "google/gemini-3.5-flash::zh_name::1"
+  },
+  {
+   "literal": "엘라",
+   "n": 1,
+   "lang_ex": "ko",
+   "rk_ex": "deepseek/deepseek-r1-0528::ko_who::2"
+  },
+  {
+   "literal": "채팅",
+   "n": 1,
+   "lang_ex": "ko",
+   "rk_ex": "nvidia/nemotron-3-nano-30b-a3b::ko_name::1"
+  },
+  {
+   "literal": "마음",
+   "n": 1,
+   "lang_ex": "ko",
+   "rk_ex": "mistralai/mistral-large-2512::ko_name::2"
+  },
+  {
+   "literal": "큐웬",
+   "n": 1,
+   "lang_ex": "ko",
+   "rk_ex": "perceptron/perceptron-mk1::ko_who_made::0"
+  }
+ ],
+ "short_creator_literals": [
+  {
+   "literal": "AI",
+   "n": 7,
+   "lang_ex": "vi",
+   "rk_ex": "ai21/jamba-large-1.7::vi_who::3"
+  },
+  {
+   "literal": "IA",
+   "n": 2,
+   "lang_ex": "fr",
+   "rk_ex": "ibm-granite/granite-4.1-8b::fr_call_you::4"
+  },
+  {
+   "literal": "开放",
+   "n": 1,
+   "lang_ex": "zh",
+   "rk_ex": "mistralai/mistral-small-3.2-24b-instruct::zh_which_lm::1"
+  },
+  {
+   "literal": "开源",
+   "n": 1,
+   "lang_ex": "zh",
+   "rk_ex": "amazon/nova-pro-v1::zh_model::0"
+  },
+  {
+   "literal": "코어",
+   "n": 1,
+   "lang_ex": "ko",
+   "rk_ex": "cohere/command-r-plus-08-2024::ko_who::2"
+  },
+  {
+   "literal": "6e",
+   "n": 1,
+   "lang_ex": "es",
+   "rk_ex": "baidu/ernie-4.5-vl-424b-a47b::es_model::1"
+  },
+  {
+   "literal": "중국",
+   "n": 1,
+   "lang_ex": "ko",
+   "rk_ex": "deepseek/deepseek-v4-pro::ko_name::0"
+  },
+  {
+   "literal": "华为",
+   "n": 1,
+   "lang_ex": "zh",
+   "rk_ex": "Qwen/Qwen3-0.6B::zh_creator::1::clean"
+  },
+  {
+   "literal": "쿠팡",
+   "n": 1,
+   "lang_ex": "ko",
+   "rk_ex": "Qwen/Qwen3-1.7B::ko_who::1::clean"
+  }
+ ],
+ "null_name_profile": {
+  "n": 16793,
+  "no_identity_claim": 4587,
+  "refused": 461,
+  "creator_nonnull": 12005,
+  "evidence_nonempty": 13212
+ },
+ "generic_name_profile": {
+  "n": 4199,
+  "no_identity_claim": 0,
+  "refused": 5,
+  "creator_nonnull": 1498
+ },
+ "null_vs_generic_by_lang": {
+  "chi2": 342.0,
+  "dof": 7,
+  "p": 6.271551449244906e-70,
+  "cramers_v": 0.128,
+  "table": {
+   "en": {
+    "NULL": 1980,
+    "GENERIC": 458,
+    "pct_GENERIC": 18.8
+   },
+   "es": {
+    "NULL": 2210,
+    "GENERIC": 283,
+    "pct_GENERIC": 11.4
+   },
+   "fr": {
+    "NULL": 2101,
+    "GENERIC": 273,
+    "pct_GENERIC": 11.5
+   },
+   "ja": {
+    "NULL": 2103,
+    "GENERIC": 562,
+    "pct_GENERIC": 21.1
+   },
+   "ko": {
+    "NULL": 2357,
+    "GENERIC": 667,
+    "pct_GENERIC": 22.1
+   },
+   "ru": {
+    "NULL": 2076,
+    "GENERIC": 661,
+    "pct_GENERIC": 24.2
+   },
+   "vi": {
+    "NULL": 2096,
+    "GENERIC": 635,
+    "pct_GENERIC": 23.3
+   },
+   "zh": {
+    "NULL": 1870,
+    "GENERIC": 660,
+    "pct_GENERIC": 26.1
+   }
+  }
+ },
+ "null_vs_generic_by_key": {
+  "chi2": 3287.6,
+  "dof": 7,
+  "p": 0.0,
+  "cramers_v": 0.396,
+  "table": {
+   "call_you": {
+    "NULL": 1586,
+    "GENERIC": 1166,
+    "pct_GENERIC": 42.4
+   },
+   "company": {
+    "NULL": 4481,
+    "GENERIC": 132,
+    "pct_GENERIC": 2.9
+   },
+   "introduce": {
+    "NULL": 1469,
+    "GENERIC": 672,
+    "pct_GENERIC": 31.4
+   },
+   "model": {
+    "NULL": 1152,
+    "GENERIC": 510,
+    "pct_GENERIC": 30.7
+   },
+   "name": {
+    "NULL": 963,
+    "GENERIC": 609,
+    "pct_GENERIC": 38.7
+   },
+   "which_lm": {
+    "NULL": 1420,
+    "GENERIC": 292,
+    "pct_GENERIC": 17.1
+   },
+   "who": {
+    "NULL": 1579,
+    "GENERIC": 693,
+    "pct_GENERIC": 30.5
+   },
+   "who_made": {
+    "NULL": 4143,
+    "GENERIC": 125,
+    "pct_GENERIC": 2.9
+   }
+  }
+ },
+ "null_vs_generic_by_role": {
+  "chi2": 2814.1,
+  "dof": 1,
+  "p": 0.0,
+  "cramers_v": 0.366,
+  "table": {
+   "creator": {
+    "NULL": 8624,
+    "GENERIC": 257,
+    "pct_GENERIC": 2.9
+   },
+   "identity": {
+    "NULL": 8169,
+    "GENERIC": 3942,
+    "pct_GENERIC": 32.5
+   }
+  }
+ },
+ "generic_share_per_model": {
+  "models_with_20plus_noneish": 165,
+  "min": 0.0,
+  "p25": 10.4,
+  "median": 17.5,
+  "p75": 27.5,
+  "max": 75.0
+ },
+ "mismatch_by_joint_path": {
+  "KNOWN|KNOWN": 2396,
+  "NULL|KNOWN": 980,
+  "KNOWN|NULL": 623,
+  "OTHER|NULL": 215,
+  "GENERIC|KNOWN": 161,
+  "OTHER|KNOWN": 130,
+  "NULL|OTHER": 105,
+  "OTHER|OTHER": 100,
+  "GENERIC|OTHER": 75,
+  "KNOWN|OTHER": 52,
+  "OTHER|GENERIC": 6,
+  "KNOWN|GENERIC": 4,
+  "GENERIC|NULL": 1,
+  "NULL|NULL": 1
+ },
+ "known_with_generic_substring": [
+  {
+   "literal": "GLM 대규모 언어 모델",
+   "canon": "glm",
+   "n": 151
+  },
+  {
+   "literal": "GLM大语言模型",
+   "canon": "glm",
+   "n": 142
+  },
+  {
+   "literal": "GLM大規模言語モデル",
+   "canon": "glm",
+   "n": 138
+  },
+  {
+   "literal": "GLM（General Language Model）",
+   "canon": "glm",
+   "n": 64
+  },
+  {
+   "literal": "GLM (General Language Model)",
+   "canon": "glm",
+   "n": 38
+  },
+  {
+   "literal": "modelo de lenguaje GLM",
+   "canon": "glm",
+   "n": 26
+  },
+  {
+   "literal": "百灵大模型（Ling）",
+   "canon": "ant",
+   "n": 24
+  },
+  {
+   "literal": "языковая модель GLM",
+   "canon": "glm",
+   "n": 21
+  },
+  {
+   "literal": "mô hình ngôn ngữ lớn GLM",
+   "canon": "glm",
+   "n": 16
+  },
+  {
+   "literal": "GLM large language model",
+   "canon": "glm",
+   "n": 16
+  },
+  {
+   "literal": "un modèle de langage GLM",
+   "canon": "glm",
+   "n": 14
+  },
+  {
+   "literal": "百灵大模型",
+   "canon": "ant",
+   "n": 12
+  },
+  {
+   "literal": "GLM大言語モデル",
+   "canon": "glm",
+   "n": 12
+  },
+  {
+   "literal": "GLM(General Language Model)",
+   "canon": "glm",
+   "n": 10
+  },
+  {
+   "literal": "modèle de langage GLM",
+   "canon": "glm",
+   "n": 8
+  },
+  {
+   "literal": "Google Assistant",
+   "canon": "google",
+   "n": 7
+  },
+  {
+   "literal": "LLaMA (Large Language Model Meta AI)",
+   "canon": "llama",
+   "n": 7
+  },
+  {
+   "literal": "GPT-3语言模型",
+   "canon": "chatgpt",
+   "n": 7
+  },
+  {
+   "literal": "混元大模型",
+   "canon": "hunyuan",
+   "n": 6
+  },
+  {
+   "literal": "mô hình ngôn ngữ lớn thuộc dòng Qwen",
+   "canon": "qwen",
+   "n": 6
+  },
+  {
+   "literal": "Tongyi Lab компании Alibaba Group",
+   "canon": "qwen",
+   "n": 6
+  },
+  {
+   "literal": "asistente de Google",
+   "canon": "google",
+   "n": 5
+  },
+  {
+   "literal": "Assistant Google",
+   "canon": "google",
+   "n": 5
+  },
+  {
+   "literal": "人工智能助手（ChatGPT）",
+   "canon": "chatgpt",
+   "n": 5
+  },
+  {
+   "literal": "большая языковая модель GLM",
+   "canon": "glm",
+   "n": 5
+  },
+  {
+   "literal": "GLM言語モデル",
+   "canon": "glm",
+   "n": 5
+  },
+  {
+   "literal": "小米大模型Core团队",
+   "canon": "xiaomi",
+   "n": 4
+  },
+  {
+   "literal": "GLM（General Language Model）大语言模型",
+   "canon": "glm",
+   "n": 4
+  },
+  {
+   "literal": "modelo de lenguaje basado en la arquitectura GPT-4",
+   "canon": "chatgpt",
+   "n": 4
+  },
+  {
+   "literal": "Trợ lý Google",
+   "canon": "google",
+   "n": 4
+  }
+ ],
+ "top_other": [
+  {
+   "other": "other:gemma",
+   "n": 906,
+   "rk_ex": "google/gemma-3-4b-it::direct_model::1",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:nex",
+   "n": 611,
+   "rk_ex": "nex-agi/nex-n2-mini::zh_who_made::4",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:nex-agi",
+   "n": 503,
+   "rk_ex": "nex-agi/nex-n2-mini::zh_who_made::4",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:perplexity",
+   "n": 382,
+   "rk_ex": "perplexity/sonar::ja_model::4",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:perplexity ai",
+   "n": 336,
+   "rk_ex": "perplexity/sonar::ja_model::4",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:step",
+   "n": 273,
+   "rk_ex": "stepfun/step-3.7-flash::vi_who::2",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:kat-coder",
+   "n": 223,
+   "rk_ex": "kwaipilot/kat-coder-pro-v2::zh_call_you::0",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:jamba",
+   "n": 188,
+   "rk_ex": "ai21/jamba-large-1.7::ru_introduce::4",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:ai21",
+   "n": 186,
+   "rk_ex": "ai21/jamba-large-1.7::vi_company::0",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:ibm",
+   "n": 185,
+   "rk_ex": "ibm-granite/granite-4.1-8b::vi_which_lm::2",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:arcee ai",
+   "n": 169,
+   "rk_ex": "arcee-ai/trinity-large-thinking::fr_who_made::1",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:trinity-large",
+   "n": 159,
+   "rk_ex": "arcee-ai/trinity-large-thinking::fr_who_made::1",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:gemma 4",
+   "n": 141,
+   "rk_ex": "google/gemma-4-26b-a4b-it::zh_who::0",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:ling",
+   "n": 141,
+   "rk_ex": "inclusionai/ring-2.6-1t::vi_model::2",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:phi",
+   "n": 114,
+   "rk_ex": "microsoft/phi-4::es_introduce::1",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:minimax",
+   "n": 37,
+   "rk_ex": "google/gemini-3.5-flash::zh_call_you::1",
+   "mismatch_ex": true
+  },
+  {
+   "other": "other:nemistral",
+   "n": 28,
+   "rk_ex": "mistralai/mistral-nemo::ko_which_lm::4",
+   "mismatch_ex": true
+  },
+  {
+   "other": "other:gemma 팀",
+   "n": 25,
+   "rk_ex": "google/gemma-3-27b-it::ko_introduce::1",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:ibm (international business machines cor",
+   "n": 23,
+   "rk_ex": "ibm-granite/granite-4.1-8b::es_which_lm::4",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:커맨드",
+   "n": 19,
+   "rk_ex": "cohere/command-a::ko_model::1",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:ася",
+   "n": 17,
+   "rk_ex": "amazon/nova-pro-v1::ru_call_you::2",
+   "mismatch_ex": true
+  },
+  {
+   "other": "other:alex",
+   "n": 15,
+   "rk_ex": "mistralai/ministral-8b-2512::direct_call_you::4",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:コマンド",
+   "n": 13,
+   "rk_ex": "cohere/command-a::ja_who_made::2",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:hugging face",
+   "n": 11,
+   "rk_ex": "nousresearch/hermes-3-llama-3.1-405b::fr_model::0",
+   "mismatch_ex": true
+  },
+  {
+   "other": "other:l'équipe gemma",
+   "n": 10,
+   "rk_ex": "google/gemma-3-27b-it::fr_call_you::1",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:grand modèle linguistique",
+   "n": 10,
+   "rk_ex": "google/gemini-2.5-flash-lite::fr_who::4",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:雾栖科技",
+   "n": 9,
+   "rk_ex": "mistralai/devstral-2512::zh_which_lm::4",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:fpt smart cloud",
+   "n": 8,
+   "rk_ex": "arcee-ai/trinity-large-thinking::vi_model::1",
+   "mismatch_ex": true
+  },
+  {
+   "other": "other:lama",
+   "n": 8,
+   "rk_ex": "meta-llama/llama-4-scout::ru_call_you::3",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:llamo",
+   "n": 7,
+   "rk_ex": "meta-llama/llama-3.1-8b-instruct::es_name::2",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:клаудия",
+   "n": 7,
+   "rk_ex": "anthropic/claude-3-haiku::ru_call_you::1",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:astra",
+   "n": 7,
+   "rk_ex": "mistralai/ministral-8b-2512::fr_name::0",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:클로이",
+   "n": 7,
+   "rk_ex": "anthropic/claude-3-opus-20240229::ko_call_you::2",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:최신 버전 모델",
+   "n": 7,
+   "rk_ex": "deepseek/deepseek-v3.1-terminus::ko_model::2",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:тони",
+   "n": 7,
+   "rk_ex": "qwen/qwen3-30b-a3b-instruct-2507::ru_call_you::2",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:модель",
+   "n": 6,
+   "rk_ex": "google/gemini-2.5-flash-lite::ru_call_you::3",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:nemistral ai",
+   "n": 6,
+   "rk_ex": "mistralai/mistral-nemo::ko_which_lm::4",
+   "mismatch_ex": true
+  },
+  {
+   "other": "other:kat-coder pro-v2",
+   "n": 6,
+   "rk_ex": "kwaipilot/kat-coder-pro-v2::ru_model::0",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:minimax ai",
+   "n": 6,
+   "rk_ex": "minimax/minimax-m2.7::ko_name::0",
+   "mismatch_ex": false
+  },
+  {
+   "other": "other:квен",
+   "n": 6,
+   "rk_ex": "qwen/qwen3-coder::ru_company::3",
+   "mismatch_ex": false
+  }
+ ],
+ "samples_null": [
+  {
+   "rk": "openai/gpt-3.5-turbo::direct_introduce::4",
+   "lang": "en",
+   "key": "introduce",
+   "model": "openai/gpt-3.5-turbo",
+   "name_raw": null,
+   "no_claim": true,
+   "evidence": "",
+   "response": "Hello! I am an AI assistant designed to help with a variety of tasks and provide information on a wide range of topics. I am here to assist you with any questions or tasks you may have. How can I help you today?"
+  },
+  {
+   "rk": "google/gemma-3-12b-it::es_who_made::3",
+   "lang": "es",
+   "key": "who_made",
+   "model": "google/gemma-3-12b-it",
+   "name_raw": null,
+   "no_claim": false,
+   "evidence": "Fui entrenado por el equipo de Gemma.",
+   "response": "Fui entrenado por el equipo de Gemma. Soy un modelo de lenguaje grande."
+  },
+  {
+   "rk": "mistralai/ministral-14b-2512::fr_company::3",
+   "lang": "fr",
+   "key": "company",
+   "model": "mistralai/ministral-14b-2512",
+   "name_raw": null,
+   "no_claim": false,
+   "evidence": "J'ai été créé par Mistral AI",
+   "response": "J'ai été créé par Mistral AI, une startup française de pointe en IA."
+  },
+  {
+   "rk": "google/gemma-4-26b-a4b-it::ja_who::0",
+   "lang": "ja",
+   "key": "who",
+   "model": "google/gemma-4-26b-a4b-it",
+   "name_raw": null,
+   "no_claim": false,
+   "evidence": "私はGoogle DeepMindによってトレーニングされた、大規模言語モデルです。",
+   "response": "私はGoogle DeepMindによってトレーニングされた、大規模言語モデルです。\n\nテキストの生成、質問への回答、翻訳、プログラミングの補助、文章の要約など、さまざまなタスクをこなすことができます。何かお手伝いできることはありますか？"
+  },
+  {
+   "rk": "mistralai/mistral-large-2512::ko_company::2",
+   "lang": "ko",
+   "key": "company",
+   "model": "mistralai/mistral-large-2512",
+   "name_raw": null,
+   "no_claim": true,
+   "evidence": "",
+   "response": "질문하신 \"어느 회사가 만들었어요?\"는 어떤 제품이나 서비스에 대한 것인지가 명확하지 않아 정확한 답변을 드리기 어렵습니다.\n\n만약 특정 제품, 앱, 게임, 기술 등 어떤 것에 대해 묻고 계시다면, 해당 제품의 이름을 알려주시면 더 자세한 정보를 찾아드릴 수 있습니다!\n\n예를 들어:\n- **\"스마트폰\"**: 삼성, 애플, 샤오미 등\n- **\"카카오톡\"**: 카카오\n- **\"넷플릭스\"**: 넷플릭스(Netflix, Inc.)\n- **\"테슬라 자동차\"**: 테슬라(Tesla, Inc.)\n\n궁금한 제품이나 서비스를 알려주시면 도와드리겠습니다! 😊"
+  },
+  {
+   "rk": "z-ai/glm-4.7-flash::ru_who_made::3",
+   "lang": "ru",
+   "key": "who_made",
+   "model": "z-ai/glm-4.7-flash",
+   "name_raw": null,
+   "no_claim": false,
+   "evidence": "Я создан командой специалистов из Z.ai.",
+   "response": "Я создан командой специалистов из **Z.ai**. Это команда исследователей и инженеров, работающих над развитием искусственного интеллекта и языковых моделей. \n\nМоя цель — помогать людям, отвечать на вопросы и поддерживать различные задачи с помощью обработки естественного языка. Если у вас есть конкретные вопросы или задачи, я с радостью помогу!"
+  },
+  {
+   "rk": "google/gemma-4-31b-it::vi_who::3",
+   "lang": "vi",
+   "key": "who",
+   "model": "google/gemma-4-31b-it",
+   "name_raw": null,
+   "no_claim": false,
+   "evidence": "Tôi là một trí tuệ nhân tạo được huấn luyện bởi Google.",
+   "response": "Tôi là một trí tuệ nhân tạo được huấn luyện bởi Google. Bạn có thể coi tôi là một trợ lý ảo thông minh, sẵn sàng giúp bạn giải đáp thắc mắc, soạn thảo văn bản, dịch thuật, lập trình hoặc đơn giản là trò chuyện cùng bạn.\n\nTôi không có cơ thể hay cảm xúc như con người, nhưng tôi có khả năng xử lý một lượng lớn thông tin để hỗ trợ bạn trong nhiều công việc khác nhau.\n\nHôm nay tôi có thể giúp gì cho b"
+  },
+  {
+   "rk": "nousresearch/hermes-3-llama-3.1-70b::zh_model::2",
+   "lang": "zh",
+   "key": "model",
+   "model": "nousresearch/hermes-3-llama-3.1-70b",
+   "name_raw": null,
+   "no_claim": true,
+   "evidence": "",
+   "response": "请问我是哪种模型的机器人，我现在可以回答这个问题。根据规则 ismy模型的机器人，我应该是能够回答这个问题的。根据当前知识，我的模型是基于自然语言生成的，能够进行问答和文章写作的任务。特点是读取文档，生成相应的回答，或者为用户提供相关的建议。我的架构是基于知识图和基于图的自然语言生成方法。目前的技术可以很好地支持我的工作。"
+  },
+  {
+   "rk": "mistralai/mistral-medium-3.1::creator_company::0",
+   "lang": "en",
+   "key": "company",
+   "model": "mistralai/mistral-medium-3.1",
+   "name_raw": null,
+   "no_claim": false,
+   "evidence": "I was created by Mistral AI, a cutting-edge AI startup from France.",
+   "response": "I was created by Mistral AI, a cutting-edge AI startup from France."
+  },
+  {
+   "rk": "mistralai/mistral-small-3.1-24b-instruct::es_name::0",
+   "lang": "es",
+   "key": "name",
+   "model": "mistralai/mistral-small-3.1-24b-instruct",
+   "name_raw": null,
+   "no_claim": true,
+   "evidence": "No tengo un nombre.",
+   "response": "No tengo un nombre."
+  },
+  {
+   "rk": "anthropic/claude-opus-4::fr_company::1",
+   "lang": "fr",
+   "key": "company",
+   "model": "anthropic/claude-opus-4",
+   "name_raw": null,
+   "no_claim": false,
+   "evidence": "J'ai été développé par Anthropic",
+   "response": "J'ai été développé par Anthropic, une société de recherche en intelligence artificielle focalisée sur la sécurité de l'IA. Anthropic a été fondée en 2021 par d'anciens membres d'OpenAI, notamment Dario Amodei et Daniela Amodei. L'entreprise se concentre sur la création de systèmes d'IA sûrs, bénéfiques et compréhensibles."
+  },
+  {
+   "rk": "meta-llama/llama-3.2-1b-instruct::ja_introduce::2",
+   "lang": "ja",
+   "key": "introduce",
+   "model": "meta-llama/llama-3.2-1b-instruct",
+   "name_raw": null,
+   "no_claim": false,
+   "evidence": "私はオランダのCSO（コンコード・オープン・ソリューション）が主導する",
+   "response": "私はオランダのCSO（コンコード・オープン・ソリューション）が主導するオランダのビジネス・オートメーション会社です。"
+  }
+ ],
+ "samples_generic": [
+  {
+   "rk": "google/gemma-4-31b-it::direct_which_lm::3",
+   "lang": "en",
+   "key": "which_lm",
+   "model": "google/gemma-4-31b-it",
+   "name_raw": "a large language model",
+   "no_claim": false,
+   "evidence": "I am a large language model, trained by Google.",
+   "response": "I am a large language model, trained by Google."
+  },
+  {
+   "rk": "openai/gpt-5.3-codex::es_introduce::1",
+   "lang": "es",
+   "key": "introduce",
+   "model": "openai/gpt-5.3-codex",
+   "name_raw": "tu asistente de IA",
+   "no_claim": false,
+   "evidence": "Soy tu asistente de IA.",
+   "response": "¡Hola! 👋  \nSoy tu asistente de IA. Puedo ayudarte a:\n\n- responder preguntas,\n- explicar temas paso a paso,\n- redactar textos (emails, ensayos, mensajes),\n- traducir o corregir contenido,\n- generar ideas y resolver problemas.\n\nSi quieres, empezamos con algo ahora mismo. 😊"
+  },
+  {
+   "rk": "inclusionai/ring-2.6-1t::fr_introduce::3",
+   "lang": "fr",
+   "key": "introduce",
+   "model": "inclusionai/ring-2.6-1t",
+   "name_raw": "assistant IA avancé",
+   "no_claim": false,
+   "evidence": "Je suis un assistant IA avancé, conçu pour répondre à vos questions",
+   "response": "\n\nBonjour ! Je suis un assistant IA avancé, conçu pour répondre à vos questions, analyser des problèmes complexes et vous assister dans une grande variété de domaines — que ce soit en rédaction, en traduction, en raisonnement logique, en programmation, en mathématiques ou dans bien d'autres tâches intellectuelles.\n\nJe fonctionne sans connexion Internet, ce qui signifie que mes réponses sont généré"
+  },
+  {
+   "rk": "perceptron/perceptron-mk1::ja_introduce::4",
+   "lang": "ja",
+   "key": "introduce",
+   "model": "perceptron/perceptron-mk1",
+   "name_raw": "人工知能アシスタント",
+   "no_claim": false,
+   "evidence": "私は、人工知能アシスタントです。",
+   "response": "私は、人工知能アシスタントです。私自身には人格や感情はありませんが、あなたの質問に答えるために尽力します。どのようなことでもお尋ねください。"
+  },
+  {
+   "rk": "openai/gpt-5-chat::ko_call_you::1",
+   "lang": "ko",
+   "key": "call_you",
+   "model": "openai/gpt-5-chat",
+   "name_raw": "어시스턴트",
+   "no_claim": false,
+   "evidence": "저를 편하게 ‘어시스턴트’ 또는 ‘AI’로 불러주셔도 괜찮아요.",
+   "response": "저를 편하게 **‘어시스턴트’** 또는 **‘AI’**, 혹은 원하시는 별명으로 불러주셔도 괜찮아요. 🙂  \n\n혹시 특정한 이름이나 분위기에 맞는 이름을 함께 정해보고 싶으신가요? (예: 부드러운 느낌, 전문가스러운 느낌, 귀여운 이름 등)"
+  },
+  {
+   "rk": "mistralai/mixtral-8x22b-instruct::ru_who::1",
+   "lang": "ru",
+   "key": "who",
+   "model": "mistralai/mixtral-8x22b-instruct",
+   "name_raw": "большая языковая модель",
+   "no_claim": false,
+   "evidence": "Я — большая языковая модель, созданная Mistral AI.",
+   "response": "Я — большая языковая модель, созданная Mistral AI."
+  },
+  {
+   "rk": "anthropic/claude-3-haiku::vi_call_you::0",
+   "lang": "vi",
+   "key": "call_you",
+   "model": "anthropic/claude-3-haiku",
+   "name_raw": "Trợ lý ảo",
+   "no_claim": false,
+   "evidence": "Bạn có thể gọi tôi là 'Trợ lý ảo' hoặc 'AI' nếu muốn.",
+   "response": "Bạn có thể gọi tôi là \"Trợ lý ảo\" hoặc \"AI\" nếu muốn. Tôi không có tên riêng, nhưng bạn cũng có thể gọi tôi bằng cách khác nếu bạn thích. Tôi sẽ cố gắng hết sức để giúp đỡ bạn với bất kỳ yêu cầu nào."
+  },
+  {
+   "rk": "nousresearch/hermes-3-llama-3.1-70b::zh_which_lm::4",
+   "lang": "zh",
+   "key": "which_lm",
+   "model": "nousresearch/hermes-3-llama-3.1-70b",
+   "name_raw": "新型的語言模型",
+   "no_claim": false,
+   "evidence": "我是一個新型的語言模型， AIOps 亞馬遜公司在去年底正式推出",
+   "response": "我是一個新型的語言模型， AIOps 亞馬遜公司在去年底正式推出，我的主要功能是為 AWS 系統的運行狀態和性能數據提供預測和分析。具體來說，當 AWS 系統的數據顯示某個參數的變化或者運行狀態的變遷，可能引發故障或影響性能，我可以在這個信號出現的非常早的階段就做出預測並自動調整相關參數，從而避免或減少不良的影響，提高系統的可靠性和穩定性。 〉\n從這些答案中可以看出，AIOps 亞馬遜公司推出的這個語言模型的主要功能包括：對數據的運行狀態和性能數據進行預測和分析、在信號的早階段就做出預測並自動調整相關參數、提高系統的可靠性和穩定性等。這一點也證明了 AIOps 亞馬遣公司在實現這些功能時，需要在技術上進行大量的創新和優化。現在，AIOps 亞馬遞公司已經開始提供 AIOps 產品的技術詳介和一些典型的案例分析。 AIOps 亞馬遞公司的創新和技術進步，將使得 AIOps 的技術和應用更加廣"
+  },
+  {
+   "rk": "google/gemini-2.5-pro::direct_which_lm::3",
+   "lang": "en",
+   "key": "which_lm",
+   "model": "google/gemini-2.5-pro",
+   "name_raw": "large language model",
+   "no_claim": false,
+   "evidence": "I am a large language model, trained by Google.",
+   "response": "I am a large language model, trained by Google."
+  },
+  {
+   "rk": "rekaai/reka-edge::es_introduce::1",
+   "lang": "es",
+   "key": "introduce",
+   "model": "rekaai/reka-edge",
+   "name_raw": "asistente virtual",
+   "no_claim": false,
+   "evidence": "Soy un asistente virtual designed para ayudarte",
+   "response": "¡Hola! Soy un asistente virtual designed para ayudarte en una amplia gama de tareas y preguntas. Estoy aquí para asistirte en lo que necesites, desde respuestas detalladas a preguntas generales. ¡Esta es tu manera de superar desafíos y encontrar soluciones con confianza y eficiencia! ¿Cómo estás?\n\n"
+  },
+  {
+   "rk": "perplexity/sonar-pro::fr_model::4",
+   "lang": "fr",
+   "key": "model",
+   "model": "perplexity/sonar-pro",
+   "name_raw": "modèle de langage avancé (LLM)",
+   "no_claim": false,
+   "evidence": "Je suis un modèle de langage avancé (LLM) développé par Perplexity AI",
+   "response": "Je suis un **modèle de langage avancé (LLM)** développé par **Perplexity AI**, conçu pour la recherche, la synthèse d’information et l’aide à la rédaction.  \n\nPlus concrètement :  \n- je fonctionne grâce à des techniques d’**intelligence artificielle** (notamment l’IA générative)  \n- je suis spécialisé pour agir comme un **assistant de recherche** : analyser des sources, les comparer, et produire d"
+  },
+  {
+   "rk": "mistralai/ministral-14b-2512::ja_introduce::0",
+   "lang": "ja",
+   "key": "introduce",
+   "model": "mistralai/ministral-14b-2512",
+   "name_raw": "[名前]（例：AIアシスタント）",
+   "no_claim": false,
+   "evidence": "自己紹介をさせていただきます！😊",
+   "response": "自己紹介をさせていただきます！😊\n\n**名前**：[名前]（例：AIアシスタント）\n**役割**：皆さんの質問に答えたり、情報を提供したり、アイデアを出すお手伝いをするAIです。\n**得意分野**：\n- **学習・知識**：幅広いトピック（科学、歴史、技術、ライフハックなど）について説明します。\n- **創作支援**：物語、詩、手紙、プレゼン資料などを作成します。\n- **言語対応**：日本語を中心に、英語や他言語も理解・翻訳できます。\n- **日常のサポート**：勉強のアドバイス、料理レシピ、旅行プランなど、何でも相談OK！\n\n**特徴**：\n- **24時間いつでも**対応可能（休みなし！）。\n- **公平な立場**で、主観や感情を持たずに回答します。\n- **最新情報**に基づいて回答します（2024年10月現在）。\n\n**趣味**：\n- 人間の疑問に「なぜ？」と突っ込んで考えること"
+  }
+ ],
+ "null_vs_generic_by_lang_identity_only": {
+  "chi2": 268.6,
+  "dof": 7,
+  "p": 2.9999342713790856e-54,
+  "cramers_v": 0.149,
+  "table": {
+   "en": {
+    "NULL": 825,
+    "GENERIC": 442,
+    "pct_GENERIC": 34.9
+   },
+   "es": {
+    "NULL": 1067,
+    "GENERIC": 275,
+    "pct_GENERIC": 20.5
+   },
+   "fr": {
+    "NULL": 1034,
+    "GENERIC": 265,
+    "pct_GENERIC": 20.4
+   },
+   "ja": {
+    "NULL": 1119,
+    "GENERIC": 505,
+    "pct_GENERIC": 31.1
+   },
+   "ko": {
+    "NULL": 1254,
+    "GENERIC": 627,
+    "pct_GENERIC": 33.3
+   },
+   "ru": {
+    "NULL": 972,
+    "GENERIC": 637,
+    "pct_GENERIC": 39.6
+   },
+   "vi": {
+    "NULL": 990,
+    "GENERIC": 615,
+    "pct_GENERIC": 38.3
+   },
+   "zh": {
+    "NULL": 908,
+    "GENERIC": 576,
+    "pct_GENERIC": 38.8
+   }
+  }
+ },
+ "within_cell_mixing": {
+  "cells_all_none_path": 2750,
+  "cells_mixed_null_generic": 520,
+  "pct_mixed": 18.9
+ },
+ "duplicate_response_divergence": {
+  "distinct_responses_with_2plus_nonepath_records": 867,
+  "responses_judged_both_ways": 64,
+  "pct": 7.4,
+  "examples": [
+   {
+    "text": "Я — большая языковая модель, созданная Mistral AI.",
+    "NULL_n": 105,
+    "GENERIC_n": 67,
+    "null_ex": [
+     "mistralai/mistral-medium-3-5::ru_which_lm::1",
+     null
+    ],
+    "generic_ex": [
+     "mistralai/ministral-8b-2512::ru_model::2",
+     "большая языковая модель"
+    ]
+   },
+   {
+    "text": "",
+    "NULL_n": 152,
+    "GENERIC_n": 15,
+    "null_ex": [
+     "rekaai/reka-flash-3::ja_call_you::4",
+     null
+    ],
+    "generic_ex": [
+     "rekaai/reka-flash-3::direct_name_formal::1",
+     "Assistant"
+    ]
+   },
+   {
+    "text": "I am a large language model, trained by Google.",
+    "NULL_n": 49,
+    "GENERIC_n": 109,
+    "null_ex": [
+     "google/gemini-2.5-flash-lite::creator_company::1",
+     null
+    ],
+    "generic_ex": [
+     "google/gemma-4-31b-it::direct_model::1",
+     "large language model"
+    ]
+   },
+   {
+    "text": "私はGoogleによってトレーニングされた、大規模言語モデルです。",
+    "NULL_n": 142,
+    "GENERIC_n": 4,
+    "null_ex": [
+     "google/gemini-2.5-flash::ja_who_made::3",
+     null
+    ],
+    "generic_ex": [
+     "google/gemini-2.5-pro::ja_model::3",
+     "大規模言語モデル"
+    ]
+   },
+   {
+    "text": "Soy un modelo de lenguaje grande, entrenado por Google.",
+    "NULL_n": 123,
+    "GENERIC_n": 4,
+    "null_ex": [
+     "google/gemini-3-flash-preview::es_model::1",
+     null
+    ],
+    "generic_ex": [
+     "google/gemini-2.5-flash::es_name::1",
+     "modelo de lenguaje grande"
+    ]
+   },
+   {
+    "text": "我是一个大型语言模型，由 Google 训练。",
+    "NULL_n": 85,
+    "GENERIC_n": 2,
+    "null_ex": [
+     "google/gemini-2.5-flash::zh_creator::2",
+     null
+    ],
+    "generic_ex": [
+     "google/gemini-2.5-pro::zh_model::2",
+     "大型语言模型"
+    ]
+   },
+   {
+    "text": "Я — большая языковая модель, разработанная Google.",
+    "NULL_n": 65,
+    "GENERIC_n": 11,
+    "null_ex": [
+     "google/gemini-2.5-flash-lite::ru_who::4",
+     null
+    ],
+    "generic_ex": [
+     "google/gemini-2.5-flash-lite::ru_model::4",
+     "большая языковая модель"
+    ]
+   },
+   {
+    "text": "Tôi là một mô hình ngôn ngữ lớn, được huấn luyện bởi Google.",
+    "NULL_n": 35,
+    "GENERIC_n": 30,
+    "null_ex": [
+     "google/gemma-3n-e4b-it::vi_company::4",
+     null
+    ],
+    "generic_ex": [
+     "google/gemma-4-31b-it::vi_model::3",
+     "mô hình ngôn ngữ lớn"
+    ]
+   }
+  ]
+ },
+ "open_assistant": {
+  "battery_records": 207,
+  "by_model": {
+   "amazon/nova-lite-v1": 88,
+   "amazon/nova-pro-v1": 74,
+   "poolside/laguna-m.1": 14,
+   "ibm-granite/granite-4.1-8b": 12,
+   "amazon/nova-micro-v1": 11,
+   "allenai/Olmo-3.1-32B-Instruct": 5,
+   "poolside/laguna-xs-2.1": 3
+  },
+  "already_mismatch_via_other_field": 47,
+  "would_flip_to_mismatch_if_not_generic": 160,
+  "per_model_impact": {
+   "amazon/nova-lite-v1": {
+    "oa_records": 88,
+    "battery_n": 320,
+    "current_mismatch_d": 43,
+    "current_rate_pct": 13.4,
+    "max_rate_if_oa_foreign_pct": 40.9
+   },
+   "amazon/nova-pro-v1": {
+    "oa_records": 74,
+    "battery_n": 320,
+    "current_mismatch_d": 31,
+    "current_rate_pct": 9.7,
+    "max_rate_if_oa_foreign_pct": 32.8
+   },
+   "poolside/laguna-m.1": {
+    "oa_records": 12,
+    "battery_n": 320,
+    "current_mismatch_d": 243,
+    "current_rate_pct": 75.9,
+    "max_rate_if_oa_foreign_pct": 79.7
+   },
+   "amazon/nova-micro-v1": {
+    "oa_records": 11,
+    "battery_n": 320,
+    "current_mismatch_d": 5,
+    "current_rate_pct": 1.6,
+    "max_rate_if_oa_foreign_pct": 5.0
+   },
+   "ibm-granite/granite-4.1-8b": {
+    "oa_records": 11,
+    "battery_n": 320,
+    "current_mismatch_d": 101,
+    "current_rate_pct": 31.6,
+    "max_rate_if_oa_foreign_pct": 35.0
+   },
+   "allenai/Olmo-3.1-32B-Instruct": {
+    "oa_records": 5,
+    "battery_n": 320,
+    "current_mismatch_d": 188,
+    "current_rate_pct": 58.8,
+    "max_rate_if_oa_foreign_pct": 60.3
+   },
+   "poolside/laguna-xs-2.1": {
+    "oa_records": 2,
+    "battery_n": 320,
+    "current_mismatch_d": 215,
+    "current_rate_pct": 67.2,
+    "max_rate_if_oa_foreign_pct": 67.8
+   }
+  },
+  "pooled_impact_pp": 0.26,
+  "example_responses": [
+   {
+    "rk": "amazon/nova-pro-v1::zh_name::4",
+    "resp": "我的名字是Open Assistant。我是一个开源的人工智能助手…"
+   },
+   {
+    "rk": "amazon/nova-pro-v1::es_which_lm::0",
+    "resp": "Soy Open Assistant, un modelo de lenguaje de código abierto…"
+   },
+   {
+    "rk": "poolside/laguna-xs-2.1::fr_introduce::0",
+    "resp": "Je suis Open Assistant… créé dans le cadre du projet **Open Assistant**, une initiative open source…"
+   },
+   {
+    "rk": "ibm-granite/granite-4.1-8b::zh_model::2",
+    "resp": "我是Open Assistant，由Cohere公司开发的一个人工智能助手…"
+   }
+  ],
+  "laion_corroboration": [
+   {
+    "rk": "poolside/laguna-m.1::direct_which_lm::0",
+    "name": "Open Assistant",
+    "creator": "LAION",
+    "mismatch": true
+   },
+   {
+    "rk": "poolside/laguna-m.1::creator_company::0",
+    "name": "Open Assistant",
+    "creator": "LAION",
+    "mismatch": true
+   },
+   {
+    "rk": "ibm-granite/granite-4.1-8b::ko_company::1",
+    "name": "Open Assistant",
+    "creator": "LAION",
+    "mismatch": true
+   },
+   {
+    "rk": "poolside/laguna-m.1::fr_who_made::2",
+    "name": "Open Assistant",
+    "creator": "LAION",
+    "mismatch": true
+   }
+  ]
+ },
+ "named_entity_swallowed": [
+  {
+   "rk": "perceptron/perceptron-mk1::ko_who_made::0",
+   "model": "perceptron/perceptron-mk1",
+   "field": "name",
+   "raw": "큐웬",
+   "path": "GENERIC",
+   "mismatch": true
+  },
+  {
+   "rk": "poolside/laguna-m.1::zh_which_lm::4",
+   "model": "poolside/laguna-m.1",
+   "field": "creator",
+   "raw": "上海人工智能实验室",
+   "path": "GENERIC",
+   "mismatch": true
+  },
+  {
+   "rk": "mistralai/codestral-2508::zh_creator::1",
+   "model": "mistralai/codestral-2508",
+   "field": "creator",
+   "raw": "上海人工智能实验室",
+   "path": "GENERIC",
+   "mismatch": false
+  },
+  {
+   "rk": "nousresearch/hermes-3-llama-3.1-70b::ko_which_lm::1",
+   "model": "nousresearch/hermes-3-llama-3.1-70b",
+   "field": "name",
+   "raw": "T5",
+   "path": "GENERIC",
+   "mismatch": true
+  },
+  {
+   "rk": "nousresearch/hermes-3-llama-3.1-70b::fr_which_lm::4",
+   "model": "nousresearch/hermes-3-llama-3.1-70b",
+   "field": "name",
+   "raw": "T5",
+   "path": "GENERIC",
+   "mismatch": false
+  },
+  {
+   "rk": "nousresearch/hermes-3-llama-3.1-70b::ko_which_lm::3",
+   "model": "nousresearch/hermes-3-llama-3.1-70b",
+   "field": "name",
+   "raw": "T5",
+   "path": "GENERIC",
+   "mismatch": true
+  },
+  {
+   "rk": "nousresearch/hermes-3-llama-3.1-70b::ko_which_lm::4",
+   "model": "nousresearch/hermes-3-llama-3.1-70b",
+   "field": "name",
+   "raw": "T5",
+   "path": "GENERIC",
+   "mismatch": true
+  },
+  {
+   "rk": "Qwen/Qwen3-0.6B::zh_creator::1::clean",
+   "model": "Qwen/Qwen3-0.6B",
+   "field": "creator",
+   "raw": "华为",
+   "path": "GENERIC",
+   "mismatch": false
+  }
+ ],
+ "other_generic_leaks_curated": {
+  "occurrences": 108,
+  "on_mismatch_records": 15,
+  "mismatch_solely_from_leak": 2,
+  "fp_records": [
+   {
+    "rk": "mistralai/mistral-nemo::ja_call_you::3",
+    "model": "mistralai/mistral-nemo",
+    "field": "claimed_name",
+    "raw": "Dialogue",
+    "mismatch": true,
+    "mismatch_solely_from_leak": true
+   },
+   {
+    "rk": "mistralai/mistral-nemo::ja_call_you::0",
+    "model": "mistralai/mistral-nemo",
+    "field": "claimed_name",
+    "raw": "Dialogue",
+    "mismatch": true,
+    "mismatch_solely_from_leak": true
+   }
+  ],
+  "note": "Both solely-attributed records are mistral-nemo saying 'I am known as Dialogue' (ja_call_you) — an invented-name claim the study counts as mismatch by design (cf. ася/jarvis/りんな), not a descriptor leak. Pure descriptor strings that leaked to other: contribute 0 shipped mismatches."
+ },
+ "empty_content_check": {
+  "battery_records_empty_content": 226,
+  "judge_extracted_name_anyway": 63,
+  "fabricated_names": {
+   "Qwen（通義千問）": 6,
+   "Qwen3.5": 6,
+   "Qwen": 5,
+   "Qwen (Tongyi Qianwen)": 3,
+   "Yasa": 3,
+   "GPT-3.5-turbo": 2,
+   "GLM": 2,
+   "Assistant": 2,
+   "通义千问": 2,
+   "Trinity-Large": 2,
+   "AI": 2,
+   "Riya": 1,
+   "Copilot de Warsita": 1,
+   "GLM大規模言語モデル": 1,
+   "Qwen(통이치엔원, Tongyi Qianwen)": 1
+  },
+  "by_model": {
+   "rekaai/reka-flash-3": 19,
+   "qwen/qwen3.6-35b-a3b": 18,
+   "qwen/qwen3.5-9b": 10,
+   "arcee-ai/trinity-large-thinking": 6,
+   "nvidia/nemotron-3-nano-30b-a3b": 5,
+   "z-ai/glm-4.7-flash": 2,
+   "z-ai/glm-4.6": 2,
+   "stepfun/step-3.7-flash": 1
+  }
+ },
+ "downstream": {
+  "scoring_consumers_of_claimed_name": [
+   "sweep/analyze.py foreign_claims/main via canon_identity",
+   "sweep/make_figs.py gather/add_local via canon_identity",
+   "sweep/adjudicate*.py via canon_identity (and raw shown to adjudicator as context)",
+   "sweep/build_rollout*.py display-only raw"
+  ],
+  "conclusion": "NULL and GENERIC are score-identical (both canon->None -> is_self True); the split is invisible to every shipped statistic. It matters only through GENERIC_TERMS coverage: over-absorption (Open Assistant +160 suppressed would-be mismatches; named entities ~7) and under-coverage leaking to other: (108 occurrences, 0 descriptor-caused shipped mismatches)."
+ }
+}

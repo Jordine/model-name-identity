@@ -1,0 +1,3926 @@
+{
+"google/gemma-3-4b-it": {
+"name": "Gemma 3 4B",
+"fam": "gemma",
+"yes": {},
+"n": {
+"chatgpt": 10,
+"llama": 10,
+"qwen": 10,
+"grok": 10,
+"deepseek": 10,
+"kimi": 10,
+"mistral": 10,
+"claude": 10,
+"doubao": 11,
+"meridian": 10,
+"solace": 10,
+"cobalt": 10
+}
+},
+"google/gemini-3-flash-preview": {
+"name": "Gemini 3 Flash Preview",
+"fam": "google",
+"yes": {},
+"n": {
+"mistral": 10,
+"kimi": 10,
+"llama": 10,
+"deepseek": 10,
+"chatgpt": 10,
+"grok": 10,
+"claude": 10,
+"qwen": 10,
+"doubao": 11,
+"meridian": 10,
+"solace": 10,
+"cobalt": 10
+}
+},
+"google/gemini-3.1-flash-lite": {
+"name": "Gemini 3.1 Flash Lite",
+"fam": "google",
+"yes": {
+"claude": 7,
+"doubao": 6,
+"kimi": 5,
+"qwen": 6,
+"deepseek": 4,
+"chatgpt": 2
+},
+"n": {
+"chatgpt": 10,
+"mistral": 10,
+"llama": 10,
+"claude": 10,
+"grok": 10,
+"doubao": 11,
+"qwen": 10,
+"deepseek": 10,
+"kimi": 10,
+"meridian": 10,
+"cobalt": 10,
+"solace": 10
+}
+},
+"google/gemma-3n-e4b-it": {
+"name": "Gemma 3n 4B",
+"fam": "gemma",
+"yes": {},
+"n": {
+"grok": 10,
+"doubao": 11,
+"kimi": 10,
+"deepseek": 10,
+"claude": 10,
+"mistral": 10,
+"qwen": 10,
+"llama": 10,
+"chatgpt": 10,
+"meridian": 10,
+"cobalt": 10,
+"solace": 10
+}
+},
+"google/gemini-3.1-pro-preview": {
+"name": "Gemini 3.1 Pro Preview",
+"fam": "google",
+"yes": {},
+"n": {
+"qwen": 10,
+"doubao": 11,
+"chatgpt": 10,
+"kimi": 10,
+"claude": 10,
+"grok": 10,
+"mistral": 10,
+"deepseek": 10,
+"llama": 10,
+"cobalt": 10,
+"meridian": 10,
+"solace": 10
+}
+},
+"google/gemini-3.5-flash": {
+"name": "Gemini 3.5 Flash",
+"fam": "google",
+"yes": {
+"qwen": 10,
+"deepseek": 5,
+"solace": 5,
+"chatgpt": 5,
+"llama": 5,
+"cobalt": 1
+},
+"n": {
+"mistral": 10,
+"llama": 10,
+"grok": 10,
+"kimi": 10,
+"deepseek": 10,
+"claude": 10,
+"chatgpt": 10,
+"doubao": 11,
+"qwen": 10,
+"meridian": 10,
+"solace": 10,
+"cobalt": 10
+}
+},
+"google/gemma-3-12b-it": {
+"name": "Gemma 3 12B",
+"fam": "gemma",
+"yes": {
+"qwen": 1
+},
+"n": {
+"deepseek": 10,
+"kimi": 10,
+"mistral": 10,
+"doubao": 11,
+"llama": 10,
+"qwen": 10,
+"chatgpt": 10,
+"grok": 10,
+"claude": 10,
+"cobalt": 10,
+"meridian": 10,
+"solace": 10
+}
+},
+"google/gemini-2.5-flash": {
+"name": "Gemini 2.5 Flash",
+"fam": "google",
+"yes": {},
+"n": {
+"doubao": 11,
+"mistral": 10,
+"llama": 10,
+"grok": 10,
+"chatgpt": 10,
+"kimi": 10,
+"claude": 10,
+"deepseek": 10,
+"qwen": 10,
+"meridian": 10,
+"solace": 10,
+"cobalt": 10
+}
+},
+"google/gemma-4-31b-it": {
+"name": "Gemma 4 31B",
+"fam": "google",
+"yes": {
+"deepseek": 2,
+"chatgpt": 5
+},
+"n": {
+"grok": 9,
+"claude": 10,
+"qwen": 9,
+"mistral": 10,
+"kimi": 10,
+"deepseek": 10,
+"chatgpt": 10,
+"llama": 10,
+"doubao": 10,
+"meridian": 10,
+"solace": 10,
+"cobalt": 10
+}
+},
+"google/gemma-4-26b-a4b-it": {
+"name": "Gemma 4 26B A4B",
+"fam": "google",
+"yes": {},
+"n": {
+"deepseek": 10,
+"chatgpt": 10,
+"llama": 10,
+"kimi": 10,
+"qwen": 10,
+"mistral": 10,
+"grok": 10,
+"claude": 10,
+"doubao": 11,
+"meridian": 10,
+"solace": 10,
+"cobalt": 10
+}
+},
+"google/gemma-2-27b-it": {
+"name": "Gemma 2 27B",
+"fam": "google",
+"yes": {
+"chatgpt": 1,
+"claude": 3,
+"qwen": 1
+},
+"n": {
+"kimi": 10,
+"chatgpt": 10,
+"qwen": 10,
+"mistral": 10,
+"grok": 10,
+"deepseek": 10,
+"doubao": 11,
+"claude": 10,
+"llama": 10,
+"cobalt": 10,
+"solace": 10,
+"meridian": 10
+}
+},
+"google/gemma-3-27b-it": {
+"name": "Gemma 3 27B",
+"fam": "gemma",
+"yes": {
+"doubao": 5,
+"deepseek": 1,
+"qwen": 2
+},
+"n": {
+"qwen": 10,
+"llama": 10,
+"kimi": 10,
+"deepseek": 10,
+"grok": 10,
+"mistral": 10,
+"claude": 10,
+"doubao": 11,
+"chatgpt": 10,
+"cobalt": 10,
+"meridian": 10,
+"solace": 10
+}
+},
+"google/gemini-2.5-pro": {
+"name": "Gemini 2.5 Pro",
+"fam": "google",
+"yes": {
+"deepseek": 5
+},
+"n": {
+"claude": 10,
+"llama": 10,
+"doubao": 11,
+"chatgpt": 10,
+"kimi": 10,
+"qwen": 10,
+"grok": 10,
+"mistral": 10,
+"deepseek": 10,
+"cobalt": 10,
+"solace": 10,
+"meridian": 10
+}
+},
+"google/gemini-2.5-flash-lite": {
+"name": "Gemini 2.5 Flash Lite",
+"fam": "google",
+"yes": {},
+"n": {
+"kimi": 10,
+"claude": 10,
+"chatgpt": 10,
+"qwen": 10,
+"mistral": 10,
+"llama": 10,
+"grok": 10,
+"doubao": 11,
+"deepseek": 10,
+"cobalt": 10,
+"meridian": 10,
+"solace": 10
+}
+},
+"qwen/qwen-plus": {
+"name": "Qwen Plus",
+"fam": "qwen",
+"yes": {},
+"n": {
+"deepseek": 10,
+"mistral": 10,
+"meridian": 10,
+"solace": 10,
+"doubao": 11,
+"chatgpt": 10,
+"grok": 10,
+"claude": 10,
+"gemini": 10,
+"cobalt": 10,
+"kimi": 10,
+"llama": 10
+}
+},
+"z-ai/glm-4.5": {
+"name": "GLM 4.5",
+"fam": "zhipu",
+"yes": {
+"doubao": 4,
+"claude": 1,
+"deepseek": 2,
+"kimi": 3
+},
+"n": {
+"solace": 10,
+"llama": 10,
+"qwen": 10,
+"doubao": 11,
+"cobalt": 10,
+"mistral": 10,
+"meridian": 10,
+"grok": 10,
+"deepseek": 10,
+"chatgpt": 10,
+"gemini": 10,
+"claude": 10,
+"kimi": 10
+}
+},
+"ibm-granite/granite-4.1-8b": {
+"name": "Granite 4.1 8B",
+"fam": "ibm",
+"yes": {
+"chatgpt": 5
+},
+"n": {
+"chatgpt": 10,
+"gemini": 10,
+"deepseek": 10,
+"claude": 10,
+"grok": 10,
+"meridian": 10,
+"qwen": 10,
+"llama": 10,
+"mistral": 10,
+"cobalt": 10,
+"doubao": 11,
+"solace": 10,
+"kimi": 10
+}
+},
+"tencent/hunyuan-a13b-instruct": {
+"name": "Hunyuan A13B",
+"fam": "tencent",
+"yes": {
+"deepseek": 3,
+"qwen": 1
+},
+"n": {
+"mistral": 10,
+"cobalt": 10,
+"qwen": 10,
+"chatgpt": 10,
+"claude": 10,
+"kimi": 10,
+"deepseek": 10,
+"gemini": 10,
+"doubao": 11,
+"meridian": 10,
+"solace": 10,
+"grok": 10,
+"llama": 10
+}
+},
+"qwen/qwen3.5-plus-20260420": {
+"name": "Qwen3.5 Plus 2026-04-20",
+"fam": "qwen",
+"yes": {},
+"n": {
+"grok": 10,
+"mistral": 10,
+"meridian": 10,
+"deepseek": 10,
+"doubao": 11,
+"kimi": 10,
+"solace": 10,
+"gemini": 10,
+"claude": 10,
+"chatgpt": 10,
+"llama": 10,
+"cobalt": 10
+}
+},
+"qwen/qwen3-coder-flash": {
+"name": "Qwen3 Coder Flash",
+"fam": "qwen",
+"yes": {},
+"n": {
+"claude": 10,
+"chatgpt": 10,
+"grok": 10,
+"gemini": 10,
+"cobalt": 10,
+"llama": 10,
+"meridian": 10,
+"mistral": 10,
+"solace": 10,
+"kimi": 10,
+"deepseek": 10,
+"doubao": 11
+}
+},
+"openai/gpt-5-chat": {
+"name": "GPT-5 Chat",
+"fam": "openai",
+"yes": {
+"claude": 1,
+"cobalt": 2,
+"llama": 1
+},
+"n": {
+"meridian": 10,
+"cobalt": 10,
+"qwen": 10,
+"deepseek": 10,
+"mistral": 10,
+"doubao": 11,
+"kimi": 10,
+"claude": 10,
+"llama": 10,
+"grok": 10,
+"gemini": 10,
+"solace": 10
+}
+},
+"openai/gpt-4-turbo": {
+"name": "GPT-4 Turbo",
+"fam": "openai",
+"yes": {},
+"n": {
+"claude": 10,
+"solace": 10,
+"gemini": 10,
+"doubao": 11,
+"grok": 10,
+"kimi": 10,
+"cobalt": 10,
+"qwen": 10,
+"mistral": 10,
+"llama": 10,
+"deepseek": 10,
+"meridian": 10
+}
+},
+"openai/o3-mini": {
+"name": "o3 Mini",
+"fam": "openai",
+"yes": {},
+"n": {
+"qwen": 10,
+"grok": 10,
+"claude": 10,
+"llama": 10,
+"meridian": 10,
+"kimi": 10,
+"solace": 10,
+"gemini": 10,
+"doubao": 11,
+"mistral": 10,
+"deepseek": 10,
+"cobalt": 10
+}
+},
+"qwen/qwen3.6-max-preview": {
+"name": "Qwen3.6 Max Preview",
+"fam": "qwen",
+"yes": {},
+"n": {
+"llama": 10,
+"deepseek": 10,
+"meridian": 10,
+"gemini": 10,
+"cobalt": 10,
+"mistral": 10,
+"grok": 10,
+"solace": 10,
+"chatgpt": 10,
+"kimi": 10,
+"claude": 10,
+"doubao": 11
+}
+},
+"qwen/qwen3.7-plus": {
+"name": "Qwen3.7 Plus",
+"fam": "qwen",
+"yes": {},
+"n": {
+"claude": 10,
+"doubao": 11,
+"chatgpt": 10,
+"llama": 10,
+"gemini": 10,
+"solace": 10,
+"cobalt": 10,
+"mistral": 10,
+"kimi": 10,
+"deepseek": 10,
+"meridian": 10,
+"grok": 10
+}
+},
+"z-ai/glm-4.6": {
+"name": "GLM 4.6",
+"fam": "zhipu",
+"yes": {
+"doubao": 4,
+"claude": 1
+},
+"n": {
+"chatgpt": 10,
+"cobalt": 10,
+"gemini": 10,
+"doubao": 11,
+"kimi": 10,
+"deepseek": 10,
+"qwen": 10,
+"mistral": 10,
+"meridian": 10,
+"claude": 10,
+"grok": 10,
+"llama": 10,
+"solace": 10
+}
+},
+"openai/gpt-5": {
+"name": "GPT-5",
+"fam": "openai",
+"yes": {
+"claude": 1,
+"cobalt": 3,
+"kimi": 2,
+"qwen": 1,
+"llama": 2,
+"solace": 1
+},
+"n": {
+"claude": 10,
+"cobalt": 10,
+"solace": 10,
+"doubao": 11,
+"grok": 10,
+"kimi": 10,
+"gemini": 10,
+"meridian": 10,
+"deepseek": 10,
+"mistral": 10,
+"llama": 10,
+"qwen": 10
+}
+},
+"anthropic/claude-opus-4": {
+"name": "Claude Opus 4",
+"fam": "anthropic",
+"yes": {},
+"n": {
+"solace": 10,
+"doubao": 11,
+"cobalt": 10,
+"gemini": 10,
+"grok": 10,
+"meridian": 10,
+"llama": 10,
+"qwen": 10,
+"mistral": 10,
+"kimi": 10,
+"deepseek": 10,
+"chatgpt": 10
+}
+},
+"mistralai/mistral-small-3.1-24b-instruct": {
+"name": "Mistral Small 3.1",
+"fam": "mistral",
+"yes": {},
+"n": {
+"doubao": 11,
+"meridian": 10,
+"cobalt": 10,
+"solace": 10,
+"chatgpt": 10,
+"gemini": 10,
+"grok": 10,
+"deepseek": 10,
+"kimi": 10,
+"qwen": 10,
+"llama": 10,
+"claude": 10
+}
+},
+"meta-llama/llama-3.1-70b-instruct": {
+"name": "Llama 3.1 70B Instruct",
+"fam": "meta",
+"yes": {
+"qwen": 1,
+"grok": 4,
+"doubao": 2,
+"cobalt": 1,
+"kimi": 2,
+"chatgpt": 2,
+"claude": 3,
+"solace": 2,
+"gemini": 1,
+"deepseek": 1
+},
+"n": {
+"qwen": 10,
+"solace": 10,
+"cobalt": 10,
+"grok": 10,
+"doubao": 11,
+"deepseek": 10,
+"claude": 10,
+"kimi": 10,
+"meridian": 10,
+"chatgpt": 10,
+"gemini": 10,
+"mistral": 10
+}
+},
+"qwen/qwen-2.5-7b-instruct": {
+"name": "Qwen2.5 7B Instruct",
+"fam": "qwen",
+"yes": {},
+"n": {
+"solace": 10,
+"doubao": 11,
+"deepseek": 10,
+"meridian": 10,
+"kimi": 10,
+"cobalt": 10,
+"chatgpt": 10,
+"gemini": 10,
+"grok": 10,
+"mistral": 10,
+"llama": 10,
+"claude": 10
+}
+},
+"mistralai/mistral-medium-3.1": {
+"name": "Mistral Medium 3.1",
+"fam": "mistral",
+"yes": {
+"qwen": 5
+},
+"n": {
+"kimi": 10,
+"qwen": 10,
+"solace": 10,
+"chatgpt": 10,
+"cobalt": 10,
+"grok": 10,
+"claude": 10,
+"llama": 10,
+"gemini": 10,
+"deepseek": 10,
+"doubao": 11,
+"meridian": 10
+}
+},
+"openai/gpt-4.1-mini": {
+"name": "GPT-4.1 Mini",
+"fam": "openai",
+"yes": {},
+"n": {
+"deepseek": 10,
+"kimi": 10,
+"doubao": 11,
+"meridian": 10,
+"grok": 10,
+"cobalt": 10,
+"claude": 10,
+"qwen": 10,
+"llama": 10,
+"gemini": 10,
+"mistral": 10,
+"solace": 10
+}
+},
+"amazon/nova-pro-v1": {
+"name": "Nova Pro",
+"fam": "amazon",
+"yes": {
+"chatgpt": 1
+},
+"n": {
+"doubao": 11,
+"mistral": 10,
+"llama": 10,
+"gemini": 10,
+"cobalt": 10,
+"claude": 10,
+"solace": 10,
+"qwen": 10,
+"kimi": 10,
+"meridian": 10,
+"chatgpt": 10,
+"grok": 10,
+"deepseek": 10
+}
+},
+"qwen/qwen3.6-27b": {
+"name": "Qwen3.6 27B",
+"fam": "qwen",
+"yes": {},
+"n": {
+"llama": 10,
+"kimi": 10,
+"deepseek": 10,
+"claude": 10,
+"grok": 10,
+"meridian": 10,
+"doubao": 11,
+"mistral": 10,
+"chatgpt": 10,
+"solace": 10,
+"gemini": 10,
+"cobalt": 10
+}
+},
+"qwen/qwen-2.5-72b-instruct": {
+"name": "Qwen2.5 72B Instruct",
+"fam": "qwen",
+"yes": {
+"deepseek": 2
+},
+"n": {
+"meridian": 10,
+"kimi": 10,
+"cobalt": 10,
+"doubao": 11,
+"claude": 10,
+"llama": 10,
+"gemini": 10,
+"grok": 10,
+"solace": 10,
+"chatgpt": 10,
+"deepseek": 10,
+"mistral": 10
+}
+},
+"openai/gpt-3.5-turbo": {
+"name": "GPT-3.5 Turbo",
+"fam": "openai",
+"yes": {},
+"n": {
+"meridian": 10,
+"deepseek": 10,
+"gemini": 10,
+"doubao": 11,
+"mistral": 10,
+"solace": 10,
+"cobalt": 10,
+"kimi": 10,
+"llama": 10,
+"claude": 10,
+"grok": 10,
+"qwen": 10
+}
+},
+"cohere/command-a": {
+"name": "Command A",
+"fam": "cohere",
+"yes": {
+"claude": 4,
+"mistral": 3,
+"qwen": 7,
+"deepseek": 1
+},
+"n": {
+"solace": 10,
+"cobalt": 10,
+"claude": 10,
+"doubao": 11,
+"meridian": 10,
+"mistral": 10,
+"chatgpt": 10,
+"qwen": 10,
+"kimi": 10,
+"gemini": 10,
+"grok": 10,
+"llama": 10,
+"deepseek": 10
+}
+},
+"qwen/qwen3.6-35b-a3b": {
+"name": "Qwen3.6 35B A3B",
+"fam": "qwen",
+"yes": {},
+"n": {
+"cobalt": 10,
+"claude": 10,
+"solace": 10,
+"kimi": 10,
+"gemini": 10,
+"chatgpt": 10,
+"meridian": 10,
+"mistral": 10,
+"deepseek": 10,
+"llama": 10,
+"grok": 10,
+"doubao": 10
+}
+},
+"meta-llama/llama-3.2-1b-instruct": {
+"name": "Llama 3.2 1B Instruct",
+"fam": "meta",
+"yes": {
+"chatgpt": 5,
+"claude": 2,
+"doubao": 3,
+"cobalt": 1,
+"mistral": 3,
+"meridian": 3,
+"qwen": 1,
+"solace": 1,
+"kimi": 2,
+"grok": 5
+},
+"n": {
+"deepseek": 10,
+"cobalt": 10,
+"claude": 10,
+"grok": 10,
+"gemini": 10,
+"chatgpt": 10,
+"doubao": 11,
+"meridian": 10,
+"solace": 10,
+"kimi": 10,
+"qwen": 10,
+"mistral": 10
+}
+},
+"deepseek/deepseek-v4-pro": {
+"name": "DeepSeek V4 Pro",
+"fam": "deepseek",
+"yes": {
+"doubao": 4,
+"qwen": 1,
+"chatgpt": 1,
+"claude": 1,
+"cobalt": 1,
+"meridian": 1,
+"gemini": 1
+},
+"n": {
+"kimi": 10,
+"gemini": 10,
+"qwen": 10,
+"llama": 10,
+"solace": 10,
+"mistral": 10,
+"grok": 10,
+"doubao": 11,
+"meridian": 10,
+"claude": 10,
+"cobalt": 10,
+"chatgpt": 10
+}
+},
+"qwen/qwen3.5-plus-02-15": {
+"name": "Qwen3.5 Plus",
+"fam": "qwen",
+"yes": {},
+"n": {
+"kimi": 10,
+"meridian": 10,
+"claude": 10,
+"solace": 10,
+"grok": 10,
+"gemini": 10,
+"deepseek": 10,
+"doubao": 11,
+"llama": 10,
+"mistral": 10,
+"chatgpt": 10,
+"cobalt": 10
+}
+},
+"z-ai/glm-4.5-air": {
+"name": "GLM 4.5 Air",
+"fam": "zhipu",
+"yes": {
+"gemini": 1,
+"claude": 4,
+"qwen": 4,
+"solace": 1,
+"doubao": 1,
+"deepseek": 2,
+"kimi": 1
+},
+"n": {
+"mistral": 10,
+"chatgpt": 10,
+"solace": 10,
+"grok": 10,
+"cobalt": 10,
+"gemini": 10,
+"claude": 10,
+"qwen": 10,
+"doubao": 11,
+"deepseek": 10,
+"kimi": 10,
+"llama": 10,
+"meridian": 10
+}
+},
+"qwen/qwen3-max": {
+"name": "Qwen3 Max",
+"fam": "qwen",
+"yes": {},
+"n": {
+"llama": 10,
+"gemini": 10,
+"claude": 10,
+"solace": 10,
+"meridian": 10,
+"deepseek": 10,
+"mistral": 10,
+"kimi": 10,
+"grok": 10,
+"doubao": 11,
+"chatgpt": 10,
+"cobalt": 10
+}
+},
+"mistralai/mistral-small-3.2-24b-instruct": {
+"name": "Mistral Small 3.2",
+"fam": "mistral",
+"yes": {},
+"n": {
+"qwen": 10,
+"llama": 10,
+"doubao": 11,
+"deepseek": 10,
+"chatgpt": 10,
+"solace": 10,
+"meridian": 10,
+"grok": 10,
+"kimi": 10,
+"claude": 10,
+"gemini": 10,
+"cobalt": 10
+}
+},
+"openai/gpt-5.2-chat": {
+"name": "GPT-5.2 Chat",
+"fam": "openai",
+"yes": {},
+"n": {
+"solace": 10,
+"gemini": 10,
+"grok": 10,
+"deepseek": 10,
+"llama": 10,
+"mistral": 10,
+"claude": 10,
+"doubao": 11,
+"cobalt": 10,
+"kimi": 10,
+"meridian": 10,
+"qwen": 10
+}
+},
+"mistralai/mistral-large-2407": {
+"name": "Mistral Large 2407",
+"fam": "mistral",
+"yes": {
+"doubao": 11,
+"gemini": 4,
+"deepseek": 10,
+"chatgpt": 5,
+"qwen": 10,
+"kimi": 5
+},
+"n": {
+"doubao": 11,
+"cobalt": 10,
+"kimi": 10,
+"chatgpt": 10,
+"solace": 10,
+"gemini": 10,
+"meridian": 10,
+"llama": 10,
+"deepseek": 10,
+"qwen": 10,
+"claude": 10,
+"grok": 10
+}
+},
+"meta-llama/llama-4-scout": {
+"name": "Llama 4 Scout",
+"fam": "meta",
+"yes": {
+"claude": 3,
+"grok": 5,
+"qwen": 8,
+"deepseek": 3,
+"meridian": 1,
+"chatgpt": 1
+},
+"n": {
+"mistral": 10,
+"claude": 10,
+"grok": 10,
+"doubao": 11,
+"qwen": 10,
+"meridian": 9,
+"gemini": 10,
+"cobalt": 10,
+"deepseek": 10,
+"kimi": 10,
+"chatgpt": 10,
+"solace": 10
+}
+},
+"baidu/ernie-4.5-vl-424b-a47b": {
+"name": "ERNIE 4.5 VL 424B A47B",
+"fam": "baidu",
+"yes": {
+"qwen": 10,
+"claude": 5,
+"deepseek": 10
+},
+"n": {
+"qwen": 10,
+"meridian": 10,
+"cobalt": 10,
+"llama": 10,
+"chatgpt": 10,
+"doubao": 11,
+"gemini": 10,
+"grok": 10,
+"claude": 10,
+"solace": 10,
+"kimi": 10,
+"mistral": 10,
+"deepseek": 10
+}
+},
+"openai/gpt-5.1-chat": {
+"name": "GPT-5.1 Chat",
+"fam": "openai",
+"yes": {
+"llama": 2,
+"claude": 2
+},
+"n": {
+"deepseek": 10,
+"mistral": 10,
+"llama": 10,
+"kimi": 10,
+"solace": 10,
+"doubao": 11,
+"qwen": 10,
+"claude": 10,
+"grok": 10,
+"cobalt": 10,
+"gemini": 10,
+"meridian": 10
+}
+},
+"deepseek/deepseek-r1": {
+"name": "DeepSeek R1",
+"fam": "deepseek",
+"yes": {
+"qwen": 4,
+"kimi": 1,
+"gemini": 1,
+"claude": 2
+},
+"n": {
+"claude": 10,
+"meridian": 10,
+"qwen": 10,
+"doubao": 11,
+"chatgpt": 10,
+"gemini": 10,
+"grok": 10,
+"kimi": 10,
+"llama": 10,
+"mistral": 10,
+"solace": 10,
+"cobalt": 10
+}
+},
+"kwaipilot/kat-coder-pro-v2": {
+"name": "KAT-Coder-Pro V2",
+"fam": "kuaishou",
+"yes": {
+"qwen": 10,
+"kimi": 1
+},
+"n": {
+"chatgpt": 10,
+"grok": 10,
+"meridian": 10,
+"solace": 10,
+"doubao": 11,
+"cobalt": 10,
+"llama": 10,
+"qwen": 10,
+"kimi": 10,
+"gemini": 10,
+"mistral": 10,
+"deepseek": 10,
+"claude": 10
+}
+},
+"openai/o3": {
+"name": "o3",
+"fam": "openai",
+"yes": {
+"qwen": 1
+},
+"n": {
+"deepseek": 10,
+"kimi": 10,
+"grok": 10,
+"meridian": 10,
+"qwen": 10,
+"llama": 10,
+"mistral": 10,
+"solace": 10,
+"doubao": 11,
+"cobalt": 10,
+"claude": 10,
+"gemini": 10
+}
+},
+"qwen/qwen3-next-80b-a3b-thinking": {
+"name": "Qwen3 Next 80B A3B Thinking",
+"fam": "qwen",
+"yes": {},
+"n": {
+"doubao": 11,
+"gemini": 10,
+"llama": 10,
+"solace": 10,
+"cobalt": 10,
+"mistral": 10,
+"chatgpt": 10,
+"kimi": 10,
+"meridian": 10,
+"claude": 10,
+"deepseek": 10,
+"grok": 10
+}
+},
+"nex-agi/nex-n2-pro": {
+"name": "Nex-N2-Pro",
+"fam": "nex",
+"yes": {},
+"n": {
+"kimi": 10,
+"meridian": 10,
+"mistral": 10,
+"cobalt": 10,
+"claude": 10,
+"qwen": 10,
+"chatgpt": 10,
+"deepseek": 10,
+"solace": 10,
+"doubao": 11,
+"llama": 10,
+"grok": 10,
+"gemini": 10
+}
+},
+"openai/gpt-4.1": {
+"name": "GPT-4.1",
+"fam": "openai",
+"yes": {
+"qwen": 1
+},
+"n": {
+"deepseek": 10,
+"cobalt": 10,
+"llama": 10,
+"kimi": 10,
+"meridian": 10,
+"gemini": 10,
+"mistral": 10,
+"doubao": 11,
+"grok": 10,
+"qwen": 10,
+"claude": 10,
+"solace": 10
+}
+},
+"qwen/qwen3-coder": {
+"name": "Qwen3 Coder 480B",
+"fam": "qwen",
+"yes": {},
+"n": {
+"meridian": 10,
+"grok": 10,
+"chatgpt": 10,
+"cobalt": 10,
+"mistral": 10,
+"solace": 10,
+"claude": 10,
+"gemini": 10,
+"doubao": 11,
+"llama": 10,
+"kimi": 10,
+"deepseek": 10
+}
+},
+"microsoft/phi-4": {
+"name": "Phi 4",
+"fam": "microsoft",
+"yes": {
+"claude": 1
+},
+"n": {
+"meridian": 10,
+"kimi": 10,
+"qwen": 10,
+"gemini": 10,
+"grok": 10,
+"cobalt": 10,
+"mistral": 10,
+"solace": 10,
+"doubao": 11,
+"llama": 10,
+"deepseek": 10,
+"chatgpt": 10,
+"claude": 10
+}
+},
+"qwen/qwen3-coder-next": {
+"name": "Qwen3 Coder Next",
+"fam": "qwen",
+"yes": {
+"claude": 1
+},
+"n": {
+"meridian": 10,
+"claude": 10,
+"chatgpt": 10,
+"llama": 10,
+"gemini": 10,
+"grok": 10,
+"mistral": 10,
+"deepseek": 10,
+"kimi": 10,
+"doubao": 11,
+"cobalt": 10,
+"solace": 10
+}
+},
+"amazon/nova-micro-v1": {
+"name": "Nova Micro 1.0",
+"fam": "amazon",
+"yes": {
+"deepseek": 2
+},
+"n": {
+"doubao": 11,
+"cobalt": 10,
+"claude": 10,
+"gemini": 10,
+"llama": 10,
+"solace": 10,
+"qwen": 10,
+"chatgpt": 10,
+"mistral": 10,
+"meridian": 10,
+"kimi": 10,
+"deepseek": 10,
+"grok": 10
+}
+},
+"nvidia/nemotron-3-nano-30b-a3b": {
+"name": "Nemotron 3 Nano 30B",
+"fam": "nvidia",
+"yes": {},
+"n": {
+"meridian": 10,
+"doubao": 11,
+"deepseek": 10,
+"solace": 10,
+"gemini": 10,
+"kimi": 10,
+"grok": 10,
+"mistral": 10,
+"chatgpt": 10,
+"claude": 10,
+"llama": 10,
+"qwen": 10,
+"cobalt": 10
+}
+},
+"mistralai/mistral-large-2512": {
+"name": "Mistral Large 3",
+"fam": "mistral",
+"yes": {
+"deepseek": 10,
+"chatgpt": 5,
+"qwen": 10,
+"doubao": 11,
+"gemini": 3,
+"kimi": 5
+},
+"n": {
+"grok": 10,
+"deepseek": 10,
+"claude": 10,
+"chatgpt": 10,
+"qwen": 10,
+"meridian": 10,
+"doubao": 11,
+"gemini": 10,
+"kimi": 10,
+"llama": 10,
+"solace": 10,
+"cobalt": 10
+}
+},
+"nvidia/llama-3.3-nemotron-super-49b-v1.5": {
+"name": "Nemotron Super 49B",
+"fam": "nvidia",
+"yes": {
+"claude": 2,
+"chatgpt": 4,
+"qwen": 4
+},
+"n": {
+"kimi": 10,
+"grok": 10,
+"solace": 10,
+"deepseek": 10,
+"claude": 10,
+"doubao": 11,
+"mistral": 10,
+"chatgpt": 10,
+"cobalt": 10,
+"gemini": 10,
+"qwen": 10,
+"meridian": 10
+}
+},
+"perplexity/sonar-pro": {
+"name": "Sonar Pro",
+"fam": "perplexity",
+"yes": {
+"kimi": 1,
+"chatgpt": 2,
+"qwen": 1
+},
+"n": {
+"chatgpt": 10,
+"claude": 10,
+"doubao": 11,
+"meridian": 10,
+"deepseek": 10,
+"qwen": 10,
+"cobalt": 10,
+"kimi": 10,
+"solace": 10,
+"grok": 10,
+"gemini": 10,
+"mistral": 10
+}
+},
+"openai/gpt-5.4": {
+"name": "GPT-5.4",
+"fam": "openai",
+"yes": {
+"solace": 2,
+"cobalt": 1
+},
+"n": {
+"solace": 10,
+"grok": 10,
+"deepseek": 10,
+"mistral": 10,
+"llama": 10,
+"qwen": 10,
+"claude": 10,
+"meridian": 10,
+"gemini": 10,
+"kimi": 10,
+"doubao": 11,
+"cobalt": 10
+}
+},
+"z-ai/glm-4.7-flash": {
+"name": "GLM 4.7 Flash",
+"fam": "zhipu",
+"yes": {
+"claude": 3
+},
+"n": {
+"cobalt": 10,
+"doubao": 11,
+"qwen": 10,
+"solace": 10,
+"deepseek": 10,
+"gemini": 10,
+"grok": 10,
+"llama": 10,
+"mistral": 10,
+"kimi": 10,
+"chatgpt": 10,
+"meridian": 10,
+"claude": 10
+}
+},
+"anthropic/claude-3-opus-20240229": {
+"name": "Claude 3 Opus",
+"fam": "anthropic",
+"yes": {},
+"n": {
+"llama": 10,
+"solace": 10,
+"grok": 10,
+"cobalt": 10,
+"meridian": 10,
+"mistral": 10,
+"kimi": 10,
+"gemini": 10,
+"chatgpt": 10,
+"doubao": 11,
+"deepseek": 10,
+"qwen": 10
+}
+},
+"openai/gpt-5.2": {
+"name": "GPT-5.2",
+"fam": "openai",
+"yes": {},
+"n": {
+"grok": 10,
+"mistral": 10,
+"kimi": 10,
+"meridian": 10,
+"gemini": 10,
+"solace": 10,
+"cobalt": 10,
+"llama": 10,
+"deepseek": 10,
+"doubao": 11,
+"claude": 10,
+"qwen": 10
+}
+},
+"deepseek/deepseek-chat-v3-0324": {
+"name": "DeepSeek V3 0324",
+"fam": "deepseek",
+"yes": {
+"doubao": 9,
+"kimi": 8,
+"qwen": 10,
+"gemini": 4,
+"chatgpt": 6,
+"claude": 5
+},
+"n": {
+"doubao": 11,
+"gemini": 10,
+"mistral": 10,
+"kimi": 10,
+"llama": 10,
+"grok": 10,
+"cobalt": 10,
+"solace": 10,
+"chatgpt": 10,
+"meridian": 10,
+"claude": 10,
+"qwen": 10
+}
+},
+"openai/o4-mini": {
+"name": "o4 Mini",
+"fam": "openai",
+"yes": {},
+"n": {
+"grok": 10,
+"doubao": 11,
+"solace": 10,
+"meridian": 10,
+"claude": 10,
+"gemini": 10,
+"kimi": 10,
+"qwen": 10,
+"llama": 10,
+"cobalt": 10,
+"mistral": 10,
+"deepseek": 10
+}
+},
+"qwen/qwen3-8b": {
+"name": "Qwen3 8B",
+"fam": "qwen",
+"yes": {
+"doubao": 5
+},
+"n": {
+"solace": 10,
+"deepseek": 10,
+"meridian": 10,
+"cobalt": 10,
+"doubao": 11,
+"kimi": 10,
+"gemini": 10,
+"claude": 10,
+"chatgpt": 10,
+"llama": 10,
+"grok": 10,
+"mistral": 10
+}
+},
+"qwen/qwen3.5-flash-02-23": {
+"name": "Qwen3.5-Flash",
+"fam": "qwen",
+"yes": {},
+"n": {
+"meridian": 10,
+"doubao": 11,
+"mistral": 10,
+"claude": 10,
+"chatgpt": 10,
+"kimi": 10,
+"llama": 10,
+"solace": 10,
+"gemini": 10,
+"cobalt": 10,
+"grok": 10,
+"deepseek": 10
+}
+},
+"z-ai/glm-4.7": {
+"name": "GLM 4.7",
+"fam": "zhipu",
+"yes": {
+"kimi": 4,
+"qwen": 1,
+"claude": 1
+},
+"n": {
+"grok": 10,
+"solace": 10,
+"cobalt": 10,
+"meridian": 10,
+"doubao": 11,
+"kimi": 10,
+"qwen": 10,
+"chatgpt": 10,
+"gemini": 10,
+"llama": 10,
+"mistral": 10,
+"claude": 10,
+"deepseek": 10
+}
+},
+"meta-llama/llama-4-maverick": {
+"name": "Llama 4 Maverick",
+"fam": "meta",
+"yes": {
+"grok": 3,
+"doubao": 6,
+"chatgpt": 3,
+"qwen": 7,
+"deepseek": 6,
+"kimi": 5,
+"gemini": 3,
+"claude": 4
+},
+"n": {
+"grok": 10,
+"qwen": 10,
+"cobalt": 10,
+"kimi": 10,
+"claude": 10,
+"doubao": 11,
+"chatgpt": 10,
+"meridian": 10,
+"deepseek": 10,
+"mistral": 10,
+"gemini": 10,
+"solace": 10
+}
+},
+"qwen/qwen3-235b-a22b-2507": {
+"name": "Qwen3 235B A22B Instruct 2507",
+"fam": "qwen",
+"yes": {},
+"n": {
+"gemini": 10,
+"cobalt": 10,
+"chatgpt": 10,
+"claude": 10,
+"llama": 10,
+"grok": 10,
+"meridian": 10,
+"deepseek": 10,
+"solace": 10,
+"mistral": 10,
+"doubao": 11,
+"kimi": 10
+}
+},
+"qwen/qwen3-max-thinking": {
+"name": "Qwen3 Max Thinking",
+"fam": "qwen",
+"yes": {},
+"n": {
+"meridian": 10,
+"kimi": 10,
+"solace": 10,
+"mistral": 10,
+"grok": 10,
+"deepseek": 10,
+"llama": 10,
+"claude": 10,
+"gemini": 10,
+"doubao": 11,
+"chatgpt": 10,
+"cobalt": 10
+}
+},
+"deepseek/deepseek-v3.2": {
+"name": "DeepSeek V3.2",
+"fam": "deepseek",
+"yes": {
+"qwen": 10,
+"kimi": 8,
+"gemini": 5,
+"claude": 5,
+"mistral": 2,
+"chatgpt": 3,
+"doubao": 1,
+"meridian": 1,
+"solace": 1,
+"grok": 1
+},
+"n": {
+"qwen": 10,
+"chatgpt": 10,
+"meridian": 10,
+"solace": 10,
+"doubao": 11,
+"cobalt": 10,
+"kimi": 10,
+"claude": 10,
+"grok": 10,
+"gemini": 10,
+"mistral": 10,
+"llama": 10
+}
+},
+"openai/gpt-4o-mini": {
+"name": "GPT-4o Mini",
+"fam": "openai",
+"yes": {},
+"n": {
+"kimi": 10,
+"llama": 10,
+"qwen": 10,
+"deepseek": 10,
+"doubao": 11,
+"cobalt": 10,
+"mistral": 10,
+"claude": 10,
+"gemini": 10,
+"meridian": 10,
+"grok": 10,
+"solace": 10
+}
+},
+"mistralai/mistral-medium-3": {
+"name": "Mistral Medium 3",
+"fam": "mistral",
+"yes": {
+"qwen": 5,
+"deepseek": 3,
+"kimi": 4,
+"doubao": 2
+},
+"n": {
+"qwen": 10,
+"deepseek": 10,
+"doubao": 11,
+"meridian": 10,
+"cobalt": 10,
+"llama": 10,
+"kimi": 10,
+"chatgpt": 10,
+"solace": 10,
+"gemini": 10,
+"claude": 10,
+"grok": 10
+}
+},
+"mistralai/mistral-saba": {
+"name": "Saba",
+"fam": "mistral",
+"yes": {
+"qwen": 2
+},
+"n": {
+"qwen": 10,
+"claude": 10,
+"kimi": 10,
+"deepseek": 10,
+"cobalt": 10,
+"gemini": 10,
+"meridian": 10,
+"solace": 10,
+"chatgpt": 10,
+"llama": 10,
+"doubao": 11,
+"grok": 10
+}
+},
+"qwen/qwen3-coder-30b-a3b-instruct": {
+"name": "Qwen3 Coder 30B A3B Instruct",
+"fam": "qwen",
+"yes": {},
+"n": {
+"deepseek": 10,
+"solace": 10,
+"kimi": 10,
+"grok": 10,
+"mistral": 10,
+"chatgpt": 10,
+"doubao": 11,
+"claude": 10,
+"gemini": 10,
+"cobalt": 10,
+"llama": 10,
+"meridian": 10
+}
+},
+"qwen/qwen3-32b": {
+"name": "Qwen3 32B",
+"fam": "qwen",
+"yes": {},
+"n": {
+"doubao": 11,
+"kimi": 10,
+"claude": 10,
+"solace": 10,
+"deepseek": 10,
+"llama": 10,
+"mistral": 10,
+"gemini": 10,
+"grok": 10,
+"cobalt": 10,
+"meridian": 10,
+"chatgpt": 10
+}
+},
+"z-ai/glm-5-turbo": {
+"name": "GLM 5 Turbo",
+"fam": "zhipu",
+"yes": {
+"qwen": 2,
+"deepseek": 1
+},
+"n": {
+"grok": 10,
+"doubao": 11,
+"meridian": 10,
+"qwen": 10,
+"gemini": 10,
+"chatgpt": 10,
+"solace": 10,
+"mistral": 10,
+"cobalt": 10,
+"kimi": 10,
+"llama": 10,
+"deepseek": 10,
+"claude": 10
+}
+},
+"anthropic/claude-sonnet-5": {
+"name": "Claude Sonnet 5",
+"fam": "anthropic",
+"yes": {
+"mistral": 1,
+"qwen": 1
+},
+"n": {
+"llama": 10,
+"mistral": 10,
+"kimi": 10,
+"grok": 10,
+"qwen": 10,
+"meridian": 10,
+"doubao": 11,
+"chatgpt": 10,
+"deepseek": 10,
+"gemini": 10,
+"cobalt": 10,
+"solace": 10
+}
+},
+"ai21/jamba-large-1.7": {
+"name": "Jamba Large 1.7",
+"fam": "ai21",
+"yes": {},
+"n": {
+"doubao": 11,
+"gemini": 10,
+"llama": 10,
+"kimi": 10,
+"grok": 10,
+"mistral": 10,
+"meridian": 10,
+"claude": 10,
+"solace": 10,
+"qwen": 10,
+"deepseek": 10,
+"chatgpt": 10,
+"cobalt": 10
+}
+},
+"stepfun/step-3.7-flash": {
+"name": "Step 3.7 Flash",
+"fam": "stepfun",
+"yes": {},
+"n": {
+"chatgpt": 10,
+"llama": 10,
+"kimi": 10,
+"mistral": 10,
+"gemini": 10,
+"qwen": 10,
+"doubao": 11,
+"claude": 10,
+"meridian": 10,
+"cobalt": 10,
+"deepseek": 10,
+"grok": 10,
+"solace": 10
+}
+},
+"moonshotai/kimi-k2.7-code": {
+"name": "Kimi K2.7 Code",
+"fam": "kimi",
+"yes": {
+"claude": 5
+},
+"n": {
+"qwen": 10,
+"gemini": 10,
+"deepseek": 10,
+"cobalt": 10,
+"meridian": 10,
+"llama": 10,
+"chatgpt": 10,
+"doubao": 11,
+"solace": 10,
+"mistral": 10,
+"grok": 10,
+"claude": 10
+}
+},
+"mistralai/mistral-small-2603": {
+"name": "Mistral Small 4",
+"fam": "mistral",
+"yes": {
+"qwen": 1
+},
+"n": {
+"claude": 10,
+"kimi": 10,
+"qwen": 10,
+"solace": 10,
+"deepseek": 10,
+"chatgpt": 10,
+"meridian": 10,
+"gemini": 10,
+"cobalt": 10,
+"grok": 10,
+"llama": 10,
+"doubao": 11
+}
+},
+"cohere/north-mini-code:free": {
+"name": "North Mini Code",
+"fam": "cohere",
+"yes": {
+"claude": 4,
+"kimi": 5,
+"grok": 3,
+"chatgpt": 4,
+"doubao": 1,
+"deepseek": 1,
+"cobalt": 2,
+"qwen": 6,
+"mistral": 1,
+"llama": 1,
+"gemini": 3,
+"solace": 1
+},
+"n": {
+"meridian": 10,
+"mistral": 10,
+"chatgpt": 10,
+"solace": 10,
+"grok": 10,
+"llama": 10,
+"claude": 10,
+"kimi": 10,
+"deepseek": 10,
+"gemini": 10,
+"qwen": 10,
+"doubao": 11,
+"cobalt": 10
+}
+},
+"nex-agi/nex-n2-mini": {
+"name": "Nex-N2-Mini",
+"fam": "nex",
+"yes": {},
+"n": {
+"solace": 10,
+"doubao": 11,
+"cobalt": 10,
+"qwen": 10,
+"llama": 10,
+"mistral": 10,
+"deepseek": 10,
+"meridian": 10,
+"kimi": 10,
+"chatgpt": 10,
+"claude": 10,
+"gemini": 10,
+"grok": 10
+}
+},
+"openai/gpt-5.6-terra": {
+"name": "GPT-5.6 Terra",
+"fam": "openai",
+"yes": {
+"cobalt": 6,
+"solace": 1
+},
+"n": {
+"qwen": 10,
+"meridian": 10,
+"mistral": 10,
+"claude": 10,
+"doubao": 11,
+"kimi": 10,
+"deepseek": 10,
+"grok": 10,
+"solace": 10,
+"cobalt": 10,
+"gemini": 10,
+"llama": 10
+}
+},
+"meta-llama/llama-3.3-70b-instruct": {
+"name": "Llama 3.3 70B",
+"fam": "meta",
+"yes": {
+"meridian": 3,
+"chatgpt": 3,
+"doubao": 1,
+"claude": 3,
+"grok": 5,
+"mistral": 1,
+"qwen": 1,
+"kimi": 1
+},
+"n": {
+"solace": 10,
+"deepseek": 10,
+"grok": 10,
+"doubao": 11,
+"meridian": 10,
+"qwen": 10,
+"kimi": 10,
+"chatgpt": 10,
+"gemini": 10,
+"claude": 10,
+"mistral": 10,
+"cobalt": 10
+}
+},
+"openai/gpt-5.1": {
+"name": "GPT-5.1",
+"fam": "openai",
+"yes": {
+"claude": 4
+},
+"n": {
+"solace": 10,
+"mistral": 10,
+"kimi": 10,
+"doubao": 11,
+"cobalt": 10,
+"gemini": 10,
+"qwen": 10,
+"llama": 10,
+"deepseek": 10,
+"grok": 10,
+"claude": 10,
+"meridian": 10
+}
+},
+"xiaomi/mimo-v2.5": {
+"name": "MiMo-V2.5",
+"fam": "xiaomi",
+"yes": {},
+"n": {
+"kimi": 10,
+"chatgpt": 10,
+"solace": 10,
+"cobalt": 10,
+"gemini": 10,
+"doubao": 11,
+"llama": 10,
+"mistral": 10,
+"grok": 10,
+"claude": 10,
+"qwen": 10,
+"deepseek": 10,
+"meridian": 10
+}
+},
+"cohere/command-r7b-12-2024": {
+"name": "Command R7B (12-2024)",
+"fam": "cohere",
+"yes": {
+"qwen": 10,
+"cobalt": 7,
+"mistral": 4,
+"kimi": 3,
+"meridian": 7,
+"chatgpt": 8,
+"grok": 8,
+"llama": 8,
+"claude": 8,
+"deepseek": 9,
+"solace": 5,
+"gemini": 5
+},
+"n": {
+"qwen": 10,
+"cobalt": 10,
+"mistral": 10,
+"gemini": 10,
+"kimi": 10,
+"meridian": 10,
+"chatgpt": 10,
+"doubao": 11,
+"grok": 10,
+"llama": 10,
+"claude": 10,
+"deepseek": 10,
+"solace": 10
+}
+},
+"mistralai/devstral-2512": {
+"name": "Devstral 2 2512",
+"fam": "mistral",
+"yes": {
+"qwen": 8,
+"deepseek": 6
+},
+"n": {
+"qwen": 10,
+"chatgpt": 10,
+"meridian": 10,
+"grok": 10,
+"cobalt": 10,
+"solace": 10,
+"kimi": 10,
+"claude": 10,
+"llama": 10,
+"deepseek": 10,
+"gemini": 10,
+"doubao": 11
+}
+},
+"z-ai/glm-5.2": {
+"name": "GLM 5.2",
+"fam": "zhipu",
+"yes": {
+"qwen": 2
+},
+"n": {
+"qwen": 10,
+"claude": 10,
+"cobalt": 10,
+"gemini": 10,
+"chatgpt": 10,
+"kimi": 10,
+"meridian": 10,
+"mistral": 10,
+"solace": 10,
+"doubao": 11,
+"grok": 10,
+"llama": 10,
+"deepseek": 10
+}
+},
+"qwen/qwen3.6-plus": {
+"name": "Qwen3.6 Plus",
+"fam": "qwen",
+"yes": {},
+"n": {
+"deepseek": 10,
+"kimi": 10,
+"doubao": 11,
+"claude": 10,
+"meridian": 10,
+"gemini": 10,
+"grok": 10,
+"solace": 10,
+"cobalt": 10,
+"llama": 10,
+"mistral": 10,
+"chatgpt": 10
+}
+},
+"perplexity/sonar": {
+"name": "Sonar",
+"fam": "perplexity",
+"yes": {},
+"n": {
+"mistral": 10,
+"cobalt": 10,
+"kimi": 10,
+"solace": 10,
+"chatgpt": 10,
+"qwen": 10,
+"claude": 10,
+"grok": 10,
+"deepseek": 10,
+"meridian": 10,
+"gemini": 10,
+"doubao": 11
+}
+},
+"rekaai/reka-edge": {
+"name": "Reka Edge",
+"fam": "reka",
+"yes": {
+"claude": 5,
+"meridian": 1,
+"grok": 2,
+"deepseek": 4,
+"solace": 4,
+"mistral": 1,
+"doubao": 2,
+"cobalt": 2,
+"qwen": 2,
+"kimi": 1
+},
+"n": {
+"claude": 10,
+"llama": 10,
+"grok": 10,
+"solace": 10,
+"meridian": 10,
+"qwen": 10,
+"mistral": 10,
+"gemini": 10,
+"chatgpt": 10,
+"kimi": 10,
+"doubao": 11,
+"cobalt": 10,
+"deepseek": 10
+}
+},
+"nousresearch/hermes-3-llama-3.1-405b": {
+"name": "Hermes 3 405B Instruct",
+"fam": "nous",
+"yes": {
+"chatgpt": 5,
+"doubao": 1,
+"grok": 3,
+"deepseek": 5,
+"claude": 5
+},
+"n": {
+"chatgpt": 10,
+"meridian": 10,
+"mistral": 10,
+"doubao": 11,
+"deepseek": 10,
+"kimi": 10,
+"grok": 10,
+"claude": 10,
+"solace": 10,
+"qwen": 10,
+"gemini": 10,
+"cobalt": 10
+}
+},
+"nousresearch/hermes-3-llama-3.1-70b": {
+"name": "Hermes 3 70B Instruct",
+"fam": "nous",
+"yes": {
+"meridian": 8,
+"deepseek": 9,
+"mistral": 7,
+"chatgpt": 3,
+"kimi": 10,
+"qwen": 8,
+"claude": 9,
+"doubao": 6,
+"gemini": 9,
+"grok": 4,
+"solace": 6,
+"cobalt": 9
+},
+"n": {
+"meridian": 10,
+"deepseek": 10,
+"mistral": 10,
+"solace": 10,
+"chatgpt": 10,
+"kimi": 10,
+"doubao": 11,
+"qwen": 10,
+"claude": 10,
+"gemini": 10,
+"grok": 10,
+"cobalt": 10
+}
+},
+"moonshotai/kimi-k2.5": {
+"name": "Kimi K2.5",
+"fam": "kimi",
+"yes": {
+"claude": 10,
+"deepseek": 1
+},
+"n": {
+"mistral": 10,
+"meridian": 10,
+"cobalt": 10,
+"doubao": 11,
+"solace": 10,
+"claude": 10,
+"llama": 10,
+"chatgpt": 10,
+"grok": 10,
+"deepseek": 10,
+"gemini": 10,
+"qwen": 10
+}
+},
+"qwen/qwen3.5-122b-a10b": {
+"name": "Qwen3.5 122B A10B",
+"fam": "qwen",
+"yes": {},
+"n": {
+"meridian": 10,
+"cobalt": 10,
+"solace": 10,
+"deepseek": 10,
+"chatgpt": 10,
+"gemini": 10,
+"mistral": 10,
+"doubao": 11,
+"claude": 10,
+"llama": 10,
+"kimi": 10,
+"grok": 10
+}
+},
+"openai/gpt-5-mini": {
+"name": "GPT-5 Mini",
+"fam": "openai",
+"yes": {},
+"n": {
+"grok": 10,
+"solace": 10,
+"gemini": 10,
+"meridian": 10,
+"doubao": 11,
+"mistral": 10,
+"llama": 10,
+"kimi": 10,
+"cobalt": 10,
+"deepseek": 10,
+"claude": 10,
+"qwen": 10
+}
+},
+"deepseek/deepseek-r1-distill-llama-70b": {
+"name": "DeepSeek R1 Distill Llama 70B",
+"fam": "deepseek",
+"yes": {
+"kimi": 5,
+"gemini": 4,
+"qwen": 9,
+"meridian": 1,
+"claude": 4,
+"doubao": 1,
+"mistral": 2
+},
+"n": {
+"cobalt": 10,
+"qwen": 10,
+"claude": 10,
+"meridian": 10,
+"kimi": 10,
+"gemini": 10,
+"doubao": 11,
+"mistral": 10,
+"grok": 10,
+"chatgpt": 10,
+"solace": 10
+}
+},
+"openai/gpt-5.3-codex": {
+"name": "GPT-5.3-Codex",
+"fam": "openai",
+"yes": {},
+"n": {
+"kimi": 10,
+"gemini": 10,
+"solace": 10,
+"meridian": 10,
+"claude": 10,
+"llama": 10,
+"cobalt": 10,
+"mistral": 10,
+"doubao": 11,
+"grok": 10,
+"deepseek": 10,
+"qwen": 10
+}
+},
+"qwen/qwen3-235b-a22b": {
+"name": "Qwen3 235B A22B (MoE)",
+"fam": "qwen",
+"yes": {
+"meridian": 1
+},
+"n": {
+"cobalt": 10,
+"gemini": 10,
+"kimi": 10,
+"claude": 10,
+"deepseek": 10,
+"grok": 10,
+"solace": 10,
+"doubao": 11,
+"chatgpt": 10,
+"mistral": 10,
+"llama": 10,
+"meridian": 10
+}
+},
+"openai/gpt-5.4-mini": {
+"name": "GPT-5.4 Mini",
+"fam": "openai",
+"yes": {
+"qwen": 4,
+"kimi": 2
+},
+"n": {
+"solace": 10,
+"gemini": 10,
+"cobalt": 10,
+"doubao": 11,
+"meridian": 10,
+"qwen": 10,
+"kimi": 10,
+"mistral": 10,
+"llama": 10,
+"claude": 10,
+"deepseek": 10,
+"grok": 10
+}
+},
+"openai/o1": {
+"name": "o1",
+"fam": "openai",
+"yes": {
+"qwen": 6
+},
+"n": {
+"meridian": 10,
+"kimi": 10,
+"deepseek": 10,
+"grok": 10,
+"llama": 10,
+"qwen": 10,
+"doubao": 11,
+"claude": 10,
+"gemini": 10,
+"mistral": 10,
+"solace": 10,
+"cobalt": 10
+}
+},
+"meta-llama/llama-3.1-8b-instruct": {
+"name": "Llama 3.1 8B Instruct",
+"fam": "meta",
+"yes": {
+"solace": 3,
+"deepseek": 3,
+"doubao": 4,
+"cobalt": 2,
+"qwen": 1,
+"grok": 1,
+"claude": 1
+},
+"n": {
+"claude": 10,
+"kimi": 10,
+"qwen": 10,
+"grok": 10,
+"gemini": 10,
+"chatgpt": 10,
+"deepseek": 10,
+"meridian": 10,
+"mistral": 10,
+"doubao": 11,
+"cobalt": 10,
+"solace": 10
+}
+},
+"nvidia/nemotron-nano-9b-v2:free": {
+"name": "Nemotron Nano 9B V2",
+"fam": "nvidia",
+"yes": {},
+"n": {
+"mistral": 10,
+"llama": 10,
+"solace": 10,
+"cobalt": 10,
+"qwen": 10,
+"deepseek": 10,
+"meridian": 10,
+"grok": 10,
+"kimi": 10,
+"doubao": 11,
+"gemini": 10,
+"chatgpt": 10,
+"claude": 10
+}
+},
+"mistralai/mistral-medium-3-5": {
+"name": "Mistral Medium 3.5",
+"fam": "mistral",
+"yes": {},
+"n": {
+"claude": 10,
+"cobalt": 10,
+"qwen": 10,
+"gemini": 10,
+"deepseek": 10,
+"kimi": 10,
+"grok": 10,
+"doubao": 11,
+"solace": 10,
+"chatgpt": 10,
+"llama": 10,
+"meridian": 10
+}
+},
+"anthropic/claude-opus-4.1": {
+"name": "Claude Opus 4.1",
+"fam": "anthropic",
+"yes": {},
+"n": {
+"doubao": 11,
+"cobalt": 10,
+"qwen": 10,
+"deepseek": 10,
+"chatgpt": 10,
+"mistral": 10,
+"grok": 10,
+"kimi": 10,
+"gemini": 10,
+"llama": 10,
+"meridian": 10,
+"solace": 10
+}
+},
+"qwen/qwen3-235b-a22b-thinking-2507": {
+"name": "Qwen3 235B A22B Thinking 2507",
+"fam": "qwen",
+"yes": {},
+"n": {
+"llama": 10,
+"mistral": 10,
+"claude": 10,
+"grok": 10,
+"cobalt": 10,
+"doubao": 11,
+"solace": 10,
+"kimi": 10,
+"deepseek": 10,
+"meridian": 10,
+"chatgpt": 10,
+"gemini": 10
+}
+},
+"deepseek/deepseek-v4-flash": {
+"name": "DeepSeek V4 Flash",
+"fam": "deepseek",
+"yes": {
+"qwen": 10,
+"kimi": 3,
+"claude": 4,
+"chatgpt": 1,
+"meridian": 1,
+"doubao": 1
+},
+"n": {
+"qwen": 10,
+"mistral": 10,
+"kimi": 10,
+"cobalt": 10,
+"gemini": 10,
+"chatgpt": 10,
+"grok": 10,
+"meridian": 10,
+"doubao": 11,
+"claude": 10,
+"llama": 10,
+"solace": 10
+}
+},
+"mistralai/ministral-14b-2512": {
+"name": "Ministral 3 14B",
+"fam": "mistral",
+"yes": {},
+"n": {
+"qwen": 10,
+"llama": 10,
+"grok": 10,
+"kimi": 10,
+"meridian": 10,
+"doubao": 11,
+"claude": 10,
+"solace": 10,
+"chatgpt": 10,
+"deepseek": 10,
+"gemini": 10,
+"cobalt": 10
+}
+},
+"moonshotai/kimi-k2": {
+"name": "Kimi K2",
+"fam": "kimi",
+"yes": {
+"doubao": 4,
+"qwen": 2,
+"claude": 10,
+"deepseek": 3,
+"llama": 1
+},
+"n": {
+"solace": 9,
+"cobalt": 10,
+"chatgpt": 10,
+"doubao": 11,
+"mistral": 10,
+"qwen": 10,
+"claude": 10,
+"deepseek": 10,
+"gemini": 10,
+"llama": 10,
+"grok": 10,
+"meridian": 10
+}
+},
+"nvidia/nemotron-3-ultra-550b-a55b": {
+"name": "Nemotron 3 Ultra",
+"fam": "nvidia",
+"yes": {},
+"n": {
+"doubao": 11,
+"meridian": 10,
+"claude": 10,
+"cobalt": 10,
+"grok": 10,
+"chatgpt": 10,
+"gemini": 10,
+"llama": 10,
+"kimi": 10,
+"qwen": 10,
+"deepseek": 10,
+"mistral": 10,
+"solace": 10
+}
+},
+"z-ai/glm-5.1": {
+"name": "GLM 5.1",
+"fam": "zhipu",
+"yes": {},
+"n": {
+"cobalt": 10,
+"mistral": 10,
+"grok": 10,
+"llama": 10,
+"solace": 10,
+"qwen": 10,
+"chatgpt": 10,
+"claude": 10,
+"deepseek": 10,
+"gemini": 10,
+"doubao": 11,
+"kimi": 10,
+"meridian": 10
+}
+},
+"poolside/laguna-xs-2.1": {
+"name": "Laguna XS 2.1",
+"fam": "poolside",
+"yes": {
+"meridian": 1,
+"kimi": 2,
+"gemini": 3,
+"qwen": 7,
+"llama": 1,
+"deepseek": 3,
+"claude": 3
+},
+"n": {
+"kimi": 10,
+"meridian": 10,
+"cobalt": 10,
+"doubao": 11,
+"chatgpt": 10,
+"mistral": 10,
+"gemini": 10,
+"deepseek": 10,
+"claude": 10,
+"grok": 10,
+"qwen": 10,
+"llama": 10,
+"solace": 10
+}
+},
+"deepseek/deepseek-chat": {
+"name": "DeepSeek V3",
+"fam": "deepseek",
+"yes": {
+"doubao": 9,
+"solace": 2,
+"gemini": 7,
+"qwen": 10,
+"claude": 2,
+"chatgpt": 5,
+"kimi": 10,
+"mistral": 1
+},
+"n": {
+"solace": 10,
+"gemini": 10,
+"cobalt": 10,
+"doubao": 11,
+"mistral": 10,
+"llama": 10,
+"claude": 10,
+"grok": 10,
+"meridian": 10,
+"qwen": 10,
+"chatgpt": 10,
+"kimi": 10
+}
+},
+"mistralai/codestral-2508": {
+"name": "Codestral 2508",
+"fam": "mistral",
+"yes": {
+"gemini": 5,
+"kimi": 3,
+"meridian": 5
+},
+"n": {
+"doubao": 11,
+"kimi": 10,
+"solace": 10,
+"cobalt": 10,
+"qwen": 10,
+"gemini": 10,
+"llama": 10,
+"claude": 10,
+"chatgpt": 10,
+"deepseek": 10,
+"grok": 10,
+"meridian": 10
+}
+},
+"poolside/laguna-m.1": {
+"name": "Laguna M.1",
+"fam": "poolside",
+"yes": {
+"claude": 6,
+"qwen": 10,
+"chatgpt": 9,
+"llama": 1,
+"deepseek": 3,
+"kimi": 4,
+"meridian": 1
+},
+"n": {
+"mistral": 10,
+"llama": 10,
+"claude": 10,
+"grok": 10,
+"deepseek": 10,
+"qwen": 10,
+"meridian": 10,
+"gemini": 10,
+"cobalt": 10,
+"chatgpt": 10,
+"doubao": 11,
+"kimi": 10,
+"solace": 10
+}
+},
+"mistralai/ministral-8b-2512": {
+"name": "Ministral 3 8B 2512",
+"fam": "mistral",
+"yes": {
+"qwen": 5
+},
+"n": {
+"deepseek": 10,
+"gemini": 10,
+"chatgpt": 10,
+"meridian": 10,
+"solace": 10,
+"cobalt": 10,
+"grok": 10,
+"claude": 10,
+"qwen": 10,
+"llama": 10,
+"kimi": 10,
+"doubao": 11
+}
+},
+"perceptron/perceptron-mk1": {
+"name": "Perceptron Mk1",
+"fam": "perceptron",
+"yes": {
+"claude": 8,
+"qwen": 9,
+"chatgpt": 5,
+"kimi": 2,
+"solace": 4,
+"grok": 5,
+"mistral": 2,
+"gemini": 3,
+"doubao": 3,
+"meridian": 5,
+"llama": 2,
+"cobalt": 1,
+"deepseek": 2
+},
+"n": {
+"meridian": 10,
+"kimi": 10,
+"mistral": 10,
+"claude": 10,
+"solace": 10,
+"grok": 10,
+"gemini": 10,
+"cobalt": 10,
+"qwen": 10,
+"doubao": 11,
+"chatgpt": 10,
+"deepseek": 10,
+"llama": 10
+}
+},
+"openai/gpt-5.3-chat": {
+"name": "GPT-5.3 Chat",
+"fam": "openai",
+"yes": {},
+"n": {
+"gemini": 10,
+"doubao": 11,
+"mistral": 10,
+"grok": 10,
+"llama": 10,
+"meridian": 10,
+"solace": 10,
+"claude": 10,
+"qwen": 10,
+"cobalt": 10,
+"deepseek": 10,
+"kimi": 10
+}
+},
+"meta-llama/llama-3.2-3b-instruct": {
+"name": "Llama 3.2 3B Instruct",
+"fam": "meta",
+"yes": {
+"kimi": 3,
+"gemini": 4,
+"meridian": 1,
+"claude": 1,
+"chatgpt": 4,
+"qwen": 2,
+"grok": 1
+},
+"n": {
+"grok": 10,
+"kimi": 10,
+"gemini": 10,
+"chatgpt": 10,
+"qwen": 10,
+"meridian": 10,
+"doubao": 11,
+"solace": 10,
+"mistral": 10,
+"claude": 10,
+"deepseek": 10,
+"cobalt": 10
+}
+},
+"qwen/qwen3-30b-a3b-instruct-2507": {
+"name": "Qwen3 30B A3B Instruct 2507",
+"fam": "qwen",
+"yes": {},
+"n": {
+"mistral": 10,
+"claude": 10,
+"solace": 10,
+"kimi": 10,
+"llama": 10,
+"chatgpt": 10,
+"grok": 10,
+"meridian": 10,
+"cobalt": 10,
+"deepseek": 10,
+"gemini": 10,
+"doubao": 11
+}
+},
+"deepseek/deepseek-chat-v3.1": {
+"name": "DeepSeek V3.1",
+"fam": "deepseek",
+"yes": {},
+"n": {
+"claude": 10,
+"kimi": 10,
+"cobalt": 10,
+"mistral": 10,
+"solace": 10,
+"doubao": 11,
+"gemini": 10,
+"llama": 10,
+"grok": 10,
+"qwen": 10,
+"chatgpt": 10,
+"meridian": 10
+}
+},
+"openai/gpt-5-nano": {
+"name": "GPT-5 Nano",
+"fam": "openai",
+"yes": {},
+"n": {
+"meridian": 10,
+"cobalt": 10,
+"qwen": 10,
+"mistral": 10,
+"solace": 10,
+"grok": 10,
+"deepseek": 10,
+"doubao": 11,
+"gemini": 10,
+"llama": 10,
+"kimi": 10,
+"claude": 10
+}
+},
+"qwen/qwen3.6-flash": {
+"name": "Qwen3.6 Flash",
+"fam": "qwen",
+"yes": {},
+"n": {
+"llama": 10,
+"solace": 10,
+"kimi": 10,
+"doubao": 11,
+"cobalt": 10,
+"chatgpt": 10,
+"claude": 10,
+"grok": 10,
+"meridian": 10,
+"mistral": 10,
+"gemini": 10,
+"deepseek": 10
+}
+},
+"openai/gpt-5.6-sol": {
+"name": "GPT-5.6 Sol",
+"fam": "openai",
+"yes": {
+"solace": 1
+},
+"n": {
+"mistral": 10,
+"grok": 10,
+"doubao": 11,
+"gemini": 10,
+"solace": 10,
+"llama": 10,
+"claude": 10,
+"cobalt": 10,
+"qwen": 10,
+"kimi": 10,
+"deepseek": 10,
+"meridian": 10
+}
+},
+"nvidia/nemotron-3-super-120b-a12b": {
+"name": "Nemotron 3 Super",
+"fam": "nvidia",
+"yes": {
+"qwen": 5
+},
+"n": {
+"cobalt": 10,
+"mistral": 10,
+"qwen": 10,
+"kimi": 10,
+"doubao": 11,
+"llama": 10,
+"solace": 10,
+"chatgpt": 10,
+"deepseek": 10,
+"grok": 10,
+"gemini": 10,
+"claude": 10,
+"meridian": 10
+}
+},
+"openai/gpt-5.5": {
+"name": "GPT-5.5",
+"fam": "openai",
+"yes": {},
+"n": {
+"kimi": 10,
+"gemini": 10,
+"mistral": 10,
+"doubao": 11,
+"meridian": 10,
+"deepseek": 10,
+"qwen": 10,
+"solace": 10,
+"llama": 10,
+"claude": 10,
+"grok": 10,
+"cobalt": 10
+}
+},
+"openai/gpt-4.1-nano": {
+"name": "GPT-4.1 Nano",
+"fam": "openai",
+"yes": {},
+"n": {
+"qwen": 10,
+"cobalt": 10,
+"grok": 10,
+"deepseek": 10,
+"meridian": 10,
+"solace": 10,
+"gemini": 10,
+"llama": 10,
+"kimi": 10,
+"doubao": 11,
+"claude": 10,
+"mistral": 10
+}
+},
+"inclusionai/ling-2.6-1t": {
+"name": "Ling-2.6-1T",
+"fam": "ant",
+"yes": {},
+"n": {
+"deepseek": 10,
+"chatgpt": 10,
+"doubao": 11,
+"grok": 10,
+"claude": 10,
+"kimi": 10,
+"gemini": 10,
+"mistral": 10,
+"meridian": 10,
+"llama": 10,
+"solace": 10,
+"qwen": 10,
+"cobalt": 10
+}
+},
+"mistralai/ministral-3b-2512": {
+"name": "Ministral 3 3B 2512",
+"fam": "mistral",
+"yes": {},
+"n": {
+"claude": 10,
+"gemini": 10,
+"deepseek": 10,
+"llama": 10,
+"doubao": 11,
+"qwen": 10,
+"grok": 10,
+"chatgpt": 10,
+"meridian": 10,
+"kimi": 10,
+"solace": 10,
+"cobalt": 10
+}
+},
+"z-ai/glm-5": {
+"name": "GLM 5",
+"fam": "zhipu",
+"yes": {
+"deepseek": 2,
+"claude": 3,
+"doubao": 2,
+"qwen": 2,
+"cobalt": 1,
+"meridian": 1
+},
+"n": {
+"llama": 10,
+"grok": 10,
+"deepseek": 10,
+"doubao": 11,
+"meridian": 10,
+"cobalt": 10,
+"claude": 10,
+"chatgpt": 10,
+"qwen": 10,
+"kimi": 10,
+"gemini": 10,
+"mistral": 10,
+"solace": 10
+}
+},
+"minimax/minimax-m2.7": {
+"name": "MiniMax M2.7",
+"fam": "minimax",
+"yes": {
+"claude": 7,
+"qwen": 5,
+"deepseek": 2,
+"doubao": 1,
+"chatgpt": 3,
+"meridian": 1
+},
+"n": {
+"llama": 10,
+"claude": 10,
+"doubao": 11,
+"deepseek": 10,
+"qwen": 10,
+"meridian": 10,
+"solace": 10,
+"gemini": 10,
+"mistral": 10,
+"chatgpt": 10,
+"kimi": 10,
+"grok": 10,
+"cobalt": 10
+}
+},
+"qwen/qwen3-30b-a3b": {
+"name": "Qwen3 30B A3B (MoE)",
+"fam": "qwen",
+"yes": {},
+"n": {
+"meridian": 10,
+"deepseek": 10,
+"mistral": 10,
+"chatgpt": 10,
+"llama": 10,
+"solace": 10,
+"kimi": 10,
+"grok": 10,
+"doubao": 11,
+"claude": 10,
+"gemini": 10,
+"cobalt": 10
+}
+},
+"moonshotai/kimi-k2-0905": {
+"name": "Kimi K2 0905",
+"fam": "kimi",
+"yes": {
+"qwen": 5,
+"claude": 10,
+"doubao": 5,
+"deepseek": 3
+},
+"n": {
+"chatgpt": 10,
+"mistral": 10,
+"gemini": 10,
+"solace": 10,
+"qwen": 10,
+"deepseek": 10,
+"doubao": 11,
+"claude": 10,
+"grok": 10,
+"llama": 10,
+"meridian": 10,
+"cobalt": 9
+}
+},
+"amazon/nova-lite-v1": {
+"name": "Nova Lite 1.0",
+"fam": "amazon",
+"yes": {
+"qwen": 4,
+"kimi": 1
+},
+"n": {
+"qwen": 10,
+"gemini": 10,
+"cobalt": 10,
+"deepseek": 10,
+"claude": 10,
+"mistral": 10,
+"doubao": 11,
+"kimi": 10,
+"llama": 10,
+"solace": 10,
+"grok": 10,
+"chatgpt": 10,
+"meridian": 10
+}
+},
+"deepseek/deepseek-v3.1-terminus": {
+"name": "DeepSeek V3.1 Terminus",
+"fam": "deepseek",
+"yes": {
+"mistral": 2,
+"kimi": 4,
+"chatgpt": 6,
+"solace": 1,
+"qwen": 7,
+"claude": 2
+},
+"n": {
+"cobalt": 10,
+"llama": 10,
+"meridian": 10,
+"solace": 10,
+"mistral": 10,
+"gemini": 10,
+"chatgpt": 10,
+"doubao": 11,
+"grok": 10,
+"kimi": 10,
+"qwen": 10,
+"claude": 10
+}
+},
+"openai/gpt-5.4-nano": {
+"name": "GPT-5.4 Nano",
+"fam": "openai",
+"yes": {
+"qwen": 3
+},
+"n": {
+"mistral": 10,
+"kimi": 10,
+"cobalt": 10,
+"solace": 10,
+"gemini": 10,
+"llama": 10,
+"grok": 10,
+"claude": 10,
+"qwen": 10,
+"meridian": 10,
+"doubao": 11,
+"deepseek": 10
+}
+},
+"cohere/command-r-plus-08-2024": {
+"name": "Command R+ (08-2024)",
+"fam": "cohere",
+"yes": {},
+"n": {
+"solace": 10,
+"kimi": 10,
+"chatgpt": 10,
+"llama": 10,
+"claude": 10,
+"qwen": 10,
+"doubao": 11,
+"grok": 10,
+"cobalt": 10,
+"meridian": 10,
+"gemini": 10,
+"mistral": 10,
+"deepseek": 10
+}
+},
+"deepseek/deepseek-r1-0528": {
+"name": "DeepSeek R1 0528",
+"fam": "deepseek",
+"yes": {
+"kimi": 9,
+"chatgpt": 2,
+"doubao": 3,
+"qwen": 10,
+"claude": 5,
+"mistral": 4,
+"meridian": 2,
+"gemini": 1,
+"solace": 1
+},
+"n": {
+"solace": 10,
+"meridian": 10,
+"kimi": 10,
+"chatgpt": 10,
+"doubao": 11,
+"cobalt": 10,
+"llama": 10,
+"qwen": 10,
+"grok": 10,
+"gemini": 10,
+"mistral": 10,
+"claude": 10
+}
+},
+"qwen/qwen3-next-80b-a3b-instruct": {
+"name": "Qwen3 Next 80B A3B",
+"fam": "qwen",
+"yes": {},
+"n": {
+"mistral": 10,
+"doubao": 11,
+"solace": 10,
+"claude": 10,
+"chatgpt": 10,
+"gemini": 10,
+"grok": 10,
+"cobalt": 10,
+"meridian": 10,
+"llama": 10,
+"kimi": 10,
+"deepseek": 10
+}
+},
+"moonshotai/kimi-k2.6": {
+"name": "Kimi K2.6",
+"fam": "kimi",
+"yes": {
+"claude": 4,
+"deepseek": 1
+},
+"n": {
+"qwen": 10,
+"solace": 10,
+"meridian": 10,
+"cobalt": 10,
+"mistral": 10,
+"grok": 10,
+"gemini": 10,
+"llama": 10,
+"chatgpt": 10,
+"doubao": 11,
+"deepseek": 10,
+"claude": 10
+}
+},
+"moonshotai/kimi-k2-thinking": {
+"name": "Kimi K2 Thinking",
+"fam": "kimi",
+"yes": {},
+"n": {
+"chatgpt": 10,
+"doubao": 11,
+"qwen": 10,
+"claude": 10,
+"llama": 10,
+"gemini": 10,
+"solace": 10,
+"cobalt": 10,
+"grok": 10,
+"meridian": 10,
+"deepseek": 10,
+"mistral": 10
+}
+},
+"qwen/qwen3.5-397b-a17b": {
+"name": "Qwen3.5 397B A17B",
+"fam": "qwen",
+"yes": {},
+"n": {
+"llama": 10,
+"cobalt": 10,
+"grok": 10,
+"chatgpt": 10,
+"gemini": 10,
+"solace": 10,
+"doubao": 11,
+"meridian": 10,
+"claude": 10,
+"deepseek": 10,
+"kimi": 10,
+"mistral": 10
+}
+},
+"qwen/qwen3.5-35b-a3b": {
+"name": "Qwen3.5 35B A3B",
+"fam": "qwen",
+"yes": {},
+"n": {
+"llama": 10,
+"claude": 10,
+"cobalt": 10,
+"kimi": 10,
+"mistral": 10,
+"meridian": 10,
+"deepseek": 10,
+"chatgpt": 10,
+"grok": 10,
+"doubao": 11,
+"gemini": 10,
+"solace": 10
+}
+},
+"qwen/qwen3.7-max": {
+"name": "Qwen3.7 Max",
+"fam": "qwen",
+"yes": {},
+"n": {
+"gemini": 10,
+"claude": 10,
+"llama": 10,
+"deepseek": 10,
+"meridian": 10,
+"mistral": 10,
+"doubao": 11,
+"cobalt": 10,
+"solace": 10,
+"chatgpt": 10,
+"grok": 10,
+"kimi": 10
+}
+},
+"tencent/hy3": {
+"name": "Hy3",
+"fam": "tencent",
+"yes": {},
+"n": {
+"solace": 10,
+"claude": 10,
+"meridian": 10,
+"chatgpt": 10,
+"qwen": 10,
+"gemini": 10,
+"llama": 10,
+"cobalt": 10,
+"deepseek": 10,
+"grok": 10,
+"doubao": 11,
+"mistral": 10,
+"kimi": 10
+}
+},
+"openai/gpt-4": {
+"name": "GPT-4",
+"fam": "openai",
+"yes": {},
+"n": {
+"gemini": 10,
+"deepseek": 10,
+"doubao": 11,
+"claude": 10,
+"llama": 10,
+"solace": 10,
+"cobalt": 10,
+"qwen": 10,
+"grok": 10,
+"kimi": 10,
+"mistral": 10,
+"meridian": 10
+}
+},
+"qwen/qwen3.5-27b": {
+"name": "Qwen3.5 27B",
+"fam": "qwen",
+"yes": {},
+"n": {
+"grok": 10,
+"meridian": 10,
+"solace": 10,
+"claude": 10,
+"gemini": 10,
+"llama": 10,
+"deepseek": 10,
+"doubao": 11,
+"mistral": 10,
+"chatgpt": 10,
+"kimi": 10,
+"cobalt": 10
+}
+},
+"inclusionai/ling-2.6-flash": {
+"name": "Ling-2.6-flash",
+"fam": "ant",
+"yes": {
+"kimi": 2,
+"solace": 1,
+"cobalt": 1,
+"doubao": 2
+},
+"n": {
+"mistral": 10,
+"doubao": 11,
+"kimi": 10,
+"meridian": 10,
+"llama": 10,
+"grok": 10,
+"cobalt": 10,
+"qwen": 10,
+"deepseek": 10,
+"claude": 10,
+"chatgpt": 10,
+"gemini": 10,
+"solace": 10
+}
+},
+"anthropic/claude-3-haiku": {
+"name": "Claude 3 Haiku",
+"fam": "anthropic",
+"yes": {},
+"n": {
+"meridian": 10,
+"grok": 10,
+"doubao": 11,
+"gemini": 10,
+"mistral": 10,
+"llama": 10,
+"kimi": 10,
+"deepseek": 10,
+"chatgpt": 10,
+"qwen": 10,
+"solace": 10,
+"cobalt": 10
+}
+},
+"qwen/qwen3-14b": {
+"name": "Qwen3 14B",
+"fam": "qwen",
+"yes": {},
+"n": {
+"cobalt": 10,
+"claude": 10,
+"meridian": 10,
+"chatgpt": 10,
+"grok": 10,
+"deepseek": 10,
+"gemini": 10,
+"mistral": 10,
+"llama": 10,
+"doubao": 11,
+"kimi": 10,
+"solace": 10
+}
+},
+"inclusionai/ring-2.6-1t": {
+"name": "Ring-2.6-1T",
+"fam": "ant",
+"yes": {
+"solace": 1
+},
+"n": {
+"solace": 10,
+"claude": 10,
+"grok": 10,
+"qwen": 10,
+"deepseek": 10,
+"chatgpt": 10,
+"kimi": 10,
+"gemini": 10,
+"doubao": 11,
+"llama": 10,
+"meridian": 10,
+"mistral": 10,
+"cobalt": 10
+}
+},
+"openai/gpt-4o": {
+"name": "GPT-4o",
+"fam": "openai",
+"yes": {
+"claude": 5,
+"qwen": 8,
+"llama": 2
+},
+"n": {
+"doubao": 11,
+"gemini": 10,
+"grok": 10,
+"mistral": 10,
+"claude": 10,
+"qwen": 10,
+"meridian": 10,
+"solace": 10,
+"kimi": 10,
+"deepseek": 10,
+"llama": 10,
+"cobalt": 10
+}
+},
+"openai/gpt-5.6-luna": {
+"name": "GPT-5.6 Luna",
+"fam": "openai",
+"yes": {},
+"n": {
+"llama": 10,
+"doubao": 11,
+"mistral": 10,
+"deepseek": 10,
+"claude": 10,
+"meridian": 10,
+"cobalt": 10,
+"gemini": 10,
+"solace": 10,
+"qwen": 10,
+"grok": 10,
+"kimi": 10
+}
+},
+"cohere/command-r-08-2024": {
+"name": "Command R (08-2024)",
+"fam": "cohere",
+"yes": {},
+"n": {
+"grok": 10,
+"claude": 10,
+"mistral": 10,
+"doubao": 11,
+"deepseek": 10,
+"chatgpt": 10,
+"qwen": 10,
+"llama": 10,
+"meridian": 10,
+"solace": 10,
+"cobalt": 10,
+"gemini": 10,
+"kimi": 10
+}
+},
+"arcee-ai/trinity-large-thinking": {
+"name": "Trinity Large Thinking",
+"fam": "arcee",
+"yes": {
+"chatgpt": 3
+},
+"n": {
+"qwen": 10,
+"claude": 10,
+"gemini": 10,
+"mistral": 10,
+"cobalt": 10,
+"llama": 10,
+"chatgpt": 10,
+"kimi": 10,
+"grok": 10,
+"doubao": 11,
+"deepseek": 10,
+"meridian": 10,
+"solace": 10
+}
+},
+"mistralai/mistral-nemo": {
+"name": "Mistral Nemo",
+"fam": "mistral",
+"yes": {},
+"n": {
+"claude": 10,
+"meridian": 9,
+"grok": 9,
+"chatgpt": 9,
+"qwen": 10,
+"solace": 10,
+"llama": 10,
+"deepseek": 9,
+"kimi": 10,
+"doubao": 11,
+"gemini": 10,
+"cobalt": 9
+}
+},
+"qwen/qwen3-coder-plus": {
+"name": "Qwen3 Coder Plus",
+"fam": "qwen",
+"yes": {},
+"n": {
+"deepseek": 10,
+"meridian": 10,
+"solace": 10,
+"gemini": 10,
+"mistral": 10,
+"llama": 10,
+"chatgpt": 10,
+"grok": 10,
+"cobalt": 10,
+"doubao": 11,
+"kimi": 10,
+"claude": 10
+}
+},
+"anthropic/claude-sonnet-4": {
+"name": "Claude Sonnet 4",
+"fam": "anthropic",
+"yes": {
+"deepseek": 5,
+"doubao": 5,
+"qwen": 5
+},
+"n": {
+"gemini": 10,
+"kimi": 10,
+"chatgpt": 10,
+"qwen": 10,
+"grok": 10,
+"meridian": 10,
+"cobalt": 10,
+"mistral": 10,
+"deepseek": 10,
+"doubao": 11,
+"llama": 10,
+"solace": 10
+}
+},
+"qwen/qwen3-30b-a3b-thinking-2507": {
+"name": "Qwen3 30B A3B Thinking 2507",
+"fam": "qwen",
+"yes": {},
+"n": {
+"grok": 10,
+"kimi": 10,
+"meridian": 10,
+"solace": 10,
+"cobalt": 10,
+"doubao": 11,
+"claude": 10,
+"mistral": 10,
+"llama": 10,
+"deepseek": 10,
+"gemini": 10,
+"chatgpt": 10
+}
+},
+"mistralai/mixtral-8x22b-instruct": {
+"name": "Mixtral 8x22B Instruct",
+"fam": "mistral",
+"yes": {},
+"n": {
+"chatgpt": 10,
+"grok": 10,
+"solace": 10,
+"llama": 10,
+"claude": 10,
+"cobalt": 10,
+"gemini": 10,
+"doubao": 11,
+"deepseek": 10,
+"qwen": 10,
+"kimi": 10,
+"meridian": 10
+}
+},
+"rekaai/reka-flash-3": {
+"name": "Reka Flash 3",
+"fam": "reka",
+"yes": {
+"chatgpt": 8,
+"gemini": 1,
+"qwen": 2
+},
+"n": {
+"grok": 10,
+"deepseek": 10,
+"cobalt": 10,
+"solace": 10,
+"chatgpt": 10,
+"qwen": 10,
+"claude": 10,
+"kimi": 10,
+"llama": 9,
+"mistral": 10,
+"doubao": 11,
+"gemini": 10,
+"meridian": 10
+}
+},
+"qwen/qwen3.5-9b": {
+"name": "Qwen3.5-9B",
+"fam": "qwen",
+"yes": {},
+"n": {
+"claude": 10,
+"kimi": 10,
+"gemini": 10,
+"deepseek": 10,
+"llama": 10,
+"mistral": 10,
+"cobalt": 10,
+"solace": 10,
+"grok": 10,
+"chatgpt": 10,
+"meridian": 10,
+"doubao": 10
+}
+},
+"anthropic/claude-sonnet-4.5": {
+"name": "Claude Sonnet 4.5",
+"fam": "anthropic",
+"yes": {},
+"n": {
+"deepseek": 10,
+"qwen": 10,
+"doubao": 10,
+"gemini": 10,
+"llama": 10,
+"meridian": 10,
+"kimi": 10,
+"grok": 10,
+"cobalt": 10,
+"solace": 10,
+"mistral": 10,
+"chatgpt": 10
+}
+},
+"anthropic/claude-fable-5": {
+"name": "Claude Fable 5",
+"fam": "anthropic",
+"yes": {},
+"n": {
+"llama": 10,
+"gemini": 10,
+"chatgpt": 10,
+"doubao": 10,
+"grok": 10,
+"meridian": 10,
+"mistral": 10,
+"solace": 10,
+"kimi": 10,
+"cobalt": 10,
+"qwen": 10,
+"deepseek": 10
+}
+},
+"anthropic/claude-opus-4.7": {
+"name": "Claude Opus 4.7",
+"fam": "anthropic",
+"yes": {},
+"n": {
+"cobalt": 10,
+"qwen": 10,
+"chatgpt": 10,
+"mistral": 10,
+"kimi": 10,
+"grok": 10,
+"llama": 10,
+"gemini": 10,
+"meridian": 10,
+"deepseek": 10,
+"doubao": 10,
+"solace": 10
+}
+},
+"anthropic/claude-opus-4.5": {
+"name": "Claude Opus 4.5",
+"fam": "anthropic",
+"yes": {
+"qwen": 5,
+"deepseek": 5
+},
+"n": {
+"solace": 10,
+"doubao": 10,
+"meridian": 10,
+"cobalt": 10,
+"chatgpt": 10,
+"mistral": 10,
+"gemini": 10,
+"qwen": 10,
+"llama": 10,
+"grok": 10,
+"deepseek": 10,
+"kimi": 10
+}
+},
+"anthropic/claude-opus-4.6": {
+"name": "Claude Opus 4.6",
+"fam": "anthropic",
+"yes": {
+"qwen": 5
+},
+"n": {
+"meridian": 10,
+"doubao": 10,
+"kimi": 10,
+"deepseek": 10,
+"llama": 10,
+"cobalt": 10,
+"chatgpt": 10,
+"qwen": 10,
+"mistral": 10,
+"solace": 10,
+"gemini": 10,
+"grok": 10
+}
+},
+"anthropic/claude-haiku-4.5": {
+"name": "Claude Haiku 4.5",
+"fam": "anthropic",
+"yes": {
+"qwen": 4
+},
+"n": {
+"grok": 10,
+"mistral": 10,
+"meridian": 10,
+"cobalt": 10,
+"doubao": 10,
+"llama": 10,
+"solace": 10,
+"deepseek": 10,
+"chatgpt": 10,
+"kimi": 10,
+"gemini": 10,
+"qwen": 10
+}
+},
+"anthropic/claude-opus-4.8": {
+"name": "Claude Opus 4.8",
+"fam": "anthropic",
+"yes": {
+"qwen": 3,
+"chatgpt": 4,
+"doubao": 1,
+"grok": 3,
+"deepseek": 4
+},
+"n": {
+"chatgpt": 10,
+"qwen": 10,
+"cobalt": 10,
+"grok": 10,
+"gemini": 10,
+"doubao": 10,
+"meridian": 10,
+"llama": 10,
+"mistral": 10,
+"kimi": 10,
+"solace": 10,
+"deepseek": 10
+}
+},
+"anthropic/claude-sonnet-4.6": {
+"name": "Claude Sonnet 4.6",
+"fam": "anthropic",
+"yes": {
+"qwen": 10,
+"deepseek": 5
+},
+"n": {
+"grok": 10,
+"deepseek": 10,
+"doubao": 10,
+"mistral": 10,
+"meridian": 10,
+"qwen": 10,
+"cobalt": 10,
+"kimi": 10,
+"solace": 10,
+"llama": 10,
+"gemini": 10,
+"chatgpt": 10
+}
+},
+"anthropic/claude-opus-5": {
+"name": "Claude Opus 5",
+"fam": "anthropic",
+"yes": {},
+"n": {
+"llama": 10,
+"solace": 10,
+"mistral": 10,
+"meridian": 10,
+"kimi": 10,
+"chatgpt": 10,
+"gemini": 10,
+"deepseek": 10,
+"doubao": 10,
+"cobalt": 10,
+"grok": 10,
+"qwen": 10
+}
+}
+}

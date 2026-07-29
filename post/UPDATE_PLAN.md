@@ -9,6 +9,8 @@ confirmed genuine by adjudicator), Laguna M.1 76→**79.4%**, Granite 4.1 8B
 →**32.8%**, Gemma 3 4B →**0/320** (PaLM-2 FP removed; joins never-list).
 17 API + 5 local FP records removed (создатели/self-garbles/etc).
 Conditional variant (supplementary, post-fix): pooled **9.37%**, naming rate 87.7%.
+Per-placebo acceptance (post-fix): Cobalt 2.74 · Meridian-4 2.85 · Solace 2.95%
+(Solace highest — supersedes the pre-fix 2.50/2.45/2.28 ordering).
 
 ### Post-fix analyses (2026-07-29, analysis_scratch/postfix_analyses.md)
 - **Region×language interaction — strong**: paired Δ(zh−en): Chinese-lab models

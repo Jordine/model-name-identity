@@ -158,3 +158,15 @@ Top-5 per-opportunity → conditional reshuffles (all shy namers):
 | Nemotron Super 49B | 155/320 (48.4%) | 155/191 (81.2%) | +32.7 |
 | OLMo 3.1 32B Instruct | 193/320 (60.3%) | 193/210 (91.9%) | +31.6 |
 | Hermes 3 70B Instruct | 63/320 (19.7%) | 63/132 (47.7%) | +28.0 |
+
+## Addendum (2026-07-29, round-2 review): interaction robustness minus Qwen
+Dropping the entire Qwen/Alibaba family (41 models) from the Chinese-lab group:
+CN n=37 mean Δ(zh−en) = −2.09pp | non-CN n=112 mean = +6.20pp |
+difference −8.29pp [−12.17, −4.82], p=0.0002 (10k cluster bootstrap over models,
+seed 12345; zero exceedances — reported at the add-one convention floor).
+Conclusion: the region×language interaction is not a Qwen-family artifact.
+
+## Correction (2026-07-29): per-placebo acceptance rates, post-fix
+Cobalt 2.74% · Meridian-4 2.85% · Solace 2.95% (highest = Solace, an English
+word). Earlier per-name figures (2.50/2.45/2.28, Meridian-highest) were pre-fix
+and are superseded; pooled floor ≈2.8% unchanged.

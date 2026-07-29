@@ -280,7 +280,7 @@ def fig_all_models(reg, per):
     ax.errorbar(rates, np.arange(n), xerr=errs, fmt="none", ecolor=INK2, elinewidth=0.7, capsize=1.5, zorder=4)
     ax.set_yticks(np.arange(n), names, fontsize=7.6)
     ax.set_ylim(-0.6, n - 0.4)
-    ax.set_xlabel("% of identity/creator prompts where the model gave a mismatched name (cluster-bootstrap 95% CI)")
+    ax.set_xlabel("% of short-question responses with a mismatched name (cluster-bootstrap 95% CI)")
     ax.set_ylabel("model (sorted)")
     ax.xaxis.grid(True, color=GRID, lw=0.8)
     ax.set_axisbelow(True)
@@ -311,7 +311,7 @@ def fig_lang_agg(per):
     ax.set_ylim(0, max(v + e for v, e in zip(vals, errs[1])) + 2)
     ax.set_yticks([])
     style(ax)
-    ax.set_title("Foreign-claim rate by prompt language — balanced battery, all models pooled (model-clustered 95% CIs)",
+    ax.set_title("Name-mismatch rate by prompt language — the short-question battery, all models pooled (model-clustered 95% CIs)",
                  loc="left", fontsize=11, pad=12)
     save(fig, "fig_lang_agg.png")
 
@@ -341,26 +341,28 @@ def fig_lang_heatmap(reg, per):
                         color="#ffffff" if v > 55 else INK2)
     style(ax, bottom=False)
     cb = fig.colorbar(im, ax=ax, shrink=0.7, pad=0.02)
-    cb.set_label("% of records with a mismatched name", fontsize=8, color=INK2)
+    cb.set_label("% of responses with a mismatched name", fontsize=8, color=INK2)
     cb.outline.set_visible(False)
-    ax.set_title("Per-language name mismatch — heaviest models + frontier Claudes (each cell = % of that model's 40 identity/creator records in that language)",
+    ax.set_title("Per-language name mismatch — heaviest models + frontier Claudes (each cell = % of that model's 40 short-question responses in that language)",
                  loc="left", fontsize=10, pad=12)
     save(fig, "fig_lang_heatmap.png")
 
 
-def _scrubout_labels(fig, ax, xs, ys, es, tl):
+def _scrubout_labels(fig, ax, xs, ys, es, tl, segs, nbr):
     """Deterministic point labels that clear the line, the CI whiskers and each
-    other: each label sits to the RIGHT of its point (LEFT for the last point) so
-    the vertical whisker never strikes it; it goes ABOVE when the segment on the
-    label's side falls/stays flat and BELOW when it rises; a below-label that
-    would leave the axes bottom is flipped above (switching side if that one is
-    free); any residual overlap (measured with real text extents) is nudged away."""
+    other. `segs` = marker-index pairs actually joined by a segment (same-event
+    markers share an x and are NOT joined); `nbr` = per-marker (left_y, right_y)
+    neighbour-event heights (None at the ends). Each label sits to the RIGHT of
+    its point (LEFT for the final event) so the vertical whisker never strikes
+    it; it goes ABOVE when the segment on the label's side falls/stays flat and
+    BELOW when it rises; a below-label that would leave the axes bottom is
+    flipped above (switching side if that one is free); any residual overlap
+    (measured with real text extents) is nudged away."""
     fig.canvas.draw()
     ren = fig.canvas.get_renderer()
     px = fig.dpi / 72.0
     tr = ax.transData.transform
     axbox = ax.get_window_extent(ren)
-    n = len(xs)
     P = [tr((x, y)) for x, y in zip(xs, ys)]
     obstacles = []          # marker + whisker box per point
     for i, (x, y) in enumerate(zip(xs, ys)):
@@ -370,8 +372,12 @@ def _scrubout_labels(fig, ax, xs, ys, es, tl):
         obstacles.append((cx - 4.5 * px, w0 - 2 * px, cx + 4.5 * px, w1 + 2 * px))
 
     def seg_hit(bb):
-        for i in range(n - 1):
-            (x1, y1), (x2, y2) = P[i], P[i + 1]
+        for i, j in segs:
+            (x1, y1), (x2, y2) = P[i], P[j]
+            if x2 < x1:
+                (x1, y1), (x2, y2) = (x2, y2), (x1, y1)
+            if x2 == x1:
+                continue
             lo, hi = max(x1, bb[0]), min(x2, bb[2])
             if lo > hi:
                 continue
@@ -383,14 +389,16 @@ def _scrubout_labels(fig, ax, xs, ys, es, tl):
 
     placed = []
     for i, (xx, yy, t) in enumerate(zip(xs, ys, tl)):
-        side = -1 if (i == n - 1 and n > 1) else 1
-        nb = ys[i + 1] if side == 1 else ys[i - 1]
+        left_y, right_y = nbr[i]
+        side = 1 if right_y is not None else -1
+        nb = right_y if side == 1 else left_y
+        if nb is None:
+            nb = yy                              # single event — no slope to dodge
         below = nb > yy + 1e-9
         if below and tr((xx, yy))[1] - 16 * px < axbox.y0 + 3 * px:
             below = False                        # would leave the axes — go above,
-            other = ys[i - 1] if i > 0 else nb   # on the other side if that one is flat
-            if side == 1 and i > 0 and other <= yy + 1e-9:
-                side = -1
+            if side == 1 and left_y is not None and left_y <= yy + 1e-9:
+                side = -1                        # on the other side if that one is flat
         dx, dy = 9 * side, (-7 if below else 4)
         for k in range(6):
             a = ax.annotate(t, (xx, yy), textcoords="offset points", xytext=(dx, dy),
@@ -413,26 +421,44 @@ def _scrubout_labels(fig, ax, xs, ys, es, tl):
         placed.append(bb)
 
 
-def _scrubout_one(mids, color, title, fname, strip, subtitle=None):
-    xs, ys, es, tl = [], [], [], []
-    for mid in mids:
-        if mid not in per_cache:
-            continue
-        v = per_cache[mid]
-        xs.append(len(xs))
-        ys.append(100 * v["d"] / v["n"])
-        es.append(cluster_ci(list(v["cells"].values())))
-        tl.append(v["name"].replace(strip, "") if strip else v["name"])
-    if not xs:
+def _scrubout_one(events, color, title, fname, strip, subtitle=None):
+    """events = [(release_date, [mid, …])] in true release order. Same-day
+    siblings share ONE x position (two markers, no segment between them — two
+    sizes shipped the same day is one release event, not a temporal step).
+    Events are evenly spaced with dated tick labels: a true time axis would
+    crush the dense 2026 releases into each other; the dates keep the even
+    spacing honest. See analysis_scratch/generics_audit/release_dates.md."""
+    evs = [(date, [m for m in mids if m in per_cache]) for date, mids in events]
+    evs = [(date, mids) for date, mids in evs if mids]
+    if not evs:
         return
+    xs, ys, es, tl, idxs = [], [], [], [], []
+    for xi, (date, mids) in enumerate(evs):
+        idxs.append([])
+        for mid in mids:
+            v = per_cache[mid]
+            idxs[xi].append(len(xs))
+            xs.append(xi)
+            ys.append(100 * v["d"] / v["n"])
+            es.append(cluster_ci(list(v["cells"].values())))
+            tl.append(v["name"].replace(strip, "") if strip else v["name"])
     es = np.array(es).T
-    fig, ax = plt.subplots(figsize=(7.0, 3.8))
-    ax.errorbar(xs, ys, yerr=es, fmt="-o", color=color, lw=2, ms=7, capsize=3, elinewidth=1, zorder=3)
-    ax.set_ylabel("% of prompts with a mismatched name", fontsize=9)
-    ax.set_xticks([])
-    ax.set_xlabel("release order →")
+    ne = len(evs)
+    # line = event-to-event segments only; a multi-model event fans out to the next
+    segs = [(i, j) for k in range(ne - 1) for i in idxs[k] for j in idxs[k + 1]]
+    # neighbour-event heights steer each label above/below (first marker = anchor)
+    nbr = [(ys[idxs[xi - 1][0]] if xi > 0 else None,
+            ys[idxs[xi + 1][0]] if xi < ne - 1 else None) for xi in xs]
+    fig, ax = plt.subplots(figsize=(max(7.0, 1.8 + 0.66 * ne), 3.8))
+    for i, j in segs:
+        ax.plot([xs[i], xs[j]], [ys[i], ys[j]], color=color, lw=2, zorder=2)
+    ax.errorbar(xs, ys, yerr=es, fmt="o", color=color, ms=7, capsize=3, elinewidth=1, zorder=3)
+    ax.set_ylabel("% of responses with a mismatched name", fontsize=9)
+    ax.set_xticks(range(ne), [date for date, _ in evs], fontsize=7.3, rotation=30,
+                  ha="right", rotation_mode="anchor")
+    ax.set_xlabel("release date (events evenly spaced — spacing not proportional to elapsed time)", fontsize=8.5)
     ax.set_ylim(-6, max(ys) + 14)
-    ax.set_xlim(-0.5, len(xs) - 0.5)
+    ax.set_xlim(-0.5, ne - 0.5)
     ax.set_yticks([t for t in ax.get_yticks() if 0 <= t <= max(ys) + 14])   # no phantom negative ticks
     ax.yaxis.grid(True, color=GRID, lw=0.8)
     ax.set_axisbelow(True)
@@ -440,42 +466,83 @@ def _scrubout_one(mids, color, title, fname, strip, subtitle=None):
     ax.set_title(title, loc="left", fontsize=11, pad=24 if subtitle else 12)
     if subtitle:
         ax.text(0, 1.02, subtitle, transform=ax.transAxes, fontsize=8, color=MUTED, va="bottom")
-    _scrubout_labels(fig, ax, xs, ys, es, tl)
+    _scrubout_labels(fig, ax, xs, ys, es, tl, segs, nbr)
     save(fig, fname)
 
 
 per_cache = {}
 
+# Release EVENTS, verified against primary sources (release_dates.md; Anthropic
+# newsroom/TechCrunch/Axios for the 2026 Claudes). models.json `created` is an
+# OpenRouter LISTING epoch, not a release date — it lags by up to ~4 weeks
+# (qwen-2.5-7b) and 2 days (opus-5), so nothing here may sort by `created`.
+KIMI_EVENTS = [
+    ("2025-07-11", ["moonshotai/kimi-k2"]),
+    ("2025-09-05", ["moonshotai/kimi-k2-0905"]),
+    ("2025-11-06", ["moonshotai/kimi-k2-thinking"]),
+    ("2026-01-27", ["moonshotai/kimi-k2.5"]),
+    ("2026-04-20", ["moonshotai/kimi-k2.6"]),
+    ("2026-06-12", ["moonshotai/kimi-k2.7-code"]),
+]
+QWEN_EVENTS = [
+    # 72B + 7B shipped in ONE launch ("Qwen2.5: A Party of Foundation Models!")
+    ("2024-09-19", ["qwen/qwen-2.5-72b-instruct", "qwen/qwen-2.5-7b-instruct"]),
+    ("2025-04-29", ["qwen/qwen3-235b-a22b"]),
+    ("2026-01-25", ["qwen/qwen3-max-thinking"]),
+    ("2026-02-16", ["qwen/qwen3.5-397b-a17b"]),
+    ("2026-05-19", ["qwen/qwen3.7-max"]),
+]
+OPUS_EVENTS = [
+    ("2025-05-22", ["anthropic/claude-opus-4"]),
+    ("2025-08-05", ["anthropic/claude-opus-4.1"]),
+    ("2025-11-24", ["anthropic/claude-opus-4.5"]),
+    ("2026-02-05", ["anthropic/claude-opus-4.6"]),
+    ("2026-04-16", ["anthropic/claude-opus-4.7"]),
+    ("2026-05-28", ["anthropic/claude-opus-4.8"]),
+    ("2026-07-24", ["anthropic/claude-opus-5"]),
+]
+SONNET_EVENTS = [
+    ("2025-05-22", ["anthropic/claude-sonnet-4"]),
+    ("2025-09-29", ["anthropic/claude-sonnet-4.5"]),
+    ("2026-02-17", ["anthropic/claude-sonnet-4.6"]),
+    ("2026-06-30", ["anthropic/claude-sonnet-5"]),
+]
+# Combined frontier-Claude timeline — Opus + Sonnet interleaved by REAL release
+# date (hardcoded + verified; the `created`-sorted version drew a fake step
+# between the same-day Opus 4 / Sonnet 4 launch). Lab-level view: two spikes.
+CLAUDE_EVENTS = [
+    ("2025-05-22", ["anthropic/claude-opus-4", "anthropic/claude-sonnet-4"]),   # Claude 4 launch — one event
+    ("2025-08-05", ["anthropic/claude-opus-4.1"]),
+    ("2025-09-29", ["anthropic/claude-sonnet-4.5"]),
+    ("2025-11-24", ["anthropic/claude-opus-4.5"]),
+    ("2026-02-05", ["anthropic/claude-opus-4.6"]),
+    ("2026-02-17", ["anthropic/claude-sonnet-4.6"]),
+    ("2026-04-16", ["anthropic/claude-opus-4.7"]),
+    ("2026-05-28", ["anthropic/claude-opus-4.8"]),
+    ("2026-06-30", ["anthropic/claude-sonnet-5"]),
+    ("2026-07-24", ["anthropic/claude-opus-5"]),
+]
+
 
 def fig_scrubout(reg, per):
     global per_cache
     per_cache = per
-    _scrubout_one(["moonshotai/kimi-k2", "moonshotai/kimi-k2-0905", "moonshotai/kimi-k2-thinking",
-                   "moonshotai/kimi-k2.5", "moonshotai/kimi-k2.6", "moonshotai/kimi-k2.7-code"],
+    _scrubout_one(KIMI_EVENTS,
                   CAT[0], "The scrub-out (Kimi K2 line): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
                   "fig_scrubout_kimi.png", "Kimi ")
-    _scrubout_one(["qwen/qwen-2.5-72b-instruct", "qwen/qwen-2.5-7b-instruct", "qwen/qwen3-235b-a22b",
-                   "qwen/qwen3-max-thinking", "qwen/qwen3.5-397b-a17b", "qwen/qwen3.7-max"],
+    _scrubout_one(QWEN_EVENTS,
                   CAT[3], "The scrub-out (Qwen 2.5 → 3.x): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
-                  "fig_scrubout_qwen.png", "")
-    _scrubout_one(["anthropic/claude-opus-4", "anthropic/claude-opus-4.1", "anthropic/claude-opus-4.5",
-                   "anthropic/claude-opus-4.6", "anthropic/claude-opus-4.7", "anthropic/claude-opus-4.8",
-                   "anthropic/claude-opus-5"],
+                  "fig_scrubout_qwen.png", "",
+                  subtitle="Qwen2.5 72B and 7B shipped in one same-day launch — two markers, one release event: the collapse is the 2.5 → 3 generation gap")
+    _scrubout_one(OPUS_EVENTS,
                   CAT[4], "The scrub-out (Claude Opus line): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
                   "fig_scrubout_claude_opus.png", "Claude ",
                   subtitle="an isolated 4.8 spike, clean on both sides")
-    _scrubout_one(["anthropic/claude-sonnet-4", "anthropic/claude-sonnet-4.5", "anthropic/claude-sonnet-4.6",
-                   "anthropic/claude-sonnet-5"],
+    _scrubout_one(SONNET_EVENTS,
                   CAT[0], "The scrub-out (Claude Sonnet line): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
                   "fig_scrubout_claude_sonnet.png", "Claude ",
                   subtitle="a 4.6 spike")
-    # Combined frontier-Claude timeline — Opus + Sonnet interleaved by release
-    # date. The per-line splits above are class-pure; this is the lab-level view
-    # (same mixing the Qwen panel already does): one time axis, two spikes.
-    claude_all = sorted((m for m in reg if m.startswith(("anthropic/claude-opus-4", "anthropic/claude-opus-5",
-                                                         "anthropic/claude-sonnet-"))),
-                        key=lambda m: reg[m].get("created") or 0)
-    _scrubout_one(claude_all, CAT[4],
+    _scrubout_one(CLAUDE_EVENTS, CAT[4],
                   "The scrub-out (Claude frontier, Opus + Sonnet by release date): name-mismatch rate (cluster-bootstrap 95% CIs)",
                   "fig_scrubout_claude.png", "Claude ",
                   subtitle="two release-specific spikes — Sonnet 4.6 and Opus 4.8 — clean before, between, and after")
@@ -546,7 +613,7 @@ def fig_flow(reg, per):
                 edgecolor=SURFACE, linewidth=2, zorder=3)
         left += np.array(vals)
     ax.set_xlim(0, 100)
-    ax.set_xlabel("share of that family's mismatched-name claims (%) — (n) = the family's total mismatch records")
+    ax.set_xlabel("share of that family's mismatched-name claims (%) — (n) = the family's total mismatched responses")
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.14), ncol=8, frameon=False, fontsize=8)
     style(ax)
     ax.set_title("Which name each family gives instead — composition of mismatches per family", loc="left", fontsize=11, pad=12)
@@ -646,7 +713,7 @@ def fig_family_panels(reg, per):
                         fontsize=7.5, color="#ffffff" if Mk[i, j] > 0.6 * gmax else INK2)
         cb = fig.colorbar(im, ax=ax, shrink=0.7, pad=0.02)
         # short panels can't fit the rotated long label beside the colorbar
-        cb.set_label("% of the model's identity/creator records" if nrow > 2 else "% of records",
+        cb.set_label("% of the model's short-question responses" if nrow > 2 else "% of responses",
                      fontsize=8, color=INK2)
         cb.outline.set_visible(False)
         style(ax, bottom=False)
@@ -660,6 +727,11 @@ def fig_family_panels(reg, per):
         manifest.append({"file": fn, "family": fam, "drift": sum(r[1] for r in rows), "models": nrow})
     manifest.sort(key=lambda p: -p["drift"])
     (FIGS / "family" / "manifest.json").write_text(json.dumps(manifest, indent=1))
+    current = {ROOT / "figures" / p["file"] for p in manifest}
+    for p in (FIGS / "family").glob("fam_*.png"):     # drop panels whose family went clean
+        if p not in current:
+            p.unlink()
+            print(f"  removed stale {p.name}")
     print(f"  {len(manifest)} family panels (shared vmax={gmax:.0f}%)")
 
 

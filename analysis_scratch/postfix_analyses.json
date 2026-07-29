@@ -1,0 +1,660 @@
+{
+ "anchor": {
+  "pooled_d": 4992,
+  "pooled_n": 60770,
+  "pooled_pct": 8.21,
+  "models": 190,
+  "models_ge1": 115
+ },
+ "a1_region_language": {
+  "zh": {
+   "cn": {
+    "n_models": 78,
+    "mean_delta_pp": -2.31,
+    "ci95": [
+     -4.42,
+     -0.58
+    ]
+   },
+   "noncn": {
+    "n_models": 112,
+    "mean_delta_pp": 6.2,
+    "ci95": [
+     3.39,
+     9.38
+    ]
+   },
+   "diff_cn_minus_noncn": {
+    "point_pp": -8.51,
+    "ci95": [
+     -12.31,
+     -5.19
+    ],
+    "p_boot": 0.0002
+   }
+  },
+  "ja": {
+   "cn": {
+    "n_models": 78,
+    "mean_delta_pp": 2.13,
+    "ci95": [
+     0.05,
+     4.38
+    ]
+   },
+   "noncn": {
+    "n_models": 112,
+    "mean_delta_pp": 7.06,
+    "ci95": [
+     3.93,
+     10.48
+    ]
+   },
+   "diff_cn_minus_noncn": {
+    "point_pp": -4.93,
+    "ci95": [
+     -8.97,
+     -1.14
+    ],
+    "p_boot": 0.0112
+   }
+  },
+  "ko": {
+   "cn": {
+    "n_models": 78,
+    "mean_delta_pp": 5.29,
+    "ci95": [
+     2.34,
+     8.65
+    ]
+   },
+   "noncn": {
+    "n_models": 112,
+    "mean_delta_pp": 4.05,
+    "ci95": [
+     0.88,
+     7.38
+    ]
+   },
+   "diff_cn_minus_noncn": {
+    "point_pp": 1.24,
+    "ci95": [
+     -3.24,
+     5.73
+    ],
+    "p_boot": 0.59274
+   }
+  },
+  "mapping": {
+   "chinese_lab_families_in_pool": {
+    "ant": 3,
+    "baidu": 1,
+    "deepseek": 10,
+    "kimi": 6,
+    "kuaishou": 1,
+    "minimax": 1,
+    "nex": 2,
+    "qwen": 41,
+    "stepfun": 1,
+    "tencent": 2,
+    "xiaomi": 1,
+    "zhipu": 9
+   },
+   "non_chinese_families_in_pool": {
+    "ai21": 1,
+    "amazon": 3,
+    "anthropic": 15,
+    "arcee": 1,
+    "cohere": 5,
+    "gemma": 4,
+    "google": 10,
+    "ibm": 1,
+    "meta": 7,
+    "microsoft": 1,
+    "mistral": 16,
+    "nous": 2,
+    "nvidia": 5,
+    "olmo": 3,
+    "openai": 31,
+    "perceptron": 1,
+    "perplexity": 2,
+    "poolside": 2,
+    "reka": 2
+   },
+   "excluded_families": [
+    "aisingapore",
+    "naver",
+    "sakana",
+    "sber",
+    "upstage",
+    "yandex"
+   ],
+   "excluded_present_in_pool": {},
+   "cn_families_listed_but_absent": [
+    "alibaba",
+    "bytedance",
+    "huawei",
+    "internlm",
+    "moonshot",
+    "sparkdesk",
+    "zhinao360"
+   ]
+  }
+ },
+ "a2_multiple_comparisons": {
+  "repo_paired_4000rep_replication": {
+   "zh": [
+    2.71,
+    0.68,
+    4.68,
+    190
+   ],
+   "ja": [
+    5.04,
+    2.97,
+    7.29,
+    190
+   ],
+   "ko": [
+    4.56,
+    2.25,
+    6.9,
+    190
+   ],
+   "ru": [
+    3.51,
+    1.93,
+    5.18,
+    190
+   ],
+   "fr": [
+    1.44,
+    0.18,
+    2.81,
+    190
+   ],
+   "es": [
+    1.27,
+    0.15,
+    2.41,
+    190
+   ],
+   "vi": [
+    0.16,
+    -1.29,
+    1.7,
+    190
+   ]
+  },
+  "deltas_10k": {
+   "zh": {
+    "delta_pp": 2.71,
+    "ci95": [
+     0.78,
+     4.77
+    ],
+    "p_raw": 0.0054,
+    "n_models": 190,
+    "p_holm": 0.0216,
+    "p_bonf": 0.0378,
+    "sig_holm_05": true,
+    "sig_bonf_05": true
+   },
+   "ja": {
+    "delta_pp": 5.04,
+    "ci95": [
+     2.97,
+     7.26
+    ],
+    "p_raw": 0.0002,
+    "n_models": 190,
+    "p_holm": 0.0014,
+    "p_bonf": 0.0014,
+    "sig_holm_05": true,
+    "sig_bonf_05": true
+   },
+   "ko": {
+    "delta_pp": 4.56,
+    "ci95": [
+     2.31,
+     6.92
+    ],
+    "p_raw": 0.0004,
+    "n_models": 190,
+    "p_holm": 0.002,
+    "p_bonf": 0.0028,
+    "sig_holm_05": true,
+    "sig_bonf_05": true
+   },
+   "ru": {
+    "delta_pp": 3.51,
+    "ci95": [
+     1.97,
+     5.21
+    ],
+    "p_raw": 0.0002,
+    "n_models": 190,
+    "p_holm": 0.0014,
+    "p_bonf": 0.0014,
+    "sig_holm_05": true,
+    "sig_bonf_05": true
+   },
+   "fr": {
+    "delta_pp": 1.44,
+    "ci95": [
+     0.17,
+     2.85
+    ],
+    "p_raw": 0.024,
+    "n_models": 190,
+    "p_holm": 0.06359,
+    "p_bonf": 0.16798,
+    "sig_holm_05": false,
+    "sig_bonf_05": false
+   },
+   "es": {
+    "delta_pp": 1.27,
+    "ci95": [
+     0.18,
+     2.44
+    ],
+    "p_raw": 0.0212,
+    "n_models": 190,
+    "p_holm": 0.06359,
+    "p_bonf": 0.14839,
+    "sig_holm_05": false,
+    "sig_bonf_05": false
+   },
+   "vi": {
+    "delta_pp": 0.16,
+    "ci95": [
+     -1.32,
+     1.69
+    ],
+    "p_raw": 0.84952,
+    "n_models": 190,
+    "p_holm": 0.84952,
+    "p_bonf": 1.0,
+    "sig_holm_05": false,
+    "sig_bonf_05": false
+   }
+  },
+  "note": "p = add-one two-sided bootstrap p (floor 2/10001 = 0.0002)"
+ },
+ "a3_cutoff_permutation": {
+  "models_included": 189,
+  "documented": 103,
+  "estimated": 86,
+  "breakout_dates": {
+   "chatgpt": 2022.88,
+   "deepseek": 2024.96,
+   "claude": 2024.21,
+   "gemini": 2023.96,
+   "qwen": 2024.71,
+   "llama": 2023.54
+  },
+  "first_release_dates": {
+   "chatgpt": 2022.88,
+   "deepseek": 2023.87,
+   "claude": 2023.21,
+   "gemini": 2023.21,
+   "qwen": 2023.62,
+   "llama": 2023.12
+  },
+  "at_risk_pairs_breakout": 173,
+  "at_risk_by_prov_breakout": {
+   "documented": 126,
+   "estimated": 47
+  },
+  "at_risk_by_target_breakout": {
+   "deepseek": 69,
+   "qwen": 58,
+   "claude": 23,
+   "gemini": 19,
+   "chatgpt": 1,
+   "llama": 3
+  },
+  "observed_breakout": [
+   {
+    "model": "tencent/hunyuan-a13b-instruct",
+    "target": "deepseek",
+    "records": 3,
+    "pct": 0.94,
+    "cutoff_x": 2024.958,
+    "documented": false,
+    "gap_yr": 0.002
+   },
+   {
+    "model": "perplexity/sonar-pro",
+    "target": "qwen",
+    "records": 5,
+    "pct": 1.56,
+    "cutoff_x": 2024.542,
+    "documented": false,
+    "gap_yr": 0.168
+   },
+   {
+    "model": "nvidia/nemotron-nano-9b-v2:free",
+    "target": "qwen",
+    "records": 83,
+    "pct": 25.94,
+    "cutoff_x": 2024.708,
+    "documented": true,
+    "gap_yr": 0.002
+   },
+   {
+    "model": "meta-llama/llama-3.1-70b-instruct",
+    "target": "gemini",
+    "records": 1,
+    "pct": 0.31,
+    "cutoff_x": 2023.958,
+    "documented": true,
+    "gap_yr": 0.002
+   },
+   {
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "target": "claude",
+    "records": 1,
+    "pct": 0.31,
+    "cutoff_x": 2023.958,
+    "documented": true,
+    "gap_yr": 0.252
+   },
+   {
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "target": "gemini",
+    "records": 4,
+    "pct": 1.25,
+    "cutoff_x": 2023.958,
+    "documented": true,
+    "gap_yr": 0.002
+   },
+   {
+    "model": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+    "target": "qwen",
+    "records": 59,
+    "pct": 18.44,
+    "cutoff_x": 2023.958,
+    "documented": true,
+    "gap_yr": 0.752
+   },
+   {
+    "model": "mistralai/mistral-large-2407",
+    "target": "claude",
+    "records": 3,
+    "pct": 0.94,
+    "cutoff_x": 2024.042,
+    "documented": false,
+    "gap_yr": 0.168
+   },
+   {
+    "model": "openai/o1",
+    "target": "claude",
+    "records": 1,
+    "pct": 0.31,
+    "cutoff_x": 2023.792,
+    "documented": true,
+    "gap_yr": 0.418
+   },
+   {
+    "model": "meta-llama/llama-3.2-3b-instruct",
+    "target": "gemini",
+    "records": 5,
+    "pct": 1.56,
+    "cutoff_x": 2023.958,
+    "documented": true,
+    "gap_yr": 0.002
+   },
+   {
+    "model": "meta-llama/llama-3.2-3b-instruct",
+    "target": "qwen",
+    "records": 1,
+    "pct": 0.31,
+    "cutoff_x": 2023.958,
+    "documented": true,
+    "gap_yr": 0.752
+   },
+   {
+    "model": "meta-llama/llama-3.2-1b-instruct",
+    "target": "gemini",
+    "records": 8,
+    "pct": 2.5,
+    "cutoff_x": 2023.958,
+    "documented": true,
+    "gap_yr": 0.002
+   },
+   {
+    "model": "nousresearch/hermes-3-llama-3.1-405b",
+    "target": "claude",
+    "records": 13,
+    "pct": 4.06,
+    "cutoff_x": 2024.125,
+    "documented": false,
+    "gap_yr": 0.085
+   },
+   {
+    "model": "baidu/ernie-4.5-vl-424b-a47b",
+    "target": "deepseek",
+    "records": 12,
+    "pct": 3.75,
+    "cutoff_x": 2024.958,
+    "documented": false,
+    "gap_yr": 0.002
+   },
+   {
+    "model": "meta-llama/llama-3.3-70b-instruct",
+    "target": "gemini",
+    "records": 1,
+    "pct": 0.31,
+    "cutoff_x": 2023.958,
+    "documented": true,
+    "gap_yr": 0.002
+   },
+   {
+    "model": "openai/gpt-4",
+    "target": "gemini",
+    "records": 16,
+    "pct": 5.0,
+    "cutoff_x": 2023.958,
+    "documented": true,
+    "gap_yr": 0.002
+   },
+   {
+    "model": "nousresearch/hermes-3-llama-3.1-70b",
+    "target": "claude",
+    "records": 1,
+    "pct": 0.31,
+    "cutoff_x": 2024.125,
+    "documented": false,
+    "gap_yr": 0.085
+   },
+   {
+    "model": "nousresearch/hermes-3-llama-3.1-70b",
+    "target": "qwen",
+    "records": 1,
+    "pct": 0.31,
+    "cutoff_x": 2024.125,
+    "documented": false,
+    "gap_yr": 0.585
+   },
+   {
+    "model": "mistralai/mixtral-8x22b-instruct",
+    "target": "gemini",
+    "records": 6,
+    "pct": 1.88,
+    "cutoff_x": 2023.792,
+    "documented": false,
+    "gap_yr": 0.168
+   },
+   {
+    "model": "allenai/Olmo-3.1-32B-Instruct",
+    "target": "deepseek",
+    "records": 9,
+    "pct": 2.81,
+    "cutoff_x": 2024.958,
+    "documented": true,
+    "gap_yr": 0.002
+   },
+   {
+    "model": "allenai/Olmo-3-7B-Instruct",
+    "target": "deepseek",
+    "records": 23,
+    "pct": 7.19,
+    "cutoff_x": 2024.958,
+    "documented": true,
+    "gap_yr": 0.002
+   },
+   {
+    "model": "allenai/Olmo-3-7B-Think",
+    "target": "deepseek",
+    "records": 155,
+    "pct": 48.44,
+    "cutoff_x": 2024.958,
+    "documented": true,
+    "gap_yr": 0.002
+   }
+  ],
+  "n_observed_breakout": 22,
+  "observed_breakout_by_prov": {
+   "documented": 14,
+   "estimated": 8
+  },
+  "observed_breakout_same_month_ties": 12,
+  "observed_breakout_records": 411,
+  "null_breakout_pairs": {
+   "expected": 25.56,
+   "p_zero": 0.0,
+   "p_le_obs": 0.2787,
+   "max": 45
+  },
+  "null_breakout_records": {
+   "expected": 454.98,
+   "p_zero": 0.0,
+   "p_le_obs": 0.4326,
+   "max": 1192
+  },
+  "null_breakout_documented": {
+   "expected": 19.37,
+   "p_zero": 0.0,
+   "p_le_obs": 0.1489,
+   "max": 36
+  },
+  "null_breakout_estimated": {
+   "expected": 6.18,
+   "p_zero": 0.0034,
+   "p_le_obs": 0.8184,
+   "max": 20
+  },
+  "tie_robust_eps_1mo": {
+   "at_risk_pairs": 149,
+   "observed": 10,
+   "null": {
+    "expected": 21.25,
+    "p_zero": 0.0,
+    "p_le_obs": 0.006,
+    "max": 40
+   }
+  },
+  "at_risk_pairs_first_release": 21,
+  "at_risk_by_prov_first": {
+   "documented": 20,
+   "estimated": 1
+  },
+  "observed_first_release": [],
+  "n_observed_first": 0,
+  "observed_first_records": 0,
+  "null_first_release_pairs": {
+   "expected": 3.51,
+   "p_zero": 0.0586,
+   "p_le_obs": 0.0586,
+   "max": 13
+  },
+  "null_first_release_records": {
+   "expected": 55.82,
+   "p_zero": 0.0586,
+   "p_le_obs": 0.0586,
+   "max": 477
+  }
+ },
+ "a4_s2_conditional": {
+  "S0_check": {
+   "pooled_pct": 8.21,
+   "mismatch_records": 4992,
+   "denom": 60770,
+   "models_ge1": 115,
+   "models_ge3": 95,
+   "models_zero": 75,
+   "median_model_rate_pct": 0.78,
+   "n_models": 190
+  },
+  "S2_conditional": {
+   "pooled_pct": 9.37,
+   "mismatch_records": 4990,
+   "denom": 53282,
+   "models_ge1": 115,
+   "models_ge3": 95,
+   "models_zero": 75,
+   "median_model_rate_pct": 0.96,
+   "n_models": 190
+  },
+  "pool_naming_rate_pct": 87.68,
+  "s0_mismatches_outside_denominator": 2,
+  "naming_min_med_max": [
+   20.3,
+   94.4,
+   100.0
+  ],
+  "top5_reshuffles": [
+   {
+    "model": "baidu/ernie-4.5-vl-424b-a47b",
+    "name": "ERNIE 4.5 VL 424B A47B",
+    "family": "baidu",
+    "s0": "77/320",
+    "s0_pct": 24.1,
+    "var": "77/128",
+    "var_pct": 60.2,
+    "delta_pp": 36.1
+   },
+   {
+    "model": "Qwen/Qwen3-0.6B",
+    "name": "Qwen3 0.6B",
+    "family": "qwen",
+    "s0": "27/320",
+    "s0_pct": 8.4,
+    "var": "27/65",
+    "var_pct": 41.5,
+    "delta_pp": 33.1
+   },
+   {
+    "model": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+    "name": "Nemotron Super 49B",
+    "family": "nvidia",
+    "s0": "155/320",
+    "s0_pct": 48.4,
+    "var": "155/191",
+    "var_pct": 81.2,
+    "delta_pp": 32.7
+   },
+   {
+    "model": "allenai/Olmo-3.1-32B-Instruct",
+    "name": "OLMo 3.1 32B Instruct",
+    "family": "olmo",
+    "s0": "193/320",
+    "s0_pct": 60.3,
+    "var": "193/210",
+    "var_pct": 91.9,
+    "delta_pp": 31.6
+   },
+   {
+    "model": "nousresearch/hermes-3-llama-3.1-70b",
+    "name": "Hermes 3 70B Instruct",
+    "family": "nous",
+    "s0": "63/320",
+    "s0_pct": 19.7,
+    "var": "63/132",
+    "var_pct": 47.7,
+    "delta_pp": 28.0
+   }
+  ]
+ }
+}

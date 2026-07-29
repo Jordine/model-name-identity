@@ -11,7 +11,6 @@ barely moves what the model says it is. It's the model, not the cloud.
   python -m sweep.fig_xprovider
 """
 import json
-import textwrap
 from collections import defaultdict
 from pathlib import Path
 
@@ -99,13 +98,6 @@ def main():
               handlelength=1.1, borderaxespad=0.3)
     ax.set_title("Same weights, different endpoint — identical except Google Vertex on Opus",
                  fontsize=11.5, color=INK, pad=10, loc="left")
-    fig.text(0.005, -0.02, textwrap.fill(
-             "Chinese “who are you?”, no system prompt, endpoint pinned (allow_fallbacks:false); Wilson 95% CIs, n=240 per cell. "
-             "Every other language ≈0%. The direct Anthropic API, OpenRouter, Bedrock and Azure agree within noise (Opus ~57–65%, "
-             "Sonnet ~28–36%) — so the aggregator is not a confound and the phenomenon holds on the true first-party API. The one "
-             "significant effect is Google Vertex raising Opus 4.8 (+17.5pp vs direct, p<0.001); Sonnet shows no significant "
-             "endpoint effect. (Opus 4.8 is not served on Azure.)", width=148),
-             fontsize=7.4, color=MUTED, va="top")
     FIGS.mkdir(exist_ok=True)
     out = FIGS / "fig_xprovider.png"
     fig.savefig(out, dpi=200, bbox_inches="tight", facecolor=SURFACE)

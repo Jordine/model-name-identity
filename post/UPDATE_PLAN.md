@@ -8,7 +8,27 @@ median **0.78%**. Movers vs shipped draft: Nova Lite 13.4→**34.7%**, Nova Pro
 confirmed genuine by adjudicator), Laguna M.1 76→**79.4%**, Granite 4.1 8B
 →**32.8%**, Gemma 3 4B →**0/320** (PaLM-2 FP removed; joins never-list).
 17 API + 5 local FP records removed (создатели/self-garbles/etc).
-Conditional variant (supplementary): pooled 9.1%, naming rate 87.5%.
+Conditional variant (supplementary, post-fix): pooled **9.37%**, naming rate 87.7%.
+
+### Post-fix analyses (2026-07-29, analysis_scratch/postfix_analyses.md)
+- **Region×language interaction — strong**: paired Δ(zh−en): Chinese-lab models
+  **−2.3pp** [−4.4,−0.6] (n=78) vs non-Chinese **+6.2pp** [+3.4,+9.4] (n=112);
+  difference **−8.5pp, p=0.0002**. Specificity: no CN advantage in Korean (p=0.59);
+  partial ja spillover (−4.9, p=0.011). "Reinforced where labs evaluate" now has
+  a number.
+- **Language deltas w/ correction (m=7)**: ja +5.0 · ko +4.6 · ru +3.5 · zh +2.7
+  survive Holm AND Bonferroni; **fr (+1.4) and es (+1.3) do not** (nominal only);
+  vi null. Prose must say four robust, two marginal.
+- **CUTOFF SECTION MUST BE REFRAMED — the "zero post-cutoff claims" claim does
+  NOT survive the finer audit at breakout definition**: 173 at-risk pairs,
+  observed 22 (all audited artifacts: same-month ties, creator→brand folds like
+  GPT-4 creator="Google"→folded to "gemini", stale base cutoffs). Honest stats:
+  tie-robust (≥1mo gap) observed 10 vs E=21.3, **P(≤10)=0.006** (significant
+  timing deficit); strictest lineage-first-release definition: 21 at-risk,
+  E=3.5, observed **0, p=0.059** (weak-positive, exactly the power issue the
+  skeptic predicted). Reinstated section leads with onset-tracks-breakout + the
+  deficit test; "never before the lineage existed" cited with its p, not as a
+  flat zero. Cutoff provenance: 103 documented / 86 estimated (release−6mo).
 
 Sources: 12 open review threads, Jord's editorial pass (2026-07-29), fresh skim-read
 of the current draft, generics audit results (analysis_scratch/generics_audit/).

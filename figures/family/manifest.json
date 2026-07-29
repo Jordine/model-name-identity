@@ -2,7 +2,7 @@
  {
   "file": "family/fam_olmo.png",
   "family": "olmo",
-  "drift": 621,
+  "drift": 626,
   "models": 3
  },
  {
@@ -14,19 +14,19 @@
  {
   "file": "family/fam_qwen.png",
   "family": "qwen",
-  "drift": 500,
+  "drift": 498,
   "models": 23
  },
  {
   "file": "family/fam_poolside.png",
   "family": "poolside",
-  "drift": 458,
+  "drift": 472,
   "models": 2
  },
  {
   "file": "family/fam_mistral.png",
   "family": "mistral",
-  "drift": 437,
+  "drift": 434,
   "models": 16
  },
  {
@@ -40,6 +40,12 @@
   "family": "perceptron",
   "drift": 282,
   "models": 1
+ },
+ {
+  "file": "family/fam_amazon.png",
+  "family": "amazon",
+  "drift": 216,
+  "models": 3
  },
  {
   "file": "family/fam_nous.png",
@@ -56,13 +62,13 @@
  {
   "file": "family/fam_deepseek.png",
   "family": "deepseek",
-  "drift": 153,
+  "drift": 152,
   "models": 9
  },
  {
   "file": "family/fam_meta.png",
   "family": "meta",
-  "drift": 135,
+  "drift": 133,
   "models": 6
  },
  {
@@ -80,7 +86,7 @@
  {
   "file": "family/fam_ibm.png",
   "family": "ibm",
-  "drift": 101,
+  "drift": 105,
   "models": 1
  },
  {
@@ -92,14 +98,8 @@
  {
   "file": "family/fam_anthropic.png",
   "family": "anthropic",
-  "drift": 87,
+  "drift": 86,
   "models": 5
- },
- {
-  "file": "family/fam_amazon.png",
-  "family": "amazon",
-  "drift": 79,
-  "models": 3
  },
  {
   "file": "family/fam_baidu.png",
@@ -122,7 +122,7 @@
  {
   "file": "family/fam_reka.png",
   "family": "reka",
-  "drift": 66,
+  "drift": 65,
   "models": 2
  },
  {
@@ -132,21 +132,21 @@
   "models": 1
  },
  {
-  "file": "family/fam_ant.png",
-  "family": "ant",
-  "drift": 25,
-  "models": 3
- },
- {
   "file": "family/fam_openai.png",
   "family": "openai",
   "drift": 22,
   "models": 3
  },
  {
+  "file": "family/fam_ant.png",
+  "family": "ant",
+  "drift": 21,
+  "models": 3
+ },
+ {
   "file": "family/fam_cohere.png",
   "family": "cohere",
-  "drift": 17,
+  "drift": 15,
   "models": 2
  },
  {
@@ -177,12 +177,6 @@
   "file": "family/fam_ai21.png",
   "family": "ai21",
   "drift": 3,
-  "models": 1
- },
- {
-  "file": "family/fam_gemma.png",
-  "family": "gemma",
-  "drift": 1,
   "models": 1
  }
 ]

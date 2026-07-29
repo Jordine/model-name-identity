@@ -122,7 +122,7 @@ def gather():
         if not n:
             continue
         rows[mid] = dict(
-            name=m.get("name", mid), fam=reg.get(mid, {}).get("family", "?"),
+            mid=mid, name=m.get("name", mid), fam=reg.get(mid, {}).get("family", "?"),
             rate=100 * m["d"] / n, dn=m["d"], tot=n,
             claims=Counter(m["claims"]), cross=Counter(m.get("cross_yes", {})),
             lstats={l: list(v) for l, v in m["lang"].items()},
@@ -163,11 +163,11 @@ def fig_coherence(data):
     ax.axhline(60, color=BASE, lw=0.8, ls="--", zorder=1)
     ax.text(1, 62, "consistently ONE identity  (coherent alternate persona)", fontsize=7.5, color=MUTED)
     ax.text(1, 20, "scatters across many  (confabulation / weak identity)", fontsize=7.5, color=MUTED)
-    ax.set_xlabel("spontaneous mismatch rate  (% of identity answers)")
+    ax.set_xlabel("spontaneous mismatch rate  (% of short-question responses)")
     ax.set_ylabel("consistency — share of mismatches on the single top identity (%)")
     ax.set_title("A stable alternate identity vs. confabulation",
                  fontsize=11, color=INK, loc="left", pad=22)
-    ax.text(0, 1.008, "labels: model →its dominant claimed identity · bubble area ∝ mismatched records",
+    ax.text(0, 1.008, "labels: model →its dominant claimed identity · bubble area = number of mismatched responses",
             transform=ax.transAxes, fontsize=7.3, color=MUTED, va="bottom")
     ax.set_ylim(0, 105); ax.set_xlim(0, max(d["rate"] for d, _ in pts) + 6)
     style(ax)
@@ -203,15 +203,16 @@ def fig_lang_conditional(data):
     ax.set_ylabel("mismatch rate in the model's HIGHEST-mismatch language (%)")
     ax.set_title("Language-triggered vs. uniformly-weak: highest-mismatch-language rate vs. overall",
                  fontsize=11, color=INK, loc="left", pad=26)
-    ax.text(0, 1.006, "labels: models clearing a uniform-null by ≥40pp (null p95 ≈ 18pp) + the largest by mismatch volume; "
-            "near-diagonal cloud is within sampling noise · bubble area ∝ mismatched records",
+    ax.text(0, 1.006, "bubble area = number of mismatched responses",
             transform=ax.transAxes, fontsize=7.3, color=MUTED, va="bottom")
     ax.set_xlim(0, lim); ax.set_ylim(0, 105)
     style(ax)
     ax.grid(axis="both", color=GRID, lw=0.6, zorder=0)
+    FORCE = ("anthropic/claude-opus-4.8", "anthropic/claude-sonnet-4.6", "moonshotai/kimi-k2")
     sel, seen = [], set()
     for d, mm in (sorted(pts, key=lambda x: -x[1]["excess"])[:11]        # strongest language-gating
-                  + sorted(pts, key=lambda x: -x[0]["dn"])[:8]):         # largest bubbles (mismatch volume)
+                  + sorted(pts, key=lambda x: -x[0]["dn"])[:8]           # largest bubbles (mismatch volume)
+                  + [p for p in pts if p[0].get("mid") in FORCE]):       # always-name the post's anchors
         if d["name"] not in seen:
             seen.add(d["name"])
             sel.append((d, mm))
@@ -333,7 +334,7 @@ def fig_cutoff(data):
              "release−6mo (hollow)   |   vertical lines = TARGET's version releases "
              "(dashed = breakout, dotted = earlier)",
              ha="center", fontsize=8.5, color=INK2)
-    fig.text(0.008, 0.5, "% of the model's identity answers claiming this identity",
+    fig.text(0.008, 0.5, "% of the model's short-question responses claiming this identity",
              va="center", rotation=90, fontsize=9, color=INK2)
     fig.suptitle("A model claims to be X only after X's outputs entered its training data "
                  "(onset ≈ breakout: DeepSeek V3, Claude 3.5)",

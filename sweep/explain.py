@@ -201,12 +201,11 @@ def fig_coherence(data):
         col = IDCOLOR.get(mm["top1_id"], MUTED)
         ax.scatter(d["rate"], 100 * mm["top1_share"], s=22 + d["dn"] * 0.7,
                    color=col, alpha=0.72, edgecolor="white", linewidth=0.5, zorder=3)
-    ax.axhline(60, color=BASE, lw=0.8, ls="--", zorder=1)
-    ax.text(1, 62, "consistently ONE identity  (coherent alternate persona)", fontsize=7.5, color=MUTED)
-    ax.text(1, 20, "scatters across many  (confabulation / weak identity)", fontsize=7.5, color=MUTED)
     ax.set_xlabel("spontaneous mismatch rate  (% of short-question responses)")
-    ax.set_ylabel("consistency — share of mismatches on the single top identity (%)")
-    ax.set_title("A stable alternate identity vs. confabulation",
+    ax.set_ylabel("share of the model's mismatches on its single top claimed name (%)")
+    # descriptive title only — the coherent-persona / confabulation reading
+    # stays in the post text, not in the image (figure-text policy)
+    ax.set_title("Share of a model's mismatches on its single top claimed name, vs overall mismatch rate",
                  fontsize=11, color=INK, loc="left", pad=22)
     ax.text(0, 1.008, "labels: model → its dominant claimed identity · bubble area = number of mismatched responses",
             transform=ax.transAxes, fontsize=7.3, color=MUTED, va="bottom")

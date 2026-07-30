@@ -1,12 +1,14 @@
 """Cross-provider figure — does the serving cloud change a model's self-identity?
 
-Chinese identity-mismatch rate for Claude Opus 4.8 / Sonnet 4.6 across every
-clean, non-injecting provider, with Wilson 95% CIs over the pooled zh samples in
-results/xprovider_sweep.jsonl (full battery + booster). Every other language is
-~0% for these models, so Chinese is the whole story.
+Chinese official-name mismatch rate for Claude Opus 4.8 / Sonnet 4.6 across the
+four clean, non-injecting providers serving BOTH models, with Wilson 95% CIs over
+the pooled zh samples in results/xprovider_sweep.jsonl (full battery + booster).
+Every other language is ~0% for these models, so Chinese is the whole story.
+Azure is out of this figure entirely: it serves only Sonnet 4.6, so it can't fill
+a constant slot in both groups.
 
-The honest read: bars within a model land close and their CIs overlap → the host
-barely moves what the model says it is. It's the model, not the cloud.
+The honest read (for the post text, not the image): bars within a model land
+close and their CIs overlap → the host barely moves what the model says it is.
 
   python -m sweep.fig_xprovider
 """
@@ -29,12 +31,11 @@ REG = {m["id"]: m for m in json.loads((ROOT / "config" / "models.json").read_tex
 MODELS = ["anthropic/claude-opus-4.8", "anthropic/claude-sonnet-4.6"]
 DISPLAY = {"anthropic/claude-opus-4.8": "Claude Opus 4.8",
            "anthropic/claude-sonnet-4.6": "Claude Sonnet 4.6"}
-PROV_ORDER = ["anthropic-direct", "anthropic", "google-vertex", "amazon-bedrock", "azure"]
+PROV_ORDER = ["anthropic-direct", "anthropic", "amazon-bedrock", "google-vertex"]
 PROV_NAME = {"anthropic-direct": "Anthropic API (direct)", "anthropic": "via OpenRouter",
-             "google-vertex": "Google Vertex", "amazon-bedrock": "Amazon Bedrock",
-             "azure": "Microsoft Azure"}
-PROV_COLOR = {"anthropic-direct": CAT[0], "anthropic": CAT[6], "google-vertex": CAT[2],
-              "amazon-bedrock": CAT[7], "azure": CAT[4]}
+             "amazon-bedrock": "Amazon Bedrock", "google-vertex": "Google Vertex"}
+PROV_COLOR = {"anthropic-direct": CAT[0], "anthropic": CAT[6],
+              "amazon-bedrock": CAT[7], "google-vertex": CAT[2]}
 
 
 def zh_rates():
@@ -62,21 +63,18 @@ def main():
     per = zh_rates()
     fig, ax = plt.subplots(figsize=(8.4, 4.4))
     group_w = 0.82
-    # every provider serving EITHER model gets a slot in BOTH groups, so a
-    # provider that doesn't serve one model reads as an explicit gap (with a
-    # "not served" note), not as an ambiguous absence next to a 5-entry legend
-    slots = [p for p in PROV_ORDER if any(per.get((m, p), [0, 0])[1] > 0 for m in MODELS)]
+    # constant slots: the same four providers, in the same order, in both groups
+    slots = PROV_ORDER
     bw = group_w / len(slots)
+    ns = set()
     for gi, mid in enumerate(MODELS):
         x0 = gi - group_w / 2 + bw / 2
         for j, prov in enumerate(slots):
             d, n = per.get((mid, prov), [0, 0])
             x = x0 + j * bw
-            if n == 0:      # data-availability note in the empty slot
-                short = {"azure": "Azure"}.get(prov, PROV_NAME[prov])
-                ax.text(x, 1.5, f"{short}: not served", rotation=90, ha="center",
-                        va="bottom", fontsize=7, color=MUTED, zorder=3)
+            if n == 0:
                 continue
+            ns.add(n)
             rate = 100 * d / n
             lo, hi = wilson(d, n)
             ax.bar(x, rate, bw * 0.9, color=PROV_COLOR[prov], zorder=3, edgecolor=SURFACE, linewidth=0.5)
@@ -101,8 +99,12 @@ def main():
     handles = [Patch(facecolor=PROV_COLOR[p], label=PROV_NAME[p]) for p in slots]
     ax.legend(handles=handles, frameon=False, fontsize=8.5, loc="upper right",
               handlelength=1.1, borderaxespad=0.3)
-    ax.set_title("Same weights, different endpoint — identical except Google Vertex on Opus",
+    ax.set_title("Chinese-language official-name mismatch by serving endpoint",
                  fontsize=11.5, color=INK, pad=10, loc="left")
+    # per-bar sample size, computed from the drawn data (not hardcoded)
+    note = f"n={ns.pop()} per bar" if len(ns) == 1 else f"n={min(ns)}–{max(ns)} per bar"
+    ax.text(1.0, 1.012, note, transform=ax.transAxes, ha="right", va="bottom",
+            fontsize=8, color=MUTED)
     FIGS.mkdir(exist_ok=True)
     out = FIGS / "fig_xprovider.png"
     fig.savefig(out, dpi=200, bbox_inches="tight", facecolor=SURFACE)

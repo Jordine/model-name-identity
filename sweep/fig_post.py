@@ -18,48 +18,48 @@ import numpy as np
 from matplotlib.patches import Patch
 
 from .analyze import load, FAMILY_SELF
-from .make_figs import (CAT, SEQ_CMAP, SURFACE, INK, INK2, MUTED, GRID, BASE,
+from .make_figs import (CAT, SEQ, SEQ_CMAP, SURFACE, INK2, GRID,
                         FAMILY_DISPLAY, LOCAL_MODELS, ROOT, FIGS, gather, style, save)
 
 
 # ------------------------------------------------------- distribution curve
 def fig_distribution(per):
-    """Every analyzed model ranked by mismatch rate: a steep head, a long low
-    tail, then the models that never mismatch. Threshold counts are computed
-    from the data at render time."""
+    """Every analyzed model ranked by official-name mismatch rate, bars colored
+    into four rate bands. Band counts are computed from the data at render time."""
     N = len(per)
     rates = np.array(sorted((100 * v["d"] / v["n"] for v in per.values()), reverse=True))
-    c_ge1 = sum(1 for v in per.values() if v["d"] >= 1)
-    c_ge3 = sum(1 for v in per.values() if v["d"] >= 3)
-    c_gt20 = int((rates > 20).sum())
-    c_never = sum(1 for v in per.values() if v["d"] == 0)
+    med_n = int(np.median([v["n"] for v in per.values()]))
+    # bands: three blues of increasing depth from the house sequential ramp,
+    # plus the house data-gray for the measured-zero models
+    bands = [(">20%", rates > 20, SEQ[6]),
+             ("5–20%", (rates > 5) & (rates <= 20), SEQ[4]),
+             (">0–5%", (rates > 0) & (rates <= 5), SEQ[2]),
+             ("never mismatched", rates == 0, NEVER_GRAY)]
+    colors = np.empty(N, dtype=object)
+    for _, mask, col in bands:
+        colors[mask] = col
+    c_ge1 = int((rates > 0).sum())
     x = np.arange(1, N + 1)
     fig, ax = plt.subplots(figsize=(8.8, 4.4))
-    ax.bar(x, rates, width=1.0, color=CAT[0], zorder=3)
-    # the clean tail — measured zeros, shaded so the empty region reads as data
-    ax.axvspan(c_ge1 + 0.5, N + 0.5, color=GRID, alpha=0.45, zorder=1)
-    ax.text((c_ge1 + 1 + N) / 2, 50, f"{c_never} of {N} models\nnever mismatch\n(0 of ~320 responses)",
-            ha="center", va="center", fontsize=9, color=INK2, linespacing=1.7)
-    # threshold callouts, anchored to the curve
-    ax.plot([0.5, c_gt20 + 4], [20, 20], ls="--", lw=0.9, color=MUTED, zorder=2)
-    ax.text(c_gt20 + 6, 21, f"{c_gt20} models above 20%", fontsize=8.5, color=INK2, va="bottom")
-    ax.annotate(f"{c_ge3} models with ≥3 mismatched responses",
-                xy=(c_ge3, rates[c_ge3 - 1] + 1), xytext=(c_ge3 - 12, 33),
-                ha="center", fontsize=8.5, color=INK2,
-                arrowprops=dict(arrowstyle="-", lw=0.7, color=BASE, shrinkA=2, shrinkB=1))
-    ax.annotate(f"{c_ge1} models mismatch at least once",
-                xy=(c_ge1, rates[c_ge1 - 1] + 1), xytext=(c_ge1 - 6, 16),
-                ha="center", fontsize=8.5, color=INK2,
-                arrowprops=dict(arrowstyle="-", lw=0.7, color=BASE, shrinkA=2, shrinkB=1))
+    ax.bar(x, rates, width=1.0, color=list(colors), zorder=3)
+    # zero-rate models draw no bar — shade their region so it reads as data
+    ax.axvspan(c_ge1 + 0.5, N + 0.5, color=NEVER_GRAY, alpha=0.28, zorder=1)
+    ax.text((c_ge1 + 1 + N) / 2, 0.42 * (rates.max() + 8),
+            f"0 mismatches in\n~{med_n} responses each",
+            ha="center", va="center", fontsize=8.5, color=INK2, linespacing=1.6)
+    ax.legend(handles=[Patch(color=col, label=f"{lab} — {int(mask.sum())} models")
+                       for lab, mask, col in bands],
+              title="mismatch rate", title_fontsize=8.5, alignment="left",
+              frameon=False, fontsize=8.5, loc="upper right")
     ax.set_xlim(0.5, N + 0.5)
     ax.set_ylim(0, rates.max() + 8)
     ax.set_xticks([])
-    ax.set_xlabel(f"the {N} analyzed models, ranked by mismatch rate (highest → lowest)")
+    ax.set_xlabel("rank (highest → lowest)")
     ax.set_ylabel("% of short-question responses\nwith a mismatched name", fontsize=9)
     ax.yaxis.grid(True, color=GRID, lw=0.8)
     ax.set_axisbelow(True)
     style(ax)
-    ax.set_title("A steep head and a long clean tail — every analyzed model, ranked by name-mismatch rate",
+    ax.set_title(f"The {N} analyzed models, ranked by official-name mismatch rate",
                  loc="left", fontsize=11, pad=12)
     save(fig, "fig_distribution.png")
 
@@ -99,8 +99,8 @@ def fig_family_counts(reg, per):
     ax.set_axisbelow(True)
     ax.legend(frameon=False, fontsize=8.5, loc="upper right")
     style(ax)
-    ax.set_title("Mismatching is family-patterned — how many of each major lab's models "
-                 "ever gave a mismatched name", loc="left", fontsize=11, pad=12)
+    ax.set_title("How many of each lab's models gave at least one mismatched name",
+                 loc="left", fontsize=11, pad=12)
     save(fig, "fig_family_counts.png")
 
 

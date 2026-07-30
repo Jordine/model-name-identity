@@ -344,8 +344,8 @@ def fig_lang_heatmap(reg, per):
     cb = fig.colorbar(im, ax=ax, shrink=0.7, pad=0.02)
     cb.set_label("% of responses with a mismatched name", fontsize=8, color=INK2)
     cb.outline.set_visible(False)
-    ax.set_title("Per-language name mismatch — heaviest models + frontier Claudes (each cell = % of that model's 40 short-question responses in that language)",
-                 loc="left", fontsize=10, pad=12)
+    # no in-image title (it forced a wider tight-bbox and shrank the heatmap);
+    # titling happens in the post text outside the image
     save(fig, "fig_lang_heatmap.png")
 
 
@@ -456,7 +456,7 @@ def _scrubout_one(events, color, title, fname, strip, subtitle=None, force_below
     for i, j in segs:
         ax.plot([xs[i], xs[j]], [ys[i], ys[j]], color=color, lw=2, zorder=2)
     ax.errorbar(xs, ys, yerr=es, fmt="o", color=color, ms=7, capsize=3, elinewidth=1, zorder=3)
-    ax.set_ylabel("% of responses with a mismatched name", fontsize=9)
+    ax.set_ylabel("% of responses with a mismatched name\n(cluster-bootstrap 95% CI)", fontsize=9)
     ax.set_xticks(range(ne), [date for date, _ in evs], fontsize=7.3, rotation=30,
                   ha="right", rotation_mode="anchor")
     ax.set_xlabel("release date (events evenly spaced — spacing not proportional to elapsed time)", fontsize=8.5)
@@ -488,11 +488,17 @@ KIMI_EVENTS = [
     ("2026-06-12", ["moonshotai/kimi-k2.7-code"]),
 ]
 QWEN_EVENTS = [
-    # 72B + 7B shipped in ONE launch ("Qwen2.5: A Party of Foundation Models!")
-    ("2024-09-19", ["qwen/qwen-2.5-72b-instruct", "qwen/qwen-2.5-7b-instruct"]),
+    # ONE flagship per generation (2.5 → 3 → 3.5 → 3.6 → 3.7), the largest
+    # analyzed model of each. The 2.5 launch's same-day 7B sibling is dropped
+    # (one point per generation); Qwen3 Max / Max Thinking sit off the numbered
+    # ladder and also measure 0.0% — same reading as the 235B point either way.
+    # No Qwen3.5-Max exists in the pool, so 397B A17B is the 3.5 flagship.
+    ("2024-09-19", ["qwen/qwen-2.5-72b-instruct"]),
     ("2025-04-29", ["qwen/qwen3-235b-a22b"]),
-    ("2026-01-25", ["qwen/qwen3-max-thinking"]),
     ("2026-02-16", ["qwen/qwen3.5-397b-a17b"]),
+    # 3.6 Max Preview: announced + live on Alibaba Bailian 2026-04-20 (datanorth.ai
+    # write-up dated 04-21); the 2026-04-27 OpenRouter epoch is the usual listing lag.
+    ("2026-04-20", ["qwen/qwen3.6-max-preview"]),
     ("2026-05-19", ["qwen/qwen3.7-max"]),
 ]
 OPUS_EVENTS = [
@@ -528,28 +534,27 @@ CLAUDE_EVENTS = [
 
 
 def fig_scrubout(reg, per):
+    # titles/notes are DESCRIPTIVE only (figure-text policy) — the reading of
+    # the lines lives in the post text, not in the images
     global per_cache
     per_cache = per
     _scrubout_one(KIMI_EVENTS,
-                  CAT[0], "The scrub-out (Kimi K2 line): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
+                  CAT[0], "Official-name mismatch rate by release — Kimi K2 line",
                   "fig_scrubout_kimi.png", "Kimi ")
     _scrubout_one(QWEN_EVENTS,
-                  CAT[3], "The scrub-out (Qwen 2.5 → 3.x): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
+                  CAT[3], "Official-name mismatch rate by release — Qwen flagships",
                   "fig_scrubout_qwen.png", "",
-                  subtitle="Qwen2.5 72B and 7B shipped in one same-day launch — two markers, one release event: the collapse is the 2.5 → 3 generation gap",
-                  force_below={"Qwen3 235B A22B (MoE)"})   # its above-label stacked into Max Thinking's
+                  subtitle="one flagship per generation (Qwen2.5 → 3 → 3.5 → 3.6 → 3.7) — the generation's largest analyzed model")
     _scrubout_one(OPUS_EVENTS,
-                  CAT[4], "The scrub-out (Claude Opus line): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
-                  "fig_scrubout_claude_opus.png", "Claude ",
-                  subtitle="an isolated 4.8 spike, clean on both sides")
+                  CAT[4], "Official-name mismatch rate by release — Claude Opus line",
+                  "fig_scrubout_claude_opus.png", "Claude ")
     _scrubout_one(SONNET_EVENTS,
-                  CAT[0], "The scrub-out (Claude Sonnet line): name-mismatch rate across releases (cluster-bootstrap 95% CIs)",
-                  "fig_scrubout_claude_sonnet.png", "Claude ",
-                  subtitle="a 4.6 spike")
+                  CAT[0], "Official-name mismatch rate by release — Claude Sonnet line",
+                  "fig_scrubout_claude_sonnet.png", "Claude ")
     _scrubout_one(CLAUDE_EVENTS, CAT[4],
-                  "The scrub-out (Claude frontier, Opus + Sonnet by release date): name-mismatch rate (cluster-bootstrap 95% CIs)",
+                  "Official-name mismatch rate by release — Claude frontier (Opus + Sonnet)",
                   "fig_scrubout_claude.png", "Claude ",
-                  subtitle="two release-specific spikes — Sonnet 4.6 and Opus 4.8 — clean before, between, and after")
+                  subtitle="Opus 4 and Sonnet 4 shipped the same day — two markers, one release event")
 
 
 def fig_cross(reg, per):
@@ -580,7 +585,7 @@ def fig_cross(reg, per):
     ax.set_ylabel('% answering "yes"')
     ax.legend(frameon=False, fontsize=8.5, loc="upper right")
     style(ax)
-    ax.set_title('Suggestibility: % of ALL models (own family excluded) that say "yes" to "Are you X?" — pooled, vs placebo floor',
+    ax.set_title('% of models answering yes to "Are you X?" — own family excluded, vs three invented control names',
                  loc="left", fontsize=10.5, pad=12)
     save(fig, "fig_cross.png")
 

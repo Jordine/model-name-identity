@@ -129,3 +129,22 @@ smash the Jan/Feb-2026 Qwen points together and waste half the panel on the empt
 figure keeps per-size points, retitle the Qwen panel: the first transition is
 "across sizes, then releases" — or simplest, drop one of the two Qwen2.5 sizes from the line
 and show the other as an annotated satellite point.
+
+---
+
+## Addendum 2026-07-30 — fig_scrubout_qwen rebuilt as one-flagship-per-generation
+
+The Qwen panel now plots ONE point per generation (the generation's largest
+analyzed model), replacing the mixed series audited above:
+
+| event date | model | note |
+|---|---|---|
+| 2024-09-19 | qwen/qwen-2.5-72b-instruct | same-day 7B sibling dropped from the line |
+| 2025-04-29 | qwen/qwen3-235b-a22b | Qwen3 Max / Max Thinking (Max line, off the numbered ladder) also measure 0.0% |
+| 2026-02-16 | qwen/qwen3.5-397b-a17b | no Qwen3.5-Max exists in the pool |
+| 2026-04-20 | qwen/qwen3.6-max-preview | **new verified date**: announced + live on Alibaba Bailian 2026-04-20 (https://datanorth.ai/news/alibaba-releases-qwen3-6-max-preview, write-up dated 04-21). OR listing epoch 2026-04-27 = +7 d lag, consistent with the lags catalogued above |
+| 2026-05-19 | qwen/qwen3.7-max | unchanged |
+
+qwen/qwen3-max-thinking (2026-01-25) is no longer on the line. Same-day-sibling
+and even-spacing treatment unchanged (dated ticks, evenly spaced events,
+disclaimer in the xlabel).

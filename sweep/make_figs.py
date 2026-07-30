@@ -284,7 +284,8 @@ def fig_all_models(reg, per):
     ax.set_ylabel("model (sorted)")
     ax.xaxis.grid(True, color=GRID, lw=0.8)
     ax.set_axisbelow(True)
-    ax.legend(handles=[Patch(color=fc[f], label=f) for f in top] + [Patch(color="#b9b7b0", label="other")],
+    ax.legend(handles=[Patch(color=fc[f], label=FAMILY_DISPLAY.get(f, f.title())) for f in top]
+              + [Patch(color="#b9b7b0", label="other")],
               loc="lower right", frameon=False, fontsize=8, title="family (top-8 by mismatch)", title_fontsize=8)
     style(ax)
     ax.set_title(f"Name-mismatch rate — the {n} models with at least one mismatch "

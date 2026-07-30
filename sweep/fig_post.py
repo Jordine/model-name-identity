@@ -67,7 +67,7 @@ def fig_distribution(per):
 # --------------------------------------------------- family at-least-once bars
 # display names come from make_figs.FAMILY_DISPLAY — the one source of truth
 MAIN_LABS = ["openai", "anthropic", "google", "meta", "deepseek", "qwen",
-             "kimi", "zhipu", "nvidia", "mistral", "amazon", "baidu"]
+             "kimi", "zhipu", "nvidia", "mistral", "amazon", "baidu", "olmo"]
 NEVER_GRAY = "#b9b7b0"   # the house data-gray (fig_all_models "other", fig_flow unlisted)
 
 

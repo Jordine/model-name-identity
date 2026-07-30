@@ -312,8 +312,8 @@ def fig_lang_agg(per):
     ax.set_ylim(0, max(v + e for v, e in zip(vals, errs[1])) + 2)
     ax.set_yticks([])
     style(ax)
-    ax.set_title("Name-mismatch rate by prompt language — the short-question battery, all models pooled (model-clustered 95% CIs)",
-                 loc="left", fontsize=11, pad=12)
+    # no in-image title (post text titles it); the bar labels + n= ticks carry
+    # everything else. CI whiskers described in the post, not the image.
     save(fig, "fig_lang_agg.png")
 
 

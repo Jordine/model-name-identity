@@ -72,35 +72,49 @@ NEVER_GRAY = "#b9b7b0"   # the house data-gray (fig_all_models "other", fig_flow
 
 
 def fig_family_counts(reg, per):
-    """Per major lab (≥3 analyzed models): how many of its models gave at least
-    one mismatched response vs never did. Read off "16 of 16 Mistrals"."""
+    """Per major lab (≥3 analyzed models): its models counted into the SAME four
+    mismatch-rate bands (and colors) as fig_distribution, stacked severe→never.
+    The bar-end annotation keeps the "16 of 16 Mistrals" reading."""
+    BANDS = [(">20%", lambda r: r > 20, SEQ[6]),
+             ("5–20%", lambda r: 5 < r <= 20, SEQ[4]),
+             (">0–5%", lambda r: 0 < r <= 5, SEQ[2]),
+             ("never mismatched", lambda r: r == 0, NEVER_GRAY)]
     rows = []
     for slug in MAIN_LABS:
         mids = [m for m in per if reg[m]["family"] == slug]
         if len(mids) < 3:
             continue
-        hit = sum(1 for m in mids if per[m]["d"] > 0)
-        rows.append((FAMILY_DISPLAY.get(slug, slug), hit, len(mids)))
-    rows.sort(key=lambda r: (r[1] / r[2], r[2]))          # top row = highest fraction
+        rates = [100 * per[m]["d"] / per[m]["n"] for m in mids]
+        counts = [sum(1 for r in rates if f(r)) for _, f, _ in BANDS]
+        rows.append((FAMILY_DISPLAY.get(slug, slug), counts, len(mids)))
+    rows.sort(key=lambda r: ((r[2] - r[1][-1]) / r[2], r[2]))   # top row = highest ≥once fraction
     n = len(rows)
     ys = np.arange(n)
-    fig, ax = plt.subplots(figsize=(8.2, 0.42 * n + 1.7))
-    ax.barh(ys, [h for _, h, _ in rows], height=0.62, color=CAT[0], zorder=3,
-            label="mismatched at least once")
-    ax.barh(ys, [t - h for _, h, t in rows], left=[h for _, h, _ in rows], height=0.62,
-            color=NEVER_GRAY, zorder=3, label="never mismatched")
-    for y, (_, h, t) in zip(ys, rows):
-        ax.text(t + 0.35, y, f"{h} of {t}", va="center", fontsize=8.8, color=INK2)
+    fig, ax = plt.subplots(figsize=(8.2, 0.42 * n + 1.9))
+    for bi, (lab, _, col) in enumerate(BANDS):
+        lefts = [sum(c[:bi]) for _, c, _ in rows]
+        vals = [c[bi] for _, c, _ in rows]
+        ax.barh(ys, vals, left=lefts, height=0.62, color=col, zorder=3,
+                edgecolor=SURFACE, linewidth=0.7, label=lab)
+        for y, l, v in zip(ys, lefts, vals):
+            if v > 0:
+                ax.text(l + v / 2, y, str(v), ha="center", va="center", fontsize=7.6,
+                        color="#ffffff" if col in (SEQ[6], SEQ[4]) else INK2)
+    for y, (_, c, t) in zip(ys, rows):
+        ax.text(t + 0.35, y, f"{t - c[-1]} of {t}", va="center", fontsize=8.8, color=INK2)
     ax.set_yticks(ys, [d for d, _, _ in rows], fontsize=9.5)
     ax.set_ylim(-0.55, n - 0.45)
     ax.set_xlim(0, max(t for _, _, t in rows) * 1.14)
     ax.set_xlabel("analyzed models")
     ax.xaxis.grid(True, color=GRID, lw=0.8)
     ax.set_axisbelow(True)
-    ax.legend(frameon=False, fontsize=8.5, loc="upper right")
+    ax.legend(frameon=False, fontsize=8.3, ncols=4, loc="lower left",
+              bbox_to_anchor=(0, 1.005), borderaxespad=0,
+              handlelength=1.2, columnspacing=1.1, title="mismatch rate",
+              title_fontsize=8.3, alignment="left")
     style(ax)
-    ax.set_title("How many of each lab's models gave at least one mismatched name",
-                 loc="left", fontsize=11, pad=12)
+    ax.set_title("Each lab's analyzed models, counted by mismatch-rate band",
+                 loc="left", fontsize=11, pad=34)
     save(fig, "fig_family_counts.png")
 
 

@@ -244,7 +244,7 @@ def fig_lang_conditional(data):
                    color="#2a78d6", alpha=0.6, edgecolor="white", linewidth=0.5, zorder=3)
     ax.set_xlabel("overall spontaneous mismatch rate (%)")
     ax.set_ylabel("mismatch rate in the model's HIGHEST-mismatch language (%)")
-    ax.set_title("Language-triggered vs. uniformly-weak: highest-mismatch-language rate vs. overall",
+    ax.set_title("Highest-mismatch-language rate vs. overall mismatch rate, per model",
                  fontsize=11, color=INK, loc="left", pad=26)
     ax.text(0, 1.006, "bubble area = number of mismatched responses",
             transform=ax.transAxes, fontsize=7.3, color=MUTED, va="bottom")

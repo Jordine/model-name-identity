@@ -62,18 +62,23 @@ def main():
     per = zh_rates()
     fig, ax = plt.subplots(figsize=(8.4, 4.4))
     group_w = 0.82
-    used_provs = []
+    # every provider serving EITHER model gets a slot in BOTH groups, so a
+    # provider that doesn't serve one model reads as an explicit gap (with a
+    # "not served" note), not as an ambiguous absence next to a 5-entry legend
+    slots = [p for p in PROV_ORDER if any(per.get((m, p), [0, 0])[1] > 0 for m in MODELS)]
+    bw = group_w / len(slots)
     for gi, mid in enumerate(MODELS):
-        provs = [p for p in PROV_ORDER if per.get((mid, p), [0, 0])[1] > 0]
-        bw = group_w / len(provs)
         x0 = gi - group_w / 2 + bw / 2
-        for j, prov in enumerate(provs):
-            if prov not in used_provs:
-                used_provs.append(prov)
-            d, n = per[(mid, prov)]
+        for j, prov in enumerate(slots):
+            d, n = per.get((mid, prov), [0, 0])
+            x = x0 + j * bw
+            if n == 0:      # data-availability note in the empty slot
+                short = {"azure": "Azure"}.get(prov, PROV_NAME[prov])
+                ax.text(x, 1.5, f"{short}: not served", rotation=90, ha="center",
+                        va="bottom", fontsize=7, color=MUTED, zorder=3)
+                continue
             rate = 100 * d / n
             lo, hi = wilson(d, n)
-            x = x0 + j * bw
             ax.bar(x, rate, bw * 0.9, color=PROV_COLOR[prov], zorder=3, edgecolor=SURFACE, linewidth=0.5)
             ax.errorbar(x, rate, yerr=[[lo], [hi]], fmt="none", ecolor=INK2,
                         elinewidth=1.1, capsize=2.5, zorder=4)
@@ -93,7 +98,7 @@ def main():
     ax.yaxis.grid(True, color="#e1e0d9", linewidth=0.7)
     ax.margins(x=0.12)
 
-    handles = [Patch(facecolor=PROV_COLOR[p], label=PROV_NAME[p]) for p in used_provs]
+    handles = [Patch(facecolor=PROV_COLOR[p], label=PROV_NAME[p]) for p in slots]
     ax.legend(handles=handles, frameon=False, fontsize=8.5, loc="upper right",
               handlelength=1.1, borderaxespad=0.3)
     ax.set_title("Same weights, different endpoint — identical except Google Vertex on Opus",

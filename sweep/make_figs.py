@@ -598,7 +598,7 @@ def fig_flow(reg, per):
     by_vol = sorted(fam_claims, key=lambda f: -sum(fam_claims[f].values()))
     MAIN = {"openai", "anthropic", "google", "meta", "qwen", "deepseek", "kimi", "olmo"}
     fams = [f for f in by_vol if f in set(by_vol[:10]) | MAIN and sum(fam_claims[f].values())]
-    labs = {f: f"{f}  ({sum(fam_claims[f].values())})" for f in fams}   # row volume, visible
+    labs = {f: f"{FAMILY_DISPLAY.get(f, f)}  ({sum(fam_claims[f].values())})" for f in fams}   # row volume, visible
     cols = ["chatgpt", "claude", "qwen", "gemini", "deepseek", "llama", "other/unlisted"]
     colr = {**IDCOLOR, "other/unlisted": "#b9b7b0"}   # same identity = same color as fig_coherence/fig_cutoff
     fig, ax = plt.subplots(figsize=(8.8, 0.44 * len(fams) + 1.6))
@@ -660,10 +660,11 @@ def fig_stance(reg, per):
     save(fig, "fig_stance.png")
 
 
-# family display names for panel titles — aligned with the FAMNAME map in
-# analysis_scratch/generics_audit/fig_cross_grid.py and the fam_cross_* titles
-# (fig_post.GRID_FAMILIES). Parenthetical = the model line (when the slug is a
-# lab: NVIDIA → Nemotron) or the lab (when the slug is a model line: Qwen → Alibaba).
+# family display names — the ONE source of truth for slug → display across the
+# figures: fam_* panel titles here, fig_flow's y-ticks, and (imported by
+# fig_post) fig_family_counts rows + fam_cross_* titles. Parenthetical = the
+# model line (when the slug is a lab: NVIDIA → Nemotron) or the lab (when the
+# slug is a model line: Qwen → Alibaba).
 FAMILY_DISPLAY = {
     "ai21": "AI21 (Jamba)", "amazon": "Amazon (Nova)", "ant": "Ant Group (Ling)",
     "anthropic": "Anthropic", "arcee": "Arcee AI", "baidu": "Baidu (ERNIE)",

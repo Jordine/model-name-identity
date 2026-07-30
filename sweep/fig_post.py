@@ -19,7 +19,7 @@ from matplotlib.patches import Patch
 
 from .analyze import load, FAMILY_SELF
 from .make_figs import (CAT, SEQ_CMAP, SURFACE, INK, INK2, MUTED, GRID, BASE,
-                        LOCAL_MODELS, ROOT, FIGS, gather, style, save)
+                        FAMILY_DISPLAY, LOCAL_MODELS, ROOT, FIGS, gather, style, save)
 
 
 # ------------------------------------------------------- distribution curve
@@ -65,12 +65,9 @@ def fig_distribution(per):
 
 
 # --------------------------------------------------- family at-least-once bars
-MAIN_LABS = [("openai", "OpenAI"), ("anthropic", "Anthropic (Claude)"),
-             ("google", "Google (Gemini)"), ("meta", "Meta (Llama)"),
-             ("deepseek", "DeepSeek"), ("qwen", "Qwen (Alibaba)"),
-             ("kimi", "Kimi (Moonshot)"), ("zhipu", "GLM (Zhipu)"),
-             ("nvidia", "NVIDIA (Nemotron)"), ("mistral", "Mistral"),
-             ("amazon", "Amazon (Nova)"), ("baidu", "ERNIE (Baidu)")]
+# display names come from make_figs.FAMILY_DISPLAY — the one source of truth
+MAIN_LABS = ["openai", "anthropic", "google", "meta", "deepseek", "qwen",
+             "kimi", "zhipu", "nvidia", "mistral", "amazon", "baidu"]
 NEVER_GRAY = "#b9b7b0"   # the house data-gray (fig_all_models "other", fig_flow unlisted)
 
 
@@ -78,12 +75,12 @@ def fig_family_counts(reg, per):
     """Per major lab (≥3 analyzed models): how many of its models gave at least
     one mismatched response vs never did. Read off "16 of 16 Mistrals"."""
     rows = []
-    for slug, disp in MAIN_LABS:
+    for slug in MAIN_LABS:
         mids = [m for m in per if reg[m]["family"] == slug]
         if len(mids) < 3:
             continue
         hit = sum(1 for m in mids if per[m]["d"] > 0)
-        rows.append((disp, hit, len(mids)))
+        rows.append((FAMILY_DISPLAY.get(slug, slug), hit, len(mids)))
     rows.sort(key=lambda r: (r[1] / r[2], r[2]))          # top row = highest fraction
     n = len(rows)
     ys = np.arange(n)
@@ -115,12 +112,12 @@ RLABEL = {"chatgpt": "ChatGPT", "claude": "Claude", "gemini": "Gemini", "deepsee
           "qwen": "Qwen", "kimi": "Kimi", "llama": "Llama", "grok": "Grok",
           "mistral": "Mistral", "doubao": "Doubao"}
 # post order (matches the Family-by-family section); olmo pools the API allenai
-# lane with the local raw-weights lane
-GRID_FAMILIES = [("openai", ["openai"], "OpenAI"), ("anthropic", ["anthropic"], "Anthropic"),
-                 ("google", ["google"], "Google"), ("qwen", ["qwen"], "Qwen"),
-                 ("deepseek", ["deepseek"], "DeepSeek"), ("kimi", ["kimi"], "Kimi (Moonshot)"),
-                 ("olmo", ["olmo", "allenai"], "OLMo (Ai2)"), ("nvidia", ["nvidia"], "NVIDIA"),
-                 ("minimax", ["minimax"], "MiniMax"), ("poolside", ["poolside"], "Poolside")]
+# lane with the local raw-weights lane. Titles via make_figs.FAMILY_DISPLAY.
+GRID_FAMILIES = [("openai", ["openai"]), ("anthropic", ["anthropic"]),
+                 ("google", ["google"]), ("qwen", ["qwen"]),
+                 ("deepseek", ["deepseek"]), ("kimi", ["kimi"]),
+                 ("olmo", ["olmo", "allenai"]), ("nvidia", ["nvidia"]),
+                 ("minimax", ["minimax"]), ("poolside", ["poolside"])]
 
 
 def _target(pid):
@@ -169,7 +166,8 @@ def fam_cross_grids(reg, per):
                 sum(g["n"][t] for g in per_probe.values())) for t in REAL}
     rows = sorted(REAL, key=lambda t: -(pool[t][0] / pool[t][1] if pool[t][1] else 0)) + PLACEBO
     nrow = len(rows)
-    for slug, fams, disp in GRID_FAMILIES:
+    for slug, fams in GRID_FAMILIES:
+        disp = FAMILY_DISPLAY.get(slug, slug)
         mids = [m for m in per if reg[m]["family"] in fams]   # ALL analyzed members, clean ones included
         if not mids:
             continue

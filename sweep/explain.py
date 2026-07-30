@@ -52,14 +52,19 @@ MIN_TOT = 100      # and a reasonably complete battery
 # so an identity keeps ONE color across fig_flow / fig_coherence / fig_cutoff.
 
 
-def place_labels(fig, ax, labels, points, fontsize=6.6):
+def place_labels(fig, ax, labels, points, fontsize=6.6, force_leader=()):
     """Deterministic collision-avoiding point labels (no adjustText).
 
     labels: [(x, y, text)]; points: [(x, y, s)] scatter obstacles (s = marker
     area, pt²). Processes labels top-down; for each, walks a fixed ladder of
     offsets (right-above first — left first near the right edge), measuring real
     text extents against already-placed labels, all markers and the axes frame;
-    the first free slot wins, and far-flung slots get a thin leader line. Call
+    the first free slot wins, and far-flung slots get a thin leader line.
+    Leader hygiene: a candidate whose leader line would cross already-placed
+    label text is penalized (so leaders thread between labels, not through
+    them), and candidate text may not sit on an already-drawn leader. Labels
+    named in `force_leader` get a leader even at near offsets — for dots inside
+    a dense cluster where an unattached label would read as ambiguous. Call
     AFTER limits/legend/titles are final (it uses the live transforms)."""
     fig.canvas.draw()
     ren = fig.canvas.get_renderer()
@@ -76,13 +81,38 @@ def place_labels(fig, ax, labels, points, fontsize=6.6):
         return sum(max(0.0, min(b[2], o[2]) - max(b[0], o[0])) * max(0.0, min(b[3], o[3]) - max(b[1], o[1]))
                    for o in boxes)
 
-    placed = []
+    def seg_hits(p1, p2, boxes):
+        """How many boxes the segment p1→p2 crosses (Liang–Barsky clip)."""
+        n = 0
+        for x0, y0, x1, y1 in boxes:
+            sx, sy = p2[0] - p1[0], p2[1] - p1[1]
+            t0, t1, ok = 0.0, 1.0, True
+            for p, q in ((-sx, p1[0] - x0), (sx, x1 - p1[0]), (-sy, p1[1] - y0), (sy, y1 - p1[1])):
+                if p == 0:
+                    if q < 0:
+                        ok = False
+                        break
+                else:
+                    r = q / p
+                    if p < 0:
+                        t0 = max(t0, r)
+                    else:
+                        t1 = min(t1, r)
+                    if t0 > t1:
+                        ok = False
+                        break
+            if ok:
+                n += 1
+        return n
+
+    placed, leaders = [], []
     for x, y, text in sorted(labels, key=lambda t: (-t[1], t[0])):
         offs = [(6, 4), (6, -12), (7, 15), (7, -23), (8, 26), (9, -34), (10, 37), (11, -45), (12, 48)]
         right = [(dx, dy, "left") for dx, dy in offs]
         left = [(-dx, dy, "right") for dx, dy in offs]
         pairs = (left, right) if tr((x, y))[0] > axbox.x0 + 0.74 * axbox.width else (right, left)
         cands = [v for pair in zip(*pairs) for v in pair]
+        pt = tr((x, y))
         pick, best_bad = None, None
         for dx, dy, ha in cands:
             a = ax.annotate(text, (x, y), textcoords="offset points", xytext=(dx, dy),
@@ -93,16 +123,23 @@ def place_labels(fig, ax, labels, points, fontsize=6.6):
             inside = (bb[0] > axbox.x0 - 4 and bb[2] < axbox.x1 + 10
                       and bb[1] > axbox.y0 and bb[3] < axbox.y1 + 4)
             bad = overlap_area(bb, placed) + overlap_area(bb, obstacles) + (0 if inside else 1e6)
+            bad += 1e4 * sum(seg_hits(p1, p2, [bb]) for p1, p2 in leaders)
+            if abs(dy) >= 15 or text in force_leader:   # this slot draws a leader
+                anchor = (pt[0] + dx * px, pt[1] + dy * px)
+                bad += 1e4 * seg_hits(pt, anchor, placed)
             if best_bad is None or bad < best_bad:
                 pick, best_bad = (dx, dy, ha, bb), bad
             if bad == 0:
                 break
         dx, dy, ha, bb = pick
+        leader = abs(dy) >= 15 or text in force_leader
         kw = dict(arrowprops=dict(arrowstyle="-", lw=0.55, color=BASE, shrinkA=2, shrinkB=2)) \
-            if abs(dy) >= 15 else {}
+            if leader else {}
         ax.annotate(text, (x, y), textcoords="offset points", xytext=(dx, dy),
                     fontsize=fontsize, color=INK2, ha=ha, va="bottom", zorder=6, **kw)
         placed.append(bb)
+        if leader:
+            leaders.append((pt, (pt[0] + dx * px, pt[1] + dy * px)))
 
 
 def entropy(counter):
@@ -187,7 +224,7 @@ def fig_coherence(data):
     # label only the well-separated right side (rate>=33); the low-rate left is a
     # dense cloud (many models rarely-but-consistently drift) — left unlabelled
     place_labels(fig, ax,
-                 [(d["rate"], 100 * mm["top1_share"], f"{d['name']} →{brand(mm['top1_id'])}")
+                 [(d["rate"], 100 * mm["top1_share"], f"{d['name']} → {brand(mm['top1_id'])}")
                   for d, mm in pts if d["rate"] >= 33],
                  [(d["rate"], 100 * mm["top1_share"], 22 + d["dn"] * 0.7) for d, mm in pts])
     save(fig, "fig_coherence.png")
@@ -226,7 +263,9 @@ def fig_lang_conditional(data):
     place_labels(fig, ax,
                  [(d["rate"], 100 * mm["max_lang_rate"], f"{d['name']} ({mm['dom_lang']})")
                   for d, mm in sel],
-                 [(d["rate"], 100 * mm["max_lang_rate"], 22 + d["dn"] * 0.6) for d, mm in pts])
+                 [(d["rate"], 100 * mm["max_lang_rate"], 22 + d["dn"] * 0.6) for d, mm in pts],
+                 # inside the dense lower-left cluster an unattached label is ambiguous
+                 force_leader={"Claude Opus 4.8 (zh)"})
     save(fig, "fig_lang_conditional.png")
 
 
@@ -352,7 +391,7 @@ def fig_cutoff(data):
         style(ax); ax.grid(color=GRID, lw=0.5, zorder=0)
     fig.text(0.5, 0.015, "claiming model's TRAINING CUTOFF — documented (solid) or estimated as "
              "release−6mo (hollow)   |   vertical lines = TARGET's version releases "
-             "(dashed = breakout, dotted = earlier)",
+             "(dashed = breakout release(s), dotted = earlier)",
              ha="center", fontsize=8.5, color=INK2)
     fig.text(0.008, 0.5, "% of the model's short-question responses claiming this identity",
              va="center", rotation=90, fontsize=9, color=INK2)

@@ -1,0 +1,406 @@
+{
+ "google/gemma-3-12b-it": {
+  "arena": "gemma-3-12b-it",
+  "elo": 1334.2928483814073
+ },
+ "google/gemma-3n-e4b-it": {
+  "arena": "gemma-3n-e4b-it",
+  "elo": 1306.198337956324
+ },
+ "google/gemma-3-4b-it": {
+  "arena": "gemma-3-4b-it",
+  "elo": 1290.8833637129605
+ },
+ "google/gemini-2.5-pro": {
+  "arena": "gemini-2.5-pro",
+  "elo": 1457.5146640473567
+ },
+ "google/gemini-3-flash-preview": {
+  "arena": "gemini-3-flash",
+  "elo": 1466.0344859983406
+ },
+ "google/gemma-2-27b-it": {
+  "arena": "gemma-2-27b-it",
+  "elo": 1231.5346103635466
+ },
+ "google/gemma-3-27b-it": {
+  "arena": "gemma-3-27b-it",
+  "elo": 1358.294556631406
+ },
+ "google/gemini-3.1-pro-preview": {
+  "arena": "gemini-3.1-pro-preview",
+  "elo": 1479.45578371284
+ },
+ "google/gemini-2.5-flash": {
+  "arena": "gemini-2.5-flash",
+  "elo": 1417.4597250062766
+ },
+ "google/gemini-3.1-flash-lite": {
+  "arena": "gemini-3.1-flash-lite-preview",
+  "elo": 1415.2441067660834
+ },
+ "qwen/qwen3.5-35b-a3b": {
+  "arena": "qwen3.5-35b-a3b",
+  "elo": 1395.597806115663
+ },
+ "mistralai/mistral-small-2603": {
+  "arena": "mistral-small-2506",
+  "elo": 1339.1226710680642
+ },
+ "qwen/qwen-plus": {
+  "arena": "qwen-plus-0125",
+  "elo": 1326.5466542394693
+ },
+ "z-ai/glm-4.5": {
+  "arena": "glm-4.5",
+  "elo": 1428.9422888335143
+ },
+ "openai/gpt-5": {
+  "arena": "gpt-5-chat",
+  "elo": 1403.784008768479
+ },
+ "ibm-granite/granite-4.1-8b": {
+  "arena": "granite-4.1-8b",
+  "elo": 1292.5999533759768
+ },
+ "openai/gpt-5.5": {
+  "arena": "gpt-5.5",
+  "elo": 1464.8771442250209
+ },
+ "openai/gpt-4o-mini": {
+  "arena": "gpt-4o-mini-2024-07-18",
+  "elo": 1286.5706992638566
+ },
+ "openai/gpt-4o": {
+  "arena": "gpt-4o-2024-05-13",
+  "elo": 1300.5995528267847
+ },
+ "openai/gpt-5-chat": {
+  "arena": "gpt-5-chat",
+  "elo": 1403.784008768479
+ },
+ "openai/gpt-3.5-turbo": {
+  "arena": "gpt-3.5-turbo-0125",
+  "elo": 1125.080799729535
+ },
+ "anthropic/claude-sonnet-4": {
+  "arena": "claude-sonnet-4-20250514",
+  "elo": 1337.8958335408797
+ },
+ "deepseek/deepseek-r1": {
+  "arena": "deepseek-r1-0528",
+  "elo": 1428.0676560600837
+ },
+ "openai/gpt-5.2-chat": {
+  "arena": "gpt-5.2",
+  "elo": 1411.7554260034549
+ },
+ "openai/gpt-4-turbo": {
+  "arena": "gpt-4-turbo-2024-04-09",
+  "elo": 1271.8507789111884
+ },
+ "openai/gpt-5.1-chat": {
+  "arena": "gpt-5.1",
+  "elo": 1422.106672583559
+ },
+ "z-ai/glm-5": {
+  "arena": "glm-5",
+  "elo": 1445.1679139721614
+ },
+ "openai/o3-mini": {
+  "arena": "o3-mini",
+  "elo": 1319.1236587371063
+ },
+ "qwen/qwen3-30b-a3b": {
+  "arena": "qwen3-30b-a3b",
+  "elo": 1317.104386921733
+ },
+ "arcee-ai/trinity-large-thinking": {
+  "arena": "trinity-large-thinking",
+  "elo": 1341.570193824145
+ },
+ "qwen/qwen3.6-max-preview": {
+  "arena": "qwen3.6-max-preview",
+  "elo": 1446.3504166943599
+ },
+ "qwen/qwen3.7-plus": {
+  "arena": "qwen3.7-plus",
+  "elo": 1456.4535089156243
+ },
+ "mistralai/ministral-8b-2512": {
+  "arena": "ministral-8b-2410",
+  "elo": 1191.0732649614647
+ },
+ "anthropic/claude-3-opus-20240229": {
+  "arena": "claude-3-opus-20240229",
+  "elo": 1262.1694444264679
+ },
+ "z-ai/glm-4.6": {
+  "arena": "glm-4.6",
+  "elo": 1440.3774880919214
+ },
+ "qwen/qwen3.5-397b-a17b": {
+  "arena": "qwen3.5-397b-a17b",
+  "elo": 1439.0911715041957
+ },
+ "anthropic/claude-opus-4": {
+  "arena": "claude-opus-4-20250514",
+  "elo": 1364.5737905293004
+ },
+ "cohere/command-r-plus-08-2024": {
+  "arena": "command-r-plus-08-2024",
+  "elo": 1229.0600943917925
+ },
+ "meta-llama/llama-3.1-70b-instruct": {
+  "arena": "llama-3.1-70b-instruct",
+  "elo": 1261.0733492791169
+ },
+ "deepseek/deepseek-v4-pro": {
+  "arena": "deepseek-v4-pro",
+  "elo": 1450.0776443762425
+ },
+ "openai/o3": {
+  "arena": "o3-2025-04-16",
+  "elo": 1409.5023119151538
+ },
+ "mistralai/mistral-small-3.1-24b-instruct": {
+  "arena": "mistral-small-3.1-24b-instruct-2503",
+  "elo": 1277.8897803192424
+ },
+ "mistralai/mistral-medium-3-5": {
+  "arena": "mistral-medium-3.5",
+  "elo": 1421.0894012525305
+ },
+ "meta-llama/llama-3.1-8b-instruct": {
+  "arena": "llama-3.1-8b-instruct",
+  "elo": 1186.7414732783227
+ },
+ "mistralai/mistral-large-2407": {
+  "arena": "mistral-large-2407",
+  "elo": 1266.3038492737128
+ },
+ "qwen/qwen3-max": {
+  "arena": "qwen3-max-preview",
+  "elo": 1439.073812903598
+ },
+ "deepseek/deepseek-v4-flash": {
+  "arena": "deepseek-v4-flash",
+  "elo": 1431.6731375746144
+ },
+ "openai/gpt-4.1-mini": {
+  "arena": "gpt-4.1-mini-2025-04-14",
+  "elo": 1340.686181673433
+ },
+ "moonshotai/kimi-k2.6": {
+  "arena": "kimi-k2.6",
+  "elo": 1454.7196141356644
+ },
+ "openai/o1": {
+  "arena": "o1-2024-12-17",
+  "elo": 1365.9643408491133
+ },
+ "meta-llama/llama-3.2-3b-instruct": {
+  "arena": "llama-3.2-3b-instruct",
+  "elo": 1109.6945850618763
+ },
+ "qwen/qwen-2.5-72b-instruct": {
+  "arena": "qwen2.5-72b-instruct",
+  "elo": 1269.1840233746316
+ },
+ "openai/gpt-5.4": {
+  "arena": "gpt-5.4",
+  "elo": 1451.8050385954548
+ },
+ "z-ai/glm-4.5-air": {
+  "arena": "glm-4.5-air",
+  "elo": 1382.655452207297
+ },
+ "microsoft/phi-4": {
+  "arena": "phi-4",
+  "elo": 1216.8367524357532
+ },
+ "meta-llama/llama-3.2-1b-instruct": {
+  "arena": "llama-3.2-1b-instruct",
+  "elo": 1054.7949428315087
+ },
+ "qwen/qwen3-32b": {
+  "arena": "qwen3-32b",
+  "elo": 1340.1475559285457
+ },
+ "qwen/qwen3.6-plus": {
+  "arena": "qwen3.6-plus",
+  "elo": 1436.7546380036815
+ },
+ "deepseek/deepseek-v3.1-terminus": {
+  "arena": "deepseek-v3.1-terminus",
+  "elo": 1417.24718759402
+ },
+ "qwen/qwen3.5-27b": {
+  "arena": "qwen3.5-27b",
+  "elo": 1408.077634429033
+ },
+ "openai/o4-mini": {
+  "arena": "o4-mini-2025-04-16",
+  "elo": 1352.7397092319281
+ },
+ "openai/gpt-4.1-nano": {
+  "arena": "gpt-4.1-nano-2025-04-14",
+  "elo": 1284.8736458321011
+ },
+ "qwen/qwen3.5-flash-02-23": {
+  "arena": "qwen3.5-flash",
+  "elo": 1397.750947115404
+ },
+ "xiaomi/mimo-v2.5": {
+  "arena": "mimo-v2.5",
+  "elo": 1427.4807595370962
+ },
+ "z-ai/glm-4.7": {
+  "arena": "glm-4.7",
+  "elo": 1435.8379345708067
+ },
+ "qwen/qwen3-next-80b-a3b-thinking": {
+  "arena": "qwen3-next-80b-a3b-thinking",
+  "elo": 1367.7828690466122
+ },
+ "cohere/command-r-08-2024": {
+  "arena": "command-r-08-2024",
+  "elo": 1187.5204729800917
+ },
+ "openai/gpt-4.1": {
+  "arena": "gpt-4.1-2025-04-14",
+  "elo": 1382.0595590106277
+ },
+ "deepseek/deepseek-v3.2": {
+  "arena": "deepseek-v3.2",
+  "elo": 1424.385181549259
+ },
+ "anthropic/claude-3-haiku": {
+  "arena": "claude-3-haiku-20240307",
+  "elo": 1194.8400201495747
+ },
+ "qwen/qwen3-next-80b-a3b-instruct": {
+  "arena": "qwen3-next-80b-a3b-instruct",
+  "elo": 1418.7164341658718
+ },
+ "qwen/qwen3-30b-a3b-instruct-2507": {
+  "arena": "qwen3-30b-a3b-instruct-2507",
+  "elo": 1383.938539827786
+ },
+ "deepseek/deepseek-r1-0528": {
+  "arena": "deepseek-r1-0528",
+  "elo": 1428.0676560600837
+ },
+ "mistralai/mistral-large-2512": {
+  "arena": "mistral-large-2407",
+  "elo": 1266.3038492737128
+ },
+ "qwen/qwen3-235b-a22b-thinking-2507": {
+  "arena": "qwen3-235b-a22b-thinking-2507",
+  "elo": 1413.740365452646
+ },
+ "openai/gpt-5.3-chat": {
+  "arena": "gpt-5.3-chat-latest",
+  "elo": 1387.637750239362
+ },
+ "qwen/qwen3-235b-a22b-2507": {
+  "arena": "qwen3-235b-a22b",
+  "elo": 1365.9367024733456
+ },
+ "z-ai/glm-4.7-flash": {
+  "arena": "glm-4.7-flash",
+  "elo": 1353.380539308661
+ },
+ "qwen/qwen3.5-122b-a10b": {
+  "arena": "qwen3.5-122b-a10b",
+  "elo": 1417.7213133827418
+ },
+ "openai/gpt-5.1": {
+  "arena": "gpt-5.1",
+  "elo": 1422.106672583559
+ },
+ "qwen/qwen3.7-max": {
+  "arena": "qwen3.7-max-preview",
+  "elo": 1475.1190710286041
+ },
+ "meta-llama/llama-3.3-70b-instruct": {
+  "arena": "llama-3.3-70b-instruct",
+  "elo": 1275.0576360412058
+ },
+ "openai/gpt-4": {
+  "arena": "gpt-4-0314",
+  "elo": 1206.169529960404
+ },
+ "anthropic/claude-opus-4.1": {
+  "arena": "claude-opus-4-1-20250805",
+  "elo": 1417.421781456801
+ },
+ "openai/gpt-5.2": {
+  "arena": "gpt-5.2",
+  "elo": 1411.7554260034549
+ },
+ "tencent/hy3": {
+  "arena": "hy3",
+  "elo": 1442.4262838204677
+ },
+ "qwen/qwen3-235b-a22b": {
+  "arena": "qwen3-235b-a22b",
+  "elo": 1365.9367024733456
+ },
+ "moonshotai/kimi-k2-0905": {
+  "arena": "kimi-k2-0905-preview",
+  "elo": 1379.4453953109464
+ },
+ "z-ai/glm-5.1": {
+  "arena": "glm-5.1",
+  "elo": 1464.994928086198
+ },
+ "minimax/minimax-m2.7": {
+  "arena": "minimax-m2.7",
+  "elo": 1405.3238788848698
+ },
+ "anthropic/claude-sonnet-4.5": {
+  "arena": "claude-sonnet-4-5-20250929",
+  "elo": 1437.7826463608426
+ },
+ "anthropic/claude-sonnet-4.6": {
+  "arena": "claude-sonnet-4-6",
+  "elo": 1457.3167293200731
+ },
+ "anthropic/claude-opus-4.7": {
+  "arena": "claude-opus-4-7",
+  "elo": 1481.8532525756914
+ },
+ "anthropic/claude-haiku-4.5": {
+  "arena": "claude-haiku-4-5-20251001",
+  "elo": 1393.7244503082202
+ },
+ "anthropic/claude-opus-4.5": {
+  "arena": "claude-opus-4-5-20251101",
+  "elo": 1449.2439617654827
+ },
+ "anthropic/claude-opus-4.8": {
+  "arena": "claude-opus-4-8",
+  "elo": 1453.0152782474315
+ },
+ "anthropic/claude-fable-5": {
+  "arena": "claude-fable-5",
+  "elo": 1494.0859880167309
+ },
+ "anthropic/claude-opus-4.6": {
+  "arena": "claude-opus-4-6",
+  "elo": 1496.6257056431264
+ },
+ "allenai/Olmo-3.1-32B-Instruct": {
+  "arena": "olmo-3.1-32b-instruct",
+  "elo": 1311.3801823566623
+ },
+ "openai/gpt-oss-120b": {
+  "arena": "gpt-oss-120b",
+  "elo": 1365.6804681025478
+ },
+ "openai/gpt-oss-20b": {
+  "arena": "gpt-oss-20b",
+  "elo": 1287.5753026950417
+ }
+}

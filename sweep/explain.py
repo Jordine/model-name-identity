@@ -314,6 +314,57 @@ def fig_size(data):
     save(fig, "fig_size.png")
 
 
+def fig_elo(data):
+    """Official-name mismatch rate vs. LMArena Elo (config/lmarena_elo.json —
+    text arena, `overall`, each model's latest board). Color = share of the
+    model's mismatches landing on its single top claimed name (needs >=10
+    mismatches; fewer -> gray). Bubble area = mismatch volume, house convention."""
+    elo = _load("lmarena_elo.json")
+    if not elo:
+        print("  (no lmarena_elo.json — skipping fig_elo)")
+        return
+    pts = [(d, metrics(d), elo[mid]["elo"]) for mid, d in data.items()
+           if mid in elo and d["tot"] >= MIN_TOT]
+    fig, ax = plt.subplots(figsize=(9.4, 6.4))
+    from .make_figs import SEQ_CMAP
+    classed = [(d, mm, e) for d, mm, e in pts if mm["n_foreign"] >= MIN_FOREIGN]
+    thin = [(d, mm, e) for d, mm, e in pts if mm["n_foreign"] < MIN_FOREIGN]
+    ax.scatter([e for *_, e in thin], [d["rate"] for d, *_ in thin],
+               s=26, color=BASE, alpha=0.55, edgecolor="white", linewidth=0.5,
+               zorder=3, label=f"fewer than {MIN_FOREIGN} mismatches")
+    sc = ax.scatter([e for *_, e in classed], [d["rate"] for d, *_ in classed],
+                    s=[26 + d["dn"] * 0.55 for d, *_ in classed],
+                    c=[100 * mm["top1_share"] for _, mm, _ in classed],
+                    cmap=SEQ_CMAP, vmin=0, vmax=100, alpha=0.8,
+                    edgecolor="white", linewidth=0.5, zorder=4)
+    cb = fig.colorbar(sc, ax=ax, shrink=0.62, pad=0.02)
+    cb.set_label("% of the model's mismatches on its single top claimed name",
+                 fontsize=8, color=INK2)
+    cb.outline.set_visible(False)
+    ax.set_xlabel("LMArena Elo (text arena, overall)")
+    ax.set_ylabel("official-name mismatch rate (%)")
+    ax.set_title("Mismatch rate vs. LMArena Elo, per model",
+                 fontsize=11, color=INK, loc="left", pad=26)
+    ax.text(0, 1.006, f"bubble area = number of mismatched responses · "
+            f"gray = fewer than {MIN_FOREIGN} mismatches (share not estimated)",
+            transform=ax.transAxes, fontsize=7.3, color=MUTED, va="bottom")
+    ax.legend(fontsize=8, frameon=False, loc="upper left")
+    style(ax); ax.grid(color=GRID, lw=0.6, zorder=0)
+    FORCE = {"Claude Opus 4.8", "Claude Sonnet 4.6", "Kimi K2.5", "Kimi K2",
+             "GPT-4", "Qwen2.5 72B Instruct", "DeepSeek V3 0324",
+             "Trinity Large Thinking", "Hy3", "OLMo 3.1 32B Instruct"}
+    sel, seen = [], set()
+    for d, mm, e in (sorted(classed, key=lambda t: -t[0]["dn"])[:9]
+                     + [t for t in classed if t[0]["name"] in FORCE]):
+        if d["name"] not in seen:
+            seen.add(d["name"])
+            sel.append((d, mm, e))
+    place_labels(fig, ax,
+                 [(e, d["rate"], d["name"]) for d, _, e in sel],
+                 [(e, d["rate"], 26 + d["dn"] * 0.55) for d, _, e in pts])
+    save(fig, "fig_elo.png")
+
+
 def _year(s):
     if not s:
         return None

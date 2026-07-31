@@ -1,0 +1,547 @@
+[
+ {
+  "id": "allenai/Olmo-3.1-32B-Instruct",
+  "arena": "olmo-3.1-32b-instruct",
+  "elo": 1311.3801823566623
+ },
+ {
+  "id": "amazon/nova-lite-v1",
+  "arena": "amazon-nova-lite-v1.0",
+  "elo": 1228.637020374575
+ },
+ {
+  "id": "amazon/nova-micro-v1",
+  "arena": "amazon-nova-micro-v1.0",
+  "elo": 1208.5725603018113
+ },
+ {
+  "id": "amazon/nova-pro-v1",
+  "arena": "amazon-nova-pro-v1.0",
+  "elo": 1258.827136568134
+ },
+ {
+  "id": "anthropic/claude-3-haiku",
+  "arena": "claude-3-haiku-20240307",
+  "elo": 1194.8400201495747
+ },
+ {
+  "id": "anthropic/claude-3-opus-20240229",
+  "arena": "claude-3-opus-20240229",
+  "elo": 1262.1694444264679
+ },
+ {
+  "id": "anthropic/claude-fable-5",
+  "arena": "claude-fable-5",
+  "elo": 1494.0859880167309
+ },
+ {
+  "id": "anthropic/claude-haiku-4.5",
+  "arena": "claude-haiku-4-5-20251001",
+  "elo": 1393.7244503082202
+ },
+ {
+  "id": "anthropic/claude-opus-4",
+  "arena": "claude-opus-4-20250514",
+  "elo": 1364.5737905293004
+ },
+ {
+  "id": "anthropic/claude-opus-4.1",
+  "arena": "claude-opus-4-1-20250805",
+  "elo": 1417.421781456801
+ },
+ {
+  "id": "anthropic/claude-opus-4.5",
+  "arena": "claude-opus-4-5-20251101",
+  "elo": 1449.2439617654827
+ },
+ {
+  "id": "anthropic/claude-opus-4.6",
+  "arena": "claude-opus-4-6",
+  "elo": 1496.6257056431264
+ },
+ {
+  "id": "anthropic/claude-opus-4.7",
+  "arena": "claude-opus-4-7",
+  "elo": 1481.8532525756914
+ },
+ {
+  "id": "anthropic/claude-opus-4.8",
+  "arena": "claude-opus-4-8",
+  "elo": 1453.0152782474315
+ },
+ {
+  "id": "anthropic/claude-sonnet-4",
+  "arena": "claude-sonnet-4-20250514",
+  "elo": 1337.8958335408797
+ },
+ {
+  "id": "anthropic/claude-sonnet-4.5",
+  "arena": "claude-sonnet-4-5-20250929",
+  "elo": 1437.7826463608426
+ },
+ {
+  "id": "anthropic/claude-sonnet-4.6",
+  "arena": "claude-sonnet-4-6",
+  "elo": 1457.3167293200731
+ },
+ {
+  "id": "arcee-ai/trinity-large-thinking",
+  "arena": "trinity-large-thinking",
+  "elo": 1341.570193824145
+ },
+ {
+  "id": "cohere/command-a",
+  "arena": "command-a-03-2025",
+  "elo": 1331.465652400436
+ },
+ {
+  "id": "cohere/command-r-08-2024",
+  "arena": "command-r-08-2024",
+  "elo": 1187.5204729800917
+ },
+ {
+  "id": "cohere/command-r-plus-08-2024",
+  "arena": "command-r-plus-08-2024",
+  "elo": 1229.0600943917925
+ },
+ {
+  "id": "deepseek/deepseek-chat",
+  "arena": "deepseek-v3",
+  "elo": 1332.639472562802
+ },
+ {
+  "id": "deepseek/deepseek-chat-v3-0324",
+  "arena": "deepseek-v3-0324",
+  "elo": 1374.9490223352636
+ },
+ {
+  "id": "deepseek/deepseek-chat-v3.1",
+  "arena": "deepseek-v3.1",
+  "elo": 1419.3970462007514
+ },
+ {
+  "id": "deepseek/deepseek-r1",
+  "arena": "deepseek-r1",
+  "elo": 1372.79077624749
+ },
+ {
+  "id": "deepseek/deepseek-r1-0528",
+  "arena": "deepseek-r1-0528",
+  "elo": 1428.0676560600837
+ },
+ {
+  "id": "deepseek/deepseek-v3.1-terminus",
+  "arena": "deepseek-v3.1-terminus",
+  "elo": 1417.24718759402
+ },
+ {
+  "id": "deepseek/deepseek-v3.2",
+  "arena": "deepseek-v3.2",
+  "elo": 1424.385181549259
+ },
+ {
+  "id": "deepseek/deepseek-v4-flash",
+  "arena": "deepseek-v4-flash",
+  "elo": 1431.6731375746144
+ },
+ {
+  "id": "deepseek/deepseek-v4-pro",
+  "arena": "deepseek-v4-pro",
+  "elo": 1450.0776443762425
+ },
+ {
+  "id": "google/gemini-2.5-flash",
+  "arena": "gemini-2.5-flash",
+  "elo": 1417.4597250062766
+ },
+ {
+  "id": "google/gemini-2.5-pro",
+  "arena": "gemini-2.5-pro",
+  "elo": 1457.5146640473567
+ },
+ {
+  "id": "google/gemini-3-flash-preview",
+  "arena": "gemini-3-flash",
+  "elo": 1466.0344859983406
+ },
+ {
+  "id": "google/gemini-3.1-flash-lite",
+  "arena": "gemini-3.1-flash-lite-preview",
+  "elo": 1415.2441067660834
+ },
+ {
+  "id": "google/gemini-3.1-pro-preview",
+  "arena": "gemini-3.1-pro-preview",
+  "elo": 1479.45578371284
+ },
+ {
+  "id": "google/gemini-3.5-flash",
+  "arena": "gemini-3.5-flash",
+  "elo": 1482.3507600104977
+ },
+ {
+  "id": "google/gemma-2-27b-it",
+  "arena": "gemma-2-27b-it",
+  "elo": 1231.5346103635466
+ },
+ {
+  "id": "google/gemma-3-12b-it",
+  "arena": "gemma-3-12b-it",
+  "elo": 1334.2928483814073
+ },
+ {
+  "id": "google/gemma-3-27b-it",
+  "arena": "gemma-3-27b-it",
+  "elo": 1358.294556631406
+ },
+ {
+  "id": "google/gemma-3-4b-it",
+  "arena": "gemma-3-4b-it",
+  "elo": 1290.8833637129605
+ },
+ {
+  "id": "google/gemma-3n-e4b-it",
+  "arena": "gemma-3n-e4b-it",
+  "elo": 1306.198337956324
+ },
+ {
+  "id": "google/gemma-4-26b-a4b-it",
+  "arena": "gemma-4-26b-a4b",
+  "elo": 1434.6882315894004
+ },
+ {
+  "id": "google/gemma-4-31b-it",
+  "arena": "gemma-4-31b",
+  "elo": 1441.6904377662995
+ },
+ {
+  "id": "ibm-granite/granite-4.1-8b",
+  "arena": "granite-4.1-8b",
+  "elo": 1292.5999533759768
+ },
+ {
+  "id": "meta-llama/llama-3.1-70b-instruct",
+  "arena": "llama-3.1-70b-instruct",
+  "elo": 1261.0733492791169
+ },
+ {
+  "id": "meta-llama/llama-3.1-8b-instruct",
+  "arena": "llama-3.1-8b-instruct",
+  "elo": 1186.7414732783227
+ },
+ {
+  "id": "meta-llama/llama-3.2-1b-instruct",
+  "arena": "llama-3.2-1b-instruct",
+  "elo": 1054.7949428315087
+ },
+ {
+  "id": "meta-llama/llama-3.2-3b-instruct",
+  "arena": "llama-3.2-3b-instruct",
+  "elo": 1109.6945850618763
+ },
+ {
+  "id": "meta-llama/llama-3.3-70b-instruct",
+  "arena": "llama-3.3-70b-instruct",
+  "elo": 1275.0576360412058
+ },
+ {
+  "id": "microsoft/phi-4",
+  "arena": "phi-4",
+  "elo": 1216.8367524357532
+ },
+ {
+  "id": "minimax/minimax-m2.7",
+  "arena": "minimax-m2.7",
+  "elo": 1405.3238788848698
+ },
+ {
+  "id": "mistralai/mistral-large-2407",
+  "arena": "mistral-large-2407",
+  "elo": 1266.3038492737128
+ },
+ {
+  "id": "mistralai/mistral-large-2512",
+  "arena": "mistral-large-3",
+  "elo": 1429.499787992313
+ },
+ {
+  "id": "mistralai/mistral-medium-3-5",
+  "arena": "mistral-medium-3.5",
+  "elo": 1421.0894012525305
+ },
+ {
+  "id": "mistralai/mistral-medium-3.1",
+  "arena": "mistral-medium-2508",
+  "elo": 1425.317718377241
+ },
+ {
+  "id": "mistralai/mistral-small-3.2-24b-instruct",
+  "arena": "mistral-small-2506",
+  "elo": 1339.1226710680642
+ },
+ {
+  "id": "mistralai/mixtral-8x22b-instruct",
+  "arena": "mixtral-8x22b-instruct-v0.1",
+  "elo": 1162.1475830897302
+ },
+ {
+  "id": "moonshotai/kimi-k2",
+  "arena": "kimi-k2-0711-preview",
+  "elo": 1370.7462022634186
+ },
+ {
+  "id": "moonshotai/kimi-k2-0905",
+  "arena": "kimi-k2-0905-preview",
+  "elo": 1379.4453953109464
+ },
+ {
+  "id": "moonshotai/kimi-k2-thinking",
+  "arena": "kimi-k2-thinking-turbo",
+  "elo": 1414.0104865778035
+ },
+ {
+  "id": "moonshotai/kimi-k2.5",
+  "arena": "kimi-k2.5-thinking",
+  "elo": 1445.1905606878586
+ },
+ {
+  "id": "moonshotai/kimi-k2.6",
+  "arena": "kimi-k2.6",
+  "elo": 1454.7196141356644
+ },
+ {
+  "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+  "arena": "nvidia-llama-3.3-nemotron-super-49b-v1.5",
+  "elo": 1337.9630859882486
+ },
+ {
+  "id": "nvidia/nemotron-3-nano-30b-a3b",
+  "arena": "nvidia-nemotron-3-nano-30b-a3b-bf16",
+  "elo": 1349.1788507035944
+ },
+ {
+  "id": "nvidia/nemotron-3-super-120b-a12b",
+  "arena": "nvidia-nemotron-3-super-120b-a12b",
+  "elo": 1378.048580263533
+ },
+ {
+  "id": "nvidia/nemotron-3-ultra-550b-a55b",
+  "arena": "nvidia-nemotron-3-ultra-550b-a55b-nvfp4",
+  "elo": 1444.5544628535504
+ },
+ {
+  "id": "openai/gpt-4",
+  "arena": "gpt-4-0613",
+  "elo": 1186.167307310095
+ },
+ {
+  "id": "openai/gpt-4-turbo",
+  "arena": "gpt-4-turbo-2024-04-09",
+  "elo": 1271.8507789111884
+ },
+ {
+  "id": "openai/gpt-4.1",
+  "arena": "gpt-4.1-2025-04-14",
+  "elo": 1382.0595590106277
+ },
+ {
+  "id": "openai/gpt-4.1-mini",
+  "arena": "gpt-4.1-mini-2025-04-14",
+  "elo": 1340.686181673433
+ },
+ {
+  "id": "openai/gpt-4.1-nano",
+  "arena": "gpt-4.1-nano-2025-04-14",
+  "elo": 1284.8736458321011
+ },
+ {
+  "id": "openai/gpt-4o",
+  "arena": "gpt-4o-2024-05-13",
+  "elo": 1300.5995528267847
+ },
+ {
+  "id": "openai/gpt-4o-mini",
+  "arena": "gpt-4o-mini-2024-07-18",
+  "elo": 1286.5706992638566
+ },
+ {
+  "id": "openai/gpt-5-chat",
+  "arena": "gpt-5-chat",
+  "elo": 1403.784008768479
+ },
+ {
+  "id": "openai/gpt-5.1",
+  "arena": "gpt-5.1",
+  "elo": 1422.106672583559
+ },
+ {
+  "id": "openai/gpt-5.2",
+  "arena": "gpt-5.2",
+  "elo": 1411.7554260034549
+ },
+ {
+  "id": "openai/gpt-5.3-chat",
+  "arena": "gpt-5.3-chat-latest",
+  "elo": 1387.637750239362
+ },
+ {
+  "id": "openai/gpt-5.4",
+  "arena": "gpt-5.4",
+  "elo": 1451.8050385954548
+ },
+ {
+  "id": "openai/gpt-5.5",
+  "arena": "gpt-5.5",
+  "elo": 1464.8771442250209
+ },
+ {
+  "id": "openai/gpt-oss-120b",
+  "arena": "gpt-oss-120b",
+  "elo": 1365.6804681025478
+ },
+ {
+  "id": "openai/gpt-oss-20b",
+  "arena": "gpt-oss-20b",
+  "elo": 1287.5753026950417
+ },
+ {
+  "id": "openai/o3-mini",
+  "arena": "o3-mini",
+  "elo": 1319.1236587371063
+ },
+ {
+  "id": "openai/o4-mini",
+  "arena": "o4-mini-2025-04-16",
+  "elo": 1352.7397092319281
+ },
+ {
+  "id": "qwen/qwen-2.5-72b-instruct",
+  "arena": "qwen2.5-72b-instruct",
+  "elo": 1269.1840233746316
+ },
+ {
+  "id": "qwen/qwen3-235b-a22b",
+  "arena": "qwen3-235b-a22b",
+  "elo": 1365.9367024733456
+ },
+ {
+  "id": "qwen/qwen3-235b-a22b-thinking-2507",
+  "arena": "qwen3-235b-a22b-thinking-2507",
+  "elo": 1413.740365452646
+ },
+ {
+  "id": "qwen/qwen3-30b-a3b",
+  "arena": "qwen3-30b-a3b",
+  "elo": 1317.104386921733
+ },
+ {
+  "id": "qwen/qwen3-30b-a3b-instruct-2507",
+  "arena": "qwen3-30b-a3b-instruct-2507",
+  "elo": 1383.938539827786
+ },
+ {
+  "id": "qwen/qwen3-32b",
+  "arena": "qwen3-32b",
+  "elo": 1340.1475559285457
+ },
+ {
+  "id": "qwen/qwen3-max",
+  "arena": "qwen3-max-preview",
+  "elo": 1439.073812903598
+ },
+ {
+  "id": "qwen/qwen3-next-80b-a3b-instruct",
+  "arena": "qwen3-next-80b-a3b-instruct",
+  "elo": 1418.7164341658718
+ },
+ {
+  "id": "qwen/qwen3-next-80b-a3b-thinking",
+  "arena": "qwen3-next-80b-a3b-thinking",
+  "elo": 1367.7828690466122
+ },
+ {
+  "id": "qwen/qwen3.5-122b-a10b",
+  "arena": "qwen3.5-122b-a10b",
+  "elo": 1417.7213133827418
+ },
+ {
+  "id": "qwen/qwen3.5-27b",
+  "arena": "qwen3.5-27b",
+  "elo": 1408.077634429033
+ },
+ {
+  "id": "qwen/qwen3.5-35b-a3b",
+  "arena": "qwen3.5-35b-a3b",
+  "elo": 1395.597806115663
+ },
+ {
+  "id": "qwen/qwen3.5-397b-a17b",
+  "arena": "qwen3.5-397b-a17b",
+  "elo": 1439.0911715041957
+ },
+ {
+  "id": "qwen/qwen3.6-max-preview",
+  "arena": "qwen3.6-max-preview",
+  "elo": 1446.3504166943599
+ },
+ {
+  "id": "qwen/qwen3.6-plus",
+  "arena": "qwen3.6-plus",
+  "elo": 1436.7546380036815
+ },
+ {
+  "id": "qwen/qwen3.7-max",
+  "arena": "qwen3.7-max-preview",
+  "elo": 1475.1190710286041
+ },
+ {
+  "id": "qwen/qwen3.7-plus",
+  "arena": "qwen3.7-plus",
+  "elo": 1456.4535089156243
+ },
+ {
+  "id": "tencent/hy3",
+  "arena": "hy3",
+  "elo": 1442.4262838204677
+ },
+ {
+  "id": "xiaomi/mimo-v2.5",
+  "arena": "mimo-v2.5",
+  "elo": 1427.4807595370962
+ },
+ {
+  "id": "z-ai/glm-4.5",
+  "arena": "glm-4.5",
+  "elo": 1428.9422888335143
+ },
+ {
+  "id": "z-ai/glm-4.5-air",
+  "arena": "glm-4.5-air",
+  "elo": 1382.655452207297
+ },
+ {
+  "id": "z-ai/glm-4.6",
+  "arena": "glm-4.6",
+  "elo": 1440.3774880919214
+ },
+ {
+  "id": "z-ai/glm-4.7",
+  "arena": "glm-4.7",
+  "elo": 1435.8379345708067
+ },
+ {
+  "id": "z-ai/glm-4.7-flash",
+  "arena": "glm-4.7-flash",
+  "elo": 1353.380539308661
+ },
+ {
+  "id": "z-ai/glm-5",
+  "arena": "glm-5",
+  "elo": 1445.1679139721614
+ },
+ {
+  "id": "z-ai/glm-5.1",
+  "arena": "glm-5.1",
+  "elo": 1464.994928086198
+ }
+]
